@@ -1,5 +1,13 @@
 ﻿## Stage 3 当前状态：PAUSED / PAPER-FACING RESULT FROZEN（2026-09-26，S3-CLOSE）
 
+- 2026-09-27 GitHub 证据补档：本次在 `paper-final-repair` 纳入此前被忽略的
+  R5 五项推理产物、Stage3 v2 与 final 各两项参数网格/逐案例信号，共 9 个既有 JSON
+  （50,732,379 bytes），保留原始字节。表一两臂与 Gold、表二八组证据的 68 项
+  Git blob SHA-256 检查通过；R5 七项输出绑定匹配；收束报告引用的 29 个不同路径
+  均已在 Git。逐文件清单和复现依赖见
+  [GitHub evidence backup](../outputs/reports/github_pipeline_evidence_backup_v1.json)。
+  仅补档与静态核对，未重跑实验/API/代码测试；远端提交号以本次推送后核对为准。
+  模型权重、运行环境和禁止再分发的第三方原始资料仍须依原合同另行准备。
 - `STAGE3_EXPERIMENT_STATUS=PAUSED`；`CURRENT_PAPER_TABLE3_FROZEN=true`；当前优先级为 **PAPER WRITING + PPT PREPARATION**。
 - 固定 Table 3：Sun P/R/F1 **0.3814 / 0.5362 / 0.4458**；Ours **0.4393 / 0.6812 / 0.5341**。主要剩余瓶颈：regulation-to-BPMN semantic action alignment。
 - `BONUS_RESULT_IS_PAPER_FACING=false`：0.4667 / 0.5474 仅 synthetic-endpoint development diagnostic，不替换主表。`FINAL_UNSEEN_EVALUATION_COMPLETED=false`；现有数据均用于 development / analysis。
