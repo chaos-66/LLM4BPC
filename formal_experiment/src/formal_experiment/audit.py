@@ -1200,13 +1200,8 @@ def collect_project_audit() -> dict[str, Any]:
     # under formal_experiment/" contract; tracked here so it shows up
     # alongside the other blockers but does not affect the formal
     # methods' readiness.
-    d1_root_scripts = [
-        Path("/__w/bpc-hybrid/bpc-hybrid/build_d1_prompt.py"),
-        Path("/__w/bpc-hybrid/bpc-hybrid/build_few_shot.py"),
-        Path("/__w/bpc-hybrid/bpc-hybrid/verify_d1_few_shot.py"),
-    ]
-    # The container paths above are placeholders; re-resolve against
-    # the actual workspace parent.
+    # Resolve against the actual workspace so directory renames and
+    # linked worktrees do not require hardcoded checkout paths.
     workspace_root = REPO_ROOT.parent
     d1_root_scripts = [
         workspace_root / "build_d1_prompt.py",

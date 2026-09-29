@@ -82,7 +82,7 @@ python formal_experiment/scripts/run_s2_12_direct_llm_v1.py `
   --runtime-home D:/environment/stanford-corenlp-4.5.10 --transport real --allow-llm `
   --auth-file formal_experiment/configs/s2_12_api_authorization_D-REST.json `
   --stage-id D-REST `
-  --resume-from-ledger D:/Paper/experiment/bpc-hybrid/formal_experiment/data/predictions/s2_12_direct_llm_v1.ledger.jsonl `
+  --resume-from-ledger formal_experiment/data/predictions/s2_12_direct_llm_v1.ledger.jsonl `
   --output-dir formal_experiment/data/predictions/s2_12_direct_llm_v1
 
 # Fallback F-1 / F-2 / F-3（9/9/9；每阶段各一份授权文件，链式 resume）

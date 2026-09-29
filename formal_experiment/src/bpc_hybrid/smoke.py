@@ -8,7 +8,7 @@ def project_health() -> dict:
     GDPR/BPMN/Sun-aligned benchmark data.
     """
     return {
-        "project": "bpc-hybrid",
+        "project": "LLM4BPC",
         "stage": "R1",
         "status": "scaffold-ok",
         "benchmark": "none",

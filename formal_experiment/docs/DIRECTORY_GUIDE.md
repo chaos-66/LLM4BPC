@@ -37,6 +37,24 @@
 清除，也不会写入逐文件目录。`.env` 可能含密钥，任何 Agent、目录脚本和日志都
 不得读取或打印。
 
+### 工作区改名与 Git worktree
+
+当前工作区根目录为 `D:\Paper\experiment\LLM4BPC`，远端为
+`https://github.com/chaos-66/LLM4BPC.git`。目录改名后，在新根目录检查
+`git remote -v`、`git worktree list --porcelain` 与各 worktree 的 `.git` 链接。
+主目录中的 `.git/worktrees/*/gitdir` 和关联 worktree 的 `.git` 必须双向一致。
+
+先备份链接信息并核对工作目录确实存在，再从新根目录执行 `git worktree repair`。
+如果关联 worktree 也随父目录移动，将其**当前实际路径**作为 repair 的参数；
+只修主目录无法恢复仍登记在旧位置的嵌套 worktree。修复后逐项检查
+`git -C <worktree当前路径> status --short --branch`，确认 HEAD、索引及未提交修改不变。
+目录改名造成的 `prunable` 不代表工作可丢弃，不应直接 prune、删除或重新检出。
+
+已存在且仍被聊天使用的 worktree 可保留旧目录名；名称不同不影响 Git，关键是
+链接指向当前主仓库。Python 的 `src/bpc_hybrid/` 和冻结证据标识也保持兼容，
+不能对整个仓库执行旧名的无差别替换。历史 manifest 中的旧绝对路径仅说明当时
+运行位置；确需复现时从当前根目录解析路径并另记新运行，不能改写旧证据。
+
 ## 3. 数据目录
 
 | 路径 | 内容 | 当前地位 |

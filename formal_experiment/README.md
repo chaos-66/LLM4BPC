@@ -1,8 +1,19 @@
 # Formal Experiment
 
-这是 `bpc-hybrid` 唯一的活动实验目录。项目完整目标是重建并改进 Sun 的
+这是 `LLM4BPC` 唯一的活动实验目录。项目完整目标是重建并改进 Sun 的
 Stage 1/2/3：先完成 Stage 2 多 baseline 与复杂法律语料比较，再补齐 Stage 1，
 最后完成 Stage 3 多 baseline、错误类型分类和端到端消融。
+
+## 项目名称与路径
+
+项目名称为 `LLM4BPC`，当前工作区为 `D:\Paper\experiment\LLM4BPC`，Git 远端为
+`https://github.com/chaos-66/LLM4BPC.git`。发行包名称为 `llm4bpc-formal`。
+从仓库根目录执行下方命令；程序使用源码位置推导路径，不依赖工作区文件夹名称。
+
+Python 导入名 `bpc_hybrid`、已有 `BPC_HYBRID_*` 环境变量和冻结 schema 的 `$id`
+保持兼容。历史日志、授权原文、manifest、实验产物及既有文件名保留当时的标识，
+不因项目改名重写证据或重新运行实验。Git worktree 的检查与修复见
+`docs/DIRECTORY_GUIDE.md` 的“工作区改名与 Git worktree”。
 
 ## 唯一入口
 

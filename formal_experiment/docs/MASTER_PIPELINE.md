@@ -1,4 +1,4 @@
-# BPC-Hybrid 完整实验主 Pipeline
+# LLM4BPC 完整实验主 Pipeline
 
 **文档版本**：3.7.31
 **状态**：ACTIVE — 全项目研究与任务分解的唯一主线
@@ -492,7 +492,7 @@ independently persisted control booleans, the minimal offline task is to write
 the already-reconstructed per-type booleans from the saved `control_scores`
 using the same frozen rule; no new API or model inference is needed.
 
-# BPC-Hybrid 完整实验主 Pipeline
+# LLM4BPC 完整实验主 Pipeline
 
 **文档版本**：3.7.2
 **状态**：ACTIVE — 全项目研究与任务分解的唯一主线

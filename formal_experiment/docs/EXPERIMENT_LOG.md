@@ -5607,3 +5607,17 @@
 - 仍存在 blocker：无
 - 备注：development/retrospective only; no promotion; default policy remains legacy
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-09-29T09:31:53.260123+00:00 - LLM4BPC-RENAME：修复项目改名后的 Git worktree 链接、活动路径、项目名称与发行包元数据
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：1 passed in 0.06s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`fa770da6092cac07b5d23dba153fcfc139cd7ad2`；相关未提交路径：28 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：未创建或覆盖（`not_created_or_overwritten`）
+- 仍存在 blocker：无
+- 备注：修复并验证 12 个 worktree 的双向 Git 链接，HEAD、索引及未提交状态不变；远端已是 chaos-66/LLM4BPC，当前上游可访问。更新活动入口、派工路径、论文标题、包元数据与健康检查，删除被立即覆盖的旧 CI 占位路径；保留 bpc_hybrid 导入、BPC_HYBRID_* 环境变量、冻结 schema 和历史证据。仅具名 smoke 测试及批次快速完整性检查，非全量；另验证 TOML 元数据、兼容导入和根目录解析。本轮无 API、Gold 修改或实验重跑，已有用户修改单独保留。目录检查的既有日期/本地未跟踪文件差异单独报告，不因此扩测或纳入用户文件。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

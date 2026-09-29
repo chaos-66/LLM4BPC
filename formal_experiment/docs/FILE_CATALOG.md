@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
-**生成日期**：2026-09-25
-**收录文件**：3124 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**生成日期**：2026-09-29
+**收录文件**：3159 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -1029,6 +1029,7 @@
 |---|---|---|
 | `docs/agent_prompts/STAGE3_TABLE3_V4.md` | 活动 | 说明、规范或研究文档 |
 | `docs/agent_prompts/STAGE3_TABLE3_V4_R1.md` | 活动 | 说明、规范或研究文档 |
+| `docs/agent_prompts/STAGE3_TWO_TYPE_RESEARCH_GPT.md` | 活动 | 说明、规范或研究文档 |
 | `docs/AGENT_RUNBOOK.md` | 活动 | Agent 分阶段派工规则与可复制 Prompt |
 | `docs/AI_CHANGE_PROTOCOL.md` | 活动 | 实验日志与自动检查协议 |
 | `docs/ANNOTATION_PROTOCOL.md` | 活动 | 说明、规范或研究文档 |
@@ -1055,6 +1056,7 @@
 | `docs/REPRODUCTION_PROTOCOL.md` | 活动 | 说明、规范或研究文档 |
 | `docs/research/BARRIENTOS_BORROWING_AUDIT_2026-07-12.md` | 研究证据 | 说明、规范或研究文档 |
 | `docs/research/BARRIENTOS_LLM_ROLE.md` | 研究证据 | 说明、规范或研究文档 |
+| `docs/research/D1_ACTOR_EXPLORATORY_BRANCH_2026-09.md` | 研究证据 | 说明、规范或研究文档 |
 | `docs/research/LINKAGE_RULES_ONLY_RESULTS_NOTE_2026-09-06.md` | 研究证据 | 说明、规范或研究文档 |
 | `docs/research/PAPER_CASE_SIM_GDPR_PREP_2026-09-08.md` | 研究证据 | 说明、规范或研究文档 |
 | `docs/research/PUBLIC_MARKER_LEXICON_RECONSTRUCTION.md` | 研究证据 | 说明、规范或研究文档 |
@@ -1132,6 +1134,20 @@
 | `outputs/development/barrientos_ablation_suite_v2/D-full-0813/repeat-01/failed_samples.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/development/barrientos_ablation_suite_v2/D-full-0813/repeat-01/manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/development/barrientos_ablation_suite_v2/D-full-0813/repeat-01/raw_responses.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/development/d1_actor_refinement_v1/B0/repeat-01/evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/development/d1_actor_refinement_v1/B0/repeat-01/manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/development/d1_actor_refinement_v1/C/repeat-01/evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/development/d1_actor_refinement_v1/C/repeat-01/manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/development/d1_actor_refinement_v1/execute.interrupted.stderr.log` | 活动 | 项目文件 |
+| `outputs/development/d1_actor_refinement_v1/execute.interrupted.stdout.log` | 活动 | 项目文件 |
+| `outputs/development/d1_actor_refinement_v1/execution_incident_001.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/development/d1_actor_refinement_v1/execution_summary.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/development/d1_actor_refinement_v1/experiment_manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/development/d1_actor_refinement_v1/P/repeat-01/evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/development/d1_actor_refinement_v1/P/repeat-01/manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/development/d1_actor_refinement_v1/R/repeat-01/evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/development/d1_actor_refinement_v1/R/repeat-01/manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/development/d1_actor_refinement_v1/smoke_report.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/development/d1_prompt_factorial_ablation_v2/D-no-explicit-json-contract-0813/repeat-01/calls_ledger.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/development/d1_prompt_factorial_ablation_v2/D-no-explicit-json-contract-0813/repeat-01/canonical_predictions.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/development/d1_prompt_factorial_ablation_v2/D-no-explicit-json-contract-0813/repeat-01/evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
@@ -1751,6 +1767,11 @@
 | `outputs/reports/barrientos_de_tables_v1.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/barrientos_paper_ablation_preflight_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/barrientos_paper_ablation_preflight_v1.md` | 活动 | 说明、规范或研究文档 |
+| `outputs/reports/d1_actor_refinement_v1.evidence_manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/d1_actor_refinement_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/d1_actor_refinement_v1.md` | 活动 | 说明、规范或研究文档 |
+| `outputs/reports/d1_actor_semantic_error_audit_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/d1_actor_semantic_error_audit_v1.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/d1_prompt_factorial_ablation_v2.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/d1_prompt_factorial_authorization_event_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/d1_prompt_factorial_budget_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
@@ -2302,6 +2323,12 @@
 | `prompts/sun_compat/ablation_v2_factorial/direct_llm_v6_110.md` | 活动 | 说明、规范或研究文档 |
 | `prompts/sun_compat/ablation_v2_factorial/direct_llm_v6_111.md` | 活动 | 说明、规范或研究文档 |
 | `prompts/sun_compat/ablation_v2_factorial/manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `prompts/sun_compat/actor_refinement_v1/direct_llm_actor_baseline_v1.md` | 活动 | 说明、规范或研究文档 |
+| `prompts/sun_compat/actor_refinement_v1/direct_llm_actor_condition_projection_v1.md` | 活动 | 说明、规范或研究文档 |
+| `prompts/sun_compat/actor_refinement_v1/direct_llm_actor_pronoun_policy_v1.md` | 活动 | 说明、规范或研究文档 |
+| `prompts/sun_compat/actor_refinement_v1/direct_llm_actor_role_eligibility_v1.md` | 活动 | 说明、规范或研究文档 |
+| `prompts/sun_compat/actor_refinement_v1/manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `prompts/sun_compat/actor_refinement_v1/prompt_diff_manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `prompts/sun_compat/direct_llm_few_shot_fixtures.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `prompts/sun_compat/direct_llm_sun_record_prompt.md` | 活动 | 说明、规范或研究文档 |
 | `prompts/sun_compat/direct_llm_sun_record_prompt_solcand_pilot_2026_08_07.md` | 活动 | 说明、规范或研究文档 |
@@ -2400,6 +2427,7 @@
 | 文件 | 状态 | 用途 |
 |---|---|---|
 | `scripts/_precheck_estg150.py` | 活动 | Python 实现、脚本或测试 |
+| `scripts/analyze_actor_refinement_experiment_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/analyze_b0_error_types.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/analyze_d_no_fewshot_interface_failure_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/analyze_sep_c3_condition_preservation_bootstrap_v1.py` | 活动 | Python 实现、脚本或测试 |
@@ -2411,6 +2439,7 @@
 | `scripts/analyze_sep_c3_gold_semantic_boundary_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/analyze_sep_c3_modular_paired_errors_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/analyze_sep_c3_targeted_refinement_v1.py` | 活动 | Python 实现、脚本或测试 |
+| `scripts/audit_d1_actor_semantic_error_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/audit_gold_conflict_readonly_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/audit_ingest_sun_modality_official.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/audit_project.py` | 活动 | 离线项目完整性检查（兼容文件名） |
@@ -2421,6 +2450,7 @@
 | `scripts/audit_stage3_ours_leakage_causality_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/audit_sun_stage3_official_assets_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/baseline_stage3_sensitivity.py` | 活动 | Python 实现、脚本或测试 |
+| `scripts/build_actor_refinement_prompt_variants_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/build_b0_d1_formal_readiness_v2.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/build_barrientos_de_execution_contract_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/build_barrientos_de_tables_v1.py` | 活动 | Python 实现、脚本或测试 |
@@ -2604,6 +2634,7 @@
 | `scripts/review_s2_11_v2.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/review_s2_11_v3.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/review_stage3_gold_annotation.py` | 活动 | Python 实现、脚本或测试 |
+| `scripts/run_actor_refinement_experiment_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_b0_formal_arm.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_b0_module_removal_ablation_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_barrientos_ablation_suite_v1.py` | 活动 | Python 实现、脚本或测试 |
@@ -3004,6 +3035,8 @@
 | `tests/fixtures/sun_modality/synthetic_small_class.csv` | 活动 | 项目文件 |
 | `tests/fixtures/sun_modality/synthetic_unknown_label.csv` | 活动 | 项目文件 |
 | `tests/test_active_file_discovery.py` | 活动 | Python 实现、脚本或测试 |
+| `tests/test_actor_refinement_experiment_v1.py` | 活动 | Python 实现、脚本或测试 |
+| `tests/test_actor_refinement_prompt_variants_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_analyze_b0_error_types.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_audit.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_b0_formal_candidate.py` | 活动 | Python 实现、脚本或测试 |
@@ -3026,9 +3059,11 @@
 | `tests/test_change_record.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_check_api_env_ready_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_coarse_gold_b0_condition_constraint.py` | 活动 | Python 实现、脚本或测试 |
+| `tests/test_d1_actor_semantic_error_audit_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_d1_h1_zero_api_reeval.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_d1_prompt_factorial_ablation_v2.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_d1_r2_lock_config.py` | 活动 | Python 实现、脚本或测试 |
+| `tests/test_d1_span_grounding_promotion_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_d_full_postprocessing_ablation_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_d_no_fewshot_interface_diagnosis_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_d_span_grounding_repair_v1.py` | 活动 | Python 实现、脚本或测试 |

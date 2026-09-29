@@ -1,6 +1,6 @@
 # 项目实时状态（兼容文件名 PROJECT_AUDIT.md）
 
-**更新时间**：2026-09-26
+**更新时间**：2026-09-29
 **唯一活动目录**：`formal_experiment/`  
 **完整路线**：`docs/MASTER_PIPELINE.md`  
 **机器事实源**：`python formal_experiment/scripts/audit_project.py`（自动完整性检查）  
@@ -8,6 +8,22 @@
 
 本文是唯一实时状态页，只记录“现在做到哪里、下一步做什么”。研究目标、完整
 Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见主 Pipeline。
+
+## 已完成：LLM4BPC 项目改名兼容维护（2026-09-29）
+
+- `LLM4BPC-RENAME`：当前根目录为 `D:\Paper\experiment\LLM4BPC`，GitHub 远端
+  `https://github.com/chaos-66/LLM4BPC.git` 已可访问，当前分支上游配置正确。
+- 修复 12 个关联 worktree 的旧主目录链接，其中 7 个嵌套 worktree 的登记路径
+  随根目录同步；全部可执行 Git status，HEAD、索引和原未提交状态保持不变。
+  本地链接备份在 `formal_experiment/.tmp/llm4bpc_rename/`（仓库根目录相对路径）。
+- 活动 README、Pipeline 标题、派工入口与论文标题统一为 LLM4BPC；发行包名称
+  为 `llm4bpc-formal`，健康检查返回 `LLM4BPC`；清除无效的旧 CI 占位路径。
+  兼容模块 `bpc_hybrid`、环境变量、冻结 schema、历史记录和实验产物保持原样。
+- 验证：批次前后快速完整性检查通过；`tests/test_smoke.py` 1 passed；包元数据、
+  兼容导入和根目录解析通过。目录索引补入 35 个既有版本化文件，重新生成并
+  `--check` 通过；原有 3 个未跟踪文件的索引条目未扩增，其内容不纳入本次提交。
+- 本项仅维护项目名称、路径和工程入口，不改变研究任务完成状态或表一固定数值；
+  无真实 LLM/API、Gold 修改、实验重跑或全量测试。已有用户修改保持独立。
 
 ## 已完成：Stage 2 论文主表数值复核与最终采用（2026-09-26）
 

@@ -4,7 +4,7 @@ from bpc_hybrid.smoke import project_health
 def test_project_health_reports_scaffold_ok() -> None:
     health = project_health()
 
-    assert health["project"] == "bpc-hybrid"
+    assert health["project"] == "LLM4BPC"
     assert health["stage"] == "R1"
     assert health["status"] == "scaffold-ok"
     assert health["benchmark"] == "none"

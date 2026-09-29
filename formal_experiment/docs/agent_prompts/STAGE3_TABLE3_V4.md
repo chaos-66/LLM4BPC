@@ -6,7 +6,7 @@
 
 ## 1. 用户目标、角色和已经作出的决定
 
-工作区：`D:\Paper\experiment\bpc-hybrid`；活动改动限 `formal_experiment/`。
+工作区：`D:\Paper\experiment\LLM4BPC`；活动改动限 `formal_experiment/`。
 准备基线：`67ef832421dd0920fdc5f62f11cf615fca87893d`；分支 `paper-final-repair`，
 上游 `origin/paper-final-repair`。使用包含本任务卡的最新提交，不得 reset 到历史基线。
 

@@ -88,10 +88,10 @@ population 及其 project-reconstructed split 已由独立机器门禁锁定。�
 第 4 节给出。
 
 ```text
-你是 BPC-Hybrid 项目的工作 Agent。本轮只执行指定的一个 Pipeline 任务 ID，
+你是 LLM4BPC 项目的工作 Agent。本轮只执行指定的一个 Pipeline 任务 ID，
 不得顺手推进下游任务。
 
-工作区：D:\Paper\experiment\bpc-hybrid
+工作区：D:\Paper\experiment\LLM4BPC
 所有活动写入只能位于 formal_experiment/。
 
 先完整阅读并服从：
@@ -127,7 +127,7 @@ archive/ 或 _retired/。
 你是 Agent-E1，只执行 Pipeline S2.1-A：固定 Sun 官方 modality 数据的来源、许可
 状态和原始文件身份。不要解析标签、生成 split、训练模型或进入 S2.1-B。
 
-工作区：D:\Paper\experiment\bpc-hybrid
+工作区：D:\Paper\experiment\LLM4BPC
 所有活动写入只能位于 formal_experiment/。
 
 完整阅读 formal_experiment/AGENTS.md 及其 Required Reading，另外阅读：
@@ -175,7 +175,7 @@ development；相关测试通过；只能把 S2.1-A 标为 verified。若没有�
 formal_experiment/paper/THESIS_DRAFT.md 与 CLAIM_EVIDENCE_MATRIX.md，不修改实验
 代码、数据、Gold、配置、主 Pipeline 或实时状态页。
 
-工作区：D:\Paper\experiment\bpc-hybrid
+工作区：D:\Paper\experiment\LLM4BPC
 先完整阅读 formal_experiment/AGENTS.md、docs/AGENT_RUNBOOK.md、paper/README.md、
 paper/THESIS_DRAFT.md、paper/CLAIM_EVIDENCE_MATRIX.md、MASTER_PIPELINE §§2–4、
 PROJECT_AUDIT 和 docs/research/。内部研究审计只能作为证据导航；正式文献主张必须

@@ -1,4 +1,4 @@
-# bpc-hybrid workspace
+# LLM4BPC workspace
 
 The workspace is intentionally split into three areas:
 
