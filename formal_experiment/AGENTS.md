@@ -2,6 +2,16 @@
 
 This directory is the only active experiment surface.
 
+## User project-name migration authorization (2026-09-29)
+
+用户要求把旧项目命名全部统一为 LLM4BPC，并明确选择“连历史记录和归档也改，
+另外保存原始证据副本”。本授权允许本次命名迁移涉及历史日志、冻结 manifest、
+`_retired/`、根 `archive/` 和 `references/` 中的项目名称或路径；必须先保存原始
+字节与哈希，另记迁移映射。原始证据副本保持只读，不把迁移后的历史测试记录
+当作新代码验证，不重写 Git 提交历史，不改实验数值或科学结论，不恢复退役代码。
+这不授权读取或修改 `.env`、真实 API、实验重跑、Gold 内容修改或全量测试。
+当前阶段与完成状态见 PROJECT_AUDIT；目录改名只改路径，不替换各 worktree 分支。
+
 ## User final paper decision: Stage 2 Table 1 (2026-09-26)
 
 用户要求再次核对并固定第二阶段论文主表，后续不再改变。唯一数值来源为
