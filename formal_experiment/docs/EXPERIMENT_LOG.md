@@ -5621,3 +5621,17 @@
 - 仍存在 blocker：无
 - 备注：修复并验证 12 个 worktree 的双向 Git 链接，HEAD、索引及未提交状态不变；远端已是 chaos-66/LLM4BPC，当前上游可访问。更新活动入口、派工路径、论文标题、包元数据与健康检查，删除被立即覆盖的旧 CI 占位路径；保留 bpc_hybrid 导入、BPC_HYBRID_* 环境变量、冻结 schema 和历史证据。仅具名 smoke 测试及批次快速完整性检查，非全量；另验证 TOML 元数据、兼容导入和根目录解析。本轮无 API、Gold 修改或实验重跑，已有用户修改单独保留。目录检查的既有日期/本地未跟踪文件差异单独报告，不因此扩测或纳入用户文件。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-09-29T11:00:53.121095+00:00 - LLM4BPC-RENAME-BACKUP：建立并验证完整命名迁移的原始证据副本与离线规划工具
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：4 passed in 0.08s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`261427515472fab9e260270c533a101cd54ef29d`；相关未提交路径：20 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：本阶段只规划和保存原始副本，未覆盖任何受影响源文件。1073 个文件、67100040 原始字节、157 个路径迁移；逐项 ZIP/原始 SHA 校验通过，原始文件无 Gold、已有用户修改及测试凭证。长期副本保存在 _retired/name_migration_originals_20260929，ZIP 包含本地与参考材料，Git 明确忽略。具名合成测试验证 CRLF/二进制保持、ZIP 非文本成员保持、凭据成员不读取及原始副本可核验；不是全量测试或迁移完成声明。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

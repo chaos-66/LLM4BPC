@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
 **生成日期**：2026-09-29
-**收录文件**：3159 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**收录文件**：3162 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -1840,6 +1840,7 @@
 | `outputs/reports/gdpr_s2_s3_linkage_v1_rules_only.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/gold_conflict_audit_readonly_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/gold_conflict_audit_readonly_v1.md` | 活动 | 说明、规范或研究文档 |
+| `outputs/reports/llm4bpc_name_migration_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/paper_experiment_completion_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s11_s14_stage1_structural_synthetic_v1.manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s13_stage1_label_semantics_synthetic_v1.manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
@@ -2605,6 +2606,7 @@
 | `scripts/import_gdpr7_confirmed_prefill_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/import_gdpr7_review_decisions_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/ingest_sun_modality.py` | 活动 | Python 实现、脚本或测试 |
+| `scripts/migrate_project_names.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/modality_classifier_alignment_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/postprocess_sep_c3_definition_targeted_refinement_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/prepare_sep_c3_condition_preservation_v1.py` | 活动 | Python 实现、脚本或测试 |
@@ -3115,6 +3117,7 @@
 | `tests/test_modular_prompt_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_normalization.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_prepare_stage3_execution_v4.py` | 活动 | Python 实现、脚本或测试 |
+| `tests/test_project_name_migration.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_project_structure.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_prompt_contract.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_public_marker_lexicon.py` | 活动 | Python 实现、脚本或测试 |
