@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
 **生成日期**：2026-10-05
-**收录文件**：3173 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**收录文件**：3174 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -2387,6 +2387,7 @@
 | `prompts/sun_compat/simplification_v1/direct_llm_json_light_v1.md` | 活动 | 说明、规范或研究文档 |
 | `prompts/sun_compat/simplification_v1/direct_llm_json_semantic_light_v1.md` | 活动 | 说明、规范或研究文档 |
 | `prompts/sun_compat/simplification_v1/manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `prompts/sun_compat/simplification_v1/RATIONALE.md` | 活动 | 说明、规范或研究文档 |
 | `prompts/sun_compat/simplification_v1/README.md` | 活动 | 所在目录的入口说明 |
 | `prompts/zh_aid/en_back_translation.md` | 活动 | 说明、规范或研究文档 |
 | `prompts/zh_aid/zh_translation.md` | 活动 | 说明、规范或研究文档 |
