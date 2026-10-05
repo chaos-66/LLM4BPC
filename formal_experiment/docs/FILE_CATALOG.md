@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
 **生成日期**：2026-10-05
-**收录文件**：3174 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**收录文件**：3180 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -90,8 +90,10 @@
 | `configs/models/estg150_b0_enhanced_s27_v10a.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/models/estg150_b0_v10_preregistration_v2.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/models/estg150_d1_active_registry_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `configs/models/stage2_multi_model_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/models/sun_b0_s26_candidate_B_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/models/sun_bert_textcnn_s24.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `configs/multi_model_api_keys.env.example` | 活动 | 不含密钥的配置示例 |
 | `configs/paper_winddown_api_authorization_basis_2026_09_07.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/paper_winddown_api_authorization_sentence_2026_09_07.txt` | 活动 | 文本清单或依赖说明 |
 | `configs/paths.json` | 活动 | 机器可读配置、数据、事件或产物 |
@@ -1091,6 +1093,7 @@
 | `docs/STAGE1_HUMAN_GOLD_GUIDE.md` | 活动 | 说明、规范或研究文档 |
 | `docs/STAGE2_CANONICAL_SCHEMA_SPEC.md` | 活动 | 说明、规范或研究文档 |
 | `docs/STAGE2_LLM_INNOVATION_DESIGN.md` | 活动 | 说明、规范或研究文档 |
+| `docs/STAGE2_MULTI_MODEL_API_GUIDE.md` | 活动 | 说明、规范或研究文档 |
 | `docs/STAGE3_BINDING_ANNOTATION_FORMAT_V1.md` | 活动 | 说明、规范或研究文档 |
 | `docs/STAGE3_OURS_AUTOMATIC_GROUNDING_V1.md` | 活动 | 说明、规范或研究文档 |
 | `docs/STYLE_EQUIVALENT_SPEC.md` | 活动 | 说明、规范或研究文档 |
@@ -2749,6 +2752,7 @@
 | `scripts/s2_12_build_readiness_v3.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/s2_12_build_readiness_v4.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/stage1_review_tool.py` | 活动 | Python 实现、脚本或测试 |
+| `scripts/stage2_multi_model.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/stage3_run_common.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/status.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/sun_selection_criteria_v1.py` | 活动 | Python 实现、脚本或测试 |
@@ -2876,6 +2880,7 @@
 | `src/bpc_hybrid/mini_pilot_evaluator.py` | 活动 | Python 实现、脚本或测试 |
 | `src/bpc_hybrid/modular_prompt.py` | 活动 | Python 实现、脚本或测试 |
 | `src/bpc_hybrid/modular_refinement_prompt.py` | 活动 | Python 实现、脚本或测试 |
+| `src/bpc_hybrid/multi_model_stage2.py` | 活动 | Python 实现、脚本或测试 |
 | `src/bpc_hybrid/normalization.py` | 活动 | Python 实现、脚本或测试 |
 | `src/bpc_hybrid/prompt_loader.py` | 活动 | Python 实现、脚本或测试 |
 | `src/bpc_hybrid/s2_11_barrientos_adapter.py` | 活动 | Python 实现、脚本或测试 |
@@ -3126,6 +3131,7 @@
 | `tests/test_llm_config.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_master_pipeline_and_layout.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_modular_prompt_v1.py` | 活动 | Python 实现、脚本或测试 |
+| `tests/test_multi_model_stage2.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_normalization.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_prepare_stage3_execution_v4.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_project_name_migration.py` | 活动 | Python 实现、脚本或测试 |

@@ -5649,3 +5649,31 @@
 - 仍存在 blocker：无
 - 备注：用户授权仅为精简分支准备；A system 压缩 8.0%，B 压缩 28.7%；六个示例与用户模板不变；15 个已提交 Git blob 的历史 prompt/结果/配置保存原始字节与哈希。现有人工数据和两份本地 modular 报告修改独立保留。只运行具名离线测试和快速完整性检查，非全量；API=0，性能指标=null；默认、Gold、评价器和表一/表二不替换。候选须 development 和独立输出目录，真实调用仍需新的预算及授权。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-05T07:16:49.278710+00:00 - S2-MODEL-API-SETUP：新增六家独立密钥填空区、离线计划及逐批授权调用入口
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：否；正式实验就绪：是
+- 测试：1 passed, 32 errors in 1.37s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`13def9473a156546399131a3589c143778fb55fe`；相关未提交路径：18 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：仅追加空白项，未读取或打印真实 .env；默认零 API；测试使用临时目录假密钥和模拟传输；固定 v6 输入与历史论文结果不改；只执行具名测试，不运行全量。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-05T07:18:47.092079+00:00 - S2-MODEL-API-SETUP：修正 v6 示例插槽并验证六家离线授权入口
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：33 passed in 3.90s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`13def9473a156546399131a3589c143778fb55fe`；相关未提交路径：20 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：保留首次测试失败事件；修复 few_shot_block 插槽并对齐原 runner 消息；测试仅假密钥和模拟传输，真实 .env 未读取，真实 API=0，历史结果未改，非全量。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

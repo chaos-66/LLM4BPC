@@ -1,0 +1,78 @@
+{
+  "schema_version": "stage2_multi_model_catalog@1.0.0",
+  "task_id": "S2-MODEL-API-SETUP",
+  "claim_scope": "development_only",
+  "prompt_name": "direct_llm_sun_record_prompt_v6_d1r1_2026_08_05",
+  "input_path": "data/input/estg150_formal_inference_input_v2.json",
+  "max_output_tokens_per_call": 4096,
+  "timeout_seconds": 180,
+  "retry": 0,
+  "profiles": {
+    "qwen": {
+      "display_name": "千问",
+      "api_key_env": "LLM4BPC_QWEN_API_KEY",
+      "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "model": "qwen3.8-max-2026-09-02",
+      "accepted_returned_models": ["qwen3.8-max-2026-09-02", "qwen3.8-max-0902"],
+      "request_parameters": {"temperature": 0, "top_p": 1, "enable_thinking": false},
+      "output_limit_parameter": "max_tokens",
+      "thinking_mode": "disabled",
+      "documentation": "https://www.alibabacloud.com/help/en/model-studio/qwen-api-via-openai-chat-completions"
+    },
+    "mimo": {
+      "display_name": "MiMo",
+      "api_key_env": "LLM4BPC_MIMO_API_KEY",
+      "base_url": "https://api.xiaomimimo.com/v1",
+      "model": "mimo-v2.6-pro",
+      "accepted_returned_models": ["mimo-v2.6-pro"],
+      "request_parameters": {"temperature": 0, "top_p": 1, "thinking": {"type": "disabled"}},
+      "output_limit_parameter": "max_completion_tokens",
+      "thinking_mode": "disabled",
+      "documentation": "https://mimo.mi.com/docs/en-US/api/chat/openai-api"
+    },
+    "kimi": {
+      "display_name": "Kimi",
+      "api_key_env": "LLM4BPC_KIMI_API_KEY",
+      "base_url": "https://api.moonshot.cn/v1",
+      "model": "kimi-k2.6",
+      "accepted_returned_models": ["kimi-k2.6"],
+      "request_parameters": {"temperature": 0.6, "top_p": 0.95, "thinking": {"type": "disabled"}},
+      "output_limit_parameter": "max_tokens",
+      "thinking_mode": "disabled_provider_fixed_sampling",
+      "documentation": "https://platform.kimi.com/docs/guide/kimi-k2-6-quickstart"
+    },
+    "grok": {
+      "display_name": "Grok",
+      "api_key_env": "LLM4BPC_GROK_API_KEY",
+      "base_url": "https://api.x.ai/v1",
+      "model": "grok-4.7",
+      "accepted_returned_models": ["grok-4.7"],
+      "request_parameters": {"reasoning_effort": "low"},
+      "output_limit_parameter": "max_tokens",
+      "thinking_mode": "reasoning_low_sampling_omitted",
+      "documentation": "https://docs.x.ai/developers/models/grok-4.7"
+    },
+    "glm": {
+      "display_name": "GLM",
+      "api_key_env": "LLM4BPC_GLM_API_KEY",
+      "base_url": "https://open.bigmodel.cn/api/paas/v4",
+      "model": "glm-5.2",
+      "accepted_returned_models": ["glm-5.2", "GLM-5.2"],
+      "request_parameters": {"temperature": 0.6, "thinking": {"type": "disabled"}},
+      "output_limit_parameter": "max_tokens",
+      "thinking_mode": "disabled_sampling_not_equated_to_deepseek",
+      "documentation": "https://docs.z.ai/guides/llm/glm-5.2"
+    },
+    "minimax": {
+      "display_name": "MiniMax",
+      "api_key_env": "LLM4BPC_MINIMAX_API_KEY",
+      "base_url": "https://api.minimax.cn/v1",
+      "model": "MiniMax-M2.7",
+      "accepted_returned_models": ["MiniMax-M2.7"],
+      "request_parameters": {"temperature": 0, "top_p": 0.9},
+      "output_limit_parameter": "max_completion_tokens",
+      "thinking_mode": "provider_reasoning_preserved_separate_from_final_json",
+      "documentation": "https://platform.minimax.cn/docs/api-reference/text-openai-api"
+    }
+  }
+}

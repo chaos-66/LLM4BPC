@@ -1,6 +1,6 @@
 # LLM4BPC 完整实验主 Pipeline
 
-**文档版本**：3.7.32
+**文档版本**：3.7.33
 **状态**：ACTIVE — 全项目研究与任务分解的唯一主线
 **最后更新**：2026-10-05
 **方法学主干**：Sun et al. (2024)（三阶段方法主干）；Barrientos et al. (2026)（直接借鉴来源：LLM 结构化输出、验证、受控词汇、归一化与评估纪律）
@@ -10,6 +10,30 @@
 > 本文定义“要完成什么、先后依赖是什么、每一步怎样算完成”。
 > `docs/PROJECT_AUDIT.md` 只记录实时进度；不要再创建新的日期版
 > `STATUS_*`、`HANDOFF_*` 或平行路线文档。
+
+## 2026-10-05 修订 3.7.33：S2-MODEL-API-SETUP 六家离线配置与逐批授权入口
+
+- 用户要求分别填写千问、MiMo、Kimi、Grok、GLM、MiniMax 的 API key，到时候按
+  新的明确授权再调用。此子任务只完成接入准备；真实调用、性能比较和正式评价
+  均未授权、未运行，不复用以前额度，不改变固定表一/表二或原 DeepSeek 臂。
+- 实现入口 `scripts/stage2_multi_model.py` 与 `src/bpc_hybrid/multi_model_stage2.py`；
+  默认 list/plan 离线，init-env 仅追加六个空白项，不读取现有 `.env`。密钥私有加载
+  只在本批计划、授权原文、双显式开关、模型/调用/token/核实单价/费用门禁后发生。
+- 模型配置 `configs/models/stage2_multi_model_v1.json`；固定 v6 原文与示例、同组
+  EStG-150 英文输入、显式 legacy 坐标策略，共享 adapter/canonical 校验。各家的
+  采样/思考约束如实登记，不声称推理配置完全等同。默认型号尚未实测验证。
+- 执行时独立目录、零自动重试、发送前持久化调用账本、原始响应/usage/型号校验、
+  费用预留、脱敏、manifest；续跑先核对旧授权、响应及费用，仅发送从未尝试的
+  请求。超时、截断、用量/型号异常与 started 未完成均停止，不能自动重发。
+- 准备 DoD 已达成：批次前快速检查通过；末次快速检查及具名离线测试 **33 passed**
+  （非全量）。首次示例插槽遗漏导致的失败事件保留，已修正并对齐原 runner 消息。
+  使用临时假密钥/模拟传输；实际 `.env` 仅追加空白项，已确认 Git 忽略；API=0。
+- 本地离线预检 `model_preflight_20261005_v1`：六家各 20 条，共 120 次计划调用，
+  `authorized=false`、预算/单价待填写、metrics=null；不是已批准的实验批次。
+  填写与运行说明见 `docs/STAGE2_MULTI_MODEL_API_GUIDE.md`。后续须用户批准具体
+  模型、样本/调用与费用上限；运行后记录 experiment_run 并 scoped checkpoint。
+- 状态：**实现准备完成；真实 API 接入验证与模型敏感性实验待授权**。不改变 Stage 3、
+  命名迁移和其他既有未完成任务的状态。
 
 ## 2026-10-05 修订 3.7.32：SEP-C3-PROMPT-SIMPLIFY-V1 独立精简分支（零 API）
 

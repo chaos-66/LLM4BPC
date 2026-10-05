@@ -9,6 +9,22 @@
 本文是唯一实时状态页，只记录“现在做到哪里、下一步做什么”。研究目标、完整
 Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见主 Pipeline。
 
+## 已准备：S2-MODEL-API-SETUP 六家模型入口（2026-10-05；零真实 API）
+
+- 千问、MiMo、Kimi、Grok、GLM、MiniMax 六个独立密钥项已只追加到实际 `.env`，
+  未读取或打印原有内容，文件被 Git 忽略。填写不会授权联网；未来只有本批计划、
+  用户明确决定、调用/输出/核对单价/费用预算及 `--execute --allow-llm` 均通过才读 key。
+- 程序 `scripts/stage2_multi_model.py`；配置 `configs/models/stage2_multi_model_v1.json`；
+  填写/授权/结果与续跑说明 `docs/STAGE2_MULTI_MODEL_API_GUIDE.md`。默认 list/plan
+  离线；原始响应脱敏保存，持久化账本，0 自动重试；不确定调用须人工核查。
+- 实现准备 DoD：前后快速检查通过，**33 passed** 具名模拟测试（非全量）；第一次
+  测试定位的 v6 示例插槽遗漏已修正，失败事件保留。真实 key 未测试、各家账户
+  权限未实测，API 调用 0，无 F1/性能结论。
+- 已生成本地预检 `model_preflight_20261005_v1`：6×20=120 次计划调用，授权 false，
+  价格和费用上限未填写，metrics=null。这是离线准备，未来仍需明确批准具体批次。
+- 本轮不改原 prompt、DeepSeek 正式臂、Gold、评价器、固定表一/表二；不运行
+  Rules+LLM。后续真实 API 与模型敏感性补充实验待授权，其他主线状态保留。
+
 ## 已准备：SEP-C3-PROMPT-SIMPLIFY-V1 独立精简候选（2026-10-05；未实测）
 
 - 用户授权在分支 `codex/s2-prompt-simplification-v1` 尝试精简，保留已有结果。
