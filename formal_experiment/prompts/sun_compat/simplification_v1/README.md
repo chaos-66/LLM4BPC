@@ -10,6 +10,8 @@
 | B：`direct_llm_json_semantic_light_v1.md` | A + 合并 S 重复说明、明确 condition/exception 与 action 边界 | 4,398 | 28.7% |
 
 这里统计的是装载后 system 文本的字符数，不是 token 数或整次请求的压缩率。
+三份系统指令的完整英文原文、逐条中文翻译、共用用户模板及六个完整示例见
+[PROMPT_BILINGUAL_REVIEW.md](PROMPT_BILINGUAL_REVIEW.md)。该文件仅供阅读，不作为运行 prompt。
 六个历史合成示例、完整 Examples 区块、用户模板和 Notes 保持一致；因此例子带来的
 结构/语义引导仍在。模板和 Notes 的历史措辞写“四个”，实际装载六个；这处旧措辞
 本批故意保留，避免同时修改示例呈现方式。
