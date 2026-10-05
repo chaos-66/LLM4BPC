@@ -1,6 +1,6 @@
 # 项目实时状态（兼容文件名 PROJECT_AUDIT.md）
 
-**更新时间**：2026-09-29
+**更新时间**：2026-10-05
 **唯一活动目录**：`formal_experiment/`  
 **完整路线**：`docs/MASTER_PIPELINE.md`  
 **机器事实源**：`python formal_experiment/scripts/audit_project.py`（自动完整性检查）  
@@ -8,6 +8,25 @@
 
 本文是唯一实时状态页，只记录“现在做到哪里、下一步做什么”。研究目标、完整
 Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见主 Pipeline。
+
+## 已准备：SEP-C3-PROMPT-SIMPLIFY-V1 独立精简候选（2026-10-05；未实测）
+
+- 用户授权在分支 `codex/s2-prompt-simplification-v1` 尝试精简，保留已有结果。
+  A 压缩 J 的重复合同/格式指令；B 加上 S 压缩及 `unless` 分类、action 边界优先级
+  修正。System 字符数 6172 → 5676/4398，缩短 8.0%/28.7%；六个示例及用户模板不改。
+- 候选与静态设计说明：`prompts/sun_compat/simplification_v1/`；机器清单/范围：
+  `outputs/reports/s2_prompt_simplification_v1.json`。真实调用 0、指标 null，尚未验证
+  语义抽取收益，不替换默认 prompt 或固定表一/表二结果。
+- 历史保留：`outputs/evidence/s2_prompt_simplification_v1/baseline_snapshot.json`
+  保存来源提交的 15 个 prompt/结果报告/配置 Git blob，附原始文本、字节数及 SHA-256。
+  已有用户数据/两份本地 modular 报告修改不覆盖、不纳入本次提交；该报告快照不等于
+  所有未版本化 raw/prediction 运行材料已远端备份。
+- runner 增加显式候选选项，须 development 且输出/manifest 在独立候选目录；
+  原默认、拒绝覆盖、API 授权与现有 canonical 校验保留。批次前后快速完整性检查
+  通过，具名离线检查 **19 passed**（非全量）；16 个原文件/用户修改的启动时哈希
+  均未变化。已登记变更事件，不宣称性能验证。后续实测须新预检、调用预算与明确
+  授权，不复用旧额度。新候选/证据目录仅针对自身固定 LF 检出，保证哈希可复核。
+- 本子任务是 SEP-C3 下的离线候选准备，不改变原 Stage 3/命名迁移未完成状态。
 
 ## 进行中：LLM4BPC 全部命名迁移（2026-09-29 用户追加）
 

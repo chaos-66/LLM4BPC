@@ -1,0 +1,43 @@
+{
+  "schema_version": "s2_prompt_simplification_offline_report@1.0.0",
+  "task_id": "SEP-C3-PROMPT-SIMPLIFY-V1",
+  "status": "offline_prepared_not_executed",
+  "baseline_system_chars": 6172,
+  "variants": [
+    {
+      "arm": "A",
+      "prompt_name": "simplification_v1/direct_llm_json_light_v1",
+      "prompt_path": "prompts/sun_compat/simplification_v1/direct_llm_json_light_v1.md",
+      "description": "Only J wording compressed; S/common/E retained",
+      "prompt_sha256": "f2ab7a283ff3b223a050d8879dcb6a918599795fa45325fbca5c66a663316d3c",
+      "raw_bytes_sha256": "f2ab7a283ff3b223a050d8879dcb6a918599795fa45325fbca5c66a663316d3c",
+      "system_chars": 5676,
+      "system_char_reduction_ratio": 0.08036292935839273,
+      "few_shot_count": 6,
+      "examples_unchanged": true,
+      "user_template_unchanged": true,
+      "actual_api_calls": 0,
+      "performance_metrics": null
+    },
+    {
+      "arm": "B",
+      "prompt_name": "simplification_v1/direct_llm_json_semantic_light_v1",
+      "prompt_path": "prompts/sun_compat/simplification_v1/direct_llm_json_semantic_light_v1.md",
+      "description": "A plus compressed S and explicit function-based field priority",
+      "prompt_sha256": "081e849773f513fb19084ce34c5701690eedb3e4c3a6f9e0aa7b196711f4ac2c",
+      "raw_bytes_sha256": "081e849773f513fb19084ce34c5701690eedb3e4c3a6f9e0aa7b196711f4ac2c",
+      "system_chars": 4398,
+      "system_char_reduction_ratio": 0.2874270900842515,
+      "few_shot_count": 6,
+      "examples_unchanged": true,
+      "user_template_unchanged": true,
+      "actual_api_calls": 0,
+      "performance_metrics": null
+    }
+  ],
+  "candidate_manifest": "prompts/sun_compat/simplification_v1/manifest.json",
+  "baseline_snapshot": "outputs/evidence/s2_prompt_simplification_v1/baseline_snapshot.json",
+  "actual_api_calls": 0,
+  "performance_metrics": null,
+  "interpretation_zh": "完成独立候选文本与历史证据保存；尚未验证抽取性能，不能替换默认方法或表一/表二结果。"
+}

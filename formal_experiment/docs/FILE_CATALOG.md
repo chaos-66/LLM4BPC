@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
-**生成日期**：2026-09-29
-**收录文件**：3162 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**生成日期**：2026-10-05
+**收录文件**：3173 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -1449,6 +1449,10 @@
 | `outputs/evidence/d1_h1_zero_api_reeval_v1/manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/g04_formal_coarse_view_v1/coarse_view_derived.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/g04_formal_coarse_view_v1/manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_prompt_simplification_v1/.gitattributes` | 活动 | 项目文件 |
+| `outputs/evidence/s2_prompt_simplification_v1/baseline_snapshot.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_prompt_simplification_v1/candidate_A_system.diff` | 活动 | 项目文件 |
+| `outputs/evidence/s2_prompt_simplification_v1/candidate_B_system.diff` | 活动 | 项目文件 |
 | `outputs/evidence/s34_winter_stage3_development_v3_clean/capsule_manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/s34_winter_stage3_development_v3_clean/config_snapshot.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/s34_winter_stage3_development_v3_clean/error_analysis.md` | 活动 | 说明、规范或研究文档 |
@@ -1969,6 +1973,7 @@
 | `outputs/reports/s2_13_stage2_freeze_gap_capsule.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/s2_llm_batches_offline_readiness_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s2_llm_batches_offline_readiness_v1.md` | 活动 | 说明、规范或研究文档 |
+| `outputs/reports/s2_prompt_simplification_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s32_s33_gold_annotation_blank_v1.manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s32_s33_gold_annotation_freeze_v1.manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s34_winter_stage3_development_v1.manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
@@ -2378,6 +2383,11 @@
 | `prompts/sun_compat/modular_v1/user_envelope.md` | 活动 | 说明、规范或研究文档 |
 | `prompts/sun_compat/rule_first_llm_fallback_masked_prompt.md` | 活动 | 说明、规范或研究文档 |
 | `prompts/sun_compat/rule_first_llm_fallback_prompt.md` | 活动 | 说明、规范或研究文档 |
+| `prompts/sun_compat/simplification_v1/.gitattributes` | 活动 | 项目文件 |
+| `prompts/sun_compat/simplification_v1/direct_llm_json_light_v1.md` | 活动 | 说明、规范或研究文档 |
+| `prompts/sun_compat/simplification_v1/direct_llm_json_semantic_light_v1.md` | 活动 | 说明、规范或研究文档 |
+| `prompts/sun_compat/simplification_v1/manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `prompts/sun_compat/simplification_v1/README.md` | 活动 | 所在目录的入口说明 |
 | `prompts/zh_aid/en_back_translation.md` | 活动 | 说明、规范或研究文档 |
 | `prompts/zh_aid/zh_translation.md` | 活动 | 说明、规范或研究文档 |
 
@@ -3171,6 +3181,7 @@
 | `tests/test_s2_13_s3_7_transition_readiness_v7.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_s2_13_s3_7_transition_readiness_v8.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_s2_13_s3_7_transition_readiness_v9.py` | 活动 | Python 实现、脚本或测试 |
+| `tests/test_s2_prompt_simplification_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_s3_2_s3_3_gold_annotation.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_s3_9_synthetic_panel.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_s3_action_matching_v2.py` | 活动 | Python 实现、脚本或测试 |

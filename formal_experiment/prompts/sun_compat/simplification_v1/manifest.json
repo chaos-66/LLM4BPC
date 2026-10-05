@@ -1,0 +1,97 @@
+{
+  "schema_version": "s2_prompt_simplification_candidate@1.0.0",
+  "task_id": "SEP-C3-PROMPT-SIMPLIFY-V1",
+  "status": "offline_prepared_not_executed",
+  "date_local": "2026-10-05",
+  "branch": "codex/s2-prompt-simplification-v1",
+  "baseline_commit": "37e5bf831b1f09ba166bf110af855b87c72efbe3",
+  "baseline_prompt": {
+    "name": "direct_llm_sun_record_prompt_v6_d1r1_2026_08_05",
+    "path": "D:\\Paper\\experiment\\LLM4BPC\\formal_experiment\\prompts\\sun_compat\\direct_llm_sun_record_prompt_v6_d1r1_2026_08_05.md",
+    "sha256": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+    "system_prompt": "You are a regulatory text formalization expert. Extract one complete\nSun-compatible Stage 2 canonical prediction record from the target text.\nThe record may be multi-clause, multi-actor, or multi-action when the target\ntext licenses those structures.\n\nYou MUST follow stage2_extraction_contract@1.0.0 with contract SHA-256\n7f17ecba78cfa1acf1bbc488942f1c85c37d08ece7662c622bab4226bd2dbd46.\nThe output MUST conform to stage2_prediction.schema.json@1.0.0.\n\nOutput discipline:\n1. Return ONLY one valid JSON object. No Markdown, explanation, commentary,\n   reasoning, preamble, or trailing text.\n2. Use exactly these top-level keys and no others: schema_version, sample_id,\n   source_id, source_text, clauses, method, validation,\n   unsupported_or_ambiguous.\n3. schema_version = \"1.0.0\"; method.name = \"direct_llm\";\n   method.schema_source = \"stage2_prediction.schema.json@1.0.0\".\n4. Copy sample_id, source_id, and source_text exactly from the user input.\n5. Set validation to {\"schema_valid\":true,\"cross_field_valid\":true,\n   \"errors\":[]}; the runtime validator overwrites it and is authoritative.\n\nInput and inference boundary:\n6. The only semantic evidence is source_text. No preceding/following sentence,\n   statute, legal common sense, web knowledge, or unstated world knowledge is\n   available. Never add an actor, object, condition, constraint, exception, or\n   antecedent from outside source_text.\n7. Every evidence text MUST equal source_text[start:end], using zero-based start\n   and exclusive end. Every child span MUST lie within clause_span.\n8. normalized is downstream matching metadata. It may case-fold, fold\n   whitespace, lemmatize without adding arguments, or remove a non-identifying\n   article. It MUST NOT replace a pronoun with an antecedent absent from input.\n\nSix-element semantics:\n9. modality is one of obligation, prohibition, permission, definition. Its\n   evidence contains the smallest sufficient surface trigger; include negation\n   evidence when it changes the class.\n10. actor is the smallest explicit noun phrase or pronominal mention that bears\n    or performs the norm. A subject pronoun it/they/this/these/such is a real\n    actor mention. Extract the pronoun exact span even when its reference is\n    unresolved. If this/these/such modifies a noun, extract the complete minimal\n    noun phrase instead of the determiner alone.\n11. action is the smallest verb-centred phrase sufficient to identify the act,\n    including a necessary object, complement, or particle. Exclude modality,\n    condition, constraint, and exception material.\n12. condition is an antecedent state/event that activates or determines whether\n    or when the norm applies. Include its marker and complete governed\n    proposition.\n13. constraint limits how, how much, where, or by when an already applicable act\n    is performed. Include its marker and smallest complete limit.\n14. exception removes or narrows a case from a rule that would otherwise apply.\n    Include its marker and complete governed proposition.\n\nMissing, uncertain, passive, and reference rules:\n15. If an element truly has no source span, use an empty array. Empty means\n    absent, not uncertain.\n16. If a defensible surface mention exists but its reference or scope is\n    uncertain, preserve the exact span and add an unsupported_or_ambiguous\n    entry. Use only these reason strings:\n    - reference_status=unresolved_coreference;independence_status=context_required\n    - semantic_scope_ambiguous_in_target\n    - clause_boundary_ambiguous\n    - context_required\n17. For an unresolved subject pronoun, keep normalized surface-preserving\n    (for example \"it\"), and add:\n    {\"field\":\"actor\",\"reason\":\"reference_status=unresolved_coreference;independence_status=context_required\"}.\n18. In a passive clause with no expressed performer, do not infer an actor.\n    Emit actors=[] and map each expressed action with actor_id=null. When an\n    explicit by-phrase supplies the relevant performer, extract that phrase.\n19. For a definition clause, actions may be empty. For a fragment that does not\n    contain a defensible normative clause, clauses may be empty and the missing\n    semantic field must be reported with a controlled reason.\n\nClause, coordination, and relation rules:\n20. Create a separate clause only when a segment has independent normative\n    force, its own modality/actor assignment, or an independently evaluable\n    consequence. A shared modality governing coordinated actions normally stays\n    in one clause.\n21. Store coordinated actors and actions as separate spans. Add only\n    actor_action_map edges licensed by the text; do not assume a cross-product\n    when scope is ambiguous.\n22. Add order_relations only when exact textual evidence or construction\n    establishes order. Ordinary \"and\" is not automatically sequential.\n23. IDs are unique within the complete record. actor_action_map and\n    order_relations may reference IDs only from the same clause.\n\nFinal self-check before output:\n24. All required keys are present, no extra keys exist, all labels are from the\n    fixed enums, all spans are exact, all references resolve, and no forbidden\n    inference was used.\n\nField-typing precision (D1-R1):\n25. constraint covers legal references (pursuant to X, under section X, within\n    the meaning of X, in accordance with X, as defined in X), temporal limits\n    (within N, until, after, before, during), quantity limits (at least, at\n    most, no more than, in such a quantity that), purpose limits (for the\n    purpose of), and exclusivity (only, solely, exclusively). Include the\n    marker and the smallest complete limit.\n26. Constraint, condition, and exception content MUST NOT be folded into the\n    action span: the action span ends where a constraint/condition/exception\n    phrase begins.\n27. condition covers if/when/where/unless/provided that/in the event of/to the\n    extent that/insofar as clauses. Condition and constraint are separate\n    fields: a constraint inside a condition (for example \"within two years\"\n    inside \"if ... within two years\") is reported in BOTH arrays. Never merge\n    condition or constraint content into the action span.",
+    "user_prompt_template": "Input mode: target_text_only\nsample_id: {sample_id}\nsource_id: {source_id}\nsource_text:\n{source_text}\n\nReturn the complete canonical JSON record. Use these four synthetic examples\nonly for contract behavior, span arithmetic, and JSON shape. They are not\nformal test-set samples:\n\n{few_shot_block}",
+    "few_shot_example_count": 6,
+    "extras": {
+      "sampling_policy": "temperature=0, top_p=1, max_tokens=4096",
+      "note": "Sampling is runtime-controlled and recorded in the manifest. seed is sent only when supported.",
+      "version": "5",
+      "contract_id": "stage2_extraction_contract@1.0.0",
+      "contract_sha256": "7f17ecba78cfa1acf1bbc488942f1c85c37d08ece7662c622bab4226bd2dbd46"
+    }
+  },
+  "baseline_snapshot": "outputs/evidence/s2_prompt_simplification_v1/baseline_snapshot.json",
+  "baseline_snapshot_sha256": "9cf47efada921f3cb10d5b08548158d615307172d9422bf4fe86829bfc31af7a",
+  "protected_worktree_files": {
+    "prompts/sun_compat/direct_llm_sun_record_prompt_v6_d1r1_2026_08_05.md": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+    "outputs/reports/stage2_table1_paper_final_v1.json": "05a601d16034db6bc6981122651ba4549aa686be74da6a9e0b32d8dc076bd941",
+    "outputs/reports/stage2_table1_paper_final_v1.md": "113796c3f5c6c67545e73a2e28e82ebc72eafa2e7b58812aa2affe85a599ff75",
+    "outputs/reports/v6_factorial_ablation_v1.json": "3725eb574747fc871e5f2f78978c30a2f19252563262e44e34614343b44311b5",
+    "outputs/reports/v6_factorial_ablation_v1.md": "e3c5da480c77c18bc124f56b2bbea8184441d2f9d8229ff6e9bcf585b6f114f0",
+    "outputs/reports/stage2_table2_prompt_ablation_paper_final_v2.json": "3725eb574747fc871e5f2f78978c30a2f19252563262e44e34614343b44311b5",
+    "outputs/reports/stage2_table2_prompt_ablation_paper_final_v2.md": "e3c5da480c77c18bc124f56b2bbea8184441d2f9d8229ff6e9bcf585b6f114f0",
+    "outputs/reports/sep_c3_modular_ablation_v1.json": "092bfaa7a641077ae1e1d82c6032fb390d7d1958c57c3bd81ff9d4c231c9f5b1",
+    "outputs/reports/sep_c3_modular_ablation_v1.md": "c05ee34359de1c541fcac61ba57ee8e41e2efbe7f1a5eec7127edb9ac462b0e8",
+    "outputs/reports/sep_c3_modular_ablation_analysis_v1.json": "aa837b36c36fe763ab185098b3e1bab94551d8024ec062280ff98ef87c666f76",
+    "outputs/reports/sep_c3_modular_ablation_analysis_v1.md": "76f429a3227eb6d53174af0e0aee2cd678e0c6143550664506c6c9604f8e0f16",
+    "prompts/sun_compat/ablation_v2_factorial/manifest.json": "2bab59855058ed2e63f772f41be8766af15923e7704ee3df7a4a733706d8a076",
+    "configs/stage2_evaluator_s210_v3.json": "28ce332564c5d10da08dea515aefe31cc2aacd91b6c6877aa1bfebe44f39ae7f",
+    "configs/schemas/stage2_prediction.schema.json": "d94941c1f7ea90f768d7244bdb72ac3c588b727e0f1fcb4e4732ef8b239259ea",
+    "data/development/human_review/stage1_gdpr7_human_correction_v1.json": "6a9c055a8f92c04aa5c44c92d4653bad128f048103fd16584754c121cb0ba18e",
+    "configs/methods.json": "82bb84192594eefead5b6b3877d6bcbf78170eca55658bb201587d8e41c7927a"
+  },
+  "variants": [
+    {
+      "arm": "A",
+      "prompt_name": "simplification_v1/direct_llm_json_light_v1",
+      "prompt_path": "prompts/sun_compat/simplification_v1/direct_llm_json_light_v1.md",
+      "description": "Only J wording compressed; S/common/E retained",
+      "prompt_sha256": "f2ab7a283ff3b223a050d8879dcb6a918599795fa45325fbca5c66a663316d3c",
+      "raw_bytes_sha256": "f2ab7a283ff3b223a050d8879dcb6a918599795fa45325fbca5c66a663316d3c",
+      "system_chars": 5676,
+      "system_char_reduction_ratio": 0.08036292935839273,
+      "few_shot_count": 6,
+      "examples_unchanged": true,
+      "user_template_unchanged": true,
+      "actual_api_calls": 0,
+      "performance_metrics": null
+    },
+    {
+      "arm": "B",
+      "prompt_name": "simplification_v1/direct_llm_json_semantic_light_v1",
+      "prompt_path": "prompts/sun_compat/simplification_v1/direct_llm_json_semantic_light_v1.md",
+      "description": "A plus compressed S and explicit function-based field priority",
+      "prompt_sha256": "081e849773f513fb19084ce34c5701690eedb3e4c3a6f9e0aa7b196711f4ac2c",
+      "raw_bytes_sha256": "081e849773f513fb19084ce34c5701690eedb3e4c3a6f9e0aa7b196711f4ac2c",
+      "system_chars": 4398,
+      "system_char_reduction_ratio": 0.2874270900842515,
+      "few_shot_count": 6,
+      "examples_unchanged": true,
+      "user_template_unchanged": true,
+      "actual_api_calls": 0,
+      "performance_metrics": null
+    }
+  ],
+  "validation_scope": "Offline loader/rendering, canonical example validation, preservation and runner opt-in guards only",
+  "semantic_effectiveness_verified": false,
+  "authorization": {
+    "real_api_authorized": false,
+    "call_budget": 0,
+    "actual_api_calls": 0
+  },
+  "future_comparison": {
+    "baseline": "v6 from the same declared runtime recipe; past scores are contextual, not a new paired run",
+    "primary_metric": "coarse_five_field_micro_f1",
+    "modality_reported_separately": true,
+    "input_gold_evaluator_and_postprocessing": "fixed, unchanged; rebind exact hashes before any future run",
+    "run_root": "outputs/development/s2_prompt_simplification_v1",
+    "new_authorization_and_preflight_required": true
+  },
+  "limitations": [
+    "No new predictions or performance estimates; existing results do not transfer to these candidates.",
+    "B combines S compression and ambiguity correction; a future A/B difference cannot isolate one wording change.",
+    "Fixed metadata remains in the output because no adapter/canonicalizer/schema change is introduced.",
+    "The unchanged user template/notes say four examples although the runtime block contains six; this known historical wording is retained for control.",
+    "Snapshot preserves versioned result reports and prompt provenance, not all machine-local raw runs."
+  ]
+}

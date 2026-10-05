@@ -5635,3 +5635,17 @@
 - 仍存在 blocker：无
 - 备注：本阶段只规划和保存原始副本，未覆盖任何受影响源文件。1073 个文件、67100040 原始字节、157 个路径迁移；逐项 ZIP/原始 SHA 校验通过，原始文件无 Gold、已有用户修改及测试凭证。长期副本保存在 _retired/name_migration_originals_20260929，ZIP 包含本地与参考材料，Git 明确忽略。具名合成测试验证 CRLF/二进制保持、ZIP 非文本成员保持、凭据成员不读取及原始副本可核验；不是全量测试或迁移完成声明。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-05T05:34:45.860164+00:00 - SEP-C3-PROMPT-SIMPLIFY-V1：独立分支准备 J/S 两个递进精简候选，保留历史结果字节快照并验证开发入口
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：19 passed in 0.35s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`37e5bf831b1f09ba166bf110af855b87c72efbe3`；相关未提交路径：26 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：用户授权仅为精简分支准备；A system 压缩 8.0%，B 压缩 28.7%；六个示例与用户模板不变；15 个已提交 Git blob 的历史 prompt/结果/配置保存原始字节与哈希。现有人工数据和两份本地 modular 报告修改独立保留。只运行具名离线测试和快速完整性检查，非全量；API=0，性能指标=null；默认、Gold、评价器和表一/表二不替换。候选须 development 和独立输出目录，真实调用仍需新的预算及授权。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

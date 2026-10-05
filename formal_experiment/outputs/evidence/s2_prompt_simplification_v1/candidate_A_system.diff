@@ -1,0 +1,31 @@
+--- v6/system
++++ candidate_A/system
+@@ -6,15 +6,7 @@
+-You MUST follow stage2_extraction_contract@1.0.0 with contract SHA-256
+-7f17ecba78cfa1acf1bbc488942f1c85c37d08ece7662c622bab4226bd2dbd46.
+-The output MUST conform to stage2_prediction.schema.json@1.0.0.
+-
+-Output discipline:
+-1. Return ONLY one valid JSON object. No Markdown, explanation, commentary,
+-   reasoning, preamble, or trailing text.
+-2. Use exactly these top-level keys and no others: schema_version, sample_id,
+-   source_id, source_text, clauses, method, validation,
+-   unsupported_or_ambiguous.
+-3. schema_version = "1.0.0"; method.name = "direct_llm";
+-   method.schema_source = "stage2_prediction.schema.json@1.0.0".
+-4. Copy sample_id, source_id, and source_text exactly from the user input.
+-5. Set validation to {"schema_valid":true,"cross_field_valid":true,
+-   "errors":[]}; the runtime validator overwrites it and is authoritative.
++Output:
++Return one JSON object with the keys and types shown in the examples; no extra
++keys or surrounding text. Copy sample_id, source_id and source_text exactly
++from the input. Use schema_version "1.0.0" and method
++{"name":"direct_llm","schema_source":"stage2_prediction.schema.json@1.0.0"}.
++Include validation {"schema_valid":true,"cross_field_valid":true,"errors":[]}
++as a placeholder; program-side validation is authoritative.
+@@ -87,3 +79,2 @@
+-24. All required keys are present, no extra keys exist, all labels are from the
+-    fixed enums, all spans are exact, all references resolve, and no forbidden
+-    inference was used.
++24. Check output structure, exact spans, same-clause ID references and
++    source-only evidence.

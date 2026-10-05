@@ -45,12 +45,17 @@ PROMPT_V3_SNAPSHOT = "direct_llm_sun_record_prompt_v3_2026_07_12"
 PROMPT_V5_FROZEN = "direct_llm_sun_record_prompt_v5_2026_07_29_frozen"
 PROMPT_V6_D1R1 = "direct_llm_sun_record_prompt_v6_d1r1_2026_08_05"
 PROMPT_SOLCAND_PILOT = "direct_llm_sun_record_prompt_solcand_pilot_2026_08_07"
+SIMPLIFICATION_PROMPT_NAMES = (
+    "simplification_v1/direct_llm_json_light_v1",
+    "simplification_v1/direct_llm_json_semantic_light_v1",
+)
 ALLOWED_PROMPT_NAMES = (
     PROMPTName,
     PROMPT_V3_SNAPSHOT,
     PROMPT_V5_FROZEN,
     PROMPT_V6_D1R1,
     PROMPT_SOLCAND_PILOT,
+    *SIMPLIFICATION_PROMPT_NAMES,
 )
 
 DEFAULT_INPUT = ROOT / "data/input/estg150_input_v1.jsonl"
@@ -184,6 +189,19 @@ def main() -> int:
         "took ~162 s).",
     )
     args = parser.parse_args()
+
+    # New prompt candidates stay opt-in and cannot write into frozen capsules.
+    if args.prompt_name in SIMPLIFICATION_PROMPT_NAMES:
+        candidate_root = ROOT / "outputs/development/s2_prompt_simplification_v1"
+        if not args.development or any(
+            not _is_under(path, candidate_root) for path in (args.output, args.manifest)
+        ):
+            print(
+                "Refusing to run: simplification candidates require --development "
+                "and new output/manifest paths under "
+                "outputs/development/s2_prompt_simplification_v1."
+            )
+            return 2
 
     # 1. Load prompt from disk
     prompt = load_prompt(args.prompt_name)
