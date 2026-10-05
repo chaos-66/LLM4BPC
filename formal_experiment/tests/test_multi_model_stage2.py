@@ -108,11 +108,18 @@ def test_same_input_and_prompt_with_provider_specific_parameters(capsule):
             assert r["body_sha256"] == m.digest(m.encode(r["body"]))
     bodies = {r["provider"]: r["body"] for r in plan["requests"][:6]}
     assert bodies["qwen"]["enable_thinking"] is False
-    assert bodies["kimi"]["temperature"] == 0.6 and bodies["kimi"]["top_p"] == 0.95
+    assert bodies["kimi"]["model"] == "kimi-k2.7-code"
+    assert bodies["kimi"]["temperature"] == 1 and bodies["kimi"]["top_p"] == 0.95
+    assert bodies["kimi"]["thinking"] == {"type": "enabled"}
     assert bodies["mimo"]["max_completion_tokens"] == 4096
     assert bodies["grok"]["reasoning_effort"] == "low"
     assert "temperature" not in bodies["grok"]
-    assert "thinking" not in bodies["minimax"]
+    assert bodies["minimax"]["model"] == "MiniMax-M3"
+    assert bodies["minimax"]["thinking"] == {"type": "disabled"}
+    assert bodies["minimax"]["top_p"] == 0.95
+    assert bodies["glm"]["model"] == "glm-5.3-flash"
+    assert bodies["glm"]["thinking"] == {"type": "enabled"}
+    assert bodies["glm"]["reasoning_effort"] == "low"
     assert not any("gold" in p.lower() or Path(p).name == ".env" for p in plan["bindings"])
 
 

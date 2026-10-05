@@ -34,12 +34,12 @@
       "display_name": "Kimi",
       "api_key_env": "LLM4BPC_KIMI_API_KEY",
       "base_url": "https://api.moonshot.cn/v1",
-      "model": "kimi-k2.6",
-      "accepted_returned_models": ["kimi-k2.6"],
-      "request_parameters": {"temperature": 0.6, "top_p": 0.95, "thinking": {"type": "disabled"}},
+      "model": "kimi-k2.7-code",
+      "accepted_returned_models": ["kimi-k2.7-code"],
+      "request_parameters": {"temperature": 1, "top_p": 0.95, "thinking": {"type": "enabled"}},
       "output_limit_parameter": "max_tokens",
-      "thinking_mode": "disabled_provider_fixed_sampling",
-      "documentation": "https://platform.kimi.com/docs/guide/kimi-k2-6-quickstart"
+      "thinking_mode": "required_provider_fixed_sampling",
+      "documentation": "https://platform.kimi.com/docs/guide/kimi-k2-7-code-quickstart"
     },
     "grok": {
       "display_name": "Grok",
@@ -56,22 +56,22 @@
       "display_name": "GLM",
       "api_key_env": "LLM4BPC_GLM_API_KEY",
       "base_url": "https://open.bigmodel.cn/api/paas/v4",
-      "model": "glm-5.2",
-      "accepted_returned_models": ["glm-5.2", "GLM-5.2"],
-      "request_parameters": {"temperature": 0.6, "thinking": {"type": "disabled"}},
+      "model": "glm-5.3-flash",
+      "accepted_returned_models": ["glm-5.3-flash", "GLM-5.3-Flash"],
+      "request_parameters": {"temperature": 1, "top_p": 0.95, "thinking": {"type": "enabled"}, "reasoning_effort": "low"},
       "output_limit_parameter": "max_tokens",
-      "thinking_mode": "disabled_sampling_not_equated_to_deepseek",
-      "documentation": "https://docs.z.ai/guides/llm/glm-5.2"
+      "thinking_mode": "required_reasoning_low_sampling_not_equated_to_deepseek",
+      "documentation": "https://docs.z.ai/guides/vlm/glm-5.3-flash"
     },
     "minimax": {
       "display_name": "MiniMax",
       "api_key_env": "LLM4BPC_MINIMAX_API_KEY",
       "base_url": "https://api.minimax.cn/v1",
-      "model": "MiniMax-M2.7",
-      "accepted_returned_models": ["MiniMax-M2.7"],
-      "request_parameters": {"temperature": 0, "top_p": 0.9},
+      "model": "MiniMax-M3",
+      "accepted_returned_models": ["MiniMax-M3"],
+      "request_parameters": {"temperature": 0, "top_p": 0.95, "thinking": {"type": "disabled"}},
       "output_limit_parameter": "max_completion_tokens",
-      "thinking_mode": "provider_reasoning_preserved_separate_from_final_json",
+      "thinking_mode": "disabled_m3",
       "documentation": "https://platform.minimax.cn/docs/api-reference/text-openai-api"
     }
   }

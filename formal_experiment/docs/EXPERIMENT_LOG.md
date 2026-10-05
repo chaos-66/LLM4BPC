@@ -5677,3 +5677,17 @@
 - 仍存在 blocker：无
 - 备注：保留首次测试失败事件；修复 few_shot_block 插槽并对齐原 runner 消息；测试仅假密钥和模拟传输，真实 .env 未读取，真实 API=0，历史结果未改，非全量。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-05T07:37:43.962667+00:00 - S2-MODEL-API-SETUP：按用户指定更新 Kimi 2.7 Code、MiniMax M3、GLM 5.3 Flash 并核对授权请求合同
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：33 passed in 3.89s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`2ccf17e4893a7f918deab0ab3771a75ed7448ac8`；相关未提交路径：18 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：未创建或覆盖（`not_created_or_overwritten`）
+- 仍存在 blocker：无
+- 备注：用户单独批准本次填写状态检查覆盖旧禁读规则；只私有返回六家均已填写，无密钥值/元数据，无 .env 修改，API=0。Kimi/GLM 强制思考参数按官方指南更新；Qwen 保持 Max 0902 快照；旧 v1 预检保留但不能复用；33 项具名模拟检查，非全量。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

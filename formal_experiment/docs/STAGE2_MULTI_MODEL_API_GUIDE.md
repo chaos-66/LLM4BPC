@@ -106,7 +106,7 @@ python formal_experiment/scripts/stage2_multi_model.py run `
 
 ## 当前默认型号及官方依据
 
-这些是 2026-10-05 准备时的可编辑默认配置，**还没有真实账户/API 验证**。
+这些是 2026-10-05 用户指定后更新的可编辑默认配置，**还没有真实账户/API 验证**。
 授权前重新核对可用型号、端点与单价。API key 应属于对应 API 平台和地域；
 Coding Plan key 不一定支持通用 Chat Completions。
 
@@ -114,10 +114,22 @@ Coding Plan key 不一定支持通用 Chat Completions。
 |---|---|---|
 | 千问 | `qwen3.8-max-2026-09-02` | 关闭 thinking，temperature=0，top_p=1；[Chat Completions](https://www.alibabacloud.com/help/en/model-studio/qwen-api-via-openai-chat-completions) / [型号](https://www.alibabacloud.com/help/en/model-studio/qwen3-8-max) |
 | MiMo | `mimo-v2.6-pro` | 关闭 thinking，temperature=0，top_p=1；[API](https://mimo.mi.com/docs/en-US/api/chat/openai-api) / [超参](https://mimo.mi.com/docs/zh-CN/api/guidance/model-hyperparameters) |
-| Kimi | `kimi-k2.6` | 关闭 thinking，按平台约束 temperature=0.6，top_p=0.95；[官方指南](https://platform.kimi.com/docs/guide/kimi-k2-6-quickstart) |
+| Kimi | `kimi-k2.7-code` | 强制开启 thinking，按平台约束 temperature=1，top_p=0.95；[官方指南](https://platform.kimi.com/docs/guide/kimi-k2-7-code-quickstart) |
 | Grok | `grok-4.7` | reasoning_effort=low，省略采样参数；[官方型号页](https://docs.x.ai/developers/models/grok-4.7) |
-| GLM | `glm-5.2` | 国内 BigModel 端点，关闭 thinking，temperature=0.6；[官方型号页](https://docs.z.ai/guides/llm/glm-5.2)；国内账户可用性需在授权前核对 |
-| MiniMax | `MiniMax-M2.7` | 国内 `api.minimax.cn` 端点，temperature=0，top_p=0.9，M2.x thinking 由平台保持开启；[国内兼容 API](https://platform.minimax.cn/docs/api-reference/text-openai-api) |
+| GLM | `glm-5.3-flash` | 国内 BigModel 端点，强制开启 thinking，reasoning_effort=low，temperature=1，top_p=0.95；[官方型号页](https://docs.z.ai/guides/vlm/glm-5.3-flash) / [GLM-5.3 参数迁移](https://docs.z.ai/guides/llm/glm-5.3)；国内账户可用性仍未实测 |
+| MiniMax | `MiniMax-M3` | 国内 `api.minimax.cn` 端点，关闭 thinking，temperature=0，top_p=0.95；[国内兼容 API](https://platform.minimax.cn/docs/api-reference/text-openai-api) |
+
+用户的“Qwen 3.8”沿用已有 Max 0902 固定快照，不自行改成 Flash/Plus。用户的
+“Kimi 2.7”按官方通用 API 名称映射为 `kimi-k2.7-code`；它是 Code 版，不能关闭
+思考，不能宣称与非思考的 2.6 在推理配置上相同。GLM 5.3 Flash 也强制思考。
+输出上限仍是 4096；该上限和 180 秒超时尚未做真实连通性验证，强制思考模型
+如返回截断/超时会保存失败并停止，不扩大 token 额度或自动补调用。
+
+用户单独明确批准覆盖旧禁读规则后，本次仅私有检查了六项填写状态，六家均已
+填写，无空白/占位符/重复冲突；没有显示任何 key，没有调用模型，没有改 `.env`。
+此结论不证明 key、余额、账户地域或型号权限有效；该例外只适用于本次状态检查，
+不构成后续真实 API 授权。此前 v1 离线预检因配置变更已不适用于现在的请求；
+更新配置后的预检须使用新 run ID 并另获调用及费用授权。
 
 MiniMax 的完整前置 `<think>…</think>` 保存于原始响应，提取 JSON 时只去掉一个
 完整的前置块。所有家族使用同一 v6 原文、示例、用户模板和英文输入；共享原有

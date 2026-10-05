@@ -11,7 +11,15 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
 
 ## 已准备：S2-MODEL-API-SETUP 六家模型入口（2026-10-05；零真实 API）
 
-- 千问、MiMo、Kimi、Grok、GLM、MiniMax 六个独立密钥项已只追加到实际 `.env`，
+- 用户追加型号已更新：Grok 4.7、MiniMax M3、Kimi K2.7 Code、Qwen 3.8 Max 0902
+  快照、GLM 5.3 Flash、MiMo v2.6 Pro。Kimi/GLM 按官方合同强制思考；MiniMax M3
+  关闭思考，输出/调用预算与 0 重试门禁不变。旧 v1 预检因配置更新不再适用。
+- 用户单独明确覆盖旧禁读规则后，本次私有检查六项均已填写，未发现空白、占位符
+  或重复冲突；未显示密钥值、未修改 `.env`、未调用模型。该例外仅为本次状态检查，
+  不能据此宣称 key 有效、账户权限齐备或启动真实 API。
+- 本次型号更新已通过前后快速检查及 **33 passed** 具名离线测试（非全量），
+  离线 list 已显示用户指定的六个 ID；真实 API 调用仍为 0，未来须生成新预检。
+- 初次准备时，千问、MiMo、Kimi、Grok、GLM、MiniMax 六个独立密钥项只追加到实际 `.env`，
   未读取或打印原有内容，文件被 Git 忽略。填写不会授权联网；未来只有本批计划、
   用户明确决定、调用/输出/核对单价/费用预算及 `--execute --allow-llm` 均通过才读 key。
 - 程序 `scripts/stage2_multi_model.py`；配置 `configs/models/stage2_multi_model_v1.json`；
