@@ -1,0 +1,79 @@
+{
+  "schema_version": "s2_thinking_default_result@2.0.0",
+  "run_id": "thinking_default_20261007_v2",
+  "pipeline_task": "S2-THINKING-SENSITIVITY-V1",
+  "status": "partial",
+  "execution": {
+    "run_id": "thinking_default_20261007_v2",
+    "complete": false,
+    "actual_calls": 105,
+    "completed_calls": 105,
+    "planned_calls": 150,
+    "retry": 0,
+    "new_off_calls": 0,
+    "new_sun_calls": 0,
+    "abort_reason": "API identity, rate limit or usage contract failed; stop new sends, no retry.",
+    "budget_gate": {
+      "calls_made": 105,
+      "input_tokens": 469748,
+      "output_tokens": 1956734,
+      "cost_usd": 8.368734,
+      "missing_usage_calls": 1,
+      "call_cap": 150,
+      "input_token_cap": 1322222.0,
+      "output_token_cap": 9830400.0,
+      "usd_cost_cap": 50.0,
+      "aborted": false,
+      "abort_reason": null
+    },
+    "execution_git_commit": "4adc6224703864b43c082fd10527a573c5c9ae62",
+    "execution_dirty_paths": [],
+    "runtime_seconds_this_invocation": 1297.424,
+    "runtime_gold_access": false,
+    "project_env_read": false,
+    "truncated_calls": 0,
+    "empty_final_calls": 1
+  },
+  "model": {
+    "id": "deepseek-v4-pro",
+    "current_documented_release": "DeepSeek-V4-Pro-0813",
+    "endpoint": "https://api.deepseek.com/v1/chat/completions"
+  },
+  "generation": {
+    "thinking": "enabled",
+    "reasoning_effort": "high",
+    "max_tokens": "omitted",
+    "documented_default_generated_tokens": 65536,
+    "temperature_sent": 0.0,
+    "temperature_effective": "ignored_in_thinking_mode",
+    "top_p": 1.0,
+    "stream": false,
+    "response_format": null,
+    "max_workers": 12,
+    "transport_timeout_seconds": 7200,
+    "retry": 0
+  },
+  "primary_metric": "coarse_five_field_micro_f1",
+  "limitations": [
+    "One new repeat; historical off reuse, not a simultaneous randomized mode comparison.",
+    "Formal off R3 predates 0813; current alias can represent a changed model.",
+    "Existing off_0813 uses the same documented release; server drift remains possible.",
+    "off_0813 preserves the estg_000092 model-emitted source_text mismatch; sent-input fingerprints match.",
+    "Thinking uses provider default 65536; historical off ceiling is 4096. Not an equal-budget causal test.",
+    "temperature=0 is ignored in thinking mode; no deterministic or stability claim.",
+    "Fixed existing benchmark; no independent unseen test or replacement of frozen main tables."
+  ],
+  "arms": {},
+  "metrics": null,
+  "cost": {
+    "known_usage_calls": 104,
+    "input_tokens": 463919,
+    "output_tokens_including_reasoning": 1891198,
+    "cache_hit_input_tokens": 133888,
+    "peak_no_cache_estimate_usd": 8.10151716,
+    "peak_reported_cache_estimate_usd": 7.930676072,
+    "off_peak_reported_cache_estimate_usd": 3.965338036,
+    "account_deduction_verified": false,
+    "usd_guardrail": 50.0
+  }
+}

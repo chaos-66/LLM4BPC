@@ -9,7 +9,7 @@
 本文是唯一实时状态页，只记录“现在做到哪里、下一步做什么”。研究目标、完整
 Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见主 Pipeline。
 
-## 默认max_tokens完整150条执行中：S2-THINKING-SENSITIVITY-V1（2026-10-07）
+## 默认max_tokens批次105次封存，45个未发送ID待续跑：S2-THINKING-SENSITIVITY-V1（2026-10-07）
 
 - 用户明确要求“思考模式跑150条试一下，默认maxtoken即可”；新run ID
   `thinking_default_20261007_v2`，入口 `scripts/run_s2_thinking_default_v2.py`，授权
@@ -32,6 +32,13 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
   首次账本确认12条started，当前进度以run目录账本/execution_summary为准。
   当前执行中，主指标及DoD待完整150条结果验证；先前零调用拦截为历史，不再阻塞。
   解除记录保存在同一approval_review；不扩大150次额度、不改冻结plan。
+- 原run已停发并排空：105次完成，104条自然stop，estg_000313一次HTTP429（剩余余额
+  将允许并发降至11，原12超限）；0生成额度截断、0重试，45个ID未发送，整体指标null。
+  105次partial manifest/账本/响应已保存，104条usage峰价无缓存估算USD8.10151716，
+  返回缓存峰价USD7.930676072/闲时USD3.965338036，非实扣；429未知用量保守预留。
+- 正在准备低并发只派发未发送45条，原105及429保持，累计150/0重试；完整分母保留
+  接口失败，不另向用户索取相同数据/目的地/调用额度许可，不改变high或默认max_tokens。
+  原collector漏报dirty以补充git_execution_context记录，不改原summary或已有用户修改。
 - 本完整批次不批准low、不做多重复/独立未见测试、不启动全量套件。先前单例
   结果commit `d046905` 已推送并核验，旧16K批次仍作为停批诊断保留。
 

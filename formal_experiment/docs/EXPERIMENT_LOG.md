@@ -5857,3 +5857,21 @@
 - 仍存在 blocker：无
 - 备注：用户2026-10-07明确要求思考150条默认maxtoken；原v6/high保持，实际省略max_tokens，官方默认65536，12动态并发/150硬调用/0重试。保护USD50依据最大token峰价USD40.6737设置并提前说明，不伪称用户单独定价。length/空最终答案/解析失败保留完整150分母，身份/usage/预算异常停止新发送；只进程密钥不读.env不发Gold，预测全保存后才离线评价。此前两单例不混入，关闭组/Sun零新调用，R3版本与0813历史参照边界保留。仅本入口7项具名离线检查和快速完整性，非全量，不重复旧测试；固定主表、Gold和已有用户修改不变。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-06T19:31:05.648280+00:00 - S2-THINKING-SENSITIVITY-V1：封存默认额度批次105次，余额并发429停发且不重试
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=thinking_default_20261007_v2；阶段=stage2；方法=direct_llm_thinking_high；状态=部分完成（`partial`）
+- 实际运行命令：`python -X utf8 formal_experiment/scripts/run_s2_thinking_default_v2.py --execute --allow-llm`
+- manifest：outputs/evidence/s2_thinking_sensitivity_v1/thinking_default_20261007_v2/run_manifest.json
+- 结果摘要：105次已全部落盘：104条自然stop、estg_000313一次HTTP429、45条未发送，完整150性能指标null；0截断、0重试
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：4 passed in 3.63s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`65aba4f7d722b7966083bc0e1d0246c9328294ce`；相关未提交路径：22 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：已授权调用（`authorized_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：用户已明确授权完整150法规文本和现有提示词向DeepSeek官方API外发。429明确为剩余余额将并发上限降至11，12并发超限；原程序停止新发送且等待全部已发请求，不重试。104条已知usage峰价无缓存估算USD8.10151716、返回缓存峰价USD7.930676072/闲时USD3.965338036，未查实扣；429缺usage按65536保守预算预留，不伪称免费或F1=0。当前105证据封存，准备另建低并发续跑仅45个未发送ID，累计最多150且失败计入分母，不改原plan/代码。补充git_execution_context如实解释旧collector嵌套pathspec漏报dirty，未改无关用户文件。只运行本产物4项检查与快速完整性，非全量。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
