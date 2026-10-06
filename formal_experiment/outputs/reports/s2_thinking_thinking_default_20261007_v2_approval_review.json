@@ -1691,7 +1691,7 @@
       "statutory_field_name_note": null
     }
   ],
-  "reconsideration_status": "rejected_pending_explicit_dataset_prompt_destination_authorization",
+  "reconsideration_status": "explicit_disclosure_authorization_received_pending_execution_review",
   "same_command_reconsideration": {
     "reviewed_at_utc": "2026-10-06T18:02:47.939375+00:00",
     "decision": "rejected_before_process_creation",
@@ -1703,10 +1703,20 @@
   },
   "specific_disclosure_authorization_question": {
     "asked": true,
-    "response": "pending",
+    "response": "authorized",
     "destination": "https://api.deepseek.com/v1/chat/completions",
     "payload": "All 150 EStG statutory target texts and the existing v6 extraction prompt with six synthetic examples",
     "execution": "high thinking, max_tokens omitted, at most 150 unique calls, zero retries",
     "source_of_requirement": "automatic approval review; not a new SKILL.md or project gate"
+  },
+  "explicit_user_disclosure_authorization": {
+    "recorded_at_utc": "2026-10-06T19:07:10.013749+00:00",
+    "user_statement": "授权将这150条法规文本及现有抽取提示词发送至 DeepSeek 官方 API 并运行",
+    "destination": "https://api.deepseek.com/v1/chat/completions",
+    "payload": "All 150 frozen EStG statutory target texts and the existing v6 extraction prompt",
+    "same_frozen_plan": true,
+    "additional_calls_above_prepared_150": 0,
+    "retry_cap": 0,
+    "env_file_read": false
   }
 }
