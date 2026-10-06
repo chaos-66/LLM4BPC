@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
 **生成日期**：2026-10-06
-**收录文件**：3212 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**收录文件**：3213 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -2000,6 +2000,7 @@
 | `outputs/reports/s2_prompt_simplification_comparison_20261006_v1_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s2_prompt_simplification_comparison_20261006_v2.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s2_prompt_simplification_comparison_20261006_v2.md` | 活动 | 说明、规范或研究文档 |
+| `outputs/reports/s2_prompt_simplification_comparison_20261006_v2_git_push_blocker.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s2_prompt_simplification_comparison_20261006_v2_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s2_prompt_simplification_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s32_s33_gold_annotation_blank_v1.manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |

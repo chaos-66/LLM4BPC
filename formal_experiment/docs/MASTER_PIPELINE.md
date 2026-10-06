@@ -29,7 +29,10 @@
 - 实测数据、指标、完整证据、具名产物复核与experiment_run事件均完成：4项产物
   检查passed/0.24秒，快速完整性通过，非全量；三臂评价可从保存预测重算一致。
   首次核验的tuple/list比较误报已修正并保留失败事件，无结果或调用变化。
-  此受控开发对照按本批scoped Git检查点保存到远端，报告为
+  此受控开发对照数据/离线验收完成，本地scoped commit `36422f6`；完整GitHub交付
+  尚被自动审批拦截（要求另行批准300条原始响应/账本/派生证据的具体外发），
+  不把本地commit冒称远端备份，不绕过。拦截记录为
+  `outputs/reports/s2_prompt_simplification_comparison_20261006_v2_git_push_blocker.json`，报告为
   `outputs/reports/s2_prompt_simplification_comparison_20261006_v2.{json,md}`。
   不替换默认prompt、固定表一/表二，不标整个SEP-C3、Stage3或正式发布已完成。
 

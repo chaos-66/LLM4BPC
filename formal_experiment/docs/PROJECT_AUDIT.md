@@ -9,7 +9,7 @@
 本文是唯一实时状态页，只记录“现在做到哪里、下一步做什么”。研究目标、完整
 Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见主 Pipeline。
 
-## 已完成并核验：SEP-C3-PROMPT-SIMPLIFY-V1 A/B 300 次（2026-10-06）
+## 实测已完成并核验，GitHub原始数据备份待审批：A/B 300 次（2026-10-06）
 
 - 实际新调用恰300次（A/B各150）、原版新调用0、0重试；300条返回均stop，
   缺失用量0，中止0，评价失败0/0/0。API耗时361.125秒，原版150条复用历史结果。
@@ -28,7 +28,12 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
   同目录 `run_manifest.json`。4项具名产物检查通过（0.24秒，非全量），涵盖全部
   证据/manifest哈希、300条唯一A/B账本、三臂共享评价重算和原始格式/用量。
   首次tuple/list序列化比较误报已修正，失败日志原样保留，指标未改、无新增调用。
-  experiment_run与后续验收change事件均已记录；本批按scoped检查点保存到Git远端。
+  experiment_run与后续验收change事件均已记录；结果本地commit `36422f6`，分支
+  `codex/s2-prompt-simplification-v1`。GitHub push两次被自动审批拒绝，程序未启动。
+  已说明AGENTS的增量备份授权、相同历史数据已在远端及不含密钥/Gold，但审批仍
+  要求针对这批300条原始响应、账本和派生证据向配置GitHub目的地的额外明确授权。
+  完整结果尚未远端备份，不绕过；记录见
+  `outputs/reports/s2_prompt_simplification_comparison_20261006_v2_git_push_blocker.json`。
 - 只读共享Gold评价；固定论文表一0.8378/0.7631、表二与默认prompt不替换。
   实验是单次历史跨批开发性比较，不排除服务端变化，不扩大到Rules+LLM或六家模型。
 

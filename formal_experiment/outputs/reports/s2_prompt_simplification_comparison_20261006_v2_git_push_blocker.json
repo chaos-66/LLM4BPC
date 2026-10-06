@@ -1,0 +1,29 @@
+{
+  "schema_version": "s2_prompt_simplification_git_push_blocker@1.0.0",
+  "run_id": "comparison_20261006_v2",
+  "date_local": "2026-10-06",
+  "timezone": "Asia/Shanghai",
+  "experiment_status": "complete_verified",
+  "actual_new_api_calls": 300,
+  "baseline_new_api_calls": 0,
+  "local_result_commit": "36422f6d19572a4a1ee8a664609e315ac3a8f467",
+  "branch": "codex/s2-prompt-simplification-v1",
+  "configured_upstream": "origin/codex/s2-prompt-simplification-v1",
+  "destination": "https://github.com/chaos-66/LLM4BPC.git",
+  "action": "git push",
+  "push_status": "blocked_before_process_start",
+  "result_commit_verified_on_remote": false,
+  "last_verified_remote_commit": "7387d9e88a1d15e18bd6f72b09327be6b0f39285",
+  "payload": "300条新原始响应、调用账本、A/B及原版预测与评价、150条历史原版响应副本、逐样本变化、manifest、报告、具名测试和范围状态文档；结果证据约4.08MB",
+  "contains_credentials_or_env_or_full_gold": false,
+  "first_rejection": "该命令会将包含原始响应、账本及派生证据的敏感实验数据推送到 GitHub；用户授权了发送法规文本和 prompt 至 DeepSeek，但未明确授权这些具体原始数据向 GitHub 外发，需先取得针对该 payload 与目的地的明确授权。",
+  "authorization_and_risk_checks": [
+    "用户提供的AGENTS.md明确要求每次已授权实验完成后scoped commit及非强制push；已向自动审批说明。",
+    "4项具名结果检查通过，24项结果/报告/代码文件的Git索引原始字节逐字核验通过。",
+    "同类型历史D-full-0813原始响应、预测、manifest、评价已核验在同一配置远端，字节与本地一致。",
+    "所暂存29文件不含.env、凭据、完整Gold或无关用户修改；新响应只含法规抽取JSON、请求哈希与模型用量。"
+  ],
+  "second_rejection": "该 push 会把 300 条原始响应、账本及派生证据外发到 GitHub；用户明确授权的是向 DeepSeek 发送法规文本和 prompt，AGENTS 的增量备份要求不等于授权将这批具体敏感 payload 发送至该 GitHub 目的地。",
+  "required_resolution": "用户明确批准本批具体原始响应/账本/派生证据向上述GitHub目的地备份，收到前不重试或绕过。",
+  "additional_llm_calls_after_completion": 0
+}
