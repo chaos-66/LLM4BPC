@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
 **生成日期**：2026-10-07
-**收录文件**：3269 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**收录文件**：3280 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -1495,8 +1495,16 @@
 | `outputs/evidence/s2_thinking_sensitivity_v1/thinking_default_20261007_v2/run_manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/s2_thinking_sensitivity_v1/thinking_default_20261007_v2_remaining_v1/calls_ledger.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/s2_thinking_sensitivity_v1/thinking_default_20261007_v2_remaining_v1/execution_summary.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_thinking_sensitivity_v1/thinking_default_20261007_v2_remaining_v1/off_0813_evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_thinking_sensitivity_v1/thinking_default_20261007_v2_remaining_v1/off_formal_evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/s2_thinking_sensitivity_v1/thinking_default_20261007_v2_remaining_v1/plan.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/s2_thinking_sensitivity_v1/thinking_default_20261007_v2_remaining_v1/raw_responses.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_thinking_sensitivity_v1/thinking_default_20261007_v2_remaining_v1/response_diagnostics.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_thinking_sensitivity_v1/thinking_default_20261007_v2_remaining_v1/result.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_thinking_sensitivity_v1/thinking_default_20261007_v2_remaining_v1/run_manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_thinking_sensitivity_v1/thinking_default_20261007_v2_remaining_v1/sun_evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_thinking_sensitivity_v1/thinking_default_20261007_v2_remaining_v1/thinking_on_evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_thinking_sensitivity_v1/thinking_default_20261007_v2_remaining_v1/thinking_on_predictions.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/s2_thinking_sensitivity_v1/thinking_on_20261006_v1/calls_ledger.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/s2_thinking_sensitivity_v1/thinking_on_20261006_v1/execution_summary.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/s2_thinking_sensitivity_v1/thinking_on_20261006_v1/failure_diagnostic.json` | 活动 | 机器可读配置、数据、事件或产物 |
@@ -2042,7 +2050,10 @@
 | `outputs/reports/s2_thinking_thinking_default_20261007_v2.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/s2_thinking_thinking_default_20261007_v2_approval_review.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s2_thinking_thinking_default_20261007_v2_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/s2_thinking_thinking_default_20261007_v2_remaining_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/s2_thinking_thinking_default_20261007_v2_remaining_v1.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/s2_thinking_thinking_default_20261007_v2_remaining_v1_approval_review.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/s2_thinking_thinking_default_20261007_v2_remaining_v1_diagnostics.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s2_thinking_thinking_default_20261007_v2_remaining_v1_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s2_thinking_thinking_on_20261006_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s2_thinking_thinking_on_20261006_v1.md` | 活动 | 说明、规范或研究文档 |

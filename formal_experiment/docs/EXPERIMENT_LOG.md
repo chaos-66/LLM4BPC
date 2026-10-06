@@ -5889,3 +5889,35 @@
 - 仍存在 blocker：无
 - 备注：继续用户已经明确批准的150条文本及提示词向DeepSeek官方API外发；原105已排空并封存，余额并发429保留计入分母。新派发最多45个从未发送ID，累计150次/0重试/high/省略max_tokens，原105和旧plan不改。新调度并发5，明确余额并发429仅减少后续新ID并发，失败ID不重发；其他身份/用量/余额不足或预算异常停止新发送，缺usage保守预留。新plan绑定原完整请求指纹、封存响应和所有代码/授权；仅本入口4项假传输检查及快速完整性，非全量。原105结果本地commit6c2dd45的GitHub推送被自动审批拦截，具体150响应/思考/抽取/账本/manifest向chaos-66/LLM4BPC外发备份已询问用户；此远端阻塞不增加API额度。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-06T20:06:33.066594+00:00 - S2-THINKING-SENSITIVITY-V1：150次high默认额度完成，F1下降1.07个百分点且生成token22.26倍
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=thinking_default_20261007_v2_remaining_v1；阶段=stage2；方法=direct_llm_thinking_high；状态=成功（`succeeded`）
+- 实际运行命令：`python -X utf8 formal_experiment/scripts/run_s2_thinking_remaining_v1.py --execute --allow-llm`
+- manifest：outputs/evidence/s2_thinking_sensitivity_v1/thinking_default_20261007_v2_remaining_v1/run_manifest.json
+- 结果摘要：累计150唯一尝试（继承105+新45），149最终JSON有效，1条余额并发429计入分母，0重试/0生成截断。F1=0.8117073948，历史0813关闭0.8224493117，差-1.0742个百分点；原主表关闭0.8377685388不变。
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：否；正式实验就绪：是
+- 测试：1 failed, 3 passed in 6.03s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`2c8f432be2a284ac15a9ee72f516ce619216f522`；相关未提交路径：28 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：已授权调用（`authorized_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：原105完整字节继承，失败estg_000313不重发，仅45个未发送ID低并发补完。完整预测保存后共享canonical/coarse五字段pooled评价；modality单列。149已知usage：输入664517，思考2596507，答案124441，生成2720948，总生成相对历史关闭122251为22.257倍；最高生成40208、无token截断。约束未匹配68→117、constraint F1 0.7578→0.6892，整体P下降/R提高；主F1无改善。额外同一失败ID置空关闭的离线诊断明确标为人为诊断，不改主指标/历史文件/Gold。返回缓存闲时估算USD5.700214036、峰价USD11.400428072，未查实扣；429未知usage在预算中保守预留。只本结果4项具名验证及快速完整性，非全量，不重复准备检查。固定表一/表二和无关用户修改不变。GitHub原始产物推送被自动审批拒绝、具体备份许可已询问，仍待回复，不能冒称远端备份。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-06T20:09:02.124259+00:00 - S2-THINKING-SENSITIVITY-V1：补既有外发许可源文件LF检出规则，保留冻结SHA与150结果
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：1 passed in 5.57s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`2c8f432be2a284ac15a9ee72f516ce619216f522`；相关未提交路径：32 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：未创建或覆盖（`not_created_or_overwritten`）
+- 仍存在 blocker：无
+- 备注：完整150结果首次新产物检查3通过、1失败（6.03秒）；唯一失败为新续跑plan绑定的既有approval_review源文件当前LF而Git过滤检出CRLF。只补该精确路径text eol=lf并重新暂存，未改源文件原始字节、不重绑定plan/manifest、不改请求/响应/预测/Gold/F1、不新增API。失败experiment_run记录保留；只重跑失败的Git字节/manifest节点，已通过的账本/四臂F1/用量三个节点证据复用，不扩大或重复全量。GitHub具体原始产物备份许可仍待回复，不绕过push拦截。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

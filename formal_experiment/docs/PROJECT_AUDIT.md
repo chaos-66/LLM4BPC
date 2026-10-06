@@ -9,49 +9,37 @@
 本文是唯一实时状态页，只记录“现在做到哪里、下一步做什么”。研究目标、完整
 Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见主 Pipeline。
 
-## 默认max_tokens批次105次封存，45个未发送ID续跑执行中：S2-THINKING-SENSITIVITY-V1（2026-10-07）
+## 默认max_tokens完整150次已验证，GitHub备份受阻：S2-THINKING-SENSITIVITY-V1（2026-10-07）
 
-- 用户明确要求“思考模式跑150条试一下，默认maxtoken即可”；新run ID
-  `thinking_default_20261007_v2`，入口 `scripts/run_s2_thinking_default_v2.py`，授权
-  `configs/authorization/s2_thinking_default_20261007_v2.json`。
-- 原v6、同一冻结EStG-150/high，实际请求省略max_tokens（官方默认65536），
-  12并发、最多150次、0重试。两次旧单例不混入；关闭组/Sun复用，零新调用。
-- 单条length/空答案/解析失败保留在150分母；接口身份/用量/额度异常停新发送。
-  不读.env、不发Gold；保存全部预测后同口径离线评价，不替换固定主表。
-- 零API预检已保存，最大token峰价估算USD40.67371704，执行者费用保护USD50，
-  已运行前说明。7项具名离线核对通过（6.90秒）、快速完整性通过；150请求确认全部
-  省略max_tokens，进程密钥可用且未读.env。准备checkpoint `c27f9e0` 已远端核验。
-- 此前实际尚未发送：自动审批在创建进程前拒绝；完整逐条核查150条法规文本和
-  共用合成提示词、绑定核对通过并以 `187728b` 远端备份后，同一命令复核仍被拒绝。
-  理由为完整数据集及抽取提示词向DeepSeek官方API的具体外发许可不足。
-  两次拒绝及逐条内容证据见
-  `outputs/reports/s2_thinking_thinking_default_20261007_v2_approval_review.json`。
-  新调用0，账本/响应尚不存在，主指标null，完整150条DoD未完成；不绕过自动审批。
-- 用户现已明确回复“授权将这150条法规文本及现有抽取提示词发送至 DeepSeek 官方 API 并运行”，
-  追加许可checkpoint `4adc622` 已推送并核验。同一原命令审批已接受且真实进程已启动，
-  首次账本确认12条started，当前进度以run目录账本/execution_summary为准。
-  当前执行中，主指标及DoD待完整150条结果验证；先前零调用拦截为历史，不再阻塞。
-  解除记录保存在同一approval_review；不扩大150次额度、不改冻结plan。
-- 原run已停发并排空：105次完成，104条自然stop，estg_000313一次HTTP429（剩余余额
-  将允许并发降至11，原12超限）；0生成额度截断、0重试，45个ID未发送，整体指标null。
-  105次partial manifest/账本/响应已保存，104条usage峰价无缓存估算USD8.10151716，
-  返回缓存峰价USD7.930676072/闲时USD3.965338036，非实扣；429未知用量保守预留。
-- 正在准备低并发只派发未发送45条，原105及429保持，累计150/0重试；完整分母保留
-  接口失败，不另向用户索取相同数据/目的地/调用额度许可，不改变high或默认max_tokens。
-  原collector漏报dirty以补充git_execution_context记录，不改原summary或已有用户修改。
-- 原105产物4项检查通过（3.63秒）、快速完整性通过、experiment_run已记，本地结果
-  commit `6c2dd45`；git push被自动审批拒绝（具体响应/抽取产物的GitHub外发许可不足），
-  未远端备份。已询问用户本批150响应含思考/预测/评价/账本/manifest向既有仓库备份，
-  阻塞记录在 `outputs/reports/s2_thinking_default_20261007_v2_git_backup_review.json`。
-- 续跑入口 `scripts/run_s2_thinking_remaining_v1.py`、run
-  `thinking_default_20261007_v2_remaining_v1` 已绑定预检：继承105、只新派发45未发送ID，
-  5并发且余额限流时仅降低新ID并发，累计150/high/默认额度/0重试。4项假传输检查
-  通过（21.20秒）和快速完整性通过，非全量；准备checkpoint后执行，无新调用尚未送出。
-- 续跑准备本地commit `b1ad1a7`；入口审批已接受并真实启动，首次合并账本为
-  110 started/105 completed（原105加首批5新ID）；后续进度见续跑目录，0失败条重发。
-  完整评价待150预测全部保存；GitHub具体原始产物备份许可仍待答复。
-- 本完整批次不批准low、不做多重复/独立未见测试、不启动全量套件。先前单例
-  结果commit `d046905` 已推送并核验，旧16K批次仍作为停批诊断保留。
+- 用户明确授权“思考模式跑150条试一下，默认maxtoken即可”，并明确批准150条法规
+  文本及现有提示词向DeepSeek官方API外发。原v6/high、实际省略max_tokens（默认65536），
+  此前两次单例独立保留。新关闭组/Sun调用0，不读.env、不发Gold或改固定主表。
+- 完整run `thinking_default_20261007_v2_remaining_v1`：150个唯一尝试、149有效JSON、
+  1条estg_000313余额并发429计为空预测，0重试、0生成额度截断。先12并发完成105并
+  排空，随后5并发仅补45个未发送ID；原105完整字节继承，45条续跑全部自然stop。
+- 报告 `outputs/reports/s2_thinking_thinking_default_20261007_v2_remaining_v1.{json,md}`；
+  完整账本/原始响应含思考/预测/四臂评价/manifest在该run ID evidence目录。预测全保存后
+  共享Gold离线评价：high F1=0.8117073948，历史0813关闭0.8224493117，差-1.0742百分点。
+  原主表关闭0.8377685388和Sun0.7630963922保持；modality独立，不混入五字段pooled F1。
+- actor/action/condition/exception字段F1上升，constraint 0.7578→0.6892，未匹配抽取
+  68→117，整体precision下降、recall提高。同一失败ID置空的关闭诊断F1=0.8188302425，
+  思考仍低0.7123百分点；此人为离线诊断不替换历史实际结果或主指标，不改Gold/旧预测。
+- 149条已知usage：平均思考17426.22、答案835.17、生成18261.40 tokens；生成总量
+  2720948相对历史关闭150条122251为22.257倍，约95.43%用于思考，p90生成29120、
+  最大40208。返回缓存后闲时费用估算USD5.700214036/峰价USD11.400428072，未查实扣。
+  那条429无usage，硬预算仍保守预留，不能认定免费。总壁钟约53.66分钟含停批与准备。
+- 四项新产物验证：首次3通过、1失败（6.03秒）；唯一失败为新绑定的既有approval_review
+  文件Git检出CRLF/LF。只补该精确路径LF规则，不改冻结源字节/plan/manifest/数值；
+  失败事件保留，仅失败节点重跑1通过（5.57秒）。其余三项证据复用，快速完整性通过，
+  非全量，未重跑API。完整experiment_run和修正change已记录，原三项用户修改字节未动。
+- 本地运行/结果验真完成；GitHub原始产物push曾被自动审批拒绝（具体产物外发许可不足）。
+  已询问本150条响应含思考、抽取、评价、账本和manifest向既有chaos-66/LLM4BPC备份，
+  尚待回复，远端交付未完成；详情在 `outputs/reports/s2_thinking_default_20261007_v2_git_backup_review.json`。
+  原105局部结果commit `6c2dd45`、续跑准备 `b1ad1a7` 和开始checkpoint `2c8f432`均保留；
+  最终本地hash在本次交付报告明确，不冒称远端备份，不绕过自动审批。
+- 本轮结果为固定150条、一次历史跨批敏感性对照，当前alias与历史0813仍可能有服务变化，
+  生成额度不同、thinking的temperature不生效；本次主F1未改善，不推断一般思考模式效果。
+  不扩大到low/多重复/独立未见测试、Rules+LLM、Stage3或全量套件。
 
 ## 已完成的单例 high 诊断（2026-10-06）
 

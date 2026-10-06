@@ -1,0 +1,65 @@
+{
+  "schema_version": "s2_thinking_result_diagnostics@1.0.0",
+  "run_id": "thinking_default_20261007_v2_remaining_v1",
+  "source_result_sha256": "eb95c891b7db880636493112a16c78525adf6892a45fccddf529238f6ba2ce78",
+  "source_gold_sha256": "c31a514a6b58b640ed020c380c0b7bed136dc9574b2c98c98dedec1ecdb57100",
+  "primary_metrics_unchanged": {
+    "thinking_on_f1": 0.8117073948257142,
+    "delta_vs_formal_off_pp": -2.6061144010487203,
+    "delta_vs_0813_off_pp": -1.0741916891093606
+  },
+  "per_field_comparison": {
+    "actor": {
+      "off_0813_f1": 0.7083085465000991,
+      "thinking_on_f1": 0.7212860739879914,
+      "delta_pp": 1.297752748789227
+    },
+    "action": {
+      "off_0813_f1": 0.9185006045949216,
+      "thinking_on_f1": 0.9534063900719402,
+      "delta_pp": 3.4905785477018614
+    },
+    "condition": {
+      "off_0813_f1": 0.840530861596798,
+      "thinking_on_f1": 0.8586628640377338,
+      "delta_pp": 1.8132002440935824
+    },
+    "constraint": {
+      "off_0813_f1": 0.7578121997155707,
+      "thinking_on_f1": 0.6892152499629135,
+      "delta_pp": -6.859694975265718
+    },
+    "exception": {
+      "off_0813_f1": 0.7000000000000001,
+      "thinking_on_f1": 0.7777777777777778,
+      "delta_pp": 7.777777777777772
+    }
+  },
+  "constraint_unmatched_predictions": {
+    "off_0813": 68,
+    "thinking_on": 117
+  },
+  "plain_json_object_output_counts": {
+    "thinking_on": 149,
+    "off_0813": 107
+  },
+  "same_failed_ids_offline_diagnostic": {
+    "forced_failed_ids": [
+      "estg_000313"
+    ],
+    "denominator": 150,
+    "off_0813_f1_with_same_ids_empty": 0.818830242510699,
+    "thinking_on_original_f1": 0.8117073948257142,
+    "delta_pp": -0.7122847684984834,
+    "interpretation": "Offline diagnostic only: historical off attempts for the same transport-failed IDs are empty predictions in memory. This is not observed historical off performance and does not replace the primary 150-item comparison. No baseline files or Gold changed."
+  },
+  "reasoning_share_of_known_generated_tokens": 0.9542655721461785,
+  "known_usage_calls": 149,
+  "token_ratio_basis": "2,720,948 generated tokens from 149 known-usage thinking responses / 122,251 tokens from 150 historical off responses",
+  "source_bindings": {
+    "original_manifest": "df7f0875da24e1ea931d19e4f6fa29b3b8d04f70e6ffaf0c360a064cd3ad1ded",
+    "historical_off_raw": "b45ea6ef530c80162bd2b60fb7877c8728beabcdecc772fe8ff9e338d3bf5dce",
+    "historical_off_predictions": "2dc036c3c72f54e194ad9882aac5b78f2fd0e0a7f9fbdf44dc73baa31ce23195"
+  },
+  "new_api_calls": 0
+}
