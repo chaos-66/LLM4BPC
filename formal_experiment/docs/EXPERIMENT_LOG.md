@@ -5875,3 +5875,17 @@
 - 仍存在 blocker：无
 - 备注：用户已明确授权完整150法规文本和现有提示词向DeepSeek官方API外发。429明确为剩余余额将并发上限降至11，12并发超限；原程序停止新发送且等待全部已发请求，不重试。104条已知usage峰价无缓存估算USD8.10151716、返回缓存峰价USD7.930676072/闲时USD3.965338036，未查实扣；429缺usage按65536保守预算预留，不伪称免费或F1=0。当前105证据封存，准备另建低并发续跑仅45个未发送ID，累计最多150且失败计入分母，不改原plan/代码。补充git_execution_context如实解释旧collector嵌套pathspec漏报dirty，未改无关用户文件。只运行本产物4项检查与快速完整性，非全量。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-06T19:38:02.652909+00:00 - S2-THINKING-SENSITIVITY-V1：验证仅45个未发送ID低并发续跑，累计150且失败条不重发
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：4 passed in 21.20s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`6c2dd45cd73f6758efed421c78fcd549ebbfed99`；相关未提交路径：19 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：继续用户已经明确批准的150条文本及提示词向DeepSeek官方API外发；原105已排空并封存，余额并发429保留计入分母。新派发最多45个从未发送ID，累计150次/0重试/high/省略max_tokens，原105和旧plan不改。新调度并发5，明确余额并发429仅减少后续新ID并发，失败ID不重发；其他身份/用量/余额不足或预算异常停止新发送，缺usage保守预留。新plan绑定原完整请求指纹、封存响应和所有代码/授权；仅本入口4项假传输检查及快速完整性，非全量。原105结果本地commit6c2dd45的GitHub推送被自动审批拦截，具体150响应/思考/抽取/账本/manifest向chaos-66/LLM4BPC外发备份已询问用户；此远端阻塞不增加API额度。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

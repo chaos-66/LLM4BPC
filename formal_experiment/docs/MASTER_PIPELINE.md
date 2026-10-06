@@ -1,6 +1,6 @@
 # LLM4BPC 完整实验主 Pipeline
 
-**文档版本**：3.7.46
+**文档版本**：3.7.47
 **状态**：ACTIVE — 全项目研究与任务分解的唯一主线
 **最后更新**：2026-10-07
 **方法学主干**：Sun et al. (2024)（三阶段方法主干）；Barrientos et al. (2026)（直接借鉴来源：LLM 结构化输出、验证、受控词汇、归一化与评估纪律）
@@ -11,7 +11,23 @@
 > `docs/PROJECT_AUDIT.md` 只记录实时进度；不要再创建新的日期版
 > `STATUS_*`、`HANDOFF_*` 或平行路线文档。
 
-## 2026-10-07 修订 3.7.46：默认批次105次封存，余额并发限流，45个未发送ID待续跑
+## 2026-10-07 修订 3.7.47：45个未发送ID续跑预检通过，原始产物GitHub备份审批待答复
+
+- 原105次产物4项具名检查通过（3.63秒）及快速完整性通过，experiment_run已记录，
+  本地checkpoint `6c2dd45`。普通git push在进程创建前被自动审批拦截，理由为这批原始
+  API响应/抽取产物向GitHub的具体外发许可不足；尚未远端备份，不冒称已push。
+- 已询问用户将本150条响应（含思考）、预测、评价、账本和manifest备份到既有
+  `chaos-66/LLM4BPC`、`codex/s2-prompt-simplification-v1` 分支；记录于
+  `outputs/reports/s2_thinking_default_20261007_v2_git_backup_review.json`，不绕过推送拦截。
+- 新续跑入口 `scripts/run_s2_thinking_remaining_v1.py`，run ID
+  `thinking_default_20261007_v2_remaining_v1`；同一用户150次/具体DeepSeek外发许可，
+  继承105、仅45个从未发送ID，累计150、0失败条重发、5并发/high/省略max_tokens。
+  仅明确余额并发429保留失败并降低后续新ID派发并发；其他异常仍停发排空。
+- plan绑定原105完整字节/manifest、150原始请求指纹和新入口/范围记录；预检新API0，
+  4项假传输检查通过（21.20秒）及快速完整性通过，非全量。准备checkpoint后执行；
+  完整150主指标仍null。GitHub备份审批阻塞单独保留，不增加API调用额度。
+
+## 历史修订 3.7.46：默认批次105次封存，余额并发限流，45个未发送ID待续跑
 
 - 原run `thinking_default_20261007_v2` 全部已发请求结束：105次，104条自然stop，
   estg_000313一次HTTP429、无usage；服务明确提示剩余余额导致并发上限11，低于

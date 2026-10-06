@@ -9,7 +9,7 @@
 本文是唯一实时状态页，只记录“现在做到哪里、下一步做什么”。研究目标、完整
 Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见主 Pipeline。
 
-## 默认max_tokens批次105次封存，45个未发送ID待续跑：S2-THINKING-SENSITIVITY-V1（2026-10-07）
+## 默认max_tokens批次105次封存，45个未发送ID续跑预检通过：S2-THINKING-SENSITIVITY-V1（2026-10-07）
 
 - 用户明确要求“思考模式跑150条试一下，默认maxtoken即可”；新run ID
   `thinking_default_20261007_v2`，入口 `scripts/run_s2_thinking_default_v2.py`，授权
@@ -39,6 +39,14 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
 - 正在准备低并发只派发未发送45条，原105及429保持，累计150/0重试；完整分母保留
   接口失败，不另向用户索取相同数据/目的地/调用额度许可，不改变high或默认max_tokens。
   原collector漏报dirty以补充git_execution_context记录，不改原summary或已有用户修改。
+- 原105产物4项检查通过（3.63秒）、快速完整性通过、experiment_run已记，本地结果
+  commit `6c2dd45`；git push被自动审批拒绝（具体响应/抽取产物的GitHub外发许可不足），
+  未远端备份。已询问用户本批150响应含思考/预测/评价/账本/manifest向既有仓库备份，
+  阻塞记录在 `outputs/reports/s2_thinking_default_20261007_v2_git_backup_review.json`。
+- 续跑入口 `scripts/run_s2_thinking_remaining_v1.py`、run
+  `thinking_default_20261007_v2_remaining_v1` 已绑定预检：继承105、只新派发45未发送ID，
+  5并发且余额限流时仅降低新ID并发，累计150/high/默认额度/0重试。4项假传输检查
+  通过（21.20秒）和快速完整性通过，非全量；准备checkpoint后执行，无新调用尚未送出。
 - 本完整批次不批准low、不做多重复/独立未见测试、不启动全量套件。先前单例
   结果commit `d046905` 已推送并核验，旧16K批次仍作为停批诊断保留。
 
