@@ -5751,3 +5751,17 @@
 - 仍存在 blocker：无
 - 备注：前一experiment_run事件已如实记录300次真实调用成功及首次3通过1失败，历史事件不改；失败仅为modality classes内存tuple与JSON list直接比较，现采用JSON规范化后对完整评价对象逐项比较，指标不改。新具名结果检查覆盖全部证据/manifest哈希、300条唯一A/B账本、三臂冻结Gold评价重算及原始格式/用量，非全量。此复核无新API、无重试、不改Gold/已有结果，运行来源与实际300次见run_manifest。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-06T10:08:50.476204+00:00 - S2-THINKING-SENSITIVITY-V1：锁定开启思考150次及历史关闭组复用，验证请求、预算和零重试门禁
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：9 passed in 10.10s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`2afb74cce3638557bc7b81684a0930dd69732a49`；相关未提交路径：21 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：用户明确授权运行150条；原v6和冻结输入不变，关闭组/Sun零新调用；high/16384生成token/最多6并发/0重试，峰价最大token费用11.4795美元、执行保护上限15美元；只用进程密钥不读.env，默认零API。R3旧版本与0813历史参照分列；后者一条历史source_text差异保留。仅具名离线检查和快速完整性，非全量；真实指标尚为null。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
