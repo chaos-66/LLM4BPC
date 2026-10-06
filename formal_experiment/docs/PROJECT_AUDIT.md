@@ -9,7 +9,7 @@
 本文是唯一实时状态页，只记录“现在做到哪里、下一步做什么”。研究目标、完整
 Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见主 Pipeline。
 
-## 执行准备：SEP-C3-PROMPT-SIMPLIFY-V1 v6/A/B 成对对照（2026-10-06）
+## 外发审批待确认：SEP-C3-PROMPT-SIMPLIFY-V1 v6/A/B 成对对照（2026-10-06）
 
 - 用户本轮明确授权 prompt 实验对照；固定同一 EStG-150、DeepSeek-V4-Pro-0813，
   v6/A/B 各一次，最多 450 次、0 重试，USD 14.77 硬上限。预检已生成，源文件、
@@ -23,6 +23,11 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
   均已检查；此时真实 API=0，不能把程序检查当抽取效果证明。
 - 输入、Gold、候选、历史结果和已有用户修改保留；固定论文表一/表二不替换。
   完整预检：`outputs/reports/s2_prompt_simplification_comparison_20261006_v1_preflight.json`。
+- 2026-10-06 实际启动命令被自动审批拒绝，程序未启动，真实调用仍为 0；没有响应、
+  调用账本或执行 summary。拒绝原因是实验目标已授权，但具体 EStG-150 英文文本
+  与 v6/A/B prompt 向 DeepSeek 官方 API 的外发未明确批准。已向用户提出完整目的地/
+  450 次/0 重试/USD14.77 确认，不绕过拦截或间接执行。审批证据及待确认范围见
+  `outputs/reports/s2_prompt_simplification_comparison_20261006_v1_execution_blocker.json`。
 
 ## 已准备：S2-MODEL-API-SETUP 六家模型入口（2026-10-05；零真实 API）
 

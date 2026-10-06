@@ -85,3 +85,8 @@ USD 14.77 上限。新的授权/请求/源哈希见
 原始响应、共享后处理预测和完整分母；中止/in-doubt/已完成批次不自动重发。
 三臂主口径为 pooled 五字段 micro-F1，原始 JSON、modality、用量另列。无额外模型
 或稳定性重复；B 的结果只能归于联合改动，不据此判断单句因果。
+
+本轮首次启动被自动审批拒绝，程序未启动，API=0。实验目标已获授权；具体冻结英文
+文本与 prompt 发送至 DeepSeek 官方 API 的外发确认待用户回复。拦截记录见
+`outputs/reports/s2_prompt_simplification_comparison_20261006_v1_execution_blocker.json`。
+不得以其他命令或间接执行绕过；确认到达后使用已冻结准备，不自动增加预算。

@@ -27,8 +27,11 @@
   后处理。同一输入三臂最多并发 3 条、提交顺序轮换；另记原始 JSON、token 用量与
   逐样本字段差异，不改原 prompt/Gold/评价器或固定表一/表二。
 - 实测 DoD：450 次完成、150/150 分母每臂保留、指标/失败/用量/差异与原始响应可
-  追溯，具名验证、experiment_run、Git checkpoint 均完成。当前为执行准备，尚无
-  新性能结果；每臂一次的开发性回顾实验不提供稳定性或独立泛化结论。
+  追溯，具名验证、experiment_run、Git checkpoint 均完成。执行准备的 7 项具名
+  检查已通过并推送（26d33f4）；真实启动被自动审批拒绝，程序未启动、API=0。
+  原因是具体文本/prompt 向 DeepSeek 的外发待用户明确确认；证据见
+  `outputs/reports/s2_prompt_simplification_comparison_20261006_v1_execution_blocker.json`。
+  当前尚无新性能结果；每臂一次的开发性回顾实验不提供稳定性或独立泛化结论。
 
 ## 2026-10-05 修订 3.7.34：S2-MODEL-API-SETUP 用户指定型号与限目的密钥状态检查
 

@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
 **生成日期**：2026-10-06
-**收录文件**：3184 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**收录文件**：3185 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -1976,6 +1976,7 @@
 | `outputs/reports/s2_13_stage2_freeze_gap_capsule.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/s2_llm_batches_offline_readiness_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s2_llm_batches_offline_readiness_v1.md` | 活动 | 说明、规范或研究文档 |
+| `outputs/reports/s2_prompt_simplification_comparison_20261006_v1_execution_blocker.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s2_prompt_simplification_comparison_20261006_v1_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s2_prompt_simplification_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s32_s33_gold_annotation_blank_v1.manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
