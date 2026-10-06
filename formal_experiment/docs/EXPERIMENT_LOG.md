@@ -5765,3 +5765,49 @@
 - 仍存在 blocker：无
 - 备注：用户明确授权运行150条；原v6和冻结输入不变，关闭组/Sun零新调用；high/16384生成token/最多6并发/0重试，峰价最大token费用11.4795美元、执行保护上限15美元；只用进程密钥不读.env，默认零API。R3旧版本与0813历史参照分列；后者一条历史source_text差异保留。仅具名离线检查和快速完整性，非全量；真实指标尚为null。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-06T10:19:33.021266+00:00 - S2-THINKING-SENSITIVITY-V1：记录首条high思考生成上限截断和停批，保留真实响应及恢复预检
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=thinking_on_20261006_v1；阶段=stage2；方法=direct_llm；状态=部分完成（`partial`）
+- 实际运行命令：`python -X utf8 formal_experiment/scripts/run_s2_thinking_sensitivity_v1.py --execute --allow-llm --max-calls 150`
+- manifest：outputs/evidence/s2_thinking_sensitivity_v1/thinking_on_20261006_v1/run_manifest.json
+- 结果摘要：已调用1/150、0重试；HTTP200但16384生成token全部用于思考，length截断且最终content为空；149条未发送；metrics=null；峰价估算USD0.07074936
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：3 passed in 0.42s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`3964c6c1671fe51f83b8b5adb03057e261b67e51`；相关未提交路径：26 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：已授权调用（`authorized_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：实际授权调用恰1次，首条契约门禁触发后未发剩余149条，未重试，不读.env，不发送Gold；准备9项检查已通过并远端备份3964c6c。此次仅检查保存证据哈希/账本/用量与partial状态，不重复运行准备测试，不跑全量。关闭组/Sun零新调用，固定表一/表二及已有用户修改未变。未授权恢复预检为low新150次/累计151次/建议累计USD15保护上限，等待追加批准，不自动执行。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-06T10:24:59.062871+00:00 - S2-THINKING-SENSITIVITY-V1：固定已记录证据和来源的行尾，验证Git检出后原始SHA仍一致
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：否；正式实验就绪：是
+- 测试：1 failed in 2.04s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`3964c6c1671fe51f83b8b5adb03057e261b67e51`；相关未提交路径：29 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：未创建或覆盖（`not_created_or_overwritten`）
+- 仍存在 blocker：无
+- 备注：只为本批证据目录及manifest既有绑定添加精确LF/CRLF属性，未修改Gold、输入、旧预测、prompt或运行实现，未重算/改绑任何哈希，未发送新增API。3项持久证据检查已经通过；本次仅新增Git checkout byte检查，非全量。真实批次仍为1/150后停批，恢复low新150/累计151尚待追加批准。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-06T10:25:49.410130+00:00 - S2-THINKING-SENSITIVITY-V1：修正新增证据在属性生效前缓存的暂存字节，核验Git检出后原始SHA
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：1 passed in 2.19s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`3964c6c1671fe51f83b8b5adb03057e261b67e51`；相关未提交路径：29 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：未创建或覆盖（`not_created_or_overwritten`）
+- 仍存在 blocker：无
+- 备注：上一新检查发现git add复用属性变更前的LF暂存缓存，失败记录原样保留。只对本批首次新增的calls_ledger/raw_responses两文件重新应用-text暂存，不改工作区原始字节、不重算或改绑manifest，不触及其他旧内容。只重验失败的新具名节点；原3项检查不重复，非全量，零新API。批次仍停在1/150；恢复新150/累计151尚未授权。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

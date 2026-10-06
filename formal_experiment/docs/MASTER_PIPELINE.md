@@ -27,8 +27,21 @@
   R3早于0813发布，不能保证与当前同名API版本一致；0813参照仍是历史跨批。
   该参照estg_000092保留一条模型输出source_text差异，150条实际发送指纹核对一致，
   不静默修正旧预测。不同生成上限、temperature在思考模式不生效均作为比较边界。
-- 状态：预检及具名离线门禁已通过（9 passed/10.10秒，快速完整性通过，非全量），
-  准备 scoped checkpoint 后执行；新指标为null。
+- 准备已验证并远端备份：9 passed/10.10秒、快速完整性通过（非全量），
+  checkpoint `3964c6c`，分支 `codex/s2-prompt-simplification-v1`，普通push成功且远端HEAD一致。
+- 实际执行在首条停止：1/150调用、0重试，HTTP200/model正确，但finish_reason=length；
+  16384生成token全部为reasoning_tokens，最终content为空，耗时182.661秒。
+  剩余149条未发送，主指标null，不把接口截断写成方法F1=0或完整实验完成。
+  首条输入4446/输出16384，峰价无缓存估算USD0.07074936，闲时USD0.03537468，未查实扣。
+- 原始响应/推理、账本、用量、失败诊断与partial manifest已保存；下一候选恢复方案
+  `outputs/reports/s2_thinking_recovery_preflight_v2.json`（authorized=false）：统一low、
+  同一150条、16384生成上限、0重试，旧high失败条独立保留，不混入low组。
+  新调用150、累计151，因此需用户追加批准失败条的一次新调用和推理设置改变。
+  新最大token费用USD11.4794，含已调用条约USD11.5502，建议累计保护上限仍USD15。
+  本轮不自动执行恢复方案；原150高强度批次DoD未完成，等待具体恢复决定。
+- 停批证据验证：3项离线检查通过（0.42秒）；另1项Git检出字节检查通过（2.19秒），
+  快速完整性通过，非全量。新增精确行尾规则保留已记录SHA；首次暂存缓存不一致的
+  失败记录保留，修正仅重暂存本次新增的两份jsonl，不改原始响应或重新绑定manifest。
   DoD：150条唯一调用完成，保留失败/截断与完整分母；推理和最终答案分列保存，仅最终
   JSON进入同一legacy后处理与五字段pooled评价；结果、费用估算、manifest、experiment_run
   和Git checkpoint完整。不替换固定表一/表二，不推进Stage3或正式发布，不运行全量测试。

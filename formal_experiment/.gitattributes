@@ -336,3 +336,28 @@ configs/authorization/s2_prompt_simplification_20261006_v2.json -text
 outputs/reports/s2_prompt_simplification_comparison_20261006_v2_preflight.json -text
 outputs/reports/s2_prompt_simplification_comparison_20261006_v2.json -text
 outputs/reports/s2_prompt_simplification_comparison_20261006_v2.md -text
+
+# S2-THINKING-SENSITIVITY-V1: preserve this run and its exact raw-byte bindings.
+# Keep each bound source at its recorded LF or CRLF checkout form; no content renormalization.
+outputs/evidence/s2_thinking_sensitivity_v1/thinking_on_20261006_v1/** -text
+scripts/run_s2_thinking_sensitivity_v1.py text eol=lf
+configs/authorization/s2_thinking_20261006_v1.json text eol=lf
+data/input/estg150_formal_inference_input_v2.json text eol=lf
+data/gold/stage2/estg150_formal_gold_v1.json text eol=lf
+prompts/sun_compat/direct_llm_sun_record_prompt_v6_d1r1_2026_08_05.md text eol=lf
+data/predictions/direct_llm_formal_arm_v1/predictions.json text eol=lf
+outputs/development/s27_d1_v6_r3_clean_rerun_150_hist56d_v1/manifest.json text eol=crlf
+outputs/development/s27_d1_pilot_20_hist56d_v1/input_150_hist56d_v1.jsonl text eol=lf
+outputs/reports/stage2_table1_paper_final_v1.json text eol=crlf
+outputs/reports/stage2_table2_prompt_ablation_paper_final_v2.json text eol=lf
+scripts/run_sep_c3_modular_ablation_v1.py text eol=lf
+scripts/run_barrientos_ablation_suite_v2.py text eol=crlf
+configs/schemas/stage2_prediction.schema.json text eol=lf
+src/bpc_hybrid/prompt_loader.py text eol=lf
+src/bpc_hybrid/d1_schema_adapter.py text eol=lf
+src/bpc_hybrid/d1_span_canonicalizer.py text eol=crlf
+src/bpc_hybrid/stage2_canonical.py text eol=lf
+src/bpc_hybrid/sep_c3_modular_evaluation.py text eol=lf
+src/bpc_hybrid/formal_stage2_evaluation.py text eol=lf
+src/bpc_hybrid/g04_coarse_view.py text eol=lf
+src/bpc_hybrid/stage2_sun_literal_overlap.py text eol=lf

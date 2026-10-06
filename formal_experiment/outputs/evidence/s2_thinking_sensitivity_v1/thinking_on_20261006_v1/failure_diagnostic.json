@@ -1,0 +1,32 @@
+{
+  "schema_version": "s2_thinking_failure_diagnostic@1.0.0",
+  "run_id": "thinking_on_20261006_v1",
+  "status": "partial_stopped",
+  "actual_calls": 1,
+  "unattempted_calls": 149,
+  "retry": 0,
+  "http_status": 200,
+  "sample_id": "estg_000002",
+  "finish_reason": "length",
+  "final_answer_characters": 0,
+  "reasoning_characters": 67568,
+  "usage": {
+    "prompt_tokens": 4446,
+    "completion_tokens": 16384,
+    "total_tokens": 20830,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 16384
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 4446
+  },
+  "peak_no_cache_estimate_usd": 0.07074936,
+  "off_peak_no_cache_estimate_usd": 0.03537468,
+  "account_deduction_verified": false,
+  "failure_cause": "生成16384个token全部用于思考，结束原因为length，最终content为空；不是网络、密钥或JSON解析失败。",
+  "metrics": null,
+  "recovery": "原批已按首条契约门禁停止，未重试或发送149条。保持原证据；若完整另跑150条，累计将为151次，需补充批准一次失败条的重跑及新推理设置。"
+}

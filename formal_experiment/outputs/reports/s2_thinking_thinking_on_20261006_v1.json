@@ -1,0 +1,68 @@
+{
+  "schema_version": "s2_thinking_sensitivity_result@1.0.0",
+  "run_id": "thinking_on_20261006_v1",
+  "pipeline_task": "S2-THINKING-SENSITIVITY-V1",
+  "status": "partial",
+  "claim_scope": "development_retrospective_fixed_estg150",
+  "primary_metric": "coarse_five_field_micro_f1",
+  "execution": {
+    "run_id": "thinking_on_20261006_v1",
+    "complete": false,
+    "actual_calls": 1,
+    "planned_calls": 150,
+    "new_off_calls": 0,
+    "new_sun_calls": 0,
+    "retry": 0,
+    "abort_reason": "First authorized response did not confirm reasoning plus a completed final answer.",
+    "budget_gate": {
+      "calls_made": 1,
+      "input_tokens": 4446,
+      "output_tokens": 16384,
+      "cost_usd": 0.07074936,
+      "missing_usage_calls": 0,
+      "call_cap": 150,
+      "input_token_cap": 1323797.0,
+      "output_token_cap": 2457600.0,
+      "usd_cost_cap": 15.0,
+      "aborted": false,
+      "abort_reason": null
+    },
+    "execution_git_commit": "3964c6c1671fe51f83b8b5adb03057e261b67e51",
+    "execution_dirty_paths": [],
+    "runtime_seconds_this_invocation": 182.988,
+    "runtime_gold_access": false,
+    "project_env_read": false,
+    "reasoning_present_calls": 1,
+    "truncated_calls": 1
+  },
+  "model": {
+    "id": "deepseek-v4-pro",
+    "current_documented_release": "DeepSeek-V4-Pro-0813",
+    "endpoint": "https://api.deepseek.com/v1/chat/completions"
+  },
+  "generation": {
+    "thinking": "enabled",
+    "reasoning_effort": "high",
+    "temperature_sent": 0.0,
+    "temperature_effective": "ignored_by_provider_in_thinking_mode",
+    "top_p": 1.0,
+    "max_tokens_reasoning_plus_final": 16384,
+    "historical_off_max_tokens": 4096,
+    "stream": false,
+    "response_format": null,
+    "timeout_seconds": 600,
+    "retry": 0,
+    "max_workers": 6
+  },
+  "limitations": [
+    "single new repeat; historical off reuse, not contemporaneous randomized mode comparison",
+    "formal off R3 was run before 0813 release; current alias can represent a changed model",
+    "existing off_0813 is an additional same documented release reference; server drift remains possible",
+    "off_0813 preserves one historical model-emitted source_text mismatch (estg_000092); all 150 sent request fingerprints match input; historical payloads are never silently corrected",
+    "on generation ceiling is 16384 versus historical 4096; measures configured operating-mode sensitivity, not equal-budget causal effect",
+    "temperature=0 is ignored in thinking mode; no claim of deterministic generation",
+    "no independent unseen test and no replacement of frozen main Table 1/Table 2"
+  ],
+  "arms": {},
+  "metrics": null
+}
