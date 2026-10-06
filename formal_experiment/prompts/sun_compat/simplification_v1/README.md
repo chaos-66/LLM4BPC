@@ -74,6 +74,13 @@ Stage 3 授权，不追加八格重跑或取消的 Rules+LLM 实验。主口径�
 
 ## 2026-10-06 当前对照范围：复用原版，只新跑 A/B
 
+用户随后明确回复“授权，进行数据运行，快点”，已批准这个范围与官方 API 外发。
+新的授权/预检分别为 `configs/authorization/s2_prompt_simplification_20261006_v2.json`
+与 `outputs/reports/s2_prompt_simplification_comparison_20261006_v2_preflight.json`；
+执行入口为 `python formal_experiment/scripts/run_s2_prompt_simplification_v2.py --execute --allow-llm`。
+最多并发 6 次以加快，0 重试、300 次/USD9.76 上限，原版不重跑。当前事实只见
+PROJECT_AUDIT；下文“待确认/待新入口”的描述保留为授权前历史事实。
+
 用户纠正原版不需重跑。当前范围为同一 EStG-150 上 A、B 各一次，共 300 次新调用，
 复用 `D-full-0813/repeat-01` 的原版结果；已核对 150/150 请求配方与响应指纹、
 prompt 哈希和输入 ID 一致。历史原版的记录估算费用 USD 1.35147804；300 次参考

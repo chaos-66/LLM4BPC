@@ -5705,3 +5705,17 @@
 - 仍存在 blocker：无
 - 备注：用户已明确要求实验对照；本检查点只准备调用，不将准备当性能。唯一批次 comparison_20261006_v1，450 次、0 重试、USD14.77，进程密钥，不读.env；共享历史后处理/固定五字段评价，原 prompt/Gold/历史报告及已有用户修改未改。具名离线检查，非全量。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-06T02:19:35.445812+00:00 - SEP-C3-PROMPT-SIMPLIFY-V1：按用户最新授权绑定 A/B 300 次及历史原版复用，验证六并发零重试执行入口
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：9 passed in 8.15s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`2b48f2cb8ecd20d2e1716979e99c5d54629782b4`；相关未提交路径：21 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：唯一批次 comparison_20261006_v2；用户原文授权，进行数据运行，快点，确认官方 DeepSeek 目的地和前述300次/USD9.76范围；旧450次预检与拦截证据未改；A/B各150，原版新调用0；历史150请求/响应指纹吻合，六并发有预算预留，进程密钥不读.env。仅具名离线测试与快速完整性，非全量；准备阶段 API=0，实测指标null。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
