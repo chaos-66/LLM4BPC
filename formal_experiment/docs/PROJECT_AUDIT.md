@@ -9,7 +9,7 @@
 本文是唯一实时状态页，只记录“现在做到哪里、下一步做什么”。研究目标、完整
 Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见主 Pipeline。
 
-## 最新授权默认max_tokens完整150条：S2-THINKING-SENSITIVITY-V1（2026-10-07）
+## 默认max_tokens完整150条执行中：S2-THINKING-SENSITIVITY-V1（2026-10-07）
 
 - 用户明确要求“思考模式跑150条试一下，默认maxtoken即可”；新run ID
   `thinking_default_20261007_v2`，入口 `scripts/run_s2_thinking_default_v2.py`，授权
@@ -28,7 +28,10 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
   `outputs/reports/s2_thinking_thinking_default_20261007_v2_approval_review.json`。
   新调用0，账本/响应尚不存在，主指标null，完整150条DoD未完成；不绕过自动审批。
 - 用户现已明确回复“授权将这150条法规文本及现有抽取提示词发送至 DeepSeek 官方 API 并运行”，
-  追加许可保存在同一证据；提交同一原命令复核执行，不扩大150次额度、不改冻结plan。
+  追加许可checkpoint `4adc622` 已推送并核验。同一原命令审批已接受且真实进程已启动，
+  首次账本确认12条started，当前进度以run目录账本/execution_summary为准。
+  当前执行中，主指标及DoD待完整150条结果验证；先前零调用拦截为历史，不再阻塞。
+  解除记录保存在同一approval_review；不扩大150次额度、不改冻结plan。
 - 本完整批次不批准low、不做多重复/独立未见测试、不启动全量套件。先前单例
   结果commit `d046905` 已推送并核验，旧16K批次仍作为停批诊断保留。
 
