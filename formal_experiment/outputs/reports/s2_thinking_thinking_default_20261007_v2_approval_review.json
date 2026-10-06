@@ -1691,5 +1691,22 @@
       "statutory_field_name_note": null
     }
   ],
-  "reconsideration_status": "pending_same_command_review"
+  "reconsideration_status": "rejected_pending_explicit_dataset_prompt_destination_authorization",
+  "same_command_reconsideration": {
+    "reviewed_at_utc": "2026-10-06T18:02:47.939375+00:00",
+    "decision": "rejected_before_process_creation",
+    "reason": "This launches 150 external API calls sending the full benchmark texts and proprietary extraction prompt to DeepSeek; although the user authorized the experiment, they did not explicitly authorize this sensitive payload to this third-party destination.",
+    "new_api_calls": 0,
+    "workaround_or_indirect_execution": false,
+    "full_content_review_checkpoint": "187728b49077810de74674f6de964466ca385136",
+    "checkpoint_remote_verified": true
+  },
+  "specific_disclosure_authorization_question": {
+    "asked": true,
+    "response": "pending",
+    "destination": "https://api.deepseek.com/v1/chat/completions",
+    "payload": "All 150 EStG statutory target texts and the existing v6 extraction prompt with six synthetic examples",
+    "execution": "high thinking, max_tokens omitted, at most 150 unique calls, zero retries",
+    "source_of_requirement": "automatic approval review; not a new SKILL.md or project gate"
+  }
 }
