@@ -1,6 +1,6 @@
 # LLM4BPC 完整实验主 Pipeline
 
-**文档版本**：3.7.40
+**文档版本**：3.7.41
 **状态**：ACTIVE — 全项目研究与任务分解的唯一主线
 **最后更新**：2026-10-06
 **方法学主干**：Sun et al. (2024)（三阶段方法主干）；Barrientos et al. (2026)（直接借鉴来源：LLM 结构化输出、验证、受控词汇、归一化与评估纪律）
@@ -11,7 +11,23 @@
 > `docs/PROJECT_AUDIT.md` 只记录实时进度；不要再创建新的日期版
 > `STATUS_*`、`HANDOFF_*` 或平行路线文档。
 
-## 2026-10-06 修订 3.7.40：S2-THINKING-SENSITIVITY-V1 开启思考150条，关闭条件复用
+## 2026-10-06 修订 3.7.41：S2-THINKING-SENSITIVITY-V1 同一失败样本 high 最大服务额度诊断
+
+- 用户追加指令：“给定一条数据特例，不设限制，看需要多少token”。独立授权
+  `configs/authorization/s2_thinking_single_high_provider_max_20261006_v1.json`，恰1个新调用、
+  0重试；仅estg_000002，原v6/high和其他参数不变，max_tokens从16384提升到服务允许的
+  最大393216。省略参数仍有64Ki默认上限，不能声称真正无限。未设置额外美元停止条件，
+  按服务最大生成额度高峰估算约USD1.57，已运行前说明。
+- run ID `high_provider_max_estg000002_20261006_v1`，入口
+  `scripts/run_s2_thinking_single_high_v1.py`。原high/16K截断证据独立保留；原150条仍停批，
+  low完整150方案仍未授权。本单例不重跑关闭组/Sun、不读.env、不发Gold、不改固定主表。
+- DoD：确认请求只改max_tokens；恰一次开始/完成账本；保存响应和完整usage，区分思考/
+  最终答案/含输入总量、结束原因与耗时；自然stop后才报告本次实际完成用量，如仍截断
+  只报告下界，不能推断最小所需预算或150条token分布。报告、manifest、实验事件与
+  checkpoint完整。准备核对已通过4项具名离线检查（0.42秒）、快速完整性通过；
+  当前仅已授权准备，等待checkpoint后执行，不跑全量测试。
+
+## 历史修订 3.7.40：S2-THINKING-SENSITIVITY-V1 开启思考150条，关闭条件复用
 
 - 用户在确认“只新增开启思考150条，关闭与Sun复用已有冻结结果”后明确回复“授权运行”。
   本批独立授权 `configs/authorization/s2_thinking_20261006_v1.json`；不借用其他批次额度。

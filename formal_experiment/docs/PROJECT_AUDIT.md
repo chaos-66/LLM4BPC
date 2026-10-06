@@ -9,7 +9,19 @@
 本文是唯一实时状态页，只记录“现在做到哪里、下一步做什么”。研究目标、完整
 Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见主 Pipeline。
 
-## 首条截断后停止，待恢复决定：S2-THINKING-SENSITIVITY-V1（2026-10-06）
+## 已追加授权单例 high 最大服务额度诊断：S2-THINKING-SENSITIVITY-V1（2026-10-06）
+
+- 用户要求“给定一条数据特例，不设限制，看需要多少token”，新授权恰1次、0重试，
+  同一estg_000002，原v6/high保持，仅max_tokens改为服务最大393216（不是无限；省略默认64Ki）。
+  单次最大峰价估算约USD1.57，已运行前说明，无额外美元停止条件。
+- run ID `high_provider_max_estg000002_20261006_v1`，入口
+  `scripts/run_s2_thinking_single_high_v1.py`，独立授权
+  `configs/authorization/s2_thinking_single_high_provider_max_20261006_v1.json`。
+  已通过4项具名离线核对（0.42秒）及快速完整性；checkpoint后执行，
+  保存思考/答案token和自然结束状态，不从单例外推150条。
+- 本次不批准low批次、不恢复原150条；既有16K截断证据、关闭组/Sun和固定主表保留。
+
+## 原150批次首条截断后停止，恢复方案未批准（2026-10-06）
 
 - 用户已明确授权只新跑开启思考150条；原关闭组与Sun新调用均为0。
 - 入口 `scripts/run_s2_thinking_sensitivity_v1.py`；run ID `thinking_on_20261006_v1`。

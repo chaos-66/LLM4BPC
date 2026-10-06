@@ -5811,3 +5811,17 @@
 - 仍存在 blocker：无
 - 备注：上一新检查发现git add复用属性变更前的LF暂存缓存，失败记录原样保留。只对本批首次新增的calls_ledger/raw_responses两文件重新应用-text暂存，不改工作区原始字节、不重算或改绑manifest，不触及其他旧内容。只重验失败的新具名节点；原3项检查不重复，非全量，零新API。批次仍停在1/150；恢复新150/累计151尚未授权。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-06T10:50:08.055574+00:00 - S2-THINKING-SENSITIVITY-V1：准备已追加授权的同一失败样本high服务最大生成额度单次诊断
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：4 passed in 0.42s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`5812155383dc13fc937af9d0c81822c74853c510`；相关未提交路径：22 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：用户明确要求单条不设限制观察token；只新调用1次、0重试，estg_000002原v6/high保持，只有max_tokens改为接口最大393216，省略仍默认64Ki，不能声称真正无限。约USD1.57峰价最大token估算已说明，不另设美元停止门限。先零API准备，绑定原失败请求和所有依赖，仅具名离线核对；原150条/low150不自动执行，关闭组/Sun零新调用，不读.env、不发Gold、不改用户已有修改或冻结表一/表二，非全量。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
