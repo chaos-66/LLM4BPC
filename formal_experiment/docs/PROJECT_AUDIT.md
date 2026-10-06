@@ -1,6 +1,6 @@
 # 项目实时状态（兼容文件名 PROJECT_AUDIT.md）
 
-**更新时间**：2026-10-05
+**更新时间**：2026-10-06
 **唯一活动目录**：`formal_experiment/`  
 **完整路线**：`docs/MASTER_PIPELINE.md`  
 **机器事实源**：`python formal_experiment/scripts/audit_project.py`（自动完整性检查）  
@@ -8,6 +8,21 @@
 
 本文是唯一实时状态页，只记录“现在做到哪里、下一步做什么”。研究目标、完整
 Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见主 Pipeline。
+
+## 执行准备：SEP-C3-PROMPT-SIMPLIFY-V1 v6/A/B 成对对照（2026-10-06）
+
+- 用户本轮明确授权 prompt 实验对照；固定同一 EStG-150、DeepSeek-V4-Pro-0813，
+  v6/A/B 各一次，最多 450 次、0 重试，USD 14.77 硬上限。预检已生成，源文件、
+  请求字节、预算及本轮授权绑定；新性能指标仍为 null。
+- 入口 `scripts/run_s2_prompt_simplification_v1.py`；唯一批次 `comparison_20261006_v1`。
+  只使用进程已有密钥，不读取 `.env`；本轮授权不扩展到六家新模型或 Rules+LLM。
+- 共享原后处理（显式 legacy policy）和五字段 pooled 评价，原始 JSON 合规率及用量
+  另列；保存逐样本字段变化。先锁定执行准备并做具名门禁检查，再启动真实调用。
+- 执行准备检查已通过：7 项具名离线检查，2.46 秒，非全量；批次快速完整性为 true。
+  请求配方/哈希、未授权不加载凭据、源绑定失效、中断/完成/中止不重发和调用上限
+  均已检查；此时真实 API=0，不能把程序检查当抽取效果证明。
+- 输入、Gold、候选、历史结果和已有用户修改保留；固定论文表一/表二不替换。
+  完整预检：`outputs/reports/s2_prompt_simplification_comparison_20261006_v1_preflight.json`。
 
 ## 已准备：S2-MODEL-API-SETUP 六家模型入口（2026-10-05；零真实 API）
 

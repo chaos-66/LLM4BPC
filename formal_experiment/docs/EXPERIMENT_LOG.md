@@ -5691,3 +5691,17 @@
 - 仍存在 blocker：无
 - 备注：用户单独批准本次填写状态检查覆盖旧禁读规则；只私有返回六家均已填写，无密钥值/元数据，无 .env 修改，API=0。Kimi/GLM 强制思考参数按官方指南更新；Qwen 保持 Max 0902 快照；旧 v1 预检保留但不能复用；33 项具名模拟检查，非全量。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-06T01:43:41.089864+00:00 - SEP-C3-PROMPT-SIMPLIFY-V1：锁定 v6/A/B 450 次成对对照预检及预算，验证请求与断点门禁
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：7 passed in 2.46s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`96c4ac05c3ef4ecfafae788cd75293dcd11bcf15`；相关未提交路径：20 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：用户已明确要求实验对照；本检查点只准备调用，不将准备当性能。唯一批次 comparison_20261006_v1，450 次、0 重试、USD14.77，进程密钥，不读.env；共享历史后处理/固定五字段评价，原 prompt/Gold/历史报告及已有用户修改未改。具名离线检查，非全量。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

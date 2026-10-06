@@ -71,3 +71,17 @@ output 和 manifest 均须位于 `outputs/development/s2_prompt_simplification_v
 Stage 3 授权，不追加八格重跑或取消的 Rules+LLM 实验。主口径仍为固定 coarse
 五字段 pooled micro-F1，modality 单列。未运行前不声称精简提高了性能，也不将
 整个 SEP-C3、正式发布或全量覆盖标为完成。
+
+## 2026-10-06 对照执行入口
+
+用户已明确要求对改动后的 prompt 进行实验对照。本轮唯一批次
+`comparison_20261006_v1` 为 v6/A/B 同一 EStG-150 各一次，450 次上限、0 重试、
+USD 14.77 上限。新的授权/请求/源哈希见
+`outputs/reports/s2_prompt_simplification_comparison_20261006_v1_preflight.json`；
+上方“未执行”及零调用是候选准备时的历史事实，当前实时状态只见 PROJECT_AUDIT。
+
+入口 `python formal_experiment/scripts/run_s2_prompt_simplification_v1.py --execute --allow-llm`。
+执行只使用进程已有 DeepSeek 密钥，不读取 `.env`；缺失则停。保留每条请求开始账本、
+原始响应、共享后处理预测和完整分母；中止/in-doubt/已完成批次不自动重发。
+三臂主口径为 pooled 五字段 micro-F1，原始 JSON、modality、用量另列。无额外模型
+或稳定性重复；B 的结果只能归于联合改动，不据此判断单句因果。

@@ -1,8 +1,8 @@
 # LLM4BPC 完整实验主 Pipeline
 
-**文档版本**：3.7.34
+**文档版本**：3.7.35
 **状态**：ACTIVE — 全项目研究与任务分解的唯一主线
-**最后更新**：2026-10-05
+**最后更新**：2026-10-06
 **方法学主干**：Sun et al. (2024)（三阶段方法主干）；Barrientos et al. (2026)（直接借鉴来源：LLM 结构化输出、验证、受控词汇、归一化与评估纪律）
 **当前实施优先级**：2026-09-25 的 S3-TABLE3-V4-R2 已完成 R1 协议偏差的机械纠正与原因定位：strict 顺序投影、失败原因分类、精确 ID/输出绑定检查、零新增 API。但表三仍未验收，因为 Sun/Ours/Winter 的 order 分母仍全为 0；下一步须由 Codex 决定是否以明确的 after/temporal 扩展协议解决映射与原生覆盖问题，不得自行改算法、改样本或追分。下方历史安排不构成扩大实验、写论文或新增 API 的指令。
 
@@ -10,6 +10,25 @@
 > 本文定义“要完成什么、先后依赖是什么、每一步怎样算完成”。
 > `docs/PROJECT_AUDIT.md` 只记录实时进度；不要再创建新的日期版
 > `STATUS_*`、`HANDOFF_*` 或平行路线文档。
+
+## 2026-10-06 修订 3.7.35：SEP-C3-PROMPT-SIMPLIFY-V1 三臂成对实测授权与执行准备
+
+- 用户明确要求“对改动后的prompt进行实验对照”，本次具体化为同一 EStG-150 上
+  v6/A/B 各一次；最多 450 次，0 重试，4096 输出上限。沿用 DeepSeek-V4-Pro-0813
+  的 `deepseek-v4-pro`、temperature=0/top_p=1、关闭 thinking、无 json_object/seed。
+- 预检 `outputs/reports/s2_prompt_simplification_comparison_20261006_v1_preflight.json`
+  绑定全部 450 个请求、原文/Gold/后处理/评价器/代码哈希；费用按 2026-10-06 核对
+  的官方高峰价及输入全未命中缓存计算，硬上限 USD 14.77、input cap 3,791,252、
+  output cap 1,843,200 tokens。仅此唯一 run ID，不借用其他任务或旧额度。
+- 入口 `scripts/run_s2_prompt_simplification_v1.py`：默认零调用；真实执行要求已保存
+  本轮授权、源文件未变及 `--execute --allow-llm`。只私有使用进程中的 DeepSeek key，
+  不读取 `.env`。每条先记录 started；in-doubt/已完成/中止批次不自动重发；失败保留。
+- 主指标五字段 pooled micro-F1，modality 单列；共享历史 adapter 与显式 legacy 坐标
+  后处理。同一输入三臂最多并发 3 条、提交顺序轮换；另记原始 JSON、token 用量与
+  逐样本字段差异，不改原 prompt/Gold/评价器或固定表一/表二。
+- 实测 DoD：450 次完成、150/150 分母每臂保留、指标/失败/用量/差异与原始响应可
+  追溯，具名验证、experiment_run、Git checkpoint 均完成。当前为执行准备，尚无
+  新性能结果；每臂一次的开发性回顾实验不提供稳定性或独立泛化结论。
 
 ## 2026-10-05 修订 3.7.34：S2-MODEL-API-SETUP 用户指定型号与限目的密钥状态检查
 
@@ -2649,6 +2668,8 @@ development-only；S3.7 formal Oracle not started；Gold Rule Records absent。
 预测和结果不得因目录整理被删除。恢复 `_retired/` 材料需要用户批准和日志事件。
 
 ## 15. Pipeline 变更日志
+
+| 3.7.35 | 2026-10-06 | SEP-C3-PROMPT-SIMPLIFY-V1：用户明确授权 v6/A/B 同批 150×3 对照；绑定唯一 run ID、450 次/0 重试、USD 14.77 与共享请求/后处理/评价口径；先完成离线执行准备，不将准备当性能结论 | 新预检、具名检查、change 事件与 scoped checkpoint；实际运行状态见 PROJECT_AUDIT |
 
 | 3.7.6 | 2026-09-14 | **SEP-C1-B：前人比较范围、通用题名与完整 E/S/J 2^3 消融预算准备（零 API）**。论文 §2.3 固定三层前人比较注册与 Sun/Winter 版本边界；题目节固定推荐中英文题名与两个备选，摘要/RQ 统一自然语言合规需求术语；ABLATION_MATRIX 登记 000-111 八组合、共同输出接口、旧四臂仅作历史单因素证据的不可拼接理由，并准备同批次 8x150x2=2400 calls 主方案、非推荐复用 1800 calls 变体与可选第三重复 +1200 calls 的 input/output/USD/CNY caps、失败计数和主效应/交互 bootstrap 协议；主张矩阵新增 C44/C45/C46；API_AUTHORIZATION_REQUEST §14 给出授权草案。真实实验/API/测试=0；所有组合待运行；价格快照 2026-08-30 未联网复核。 | 文档/预算准备、价格与扣除条件、授权草案、主张矩阵、FILE_CATALOG；scoped Git commits/push；零 API |
 | 3.7.1 | 2026-09-12 | **SEP-C0 修订：按依赖推进，持续诊断与修复**。按用户纠正撤销 3.7.0 的阶段起止日、预设实验停止日和投稿就绪日，仅保留 9 月 30 日导师初稿、10 月 31 日 CSCWD 截止两个最晚目标。条件满足即开始、完成即推进；新增问题归入原任务，定位、最小修复、相关验证、论文同步后继续，不重跑有效证据、不以月份阻塞工作。同步实时派工和手册，任务 ID、实验门禁及既有授权保持有效。 | 文档内容、链接及差异检查；scoped Git commit / push；未运行实验或调用 API |
