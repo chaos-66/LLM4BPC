@@ -1,0 +1,103 @@
+{
+  "arm": "D-full-0813",
+  "repeat_id": "repeat-01",
+  "evaluation": {
+    "evaluator": "sun_literal_overlap@2.0.0",
+    "metrics": {
+      "schema_version": "sun_literal_overlap_evaluation@2.0.0",
+      "dataset_id": "independently_reconstructed_estg_150_v1",
+      "method_id": "direct_llm",
+      "sample_count": 150,
+      "invalid_attempt_count": 0,
+      "evaluation_unit": "statement",
+      "match_rule": "independent_same_field_any_nonempty_character_span_intersection",
+      "assignment": "none_independent_overlap_coverage",
+      "clause_alignment_required": false,
+      "overlap_threshold": "strictly_greater_than_zero_characters",
+      "modality_policy": "evidence_span_extraction_only_label_ignored",
+      "reporting_role": "primary_sun_phrase_extraction_metric",
+      "per_field": {
+        "modality": {
+          "ground_truth": 231,
+          "extracted": 238,
+          "matched_predictions": 231,
+          "matched_ground_truth": 200,
+          "misclassified": 7,
+          "missed": 31,
+          "precision": 0.9705882352941176,
+          "recall": 0.8658008658008658,
+          "f1": 0.9152048810926992
+        },
+        "actor": {
+          "ground_truth": 48,
+          "extracted": 82,
+          "matched_predictions": 45,
+          "matched_ground_truth": 44,
+          "misclassified": 37,
+          "missed": 4,
+          "precision": 0.5487804878048781,
+          "recall": 0.9166666666666666,
+          "f1": 0.6865464632454924
+        },
+        "action": {
+          "ground_truth": 247,
+          "extracted": 225,
+          "matched_predictions": 202,
+          "matched_ground_truth": 204,
+          "misclassified": 23,
+          "missed": 43,
+          "precision": 0.8977777777777778,
+          "recall": 0.8259109311740891,
+          "f1": 0.8603461594671901
+        },
+        "condition": {
+          "ground_truth": 214,
+          "extracted": 138,
+          "matched_predictions": 125,
+          "matched_ground_truth": 148,
+          "misclassified": 13,
+          "missed": 66,
+          "precision": 0.9057971014492754,
+          "recall": 0.6915887850467289,
+          "f1": 0.78433035146479
+        },
+        "constraint": {
+          "ground_truth": 302,
+          "extracted": 254,
+          "matched_predictions": 166,
+          "matched_ground_truth": 166,
+          "misclassified": 88,
+          "missed": 136,
+          "precision": 0.6535433070866141,
+          "recall": 0.5496688741721855,
+          "f1": 0.5971223021582733
+        },
+        "exception": {
+          "ground_truth": 13,
+          "extracted": 9,
+          "matched_predictions": 7,
+          "matched_ground_truth": 7,
+          "misclassified": 2,
+          "missed": 6,
+          "precision": 0.7777777777777778,
+          "recall": 0.5384615384615384,
+          "f1": 0.6363636363636364
+        }
+      },
+      "overall": {
+        "ground_truth": 1055,
+        "extracted": 946,
+        "matched_predictions": 776,
+        "matched_ground_truth": 769,
+        "misclassified": 170,
+        "missed": 286,
+        "precision": 0.8202959830866807,
+        "recall": 0.728909952606635,
+        "f1": 0.7719075848848173
+      }
+    },
+    "denominator": 150,
+    "failed_count": 0
+  },
+  "denominator": 150
+}

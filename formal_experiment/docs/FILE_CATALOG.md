@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
 **生成日期**：2026-10-06
-**收录文件**：3190 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**收录文件**：3212 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -1457,6 +1457,25 @@
 | `outputs/evidence/s2_prompt_simplification_v1/baseline_snapshot.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/s2_prompt_simplification_v1/candidate_A_system.diff` | 活动 | 项目文件 |
 | `outputs/evidence/s2_prompt_simplification_v1/candidate_B_system.diff` | 活动 | 项目文件 |
+| `outputs/evidence/s2_prompt_simplification_v1/comparison_20261006_v2/.gitattributes` | 活动 | 项目文件 |
+| `outputs/evidence/s2_prompt_simplification_v1/comparison_20261006_v2/A_canonical_predictions.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_prompt_simplification_v1/comparison_20261006_v2/A_evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_prompt_simplification_v1/comparison_20261006_v2/authorization.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_prompt_simplification_v1/comparison_20261006_v2/B_canonical_predictions.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_prompt_simplification_v1/comparison_20261006_v2/B_evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_prompt_simplification_v1/comparison_20261006_v2/budget.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_prompt_simplification_v1/comparison_20261006_v2/calls_ledger.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_prompt_simplification_v1/comparison_20261006_v2/execution_summary.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_prompt_simplification_v1/comparison_20261006_v2/paired_sample_changes.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_prompt_simplification_v1/comparison_20261006_v2/plan.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_prompt_simplification_v1/comparison_20261006_v2/raw_responses.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_prompt_simplification_v1/comparison_20261006_v2/run_manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_prompt_simplification_v1/comparison_20261006_v2/v6_canonical_predictions.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_prompt_simplification_v1/comparison_20261006_v2/v6_evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_prompt_simplification_v1/comparison_20261006_v2/v6_historical_canonical_predictions.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_prompt_simplification_v1/comparison_20261006_v2/v6_historical_evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_prompt_simplification_v1/comparison_20261006_v2/v6_historical_manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/s2_prompt_simplification_v1/comparison_20261006_v2/v6_historical_raw_responses.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/s34_winter_stage3_development_v3_clean/capsule_manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/s34_winter_stage3_development_v3_clean/config_snapshot.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/s34_winter_stage3_development_v3_clean/error_analysis.md` | 活动 | 说明、规范或研究文档 |
@@ -1979,6 +1998,8 @@
 | `outputs/reports/s2_llm_batches_offline_readiness_v1.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/s2_prompt_simplification_comparison_20261006_v1_execution_blocker.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s2_prompt_simplification_comparison_20261006_v1_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/s2_prompt_simplification_comparison_20261006_v2.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/s2_prompt_simplification_comparison_20261006_v2.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/s2_prompt_simplification_comparison_20261006_v2_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s2_prompt_simplification_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s32_s33_gold_annotation_blank_v1.manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
@@ -3196,6 +3217,7 @@
 | `tests/test_s2_13_s3_7_transition_readiness_v7.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_s2_13_s3_7_transition_readiness_v8.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_s2_13_s3_7_transition_readiness_v9.py` | 活动 | Python 实现、脚本或测试 |
+| `tests/test_s2_prompt_simplification_results_v2.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_s2_prompt_simplification_run_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_s2_prompt_simplification_run_v2.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_s2_prompt_simplification_v1.py` | 活动 | Python 实现、脚本或测试 |

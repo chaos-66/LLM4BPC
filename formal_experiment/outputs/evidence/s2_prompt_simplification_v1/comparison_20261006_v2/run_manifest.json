@@ -1,0 +1,161 @@
+{
+  "schema_version": "s2_prompt_simplification_run_manifest@1.0.0",
+  "run_id": "comparison_20261006_v2",
+  "completed_at_utc": "2026-10-06T02:29:25.711889+00:00",
+  "claim_scope": "development_retrospective_fixed_estg150",
+  "execution_git_commit": "b8c27747d1bca7f5037c1b8487db7c6679fdd279",
+  "status": "succeeded",
+  "actual_new_api_calls": 300,
+  "new_calls_by_arm": {
+    "A": 150,
+    "B": 150
+  },
+  "baseline_reuse": {
+    "arm": "v6",
+    "source_arm": "D-full-0813",
+    "repeat_id": "repeat-01",
+    "source_root": "outputs/development/barrientos_ablation_suite_v2/D-full-0813/repeat-01",
+    "prompt_name": "direct_llm_sun_record_prompt_v6_d1r1_2026_08_05",
+    "samples": 150,
+    "new_api_calls": 0,
+    "verified_request_fingerprints": 150,
+    "historical_estimated_usd": 1.35147804,
+    "comparison_scope": "historical cross-batch baseline; server changes cannot be excluded"
+  },
+  "model": {
+    "id": "deepseek-v4-pro",
+    "documented_release": "DeepSeek-V4-Pro-0813",
+    "base_url": "https://api.deepseek.com/v1"
+  },
+  "sampling": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 4096,
+    "retry": 0,
+    "thinking": {
+      "type": "disabled"
+    },
+    "stream": false,
+    "response_format": null,
+    "seed": null
+  },
+  "budget": {
+    "planned_calls": 300,
+    "call_cap": 300,
+    "input_token_cap": 2469549,
+    "output_token_cap": 1228800,
+    "usd_cost_cap": 9.76,
+    "price_snapshot": {
+      "currency": "USD",
+      "input_cache_miss_per_million": 1.32,
+      "output_per_million": 3.96,
+      "mode_used_for_gate": "peak_all_input_cache_miss",
+      "verified_date_local": "2026-10-06",
+      "source_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "corroborating_cny_url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+    },
+    "estimated_input_tokens": 1646366,
+    "estimate_policy": "ceil(serialized request UTF-8 bytes/3); input cap 1.5x; USD cap 1.2x maximum token budget",
+    "missing_usage_policy": "reserve estimated input and full 4096 output; abort further sends; cost remains an upper estimate"
+  },
+  "token_usage": {
+    "prompt_tokens": 1222988,
+    "completion_tokens": 239396,
+    "prompt_cache_hit_tokens": 294912,
+    "prompt_cache_miss_tokens": 928076
+  },
+  "cost_estimates_usd": {
+    "peak_ignore_cache": 2.56235232,
+    "peak_cache_aware": 2.186044608,
+    "offpeak_cache_aware": 1.093022304,
+    "account_charge_verified": false,
+    "price_source": "https://api-docs.deepseek.com/quick_start/pricing/",
+    "price_verified_date": "2026-10-06"
+  },
+  "runtime_seconds_api": 361.125,
+  "failed_by_arm": {
+    "v6": 0,
+    "A": 0,
+    "B": 0
+  },
+  "overall_f1": {
+    "v6": 0.8224493117168078,
+    "A": 0.8218192828959295,
+    "B": 0.8210327163688936
+  },
+  "raw_strict_json_objects": {
+    "v6": 107,
+    "A": 7,
+    "B": 6
+  },
+  "primary_metric": "coarse_five_field_micro_f1",
+  "source_bindings": {
+    "data/input/estg150_formal_inference_input_v2.json": "52a73aa1109970b6c4fbc17214b0828ed0dd64b330001e884cdc803b1ce81dc2",
+    "data/gold/stage2/estg150_formal_gold_v1.json": "c31a514a6b58b640ed020c380c0b7bed136dc9574b2c98c98dedec1ecdb57100",
+    "scripts/run_s2_prompt_simplification_v2.py": "3d60a839321574e4f0da77e6d75264c3fa913d7ab197f7a18f35f06bddacf3d8",
+    "configs/stage2_evaluator_s210_v3.json": "28ce332564c5d10da08dea515aefe31cc2aacd91b6c6877aa1bfebe44f39ae7f",
+    "configs/schemas/stage2_prediction.schema.json": "d94941c1f7ea90f768d7244bdb72ac3c588b727e0f1fcb4e4732ef8b239259ea",
+    "scripts/run_sep_c3_modular_ablation_v1.py": "f916799de0e7edebdfe4ec06c1e365b0924405fd6d374a07571ad59469747f29",
+    "scripts/run_barrientos_ablation_suite_v2.py": "df5e122dd1732d50015413520c0a28b07412ca9883cae51d6bf40940aae9bced",
+    "src/bpc_hybrid/d1_schema_adapter.py": "457d01cfcc663e8594a163db603c2e1d31cbffce4523d3ed7cdfaf16328edbf3",
+    "src/bpc_hybrid/d1_span_canonicalizer.py": "47d87ed5779e60bcdf7adb7f7fb289239ac036c5f1d60d1cc50395624be88668",
+    "src/bpc_hybrid/llm_client.py": "232284dadc2b1f867ee885db1d111360f005b29a52662619af2dffee4f128e24",
+    "src/bpc_hybrid/h1_transport.py": "5e54a41fa48c01377295b2ac6422e27852a40dc4fbd5cb7df90d6651ddfe8be9",
+    "src/bpc_hybrid/sep_c3_modular_evaluation.py": "31363c2e0bad27ebbe2b9e1fa56b5aae3cbe2e1e5c12204627e173a8db8b5330",
+    "src/bpc_hybrid/g04_coarse_view.py": "a8a867964036e77d5fa83f9f430b0ea7dced9fd3ba2a170131fb09183a49ae7d",
+    "src/bpc_hybrid/formal_stage2_evaluation.py": "28be155401ff44479771c0c1901e170c3064e076b36f24cfc094f257ab87b3a0",
+    "src/bpc_hybrid/stage2_sun_literal_overlap.py": "a6df234611ef63ab9d47a3d5e886c3a711ccce8c6e5d8e164e42826bef978de7",
+    "prompts/sun_compat/direct_llm_sun_record_prompt_v6_d1r1_2026_08_05.md": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+    "prompts/sun_compat/simplification_v1/direct_llm_json_light_v1.md": "f2ab7a283ff3b223a050d8879dcb6a918599795fa45325fbca5c66a663316d3c",
+    "prompts/sun_compat/simplification_v1/direct_llm_json_semantic_light_v1.md": "081e849773f513fb19084ce34c5701690eedb3e4c3a6f9e0aa7b196711f4ac2c",
+    "configs/authorization/s2_prompt_simplification_20261006_v2.json": "c9b71f3e4dacf89e05b2f45fa75d2494f2f0c760c9bf72337413c8533768c215",
+    "outputs/development/barrientos_ablation_suite_v2/D-full-0813/repeat-01/manifest.json": "c2cbde7cfcf452e2ebe63a89f930a2627d8fec9915228d63c42ccfc2d394fd05",
+    "outputs/development/barrientos_ablation_suite_v2/D-full-0813/repeat-01/raw_responses.jsonl": "b45ea6ef530c80162bd2b60fb7877c8728beabcdecc772fe8ff9e338d3bf5dce",
+    "outputs/development/barrientos_ablation_suite_v2/D-full-0813/repeat-01/canonical_predictions.jsonl": "2dc036c3c72f54e194ad9882aac5b78f2fd0e0a7f9fbdf44dc73baa31ce23195",
+    "outputs/development/barrientos_ablation_suite_v2/D-full-0813/repeat-01/evaluation.json": "0259150657253cce207ae37ed615bf8555973db037daea30532b8b0289c4e7db"
+  },
+  "preserved_files": {
+    "outputs/reports/stage2_table1_paper_final_v1.json": "05a601d16034db6bc6981122651ba4549aa686be74da6a9e0b32d8dc076bd941",
+    "outputs/reports/stage2_table1_paper_final_v1.md": "113796c3f5c6c67545e73a2e28e82ebc72eafa2e7b58812aa2affe85a599ff75",
+    "outputs/reports/stage2_table2_prompt_ablation_paper_final_v2.json": "3725eb574747fc871e5f2f78978c30a2f19252563262e44e34614343b44311b5",
+    "outputs/reports/stage2_table2_prompt_ablation_paper_final_v2.md": "e3c5da480c77c18bc124f56b2bbea8184441d2f9d8229ff6e9bcf585b6f114f0",
+    "outputs/reports/v6_factorial_ablation_v1.json": "3725eb574747fc871e5f2f78978c30a2f19252563262e44e34614343b44311b5",
+    "outputs/reports/v6_factorial_ablation_v1.md": "e3c5da480c77c18bc124f56b2bbea8184441d2f9d8229ff6e9bcf585b6f114f0",
+    "outputs/reports/sep_c3_modular_ablation_v1.json": "092bfaa7a641077ae1e1d82c6032fb390d7d1958c57c3bd81ff9d4c231c9f5b1",
+    "outputs/reports/sep_c3_modular_ablation_v1.md": "c05ee34359de1c541fcac61ba57ee8e41e2efbe7f1a5eec7127edb9ac462b0e8",
+    "data/development/human_review/stage1_gdpr7_human_correction_v1.json": "6a9c055a8f92c04aa5c44c92d4653bad128f048103fd16584754c121cb0ba18e"
+  },
+  "preserved_files_unchanged": true,
+  "evidence_artifact_bindings": {
+    "plan.json": "48c69963b6a0378a1ef4dd3a8926fbf6904fa9b6a3ab7422c974989ecae64978",
+    "budget.json": "45499288ed646ae4785da025d9c0a279a14ba5bdda5c871e16bc45639c68aa5b",
+    "execution_summary.json": "a662205840adb45e5354781e33d9e2b3ffa16d1569840add91d844393dbcaea5",
+    "raw_responses.jsonl": "9a7c9cceac1027d8393b2fc51c6dbce3db8ca8f1d85d234c4e1b0bee9ed18694",
+    "calls_ledger.jsonl": "5bdaf66aee79273c4bd73086f3606ed934e605e9611dfcd26c46a79b41fdebae",
+    "v6_historical_manifest.json": "c2cbde7cfcf452e2ebe63a89f930a2627d8fec9915228d63c42ccfc2d394fd05",
+    "v6_historical_raw_responses.jsonl": "b45ea6ef530c80162bd2b60fb7877c8728beabcdecc772fe8ff9e338d3bf5dce",
+    "v6_historical_canonical_predictions.jsonl": "2dc036c3c72f54e194ad9882aac5b78f2fd0e0a7f9fbdf44dc73baa31ce23195",
+    "v6_historical_evaluation.json": "0259150657253cce207ae37ed615bf8555973db037daea30532b8b0289c4e7db",
+    "v6_canonical_predictions.jsonl": "7e3b63d0521eb48b0bf74d281bee1786d0221a88e9ad906d7ed86490f34851d0",
+    "v6_evaluation.json": "0d0ea80a662d782b50e4161a99861785eb25d0e4ecadd950ea55cb59edf1609a",
+    "A_canonical_predictions.jsonl": "b2e8f1e020246a3cbf4e90dbf89b72db1ef0d70bbc0d0ef9c9a570524ac75f3a",
+    "A_evaluation.json": "d549c7e67aad87b2b51bba42fe1a586ccf5e418c84293b7351d84d667c0943d5",
+    "B_canonical_predictions.jsonl": "8587ad1af9e9de32d4dadd97eb1ae8243868d2a3adad6e046b526ced9514208e",
+    "B_evaluation.json": "032e9a6fa3039ac5e6baeba082c8642d3fe88aeee030d2f2d87ae58aaa5afa07",
+    "paired_sample_changes.json": "469230ee3e4caa108e7b1a2e33d10ab1cd553d86e359da79a2d37ca52162787d",
+    "authorization.json": "c9b71f3e4dacf89e05b2f45fa75d2494f2f0c760c9bf72337413c8533768c215"
+  },
+  "report_bindings": {
+    "outputs/reports/s2_prompt_simplification_comparison_20261006_v2.json": "3fc65228fb4797f734391f55d58cedd2aa6f63eac27dc2bf44f5e4a21681041a",
+    "outputs/reports/s2_prompt_simplification_comparison_20261006_v2.md": "f55481f73cca2a616e4976f8a4385e81a548c6490a0fd099cb0601d9ccf84aa3"
+  },
+  "project_env_read": false,
+  "runtime_gold_access": false,
+  "gold_sent": false,
+  "retry": 0,
+  "limitations": [
+    "one new repeat per A/B; historical v6 reused, cross-batch descriptive comparison",
+    "B combines wording compression with semantic rule changes",
+    "no replacement of fixed paper Table 1/Table 2; no Rules+LLM; no new model families"
+  ]
+}

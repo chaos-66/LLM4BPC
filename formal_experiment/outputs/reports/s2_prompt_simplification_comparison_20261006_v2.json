@@ -1,0 +1,318 @@
+{
+  "schema_version": "s2_prompt_simplification_result@1.0.0",
+  "run_id": "comparison_20261006_v2",
+  "status": "complete",
+  "claim_scope": "development_retrospective_fixed_estg150",
+  "primary_metric": "coarse_five_field_micro_f1",
+  "model": {
+    "id": "deepseek-v4-pro",
+    "documented_release": "DeepSeek-V4-Pro-0813",
+    "base_url": "https://api.deepseek.com/v1"
+  },
+  "sampling": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 4096,
+    "retry": 0,
+    "thinking": {
+      "type": "disabled"
+    },
+    "stream": false,
+    "response_format": null,
+    "seed": null
+  },
+  "execution": {
+    "run_id": "comparison_20261006_v2",
+    "complete": true,
+    "execution_git_commit": "b8c27747d1bca7f5037c1b8487db7c6679fdd279",
+    "actual_calls": 300,
+    "completed_call_batches": 50,
+    "new_calls_by_arm": {
+      "A": 150,
+      "B": 150
+    },
+    "budget_gate": {
+      "calls_made": 300,
+      "input_tokens": 1222988,
+      "output_tokens": 239396,
+      "cost_usd": 2.56235232,
+      "missing_usage_calls": 0,
+      "call_cap": 300,
+      "input_token_cap": 2469549.0,
+      "output_token_cap": 1228800.0,
+      "usd_cost_cap": 9.76,
+      "aborted": false,
+      "abort_reason": null
+    },
+    "abort_reason": null,
+    "usage_unknown_calls": 0,
+    "runtime_seconds_this_invocation": 361.125,
+    "project_env_read": false,
+    "runtime_gold_access": false
+  },
+  "plan_sha256": "48c69963b6a0378a1ef4dd3a8926fbf6904fa9b6a3ab7422c974989ecae64978",
+  "arms": {
+    "v6": {
+      "prompt_name": "direct_llm_sun_record_prompt_v6_d1r1_2026_08_05",
+      "denominator": 150,
+      "historical_reuse": true,
+      "new_api_calls": 0,
+      "overall_precision": 0.8149717514124294,
+      "overall_recall": 0.8300653594771242,
+      "overall_f1": 0.8224493117168078,
+      "mean_five_field_f1": 0.7850304424814778,
+      "modality_macro_f1": 0.7537201079506458,
+      "failed_count": 0,
+      "per_field": {
+        "actor": {
+          "ground_truth": 41,
+          "extracted": 82,
+          "matched_predictions": 47,
+          "matched_ground_truth": 38,
+          "misclassified": 35,
+          "missed": 3,
+          "precision": 0.573170731707317,
+          "recall": 0.926829268292683,
+          "f1": 0.7083085465000991
+        },
+        "action": {
+          "ground_truth": 150,
+          "extracted": 225,
+          "matched_predictions": 211,
+          "matched_ground_truth": 135,
+          "misclassified": 14,
+          "missed": 15,
+          "precision": 0.9377777777777778,
+          "recall": 0.9,
+          "f1": 0.9185006045949216
+        },
+        "condition": {
+          "ground_truth": 122,
+          "extracted": 138,
+          "matched_predictions": 126,
+          "matched_ground_truth": 95,
+          "misclassified": 12,
+          "missed": 27,
+          "precision": 0.9130434782608695,
+          "recall": 0.7786885245901639,
+          "f1": 0.840530861596798
+        },
+        "constraint": {
+          "ground_truth": 135,
+          "extracted": 254,
+          "matched_predictions": 186,
+          "matched_ground_truth": 106,
+          "misclassified": 68,
+          "missed": 29,
+          "precision": 0.7322834645669292,
+          "recall": 0.7851851851851852,
+          "f1": 0.7578121997155707
+        },
+        "exception": {
+          "ground_truth": 11,
+          "extracted": 9,
+          "matched_predictions": 7,
+          "matched_ground_truth": 7,
+          "misclassified": 2,
+          "missed": 4,
+          "precision": 0.7777777777777778,
+          "recall": 0.6363636363636364,
+          "f1": 0.7000000000000001
+        }
+      },
+      "raw_strict_json_objects": 107,
+      "raw_exact_top_level_keys": 107,
+      "raw_fenced_responses": 43,
+      "input_tokens": 657094,
+      "output_tokens": 122251,
+      "delta_overall_vs_v6": 0.0
+    },
+    "A": {
+      "prompt_name": "simplification_v1/direct_llm_json_light_v1",
+      "denominator": 150,
+      "historical_reuse": false,
+      "new_api_calls": 150,
+      "overall_precision": 0.8095909732016925,
+      "overall_recall": 0.8344226579520697,
+      "overall_f1": 0.8218192828959295,
+      "mean_five_field_f1": 0.8019008048814905,
+      "modality_macro_f1": 0.7568528387943109,
+      "failed_count": 0,
+      "per_field": {
+        "actor": {
+          "ground_truth": 41,
+          "extracted": 94,
+          "matched_predictions": 44,
+          "matched_ground_truth": 38,
+          "misclassified": 50,
+          "missed": 3,
+          "precision": 0.46808510638297873,
+          "recall": 0.926829268292683,
+          "f1": 0.6220238095238096
+        },
+        "action": {
+          "ground_truth": 150,
+          "extracted": 225,
+          "matched_predictions": 213,
+          "matched_ground_truth": 137,
+          "misclassified": 12,
+          "missed": 13,
+          "precision": 0.9466666666666667,
+          "recall": 0.9133333333333333,
+          "f1": 0.9297013142174433
+        },
+        "condition": {
+          "ground_truth": 122,
+          "extracted": 134,
+          "matched_predictions": 124,
+          "matched_ground_truth": 92,
+          "misclassified": 10,
+          "missed": 30,
+          "precision": 0.9253731343283582,
+          "recall": 0.7540983606557377,
+          "f1": 0.831002331002331
+        },
+        "constraint": {
+          "ground_truth": 135,
+          "extracted": 246,
+          "matched_predictions": 184,
+          "matched_ground_truth": 107,
+          "misclassified": 62,
+          "missed": 28,
+          "precision": 0.7479674796747967,
+          "recall": 0.7925925925925926,
+          "f1": 0.7696337125210118
+        },
+        "exception": {
+          "ground_truth": 11,
+          "extracted": 10,
+          "matched_predictions": 9,
+          "matched_ground_truth": 9,
+          "misclassified": 1,
+          "missed": 2,
+          "precision": 0.9,
+          "recall": 0.8181818181818182,
+          "f1": 0.8571428571428572
+        }
+      },
+      "raw_strict_json_objects": 7,
+      "raw_exact_top_level_keys": 7,
+      "raw_fenced_responses": 143,
+      "input_tokens": 634294,
+      "output_tokens": 119146,
+      "delta_overall_vs_v6": -0.000630028820878259
+    },
+    "B": {
+      "prompt_name": "simplification_v1/direct_llm_json_semantic_light_v1",
+      "denominator": 150,
+      "historical_reuse": false,
+      "new_api_calls": 150,
+      "overall_precision": 0.8251121076233184,
+      "overall_recall": 0.8169934640522876,
+      "overall_f1": 0.8210327163688936,
+      "mean_five_field_f1": 0.7853808247145557,
+      "modality_macro_f1": 0.7417501970494336,
+      "failed_count": 0,
+      "per_field": {
+        "actor": {
+          "ground_truth": 41,
+          "extracted": 62,
+          "matched_predictions": 43,
+          "matched_ground_truth": 36,
+          "misclassified": 19,
+          "missed": 5,
+          "precision": 0.6935483870967742,
+          "recall": 0.8780487804878049,
+          "f1": 0.7749687108886107
+        },
+        "action": {
+          "ground_truth": 150,
+          "extracted": 223,
+          "matched_predictions": 211,
+          "matched_ground_truth": 138,
+          "misclassified": 12,
+          "missed": 12,
+          "precision": 0.9461883408071748,
+          "recall": 0.92,
+          "f1": 0.9329104190695886
+        },
+        "condition": {
+          "ground_truth": 122,
+          "extracted": 141,
+          "matched_predictions": 127,
+          "matched_ground_truth": 94,
+          "misclassified": 14,
+          "missed": 28,
+          "precision": 0.900709219858156,
+          "recall": 0.7704918032786885,
+          "f1": 0.8305273410324198
+        },
+        "constraint": {
+          "ground_truth": 135,
+          "extracted": 233,
+          "matched_predictions": 164,
+          "matched_ground_truth": 100,
+          "misclassified": 69,
+          "missed": 35,
+          "precision": 0.703862660944206,
+          "recall": 0.7407407407407407,
+          "f1": 0.721830985915493
+        },
+        "exception": {
+          "ground_truth": 11,
+          "extracted": 10,
+          "matched_predictions": 7,
+          "matched_ground_truth": 7,
+          "misclassified": 3,
+          "missed": 4,
+          "precision": 0.7,
+          "recall": 0.6363636363636364,
+          "f1": 0.6666666666666666
+        }
+      },
+      "raw_strict_json_objects": 6,
+      "raw_exact_top_level_keys": 6,
+      "raw_fenced_responses": 144,
+      "input_tokens": 588694,
+      "output_tokens": 120250,
+      "delta_overall_vs_v6": -0.0014165953479141624
+    }
+  },
+  "limitations": [
+    "one new repeat per A/B; historical v6 reused, cross-batch descriptive comparison",
+    "B combines wording compression with semantic rule changes",
+    "no replacement of fixed paper Table 1/Table 2; no Rules+LLM; no new model families"
+  ],
+  "baseline_reuse": {
+    "arm": "v6",
+    "source_arm": "D-full-0813",
+    "repeat_id": "repeat-01",
+    "source_root": "outputs/development/barrientos_ablation_suite_v2/D-full-0813/repeat-01",
+    "prompt_name": "direct_llm_sun_record_prompt_v6_d1r1_2026_08_05",
+    "samples": 150,
+    "new_api_calls": 0,
+    "verified_request_fingerprints": 150,
+    "historical_estimated_usd": 1.35147804,
+    "comparison_scope": "historical cross-batch baseline; server changes cannot be excluded"
+  },
+  "artifact_bindings": {
+    "plan.json": "48c69963b6a0378a1ef4dd3a8926fbf6904fa9b6a3ab7422c974989ecae64978",
+    "budget.json": "45499288ed646ae4785da025d9c0a279a14ba5bdda5c871e16bc45639c68aa5b",
+    "execution_summary.json": "a662205840adb45e5354781e33d9e2b3ffa16d1569840add91d844393dbcaea5",
+    "raw_responses.jsonl": "9a7c9cceac1027d8393b2fc51c6dbce3db8ca8f1d85d234c4e1b0bee9ed18694",
+    "calls_ledger.jsonl": "5bdaf66aee79273c4bd73086f3606ed934e605e9611dfcd26c46a79b41fdebae",
+    "v6_historical_manifest.json": "c2cbde7cfcf452e2ebe63a89f930a2627d8fec9915228d63c42ccfc2d394fd05",
+    "v6_historical_raw_responses.jsonl": "b45ea6ef530c80162bd2b60fb7877c8728beabcdecc772fe8ff9e338d3bf5dce",
+    "v6_historical_canonical_predictions.jsonl": "2dc036c3c72f54e194ad9882aac5b78f2fd0e0a7f9fbdf44dc73baa31ce23195",
+    "v6_historical_evaluation.json": "0259150657253cce207ae37ed615bf8555973db037daea30532b8b0289c4e7db",
+    "v6_canonical_predictions.jsonl": "7e3b63d0521eb48b0bf74d281bee1786d0221a88e9ad906d7ed86490f34851d0",
+    "v6_evaluation.json": "0d0ea80a662d782b50e4161a99861785eb25d0e4ecadd950ea55cb59edf1609a",
+    "A_canonical_predictions.jsonl": "b2e8f1e020246a3cbf4e90dbf89b72db1ef0d70bbc0d0ef9c9a570524ac75f3a",
+    "A_evaluation.json": "d549c7e67aad87b2b51bba42fe1a586ccf5e418c84293b7351d84d667c0943d5",
+    "B_canonical_predictions.jsonl": "8587ad1af9e9de32d4dadd97eb1ae8243868d2a3adad6e046b526ced9514208e",
+    "B_evaluation.json": "032e9a6fa3039ac5e6baeba082c8642d3fe88aeee030d2f2d87ae58aaa5afa07",
+    "paired_sample_changes.json": "469230ee3e4caa108e7b1a2e33d10ab1cd553d86e359da79a2d37ca52162787d"
+  },
+  "evidence_root": "outputs/evidence/s2_prompt_simplification_v1/comparison_20261006_v2",
+  "preserved_files_unchanged": true
+}

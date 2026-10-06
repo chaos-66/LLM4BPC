@@ -5719,3 +5719,35 @@
 - 仍存在 blocker：无
 - 备注：唯一批次 comparison_20261006_v2；用户原文授权，进行数据运行，快点，确认官方 DeepSeek 目的地和前述300次/USD9.76范围；旧450次预检与拦截证据未改；A/B各150，原版新调用0；历史150请求/响应指纹吻合，六并发有预算预留，进程密钥不读.env。仅具名离线测试与快速完整性，非全量；准备阶段 API=0，实测指标null。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-06T02:31:09.650397+00:00 - SEP-C3-PROMPT-SIMPLIFY-V1：完成授权A/B共300次真实对照，复用原版并保存近零主分差及原始JSON负结果
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=comparison_20261006_v2；阶段=stage2；方法=direct_llm；状态=成功（`succeeded`）
+- 实际运行命令：`python -X utf8 formal_experiment/scripts/run_s2_prompt_simplification_v2.py --execute --allow-llm`
+- manifest：outputs/evidence/s2_prompt_simplification_v1/comparison_20261006_v2/run_manifest.json
+- 结果摘要：新调用300（A/B各150）、原版新调用0、零重试；F1原版0.8224493117/A0.8218192829/B0.8210327164，失败均0；原始JSON107/7/6每150；高峰无缓存估算USD2.56235232，实扣未查；API361.125秒
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：否；正式实验就绪：是
+- 测试：1 failed, 3 passed in 0.31s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`7387d9e88a1d15e18bd6f72b09327be6b0f39285`；相关未提交路径：38 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：已授权调用（`authorized_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：运行在用户最新明确授权的官方DeepSeek目的地、300次/USD9.76范围内完成，不读.env，不发送Gold；Gold仅在预测冻结后用于只读共享评价。前置9项具名门禁证据复用，不重复运行；这里只执行新结果的4项具名哈希/账本/评价重算/原始JSON与用量检查，非全量。历史原版跨批复用，不能排除服务端变化；固定表一/表二、默认prompt、旧结果和已有用户修改未变；无新增API或重试。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-06T02:32:33.283400+00:00 - SEP-C3-PROMPT-SIMPLIFY-V1：修正离线核验的JSON序列化类型比较并完成300次实测证据验收
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：4 passed in 0.24s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`7387d9e88a1d15e18bd6f72b09327be6b0f39285`；相关未提交路径：40 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：未创建或覆盖（`not_created_or_overwritten`）
+- 仍存在 blocker：无
+- 备注：前一experiment_run事件已如实记录300次真实调用成功及首次3通过1失败，历史事件不改；失败仅为modality classes内存tuple与JSON list直接比较，现采用JSON规范化后对完整评价对象逐项比较，指标不改。新具名结果检查覆盖全部证据/manifest哈希、300条唯一A/B账本、三臂冻结Gold评价重算及原始格式/用量，非全量。此复核无新API、无重试、不改Gold/已有结果，运行来源与实际300次见run_manifest。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

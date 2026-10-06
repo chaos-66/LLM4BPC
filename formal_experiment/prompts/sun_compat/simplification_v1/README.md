@@ -74,6 +74,13 @@ Stage 3 授权，不追加八格重跑或取消的 Rules+LLM 实验。主口径�
 
 ## 2026-10-06 当前对照范围：复用原版，只新跑 A/B
 
+本批实际运行现已完成：300次新调用、0重试，约6分1秒；原版复用150条。
+共享pooled主F1为原版0.8224、A 0.8218、B 0.8210，没有总体提升。
+原始JSON对象为107/150、7/150、6/150，围栏可由现有解析器处理，评价失败均0。
+报告 `outputs/reports/s2_prompt_simplification_comparison_20261006_v2.{json,md}`；
+完整证据与manifest保存于 `outputs/evidence/s2_prompt_simplification_v1/comparison_20261006_v2/`。
+保留真实负/近零结果，当前候选不替换默认或固定论文表一/表二。
+
 用户随后明确回复“授权，进行数据运行，快点”，已批准这个范围与官方 API 外发。
 新的授权/预检分别为 `configs/authorization/s2_prompt_simplification_20261006_v2.json`
 与 `outputs/reports/s2_prompt_simplification_comparison_20261006_v2_preflight.json`；
