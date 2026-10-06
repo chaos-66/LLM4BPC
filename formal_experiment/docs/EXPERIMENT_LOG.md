@@ -5843,3 +5843,17 @@
 - 仍存在 blocker：无
 - 备注：用户指定同一失败样本单例不设限制观察token；仅max_tokens变成服务最大，真实过程未改high或prompt，不读.env、不发Gold、Gold不入运行。初次自动审批未创建进程无调用；核查一般法规规范无纳税人敏感信息后，以新增事实复核放行同一原命令，证据保留。旧16K截断/原150停批和low未测试保留；本次14566小于16K，不能推断固定最小预算/low必要/随机性单独原因或150条分布。费用按返回缓存峰价USD0.057996928/闲时USD0.028998464估算，未查实扣。准备4项已通过不重复；仅4项新的持久响应、usage/JSON、manifest/Git检出字节检查及快速完整性，非全量，用户已有修改未变。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-06T17:53:30.802412+00:00 - S2-THINKING-SENSITIVITY-V1：准备用户新授权的high默认max_tokens完整150条，保留逐条失败分母
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：7 passed in 6.90s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`d046905747a1cfde825ef36f0ebbee97fba34c4f`；相关未提交路径：22 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：用户2026-10-07明确要求思考150条默认maxtoken；原v6/high保持，实际省略max_tokens，官方默认65536，12动态并发/150硬调用/0重试。保护USD50依据最大token峰价USD40.6737设置并提前说明，不伪称用户单独定价。length/空最终答案/解析失败保留完整150分母，身份/usage/预算异常停止新发送；只进程密钥不读.env不发Gold，预测全保存后才离线评价。此前两单例不混入，关闭组/Sun零新调用，R3版本与0813历史参照边界保留。仅本入口7项具名离线检查和快速完整性，非全量，不重复旧测试；固定主表、Gold和已有用户修改不变。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

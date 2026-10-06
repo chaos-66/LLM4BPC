@@ -1,8 +1,8 @@
 # LLM4BPC 完整实验主 Pipeline
 
-**文档版本**：3.7.41
+**文档版本**：3.7.42
 **状态**：ACTIVE — 全项目研究与任务分解的唯一主线
-**最后更新**：2026-10-06
+**最后更新**：2026-10-07
 **方法学主干**：Sun et al. (2024)（三阶段方法主干）；Barrientos et al. (2026)（直接借鉴来源：LLM 结构化输出、验证、受控词汇、归一化与评估纪律）
 **当前实施优先级**：2026-09-25 的 S3-TABLE3-V4-R2 已完成 R1 协议偏差的机械纠正与原因定位：strict 顺序投影、失败原因分类、精确 ID/输出绑定检查、零新增 API。但表三仍未验收，因为 Sun/Ours/Winter 的 order 分母仍全为 0；下一步须由 Codex 决定是否以明确的 after/temporal 扩展协议解决映射与原生覆盖问题，不得自行改算法、改样本或追分。下方历史安排不构成扩大实验、写论文或新增 API 的指令。
 
@@ -11,7 +11,29 @@
 > `docs/PROJECT_AUDIT.md` 只记录实时进度；不要再创建新的日期版
 > `STATUS_*`、`HANDOFF_*` 或平行路线文档。
 
-## 2026-10-06 修订 3.7.41：S2-THINKING-SENSITIVITY-V1 同一失败样本 high 最大服务额度诊断
+## 2026-10-07 修订 3.7.42：S2-THINKING-SENSITIVITY-V1 默认生成上限完整150条
+
+- 用户最新明确要求“思考模式跑150条试一下，默认maxtoken即可”。新独立授权
+  `configs/authorization/s2_thinking_default_20261007_v2.json`；run ID
+  `thinking_default_20261007_v2`，入口 `scripts/run_s2_thinking_default_v2.py`。
+- 同一冻结EStG-150、原v6提示词，thinking enabled/high保持；实际请求完全不传
+  max_tokens，不传None或显式65536。当前官方默认65536生成token（思考+最终答案），
+  12并发动态补位、最多150次、0重试；此前两次单条诊断独立保留，不混入新150条。
+- HTTP200下length/空最终答案/解析失败保留在150分母，不因单条截断停止整批。
+  身份、用量、429或预算异常则停止新发送，保留并等待已发出的请求，不自动重发。
+  只用既有进程密钥，不读.env，不发Gold或审核决定；预测全保存后才进行离线Gold评价。
+- 零API预检绑定150条请求、全部来源与共享后处理/评价器；高峰无缓存最大token
+  估算USD40.67371704，执行者保护上限USD50，已运行前说明，不伪称用户另定美元预算。
+  复用原关闭R3/Sun及已有0813关闭参照，新关闭/Sun调用0；固定表一/表二不变。
+- 比较边界：一次完整新批次与历史关闭结果；R3早于0813，生成额度不同，thinking的
+  temperature不生效。完整150条不等于稳定性、多重复或独立未见测试，不作纯模式因果结论。
+- DoD：150个唯一调用完成、完整账本/响应/usage/失败分母，推理与答案分列；同一
+  legacy后处理及五字段coarse pooled micro-F1、modality独立，费用与token分布；结果/
+  manifest/实验事件/具名产物检查及普通Git checkpoint。零API预检及7项具名离线检查
+  已通过（6.90秒），快速完整性通过，150请求均确认省略max_tokens；准备checkpoint后
+  执行。本任务不运行全量测试、不推进Stage3或正式发布。
+
+## 历史修订 3.7.41：S2-THINKING-SENSITIVITY-V1 同一失败样本 high 最大服务额度诊断
 
 - 用户追加指令：“给定一条数据特例，不设限制，看需要多少token”。独立授权
   `configs/authorization/s2_thinking_single_high_provider_max_20261006_v1.json`，恰1个新调用、

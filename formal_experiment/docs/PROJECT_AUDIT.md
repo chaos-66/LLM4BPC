@@ -1,6 +1,6 @@
 # 项目实时状态（兼容文件名 PROJECT_AUDIT.md）
 
-**更新时间**：2026-10-06
+**更新时间**：2026-10-07
 **唯一活动目录**：`formal_experiment/`  
 **完整路线**：`docs/MASTER_PIPELINE.md`  
 **机器事实源**：`python formal_experiment/scripts/audit_project.py`（自动完整性检查）  
@@ -9,7 +9,22 @@
 本文是唯一实时状态页，只记录“现在做到哪里、下一步做什么”。研究目标、完整
 Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见主 Pipeline。
 
-## 单例 high 自然完成并通过验收：S2-THINKING-SENSITIVITY-V1（2026-10-06）
+## 最新授权默认max_tokens完整150条：S2-THINKING-SENSITIVITY-V1（2026-10-07）
+
+- 用户明确要求“思考模式跑150条试一下，默认maxtoken即可”；新run ID
+  `thinking_default_20261007_v2`，入口 `scripts/run_s2_thinking_default_v2.py`，授权
+  `configs/authorization/s2_thinking_default_20261007_v2.json`。
+- 原v6、同一冻结EStG-150/high，实际请求省略max_tokens（官方默认65536），
+  12并发、最多150次、0重试。两次旧单例不混入；关闭组/Sun复用，零新调用。
+- 单条length/空答案/解析失败保留在150分母；接口身份/用量/额度异常停新发送。
+  不读.env、不发Gold；保存全部预测后同口径离线评价，不替换固定主表。
+- 零API预检已保存，最大token峰价估算USD40.67371704，执行者费用保护USD50，
+  已运行前说明。7项具名离线核对通过（6.90秒）、快速完整性通过；150请求确认全部
+  省略max_tokens，进程密钥可用且未读.env。准备checkpoint后执行，新总体指标为null。
+- 本完整批次不批准low、不做多重复/独立未见测试、不启动全量套件。先前单例
+  结果commit `d046905` 已推送并核验，旧16K批次仍作为停批诊断保留。
+
+## 已完成的单例 high 诊断（2026-10-06）
 
 - 用户要求“给定一条数据特例，不设限制，看需要多少token”，新授权恰1次、0重试，
   同一estg_000002，原v6/high保持，仅max_tokens改为服务最大393216（不是无限；省略默认64Ki）。
