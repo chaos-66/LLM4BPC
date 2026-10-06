@@ -9,7 +9,7 @@
 本文是唯一实时状态页，只记录“现在做到哪里、下一步做什么”。研究目标、完整
 Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见主 Pipeline。
 
-## 已追加授权单例 high 最大服务额度诊断：S2-THINKING-SENSITIVITY-V1（2026-10-06）
+## 单例 high 自然完成并通过验收：S2-THINKING-SENSITIVITY-V1（2026-10-06）
 
 - 用户要求“给定一条数据特例，不设限制，看需要多少token”，新授权恰1次、0重试，
   同一estg_000002，原v6/high保持，仅max_tokens改为服务最大393216（不是无限；省略默认64Ki）。
@@ -17,8 +17,18 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
 - run ID `high_provider_max_estg000002_20261006_v1`，入口
   `scripts/run_s2_thinking_single_high_v1.py`，独立授权
   `configs/authorization/s2_thinking_single_high_provider_max_20261006_v1.json`。
-  已通过4项具名离线核对（0.42秒）及快速完整性；checkpoint后执行，
-  保存思考/答案token和自然结束状态，不从单例外推150条。
+  准备4项离线核对（0.42秒）及快速完整性通过，checkpoint `9ddabd1` 已远端核验。
+- 已恰1次、0重试，HTTP200/stop且最终JSON共享canonical校验通过：输入4446，
+  思考13582/答案984/生成14566，含输入19012 tokens，159.29秒。
+  报告 `outputs/reports/s2_thinking_single_high_provider_max_20261006_v1.{json,md}`；
+  峰价无缓存USD0.06355008，返回缓存后峰价USD0.057996928/闲时USD0.028998464（估算）。
+  已通过4项新的具名产物验证（1.72秒）及快速完整性，非全量；结果checkpoint按
+  根AGENTS.md要求普通push，最终交付报告附远端核验哈希。不把单例当150条完成。
+- 本次生成14566<16384，旧截断只表明旧轨迹用尽上限；不能认定该条固定需要>16K
+  或low是必要条件。两次轨迹可变且上限不同，不能只归因随机性，不推断最小预算或分布。
+- 首次API执行自动审批拒绝（进程未创建、新调用0）；核查一般规范文本无具体纳税人/
+  申报数据后，同一原命令以新增低风险事实复核通过。初次拦截及解决证据均保留于
+  `outputs/reports/s2_thinking_single_high_provider_max_20261006_v1_approval_review.json`。
 - 本次不批准low批次、不恢复原150条；既有16K截断证据、关闭组/Sun和固定主表保留。
 
 ## 原150批次首条截断后停止，恢复方案未批准（2026-10-06）

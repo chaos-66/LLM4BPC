@@ -5825,3 +5825,21 @@
 - 仍存在 blocker：无
 - 备注：用户明确要求单条不设限制观察token；只新调用1次、0重试，estg_000002原v6/high保持，只有max_tokens改为接口最大393216，省略仍默认64Ki，不能声称真正无限。约USD1.57峰价最大token估算已说明，不另设美元停止门限。先零API准备，绑定原失败请求和所有依赖，仅具名离线核对；原150条/low150不自动执行，关闭组/Sun零新调用，不读.env、不发Gold、不改用户已有修改或冻结表一/表二，非全量。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-06T10:58:16.189413+00:00 - S2-THINKING-SENSITIVITY-V1：同一失败样本high服务最大额度单次自然完成，记录实际token而非推测最小预算
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=high_provider_max_estg000002_20261006_v1；阶段=stage2；方法=direct_llm；状态=成功（`succeeded`）
+- 实际运行命令：`python -X utf8 formal_experiment/scripts/run_s2_thinking_single_high_v1.py --execute --allow-llm`
+- manifest：outputs/evidence/s2_thinking_sensitivity_v1/high_provider_max_estg000002_20261006_v1/run_manifest.json
+- 结果摘要：恰1次/0重试；high/393216自然stop；输入4446/思考13582/答案984/生成14566/含输入19012 tokens，159.29秒，最终JSON规范校验通过；无150条指标
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：4 passed in 1.72s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`9ddabd1387c8d82cb88ffab9b984384a61d64533`；相关未提交路径：25 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：已授权调用（`authorized_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：用户指定同一失败样本单例不设限制观察token；仅max_tokens变成服务最大，真实过程未改high或prompt，不读.env、不发Gold、Gold不入运行。初次自动审批未创建进程无调用；核查一般法规规范无纳税人敏感信息后，以新增事实复核放行同一原命令，证据保留。旧16K截断/原150停批和low未测试保留；本次14566小于16K，不能推断固定最小预算/low必要/随机性单独原因或150条分布。费用按返回缓存峰价USD0.057996928/闲时USD0.028998464估算，未查实扣。准备4项已通过不重复；仅4项新的持久响应、usage/JSON、manifest/Git检出字节检查及快速完整性，非全量，用户已有修改未变。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

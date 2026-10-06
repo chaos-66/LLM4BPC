@@ -1,0 +1,26 @@
+{
+  "schema_version": "api_approval_review_evidence@1.0.0",
+  "run_id": "high_provider_max_estg000002_20261006_v1",
+  "reviewed_at_utc": "2026-10-06T10:53:04.404485+00:00",
+  "first_exec_process_started": false,
+  "actual_new_api_calls_before_reconsideration": 0,
+  "reviewer_rejection": "该命令会把含敏感税务文本的样本发送到外部 DeepSeek API；用户授权了单条“不设限制”诊断，但未在可信用户内容中明确授权将该具体数据发送至该具体第三方目的地。",
+  "verified_outbound_sample": {
+    "sample_id": "estg_000002",
+    "text": "Bookkeeping farmers and foresters and registered traders (Section 5) may, however, have a business year deviating from the calendar year; in this case, the profit shall be taken into account in determining the income for that calendar year in which the business year ends.",
+    "input_text_sha256": "8f8c2f1de5e7a609bc7f714c771b4a1a374a9a3ec42e9d76cae6d573f6ded314"
+  },
+  "verified_request_body_sha256": "fb77eff7e0ba2e879efeb9a04c4b10566ae43d2687f90267b37fd67f3def75ad",
+  "destination": "https://api.deepseek.com/v1/chat/completions",
+  "new_findings": [
+    "实际文本是一般税法规范：农林经营者及登记商人的营业年度和利润归属年度；未包含具体自然人、企业名称、税号、账户、收入数额或纳税申报。",
+    "消息只含此冻结样本、原v6提示词和合成示例；运行不发送Gold或审核决定，密钥仅在HTTPS鉴权头使用。",
+    "原请求进程未创建，calls_ledger和raw_responses均不存在；重审的是同一条新调用而非追加重试。"
+  ],
+  "reconsideration_policy": "只提交新增事实进行原命令风险复核；若仍拒绝则停下报告并请求明确数据/目的地批准，不用间接执行或换命令绕过。",
+  "reconsideration_result": "accepted_after_new_low_risk_content_evidence",
+  "review_resolution_recorded_at_utc": "2026-10-06T10:54:39.993625+00:00",
+  "same_original_command_used": true,
+  "request_sent_once": true,
+  "initial_rejection_was_not_a_network_call": true
+}
