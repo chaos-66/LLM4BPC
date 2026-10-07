@@ -5981,3 +5981,17 @@
 - 仍存在 blocker：无
 - 备注：响应、预测、账本及共享评价均固定；原始失败保留150分母，modality独立。真实运行1572.297秒；代码checkpoint eef2f8334ffeb3e81f2970ea563c65551295668e。独立数据复核仅六项具名测试，禁止HTTP和实际.env读取，不复验准备模拟/全量套件。本地字节相同证据副本索引已生成，未推送GitHub；此前原始响应外发自动审批仍待用户确认。固定表一和历史DeepSeek/Sun来源未改。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-07T05:51:54.158631+00:00 - S2-MODEL-SENSITIVITY-V1：验证充值后447个未发送项续跑与用户接受的Kimi单token计数差异
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：13 passed in 132.50s (0:02:12)
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`4af96bad661110556da5137eb5ef6a8da8899525`；相关未提交路径：16 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：用户已明确表示GLM/MiMo充值，并接受保留Kimi无思考正文且仅1 reasoning token计数差异继续运行。原453次产物/原严格失败/源文件均不修改；只149条每家共447从未尝试项，原900上限与费用保护不增加，0重试。Kimi首条已有正文离线验证为ok，不重发、不断言token为占位。仅验证新续跑授权/请求绑定/父证据不可变/例外限制/全分母/保存后Gold/已完成恢复零发送；不重跑原58模拟或全量。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

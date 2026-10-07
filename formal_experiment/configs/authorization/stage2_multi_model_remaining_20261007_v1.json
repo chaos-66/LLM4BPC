@@ -1,0 +1,32 @@
+{
+  "schema_version": "stage2_multi_model_remaining_authorization@1.0.0",
+  "task_id": "S2-MODEL-SENSITIVITY-V1",
+  "run_id": "multi_model_remaining_20261007_v1",
+  "parent_run_id": "multi_model_all_20261007_v2",
+  "authorized": true,
+  "user_authorization": "怎么解决？glm和mimo我已经充好余额",
+  "kimi_counter_policy_authorization": "接受，保留计数差异并继续 Kimi",
+  "providers": ["glm", "mimo", "kimi"],
+  "inherited_calls": 453,
+  "max_new_calls": 447,
+  "max_combined_calls": 900,
+  "new_calls_per_provider": 149,
+  "retry": 0,
+  "max_workers": 3,
+  "max_workers_per_provider": 1,
+  "max_output_tokens_per_call": 4096,
+  "max_new_output_tokens": 1830912,
+  "thinking_requirement": "disabled",
+  "kimi_counter_exception": {
+    "model": "kimi-k2.6",
+    "required_request_thinking_type": "disabled",
+    "required_empty_reasoning_content": true,
+    "allowed_reported_reasoning_tokens": [0, 1],
+    "retain_actual_reported_count": true,
+    "claim_one_token_is_placeholder": false,
+    "documentation": "https://platform.kimi.com/docs/guide/kimi-k2-6-quickstart"
+  },
+  "budget_policy": "继承原六家900次授权与2026-10-07已核对价格，每家续跑费用上限为原该家保护上限减去原已保留费用；不扩大、不挪用、不自动充值。",
+  "scope": "仅发送GLM/MiMo/Kimi从未尝试的149条/家；原始请求字节、模型、提示词、输入、输出4096均不变。GLM/MiMo首条失败保留，不重发；Kimi首条已有正文离线重新验证，原始失败记录和原报告不覆盖。仅授权运行门禁通过后私有加载三家key，不显示或修改.env。Gold仅在新预测保存后共享评价。",
+  "github_raw_artifact_export_authorized": false
+}
