@@ -6073,3 +6073,45 @@
 - 仍存在 blocker：无
 - 备注：Kimi145从未发送项已完成，用时3189.299秒；21秒最小开始间隔、无新增限流、0重试。完整Kimi有效141、失败9含原一次RPM429；首条原严格失败保留，合并离线恢复，实际reasoning_tokens=1不归零、不解释为占位；无返回思考正文。原453次及充值302次全部字节不变；其他五家评分与原固定DeepSeek/Sun结果复用。完整预测保存后读取Gold共享coarse五字段pooled与modality独立评价。新字节相同本地副本与分析保存；只6项最终具名产物复核，原4+1+1真实产物和13/6准备证据复用、不全量。API全部授权，原900上限耗尽不扩大；GitHub原始产物外发许可未答复，自动审批拒绝push仍未解除。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-07T09:19:51.335566+00:00 - S2-MODEL-OUTPUT-RECOVERY-V1：15条仅回显格式恢复及18次授权门禁准备
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：否；正式实验就绪：是
+- 测试：3 failed, 8 passed in 33.74s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`9c767dc8e67492890276a9bf47eecc73005f2b02`；相关未提交路径：18 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：用户明确选15离线恢复加最多18原样补跑，CNY3.83/USD0.05，输出73728，0自动重试，Kimi21秒及1token已接受例外。原900产物与固定表不改；本次模拟无真实API，Gold仅模拟合并预测保存后离线评价及audit。GitHub原始产物外发审批仍阻塞。不运行全量。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-07T09:22:18.936771+00:00 - S2-MODEL-OUTPUT-RECOVERY-V1：修正补跑账本目录并仅复核三个失败节点
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：否；正式实验就绪：是
+- 测试：2 failed, 1 passed in 8.34s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`9c767dc8e67492890276a9bf47eecc73005f2b02`；相关未提交路径：20 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：首次11节点8通过3失败，目录缺失及空clauses测试样例；修正新wrapper创建目录，测试改用真实格式候选非法label。未发送API；原0API准备副本保留formal/.tmp/recovery_prepare_before_directory_fix并重新冻结源hash，旧900及Gold不改。其余8项证据仍适用，非全量。GitHub原始产物push审批阻塞仍待外发许可。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-07T09:23:35.766451+00:00 - S2-MODEL-OUTPUT-RECOVERY-V1：补齐模拟预检文件并仅复核两个剩余失败节点
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：2 passed in 7.85s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`9c767dc8e67492890276a9bf47eecc73005f2b02`；相关未提交路径：20 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：前次label拒绝节点已通过，其余两个模拟测试仅缺少汇总所需预检文件；只补测试fixture，不改runner/授权/冻结源hash。首轮8项与label节点1项匹配证据复用，本次仅2项，非全量；真实API仍0。旧900产物/固定表/Gold不改；GitHub外发许可未答复，push仍审批阻塞。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

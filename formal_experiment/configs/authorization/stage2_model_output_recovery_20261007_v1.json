@@ -1,0 +1,23 @@
+{
+  "authorized": true,
+  "run_id": "model_output_recovery_20261007_v1",
+  "decision": "恢复15条格式差异，再授权补跑其余18条（推荐）",
+  "preview_sha256": "c07d6dcb82371b70654d56ff818cc9865c475c1ead45cc4fda7ac8cf9117d76c",
+  "max_new_calls": 18,
+  "max_combined_calls": 918,
+  "retry": 0,
+  "max_output_tokens_per_call": 4096,
+  "max_new_output_tokens": 73728,
+  "kimi_min_start_interval_seconds": 21,
+  "currency_caps": {
+    "CNY": 3.83,
+    "USD": 0.05
+  },
+  "offline_recoveries": 15,
+  "kimi_counter_policy_authorization": "接受，保留计数差异并继续 Kimi",
+  "request_policy": "unchanged original bodies; one supplementary attempt per selected failed sample",
+  "echo_policy": "source_text only; smart quote and whitespace equivalence; extraction fields unchanged; applicable to all six providers",
+  "gold_policy": "never API input; semantic evaluation only after all merged predictions persisted",
+  "historical_baseline_policy": "first 900 calls and fixed Table 1 unchanged",
+  "github_raw_artifact_export_authorized": false
+}
