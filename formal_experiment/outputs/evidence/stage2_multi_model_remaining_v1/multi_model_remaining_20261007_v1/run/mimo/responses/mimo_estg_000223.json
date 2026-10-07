@@ -1,0 +1,269 @@
+{
+  "request_id": "mimo:estg_000223",
+  "raw_response_utf8": "\n\n{\"id\":\"b4b7ac4e-13d0-4805-b45f-3d1fd5a924e4_4ab9bf6eb20643a1a4ea084a32f2b220\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000223\\\",\\n  \\\"source_id\\\": \\\"estg_000223\\\",\\n  \\\"source_text\\\": \\\"A recapture of tax on expenses for the acquisition of participation certificates and new shares (paragraph (1) subparagraph 4) shall be effected if the participation certificates or shares are removed from the deposit or withdrawn, transferred for consideration or gratuitously, or transferred to business assets before the expiry of ten years from their deposit.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000223_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"A recapture of tax on expenses for the acquisition of participation certificates and new shares (paragraph (1) subparagraph 4) shall be effected if the participation certificates or shares are removed from the deposit or withdrawn, transferred for consideration or gratuitously, or transferred to business assets before the expiry of ten years from their deposit.\\\", \\\"start\\\": 0, \\\"end\\\": 313},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 117, \\\"end\\\": 122}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [\\n        {\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"effected\\\", \\\"start\\\": 123, \\\"end\\\": 131, \\\"normalized\\\": \\\"effect\\\"}\\n      ],\\n      \\\"conditions\\\": [\\n        {\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"if the participation certificates or shares are removed from the deposit or withdrawn, transferred for consideration or gratuitously, or transferred to business assets before the expiry of ten years from their deposit\\\", \\\"start\\\": 132, \\\"end\\\": 312, \\\"normalized\\\": \\\"if the participation certificates or shares are removed from the deposit or withdrawn, transferred for consideration or gratuitously, or transferred to business assets before the expiry of ten years from their deposit\\\"}\\n      ],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"before the expiry of ten years from their deposit\\\", \\\"start\\\": 264, \\\"end\\\": 312, \\\"normalized\\\": \\\"before the expiry of ten years from their deposit\\\"}\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [\\n        {\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}\\n      ],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"role\":\"assistant\",\"tool_calls\":null}}],\"created\":1791353491,\"model\":\"mimo-v2.6-pro\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":592,\"prompt_tokens\":4410,\"total_tokens\":5002,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":0}}}",
+  "usage": {
+    "prompt_tokens": 4410,
+    "completion_tokens": 592,
+    "total_tokens": 5002,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "mimo-v2.6-pro",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "mimo",
+    "sample_id": "estg_000223",
+    "request_id": "mimo:estg_000223",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000223",
+      "source_id": "estg_000223",
+      "source_text": "A recapture of tax on expenses for the acquisition of participation certificates and new shares (paragraph (1) subparagraph 4) shall be effected if the participation certificates or shares are removed from the deposit or withdrawn, transferred for consideration or gratuitously, or transferred to business assets before the expiry of ten years from their deposit.",
+      "clauses": [
+        {
+          "clause_id": "estg_000223_c01",
+          "clause_span": {
+            "text": "A recapture of tax on expenses for the acquisition of participation certificates and new shares (paragraph (1) subparagraph 4) shall be effected if the participation certificates or shares are removed from the deposit or withdrawn, transferred for consideration or gratuitously, or transferred to business assets before the expiry of ten years from their deposit.",
+            "start": 0,
+            "end": 363
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 127,
+                "end": 132
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "effected",
+              "start": 136,
+              "end": 144,
+              "normalized": "effected",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "if the participation certificates or shares are removed from the deposit or withdrawn, transferred for consideration or gratuitously, or transferred to business assets before the expiry of ten years from their deposit",
+              "start": 145,
+              "end": 362,
+              "normalized": "if the participation certificates or shares are removed from the deposit or withdrawn, transferred for consideration or gratuitously, or transferred to business assets before the expiry of ten years from their deposit",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "before the expiry of ten years from their deposit",
+              "start": 313,
+              "end": 362,
+              "normalized": "before the expiry of ten years from their deposit",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 5,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000223_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "A recapture of tax on expenses for the acquisition of participation certificates and new shares (paragraph (1) subparagraph 4) shall be effected if the participation certificates or shares are removed from the deposit or withdrawn, transferred for consideration or gratuitously, or transferred to business assets before the expiry of ten years from their deposit.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 313,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 363
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 363
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000223_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 117,
+          "original_end": 122,
+          "candidate_occurrences": [
+            {
+              "start": 127,
+              "end": 132
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 127,
+            "end": 132
+          },
+          "distance": 20,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000223_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "effected",
+          "normalized": "effected",
+          "original_start": 123,
+          "original_end": 131,
+          "candidate_occurrences": [
+            {
+              "start": 136,
+              "end": 144
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 136,
+            "end": 144
+          },
+          "distance": 26,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000223_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "if the participation certificates or shares are removed from the deposit or withdrawn, transferred for consideration or gratuitously, or transferred to business assets before the expiry of ten years from their deposit",
+          "normalized": "if the participation certificates or shares are removed from the deposit or withdrawn, transferred for consideration or gratuitously, or transferred to business assets before the expiry of ten years from their deposit",
+          "original_start": 132,
+          "original_end": 312,
+          "candidate_occurrences": [
+            {
+              "start": 145,
+              "end": 362
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 145,
+            "end": 362
+          },
+          "distance": 63,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000223_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "before the expiry of ten years from their deposit",
+          "normalized": "before the expiry of ten years from their deposit",
+          "original_start": 264,
+          "original_end": 312,
+          "candidate_occurrences": [
+            {
+              "start": 313,
+              "end": 362
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 313,
+            "end": 362
+          },
+          "distance": 99,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

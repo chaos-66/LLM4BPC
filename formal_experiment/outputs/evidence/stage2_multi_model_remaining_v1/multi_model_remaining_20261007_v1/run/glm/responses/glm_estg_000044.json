@@ -1,0 +1,308 @@
+{
+  "request_id": "glm:estg_000044",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000044\\\",\\n  \\\"source_id\\\": \\\"estg_000044\\\",\\n  \\\"source_text\\\": \\\"This shall be assessed on the basis of the average benefits granted by the fund to the recipients during the three years preceding the date of the allocation. 3.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000044_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"This shall be assessed on the basis of the average benefits granted by the fund to the recipients during the three years preceding the date of the allocation.\\\", \\\"start\\\": 0, \\\"end\\\": 153},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 5, \\\"end\\\": 10}]},\\n      \\\"actors\\\": [\\n        {\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"the fund\\\", \\\"start\\\": 73, \\\"end\\\": 81, \\\"normalized\\\": \\\"fund\\\"}\\n      ],\\n      \\\"actions\\\": [\\n        {\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"assessed\\\", \\\"start\\\": 14, \\\"end\\\": 22, \\\"normalized\\\": \\\"assess\\\"}\\n      ],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"on the basis of the average benefits granted by the fund to the recipients\\\", \\\"start\\\": 23, \\\"end\\\": 100, \\\"normalized\\\": \\\"on the basis of the average benefits granted by the fund to the recipients\\\"},\\n        {\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"during the three years preceding the date of the allocation\\\", \\\"start\\\": 101, \\\"end\\\": 160, \\\"normalized\\\": \\\"during the three years preceding the date of the allocation\\\"}\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [\\n        {\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}\\n      ],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": [\\n    {\\\"field\\\": \\\"actor\\\", \\\"reason\\\": \\\"reference_status=unresolved_coreference;independence_status=context_required\\\"}\\n  ]\\n}\\n```\",\"role\":\"assistant\"}}],\"created\":1791352587,\"id\":\"20261007135621e0d3507a76b44315\",\"model\":\"glm-5.2\",\"object\":\"chat.completion\",\"request_id\":\"20261007135621e0d3507a76b44315\",\"usage\":{\"completion_tokens\":517,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens\":4214,\"prompt_tokens_details\":{\"cached_tokens\":1344},\"total_tokens\":4731}}",
+  "usage": {
+    "prompt_tokens": 4214,
+    "completion_tokens": 517,
+    "total_tokens": 4731,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "glm-5.2",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "glm",
+    "sample_id": "estg_000044",
+    "request_id": "glm:estg_000044",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000044",
+      "source_id": "estg_000044",
+      "source_text": "This shall be assessed on the basis of the average benefits granted by the fund to the recipients during the three years preceding the date of the allocation. 3.",
+      "clauses": [
+        {
+          "clause_id": "estg_000044_c01",
+          "clause_span": {
+            "text": "This shall be assessed on the basis of the average benefits granted by the fund to the recipients during the three years preceding the date of the allocation.",
+            "start": 0,
+            "end": 158
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 5,
+                "end": 10
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the fund",
+              "start": 71,
+              "end": 79,
+              "normalized": "the fund",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "assessed",
+              "start": 14,
+              "end": 22,
+              "normalized": "assessed",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "on the basis of the average benefits granted by the fund to the recipients",
+              "start": 23,
+              "end": 97,
+              "normalized": "on the basis of the average benefits granted by the fund to the recipients",
+              "id": "c01"
+            },
+            {
+              "text": "during the three years preceding the date of the allocation",
+              "start": 98,
+              "end": 157,
+              "normalized": "during the three years preceding the date of the allocation",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 5,
+      "reanchored_count": 4,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000044_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "This shall be assessed on the basis of the average benefits granted by the fund to the recipients during the three years preceding the date of the allocation.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 153,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 158
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 158
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000044_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 5,
+          "original_end": 10,
+          "candidate_occurrences": [
+            {
+              "start": 5,
+              "end": 10
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 5,
+            "end": 10
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000044_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "the fund",
+          "normalized": "the fund",
+          "original_start": 73,
+          "original_end": 81,
+          "candidate_occurrences": [
+            {
+              "start": 71,
+              "end": 79
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 71,
+            "end": 79
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000044_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "assessed",
+          "normalized": "assessed",
+          "original_start": 14,
+          "original_end": 22,
+          "candidate_occurrences": [
+            {
+              "start": 14,
+              "end": 22
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 14,
+            "end": 22
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000044_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "on the basis of the average benefits granted by the fund to the recipients",
+          "normalized": "on the basis of the average benefits granted by the fund to the recipients",
+          "original_start": 23,
+          "original_end": 100,
+          "candidate_occurrences": [
+            {
+              "start": 23,
+              "end": 97
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 23,
+            "end": 97
+          },
+          "distance": 3,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000044_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "during the three years preceding the date of the allocation",
+          "normalized": "during the three years preceding the date of the allocation",
+          "original_start": 101,
+          "original_end": 160,
+          "candidate_occurrences": [
+            {
+              "start": 98,
+              "end": 157
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 98,
+            "end": 157
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 2,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 4,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

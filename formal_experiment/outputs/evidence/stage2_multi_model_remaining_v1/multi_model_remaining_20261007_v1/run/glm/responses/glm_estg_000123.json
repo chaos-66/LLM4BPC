@@ -1,0 +1,337 @@
+{
+  "request_id": "glm:estg_000123",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000123\\\",\\n  \\\"source_id\\\": \\\"estg_000123\\\",\\n  \\\"source_text\\\": \\\"If a loss arises in one of the following nine years (operating expenses exceeding operating income within the meaning of item l), the loss shall be offset against the reserves created for the preceding years, starting with the oldest. 4.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000123_c01\\\",\\n      \\\"clause_span\\\": {\\n        \\\"text\\\": \\\"If a loss arises in one of the following nine years (operating expenses exceeding operating income within the meaning of item l), the loss shall be offset against the reserves created for the preceding years, starting with the oldest.\\\",\\n        \\\"start\\\": 0,\\n        \\\"end\\\": 218\\n      },\\n      \\\"modality\\\": {\\n        \\\"label\\\": \\\"obligation\\\",\\n        \\\"evidence\\\": [\\n          {\\n            \\\"text\\\": \\\"shall\\\",\\n            \\\"start\\\": 140,\\n            \\\"end\\\": 145\\n          }\\n        ]\\n      },\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [\\n        {\\n          \\\"id\\\": \\\"p01\\\",\\n          \\\"text\\\": \\\"offset against the reserves\\\",\\n          \\\"start\\\": 150,\\n          \\\"end\\\": 177,\\n          \\\"normalized\\\": \\\"offset against reserves\\\"\\n        }\\n      ],\\n      \\\"conditions\\\": [\\n        {\\n          \\\"id\\\": \\\"d01\\\",\\n          \\\"text\\\": \\\"If a loss arises in one of the following nine years (operating expenses exceeding operating income within the meaning of item l)\\\",\\n          \\\"start\\\": 0,\\n          \\\"end\\\": 139,\\n          \\\"normalized\\\": \\\"if a loss arises in one of the following nine years (operating expenses exceeding operating income within the meaning of item l)\\\"\\n        }\\n      ],\\n      \\\"constraints\\\": [\\n        {\\n          \\\"id\\\": \\\"c01\\\",\\n          \\\"text\\\": \\\"within the meaning of item l\\\",\\n          \\\"start\\\": 109,\\n          \\\"end\\\": 138,\\n          \\\"normalized\\\": \\\"within the meaning of item l\\\"\\n        },\\n        {\\n          \\\"id\\\": \\\"c02\\\",\\n          \\\"text\\\": \\\"for the preceding years\\\",\\n          \\\"start\\\": 193,\\n          \\\"end\\\": 216,\\n          \\\"normalized\\\": \\\"for the preceding years\\\"\\n        },\\n        {\\n          \\\"id\\\": \\\"c03\\\",\\n          \\\"text\\\": \\\"starting with the oldest\\\",\\n          \\\"start\\\": 218,\\n          \\\"end\\\": 242,\\n          \\\"normalized\\\": \\\"starting with the oldest\\\"\\n        }\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [\\n        {\\n          \\\"actor_id\\\": null,\\n          \\\"action_id\\\": \\\"p01\\\"\\n        }\\n      ],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\n    \\\"name\\\": \\\"direct_llm\\\",\\n    \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"\\n  },\\n  \\\"validation\\\": {\\n    \\\"schema_valid\\\": true,\\n    \\\"cross_field_valid\\\": true,\\n    \\\"errors\\\": []\\n  },\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"role\":\"assistant\"}}],\"created\":1791352953,\"id\":\"20261007140227eb03180515544b36\",\"model\":\"glm-5.2\",\"object\":\"chat.completion\",\"request_id\":\"20261007140227eb03180515544b36\",\"usage\":{\"completion_tokens\":652,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens\":4227,\"prompt_tokens_details\":{\"cached_tokens\":1344},\"total_tokens\":4879}}",
+  "usage": {
+    "prompt_tokens": 4227,
+    "completion_tokens": 652,
+    "total_tokens": 4879,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "glm-5.2",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "glm",
+    "sample_id": "estg_000123",
+    "request_id": "glm:estg_000123",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000123",
+      "source_id": "estg_000123",
+      "source_text": "If a loss arises in one of the following nine years (operating expenses exceeding operating income within the meaning of item l), the loss shall be offset against the reserves created for the preceding years, starting with the oldest. 4.",
+      "clauses": [
+        {
+          "clause_id": "estg_000123_c01",
+          "clause_span": {
+            "text": "If a loss arises in one of the following nine years (operating expenses exceeding operating income within the meaning of item l), the loss shall be offset against the reserves created for the preceding years, starting with the oldest.",
+            "start": 0,
+            "end": 234
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 139,
+                "end": 144
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "offset against the reserves",
+              "start": 148,
+              "end": 175,
+              "normalized": "offset against the reserves",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If a loss arises in one of the following nine years (operating expenses exceeding operating income within the meaning of item l)",
+              "start": 0,
+              "end": 128,
+              "normalized": "if a loss arises in one of the following nine years (operating expenses exceeding operating income within the meaning of item l)",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "within the meaning of item l",
+              "start": 99,
+              "end": 127,
+              "normalized": "within the meaning of item l",
+              "id": "c01"
+            },
+            {
+              "text": "for the preceding years",
+              "start": 184,
+              "end": 207,
+              "normalized": "for the preceding years",
+              "id": "c02"
+            },
+            {
+              "text": "starting with the oldest",
+              "start": 209,
+              "end": 233,
+              "normalized": "starting with the oldest",
+              "id": "c03"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 5,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 6,
+      "reanchored_count": 7,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000123_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If a loss arises in one of the following nine years (operating expenses exceeding operating income within the meaning of item l), the loss shall be offset against the reserves created for the preceding years, starting with the oldest.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 218,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 234
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 234
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000123_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 140,
+          "original_end": 145,
+          "candidate_occurrences": [
+            {
+              "start": 139,
+              "end": 144
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 139,
+            "end": 144
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000123_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "offset against the reserves",
+          "normalized": "offset against the reserves",
+          "original_start": 150,
+          "original_end": 177,
+          "candidate_occurrences": [
+            {
+              "start": 148,
+              "end": 175
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 148,
+            "end": 175
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000123_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "If a loss arises in one of the following nine years (operating expenses exceeding operating income within the meaning of item l)",
+          "normalized": "if a loss arises in one of the following nine years (operating expenses exceeding operating income within the meaning of item l)",
+          "original_start": 0,
+          "original_end": 139,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 128
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 128
+          },
+          "distance": 11,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000123_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "within the meaning of item l",
+          "normalized": "within the meaning of item l",
+          "original_start": 109,
+          "original_end": 138,
+          "candidate_occurrences": [
+            {
+              "start": 99,
+              "end": 127
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 99,
+            "end": 127
+          },
+          "distance": 21,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000123_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "for the preceding years",
+          "normalized": "for the preceding years",
+          "original_start": 193,
+          "original_end": 216,
+          "candidate_occurrences": [
+            {
+              "start": 184,
+              "end": 207
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 184,
+            "end": 207
+          },
+          "distance": 18,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[2]",
+          "clause_index": 0,
+          "clause_id": "estg_000123_c01",
+          "field": "constraints",
+          "span_index": 2,
+          "span_id": "c03",
+          "text": "starting with the oldest",
+          "normalized": "starting with the oldest",
+          "original_start": 218,
+          "original_end": 242,
+          "candidate_occurrences": [
+            {
+              "start": 209,
+              "end": 233
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 209,
+            "end": 233
+          },
+          "distance": 18,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 7,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

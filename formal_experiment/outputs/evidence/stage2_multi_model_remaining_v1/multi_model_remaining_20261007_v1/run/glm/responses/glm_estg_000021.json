@@ -1,0 +1,309 @@
+{
+  "request_id": "glm:estg_000021",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000021\\\",\\n  \\\"source_id\\\": \\\"estg_000021\\\",\\n  \\\"source_text\\\": \\\"Free tobacco, free cigars and free cigarettes to employees in tobacco processing establishments, if the products granted may not be sold and are granted only in such a quantity that actually precludes a sale. 21.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000021_c01\\\",\\n      \\\"clause_span\\\": {\\n        \\\"text\\\": \\\"Free tobacco, free cigars and free cigarettes to employees in tobacco processing establishments, if the products granted may not be sold and are granted only in such a quantity that actually precludes a sale.\\\",\\n        \\\"start\\\": 0,\\n        \\\"end\\\": 191\\n      },\\n      \\\"modality\\\": {\\n        \\\"label\\\": \\\"permission\\\",\\n        \\\"evidence\\\": [\\n          {\\n            \\\"text\\\": \\\"Free tobacco, free cigars and free cigarettes to employees in tobacco processing establishments\\\",\\n            \\\"start\\\": 0,\\n            \\\"end\\\": 100\\n          }\\n        ]\\n      },\\n      \\\"actors\\\": [\\n        {\\n          \\\"id\\\": \\\"a01\\\",\\n          \\\"text\\\": \\\"employees in tobacco processing establishments\\\",\\n          \\\"start\\\": 56,\\n          \\\"end\\\": 100,\\n          \\\"normalized\\\": \\\"employees in tobacco processing establishments\\\"\\n        }\\n      ],\\n      \\\"actions\\\": [\\n        {\\n          \\\"id\\\": \\\"p01\\\",\\n          \\\"text\\\": \\\"Free tobacco, free cigars and free cigarettes\\\",\\n          \\\"start\\\": 0,\\n          \\\"end\\\": 46,\\n          \\\"normalized\\\": \\\"free tobacco free cigars and free cigarettes\\\"\\n        }\\n      ],\\n      \\\"conditions\\\": [\\n        {\\n          \\\"id\\\": \\\"d01\\\",\\n          \\\"text\\\": \\\"if the products granted may not be sold and are granted only in such a quantity that actually precludes a sale\\\",\\n          \\\"start\\\": 102,\\n          \\\"end\\\": 191,\\n          \\\"normalized\\\": \\\"if the products granted may not be sold and are granted only in such a quantity that actually precludes a sale\\\"\\n        }\\n      ],\\n      \\\"constraints\\\": [\\n        {\\n          \\\"id\\\": \\\"c01\\\",\\n          \\\"text\\\": \\\"only in such a quantity that actually precludes a sale\\\",\\n          \\\"start\\\": 155,\\n          \\\"end\\\": 191,\\n          \\\"normalized\\\": \\\"only in such a quantity that actually precludes a sale\\\"\\n        }\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [\\n        {\\n          \\\"actor_id\\\": \\\"a01\\\",\\n          \\\"action_id\\\": \\\"p01\\\"\\n        }\\n      ],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\n    \\\"name\\\": \\\"direct_llm\\\",\\n    \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"\\n  },\\n  \\\"validation\\\": {\\n    \\\"schema_valid\\\": true,\\n    \\\"cross_field_valid\\\": true,\\n    \\\"errors\\\": []\\n  },\\n  \\\"unsupported_or_ambiguous\\\": [\\n    {\\n      \\\"field\\\": \\\"modality\\\",\\n      \\\"reason\\\": \\\"semantic_scope_ambiguous_in_target\\\"\\n    }\\n  ]\\n}\\n```\",\"role\":\"assistant\"}}],\"created\":1791352496,\"id\":\"20261007135447fed4dd8eb57849f2\",\"model\":\"glm-5.2\",\"object\":\"chat.completion\",\"request_id\":\"20261007135447fed4dd8eb57849f2\",\"usage\":{\"completion_tokens\":655,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens\":4223,\"prompt_tokens_details\":{\"cached_tokens\":0},\"total_tokens\":4878}}",
+  "usage": {
+    "prompt_tokens": 4223,
+    "completion_tokens": 655,
+    "total_tokens": 4878,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "glm-5.2",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "glm",
+    "sample_id": "estg_000021",
+    "request_id": "glm:estg_000021",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000021",
+      "source_id": "estg_000021",
+      "source_text": "Free tobacco, free cigars and free cigarettes to employees in tobacco processing establishments, if the products granted may not be sold and are granted only in such a quantity that actually precludes a sale. 21.",
+      "clauses": [
+        {
+          "clause_id": "estg_000021_c01",
+          "clause_span": {
+            "text": "Free tobacco, free cigars and free cigarettes to employees in tobacco processing establishments, if the products granted may not be sold and are granted only in such a quantity that actually precludes a sale.",
+            "start": 0,
+            "end": 208
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "Free tobacco, free cigars and free cigarettes to employees in tobacco processing establishments",
+                "start": 0,
+                "end": 95
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "employees in tobacco processing establishments",
+              "start": 49,
+              "end": 95,
+              "normalized": "employees in tobacco processing establishments",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "Free tobacco, free cigars and free cigarettes",
+              "start": 0,
+              "end": 45,
+              "normalized": "free tobacco, free cigars and free cigarettes",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "if the products granted may not be sold and are granted only in such a quantity that actually precludes a sale",
+              "start": 97,
+              "end": 207,
+              "normalized": "if the products granted may not be sold and are granted only in such a quantity that actually precludes a sale",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "only in such a quantity that actually precludes a sale",
+              "start": 153,
+              "end": 207,
+              "normalized": "only in such a quantity that actually precludes a sale",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "modality",
+          "reason": "semantic_scope_ambiguous_in_target"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 5,
+      "reanchored_count": 6,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000021_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Free tobacco, free cigars and free cigarettes to employees in tobacco processing establishments, if the products granted may not be sold and are granted only in such a quantity that actually precludes a sale.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 191,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 208
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 208
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000021_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "Free tobacco, free cigars and free cigarettes to employees in tobacco processing establishments",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 100,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 95
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 95
+          },
+          "distance": 5,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000021_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "employees in tobacco processing establishments",
+          "normalized": "employees in tobacco processing establishments",
+          "original_start": 56,
+          "original_end": 100,
+          "candidate_occurrences": [
+            {
+              "start": 49,
+              "end": 95
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 49,
+            "end": 95
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000021_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "Free tobacco, free cigars and free cigarettes",
+          "normalized": "free tobacco, free cigars and free cigarettes",
+          "original_start": 0,
+          "original_end": 46,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 45
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 45
+          },
+          "distance": 1,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000021_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "if the products granted may not be sold and are granted only in such a quantity that actually precludes a sale",
+          "normalized": "if the products granted may not be sold and are granted only in such a quantity that actually precludes a sale",
+          "original_start": 102,
+          "original_end": 191,
+          "candidate_occurrences": [
+            {
+              "start": 97,
+              "end": 207
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 97,
+            "end": 207
+          },
+          "distance": 21,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000021_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "only in such a quantity that actually precludes a sale",
+          "normalized": "only in such a quantity that actually precludes a sale",
+          "original_start": 155,
+          "original_end": 191,
+          "candidate_occurrences": [
+            {
+              "start": 153,
+              "end": 207
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 153,
+            "end": 207
+          },
+          "distance": 18,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 6,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

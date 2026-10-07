@@ -1,0 +1,303 @@
+{
+  "request_id": "mimo:estg_000105",
+  "raw_response_utf8": "\n\n{\"id\":\"dee2e967-5d43-4ccc-a13d-512e4a38be3f_1dbb052f896142d9807990570b94389f\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000105\\\",\\\"source_id\\\":\\\"estg_000105\\\",\\\"source_text\\\":\\\"At the end of the fourth financial year following the year of acquisition or production, the investment allowances shall be transferred tax-free to a capital account or to a reserve deemed to have been taxed.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000105_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"At the end of the fourth financial year following the year of acquisition or production, the investment allowances shall be transferred tax-free to a capital account or to a reserve deemed to have been taxed.\\\",\\\"start\\\":0,\\\"end\\\":194},\\\"modality\\\":{\\\"label\\\":\\\"obligation\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall\\\",\\\"start\\\":103,\\\"end\\\":108}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"transferred\\\",\\\"start\\\":113,\\\"end\\\":124,\\\"normalized\\\":\\\"transfer\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"At the end of the fourth financial year following the year of acquisition or production\\\",\\\"start\\\":0,\\\"end\\\":86,\\\"normalized\\\":\\\"at the end of the fourth financial year following the year of acquisition or production\\\"}],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"tax-free\\\",\\\"start\\\":125,\\\"end\\\":133,\\\"normalized\\\":\\\"tax-free\\\"},{\\\"id\\\":\\\"c02\\\",\\\"text\\\":\\\"to a capital account or to a reserve deemed to have been taxed\\\",\\\"start\\\":134,\\\"end\\\":193,\\\"normalized\\\":\\\"to a capital account or to a reserve deemed to have been taxed\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\",\"tool_calls\":null}}],\"created\":1791352986,\"model\":\"mimo-v2.6-pro\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":419,\"prompt_tokens\":4384,\"total_tokens\":4803,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":0}}}",
+  "usage": {
+    "prompt_tokens": 4384,
+    "completion_tokens": 419,
+    "total_tokens": 4803,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "mimo-v2.6-pro",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "mimo",
+    "sample_id": "estg_000105",
+    "request_id": "mimo:estg_000105",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000105",
+      "source_id": "estg_000105",
+      "source_text": "At the end of the fourth financial year following the year of acquisition or production, the investment allowances shall be transferred tax-free to a capital account or to a reserve deemed to have been taxed.",
+      "clauses": [
+        {
+          "clause_id": "estg_000105_c01",
+          "clause_span": {
+            "text": "At the end of the fourth financial year following the year of acquisition or production, the investment allowances shall be transferred tax-free to a capital account or to a reserve deemed to have been taxed.",
+            "start": 0,
+            "end": 208
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 115,
+                "end": 120
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "transferred",
+              "start": 124,
+              "end": 135,
+              "normalized": "transferred",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "At the end of the fourth financial year following the year of acquisition or production",
+              "start": 0,
+              "end": 87,
+              "normalized": "at the end of the fourth financial year following the year of acquisition or production",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "tax-free",
+              "start": 136,
+              "end": 144,
+              "normalized": "tax-free",
+              "id": "c01"
+            },
+            {
+              "text": "to a capital account or to a reserve deemed to have been taxed",
+              "start": 145,
+              "end": 207,
+              "normalized": "to a capital account or to a reserve deemed to have been taxed",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 5,
+      "reanchored_count": 6,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000105_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "At the end of the fourth financial year following the year of acquisition or production, the investment allowances shall be transferred tax-free to a capital account or to a reserve deemed to have been taxed.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 194,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 208
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 208
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000105_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 103,
+          "original_end": 108,
+          "candidate_occurrences": [
+            {
+              "start": 115,
+              "end": 120
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 115,
+            "end": 120
+          },
+          "distance": 24,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000105_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "transferred",
+          "normalized": "transferred",
+          "original_start": 113,
+          "original_end": 124,
+          "candidate_occurrences": [
+            {
+              "start": 124,
+              "end": 135
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 124,
+            "end": 135
+          },
+          "distance": 22,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000105_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "At the end of the fourth financial year following the year of acquisition or production",
+          "normalized": "at the end of the fourth financial year following the year of acquisition or production",
+          "original_start": 0,
+          "original_end": 86,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 87
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 87
+          },
+          "distance": 1,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000105_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "tax-free",
+          "normalized": "tax-free",
+          "original_start": 125,
+          "original_end": 133,
+          "candidate_occurrences": [
+            {
+              "start": 136,
+              "end": 144
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 136,
+            "end": 144
+          },
+          "distance": 22,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000105_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "to a capital account or to a reserve deemed to have been taxed",
+          "normalized": "to a capital account or to a reserve deemed to have been taxed",
+          "original_start": 134,
+          "original_end": 193,
+          "candidate_occurrences": [
+            {
+              "start": 145,
+              "end": 207
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 145,
+            "end": 207
+          },
+          "distance": 25,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 6,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

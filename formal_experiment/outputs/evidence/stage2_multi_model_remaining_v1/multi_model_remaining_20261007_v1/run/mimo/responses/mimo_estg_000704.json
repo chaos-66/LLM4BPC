@@ -1,0 +1,267 @@
+{
+  "request_id": "mimo:estg_000704",
+  "raw_response_utf8": "{\"id\":\"33612eae-fe63-4ea2-ab60-5c90799e5bad_33fee204a56b438f9c4784596e2dab6b\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\": \\\"1.0.0\\\", \\\"sample_id\\\": \\\"estg_000704\\\", \\\"source_id\\\": \\\"estg_000704\\\", \\\"source_text\\\": \\\"The building society is obliged to notify the taxpayer within two weeks, by transmitting the second copy of the declaration, of the cessation of the additional amounts.\\\", \\\"clauses\\\": [{\\\"clause_id\\\": \\\"estg_000704_c01\\\", \\\"clause_span\\\": {\\\"text\\\": \\\"The building society is obliged to notify the taxpayer within two weeks, by transmitting the second copy of the declaration, of the cessation of the additional amounts.\\\", \\\"start\\\": 0, \\\"end\\\": 163}, \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"is obliged\\\", \\\"start\\\": 21, \\\"end\\\": 31}]}, \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"The building society\\\", \\\"start\\\": 0, \\\"end\\\": 20, \\\"normalized\\\": \\\"building society\\\"}], \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"notify the taxpayer of the cessation of the additional amounts\\\", \\\"start\\\": 35, \\\"end\\\": 162, \\\"normalized\\\": \\\"notify taxpayer of cessation of additional amounts\\\"}], \\\"conditions\\\": [], \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"within two weeks\\\", \\\"start\\\": 58, \\\"end\\\": 73, \\\"normalized\\\": \\\"within two weeks\\\"}, {\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"by transmitting the second copy of the declaration\\\", \\\"start\\\": 75, \\\"end\\\": 124, \\\"normalized\\\": \\\"by transmitting second copy of declaration\\\"}], \\\"exceptions\\\": [], \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}], \\\"order_relations\\\": []}], \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"}, \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []}, \\\"unsupported_or_ambiguous\\\": []}\",\"role\":\"assistant\",\"tool_calls\":null}}],\"created\":1791354040,\"model\":\"mimo-v2.6-pro\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":467,\"prompt_tokens\":4376,\"total_tokens\":4843,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":0}}}",
+  "usage": {
+    "prompt_tokens": 4376,
+    "completion_tokens": 467,
+    "total_tokens": 4843,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "mimo-v2.6-pro",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "mimo",
+    "sample_id": "estg_000704",
+    "request_id": "mimo:estg_000704",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000704",
+      "source_id": "estg_000704",
+      "source_text": "The building society is obliged to notify the taxpayer within two weeks, by transmitting the second copy of the declaration, of the cessation of the additional amounts.",
+      "clauses": [
+        {
+          "clause_id": "estg_000704_c01",
+          "clause_span": {
+            "text": "The building society is obliged to notify the taxpayer within two weeks, by transmitting the second copy of the declaration, of the cessation of the additional amounts.",
+            "start": 0,
+            "end": 168
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "is obliged",
+                "start": 21,
+                "end": 31
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "The building society",
+              "start": 0,
+              "end": 20,
+              "normalized": "the building society",
+              "id": "a01"
+            }
+          ],
+          "actions": [],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "within two weeks",
+              "start": 55,
+              "end": 71,
+              "normalized": "within two weeks",
+              "id": "c01"
+            },
+            {
+              "text": "by transmitting the second copy of the declaration",
+              "start": 73,
+              "end": 123,
+              "normalized": "by transmitting the second copy of the declaration",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "spans_adapted": 3,
+      "dropped_spans": [
+        "actions[0]_text_not_in_source"
+      ],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 3,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [
+        "clauses[0].actor_action_map[0]"
+      ],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000704_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The building society is obliged to notify the taxpayer within two weeks, by transmitting the second copy of the declaration, of the cessation of the additional amounts.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 163,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 168
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 168
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000704_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "is obliged",
+          "normalized": null,
+          "original_start": 21,
+          "original_end": 31,
+          "candidate_occurrences": [
+            {
+              "start": 21,
+              "end": 31
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 21,
+            "end": 31
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000704_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "The building society",
+          "normalized": "the building society",
+          "original_start": 0,
+          "original_end": 20,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 20
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 0,
+            "end": 20
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000704_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "within two weeks",
+          "normalized": "within two weeks",
+          "original_start": 58,
+          "original_end": 73,
+          "candidate_occurrences": [
+            {
+              "start": 55,
+              "end": 71
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 55,
+            "end": 71
+          },
+          "distance": 5,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000704_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "by transmitting the second copy of the declaration",
+          "normalized": "by transmitting the second copy of the declaration",
+          "original_start": 75,
+          "original_end": 124,
+          "candidate_occurrences": [
+            {
+              "start": 73,
+              "end": 123
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 73,
+            "end": 123
+          },
+          "distance": 3,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 2,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 3,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

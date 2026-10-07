@@ -1,0 +1,234 @@
+{
+  "request_id": "mimo:estg_000121",
+  "raw_response_utf8": "\n{\"id\":\"4a34a188-c9f9-4cd0-a5fa-4e44c6ce3ca0_2531068176b94ab78864ae90396c8cf9\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000121\\\",\\n  \\\"source_id\\\": \\\"estg_000121\\\",\\n  \\\"source_text\\\": \\\"In this context, the operating costs and the ongoing public charges for the land (building) are to be disregarded for both business income and business expenses.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000121_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"In this context, the operating costs and the ongoing public charges for the land (building) are to be disregarded for both business income and business expenses.\\\", \\\"start\\\": 0, \\\"end\\\": 158},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"are to be\\\", \\\"start\\\": 83, \\\"end\\\": 92}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [\\n        {\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"disregarded\\\", \\\"start\\\": 93, \\\"end\\\": 104, \\\"normalized\\\": \\\"disregard\\\"}\\n      ],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"for both business income and business expenses\\\", \\\"start\\\": 105, \\\"end\\\": 157, \\\"normalized\\\": \\\"for both business income and business expenses\\\"}\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [\\n        {\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}\\n      ],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"role\":\"assistant\",\"tool_calls\":null}}],\"created\":1791353108,\"model\":\"mimo-v2.6-pro\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":417,\"prompt_tokens\":4377,\"total_tokens\":4794,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":0}}}",
+  "usage": {
+    "prompt_tokens": 4377,
+    "completion_tokens": 417,
+    "total_tokens": 4794,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "mimo-v2.6-pro",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "mimo",
+    "sample_id": "estg_000121",
+    "request_id": "mimo:estg_000121",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000121",
+      "source_id": "estg_000121",
+      "source_text": "In this context, the operating costs and the ongoing public charges for the land (building) are to be disregarded for both business income and business expenses.",
+      "clauses": [
+        {
+          "clause_id": "estg_000121_c01",
+          "clause_span": {
+            "text": "In this context, the operating costs and the ongoing public charges for the land (building) are to be disregarded for both business income and business expenses.",
+            "start": 0,
+            "end": 161
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "are to be",
+                "start": 92,
+                "end": 101
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "disregarded",
+              "start": 102,
+              "end": 113,
+              "normalized": "disregarded",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "for both business income and business expenses",
+              "start": 114,
+              "end": 160,
+              "normalized": "for both business income and business expenses",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 2,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 3,
+      "reanchored_count": 4,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000121_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "In this context, the operating costs and the ongoing public charges for the land (building) are to be disregarded for both business income and business expenses.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 158,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 161
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 161
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000121_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "are to be",
+          "normalized": null,
+          "original_start": 83,
+          "original_end": 92,
+          "candidate_occurrences": [
+            {
+              "start": 92,
+              "end": 101
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 92,
+            "end": 101
+          },
+          "distance": 18,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000121_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "disregarded",
+          "normalized": "disregarded",
+          "original_start": 93,
+          "original_end": 104,
+          "candidate_occurrences": [
+            {
+              "start": 102,
+              "end": 113
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 102,
+            "end": 113
+          },
+          "distance": 18,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000121_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "for both business income and business expenses",
+          "normalized": "for both business income and business expenses",
+          "original_start": 105,
+          "original_end": 157,
+          "candidate_occurrences": [
+            {
+              "start": 114,
+              "end": 160
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 114,
+            "end": 160
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 4,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

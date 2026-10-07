@@ -1,0 +1,278 @@
+{
+  "request_id": "mimo:estg_000302",
+  "raw_response_utf8": "{\"id\":\"13af8f07-4ea1-4ccb-979f-23a9020018cc_0e68f3d8f51e4a85b90b7db566c85950\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000302\\\",\\\"source_id\\\":\\\"estg_000302\\\",\\\"source_text\\\":\\\"(1) The following income shall, to the extent it does not constitute income within the meaning of Section 2(3) items 1 to 5, be income from letting and leasing: 1.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000302_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"The following income shall, to the extent it does not constitute income within the meaning of Section 2(3) items 1 to 5, be income from letting and leasing: 1.\\\",\\\"start\\\":5,\\\"end\\\":153},\\\"modality\\\":{\\\"label\\\":\\\"definition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall\\\",\\\"start\\\":31,\\\"end\\\":36}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"be income from letting and leasing\\\",\\\"start\\\":112,\\\"end\\\":147,\\\"normalized\\\":\\\"be income from letting and leasing\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"to the extent it does not constitute income within the meaning of Section 2(3) items 1 to 5\\\",\\\"start\\\":38,\\\"end\\\":130,\\\"normalized\\\":\\\"to the extent it does not constitute income within the meaning of section 2(3) items 1 to 5\\\"}],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"within the meaning of Section 2(3) items 1 to 5\\\",\\\"start\\\":84,\\\"end\\\":130,\\\"normalized\\\":\\\"within the meaning of section 2(3) items 1 to 5\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"actor\\\",\\\"reason\\\":\\\"reference_status=unresolved_coreference;independence_status=context_required\\\"},{\\\"field\\\":\\\"clause\\\",\\\"reason\\\":\\\"clause_boundary_ambiguous\\\"}]}\",\"role\":\"assistant\",\"tool_calls\":null}}],\"created\":1791353693,\"model\":\"mimo-v2.6-pro\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":459,\"prompt_tokens\":4389,\"total_tokens\":4848,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":0}}}",
+  "usage": {
+    "prompt_tokens": 4389,
+    "completion_tokens": 459,
+    "total_tokens": 4848,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "mimo-v2.6-pro",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "mimo",
+    "sample_id": "estg_000302",
+    "request_id": "mimo:estg_000302",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000302",
+      "source_id": "estg_000302",
+      "source_text": "(1) The following income shall, to the extent it does not constitute income within the meaning of Section 2(3) items 1 to 5, be income from letting and leasing: 1.",
+      "clauses": [
+        {
+          "clause_id": "estg_000302_c01",
+          "clause_span": {
+            "text": "The following income shall, to the extent it does not constitute income within the meaning of Section 2(3) items 1 to 5, be income from letting and leasing: 1.",
+            "start": 4,
+            "end": 163
+          },
+          "modality": {
+            "label": "definition",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 25,
+                "end": 30
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "be income from letting and leasing",
+              "start": 125,
+              "end": 159,
+              "normalized": "be income from letting and leasing",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "to the extent it does not constitute income within the meaning of Section 2(3) items 1 to 5",
+              "start": 32,
+              "end": 123,
+              "normalized": "to the extent it does not constitute income within the meaning of section 2(3) items 1 to 5",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "within the meaning of Section 2(3) items 1 to 5",
+              "start": 76,
+              "end": 123,
+              "normalized": "within the meaning of section 2(3) items 1 to 5",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        },
+        {
+          "field": "clause",
+          "reason": "clause_boundary_ambiguous"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 5,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000302_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The following income shall, to the extent it does not constitute income within the meaning of Section 2(3) items 1 to 5, be income from letting and leasing: 1.",
+          "normalized": null,
+          "original_start": 5,
+          "original_end": 153,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 163
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 163
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000302_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 31,
+          "original_end": 36,
+          "candidate_occurrences": [
+            {
+              "start": 25,
+              "end": 30
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 25,
+            "end": 30
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000302_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "be income from letting and leasing",
+          "normalized": "be income from letting and leasing",
+          "original_start": 112,
+          "original_end": 147,
+          "candidate_occurrences": [
+            {
+              "start": 125,
+              "end": 159
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 125,
+            "end": 159
+          },
+          "distance": 25,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000302_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "to the extent it does not constitute income within the meaning of Section 2(3) items 1 to 5",
+          "normalized": "to the extent it does not constitute income within the meaning of section 2(3) items 1 to 5",
+          "original_start": 38,
+          "original_end": 130,
+          "candidate_occurrences": [
+            {
+              "start": 32,
+              "end": 123
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 32,
+            "end": 123
+          },
+          "distance": 13,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000302_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "within the meaning of Section 2(3) items 1 to 5",
+          "normalized": "within the meaning of section 2(3) items 1 to 5",
+          "original_start": 84,
+          "original_end": 130,
+          "candidate_occurrences": [
+            {
+              "start": 76,
+              "end": 123
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 76,
+            "end": 123
+          },
+          "distance": 15,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

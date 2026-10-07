@@ -1,0 +1,485 @@
+{
+  "request_id": "glm:estg_000020",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000020\\\",\\n  \\\"source_id\\\": \\\"estg_000020\\\",\\n  \\\"source_text\\\": \\\"A prerequisite for the tax exemption is that the free drink allowance may not be sold by the employee and that it is only granted in such quantity as to actually preclude a sale. 20.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000020_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"A prerequisite for the tax exemption is that the free drink allowance may not be sold by the employee and that it is only granted in such quantity as to actually preclude a sale.\\\", \\\"start\\\": 0, \\\"end\\\": 163},\\n      \\\"modality\\\": {\\\"label\\\": \\\"prohibition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may not\\\", \\\"start\\\": 74, \\\"end\\\": 81}, {\\\"text\\\": \\\"not\\\", \\\"start\\\": 78, \\\"end\\\": 81}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"the employee\\\", \\\"start\\\": 95, \\\"end\\\": 107, \\\"normalized\\\": \\\"employee\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"sold\\\", \\\"start\\\": 86, \\\"end\\\": 90, \\\"normalized\\\": \\\"sell\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000020_c02\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"and that it is only granted in such quantity as to actually preclude a sale.\\\", \\\"start\\\": 108, \\\"end\\\": 178},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"only\\\", \\\"start\\\": 122, \\\"end\\\": 126}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a02\\\", \\\"text\\\": \\\"it\\\", \\\"start\\\": 118, \\\"end\\\": 120, \\\"normalized\\\": \\\"it\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"granted\\\", \\\"start\\\": 127, \\\"end\\\": 134, \\\"normalized\\\": \\\"grant\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"only\\\", \\\"start\\\": 122, \\\"end\\\": 126, \\\"normalized\\\": \\\"only\\\"},\\n        {\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"in such quantity as to actually preclude a sale\\\", \\\"start\\\": 135, \\\"end\\\": 181, \\\"normalized\\\": \\\"in such quantity as to actually preclude a sale\\\"}\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a02\\\", \\\"action_id\\\": \\\"p02\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": [\\n    {\\\"field\\\": \\\"actor\\\", \\\"reason\\\": \\\"reference_status=unresolved_coreference;independence_status=context_required\\\"}\\n  ]\\n}\\n```\",\"role\":\"assistant\"}}],\"created\":1791352487,\"id\":\"202610071354399be95727b2f1482a\",\"model\":\"glm-5.2\",\"object\":\"chat.completion\",\"request_id\":\"202610071354399be95727b2f1482a\",\"usage\":{\"completion_tokens\":724,\"prompt_tokens\":4221,\"prompt_tokens_details\":{\"cached_tokens\":1280},\"total_tokens\":4945}}",
+  "usage": {
+    "prompt_tokens": 4221,
+    "completion_tokens": 724,
+    "total_tokens": 4945
+  },
+  "returned_model": "glm-5.2",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "glm",
+    "sample_id": "estg_000020",
+    "request_id": "glm:estg_000020",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000020",
+      "source_id": "estg_000020",
+      "source_text": "A prerequisite for the tax exemption is that the free drink allowance may not be sold by the employee and that it is only granted in such quantity as to actually preclude a sale. 20.",
+      "clauses": [
+        {
+          "clause_id": "estg_000020_c01",
+          "clause_span": {
+            "text": "A prerequisite for the tax exemption is that the free drink allowance may not be sold by the employee and that it is only granted in such quantity as to actually preclude a sale.",
+            "start": 0,
+            "end": 178
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "may not",
+                "start": 70,
+                "end": 77
+              },
+              {
+                "text": "not",
+                "start": 74,
+                "end": 77
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the employee",
+              "start": 89,
+              "end": 101,
+              "normalized": "the employee",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "sold",
+              "start": 81,
+              "end": 85,
+              "normalized": "sold",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000020_c02",
+          "clause_span": {
+            "text": "and that it is only granted in such quantity as to actually preclude a sale.",
+            "start": 102,
+            "end": 178
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "only",
+                "start": 117,
+                "end": 121
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "granted",
+              "start": 122,
+              "end": 129,
+              "normalized": "granted",
+              "id": "p02"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "only",
+              "start": 117,
+              "end": 121,
+              "normalized": "only",
+              "id": "c01"
+            },
+            {
+              "text": "in such quantity as to actually preclude a sale",
+              "start": 130,
+              "end": 177,
+              "normalized": "in such quantity as to actually preclude a sale",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 6,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 2,
+      "field_span_count": 9,
+      "reanchored_count": 10,
+      "dropped_spans": [
+        "clauses[1].actors[0]"
+      ],
+      "dropped_clauses": [],
+      "dropped_edges": [
+        "clauses[1].actor_action_map[0]"
+      ],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000020_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "A prerequisite for the tax exemption is that the free drink allowance may not be sold by the employee and that it is only granted in such quantity as to actually preclude a sale.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 163,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 178
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 178
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000020_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may not",
+          "normalized": null,
+          "original_start": 74,
+          "original_end": 81,
+          "candidate_occurrences": [
+            {
+              "start": 70,
+              "end": 77
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 70,
+            "end": 77
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000020_c01",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "not",
+          "normalized": null,
+          "original_start": 78,
+          "original_end": 81,
+          "candidate_occurrences": [
+            {
+              "start": 74,
+              "end": 77
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 74,
+            "end": 77
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000020_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "the employee",
+          "normalized": "the employee",
+          "original_start": 95,
+          "original_end": 107,
+          "candidate_occurrences": [
+            {
+              "start": 89,
+              "end": 101
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 89,
+            "end": 101
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000020_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "sold",
+          "normalized": "sold",
+          "original_start": 86,
+          "original_end": 90,
+          "candidate_occurrences": [
+            {
+              "start": 81,
+              "end": 85
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 81,
+            "end": 85
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000020_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "and that it is only granted in such quantity as to actually preclude a sale.",
+          "normalized": null,
+          "original_start": 108,
+          "original_end": 178,
+          "candidate_occurrences": [
+            {
+              "start": 102,
+              "end": 178
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 102,
+            "end": 178
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000020_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "only",
+          "normalized": null,
+          "original_start": 122,
+          "original_end": 126,
+          "candidate_occurrences": [
+            {
+              "start": 117,
+              "end": 121
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 117,
+            "end": 121
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actors[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000020_c02",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a02",
+          "text": "it",
+          "normalized": "it",
+          "original_start": 118,
+          "original_end": 120,
+          "candidate_occurrences": [
+            {
+              "start": 111,
+              "end": 113
+            },
+            {
+              "start": 143,
+              "end": 145
+            }
+          ],
+          "strategy": "not_applicable",
+          "chosen": null,
+          "distance": null,
+          "outcome": "unresolved",
+          "reason": "ambiguous_occurrence",
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000020_c02",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p02",
+          "text": "granted",
+          "normalized": "granted",
+          "original_start": 127,
+          "original_end": 134,
+          "candidate_occurrences": [
+            {
+              "start": 122,
+              "end": 129
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 122,
+            "end": 129
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].constraints[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000020_c02",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "only",
+          "normalized": "only",
+          "original_start": 122,
+          "original_end": 126,
+          "candidate_occurrences": [
+            {
+              "start": 117,
+              "end": 121
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 117,
+            "end": 121
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].constraints[1]",
+          "clause_index": 1,
+          "clause_id": "estg_000020_c02",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "in such quantity as to actually preclude a sale",
+          "normalized": "in such quantity as to actually preclude a sale",
+          "original_start": 135,
+          "original_end": 181,
+          "candidate_occurrences": [
+            {
+              "start": 130,
+              "end": 177
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 130,
+            "end": 177
+          },
+          "distance": 9,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 1,
+      "reanchored_unique_exact": 10,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 1,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 1,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

@@ -1,0 +1,388 @@
+{
+  "request_id": "mimo:estg_000509",
+  "raw_response_utf8": "\n{\"id\":\"dd6f5745-8070-4e86-ba7d-55126af5ba0c_aaeab0e59e9943a9a299d13da6dabf62\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000509\\\",\\n  \\\"source_id\\\": \\\"estg_000509\\\",\\n  \\\"source_text\\\": \\\"(10) Other remuneration that does not fall under subsections 1 to 8 shall be taxed like a current payment in accordance with the wage tax rate schedule; for this purpose, a monthly wage payment period shall be assumed.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000509_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"Other remuneration that does not fall under subsections 1 to 8 shall be taxed like a current payment in accordance with the wage tax rate schedule\\\", \\\"start\\\": 5, \\\"end\\\": 154},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 71, \\\"end\\\": 76}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"taxed like a current payment\\\", \\\"start\\\": 81, \\\"end\\\": 109, \\\"normalized\\\": \\\"tax like a current payment\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"in accordance with the wage tax rate schedule\\\", \\\"start\\\": 110, \\\"end\\\": 154, \\\"normalized\\\": \\\"in accordance with the wage tax rate schedule\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000509_c02\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"for this purpose, a monthly wage payment period shall be assumed\\\", \\\"start\\\": 156, \\\"end\\\": 218},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 195, \\\"end\\\": 200}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"assumed\\\", \\\"start\\\": 205, \\\"end\\\": 212, \\\"normalized\\\": \\\"assume\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"for this purpose\\\", \\\"start\\\": 156, \\\"end\\\": 172, \\\"normalized\\\": \\\"for this purpose\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p02\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"role\":\"assistant\",\"tool_calls\":null}}],\"created\":1791353898,\"model\":\"mimo-v2.6-pro\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":662,\"prompt_tokens\":4395,\"total_tokens\":5057,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":0}}}",
+  "usage": {
+    "prompt_tokens": 4395,
+    "completion_tokens": 662,
+    "total_tokens": 5057,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "mimo-v2.6-pro",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "mimo",
+    "sample_id": "estg_000509",
+    "request_id": "mimo:estg_000509",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000509",
+      "source_id": "estg_000509",
+      "source_text": "(10) Other remuneration that does not fall under subsections 1 to 8 shall be taxed like a current payment in accordance with the wage tax rate schedule; for this purpose, a monthly wage payment period shall be assumed.",
+      "clauses": [
+        {
+          "clause_id": "estg_000509_c01",
+          "clause_span": {
+            "text": "Other remuneration that does not fall under subsections 1 to 8 shall be taxed like a current payment in accordance with the wage tax rate schedule",
+            "start": 5,
+            "end": 151
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 68,
+                "end": 73
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "taxed like a current payment",
+              "start": 77,
+              "end": 105,
+              "normalized": "taxed like a current payment",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "in accordance with the wage tax rate schedule",
+              "start": 106,
+              "end": 151,
+              "normalized": "in accordance with the wage tax rate schedule",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000509_c02",
+          "clause_span": {
+            "text": "for this purpose, a monthly wage payment period shall be assumed",
+            "start": 153,
+            "end": 217
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 201,
+                "end": 206
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "assumed",
+              "start": 210,
+              "end": 217,
+              "normalized": "assumed",
+              "id": "p02"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "for this purpose",
+              "start": 153,
+              "end": 169,
+              "normalized": "for this purpose",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p02"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 2,
+      "field_span_count": 6,
+      "reanchored_count": 8,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000509_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Other remuneration that does not fall under subsections 1 to 8 shall be taxed like a current payment in accordance with the wage tax rate schedule",
+          "normalized": null,
+          "original_start": 5,
+          "original_end": 154,
+          "candidate_occurrences": [
+            {
+              "start": 5,
+              "end": 151
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 5,
+            "end": 151
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000509_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 71,
+          "original_end": 76,
+          "candidate_occurrences": [
+            {
+              "start": 68,
+              "end": 73
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 68,
+            "end": 73
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000509_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "taxed like a current payment",
+          "normalized": "taxed like a current payment",
+          "original_start": 81,
+          "original_end": 109,
+          "candidate_occurrences": [
+            {
+              "start": 77,
+              "end": 105
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 77,
+            "end": 105
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000509_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "in accordance with the wage tax rate schedule",
+          "normalized": "in accordance with the wage tax rate schedule",
+          "original_start": 110,
+          "original_end": 154,
+          "candidate_occurrences": [
+            {
+              "start": 106,
+              "end": 151
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 106,
+            "end": 151
+          },
+          "distance": 7,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000509_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "for this purpose, a monthly wage payment period shall be assumed",
+          "normalized": null,
+          "original_start": 156,
+          "original_end": 218,
+          "candidate_occurrences": [
+            {
+              "start": 153,
+              "end": 217
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 153,
+            "end": 217
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000509_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 195,
+          "original_end": 200,
+          "candidate_occurrences": [
+            {
+              "start": 201,
+              "end": 206
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 201,
+            "end": 206
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000509_c02",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p02",
+          "text": "assumed",
+          "normalized": "assumed",
+          "original_start": 205,
+          "original_end": 212,
+          "candidate_occurrences": [
+            {
+              "start": 210,
+              "end": 217
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 210,
+            "end": 217
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].constraints[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000509_c02",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c02",
+          "text": "for this purpose",
+          "normalized": "for this purpose",
+          "original_start": 156,
+          "original_end": 172,
+          "candidate_occurrences": [
+            {
+              "start": 153,
+              "end": 169
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 153,
+            "end": 169
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 8,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

@@ -1,0 +1,423 @@
+{
+  "request_id": "mimo:estg_000347",
+  "raw_response_utf8": "\n{\"id\":\"7b41978f-99e2-4099-a35d-4d07e7ab921c_cbb3ad44d7204e77a9f5eeaf60e79ee0\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000347\\\",\\\"source_id\\\":\\\"estg_000347\\\",\\\"source_text\\\":\\\"(2) If the income is not divisible by 100 S, remainders of up to and including 50 S shall be disregarded and remainders exceeding 50 S shall be counted as full 100 S.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000347_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"If the income is not divisible by 100 S, remainders of up to and including 50 S shall be disregarded\\\",\\\"start\\\":0,\\\"end\\\":101},\\\"modality\\\":{\\\"label\\\":\\\"obligation\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall\\\",\\\"start\\\":75,\\\"end\\\":80}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"disregarded\\\",\\\"start\\\":84,\\\"end\\\":95,\\\"normalized\\\":\\\"disregard\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"If the income is not divisible by 100 S\\\",\\\"start\\\":0,\\\"end\\\":39,\\\"normalized\\\":\\\"if the income is not divisible by 100 s\\\"}],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"of up to and including 50 S\\\",\\\"start\\\":52,\\\"end\\\":79,\\\"normalized\\\":\\\"of up to and including 50 s\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]},{\\\"clause_id\\\":\\\"estg_000347_c02\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"remainders exceeding 50 S shall be counted as full 100 S.\\\",\\\"start\\\":102,\\\"end\\\":159},\\\"modality\\\":{\\\"label\\\":\\\"obligation\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall\\\",\\\"start\\\":127,\\\"end\\\":132}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p02\\\",\\\"text\\\":\\\"counted as full 100 S\\\",\\\"start\\\":136,\\\"end\\\":156,\\\"normalized\\\":\\\"count as full 100 s\\\"}],\\\"conditions\\\":[],\\\"constraints\\\":[{\\\"id\\\":\\\"c02\\\",\\\"text\\\":\\\"exceeding 50 S\\\",\\\"start\\\":112,\\\"end\\\":126,\\\"normalized\\\":\\\"exceeding 50 s\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p02\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\",\"tool_calls\":null}}],\"created\":1791353744,\"model\":\"mimo-v2.6-pro\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":574,\"prompt_tokens\":4396,\"total_tokens\":4970,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":0}}}",
+  "usage": {
+    "prompt_tokens": 4396,
+    "completion_tokens": 574,
+    "total_tokens": 4970,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "mimo-v2.6-pro",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "mimo",
+    "sample_id": "estg_000347",
+    "request_id": "mimo:estg_000347",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000347",
+      "source_id": "estg_000347",
+      "source_text": "(2) If the income is not divisible by 100 S, remainders of up to and including 50 S shall be disregarded and remainders exceeding 50 S shall be counted as full 100 S.",
+      "clauses": [
+        {
+          "clause_id": "estg_000347_c01",
+          "clause_span": {
+            "text": "If the income is not divisible by 100 S, remainders of up to and including 50 S shall be disregarded",
+            "start": 4,
+            "end": 104
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 84,
+                "end": 89
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "disregarded",
+              "start": 93,
+              "end": 104,
+              "normalized": "disregarded",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If the income is not divisible by 100 S",
+              "start": 4,
+              "end": 43,
+              "normalized": "if the income is not divisible by 100 s",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "of up to and including 50 S",
+              "start": 56,
+              "end": 83,
+              "normalized": "of up to and including 50 s",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000347_c02",
+          "clause_span": {
+            "text": "remainders exceeding 50 S shall be counted as full 100 S.",
+            "start": 109,
+            "end": 166
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 135,
+                "end": 140
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "counted as full 100 S",
+              "start": 144,
+              "end": 165,
+              "normalized": "counted as full 100 s",
+              "id": "p02"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "exceeding 50 S",
+              "start": 120,
+              "end": 134,
+              "normalized": "exceeding 50 s",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p02"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 5,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 2,
+      "field_span_count": 7,
+      "reanchored_count": 9,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000347_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If the income is not divisible by 100 S, remainders of up to and including 50 S shall be disregarded",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 101,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 104
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 104
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000347_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 75,
+          "original_end": 80,
+          "candidate_occurrences": [
+            {
+              "start": 84,
+              "end": 89
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 84,
+            "end": 89
+          },
+          "distance": 18,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000347_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "disregarded",
+          "normalized": "disregarded",
+          "original_start": 84,
+          "original_end": 95,
+          "candidate_occurrences": [
+            {
+              "start": 93,
+              "end": 104
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 93,
+            "end": 104
+          },
+          "distance": 18,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000347_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "If the income is not divisible by 100 S",
+          "normalized": "if the income is not divisible by 100 s",
+          "original_start": 0,
+          "original_end": 39,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 43
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 43
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000347_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "of up to and including 50 S",
+          "normalized": "of up to and including 50 s",
+          "original_start": 52,
+          "original_end": 79,
+          "candidate_occurrences": [
+            {
+              "start": 56,
+              "end": 83
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 56,
+            "end": 83
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000347_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "remainders exceeding 50 S shall be counted as full 100 S.",
+          "normalized": null,
+          "original_start": 102,
+          "original_end": 159,
+          "candidate_occurrences": [
+            {
+              "start": 109,
+              "end": 166
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 109,
+            "end": 166
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000347_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 127,
+          "original_end": 132,
+          "candidate_occurrences": [
+            {
+              "start": 135,
+              "end": 140
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 135,
+            "end": 140
+          },
+          "distance": 16,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000347_c02",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p02",
+          "text": "counted as full 100 S",
+          "normalized": "counted as full 100 s",
+          "original_start": 136,
+          "original_end": 156,
+          "candidate_occurrences": [
+            {
+              "start": 144,
+              "end": 165
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 144,
+            "end": 165
+          },
+          "distance": 17,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].constraints[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000347_c02",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c02",
+          "text": "exceeding 50 S",
+          "normalized": "exceeding 50 s",
+          "original_start": 112,
+          "original_end": 126,
+          "candidate_occurrences": [
+            {
+              "start": 120,
+              "end": 134
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 120,
+            "end": 134
+          },
+          "distance": 16,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 9,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

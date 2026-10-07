@@ -1,0 +1,269 @@
+{
+  "request_id": "glm:estg_000458",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000458\\\",\\n  \\\"source_id\\\": \\\"estg_000458\\\",\\n  \\\"source_text\\\": \\\"In the cases of Section 56(2), the competent authority shall ensure that the changes are noted in the household list.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000458_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"In the cases of Section 56(2), the competent authority shall ensure that the changes are noted in the household list.\\\", \\\"start\\\": 0, \\\"end\\\": 108},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 57, \\\"end\\\": 62}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"the competent authority\\\", \\\"start\\\": 34, \\\"end\\\": 56, \\\"normalized\\\": \\\"competent authority\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"ensure that the changes are noted in the household list\\\", \\\"start\\\": 63, \\\"end\\\": 118, \\\"normalized\\\": \\\"ensure that the changes are noted in the household list\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"In the cases of Section 56(2)\\\", \\\"start\\\": 0, \\\"end\\\": 29, \\\"normalized\\\": \\\"in the cases of section 56(2)\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"role\":\"assistant\"}}],\"created\":1791353395,\"id\":\"202610071409492717432c1a9e45ca\",\"model\":\"glm-5.2\",\"object\":\"chat.completion\",\"request_id\":\"202610071409492717432c1a9e45ca\",\"usage\":{\"completion_tokens\":429,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens\":4207,\"prompt_tokens_details\":{\"cached_tokens\":1344},\"total_tokens\":4636}}",
+  "usage": {
+    "prompt_tokens": 4207,
+    "completion_tokens": 429,
+    "total_tokens": 4636,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "glm-5.2",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "glm",
+    "sample_id": "estg_000458",
+    "request_id": "glm:estg_000458",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000458",
+      "source_id": "estg_000458",
+      "source_text": "In the cases of Section 56(2), the competent authority shall ensure that the changes are noted in the household list.",
+      "clauses": [
+        {
+          "clause_id": "estg_000458_c01",
+          "clause_span": {
+            "text": "In the cases of Section 56(2), the competent authority shall ensure that the changes are noted in the household list.",
+            "start": 0,
+            "end": 117
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 55,
+                "end": 60
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the competent authority",
+              "start": 31,
+              "end": 54,
+              "normalized": "the competent authority",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "ensure that the changes are noted in the household list",
+              "start": 61,
+              "end": 116,
+              "normalized": "ensure that the changes are noted in the household list",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "In the cases of Section 56(2)",
+              "start": 0,
+              "end": 29,
+              "normalized": "in the cases of section 56(2)",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 4,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000458_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "In the cases of Section 56(2), the competent authority shall ensure that the changes are noted in the household list.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 108,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 117
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 117
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000458_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 57,
+          "original_end": 62,
+          "candidate_occurrences": [
+            {
+              "start": 55,
+              "end": 60
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 55,
+            "end": 60
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000458_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "the competent authority",
+          "normalized": "the competent authority",
+          "original_start": 34,
+          "original_end": 56,
+          "candidate_occurrences": [
+            {
+              "start": 31,
+              "end": 54
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 31,
+            "end": 54
+          },
+          "distance": 5,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000458_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "ensure that the changes are noted in the household list",
+          "normalized": "ensure that the changes are noted in the household list",
+          "original_start": 63,
+          "original_end": 118,
+          "candidate_occurrences": [
+            {
+              "start": 61,
+              "end": 116
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 61,
+            "end": 116
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000458_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "In the cases of Section 56(2)",
+          "normalized": "in the cases of section 56(2)",
+          "original_start": 0,
+          "original_end": 29,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 29
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 0,
+            "end": 29
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 4,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

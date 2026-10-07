@@ -1,0 +1,269 @@
+{
+  "request_id": "mimo:estg_000139",
+  "raw_response_utf8": "{\"id\":\"cf91724f-3b59-4f32-9b7d-975f08d9d266_035be986efaa4f8a9d3b216ef8839c32\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\": \\\"1.0.0\\\", \\\"sample_id\\\": \\\"estg_000139\\\", \\\"source_id\\\": \\\"estg_000139\\\", \\\"source_text\\\": \\\"The acquisition or production costs of depreciable fixed assets may be deducted as operating expenses if the cost of the individual asset does not exceed 5,000 Schillings (low-value assets).\\\", \\\"clauses\\\": [{\\\"clause_id\\\": \\\"estg_000139_c01\\\", \\\"clause_span\\\": {\\\"text\\\": \\\"The acquisition or production costs of depreciable fixed assets may be deducted as operating expenses if the cost of the individual asset does not exceed 5,000 Schillings (low-value assets).\\\", \\\"start\\\": 0, \\\"end\\\": 173}, \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may\\\", \\\"start\\\": 58, \\\"end\\\": 61}]}, \\\"actors\\\": [], \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"deducted as operating expenses\\\", \\\"start\\\": 62, \\\"end\\\": 92, \\\"normalized\\\": \\\"deduct as operating expenses\\\"}], \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"if the cost of the individual asset does not exceed 5,000 Schillings (low-value assets)\\\", \\\"start\\\": 93, \\\"end\\\": 172, \\\"normalized\\\": \\\"if the cost of the individual asset does not exceed 5,000 Schillings (low-value assets)\\\"}], \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"does not exceed 5,000 Schillings\\\", \\\"start\\\": 131, \\\"end\\\": 162, \\\"normalized\\\": \\\"does not exceed 5,000 Schillings\\\"}], \\\"exceptions\\\": [], \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}], \\\"order_relations\\\": []}], \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"}, \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []}, \\\"unsupported_or_ambiguous\\\": []}\",\"role\":\"assistant\",\"tool_calls\":null}}],\"created\":1791353221,\"model\":\"mimo-v2.6-pro\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":495,\"prompt_tokens\":4387,\"total_tokens\":4882,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":0}}}",
+  "usage": {
+    "prompt_tokens": 4387,
+    "completion_tokens": 495,
+    "total_tokens": 4882,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "mimo-v2.6-pro",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "mimo",
+    "sample_id": "estg_000139",
+    "request_id": "mimo:estg_000139",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000139",
+      "source_id": "estg_000139",
+      "source_text": "The acquisition or production costs of depreciable fixed assets may be deducted as operating expenses if the cost of the individual asset does not exceed 5,000 Schillings (low-value assets).",
+      "clauses": [
+        {
+          "clause_id": "estg_000139_c01",
+          "clause_span": {
+            "text": "The acquisition or production costs of depreciable fixed assets may be deducted as operating expenses if the cost of the individual asset does not exceed 5,000 Schillings (low-value assets).",
+            "start": 0,
+            "end": 190
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 64,
+                "end": 67
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "deducted as operating expenses",
+              "start": 71,
+              "end": 101,
+              "normalized": "deducted as operating expenses",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "if the cost of the individual asset does not exceed 5,000 Schillings (low-value assets)",
+              "start": 102,
+              "end": 189,
+              "normalized": "if the cost of the individual asset does not exceed 5,000 schillings (low-value assets)",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "does not exceed 5,000 Schillings",
+              "start": 138,
+              "end": 170,
+              "normalized": "does not exceed 5,000 schillings",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 5,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000139_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The acquisition or production costs of depreciable fixed assets may be deducted as operating expenses if the cost of the individual asset does not exceed 5,000 Schillings (low-value assets).",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 173,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 190
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 190
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000139_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 58,
+          "original_end": 61,
+          "candidate_occurrences": [
+            {
+              "start": 64,
+              "end": 67
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 64,
+            "end": 67
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000139_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "deducted as operating expenses",
+          "normalized": "deducted as operating expenses",
+          "original_start": 62,
+          "original_end": 92,
+          "candidate_occurrences": [
+            {
+              "start": 71,
+              "end": 101
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 71,
+            "end": 101
+          },
+          "distance": 18,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000139_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "if the cost of the individual asset does not exceed 5,000 Schillings (low-value assets)",
+          "normalized": "if the cost of the individual asset does not exceed 5,000 schillings (low-value assets)",
+          "original_start": 93,
+          "original_end": 172,
+          "candidate_occurrences": [
+            {
+              "start": 102,
+              "end": 189
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 102,
+            "end": 189
+          },
+          "distance": 26,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000139_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "does not exceed 5,000 Schillings",
+          "normalized": "does not exceed 5,000 schillings",
+          "original_start": 131,
+          "original_end": 162,
+          "candidate_occurrences": [
+            {
+              "start": 138,
+              "end": 170
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 138,
+            "end": 170
+          },
+          "distance": 15,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

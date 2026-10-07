@@ -1,0 +1,303 @@
+{
+  "request_id": "glm:estg_000130",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000130\\\",\\\"source_id\\\":\\\"estg_000130\\\",\\\"source_text\\\":\\\"(3) A transfer to tangible assets shall only be permissible if the hidden reserves also originate from the sale of tangible assets.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000130_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"(3) A transfer to tangible assets shall only be permissible if the hidden reserves also originate from the sale of tangible assets.\\\",\\\"start\\\":0,\\\"end\\\":124},\\\"modality\\\":{\\\"label\\\":\\\"permission\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall only be permissible\\\",\\\"start\\\":37,\\\"end\\\":61}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"A transfer to tangible assets\\\",\\\"start\\\":4,\\\"end\\\":32,\\\"normalized\\\":\\\"transfer to tangible assets\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"be permissible\\\",\\\"start\\\":49,\\\"end\\\":62,\\\"normalized\\\":\\\"be permissible\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"if the hidden reserves also originate from the sale of tangible assets\\\",\\\"start\\\":63,\\\"end\\\":123,\\\"normalized\\\":\\\"if the hidden reserves also originate from the sale of tangible assets\\\"}],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"only\\\",\\\"start\\\":43,\\\"end\\\":47,\\\"normalized\\\":\\\"only\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a01\\\",\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\"}}],\"created\":1791352980,\"id\":\"20261007140256cca577d02c2046fe\",\"model\":\"glm-5.2\",\"object\":\"chat.completion\",\"request_id\":\"20261007140256cca577d02c2046fe\",\"usage\":{\"completion_tokens\":333,\"prompt_tokens\":4205,\"prompt_tokens_details\":{\"cached_tokens\":1280},\"total_tokens\":4538}}",
+  "usage": {
+    "prompt_tokens": 4205,
+    "completion_tokens": 333,
+    "total_tokens": 4538
+  },
+  "returned_model": "glm-5.2",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "glm",
+    "sample_id": "estg_000130",
+    "request_id": "glm:estg_000130",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000130",
+      "source_id": "estg_000130",
+      "source_text": "(3) A transfer to tangible assets shall only be permissible if the hidden reserves also originate from the sale of tangible assets.",
+      "clauses": [
+        {
+          "clause_id": "estg_000130_c01",
+          "clause_span": {
+            "text": "(3) A transfer to tangible assets shall only be permissible if the hidden reserves also originate from the sale of tangible assets.",
+            "start": 0,
+            "end": 131
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "shall only be permissible",
+                "start": 34,
+                "end": 59
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "A transfer to tangible assets",
+              "start": 4,
+              "end": 33,
+              "normalized": "a transfer to tangible assets",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "be permissible",
+              "start": 45,
+              "end": 59,
+              "normalized": "be permissible",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "if the hidden reserves also originate from the sale of tangible assets",
+              "start": 60,
+              "end": 130,
+              "normalized": "if the hidden reserves also originate from the sale of tangible assets",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "only",
+              "start": 40,
+              "end": 44,
+              "normalized": "only",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 5,
+      "reanchored_count": 6,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000130_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "(3) A transfer to tangible assets shall only be permissible if the hidden reserves also originate from the sale of tangible assets.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 124,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 131
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 131
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000130_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall only be permissible",
+          "normalized": null,
+          "original_start": 37,
+          "original_end": 61,
+          "candidate_occurrences": [
+            {
+              "start": 34,
+              "end": 59
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 34,
+            "end": 59
+          },
+          "distance": 5,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000130_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "A transfer to tangible assets",
+          "normalized": "a transfer to tangible assets",
+          "original_start": 4,
+          "original_end": 32,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 33
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 33
+          },
+          "distance": 1,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000130_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "be permissible",
+          "normalized": "be permissible",
+          "original_start": 49,
+          "original_end": 62,
+          "candidate_occurrences": [
+            {
+              "start": 45,
+              "end": 59
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 45,
+            "end": 59
+          },
+          "distance": 7,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000130_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "if the hidden reserves also originate from the sale of tangible assets",
+          "normalized": "if the hidden reserves also originate from the sale of tangible assets",
+          "original_start": 63,
+          "original_end": 123,
+          "candidate_occurrences": [
+            {
+              "start": 60,
+              "end": 130
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 60,
+            "end": 130
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000130_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "only",
+          "normalized": "only",
+          "original_start": 43,
+          "original_end": 47,
+          "candidate_occurrences": [
+            {
+              "start": 40,
+              "end": 44
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 40,
+            "end": 44
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 6,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

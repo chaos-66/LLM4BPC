@@ -1,0 +1,303 @@
+{
+  "request_id": "glm:estg_000133",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000133\\\",\\n  \\\"source_id\\\": \\\"estg_000133\\\",\\n  \\\"source_text\\\": \\\"(6) Half of the income from forest uses as a result of force majeure (in particular ice breakage, snow breakage, windthrow, insect infestation, flood or fire) may be used in accordance with paragraphs 1 to 5.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000133_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"(6) Half of the income from forest uses as a result of force majeure (in particular ice breakage, snow breakage, windthrow, insect infestation, flood or fire) may be used in accordance with paragraphs 1 to 5.\\\", \\\"start\\\": 0, \\\"end\\\": 195},\\n      \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may\\\", \\\"start\\\": 148, \\\"end\\\": 151}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"used\\\", \\\"start\\\": 155, \\\"end\\\": 159, \\\"normalized\\\": \\\"use\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"as a result of force majeure (in particular ice breakage, snow breakage, windthrow, insect infestation, flood or fire)\\\", \\\"start\\\": 48, \\\"end\\\": 147, \\\"normalized\\\": \\\"as a result of force majeure (in particular ice breakage, snow breakage, windthrow, insect infestation, flood or fire)\\\"}],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"Half of the income from forest uses\\\", \\\"start\\\": 4, \\\"end\\\": 39, \\\"normalized\\\": \\\"half of the income from forest uses\\\"},\\n        {\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"in accordance with paragraphs 1 to 5\\\", \\\"start\\\": 160, \\\"end\\\": 195, \\\"normalized\\\": \\\"in accordance with paragraphs 1 to 5\\\"}\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"role\":\"assistant\"}}],\"created\":1791352993,\"id\":\"20261007140308490e0b771b2040de\",\"model\":\"glm-5.2\",\"object\":\"chat.completion\",\"request_id\":\"20261007140308490e0b771b2040de\",\"usage\":{\"completion_tokens\":553,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens\":4232,\"prompt_tokens_details\":{\"cached_tokens\":1344},\"total_tokens\":4785}}",
+  "usage": {
+    "prompt_tokens": 4232,
+    "completion_tokens": 553,
+    "total_tokens": 4785,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "glm-5.2",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "glm",
+    "sample_id": "estg_000133",
+    "request_id": "glm:estg_000133",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000133",
+      "source_id": "estg_000133",
+      "source_text": "(6) Half of the income from forest uses as a result of force majeure (in particular ice breakage, snow breakage, windthrow, insect infestation, flood or fire) may be used in accordance with paragraphs 1 to 5.",
+      "clauses": [
+        {
+          "clause_id": "estg_000133_c01",
+          "clause_span": {
+            "text": "(6) Half of the income from forest uses as a result of force majeure (in particular ice breakage, snow breakage, windthrow, insect infestation, flood or fire) may be used in accordance with paragraphs 1 to 5.",
+            "start": 0,
+            "end": 208
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 159,
+                "end": 162
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "used",
+              "start": 166,
+              "end": 170,
+              "normalized": "used",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "as a result of force majeure (in particular ice breakage, snow breakage, windthrow, insect infestation, flood or fire)",
+              "start": 40,
+              "end": 158,
+              "normalized": "as a result of force majeure (in particular ice breakage, snow breakage, windthrow, insect infestation, flood or fire)",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "Half of the income from forest uses",
+              "start": 4,
+              "end": 39,
+              "normalized": "half of the income from forest uses",
+              "id": "c01"
+            },
+            {
+              "text": "in accordance with paragraphs 1 to 5",
+              "start": 171,
+              "end": 207,
+              "normalized": "in accordance with paragraphs 1 to 5",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 5,
+      "reanchored_count": 5,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000133_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "(6) Half of the income from forest uses as a result of force majeure (in particular ice breakage, snow breakage, windthrow, insect infestation, flood or fire) may be used in accordance with paragraphs 1 to 5.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 195,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 208
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 208
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000133_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 148,
+          "original_end": 151,
+          "candidate_occurrences": [
+            {
+              "start": 159,
+              "end": 162
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 159,
+            "end": 162
+          },
+          "distance": 22,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000133_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "used",
+          "normalized": "used",
+          "original_start": 155,
+          "original_end": 159,
+          "candidate_occurrences": [
+            {
+              "start": 166,
+              "end": 170
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 166,
+            "end": 170
+          },
+          "distance": 22,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000133_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "as a result of force majeure (in particular ice breakage, snow breakage, windthrow, insect infestation, flood or fire)",
+          "normalized": "as a result of force majeure (in particular ice breakage, snow breakage, windthrow, insect infestation, flood or fire)",
+          "original_start": 48,
+          "original_end": 147,
+          "candidate_occurrences": [
+            {
+              "start": 40,
+              "end": 158
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 40,
+            "end": 158
+          },
+          "distance": 19,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000133_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "Half of the income from forest uses",
+          "normalized": "half of the income from forest uses",
+          "original_start": 4,
+          "original_end": 39,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 39
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 4,
+            "end": 39
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000133_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "in accordance with paragraphs 1 to 5",
+          "normalized": "in accordance with paragraphs 1 to 5",
+          "original_start": 160,
+          "original_end": 195,
+          "candidate_occurrences": [
+            {
+              "start": 171,
+              "end": 207
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 171,
+            "end": 207
+          },
+          "distance": 23,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

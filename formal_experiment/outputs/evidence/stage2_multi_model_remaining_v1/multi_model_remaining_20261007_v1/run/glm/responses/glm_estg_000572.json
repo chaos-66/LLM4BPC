@@ -1,0 +1,304 @@
+{
+  "request_id": "glm:estg_000572",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000572\\\",\\n  \\\"source_id\\\": \\\"estg_000572\\\",\\n  \\\"source_text\\\": \\\"If, due to the special nature of the remuneration, a period for which the wage is paid cannot exceptionally be determined, the wage payment period shall be deemed to be at least the actually expended working time.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000572_c01\\\",\\n      \\\"clause_span\\\": {\\n        \\\"text\\\": \\\"If, due to the special nature of the remuneration, a period for which the wage is paid cannot exceptionally be determined, the wage payment period shall be deemed to be at least the actually expended working time.\\\",\\n        \\\"start\\\": 0,\\n        \\\"end\\\": 188\\n      },\\n      \\\"modality\\\": {\\n        \\\"label\\\": \\\"obligation\\\",\\n        \\\"evidence\\\": [\\n          {\\\"text\\\": \\\"shall\\\", \\\"start\\\": 145, \\\"end\\\": 150}\\n        ]\\n      },\\n      \\\"actors\\\": [\\n        {\\n          \\\"id\\\": \\\"a01\\\",\\n          \\\"text\\\": \\\"the wage payment period\\\",\\n          \\\"start\\\": 122,\\n          \\\"end\\\": 144,\\n          \\\"normalized\\\": \\\"wage payment period\\\"\\n        }\\n      ],\\n      \\\"actions\\\": [\\n        {\\n          \\\"id\\\": \\\"p01\\\",\\n          \\\"text\\\": \\\"deemed to be\\\",\\n          \\\"start\\\": 151,\\n          \\\"end\\\": 163,\\n          \\\"normalized\\\": \\\"deemed to be\\\"\\n        }\\n      ],\\n      \\\"conditions\\\": [\\n        {\\n          \\\"id\\\": \\\"d01\\\",\\n          \\\"text\\\": \\\"If, due to the special nature of the remuneration, a period for which the wage is paid cannot exceptionally be determined\\\",\\n          \\\"start\\\": 0,\\n          \\\"end\\\": 121,\\n          \\\"normalized\\\": \\\"if, due to the special nature of the remuneration, a period for which the wage is paid cannot exceptionally be determined\\\"\\n        }\\n      ],\\n      \\\"constraints\\\": [\\n        {\\n          \\\"id\\\": \\\"c01\\\",\\n          \\\"text\\\": \\\"at least\\\",\\n          \\\"start\\\": 167,\\n          \\\"end\\\": 175,\\n          \\\"normalized\\\": \\\"at least\\\"\\n        }\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [\\n        {\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}\\n      ],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\n    \\\"name\\\": \\\"direct_llm\\\",\\n    \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"\\n  },\\n  \\\"validation\\\": {\\n    \\\"schema_valid\\\": true,\\n    \\\"cross_field_valid\\\": true,\\n    \\\"errors\\\": []\\n  },\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"role\":\"assistant\"}}],\"created\":1791353500,\"id\":\"20261007141134933d871683a54e26\",\"model\":\"glm-5.2\",\"object\":\"chat.completion\",\"request_id\":\"20261007141134933d871683a54e26\",\"usage\":{\"completion_tokens\":590,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens\":4225,\"prompt_tokens_details\":{\"cached_tokens\":1344},\"total_tokens\":4815}}",
+  "usage": {
+    "prompt_tokens": 4225,
+    "completion_tokens": 590,
+    "total_tokens": 4815,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "glm-5.2",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "glm",
+    "sample_id": "estg_000572",
+    "request_id": "glm:estg_000572",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000572",
+      "source_id": "estg_000572",
+      "source_text": "If, due to the special nature of the remuneration, a period for which the wage is paid cannot exceptionally be determined, the wage payment period shall be deemed to be at least the actually expended working time.",
+      "clauses": [
+        {
+          "clause_id": "estg_000572_c01",
+          "clause_span": {
+            "text": "If, due to the special nature of the remuneration, a period for which the wage is paid cannot exceptionally be determined, the wage payment period shall be deemed to be at least the actually expended working time.",
+            "start": 0,
+            "end": 213
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 147,
+                "end": 152
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the wage payment period",
+              "start": 123,
+              "end": 146,
+              "normalized": "the wage payment period",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "deemed to be",
+              "start": 156,
+              "end": 168,
+              "normalized": "deemed to be",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If, due to the special nature of the remuneration, a period for which the wage is paid cannot exceptionally be determined",
+              "start": 0,
+              "end": 121,
+              "normalized": "if, due to the special nature of the remuneration, a period for which the wage is paid cannot exceptionally be determined",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "at least",
+              "start": 169,
+              "end": 177,
+              "normalized": "at least",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 5,
+      "reanchored_count": 5,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000572_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If, due to the special nature of the remuneration, a period for which the wage is paid cannot exceptionally be determined, the wage payment period shall be deemed to be at least the actually expended working time.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 188,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 213
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 213
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000572_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 145,
+          "original_end": 150,
+          "candidate_occurrences": [
+            {
+              "start": 147,
+              "end": 152
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 147,
+            "end": 152
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000572_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "the wage payment period",
+          "normalized": "the wage payment period",
+          "original_start": 122,
+          "original_end": 144,
+          "candidate_occurrences": [
+            {
+              "start": 123,
+              "end": 146
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 123,
+            "end": 146
+          },
+          "distance": 3,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000572_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "deemed to be",
+          "normalized": "deemed to be",
+          "original_start": 151,
+          "original_end": 163,
+          "candidate_occurrences": [
+            {
+              "start": 156,
+              "end": 168
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 156,
+            "end": 168
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000572_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "If, due to the special nature of the remuneration, a period for which the wage is paid cannot exceptionally be determined",
+          "normalized": "if, due to the special nature of the remuneration, a period for which the wage is paid cannot exceptionally be determined",
+          "original_start": 0,
+          "original_end": 121,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 121
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 0,
+            "end": 121
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000572_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "at least",
+          "normalized": "at least",
+          "original_start": 167,
+          "original_end": 175,
+          "candidate_occurrences": [
+            {
+              "start": 169,
+              "end": 177
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 169,
+            "end": 177
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

@@ -1,0 +1,372 @@
+{
+  "request_id": "glm:estg_000773",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000773\\\",\\\"source_id\\\":\\\"estg_000773\\\",\\\"source_text\\\":\\\"If the legal person under private law is held exclusively, directly or indirectly, by corporations under public law, activities conducted in a separate set of accounts within the meaning of subsection (3) shall be deemed a single activity, even if the individual activities lack the intention of making a profit.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000773_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"If the legal person under private law is held exclusively, directly or indirectly, by corporations under public law, activities conducted in a separate set of accounts within the meaning of subsection (3) shall be deemed a single activity, even if the individual activities lack the intention of making a profit.\\\",\\\"start\\\":0,\\\"end\\\":286},\\\"modality\\\":{\\\"label\\\":\\\"definition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall be deemed\\\",\\\"start\\\":191,\\\"end\\\":205}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"deemed a single activity\\\",\\\"start\\\":206,\\\"end\\\":229,\\\"normalized\\\":\\\"deemed a single activity\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"If the legal person under private law is held exclusively, directly or indirectly, by corporations under public law\\\",\\\"start\\\":0,\\\"end\\\":123,\\\"normalized\\\":\\\"if the legal person under private law is held exclusively, directly or indirectly, by corporations under public law\\\"}],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"exclusively\\\",\\\"start\\\":57,\\\"end\\\":68,\\\"normalized\\\":\\\"exclusively\\\"},{\\\"id\\\":\\\"c02\\\",\\\"text\\\":\\\"directly or indirectly\\\",\\\"start\\\":70,\\\"end\\\":91,\\\"normalized\\\":\\\"directly or indirectly\\\"},{\\\"id\\\":\\\"c03\\\",\\\"text\\\":\\\"within the meaning of subsection (3)\\\",\\\"start\\\":159,\\\"end\\\":194,\\\"normalized\\\":\\\"within the meaning of subsection (3)\\\"}],\\\"exceptions\\\":[{\\\"id\\\":\\\"e01\\\",\\\"text\\\":\\\"even if the individual activities lack the intention of making a profit\\\",\\\"start\\\":231,\\\"end\\\":300,\\\"normalized\\\":\\\"even if the individual activities lack the intention of making a profit\\\"}],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\"}}],\"created\":1791353582,\"id\":\"20261007141257a80903ccad7e4fd4\",\"model\":\"glm-5.2\",\"object\":\"chat.completion\",\"request_id\":\"20261007141257a80903ccad7e4fd4\",\"usage\":{\"completion_tokens\":505,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens\":4239,\"prompt_tokens_details\":{\"cached_tokens\":1344},\"total_tokens\":4744}}",
+  "usage": {
+    "prompt_tokens": 4239,
+    "completion_tokens": 505,
+    "total_tokens": 4744,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "glm-5.2",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "glm",
+    "sample_id": "estg_000773",
+    "request_id": "glm:estg_000773",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000773",
+      "source_id": "estg_000773",
+      "source_text": "If the legal person under private law is held exclusively, directly or indirectly, by corporations under public law, activities conducted in a separate set of accounts within the meaning of subsection (3) shall be deemed a single activity, even if the individual activities lack the intention of making a profit.",
+      "clauses": [
+        {
+          "clause_id": "estg_000773_c01",
+          "clause_span": {
+            "text": "If the legal person under private law is held exclusively, directly or indirectly, by corporations under public law, activities conducted in a separate set of accounts within the meaning of subsection (3) shall be deemed a single activity, even if the individual activities lack the intention of making a profit.",
+            "start": 0,
+            "end": 312
+          },
+          "modality": {
+            "label": "definition",
+            "evidence": [
+              {
+                "text": "shall be deemed",
+                "start": 205,
+                "end": 220
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "deemed a single activity",
+              "start": 214,
+              "end": 238,
+              "normalized": "deemed a single activity",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If the legal person under private law is held exclusively, directly or indirectly, by corporations under public law",
+              "start": 0,
+              "end": 115,
+              "normalized": "if the legal person under private law is held exclusively, directly or indirectly, by corporations under public law",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "exclusively",
+              "start": 46,
+              "end": 57,
+              "normalized": "exclusively",
+              "id": "c01"
+            },
+            {
+              "text": "directly or indirectly",
+              "start": 59,
+              "end": 81,
+              "normalized": "directly or indirectly",
+              "id": "c02"
+            },
+            {
+              "text": "within the meaning of subsection (3)",
+              "start": 168,
+              "end": 204,
+              "normalized": "within the meaning of subsection (3)",
+              "id": "c03"
+            }
+          ],
+          "exceptions": [
+            {
+              "text": "even if the individual activities lack the intention of making a profit",
+              "start": 240,
+              "end": 311,
+              "normalized": "even if the individual activities lack the intention of making a profit",
+              "id": "e01"
+            }
+          ],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 6,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 7,
+      "reanchored_count": 8,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000773_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If the legal person under private law is held exclusively, directly or indirectly, by corporations under public law, activities conducted in a separate set of accounts within the meaning of subsection (3) shall be deemed a single activity, even if the individual activities lack the intention of making a profit.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 286,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 312
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 312
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000773_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall be deemed",
+          "normalized": null,
+          "original_start": 191,
+          "original_end": 205,
+          "candidate_occurrences": [
+            {
+              "start": 205,
+              "end": 220
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 205,
+            "end": 220
+          },
+          "distance": 29,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000773_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "deemed a single activity",
+          "normalized": "deemed a single activity",
+          "original_start": 206,
+          "original_end": 229,
+          "candidate_occurrences": [
+            {
+              "start": 214,
+              "end": 238
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 214,
+            "end": 238
+          },
+          "distance": 17,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000773_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "If the legal person under private law is held exclusively, directly or indirectly, by corporations under public law",
+          "normalized": "if the legal person under private law is held exclusively, directly or indirectly, by corporations under public law",
+          "original_start": 0,
+          "original_end": 123,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 115
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 115
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000773_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "exclusively",
+          "normalized": "exclusively",
+          "original_start": 57,
+          "original_end": 68,
+          "candidate_occurrences": [
+            {
+              "start": 46,
+              "end": 57
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 46,
+            "end": 57
+          },
+          "distance": 22,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000773_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "directly or indirectly",
+          "normalized": "directly or indirectly",
+          "original_start": 70,
+          "original_end": 91,
+          "candidate_occurrences": [
+            {
+              "start": 59,
+              "end": 81
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 59,
+            "end": 81
+          },
+          "distance": 21,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[2]",
+          "clause_index": 0,
+          "clause_id": "estg_000773_c01",
+          "field": "constraints",
+          "span_index": 2,
+          "span_id": "c03",
+          "text": "within the meaning of subsection (3)",
+          "normalized": "within the meaning of subsection (3)",
+          "original_start": 159,
+          "original_end": 194,
+          "candidate_occurrences": [
+            {
+              "start": 168,
+              "end": 204
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 168,
+            "end": 204
+          },
+          "distance": 19,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].exceptions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000773_c01",
+          "field": "exceptions",
+          "span_index": 0,
+          "span_id": "e01",
+          "text": "even if the individual activities lack the intention of making a profit",
+          "normalized": "even if the individual activities lack the intention of making a profit",
+          "original_start": 231,
+          "original_end": 300,
+          "candidate_occurrences": [
+            {
+              "start": 240,
+              "end": 311
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 240,
+            "end": 311
+          },
+          "distance": 20,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 8,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

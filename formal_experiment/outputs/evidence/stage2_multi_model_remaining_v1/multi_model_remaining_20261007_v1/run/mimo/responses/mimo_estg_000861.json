@@ -1,0 +1,274 @@
+{
+  "request_id": "mimo:estg_000861",
+  "raw_response_utf8": "{\"id\":\"282a1d5a-d010-4915-8bae-31f6de2e6313_fcd134e870854da3a19a4b30c9ef95f3\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000861\\\",\\\"source_id\\\":\\\"estg_000861\\\",\\\"source_text\\\":\\\"If a taxpayer falling under Section 7(3) who has resolved to dissolve actually proceeds to liquidation, the liquidation gain shall form the basis for taxation. 152.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000861_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"If a taxpayer falling under Section 7(3) who has resolved to dissolve actually proceeds to liquidation, the liquidation gain shall form the basis for taxation.\\\",\\\"start\\\":0,\\\"end\\\":151},\\\"modality\\\":{\\\"label\\\":\\\"obligation\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall\\\",\\\"start\\\":113,\\\"end\\\":118}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"the liquidation gain\\\",\\\"start\\\":92,\\\"end\\\":112,\\\"normalized\\\":\\\"liquidation gain\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"form the basis for taxation\\\",\\\"start\\\":119,\\\"end\\\":146,\\\"normalized\\\":\\\"form basis for taxation\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"If a taxpayer falling under Section 7(3) who has resolved to dissolve actually proceeds to liquidation\\\",\\\"start\\\":0,\\\"end\\\":90,\\\"normalized\\\":\\\"if a taxpayer falling under section 7(3) who has resolved to dissolve actually proceeds to liquidation\\\"}],\\\"constraints\\\":[],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a01\\\",\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"clause_span\\\",\\\"reason\\\":\\\"clause_boundary_ambiguous\\\"}]}\",\"role\":\"assistant\",\"tool_calls\":null}}],\"created\":1791354186,\"model\":\"mimo-v2.6-pro\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":398,\"prompt_tokens\":4384,\"total_tokens\":4782,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":0}}}",
+  "usage": {
+    "prompt_tokens": 4384,
+    "completion_tokens": 398,
+    "total_tokens": 4782,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "mimo-v2.6-pro",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "mimo",
+    "sample_id": "estg_000861",
+    "request_id": "mimo:estg_000861",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000861",
+      "source_id": "estg_000861",
+      "source_text": "If a taxpayer falling under Section 7(3) who has resolved to dissolve actually proceeds to liquidation, the liquidation gain shall form the basis for taxation. 152.",
+      "clauses": [
+        {
+          "clause_id": "estg_000861_c01",
+          "clause_span": {
+            "text": "If a taxpayer falling under Section 7(3) who has resolved to dissolve actually proceeds to liquidation, the liquidation gain shall form the basis for taxation.",
+            "start": 0,
+            "end": 159
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 125,
+                "end": 130
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the liquidation gain",
+              "start": 104,
+              "end": 124,
+              "normalized": "the liquidation gain",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "form the basis for taxation",
+              "start": 131,
+              "end": 158,
+              "normalized": "form the basis for taxation",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If a taxpayer falling under Section 7(3) who has resolved to dissolve actually proceeds to liquidation",
+              "start": 0,
+              "end": 102,
+              "normalized": "if a taxpayer falling under section 7(3) who has resolved to dissolve actually proceeds to liquidation",
+              "id": "d01"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "clause_span",
+          "reason": "clause_boundary_ambiguous"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 5,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000861_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If a taxpayer falling under Section 7(3) who has resolved to dissolve actually proceeds to liquidation, the liquidation gain shall form the basis for taxation.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 151,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 159
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 159
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000861_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 113,
+          "original_end": 118,
+          "candidate_occurrences": [
+            {
+              "start": 125,
+              "end": 130
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 125,
+            "end": 130
+          },
+          "distance": 24,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000861_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "the liquidation gain",
+          "normalized": "the liquidation gain",
+          "original_start": 92,
+          "original_end": 112,
+          "candidate_occurrences": [
+            {
+              "start": 104,
+              "end": 124
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 104,
+            "end": 124
+          },
+          "distance": 24,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000861_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "form the basis for taxation",
+          "normalized": "form the basis for taxation",
+          "original_start": 119,
+          "original_end": 146,
+          "candidate_occurrences": [
+            {
+              "start": 131,
+              "end": 158
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 131,
+            "end": 158
+          },
+          "distance": 24,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000861_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "If a taxpayer falling under Section 7(3) who has resolved to dissolve actually proceeds to liquidation",
+          "normalized": "if a taxpayer falling under section 7(3) who has resolved to dissolve actually proceeds to liquidation",
+          "original_start": 0,
+          "original_end": 90,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 102
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 102
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

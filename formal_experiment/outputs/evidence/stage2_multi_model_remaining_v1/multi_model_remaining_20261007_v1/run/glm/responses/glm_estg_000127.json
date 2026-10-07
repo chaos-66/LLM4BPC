@@ -1,0 +1,307 @@
+{
+  "request_id": "glm:estg_000127",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000127\\\",\\n  \\\"source_id\\\": \\\"estg_000127\\\",\\n  \\\"source_text\\\": \\\"(1) If fixed assets are sold, the hidden reserves disclosed thereby may be deducted from the acquisition or production costs, or from the partial amounts of the acquisition or production costs within the meaning of Section 10(7), second sentence, of fixed assets acquired or produced in the financial year of the sale.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000127_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"(1) If fixed assets are sold, the hidden reserves disclosed thereby may be deducted from the acquisition or production costs, or from the partial amounts of the acquisition or production costs within the meaning of Section 10(7), second sentence, of fixed assets acquired or produced in the financial year of the sale.\\\", \\\"start\\\": 0, \\\"end\\\": 299},\\n      \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may\\\", \\\"start\\\": 73, \\\"end\\\": 76}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [\\n        {\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"deducted from the acquisition or production costs\\\", \\\"start\\\": 81, \\\"end\\\": 131, \\\"normalized\\\": \\\"deduct from the acquisition or production costs\\\"},\\n        {\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"deducted from the partial amounts of the acquisition or production costs\\\", \\\"start\\\": 81, \\\"end\\\": 202, \\\"normalized\\\": \\\"deduct from the partial amounts of the acquisition or production costs\\\"}\\n      ],\\n      \\\"conditions\\\": [\\n        {\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"If fixed assets are sold\\\", \\\"start\\\": 4, \\\"end\\\": 28, \\\"normalized\\\": \\\"if fixed assets are sold\\\"}\\n      ],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"within the meaning of Section 10(7), second sentence\\\", \\\"start\\\": 137, \\\"end\\\": 188, \\\"normalized\\\": \\\"within the meaning of section 10(7), second sentence\\\"},\\n        {\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"in the financial year of the sale\\\", \\\"start\\\": 264, \\\"end\\\": 297, \\\"normalized\\\": \\\"in the financial year of the sale\\\"}\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [\\n        {\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"},\\n        {\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p02\\\"}\\n      ],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"role\":\"assistant\"}}],\"created\":1791352970,\"id\":\"2026100714024385e2199441fa467d\",\"model\":\"glm-5.2\",\"object\":\"chat.completion\",\"request_id\":\"2026100714024385e2199441fa467d\",\"usage\":{\"completion_tokens\":628,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens\":4242,\"prompt_tokens_details\":{\"cached_tokens\":1344},\"total_tokens\":4870}}",
+  "usage": {
+    "prompt_tokens": 4242,
+    "completion_tokens": 628,
+    "total_tokens": 4870,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "glm-5.2",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "glm",
+    "sample_id": "estg_000127",
+    "request_id": "glm:estg_000127",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000127",
+      "source_id": "estg_000127",
+      "source_text": "(1) If fixed assets are sold, the hidden reserves disclosed thereby may be deducted from the acquisition or production costs, or from the partial amounts of the acquisition or production costs within the meaning of Section 10(7), second sentence, of fixed assets acquired or produced in the financial year of the sale.",
+      "clauses": [
+        {
+          "clause_id": "estg_000127_c01",
+          "clause_span": {
+            "text": "(1) If fixed assets are sold, the hidden reserves disclosed thereby may be deducted from the acquisition or production costs, or from the partial amounts of the acquisition or production costs within the meaning of Section 10(7), second sentence, of fixed assets acquired or produced in the financial year of the sale.",
+            "start": 0,
+            "end": 318
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 68,
+                "end": 71
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "deducted from the acquisition or production costs",
+              "start": 75,
+              "end": 124,
+              "normalized": "deducted from the acquisition or production costs",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If fixed assets are sold",
+              "start": 4,
+              "end": 28,
+              "normalized": "if fixed assets are sold",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "within the meaning of Section 10(7), second sentence",
+              "start": 193,
+              "end": 245,
+              "normalized": "within the meaning of section 10(7), second sentence",
+              "id": "c01"
+            },
+            {
+              "text": "in the financial year of the sale",
+              "start": 284,
+              "end": 317,
+              "normalized": "in the financial year of the sale",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "spans_adapted": 4,
+      "dropped_spans": [
+        "actions[1]_text_not_in_source"
+      ],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 5,
+      "reanchored_count": 5,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [
+        "clauses[0].actor_action_map[1]"
+      ],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000127_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "(1) If fixed assets are sold, the hidden reserves disclosed thereby may be deducted from the acquisition or production costs, or from the partial amounts of the acquisition or production costs within the meaning of Section 10(7), second sentence, of fixed assets acquired or produced in the financial year of the sale.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 299,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 318
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 318
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000127_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 73,
+          "original_end": 76,
+          "candidate_occurrences": [
+            {
+              "start": 68,
+              "end": 71
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 68,
+            "end": 71
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000127_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "deducted from the acquisition or production costs",
+          "normalized": "deducted from the acquisition or production costs",
+          "original_start": 81,
+          "original_end": 131,
+          "candidate_occurrences": [
+            {
+              "start": 75,
+              "end": 124
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 75,
+            "end": 124
+          },
+          "distance": 13,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000127_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "If fixed assets are sold",
+          "normalized": "if fixed assets are sold",
+          "original_start": 4,
+          "original_end": 28,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 28
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 4,
+            "end": 28
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000127_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "within the meaning of Section 10(7), second sentence",
+          "normalized": "within the meaning of section 10(7), second sentence",
+          "original_start": 137,
+          "original_end": 188,
+          "candidate_occurrences": [
+            {
+              "start": 193,
+              "end": 245
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 193,
+            "end": 245
+          },
+          "distance": 113,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000127_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "in the financial year of the sale",
+          "normalized": "in the financial year of the sale",
+          "original_start": 264,
+          "original_end": 297,
+          "candidate_occurrences": [
+            {
+              "start": 284,
+              "end": 317
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 284,
+            "end": 317
+          },
+          "distance": 40,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

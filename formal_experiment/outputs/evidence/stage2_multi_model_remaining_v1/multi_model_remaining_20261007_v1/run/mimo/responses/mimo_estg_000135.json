@@ -1,0 +1,336 @@
+{
+  "request_id": "mimo:estg_000135",
+  "raw_response_utf8": "\n{\"id\":\"5e923cc6-2d7e-4400-b463-ba644f2dc000_a5a20a837e644db6aaf267a7cff49875\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000135\\\",\\\"source_id\\\":\\\"estg_000135\\\",\\\"source_text\\\":\\\"(8) The reserve (the tax-free amount) may be transferred in the following three financial years in accordance with the preceding provisions to the acquisition or production costs or the partial amounts of the acquisition or production costs within the meaning of Section 10(7), second sentence, of fixed assets.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000135_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"(8) The reserve (the tax-free amount) may be transferred in the following three financial years in accordance with the preceding provisions to the acquisition or production costs or the partial amounts of the acquisition or production costs within the meaning of Section 10(7), second sentence, of fixed assets.\\\",\\\"start\\\":0,\\\"end\\\":243},\\\"modality\\\":{\\\"label\\\":\\\"permission\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"may\\\",\\\"start\\\":43,\\\"end\\\":46}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"transferred\\\",\\\"start\\\":50,\\\"end\\\":61,\\\"normalized\\\":\\\"transfer\\\"}],\\\"conditions\\\":[],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"in the following three financial years\\\",\\\"start\\\":62,\\\"end\\\":100,\\\"normalized\\\":\\\"in the following three financial years\\\"},{\\\"id\\\":\\\"c02\\\",\\\"text\\\":\\\"in accordance with the preceding provisions\\\",\\\"start\\\":101,\\\"end\\\":144,\\\"normalized\\\":\\\"in accordance with the preceding provisions\\\"},{\\\"id\\\":\\\"c03\\\",\\\"text\\\":\\\"to the acquisition or production costs or the partial amounts of the acquisition or production costs\\\",\\\"start\\\":145,\\\"end\\\":242,\\\"normalized\\\":\\\"to the acquisition or production costs or the partial amounts of the acquisition or production costs\\\"},{\\\"id\\\":\\\"c04\\\",\\\"text\\\":\\\"within the meaning of Section 10(7), second sentence,\\\",\\\"start\\\":243,\\\"end\\\":296,\\\"normalized\\\":\\\"within the meaning of section 10(7), second sentence,\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\",\"tool_calls\":null}}],\"created\":1791353207,\"model\":\"mimo-v2.6-pro\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":507,\"prompt_tokens\":4406,\"total_tokens\":4913,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":0}}}",
+  "usage": {
+    "prompt_tokens": 4406,
+    "completion_tokens": 507,
+    "total_tokens": 4913,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "mimo-v2.6-pro",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "mimo",
+    "sample_id": "estg_000135",
+    "request_id": "mimo:estg_000135",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000135",
+      "source_id": "estg_000135",
+      "source_text": "(8) The reserve (the tax-free amount) may be transferred in the following three financial years in accordance with the preceding provisions to the acquisition or production costs or the partial amounts of the acquisition or production costs within the meaning of Section 10(7), second sentence, of fixed assets.",
+      "clauses": [
+        {
+          "clause_id": "estg_000135_c01",
+          "clause_span": {
+            "text": "(8) The reserve (the tax-free amount) may be transferred in the following three financial years in accordance with the preceding provisions to the acquisition or production costs or the partial amounts of the acquisition or production costs within the meaning of Section 10(7), second sentence, of fixed assets.",
+            "start": 0,
+            "end": 311
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 38,
+                "end": 41
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "transferred",
+              "start": 45,
+              "end": 56,
+              "normalized": "transferred",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "in the following three financial years",
+              "start": 57,
+              "end": 95,
+              "normalized": "in the following three financial years",
+              "id": "c01"
+            },
+            {
+              "text": "in accordance with the preceding provisions",
+              "start": 96,
+              "end": 139,
+              "normalized": "in accordance with the preceding provisions",
+              "id": "c02"
+            },
+            {
+              "text": "to the acquisition or production costs or the partial amounts of the acquisition or production costs",
+              "start": 140,
+              "end": 240,
+              "normalized": "to the acquisition or production costs or the partial amounts of the acquisition or production costs",
+              "id": "c03"
+            },
+            {
+              "text": "within the meaning of Section 10(7), second sentence,",
+              "start": 241,
+              "end": 294,
+              "normalized": "within the meaning of section 10(7), second sentence,",
+              "id": "c04"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 5,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 6,
+      "reanchored_count": 7,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000135_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "(8) The reserve (the tax-free amount) may be transferred in the following three financial years in accordance with the preceding provisions to the acquisition or production costs or the partial amounts of the acquisition or production costs within the meaning of Section 10(7), second sentence, of fixed assets.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 243,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 311
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 311
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000135_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 43,
+          "original_end": 46,
+          "candidate_occurrences": [
+            {
+              "start": 38,
+              "end": 41
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 38,
+            "end": 41
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000135_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "transferred",
+          "normalized": "transferred",
+          "original_start": 50,
+          "original_end": 61,
+          "candidate_occurrences": [
+            {
+              "start": 45,
+              "end": 56
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 45,
+            "end": 56
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000135_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "in the following three financial years",
+          "normalized": "in the following three financial years",
+          "original_start": 62,
+          "original_end": 100,
+          "candidate_occurrences": [
+            {
+              "start": 57,
+              "end": 95
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 57,
+            "end": 95
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000135_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "in accordance with the preceding provisions",
+          "normalized": "in accordance with the preceding provisions",
+          "original_start": 101,
+          "original_end": 144,
+          "candidate_occurrences": [
+            {
+              "start": 96,
+              "end": 139
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 96,
+            "end": 139
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[2]",
+          "clause_index": 0,
+          "clause_id": "estg_000135_c01",
+          "field": "constraints",
+          "span_index": 2,
+          "span_id": "c03",
+          "text": "to the acquisition or production costs or the partial amounts of the acquisition or production costs",
+          "normalized": "to the acquisition or production costs or the partial amounts of the acquisition or production costs",
+          "original_start": 145,
+          "original_end": 242,
+          "candidate_occurrences": [
+            {
+              "start": 140,
+              "end": 240
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 140,
+            "end": 240
+          },
+          "distance": 7,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[3]",
+          "clause_index": 0,
+          "clause_id": "estg_000135_c01",
+          "field": "constraints",
+          "span_index": 3,
+          "span_id": "c04",
+          "text": "within the meaning of Section 10(7), second sentence,",
+          "normalized": "within the meaning of section 10(7), second sentence,",
+          "original_start": 243,
+          "original_end": 296,
+          "candidate_occurrences": [
+            {
+              "start": 241,
+              "end": 294
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 241,
+            "end": 294
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 7,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

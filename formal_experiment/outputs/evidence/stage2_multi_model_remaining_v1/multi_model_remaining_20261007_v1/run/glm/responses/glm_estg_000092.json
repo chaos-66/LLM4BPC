@@ -1,0 +1,269 @@
+{
+  "request_id": "glm:estg_000092",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000092\\\",\\n  \\\"source_id\\\": \\\"estg_000092\\\",\\n  \\\"source_text\\\": \\\"The register shall contain, under the precise designation of each individual fixed asset:  \\\\n— date of acquisition,  \\\\n— acquisition or production costs,  \\\\n— name and address of the supplier,  \\\\n— estimated useful life,  \\\\n— amount of annual depreciation, and  \\\\n— the remaining depreciable amount (residual book value).\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000092_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"The register shall contain, under the precise designation of each individual fixed asset:  \\\\n— date of acquisition,  \\\\n— acquisition or production costs,  \\\\n— name and address of the supplier,  \\\\n— estimated useful life,  \\\\n— amount of annual depreciation, and  \\\\n— the remaining depreciable amount (residual book value).\\\", \\\"start\\\": 0, \\\"end\\\": 322},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 13, \\\"end\\\": 18}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"The register\\\", \\\"start\\\": 0, \\\"end\\\": 12, \\\"normalized\\\": \\\"register\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"contain\\\", \\\"start\\\": 19, \\\"end\\\": 26, \\\"normalized\\\": \\\"contain\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"under the precise designation of each individual fixed asset\\\", \\\"start\\\": 28, \\\"end\\\": 85, \\\"normalized\\\": \\\"under the precise designation of each individual fixed asset\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"role\":\"assistant\"}}],\"created\":1791352819,\"id\":\"20261007140014125f330da0474f14\",\"model\":\"glm-5.2\",\"object\":\"chat.completion\",\"request_id\":\"20261007140014125f330da0474f14\",\"usage\":{\"completion_tokens\":510,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens\":4247,\"prompt_tokens_details\":{\"cached_tokens\":1344},\"total_tokens\":4757}}",
+  "usage": {
+    "prompt_tokens": 4247,
+    "completion_tokens": 510,
+    "total_tokens": 4757,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "glm-5.2",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "glm",
+    "sample_id": "estg_000092",
+    "request_id": "glm:estg_000092",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000092",
+      "source_id": "estg_000092",
+      "source_text": "The register shall contain, under the precise designation of each individual fixed asset:  \n— date of acquisition,  \n— acquisition or production costs,  \n— name and address of the supplier,  \n— estimated useful life,  \n— amount of annual depreciation, and  \n— the remaining depreciable amount (residual book value).",
+      "clauses": [
+        {
+          "clause_id": "estg_000092_c01",
+          "clause_span": {
+            "text": "The register shall contain, under the precise designation of each individual fixed asset:  \n— date of acquisition,  \n— acquisition or production costs,  \n— name and address of the supplier,  \n— estimated useful life,  \n— amount of annual depreciation, and  \n— the remaining depreciable amount (residual book value).",
+            "start": 0,
+            "end": 315
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 13,
+                "end": 18
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "The register",
+              "start": 0,
+              "end": 12,
+              "normalized": "the register",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "contain",
+              "start": 19,
+              "end": 26,
+              "normalized": "contain",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "under the precise designation of each individual fixed asset",
+              "start": 28,
+              "end": 88,
+              "normalized": "under the precise designation of each individual fixed asset",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 2,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000092_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The register shall contain, under the precise designation of each individual fixed asset:  \n— date of acquisition,  \n— acquisition or production costs,  \n— name and address of the supplier,  \n— estimated useful life,  \n— amount of annual depreciation, and  \n— the remaining depreciable amount (residual book value).",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 322,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 315
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 315
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000092_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 13,
+          "original_end": 18,
+          "candidate_occurrences": [
+            {
+              "start": 13,
+              "end": 18
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 13,
+            "end": 18
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000092_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "The register",
+          "normalized": "the register",
+          "original_start": 0,
+          "original_end": 12,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 12
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 0,
+            "end": 12
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000092_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "contain",
+          "normalized": "contain",
+          "original_start": 19,
+          "original_end": 26,
+          "candidate_occurrences": [
+            {
+              "start": 19,
+              "end": 26
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 19,
+            "end": 26
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000092_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "under the precise designation of each individual fixed asset",
+          "normalized": "under the precise designation of each individual fixed asset",
+          "original_start": 28,
+          "original_end": 85,
+          "candidate_occurrences": [
+            {
+              "start": 28,
+              "end": 88
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 28,
+            "end": 88
+          },
+          "distance": 3,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 3,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 2,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

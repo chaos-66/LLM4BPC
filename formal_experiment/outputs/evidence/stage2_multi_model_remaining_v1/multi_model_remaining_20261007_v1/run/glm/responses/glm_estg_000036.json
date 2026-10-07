@@ -1,0 +1,268 @@
+{
+  "request_id": "glm:estg_000036",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000036\\\",\\\"source_id\\\":\\\"estg_000036\\\",\\\"source_text\\\":\\\"The taxpayer may decide for himself whether he treats the VAT amounts owed on supplies and other services and the deductible input tax amounts as transitory items.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000036_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"The taxpayer may decide for himself whether he treats the VAT amounts owed on supplies and other services and the deductible input tax amounts as transitory items.\\\",\\\"start\\\":0,\\\"end\\\":171},\\\"modality\\\":{\\\"label\\\":\\\"permission\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"may\\\",\\\"start\\\":13,\\\"end\\\":16}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"The taxpayer\\\",\\\"start\\\":0,\\\"end\\\":12,\\\"normalized\\\":\\\"taxpayer\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"decide for himself\\\",\\\"start\\\":17,\\\"end\\\":35,\\\"normalized\\\":\\\"decide for himself\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"whether he treats the VAT amounts owed on supplies and other services and the deductible input tax amounts as transitory items\\\",\\\"start\\\":36,\\\"end\\\":170,\\\"normalized\\\":\\\"whether he treats the vat amounts owed on supplies and other services and the deductible input tax amounts as transitory items\\\"}],\\\"constraints\\\":[],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a01\\\",\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\"}}],\"created\":1791352530,\"id\":\"202610071355261cec66db009b472e\",\"model\":\"glm-5.2\",\"object\":\"chat.completion\",\"request_id\":\"202610071355261cec66db009b472e\",\"usage\":{\"completion_tokens\":339,\"prompt_tokens\":4211,\"prompt_tokens_details\":{\"cached_tokens\":1280},\"total_tokens\":4550}}",
+  "usage": {
+    "prompt_tokens": 4211,
+    "completion_tokens": 339,
+    "total_tokens": 4550
+  },
+  "returned_model": "glm-5.2",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "glm",
+    "sample_id": "estg_000036",
+    "request_id": "glm:estg_000036",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000036",
+      "source_id": "estg_000036",
+      "source_text": "The taxpayer may decide for himself whether he treats the VAT amounts owed on supplies and other services and the deductible input tax amounts as transitory items.",
+      "clauses": [
+        {
+          "clause_id": "estg_000036_c01",
+          "clause_span": {
+            "text": "The taxpayer may decide for himself whether he treats the VAT amounts owed on supplies and other services and the deductible input tax amounts as transitory items.",
+            "start": 0,
+            "end": 163
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 13,
+                "end": 16
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "The taxpayer",
+              "start": 0,
+              "end": 12,
+              "normalized": "the taxpayer",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "decide for himself",
+              "start": 17,
+              "end": 35,
+              "normalized": "decide for himself",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "whether he treats the VAT amounts owed on supplies and other services and the deductible input tax amounts as transitory items",
+              "start": 36,
+              "end": 162,
+              "normalized": "whether he treats the vat amounts owed on supplies and other services and the deductible input tax amounts as transitory items",
+              "id": "d01"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 2,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000036_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The taxpayer may decide for himself whether he treats the VAT amounts owed on supplies and other services and the deductible input tax amounts as transitory items.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 171,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 163
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 163
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000036_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 13,
+          "original_end": 16,
+          "candidate_occurrences": [
+            {
+              "start": 13,
+              "end": 16
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 13,
+            "end": 16
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000036_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "The taxpayer",
+          "normalized": "the taxpayer",
+          "original_start": 0,
+          "original_end": 12,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 12
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 0,
+            "end": 12
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000036_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "decide for himself",
+          "normalized": "decide for himself",
+          "original_start": 17,
+          "original_end": 35,
+          "candidate_occurrences": [
+            {
+              "start": 17,
+              "end": 35
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 17,
+            "end": 35
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000036_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "whether he treats the VAT amounts owed on supplies and other services and the deductible input tax amounts as transitory items",
+          "normalized": "whether he treats the vat amounts owed on supplies and other services and the deductible input tax amounts as transitory items",
+          "original_start": 36,
+          "original_end": 170,
+          "candidate_occurrences": [
+            {
+              "start": 36,
+              "end": 162
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 36,
+            "end": 162
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 3,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 2,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

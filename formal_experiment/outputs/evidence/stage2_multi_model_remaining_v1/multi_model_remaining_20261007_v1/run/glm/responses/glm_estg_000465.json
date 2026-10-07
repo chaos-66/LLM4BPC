@@ -1,0 +1,371 @@
+{
+  "request_id": "glm:estg_000465",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000465\\\",\\n  \\\"source_id\\\": \\\"estg_000465\\\",\\n  \\\"source_text\\\": \\\"If the employee has retired during the calendar year or if unlimited tax liability did not exist throughout the full calendar year, the pensioner deduction shall be taken into account with the corresponding monthly portions.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000465_c01\\\",\\n      \\\"clause_span\\\": {\\n        \\\"text\\\": \\\"If the employee has retired during the calendar year or if unlimited tax liability did not exist throughout the full calendar year, the pensioner deduction shall be taken into account with the corresponding monthly portions.\\\",\\n        \\\"start\\\": 0,\\n        \\\"end\\\": 207\\n      },\\n      \\\"modality\\\": {\\n        \\\"label\\\": \\\"obligation\\\",\\n        \\\"evidence\\\": [\\n          {\\n            \\\"text\\\": \\\"shall\\\",\\n            \\\"start\\\": 154,\\n            \\\"end\\\": 159\\n          }\\n        ]\\n      },\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [\\n        {\\n          \\\"id\\\": \\\"p01\\\",\\n          \\\"text\\\": \\\"taken into account\\\",\\n          \\\"start\\\": 160,\\n          \\\"end\\\": 178,\\n          \\\"normalized\\\": \\\"take into account\\\"\\n        }\\n      ],\\n      \\\"conditions\\\": [\\n        {\\n          \\\"id\\\": \\\"d01\\\",\\n          \\\"text\\\": \\\"If the employee has retired during the calendar year\\\",\\n          \\\"start\\\": 0,\\n          \\\"end\\\": 53,\\n          \\\"normalized\\\": \\\"if the employee has retired during the calendar year\\\"\\n        },\\n        {\\n          \\\"id\\\": \\\"d02\\\",\\n          \\\"text\\\": \\\"if unlimited tax liability did not exist throughout the full calendar year\\\",\\n          \\\"start\\\": 57,\\n          \\\"end\\\": 137,\\n          \\\"normalized\\\": \\\"if unlimited tax liability did not exist throughout the full calendar year\\\"\\n        }\\n      ],\\n      \\\"constraints\\\": [\\n        {\\n          \\\"id\\\": \\\"c01\\\",\\n          \\\"text\\\": \\\"during the calendar year\\\",\\n          \\\"start\\\": 30,\\n          \\\"end\\\": 53,\\n          \\\"normalized\\\": \\\"during the calendar year\\\"\\n        },\\n        {\\n          \\\"id\\\": \\\"c02\\\",\\n          \\\"text\\\": \\\"throughout the full calendar year\\\",\\n          \\\"start\\\": 106,\\n          \\\"end\\\": 137,\\n          \\\"normalized\\\": \\\"throughout the full calendar year\\\"\\n        },\\n        {\\n          \\\"id\\\": \\\"c03\\\",\\n          \\\"text\\\": \\\"with the corresponding monthly portions\\\",\\n          \\\"start\\\": 179,\\n          \\\"end\\\": 206,\\n          \\\"normalized\\\": \\\"with the corresponding monthly portions\\\"\\n        }\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [\\n        {\\n          \\\"actor_id\\\": null,\\n          \\\"action_id\\\": \\\"p01\\\"\\n        }\\n      ],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\n    \\\"name\\\": \\\"direct_llm\\\",\\n    \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"\\n  },\\n  \\\"validation\\\": {\\n    \\\"schema_valid\\\": true,\\n    \\\"cross_field_valid\\\": true,\\n    \\\"errors\\\": []\\n  },\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"role\":\"assistant\"}}],\"created\":1791353400,\"id\":\"20261007140955b9b01dda031f43a8\",\"model\":\"glm-5.2\",\"object\":\"chat.completion\",\"request_id\":\"20261007140955b9b01dda031f43a8\",\"usage\":{\"completion_tokens\":671,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens\":4220,\"prompt_tokens_details\":{\"cached_tokens\":1344},\"total_tokens\":4891}}",
+  "usage": {
+    "prompt_tokens": 4220,
+    "completion_tokens": 671,
+    "total_tokens": 4891,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "glm-5.2",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "glm",
+    "sample_id": "estg_000465",
+    "request_id": "glm:estg_000465",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000465",
+      "source_id": "estg_000465",
+      "source_text": "If the employee has retired during the calendar year or if unlimited tax liability did not exist throughout the full calendar year, the pensioner deduction shall be taken into account with the corresponding monthly portions.",
+      "clauses": [
+        {
+          "clause_id": "estg_000465_c01",
+          "clause_span": {
+            "text": "If the employee has retired during the calendar year or if unlimited tax liability did not exist throughout the full calendar year, the pensioner deduction shall be taken into account with the corresponding monthly portions.",
+            "start": 0,
+            "end": 224
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 156,
+                "end": 161
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "taken into account",
+              "start": 165,
+              "end": 183,
+              "normalized": "taken into account",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If the employee has retired during the calendar year",
+              "start": 0,
+              "end": 52,
+              "normalized": "if the employee has retired during the calendar year",
+              "id": "d01"
+            },
+            {
+              "text": "if unlimited tax liability did not exist throughout the full calendar year",
+              "start": 56,
+              "end": 130,
+              "normalized": "if unlimited tax liability did not exist throughout the full calendar year",
+              "id": "d02"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "during the calendar year",
+              "start": 28,
+              "end": 52,
+              "normalized": "during the calendar year",
+              "id": "c01"
+            },
+            {
+              "text": "throughout the full calendar year",
+              "start": 97,
+              "end": 130,
+              "normalized": "throughout the full calendar year",
+              "id": "c02"
+            },
+            {
+              "text": "with the corresponding monthly portions",
+              "start": 184,
+              "end": 223,
+              "normalized": "with the corresponding monthly portions",
+              "id": "c03"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 6,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 7,
+      "reanchored_count": 8,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000465_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If the employee has retired during the calendar year or if unlimited tax liability did not exist throughout the full calendar year, the pensioner deduction shall be taken into account with the corresponding monthly portions.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 207,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 224
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 224
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000465_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 154,
+          "original_end": 159,
+          "candidate_occurrences": [
+            {
+              "start": 156,
+              "end": 161
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 156,
+            "end": 161
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000465_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "taken into account",
+          "normalized": "taken into account",
+          "original_start": 160,
+          "original_end": 178,
+          "candidate_occurrences": [
+            {
+              "start": 165,
+              "end": 183
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 165,
+            "end": 183
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000465_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "If the employee has retired during the calendar year",
+          "normalized": "if the employee has retired during the calendar year",
+          "original_start": 0,
+          "original_end": 53,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 52
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 52
+          },
+          "distance": 1,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000465_c01",
+          "field": "conditions",
+          "span_index": 1,
+          "span_id": "d02",
+          "text": "if unlimited tax liability did not exist throughout the full calendar year",
+          "normalized": "if unlimited tax liability did not exist throughout the full calendar year",
+          "original_start": 57,
+          "original_end": 137,
+          "candidate_occurrences": [
+            {
+              "start": 56,
+              "end": 130
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 56,
+            "end": 130
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000465_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "during the calendar year",
+          "normalized": "during the calendar year",
+          "original_start": 30,
+          "original_end": 53,
+          "candidate_occurrences": [
+            {
+              "start": 28,
+              "end": 52
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 28,
+            "end": 52
+          },
+          "distance": 3,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000465_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "throughout the full calendar year",
+          "normalized": "throughout the full calendar year",
+          "original_start": 106,
+          "original_end": 137,
+          "candidate_occurrences": [
+            {
+              "start": 97,
+              "end": 130
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 97,
+            "end": 130
+          },
+          "distance": 16,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[2]",
+          "clause_index": 0,
+          "clause_id": "estg_000465_c01",
+          "field": "constraints",
+          "span_index": 2,
+          "span_id": "c03",
+          "text": "with the corresponding monthly portions",
+          "normalized": "with the corresponding monthly portions",
+          "original_start": 179,
+          "original_end": 206,
+          "candidate_occurrences": [
+            {
+              "start": 184,
+              "end": 223
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 184,
+            "end": 223
+          },
+          "distance": 22,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 8,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

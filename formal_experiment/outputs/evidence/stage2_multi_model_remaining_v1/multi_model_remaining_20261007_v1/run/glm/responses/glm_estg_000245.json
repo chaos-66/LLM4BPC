@@ -1,0 +1,339 @@
+{
+  "request_id": "glm:estg_000245",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000245\\\",\\n  \\\"source_id\\\": \\\"estg_000245\\\",\\n  \\\"source_text\\\": \\\"(2) Furthermore, in determining income, expenses and expenditures shall not be deducted to the extent that they are directly economically connected with non-taxable receipts.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000245_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"(2) Furthermore, in determining income, expenses and expenditures shall not be deducted to the extent that they are directly economically connected with non-taxable receipts.\\\", \\\"start\\\": 0, \\\"end\\\": 157},\\n      \\\"modality\\\": {\\\"label\\\": \\\"prohibition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall not\\\", \\\"start\\\": 56, \\\"end\\\": 65}, {\\\"text\\\": \\\"not\\\", \\\"start\\\": 62, \\\"end\\\": 65}]},\\n      \\\"actors\\\": [\\n        {\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"expenses\\\", \\\"start\\\": 38, \\\"end\\\": 46, \\\"normalized\\\": \\\"expenses\\\"},\\n        {\\\"id\\\": \\\"a02\\\", \\\"text\\\": \\\"expenditures\\\", \\\"start\\\": 51, \\\"end\\\": 63, \\\"normalized\\\": \\\"expenditures\\\"}\\n      ],\\n      \\\"actions\\\": [\\n        {\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"deducted\\\", \\\"start\\\": 66, \\\"end\\\": 74, \\\"normalized\\\": \\\"deduct\\\"}\\n      ],\\n      \\\"conditions\\\": [\\n        {\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"to the extent that they are directly economically connected with non-taxable receipts\\\", \\\"start\\\": 75, \\\"end\\\": 156, \\\"normalized\\\": \\\"to the extent that they are directly economically connected with non-taxable receipts\\\"}\\n      ],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [\\n        {\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"},\\n        {\\\"actor_id\\\": \\\"a02\\\", \\\"action_id\\\": \\\"p01\\\"}\\n      ],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"role\":\"assistant\"}}],\"created\":1791353216,\"id\":\"20261007140650b43cd67a29ce44c4\",\"model\":\"glm-5.2\",\"object\":\"chat.completion\",\"request_id\":\"20261007140650b43cd67a29ce44c4\",\"usage\":{\"completion_tokens\":509,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens\":4211,\"prompt_tokens_details\":{\"cached_tokens\":1344},\"total_tokens\":4720}}",
+  "usage": {
+    "prompt_tokens": 4211,
+    "completion_tokens": 509,
+    "total_tokens": 4720,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "glm-5.2",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "glm",
+    "sample_id": "estg_000245",
+    "request_id": "glm:estg_000245",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000245",
+      "source_id": "estg_000245",
+      "source_text": "(2) Furthermore, in determining income, expenses and expenditures shall not be deducted to the extent that they are directly economically connected with non-taxable receipts.",
+      "clauses": [
+        {
+          "clause_id": "estg_000245_c01",
+          "clause_span": {
+            "text": "(2) Furthermore, in determining income, expenses and expenditures shall not be deducted to the extent that they are directly economically connected with non-taxable receipts.",
+            "start": 0,
+            "end": 174
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "shall not",
+                "start": 66,
+                "end": 75
+              },
+              {
+                "text": "not",
+                "start": 72,
+                "end": 75
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "expenses",
+              "start": 40,
+              "end": 48,
+              "normalized": "expenses",
+              "id": "a01"
+            },
+            {
+              "text": "expenditures",
+              "start": 53,
+              "end": 65,
+              "normalized": "expenditures",
+              "id": "a02"
+            }
+          ],
+          "actions": [
+            {
+              "text": "deducted",
+              "start": 79,
+              "end": 87,
+              "normalized": "deducted",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "to the extent that they are directly economically connected with non-taxable receipts",
+              "start": 88,
+              "end": 173,
+              "normalized": "to the extent that they are directly economically connected with non-taxable receipts",
+              "id": "d01"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            },
+            {
+              "actor_id": "a02",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 6,
+      "reanchored_count": 7,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000245_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "(2) Furthermore, in determining income, expenses and expenditures shall not be deducted to the extent that they are directly economically connected with non-taxable receipts.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 157,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 174
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 174
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000245_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall not",
+          "normalized": null,
+          "original_start": 56,
+          "original_end": 65,
+          "candidate_occurrences": [
+            {
+              "start": 66,
+              "end": 75
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 66,
+            "end": 75
+          },
+          "distance": 20,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000245_c01",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "not",
+          "normalized": null,
+          "original_start": 62,
+          "original_end": 65,
+          "candidate_occurrences": [
+            {
+              "start": 72,
+              "end": 75
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 72,
+            "end": 75
+          },
+          "distance": 20,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000245_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "expenses",
+          "normalized": "expenses",
+          "original_start": 38,
+          "original_end": 46,
+          "candidate_occurrences": [
+            {
+              "start": 40,
+              "end": 48
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 40,
+            "end": 48
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000245_c01",
+          "field": "actors",
+          "span_index": 1,
+          "span_id": "a02",
+          "text": "expenditures",
+          "normalized": "expenditures",
+          "original_start": 51,
+          "original_end": 63,
+          "candidate_occurrences": [
+            {
+              "start": 53,
+              "end": 65
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 53,
+            "end": 65
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000245_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "deducted",
+          "normalized": "deducted",
+          "original_start": 66,
+          "original_end": 74,
+          "candidate_occurrences": [
+            {
+              "start": 79,
+              "end": 87
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 79,
+            "end": 87
+          },
+          "distance": 26,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000245_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "to the extent that they are directly economically connected with non-taxable receipts",
+          "normalized": "to the extent that they are directly economically connected with non-taxable receipts",
+          "original_start": 75,
+          "original_end": 156,
+          "candidate_occurrences": [
+            {
+              "start": 88,
+              "end": 173
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 88,
+            "end": 173
+          },
+          "distance": 30,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 7,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

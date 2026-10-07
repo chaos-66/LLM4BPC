@@ -1,0 +1,193 @@
+{
+  "request_id": "glm:estg_000031",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000031\\\",\\\"source_id\\\":\\\"estg_000031\\\",\\\"source_text\\\":\\\"(1) Profit is the difference, to be determined by double-entry bookkeeping, between the business assets at the end of the financial year and the business assets at the end of the preceding financial year.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000031_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"(1) Profit is the difference, to be determined by double-entry bookkeeping, between the business assets at the end of the financial year and the business assets at the end of the preceding financial year.\\\",\\\"start\\\":0,\\\"end\\\":180},\\\"modality\\\":{\\\"label\\\":\\\"definition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"is\\\",\\\"start\\\":11,\\\"end\\\":13}]},\\\"actors\\\":[],\\\"actions\\\":[],\\\"conditions\\\":[],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"to be determined by double-entry bookkeeping\\\",\\\"start\\\":29,\\\"end\\\":75,\\\"normalized\\\":\\\"to be determined by double-entry bookkeeping\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\"}}],\"created\":1791352518,\"id\":\"202610071355152c4a462b44b543f3\",\"model\":\"glm-5.2\",\"object\":\"chat.completion\",\"request_id\":\"202610071355152c4a462b44b543f3\",\"usage\":{\"completion_tokens\":273,\"prompt_tokens\":4223,\"prompt_tokens_details\":{\"cached_tokens\":1280},\"total_tokens\":4496}}",
+  "usage": {
+    "prompt_tokens": 4223,
+    "completion_tokens": 273,
+    "total_tokens": 4496
+  },
+  "returned_model": "glm-5.2",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "glm",
+    "sample_id": "estg_000031",
+    "request_id": "glm:estg_000031",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000031",
+      "source_id": "estg_000031",
+      "source_text": "(1) Profit is the difference, to be determined by double-entry bookkeeping, between the business assets at the end of the financial year and the business assets at the end of the preceding financial year.",
+      "clauses": [
+        {
+          "clause_id": "estg_000031_c01",
+          "clause_span": {
+            "text": "(1) Profit is the difference, to be determined by double-entry bookkeeping, between the business assets at the end of the financial year and the business assets at the end of the preceding financial year.",
+            "start": 0,
+            "end": 204
+          },
+          "modality": {
+            "label": "definition",
+            "evidence": [
+              {
+                "text": "is",
+                "start": 11,
+                "end": 13
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "to be determined by double-entry bookkeeping",
+              "start": 30,
+              "end": 74,
+              "normalized": "to be determined by double-entry bookkeeping",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 1,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 2,
+      "reanchored_count": 2,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000031_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "(1) Profit is the difference, to be determined by double-entry bookkeeping, between the business assets at the end of the financial year and the business assets at the end of the preceding financial year.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 180,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 204
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 204
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000031_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "is",
+          "normalized": null,
+          "original_start": 11,
+          "original_end": 13,
+          "candidate_occurrences": [
+            {
+              "start": 11,
+              "end": 13
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 11,
+            "end": 13
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000031_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "to be determined by double-entry bookkeeping",
+          "normalized": "to be determined by double-entry bookkeeping",
+          "original_start": 29,
+          "original_end": 75,
+          "candidate_occurrences": [
+            {
+              "start": 30,
+              "end": 74
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 30,
+            "end": 74
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 2,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

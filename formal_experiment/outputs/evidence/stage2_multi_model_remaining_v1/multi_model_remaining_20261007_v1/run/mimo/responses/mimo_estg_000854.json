@@ -1,0 +1,199 @@
+{
+  "request_id": "mimo:estg_000854",
+  "raw_response_utf8": "\n{\"id\":\"d7ed4ee0-8ca8-4ced-a2bf-8e68d4f4369d_94182b276bfe4d27b851fc0dd51e051f\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000854\\\",\\n  \\\"source_id\\\": \\\"estg_000854\\\",\\n  \\\"source_text\\\": \\\"The exclusive use of the provisions for premium refunds (profit participations) in the life, health or accident insurance business with return of premium shall also be deemed secure to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000854_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"The exclusive use of the provisions for premium refunds (profit participations) in the life, health or accident insurance business with return of premium shall also be deemed secure to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts.\\\", \\\"start\\\": 0, \\\"end\\\": 385},\\n      \\\"modality\\\": {\\\"label\\\": \\\"definition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall also be deemed\\\", \\\"start\\\": 135, \\\"end\\\": 155}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts\\\", \\\"start\\\": 164, \\\"end\\\": 384, \\\"normalized\\\": \\\"to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts\\\"}\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": [\\n    {\\\"field\\\": \\\"clause\\\", \\\"reason\\\": \\\"clause_boundary_ambiguous\\\"}\\n  ]\\n}\",\"role\":\"assistant\",\"tool_calls\":null}}],\"created\":1791354178,\"model\":\"mimo-v2.6-pro\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":558,\"prompt_tokens\":4427,\"total_tokens\":4985,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":0}}}",
+  "usage": {
+    "prompt_tokens": 4427,
+    "completion_tokens": 558,
+    "total_tokens": 4985,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "mimo-v2.6-pro",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "mimo",
+    "sample_id": "estg_000854",
+    "request_id": "mimo:estg_000854",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000854",
+      "source_id": "estg_000854",
+      "source_text": "The exclusive use of the provisions for premium refunds (profit participations) in the life, health or accident insurance business with return of premium shall also be deemed secure to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts.",
+      "clauses": [
+        {
+          "clause_id": "estg_000854_c01",
+          "clause_span": {
+            "text": "The exclusive use of the provisions for premium refunds (profit participations) in the life, health or accident insurance business with return of premium shall also be deemed secure to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts.",
+            "start": 0,
+            "end": 471
+          },
+          "modality": {
+            "label": "definition",
+            "evidence": [
+              {
+                "text": "shall also be deemed",
+                "start": 154,
+                "end": 174
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts",
+              "start": 182,
+              "end": 470,
+              "normalized": "to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "clause",
+          "reason": "clause_boundary_ambiguous"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 1,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 2,
+      "reanchored_count": 3,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000854_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The exclusive use of the provisions for premium refunds (profit participations) in the life, health or accident insurance business with return of premium shall also be deemed secure to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 385,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 471
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 471
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000854_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall also be deemed",
+          "normalized": null,
+          "original_start": 135,
+          "original_end": 155,
+          "candidate_occurrences": [
+            {
+              "start": 154,
+              "end": 174
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 154,
+            "end": 174
+          },
+          "distance": 38,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000854_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts",
+          "normalized": "to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts",
+          "original_start": 164,
+          "original_end": 384,
+          "candidate_occurrences": [
+            {
+              "start": 182,
+              "end": 470
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 182,
+            "end": 470
+          },
+          "distance": 104,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 3,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

@@ -1,0 +1,420 @@
+{
+  "request_id": "glm:estg_000028",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000028\\\",\\n  \\\"source_id\\\": \\\"estg_000028\\\",\\n  \\\"source_text\\\": \\\"The income shall be taxed at the tax rate that results when taking into account the converted income; however, the tax to be assessed may not be higher than that which would result from the taxation of all emoluments.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000028_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"The income shall be taxed at the tax rate that results when taking into account the converted income\\\", \\\"start\\\": 0, \\\"end\\\": 104},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 10, \\\"end\\\": 15}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"taxed\\\", \\\"start\\\": 19, \\\"end\\\": 24, \\\"normalized\\\": \\\"tax\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"when taking into account the converted income\\\", \\\"start\\\": 60, \\\"end\\\": 104, \\\"normalized\\\": \\\"when taking into account the converted income\\\"}],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"at the tax rate that results\\\", \\\"start\\\": 25, \\\"end\\\": 53, \\\"normalized\\\": \\\"at the tax rate that results\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000028_c02\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"however, the tax to be assessed may not be higher than that which would result from the taxation of all emoluments.\\\", \\\"start\\\": 106, \\\"end\\\": 211},\\n      \\\"modality\\\": {\\\"label\\\": \\\"prohibition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may not\\\", \\\"start\\\": 140, \\\"end\\\": 147}, {\\\"text\\\": \\\"not\\\", \\\"start\\\": 144, \\\"end\\\": 147}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"be higher than that which would result from the taxation of all emoluments\\\", \\\"start\\\": 148, \\\"end\\\": 210, \\\"normalized\\\": \\\"be higher than that which would result from the taxation of all emoluments\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p02\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"role\":\"assistant\"}}],\"created\":1791352510,\"id\":\"20261007135505768b48289b1c4a70\",\"model\":\"glm-5.2\",\"object\":\"chat.completion\",\"request_id\":\"20261007135505768b48289b1c4a70\",\"usage\":{\"completion_tokens\":654,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens\":4226,\"prompt_tokens_details\":{\"cached_tokens\":1344},\"total_tokens\":4880}}",
+  "usage": {
+    "prompt_tokens": 4226,
+    "completion_tokens": 654,
+    "total_tokens": 4880,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "glm-5.2",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "glm",
+    "sample_id": "estg_000028",
+    "request_id": "glm:estg_000028",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000028",
+      "source_id": "estg_000028",
+      "source_text": "The income shall be taxed at the tax rate that results when taking into account the converted income; however, the tax to be assessed may not be higher than that which would result from the taxation of all emoluments.",
+      "clauses": [
+        {
+          "clause_id": "estg_000028_c01",
+          "clause_span": {
+            "text": "The income shall be taxed at the tax rate that results when taking into account the converted income",
+            "start": 0,
+            "end": 100
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 11,
+                "end": 16
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "taxed",
+              "start": 20,
+              "end": 25,
+              "normalized": "taxed",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "when taking into account the converted income",
+              "start": 55,
+              "end": 100,
+              "normalized": "when taking into account the converted income",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "at the tax rate that results",
+              "start": 26,
+              "end": 54,
+              "normalized": "at the tax rate that results",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000028_c02",
+          "clause_span": {
+            "text": "however, the tax to be assessed may not be higher than that which would result from the taxation of all emoluments.",
+            "start": 102,
+            "end": 217
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "may not",
+                "start": 134,
+                "end": 141
+              },
+              {
+                "text": "not",
+                "start": 138,
+                "end": 141
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "be higher than that which would result from the taxation of all emoluments",
+              "start": 142,
+              "end": 216,
+              "normalized": "be higher than that which would result from the taxation of all emoluments",
+              "id": "p02"
+            }
+          ],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p02"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 2,
+      "field_span_count": 7,
+      "reanchored_count": 9,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000028_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The income shall be taxed at the tax rate that results when taking into account the converted income",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 104,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 100
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 100
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000028_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 10,
+          "original_end": 15,
+          "candidate_occurrences": [
+            {
+              "start": 11,
+              "end": 16
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 11,
+            "end": 16
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000028_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "taxed",
+          "normalized": "taxed",
+          "original_start": 19,
+          "original_end": 24,
+          "candidate_occurrences": [
+            {
+              "start": 20,
+              "end": 25
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 20,
+            "end": 25
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000028_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "when taking into account the converted income",
+          "normalized": "when taking into account the converted income",
+          "original_start": 60,
+          "original_end": 104,
+          "candidate_occurrences": [
+            {
+              "start": 55,
+              "end": 100
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 55,
+            "end": 100
+          },
+          "distance": 9,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000028_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "at the tax rate that results",
+          "normalized": "at the tax rate that results",
+          "original_start": 25,
+          "original_end": 53,
+          "candidate_occurrences": [
+            {
+              "start": 26,
+              "end": 54
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 26,
+            "end": 54
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000028_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "however, the tax to be assessed may not be higher than that which would result from the taxation of all emoluments.",
+          "normalized": null,
+          "original_start": 106,
+          "original_end": 211,
+          "candidate_occurrences": [
+            {
+              "start": 102,
+              "end": 217
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 102,
+            "end": 217
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000028_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may not",
+          "normalized": null,
+          "original_start": 140,
+          "original_end": 147,
+          "candidate_occurrences": [
+            {
+              "start": 134,
+              "end": 141
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 134,
+            "end": 141
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[1]",
+          "clause_index": 1,
+          "clause_id": "estg_000028_c02",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "not",
+          "normalized": null,
+          "original_start": 144,
+          "original_end": 147,
+          "candidate_occurrences": [
+            {
+              "start": 138,
+              "end": 141
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 138,
+            "end": 141
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000028_c02",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p02",
+          "text": "be higher than that which would result from the taxation of all emoluments",
+          "normalized": "be higher than that which would result from the taxation of all emoluments",
+          "original_start": 148,
+          "original_end": 210,
+          "candidate_occurrences": [
+            {
+              "start": 142,
+              "end": 216
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 142,
+            "end": 216
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 9,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

@@ -1,0 +1,420 @@
+{
+  "request_id": "glm:estg_000659",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000659\\\",\\n  \\\"source_id\\\": \\\"estg_000659\\\",\\n  \\\"source_text\\\": \\\"(1) Persons with limited tax liability shall be assessed for income tax on their income from which no withholding of tax on wages, on capital yield, or under Sections 99 to 101 is to be made.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000659_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"(1) Persons with limited tax liability shall be assessed for income tax on their income from which no withholding of tax on wages, on capital yield, or under Sections 99 to 101 is to be made.\\\", \\\"start\\\": 0, \\\"end\\\": 184},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 38, \\\"end\\\": 43}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"Persons with limited tax liability\\\", \\\"start\\\": 4, \\\"end\\\": 37, \\\"normalized\\\": \\\"persons with limited tax liability\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"assessed for income tax\\\", \\\"start\\\": 48, \\\"end\\\": 71, \\\"normalized\\\": \\\"assessed for income tax\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"on their income\\\", \\\"start\\\": 72, \\\"end\\\": 87, \\\"normalized\\\": \\\"on their income\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000659_c02\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"from which no withholding of tax on wages, on capital yield, or under Sections 99 to 101 is to be made.\\\", \\\"start\\\": 87, \\\"end\\\": 183},\\n      \\\"modality\\\": {\\\"label\\\": \\\"prohibition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"no\\\", \\\"start\\\": 98, \\\"end\\\": 100}, {\\\"text\\\": \\\"is to be made\\\", \\\"start\\\": 169, \\\"end\\\": 182}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"withholding of tax on wages, on capital yield, or under Sections 99 to 101\\\", \\\"start\\\": 101, \\\"end\\\": 168, \\\"normalized\\\": \\\"withholding of tax on wages on capital yield or under sections 99 to 101\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p02\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"role\":\"assistant\"}}],\"created\":1791353534,\"id\":\"2026100714120834069c632879417d\",\"model\":\"glm-5.2\",\"object\":\"chat.completion\",\"request_id\":\"2026100714120834069c632879417d\",\"usage\":{\"completion_tokens\":683,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens\":4225,\"prompt_tokens_details\":{\"cached_tokens\":1344},\"total_tokens\":4908}}",
+  "usage": {
+    "prompt_tokens": 4225,
+    "completion_tokens": 683,
+    "total_tokens": 4908,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "glm-5.2",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "glm",
+    "sample_id": "estg_000659",
+    "request_id": "glm:estg_000659",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000659",
+      "source_id": "estg_000659",
+      "source_text": "(1) Persons with limited tax liability shall be assessed for income tax on their income from which no withholding of tax on wages, on capital yield, or under Sections 99 to 101 is to be made.",
+      "clauses": [
+        {
+          "clause_id": "estg_000659_c01",
+          "clause_span": {
+            "text": "(1) Persons with limited tax liability shall be assessed for income tax on their income from which no withholding of tax on wages, on capital yield, or under Sections 99 to 101 is to be made.",
+            "start": 0,
+            "end": 191
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 39,
+                "end": 44
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "Persons with limited tax liability",
+              "start": 4,
+              "end": 38,
+              "normalized": "persons with limited tax liability",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "assessed for income tax",
+              "start": 48,
+              "end": 71,
+              "normalized": "assessed for income tax",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "on their income",
+              "start": 72,
+              "end": 87,
+              "normalized": "on their income",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000659_c02",
+          "clause_span": {
+            "text": "from which no withholding of tax on wages, on capital yield, or under Sections 99 to 101 is to be made.",
+            "start": 88,
+            "end": 191
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "no",
+                "start": 99,
+                "end": 101
+              },
+              {
+                "text": "is to be made",
+                "start": 177,
+                "end": 190
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "withholding of tax on wages, on capital yield, or under Sections 99 to 101",
+              "start": 102,
+              "end": 176,
+              "normalized": "withholding of tax on wages, on capital yield, or under sections 99 to 101",
+              "id": "p02"
+            }
+          ],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p02"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 2,
+      "field_span_count": 7,
+      "reanchored_count": 7,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000659_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "(1) Persons with limited tax liability shall be assessed for income tax on their income from which no withholding of tax on wages, on capital yield, or under Sections 99 to 101 is to be made.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 184,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 191
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 191
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000659_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 38,
+          "original_end": 43,
+          "candidate_occurrences": [
+            {
+              "start": 39,
+              "end": 44
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 39,
+            "end": 44
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000659_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "Persons with limited tax liability",
+          "normalized": "persons with limited tax liability",
+          "original_start": 4,
+          "original_end": 37,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 38
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 38
+          },
+          "distance": 1,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000659_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "assessed for income tax",
+          "normalized": "assessed for income tax",
+          "original_start": 48,
+          "original_end": 71,
+          "candidate_occurrences": [
+            {
+              "start": 48,
+              "end": 71
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 48,
+            "end": 71
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000659_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "on their income",
+          "normalized": "on their income",
+          "original_start": 72,
+          "original_end": 87,
+          "candidate_occurrences": [
+            {
+              "start": 72,
+              "end": 87
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 72,
+            "end": 87
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000659_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "from which no withholding of tax on wages, on capital yield, or under Sections 99 to 101 is to be made.",
+          "normalized": null,
+          "original_start": 87,
+          "original_end": 183,
+          "candidate_occurrences": [
+            {
+              "start": 88,
+              "end": 191
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 88,
+            "end": 191
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000659_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "no",
+          "normalized": null,
+          "original_start": 98,
+          "original_end": 100,
+          "candidate_occurrences": [
+            {
+              "start": 99,
+              "end": 101
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 99,
+            "end": 101
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[1]",
+          "clause_index": 1,
+          "clause_id": "estg_000659_c02",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "is to be made",
+          "normalized": null,
+          "original_start": 169,
+          "original_end": 182,
+          "candidate_occurrences": [
+            {
+              "start": 177,
+              "end": 190
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 177,
+            "end": 190
+          },
+          "distance": 16,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000659_c02",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p02",
+          "text": "withholding of tax on wages, on capital yield, or under Sections 99 to 101",
+          "normalized": "withholding of tax on wages, on capital yield, or under sections 99 to 101",
+          "original_start": 101,
+          "original_end": 168,
+          "candidate_occurrences": [
+            {
+              "start": 102,
+              "end": 176
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 102,
+            "end": 176
+          },
+          "distance": 9,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 2,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 7,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

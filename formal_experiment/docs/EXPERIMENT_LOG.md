@@ -6009,3 +6009,49 @@
 - 仍存在 blocker：无
 - 备注：Kimi三条新响应通过关闭思考与单token计数口径，第四次HTTP429明确max RPM=3；保留限流失败，不重发。仅原900次内剩余145未尝试ID，开始间隔至少21秒，原请求后65秒；费用剩余预算不增加。验证新节流、授权、源绑定和已完成恢复零调用，模拟无真实HTTP/密钥；GLM/MiMo既有进程独立继续。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-07T06:24:57.314235+00:00 - S2-MODEL-SENSITIVITY-V1：充值后302个未发送项完成、GLM与MiMo全150评分核验
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=multi_model_remaining_20261007_v1；阶段=stage2；方法=multi_model_direct_llm；状态=部分完成（`partial`）
+- 实际运行命令：`python scripts/run_stage2_multi_model_remaining_v1.py --execute --allow-llm`
+- manifest：outputs/development/stage2_multi_model_remaining_v1/multi_model_remaining_20261007_v1/manifest.json
+- 结果摘要：{"new_calls":302,"combined_calls":755,"retry":0,"glm_full_denominator_f1":0.7833,"mimo_full_denominator_f1":0.8184,"kimi_remaining_never_sent":145}
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：否；正式实验就绪：是
+- 测试：1 failed, 5 passed in 16.65s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`7b163dafaee875d105c7fb40368bd58b6082a6f2`；相关未提交路径：339 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：已授权调用（`authorized_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：GLM149新次/142有效，MiMo149新次/147有效；各保留原首余额失败，150分母Overall F1分别0.7833/0.8184。Kimi本批4新次、3有效、一次max RPM=3停止，首条离线恢复后5尝试4有效，其余145在独立已验证节流进程继续，不重复请求；本批302新/继承453/合计755、0重试、父497产物原字节不变。新完整预测保存后读取Gold共享离线评价；321份字节相同本地副本，GitHub外发许可仍未确认，push阻塞。只新增6项真实产物核验，不重复13/6准备或全量。首次record命令因缺少运行元数据被参数检查拒绝，未运行测试或审计，原CLI日志保留。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-07T06:26:30.357994+00:00 - S2-MODEL-SENSITIVITY-V1：修正真实产物复核中未报告思考用量的缺失断言
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：1 passed in 2.45s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`7b163dafaee875d105c7fb40368bd58b6082a6f2`；相关未提交路径：341 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：未创建或覆盖（`not_created_or_overwritten`）
+- 仍存在 blocker：无
+- 备注：真实usage可缺失reasoning_tokens；未报告保留null，不改为0。仅将新测试字典必填访问改为get，与原runner门禁口径一致；运行源码/原453及新302响应/账本/预测/评分/manifest/副本都不改，新增API=0。前一次6项核验5通过1因KeyError失败（16.65秒），失败事件日志保留；本次只重跑该唯一失败项，另外5项 exact-state证据复用，不全量。Kimi145节流进程独立继续；GitHubpush外部阻塞仍未解决。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-07T06:29:40.735543+00:00 - S2-MODEL-SENSITIVITY-V1：验证Windows可提交的短路径证据副本
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：1 passed in 2.64s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`7b163dafaee875d105c7fb40368bd58b6082a6f2`；相关未提交路径：344 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：首次scoped git add因新副本重复长目录Filename too long拒绝，索引无新增。只将本批未提交长路径副本保留到formal/.tmp、生成同321份相同字节的短目录副本及新映射；原API产物、父497副本、源/账本/预测/指标/manifest不改。因副本路径/索引变化，仅复跑此具名副本节点；其他4项16.65秒与计数节点2.45秒证据仍匹配，不重跑或全量。无新增API；Kimi原授权节流继续，GitHub外发许可未确认、push仍阻塞。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

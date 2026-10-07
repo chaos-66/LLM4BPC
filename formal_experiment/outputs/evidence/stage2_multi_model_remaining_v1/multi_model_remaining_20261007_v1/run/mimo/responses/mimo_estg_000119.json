@@ -1,0 +1,234 @@
+{
+  "request_id": "mimo:estg_000119",
+  "raw_response_utf8": "\n{\"id\":\"1d467532-980b-4fc5-ad0f-b0cd51b68032_9a084922886248ccbd08e04fd0d82329\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000119\\\",\\n  \\\"source_id\\\": \\\"estg_000119\\\",\\n  \\\"source_text\\\": \\\"This list must contain the following:  \\\\n— acquisition or production costs,  \\\\n— date of acquisition or production,  \\\\n— name and address of the supplier,  \\\\n— the investment allowance claimed.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000119_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"This list must contain the following:  \\\\n— acquisition or production costs,  \\\\n— date of acquisition or production,  \\\\n— name and address of the supplier,  \\\\n— the investment allowance claimed.\\\", \\\"start\\\": 0, \\\"end\\\": 178},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"must\\\", \\\"start\\\": 10, \\\"end\\\": 14}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"This list\\\", \\\"start\\\": 0, \\\"end\\\": 9, \\\"normalized\\\": \\\"this list\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"contain the following:  \\\\n— acquisition or production costs,  \\\\n— date of acquisition or production,  \\\\n— name and address of the supplier,  \\\\n— the investment allowance claimed\\\", \\\"start\\\": 15, \\\"end\\\": 177, \\\"normalized\\\": \\\"contain the following: acquisition or production costs, date of acquisition or production, name and address of the supplier, the investment allowance claimed\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"role\":\"assistant\",\"tool_calls\":null}}],\"created\":1791353099,\"model\":\"mimo-v2.6-pro\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":491,\"prompt_tokens\":4384,\"total_tokens\":4875,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":0}}}",
+  "usage": {
+    "prompt_tokens": 4384,
+    "completion_tokens": 491,
+    "total_tokens": 4875,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "mimo-v2.6-pro",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "mimo",
+    "sample_id": "estg_000119",
+    "request_id": "mimo:estg_000119",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000119",
+      "source_id": "estg_000119",
+      "source_text": "This list must contain the following:  \n— acquisition or production costs,  \n— date of acquisition or production,  \n— name and address of the supplier,  \n— the investment allowance claimed.",
+      "clauses": [
+        {
+          "clause_id": "estg_000119_c01",
+          "clause_span": {
+            "text": "This list must contain the following:  \n— acquisition or production costs,  \n— date of acquisition or production,  \n— name and address of the supplier,  \n— the investment allowance claimed.",
+            "start": 0,
+            "end": 189
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "must",
+                "start": 10,
+                "end": 14
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "This list",
+              "start": 0,
+              "end": 9,
+              "normalized": "this list",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "contain the following:  \n— acquisition or production costs,  \n— date of acquisition or production,  \n— name and address of the supplier,  \n— the investment allowance claimed",
+              "start": 15,
+              "end": 188,
+              "normalized": "contain the following: — acquisition or production costs, — date of acquisition or production, — name and address of the supplier, — the investment allowance claimed",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 2,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 3,
+      "reanchored_count": 2,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000119_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "This list must contain the following:  \n— acquisition or production costs,  \n— date of acquisition or production,  \n— name and address of the supplier,  \n— the investment allowance claimed.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 178,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 189
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 189
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000119_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "must",
+          "normalized": null,
+          "original_start": 10,
+          "original_end": 14,
+          "candidate_occurrences": [
+            {
+              "start": 10,
+              "end": 14
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 10,
+            "end": 14
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000119_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "This list",
+          "normalized": "this list",
+          "original_start": 0,
+          "original_end": 9,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 9
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 0,
+            "end": 9
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000119_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "contain the following:  \n— acquisition or production costs,  \n— date of acquisition or production,  \n— name and address of the supplier,  \n— the investment allowance claimed",
+          "normalized": "contain the following: — acquisition or production costs, — date of acquisition or production, — name and address of the supplier, — the investment allowance claimed",
+          "original_start": 15,
+          "original_end": 177,
+          "candidate_occurrences": [
+            {
+              "start": 15,
+              "end": 188
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 15,
+            "end": 188
+          },
+          "distance": 11,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 2,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 2,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

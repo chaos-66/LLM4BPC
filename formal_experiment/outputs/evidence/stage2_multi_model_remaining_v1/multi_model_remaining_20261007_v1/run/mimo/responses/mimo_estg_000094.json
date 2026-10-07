@@ -1,0 +1,303 @@
+{
+  "request_id": "mimo:estg_000094",
+  "raw_response_utf8": "{\"id\":\"8bdba210-3dc6-4f4f-9b40-ff12fae56c1c_090778ef203d4e7c8a85ad8041545233\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000094\\\",\\\"source_id\\\":\\\"estg_000094\\\",\\\"source_text\\\":\\\"(2) Acquisition or production costs incurred for the rehabilitation of business buildings may, instead of being depreciated at the rates under subsection (1), be depreciated in equal annual instalments over ten years, if the rehabilitation is carried out pursuant to the Urban Renewal Act.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000094_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"(2) Acquisition or production costs incurred for the rehabilitation of business buildings may, instead of being depreciated at the rates under subsection (1), be depreciated in equal annual instalments over ten years, if the rehabilitation is carried out pursuant to the Urban Renewal Act.\\\",\\\"start\\\":0,\\\"end\\\":257},\\\"modality\\\":{\\\"label\\\":\\\"permission\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"may\\\",\\\"start\\\":83,\\\"end\\\":86}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"be depreciated in equal annual instalments over ten years\\\",\\\"start\\\":133,\\\"end\\\":189,\\\"normalized\\\":\\\"be depreciated in equal annual instalments over ten years\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"if the rehabilitation is carried out pursuant to the Urban Renewal Act\\\",\\\"start\\\":191,\\\"end\\\":256,\\\"normalized\\\":\\\"if the rehabilitation is carried out pursuant to the Urban Renewal Act\\\"}],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"in equal annual instalments over ten years\\\",\\\"start\\\":148,\\\"end\\\":189,\\\"normalized\\\":\\\"in equal annual instalments over ten years\\\"},{\\\"id\\\":\\\"c02\\\",\\\"text\\\":\\\"pursuant to the Urban Renewal Act\\\",\\\"start\\\":224,\\\"end\\\":256,\\\"normalized\\\":\\\"pursuant to the Urban Renewal Act\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\",\"tool_calls\":null}}],\"created\":1791352926,\"model\":\"mimo-v2.6-pro\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":471,\"prompt_tokens\":4401,\"total_tokens\":4872,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":0}}}",
+  "usage": {
+    "prompt_tokens": 4401,
+    "completion_tokens": 471,
+    "total_tokens": 4872,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "mimo-v2.6-pro",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "mimo",
+    "sample_id": "estg_000094",
+    "request_id": "mimo:estg_000094",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000094",
+      "source_id": "estg_000094",
+      "source_text": "(2) Acquisition or production costs incurred for the rehabilitation of business buildings may, instead of being depreciated at the rates under subsection (1), be depreciated in equal annual instalments over ten years, if the rehabilitation is carried out pursuant to the Urban Renewal Act.",
+      "clauses": [
+        {
+          "clause_id": "estg_000094_c01",
+          "clause_span": {
+            "text": "(2) Acquisition or production costs incurred for the rehabilitation of business buildings may, instead of being depreciated at the rates under subsection (1), be depreciated in equal annual instalments over ten years, if the rehabilitation is carried out pursuant to the Urban Renewal Act.",
+            "start": 0,
+            "end": 289
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 90,
+                "end": 93
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "be depreciated in equal annual instalments over ten years",
+              "start": 159,
+              "end": 216,
+              "normalized": "be depreciated in equal annual instalments over ten years",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "if the rehabilitation is carried out pursuant to the Urban Renewal Act",
+              "start": 218,
+              "end": 288,
+              "normalized": "if the rehabilitation is carried out pursuant to the urban renewal act",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "in equal annual instalments over ten years",
+              "start": 174,
+              "end": 216,
+              "normalized": "in equal annual instalments over ten years",
+              "id": "c01"
+            },
+            {
+              "text": "pursuant to the Urban Renewal Act",
+              "start": 255,
+              "end": 288,
+              "normalized": "pursuant to the urban renewal act",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 5,
+      "reanchored_count": 6,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000094_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "(2) Acquisition or production costs incurred for the rehabilitation of business buildings may, instead of being depreciated at the rates under subsection (1), be depreciated in equal annual instalments over ten years, if the rehabilitation is carried out pursuant to the Urban Renewal Act.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 257,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 289
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 289
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000094_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 83,
+          "original_end": 86,
+          "candidate_occurrences": [
+            {
+              "start": 90,
+              "end": 93
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 90,
+            "end": 93
+          },
+          "distance": 14,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000094_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "be depreciated in equal annual instalments over ten years",
+          "normalized": "be depreciated in equal annual instalments over ten years",
+          "original_start": 133,
+          "original_end": 189,
+          "candidate_occurrences": [
+            {
+              "start": 159,
+              "end": 216
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 159,
+            "end": 216
+          },
+          "distance": 53,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000094_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "if the rehabilitation is carried out pursuant to the Urban Renewal Act",
+          "normalized": "if the rehabilitation is carried out pursuant to the urban renewal act",
+          "original_start": 191,
+          "original_end": 256,
+          "candidate_occurrences": [
+            {
+              "start": 218,
+              "end": 288
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 218,
+            "end": 288
+          },
+          "distance": 59,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000094_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "in equal annual instalments over ten years",
+          "normalized": "in equal annual instalments over ten years",
+          "original_start": 148,
+          "original_end": 189,
+          "candidate_occurrences": [
+            {
+              "start": 174,
+              "end": 216
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 174,
+            "end": 216
+          },
+          "distance": 53,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000094_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "pursuant to the Urban Renewal Act",
+          "normalized": "pursuant to the urban renewal act",
+          "original_start": 224,
+          "original_end": 256,
+          "candidate_occurrences": [
+            {
+              "start": 255,
+              "end": 288
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 255,
+            "end": 288
+          },
+          "distance": 63,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 6,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

@@ -1,0 +1,388 @@
+{
+  "request_id": "mimo:estg_000038",
+  "raw_response_utf8": "\n{\"id\":\"497a5c06-f6ee-4821-9dca-74a18e94fb00_8c72ff54c9ea45939502f3d602000892\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000038\\\",\\n  \\\"source_id\\\": \\\"estg_000038\\\",\\n  \\\"source_text\\\": \\\"If an additional disability pension is granted, a legal entitlement to this pension must also exist.  \\\\ncc) The establishment of, accession to, and administration of the fund must be governed by a works agreement.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000038_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"If an additional disability pension is granted, a legal entitlement to this pension must also exist.\\\", \\\"start\\\": 0, \\\"end\\\": 101},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"must\\\", \\\"start\\\": 75, \\\"end\\\": 79}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"exist\\\", \\\"start\\\": 86, \\\"end\\\": 91, \\\"normalized\\\": \\\"exist\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"If an additional disability pension is granted\\\", \\\"start\\\": 0, \\\"end\\\": 47, \\\"normalized\\\": \\\"if an additional disability pension is granted\\\"}],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000038_c02\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"cc) The establishment of, accession to, and administration of the fund must be governed by a works agreement.\\\", \\\"start\\\": 104, \\\"end\\\": 213},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"must\\\", \\\"start\\\": 168, \\\"end\\\": 172}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a02\\\", \\\"text\\\": \\\"a works agreement\\\", \\\"start\\\": 195, \\\"end\\\": 212, \\\"normalized\\\": \\\"works agreement\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"governed\\\", \\\"start\\\": 177, \\\"end\\\": 185, \\\"normalized\\\": \\\"govern\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a02\\\", \\\"action_id\\\": \\\"p02\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"role\":\"assistant\",\"tool_calls\":null}}],\"created\":1791352591,\"model\":\"mimo-v2.6-pro\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":641,\"prompt_tokens\":4387,\"total_tokens\":5028,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":0}}}",
+  "usage": {
+    "prompt_tokens": 4387,
+    "completion_tokens": 641,
+    "total_tokens": 5028,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "mimo-v2.6-pro",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "mimo",
+    "sample_id": "estg_000038",
+    "request_id": "mimo:estg_000038",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000038",
+      "source_id": "estg_000038",
+      "source_text": "If an additional disability pension is granted, a legal entitlement to this pension must also exist.  \ncc) The establishment of, accession to, and administration of the fund must be governed by a works agreement.",
+      "clauses": [
+        {
+          "clause_id": "estg_000038_c01",
+          "clause_span": {
+            "text": "If an additional disability pension is granted, a legal entitlement to this pension must also exist.",
+            "start": 0,
+            "end": 100
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "must",
+                "start": 84,
+                "end": 88
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "exist",
+              "start": 94,
+              "end": 99,
+              "normalized": "exist",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If an additional disability pension is granted",
+              "start": 0,
+              "end": 46,
+              "normalized": "if an additional disability pension is granted",
+              "id": "d01"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000038_c02",
+          "clause_span": {
+            "text": "cc) The establishment of, accession to, and administration of the fund must be governed by a works agreement.",
+            "start": 103,
+            "end": 212
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "must",
+                "start": 174,
+                "end": 178
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "a works agreement",
+              "start": 194,
+              "end": 211,
+              "normalized": "a works agreement",
+              "id": "a02"
+            }
+          ],
+          "actions": [
+            {
+              "text": "governed",
+              "start": 182,
+              "end": 190,
+              "normalized": "governed",
+              "id": "p02"
+            }
+          ],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a02",
+              "action_id": "p02"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 2,
+      "field_span_count": 6,
+      "reanchored_count": 8,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000038_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If an additional disability pension is granted, a legal entitlement to this pension must also exist.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 101,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 100
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 100
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000038_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "must",
+          "normalized": null,
+          "original_start": 75,
+          "original_end": 79,
+          "candidate_occurrences": [
+            {
+              "start": 84,
+              "end": 88
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 84,
+            "end": 88
+          },
+          "distance": 18,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000038_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "exist",
+          "normalized": "exist",
+          "original_start": 86,
+          "original_end": 91,
+          "candidate_occurrences": [
+            {
+              "start": 94,
+              "end": 99
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 94,
+            "end": 99
+          },
+          "distance": 16,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000038_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "If an additional disability pension is granted",
+          "normalized": "if an additional disability pension is granted",
+          "original_start": 0,
+          "original_end": 47,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 46
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 46
+          },
+          "distance": 1,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000038_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "cc) The establishment of, accession to, and administration of the fund must be governed by a works agreement.",
+          "normalized": null,
+          "original_start": 104,
+          "original_end": 213,
+          "candidate_occurrences": [
+            {
+              "start": 103,
+              "end": 212
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 103,
+            "end": 212
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000038_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "must",
+          "normalized": null,
+          "original_start": 168,
+          "original_end": 172,
+          "candidate_occurrences": [
+            {
+              "start": 174,
+              "end": 178
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 174,
+            "end": 178
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actors[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000038_c02",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a02",
+          "text": "a works agreement",
+          "normalized": "a works agreement",
+          "original_start": 195,
+          "original_end": 212,
+          "candidate_occurrences": [
+            {
+              "start": 194,
+              "end": 211
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 194,
+            "end": 211
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000038_c02",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p02",
+          "text": "governed",
+          "normalized": "governed",
+          "original_start": 177,
+          "original_end": 185,
+          "candidate_occurrences": [
+            {
+              "start": 182,
+              "end": 190
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 182,
+            "end": 190
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 8,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

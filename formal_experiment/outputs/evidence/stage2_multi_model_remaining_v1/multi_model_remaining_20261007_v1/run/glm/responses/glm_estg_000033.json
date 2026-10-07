@@ -1,0 +1,231 @@
+{
+  "request_id": "glm:estg_000033",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000033\\\",\\n  \\\"source_id\\\": \\\"estg_000033\\\",\\n  \\\"source_text\\\": \\\"Gains or losses from the disposal or withdrawal and other changes in value of land that is part of the fixed assets are not to be taken into account.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000033_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"Gains or losses from the disposal or withdrawal and other changes in value of land that is part of the fixed assets are not to be taken into account.\\\", \\\"start\\\": 0, \\\"end\\\": 147},\\n      \\\"modality\\\": {\\\"label\\\": \\\"prohibition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"not to be taken into account\\\", \\\"start\\\": 118, \\\"end\\\": 146}, {\\\"text\\\": \\\"not\\\", \\\"start\\\": 118, \\\"end\\\": 121}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"taken into account\\\", \\\"start\\\": 128, \\\"end\\\": 146, \\\"normalized\\\": \\\"take into account\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"role\":\"assistant\"}}],\"created\":1791352522,\"id\":\"20261007135518df990156778a4b50\",\"model\":\"glm-5.2\",\"object\":\"chat.completion\",\"request_id\":\"20261007135518df990156778a4b50\",\"usage\":{\"completion_tokens\":364,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens\":4213,\"prompt_tokens_details\":{\"cached_tokens\":1344},\"total_tokens\":4577}}",
+  "usage": {
+    "prompt_tokens": 4213,
+    "completion_tokens": 364,
+    "total_tokens": 4577,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "glm-5.2",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "glm",
+    "sample_id": "estg_000033",
+    "request_id": "glm:estg_000033",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000033",
+      "source_id": "estg_000033",
+      "source_text": "Gains or losses from the disposal or withdrawal and other changes in value of land that is part of the fixed assets are not to be taken into account.",
+      "clauses": [
+        {
+          "clause_id": "estg_000033_c01",
+          "clause_span": {
+            "text": "Gains or losses from the disposal or withdrawal and other changes in value of land that is part of the fixed assets are not to be taken into account.",
+            "start": 0,
+            "end": 149
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "not to be taken into account",
+                "start": 120,
+                "end": 148
+              },
+              {
+                "text": "not",
+                "start": 120,
+                "end": 123
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "taken into account",
+              "start": 130,
+              "end": 148,
+              "normalized": "taken into account",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 1,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 3,
+      "reanchored_count": 4,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000033_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Gains or losses from the disposal or withdrawal and other changes in value of land that is part of the fixed assets are not to be taken into account.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 147,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 149
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 149
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000033_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "not to be taken into account",
+          "normalized": null,
+          "original_start": 118,
+          "original_end": 146,
+          "candidate_occurrences": [
+            {
+              "start": 120,
+              "end": 148
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 120,
+            "end": 148
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000033_c01",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "not",
+          "normalized": null,
+          "original_start": 118,
+          "original_end": 121,
+          "candidate_occurrences": [
+            {
+              "start": 120,
+              "end": 123
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 120,
+            "end": 123
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000033_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "taken into account",
+          "normalized": "taken into account",
+          "original_start": 128,
+          "original_end": 146,
+          "candidate_occurrences": [
+            {
+              "start": 130,
+              "end": 148
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 130,
+            "end": 148
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 4,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

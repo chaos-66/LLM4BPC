@@ -1,0 +1,340 @@
+{
+  "request_id": "mimo:estg_000326",
+  "raw_response_utf8": "{\"id\":\"f41b4480-e179-4ff2-a7ba-bea199cc0e52_3f27ccfd6fd648afaa395c6055fac650\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000326\\\",\\\"source_id\\\":\\\"estg_000326\\\",\\\"source_text\\\":\\\"If the income-related expenses exceed the income, the excess amount may not be offset in the determination of income (Section 2(2)). 4.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000326_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"If the income-related expenses exceed the income, the excess amount may not be offset in the determination of income (Section 2(2)).\\\",\\\"start\\\":0,\\\"end\\\":131},\\\"modality\\\":{\\\"label\\\":\\\"prohibition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"may not\\\",\\\"start\\\":72,\\\"end\\\":79},{\\\"text\\\":\\\"not\\\",\\\"start\\\":76,\\\"end\\\":79}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"be offset\\\",\\\"start\\\":80,\\\"end\\\":89,\\\"normalized\\\":\\\"be offset\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"If the income-related expenses exceed the income\\\",\\\"start\\\":0,\\\"end\\\":50,\\\"normalized\\\":\\\"if the income-related expenses exceed the income\\\"}],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"in the determination of income\\\",\\\"start\\\":90,\\\"end\\\":120,\\\"normalized\\\":\\\"in the determination of income\\\"},{\\\"id\\\":\\\"c02\\\",\\\"text\\\":\\\"(Section 2(2))\\\",\\\"start\\\":121,\\\"end\\\":134,\\\"normalized\\\":\\\"(section 2(2))\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"clause_span\\\",\\\"reason\\\":\\\"clause_boundary_ambiguous\\\"}]}\",\"role\":\"assistant\",\"tool_calls\":null}}],\"created\":1791353734,\"model\":\"mimo-v2.6-pro\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":405,\"prompt_tokens\":4377,\"total_tokens\":4782,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":0}}}",
+  "usage": {
+    "prompt_tokens": 4377,
+    "completion_tokens": 405,
+    "total_tokens": 4782,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "mimo-v2.6-pro",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "mimo",
+    "sample_id": "estg_000326",
+    "request_id": "mimo:estg_000326",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000326",
+      "source_id": "estg_000326",
+      "source_text": "If the income-related expenses exceed the income, the excess amount may not be offset in the determination of income (Section 2(2)). 4.",
+      "clauses": [
+        {
+          "clause_id": "estg_000326_c01",
+          "clause_span": {
+            "text": "If the income-related expenses exceed the income, the excess amount may not be offset in the determination of income (Section 2(2)).",
+            "start": 0,
+            "end": 132
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "may not",
+                "start": 68,
+                "end": 75
+              },
+              {
+                "text": "not",
+                "start": 72,
+                "end": 75
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "be offset",
+              "start": 76,
+              "end": 85,
+              "normalized": "be offset",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If the income-related expenses exceed the income",
+              "start": 0,
+              "end": 48,
+              "normalized": "if the income-related expenses exceed the income",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "in the determination of income",
+              "start": 86,
+              "end": 116,
+              "normalized": "in the determination of income",
+              "id": "c01"
+            },
+            {
+              "text": "(Section 2(2))",
+              "start": 117,
+              "end": 131,
+              "normalized": "(section 2(2))",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "clause_span",
+          "reason": "clause_boundary_ambiguous"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 6,
+      "reanchored_count": 7,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000326_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If the income-related expenses exceed the income, the excess amount may not be offset in the determination of income (Section 2(2)).",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 131,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 132
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 132
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000326_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may not",
+          "normalized": null,
+          "original_start": 72,
+          "original_end": 79,
+          "candidate_occurrences": [
+            {
+              "start": 68,
+              "end": 75
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 68,
+            "end": 75
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000326_c01",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "not",
+          "normalized": null,
+          "original_start": 76,
+          "original_end": 79,
+          "candidate_occurrences": [
+            {
+              "start": 72,
+              "end": 75
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 72,
+            "end": 75
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000326_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "be offset",
+          "normalized": "be offset",
+          "original_start": 80,
+          "original_end": 89,
+          "candidate_occurrences": [
+            {
+              "start": 76,
+              "end": 85
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 76,
+            "end": 85
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000326_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "If the income-related expenses exceed the income",
+          "normalized": "if the income-related expenses exceed the income",
+          "original_start": 0,
+          "original_end": 50,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 48
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 48
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000326_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "in the determination of income",
+          "normalized": "in the determination of income",
+          "original_start": 90,
+          "original_end": 120,
+          "candidate_occurrences": [
+            {
+              "start": 86,
+              "end": 116
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 86,
+            "end": 116
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000326_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "(Section 2(2))",
+          "normalized": "(section 2(2))",
+          "original_start": 121,
+          "original_end": 134,
+          "candidate_occurrences": [
+            {
+              "start": 117,
+              "end": 131
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 117,
+            "end": 131
+          },
+          "distance": 7,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 7,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

@@ -1,0 +1,275 @@
+{
+  "request_id": "mimo:estg_000111",
+  "raw_response_utf8": "\n\n\n\n\n\n{\"id\":\"5601fed1-b11c-40b3-a104-15d47c3bec92_17d6ded4234e43c48cd85a21a60b809a\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000111\\\",\\n  \\\"source_id\\\": \\\"estg_000111\\\",\\n  \\\"source_text\\\": \\\"(5) In the following cases, an investment allowance may be claimed neither as a reduction of profit nor through the designated use of an investment reserve (a tax-free amount):  \\\\n— For aircraft used for passenger transport, except aircraft of air transport companies (Section 101 of the Aviation Act, BGBl.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000111_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"In the following cases, an investment allowance may be claimed neither as a reduction of profit nor through the designated use of an investment reserve (a tax-free amount):\\\", \\\"start\\\": 4, \\\"end\\\": 171},\\n      \\\"modality\\\": {\\\"label\\\": \\\"prohibition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may\\\", \\\"start\\\": 62, \\\"end\\\": 65}, {\\\"text\\\": \\\"neither\\\", \\\"start\\\": 82, \\\"end\\\": 89}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"claimed\\\", \\\"start\\\": 70, \\\"end\\\": 77, \\\"normalized\\\": \\\"claim\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"neither as a reduction of profit nor through the designated use of an investment reserve (a tax-free amount)\\\", \\\"start\\\": 82, \\\"end\\\": 170, \\\"normalized\\\": \\\"neither as a reduction of profit nor through the designated use of an investment reserve (a tax-free amount)\\\"}\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": [\\n    {\\\"field\\\": \\\"condition\\\", \\\"reason\\\": \\\"clause_boundary_ambiguous\\\"},\\n    {\\\"field\\\": \\\"exception\\\", \\\"reason\\\": \\\"clause_boundary_ambiguous\\\"}\\n  ]\\n}\",\"role\":\"assistant\",\"tool_calls\":null}}],\"created\":1791353049,\"model\":\"mimo-v2.6-pro\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":522,\"prompt_tokens\":4410,\"total_tokens\":4932,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":0}}}",
+  "usage": {
+    "prompt_tokens": 4410,
+    "completion_tokens": 522,
+    "total_tokens": 4932,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "mimo-v2.6-pro",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "mimo",
+    "sample_id": "estg_000111",
+    "request_id": "mimo:estg_000111",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000111",
+      "source_id": "estg_000111",
+      "source_text": "(5) In the following cases, an investment allowance may be claimed neither as a reduction of profit nor through the designated use of an investment reserve (a tax-free amount):  \n— For aircraft used for passenger transport, except aircraft of air transport companies (Section 101 of the Aviation Act, BGBl.",
+      "clauses": [
+        {
+          "clause_id": "estg_000111_c01",
+          "clause_span": {
+            "text": "In the following cases, an investment allowance may be claimed neither as a reduction of profit nor through the designated use of an investment reserve (a tax-free amount):",
+            "start": 4,
+            "end": 176
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 52,
+                "end": 55
+              },
+              {
+                "text": "neither",
+                "start": 67,
+                "end": 74
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "claimed",
+              "start": 59,
+              "end": 66,
+              "normalized": "claimed",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "neither as a reduction of profit nor through the designated use of an investment reserve (a tax-free amount)",
+              "start": 67,
+              "end": 175,
+              "normalized": "neither as a reduction of profit nor through the designated use of an investment reserve (a tax-free amount)",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "condition",
+          "reason": "clause_boundary_ambiguous"
+        },
+        {
+          "field": "exception",
+          "reason": "clause_boundary_ambiguous"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 2,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 5,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000111_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "In the following cases, an investment allowance may be claimed neither as a reduction of profit nor through the designated use of an investment reserve (a tax-free amount):",
+          "normalized": null,
+          "original_start": 4,
+          "original_end": 171,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 176
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 176
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000111_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 62,
+          "original_end": 65,
+          "candidate_occurrences": [
+            {
+              "start": 52,
+              "end": 55
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 52,
+            "end": 55
+          },
+          "distance": 20,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000111_c01",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "neither",
+          "normalized": null,
+          "original_start": 82,
+          "original_end": 89,
+          "candidate_occurrences": [
+            {
+              "start": 67,
+              "end": 74
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 67,
+            "end": 74
+          },
+          "distance": 30,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000111_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "claimed",
+          "normalized": "claimed",
+          "original_start": 70,
+          "original_end": 77,
+          "candidate_occurrences": [
+            {
+              "start": 59,
+              "end": 66
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 59,
+            "end": 66
+          },
+          "distance": 22,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000111_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "neither as a reduction of profit nor through the designated use of an investment reserve (a tax-free amount)",
+          "normalized": "neither as a reduction of profit nor through the designated use of an investment reserve (a tax-free amount)",
+          "original_start": 82,
+          "original_end": 170,
+          "candidate_occurrences": [
+            {
+              "start": 67,
+              "end": 175
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 67,
+            "end": 175
+          },
+          "distance": 20,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

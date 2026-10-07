@@ -1,0 +1,91 @@
+{
+  "request_id": "mimo:estg_000112",
+  "raw_response_utf8": "{\"id\":\"a9e0d489-eb28-402a-809c-03c3228c2357_7841b85e565e4eba93cf9e959f478c94\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000112\\\",\\n  \\\"source_id\\\": \\\"estg_000112\\\",\\n  \\\"source_text\\\": \\\"No. 253/1957) and civil aviation schools. — For low-value assets written off pursuant to Section 13. — Upon acquisition of a business, a part of a business or an interest of a partner who is deemed to be an entrepreneur (co-entrepreneur). — For used assets which are intended, directly or indirectly, for transfer for consideration to the seller (sale and lease back) or for resale to the seller (sale and sale back). — For used assets acquired by a group company within a group as defined by Section 15 of the Stock Corporation Act 1965.\\\",\\n  \\\"clauses\\\": [],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": [\\n    {\\\"field\\\": \\\"modality\\\", \\\"reason\\\": \\\"context_required\\\"},\\n    {\\\"field\\\": \\\"actor\\\", \\\"reason\\\": \\\"context_required\\\"},\\n    {\\\"field\\\": \\\"action\\\", \\\"reason\\\": \\\"context_required\\\"}\\n  ]\\n}\",\"role\":\"assistant\",\"tool_calls\":null}}],\"created\":1791353056,\"model\":\"mimo-v2.6-pro\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":292,\"prompt_tokens\":4475,\"total_tokens\":4767,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":0}}}",
+  "usage": {
+    "prompt_tokens": 4475,
+    "completion_tokens": 292,
+    "total_tokens": 4767,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "mimo-v2.6-pro",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "mimo",
+    "sample_id": "estg_000112",
+    "request_id": "mimo:estg_000112",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000112",
+      "source_id": "estg_000112",
+      "source_text": "No. 253/1957) and civil aviation schools. — For low-value assets written off pursuant to Section 13. — Upon acquisition of a business, a part of a business or an interest of a partner who is deemed to be an entrepreneur (co-entrepreneur). — For used assets which are intended, directly or indirectly, for transfer for consideration to the seller (sale and lease back) or for resale to the seller (sale and sale back). — For used assets acquired by a group company within a group as defined by Section 15 of the Stock Corporation Act 1965.",
+      "clauses": [],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "modality",
+          "reason": "context_required"
+        },
+        {
+          "field": "actor",
+          "reason": "context_required"
+        },
+        {
+          "field": "action",
+          "reason": "context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "unchanged",
+      "spans_adapted": 0,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "unchanged",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 0,
+      "field_span_count": 0,
+      "reanchored_count": 0,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 0,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

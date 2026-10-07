@@ -1,0 +1,302 @@
+{
+  "request_id": "glm:estg_000452",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000452\\\",\\n  \\\"source_id\\\": \\\"estg_000452\\\",\\n  \\\"source_text\\\": \\\"(2) The employee shall be obliged to request the correction of the entries on the wage tax card if 1. the sole earner tax credit is entered, but the conditions for granting this credit have ceased, or 2. the conditions for the notation of children have ceased.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000452_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"(2) The employee shall be obliged to request the correction of the entries on the wage tax card if 1. the sole earner tax credit is entered, but the conditions for granting this credit have ceased, or 2. the conditions for the notation of children have ceased.\\\", \\\"start\\\": 0, \\\"end\\\": 233},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall be obliged\\\", \\\"start\\\": 17, \\\"end\\\": 34}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"The employee\\\", \\\"start\\\": 4, \\\"end\\\": 16, \\\"normalized\\\": \\\"employee\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"request the correction of the entries on the wage tax card\\\", \\\"start\\\": 38, \\\"end\\\": 97, \\\"normalized\\\": \\\"request correction of entries on wage tax card\\\"}],\\n      \\\"conditions\\\": [\\n        {\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"if 1. the sole earner tax credit is entered, but the conditions for granting this credit have ceased\\\", \\\"start\\\": 98, \\\"end\\\": 191, \\\"normalized\\\": \\\"if the sole earner tax credit is entered but the conditions for granting this credit have ceased\\\"},\\n        {\\\"id\\\": \\\"d02\\\", \\\"text\\\": \\\"or 2. the conditions for the notation of children have ceased\\\", \\\"start\\\": 192, \\\"end\\\": 255, \\\"normalized\\\": \\\"or the conditions for the notation of children have ceased\\\"}\\n      ],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"role\":\"assistant\"}}],\"created\":1791353383,\"id\":\"20261007140937defaa576b1464c09\",\"model\":\"glm-5.2\",\"object\":\"chat.completion\",\"request_id\":\"20261007140937defaa576b1464c09\",\"usage\":{\"completion_tokens\":564,\"prompt_tokens\":4239,\"prompt_tokens_details\":{\"cached_tokens\":1280},\"total_tokens\":4803}}",
+  "usage": {
+    "prompt_tokens": 4239,
+    "completion_tokens": 564,
+    "total_tokens": 4803
+  },
+  "returned_model": "glm-5.2",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "glm",
+    "sample_id": "estg_000452",
+    "request_id": "glm:estg_000452",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000452",
+      "source_id": "estg_000452",
+      "source_text": "(2) The employee shall be obliged to request the correction of the entries on the wage tax card if 1. the sole earner tax credit is entered, but the conditions for granting this credit have ceased, or 2. the conditions for the notation of children have ceased.",
+      "clauses": [
+        {
+          "clause_id": "estg_000452_c01",
+          "clause_span": {
+            "text": "(2) The employee shall be obliged to request the correction of the entries on the wage tax card if 1. the sole earner tax credit is entered, but the conditions for granting this credit have ceased, or 2. the conditions for the notation of children have ceased.",
+            "start": 0,
+            "end": 260
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall be obliged",
+                "start": 17,
+                "end": 33
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "The employee",
+              "start": 4,
+              "end": 16,
+              "normalized": "the employee",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "request the correction of the entries on the wage tax card",
+              "start": 37,
+              "end": 95,
+              "normalized": "request the correction of the entries on the wage tax card",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "if 1. the sole earner tax credit is entered, but the conditions for granting this credit have ceased",
+              "start": 96,
+              "end": 196,
+              "normalized": "if 1. the sole earner tax credit is entered, but the conditions for granting this credit have ceased",
+              "id": "d01"
+            },
+            {
+              "text": "or 2. the conditions for the notation of children have ceased",
+              "start": 198,
+              "end": 259,
+              "normalized": "or 2. the conditions for the notation of children have ceased",
+              "id": "d02"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 5,
+      "reanchored_count": 5,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000452_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "(2) The employee shall be obliged to request the correction of the entries on the wage tax card if 1. the sole earner tax credit is entered, but the conditions for granting this credit have ceased, or 2. the conditions for the notation of children have ceased.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 233,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 260
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 260
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000452_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall be obliged",
+          "normalized": null,
+          "original_start": 17,
+          "original_end": 34,
+          "candidate_occurrences": [
+            {
+              "start": 17,
+              "end": 33
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 17,
+            "end": 33
+          },
+          "distance": 1,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000452_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "The employee",
+          "normalized": "the employee",
+          "original_start": 4,
+          "original_end": 16,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 16
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 4,
+            "end": 16
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000452_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "request the correction of the entries on the wage tax card",
+          "normalized": "request the correction of the entries on the wage tax card",
+          "original_start": 38,
+          "original_end": 97,
+          "candidate_occurrences": [
+            {
+              "start": 37,
+              "end": 95
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 37,
+            "end": 95
+          },
+          "distance": 3,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000452_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "if 1. the sole earner tax credit is entered, but the conditions for granting this credit have ceased",
+          "normalized": "if 1. the sole earner tax credit is entered, but the conditions for granting this credit have ceased",
+          "original_start": 98,
+          "original_end": 191,
+          "candidate_occurrences": [
+            {
+              "start": 96,
+              "end": 196
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 96,
+            "end": 196
+          },
+          "distance": 7,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000452_c01",
+          "field": "conditions",
+          "span_index": 1,
+          "span_id": "d02",
+          "text": "or 2. the conditions for the notation of children have ceased",
+          "normalized": "or 2. the conditions for the notation of children have ceased",
+          "original_start": 192,
+          "original_end": 255,
+          "candidate_occurrences": [
+            {
+              "start": 198,
+              "end": 259
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 198,
+            "end": 259
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

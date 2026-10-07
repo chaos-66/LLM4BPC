@@ -1,0 +1,2488 @@
+{
+  "records": [
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000002",
+      "request_id": "kimi:estg_000002",
+      "request_status": "ok",
+      "failure_stage": null,
+      "record": {
+        "schema_version": "1.0.0",
+        "sample_id": "estg_000002",
+        "source_id": "estg_000002",
+        "source_text": "Bookkeeping farmers and foresters and registered traders (Section 5) may, however, have a business year deviating from the calendar year; in this case, the profit shall be taken into account in determining the income for that calendar year in which the business year ends.",
+        "clauses": [
+          {
+            "clause_id": "estg_000002_c01",
+            "clause_span": {
+              "text": "Bookkeeping farmers and foresters and registered traders (Section 5) may, however, have a business year deviating from the calendar year;",
+              "start": 0,
+              "end": 137
+            },
+            "modality": {
+              "label": "permission",
+              "evidence": [
+                {
+                  "text": "may",
+                  "start": 69,
+                  "end": 72
+                }
+              ]
+            },
+            "actors": [
+              {
+                "text": "Bookkeeping farmers",
+                "start": 0,
+                "end": 19,
+                "normalized": "bookkeeping farmers",
+                "id": "a01"
+              },
+              {
+                "text": "foresters",
+                "start": 24,
+                "end": 33,
+                "normalized": "foresters",
+                "id": "a02"
+              },
+              {
+                "text": "registered traders",
+                "start": 38,
+                "end": 56,
+                "normalized": "registered traders",
+                "id": "a03"
+              }
+            ],
+            "actions": [
+              {
+                "text": "have a business year deviating from the calendar year",
+                "start": 83,
+                "end": 136,
+                "normalized": "have a business year deviating from the calendar year",
+                "id": "p01"
+              }
+            ],
+            "conditions": [],
+            "constraints": [],
+            "exceptions": [],
+            "actor_action_map": [
+              {
+                "actor_id": "a01",
+                "action_id": "p01"
+              },
+              {
+                "actor_id": "a02",
+                "action_id": "p01"
+              },
+              {
+                "actor_id": "a03",
+                "action_id": "p01"
+              }
+            ],
+            "order_relations": []
+          },
+          {
+            "clause_id": "estg_000002_c02",
+            "clause_span": {
+              "text": "in this case, the profit shall be taken into account in determining the income for that calendar year in which the business year ends.",
+              "start": 138,
+              "end": 272
+            },
+            "modality": {
+              "label": "obligation",
+              "evidence": [
+                {
+                  "text": "shall",
+                  "start": 163,
+                  "end": 168
+                }
+              ]
+            },
+            "actors": [],
+            "actions": [
+              {
+                "text": "taken into account",
+                "start": 172,
+                "end": 190,
+                "normalized": "taken into account",
+                "id": "p02"
+              }
+            ],
+            "conditions": [
+              {
+                "text": "in this case",
+                "start": 138,
+                "end": 150,
+                "normalized": "in this case",
+                "id": "d01"
+              }
+            ],
+            "constraints": [
+              {
+                "text": "in determining the income",
+                "start": 191,
+                "end": 216,
+                "normalized": "in determining the income",
+                "id": "c01"
+              },
+              {
+                "text": "for that calendar year in which the business year ends",
+                "start": 217,
+                "end": 271,
+                "normalized": "for that calendar year in which the business year ends",
+                "id": "c02"
+              }
+            ],
+            "exceptions": [],
+            "actor_action_map": [
+              {
+                "actor_id": null,
+                "action_id": "p02"
+              }
+            ],
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "validation": {
+          "schema_valid": true,
+          "cross_field_valid": true,
+          "errors": []
+        },
+        "unsupported_or_ambiguous": []
+      },
+      "canonicalization_policy": "legacy",
+      "adapter_audit": {
+        "attempted": true,
+        "status": "adapted",
+        "spans_adapted": 8,
+        "dropped_spans": [],
+        "failed_reasons": []
+      },
+      "canonicalizer_audit": {
+        "attempted": true,
+        "status": "reanchored",
+        "policy": "legacy",
+        "cost_metric": "abs_start_plus_abs_end",
+        "clause_span_count": 2,
+        "field_span_count": 10,
+        "reanchored_count": 8,
+        "dropped_spans": [],
+        "dropped_clauses": [],
+        "dropped_edges": [],
+        "failed_reasons": [],
+        "resolution_events": [
+          {
+            "path": "clauses[0].clause_span",
+            "clause_index": 0,
+            "clause_id": "estg_000002_c01",
+            "field": "clause_span",
+            "span_index": null,
+            "span_id": null,
+            "text": "Bookkeeping farmers and foresters and registered traders (Section 5) may, however, have a business year deviating from the calendar year;",
+            "normalized": null,
+            "original_start": 0,
+            "original_end": 104,
+            "candidate_occurrences": [
+              {
+                "start": 0,
+                "end": 137
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 0,
+              "end": 137
+            },
+            "distance": null,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].modality.evidence[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000002_c01",
+            "field": "modality.evidence",
+            "span_index": 0,
+            "span_id": null,
+            "text": "may",
+            "normalized": null,
+            "original_start": 69,
+            "original_end": 72,
+            "candidate_occurrences": [
+              {
+                "start": 69,
+                "end": 72
+              }
+            ],
+            "strategy": "unchanged",
+            "chosen": {
+              "start": 69,
+              "end": 72
+            },
+            "distance": 0,
+            "outcome": "unchanged",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].actors[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000002_c01",
+            "field": "actors",
+            "span_index": 0,
+            "span_id": "a01",
+            "text": "Bookkeeping farmers",
+            "normalized": "bookkeeping farmers",
+            "original_start": 0,
+            "original_end": 19,
+            "candidate_occurrences": [
+              {
+                "start": 0,
+                "end": 19
+              }
+            ],
+            "strategy": "unchanged",
+            "chosen": {
+              "start": 0,
+              "end": 19
+            },
+            "distance": 0,
+            "outcome": "unchanged",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].actors[1]",
+            "clause_index": 0,
+            "clause_id": "estg_000002_c01",
+            "field": "actors",
+            "span_index": 1,
+            "span_id": "a02",
+            "text": "foresters",
+            "normalized": "foresters",
+            "original_start": 24,
+            "original_end": 33,
+            "candidate_occurrences": [
+              {
+                "start": 24,
+                "end": 33
+              }
+            ],
+            "strategy": "unchanged",
+            "chosen": {
+              "start": 24,
+              "end": 33
+            },
+            "distance": 0,
+            "outcome": "unchanged",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].actors[2]",
+            "clause_index": 0,
+            "clause_id": "estg_000002_c01",
+            "field": "actors",
+            "span_index": 2,
+            "span_id": "a03",
+            "text": "registered traders",
+            "normalized": "registered traders",
+            "original_start": 38,
+            "original_end": 56,
+            "candidate_occurrences": [
+              {
+                "start": 38,
+                "end": 56
+              }
+            ],
+            "strategy": "unchanged",
+            "chosen": {
+              "start": 38,
+              "end": 56
+            },
+            "distance": 0,
+            "outcome": "unchanged",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].actions[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000002_c01",
+            "field": "actions",
+            "span_index": 0,
+            "span_id": "p01",
+            "text": "have a business year deviating from the calendar year",
+            "normalized": "have a business year deviating from the calendar year",
+            "original_start": 84,
+            "original_end": 103,
+            "candidate_occurrences": [
+              {
+                "start": 83,
+                "end": 136
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 83,
+              "end": 136
+            },
+            "distance": 34,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[1].clause_span",
+            "clause_index": 1,
+            "clause_id": "estg_000002_c02",
+            "field": "clause_span",
+            "span_index": null,
+            "span_id": null,
+            "text": "in this case, the profit shall be taken into account in determining the income for that calendar year in which the business year ends.",
+            "normalized": null,
+            "original_start": 105,
+            "original_end": 200,
+            "candidate_occurrences": [
+              {
+                "start": 138,
+                "end": 272
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 138,
+              "end": 272
+            },
+            "distance": null,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[1].modality.evidence[0]",
+            "clause_index": 1,
+            "clause_id": "estg_000002_c02",
+            "field": "modality.evidence",
+            "span_index": 0,
+            "span_id": null,
+            "text": "shall",
+            "normalized": null,
+            "original_start": 127,
+            "original_end": 132,
+            "candidate_occurrences": [
+              {
+                "start": 163,
+                "end": 168
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 163,
+              "end": 168
+            },
+            "distance": 72,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[1].actions[0]",
+            "clause_index": 1,
+            "clause_id": "estg_000002_c02",
+            "field": "actions",
+            "span_index": 0,
+            "span_id": "p02",
+            "text": "taken into account",
+            "normalized": "taken into account",
+            "original_start": 136,
+            "original_end": 154,
+            "candidate_occurrences": [
+              {
+                "start": 172,
+                "end": 190
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 172,
+              "end": 190
+            },
+            "distance": 72,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[1].conditions[0]",
+            "clause_index": 1,
+            "clause_id": "estg_000002_c02",
+            "field": "conditions",
+            "span_index": 0,
+            "span_id": "d01",
+            "text": "in this case",
+            "normalized": "in this case",
+            "original_start": 105,
+            "original_end": 117,
+            "candidate_occurrences": [
+              {
+                "start": 138,
+                "end": 150
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 138,
+              "end": 150
+            },
+            "distance": 66,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[1].constraints[0]",
+            "clause_index": 1,
+            "clause_id": "estg_000002_c02",
+            "field": "constraints",
+            "span_index": 0,
+            "span_id": "c01",
+            "text": "in determining the income",
+            "normalized": "in determining the income",
+            "original_start": 155,
+            "original_end": 180,
+            "candidate_occurrences": [
+              {
+                "start": 191,
+                "end": 216
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 191,
+              "end": 216
+            },
+            "distance": 72,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[1].constraints[1]",
+            "clause_index": 1,
+            "clause_id": "estg_000002_c02",
+            "field": "constraints",
+            "span_index": 1,
+            "span_id": "c02",
+            "text": "for that calendar year in which the business year ends",
+            "normalized": "for that calendar year in which the business year ends",
+            "original_start": 181,
+            "original_end": 199,
+            "candidate_occurrences": [
+              {
+                "start": 217,
+                "end": 271
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 217,
+              "end": 271
+            },
+            "distance": 108,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          }
+        ],
+        "unchanged_spans": 4,
+        "unresolved_spans": 0,
+        "reanchored_unique_exact": 8,
+        "reanchored_repeated_exact": 0,
+        "repeated_occurrence_cases": 0,
+        "repeated_occurrence_recovered": 0,
+        "repeated_occurrence_unresolved": 0,
+        "tie_cases": 0,
+        "one_to_one_assignment_cases": 0,
+        "assignment_ambiguities": 0
+      },
+      "runtime_validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000003",
+      "request_id": "kimi:estg_000003",
+      "request_status": "ok",
+      "failure_stage": null,
+      "record": {
+        "schema_version": "1.0.0",
+        "sample_id": "estg_000003",
+        "source_id": "estg_000003",
+        "source_text": "It may cover a shorter period if  \n1. a business is opened or closed, or  \n2. the business year of a bookkeeping farmer or forester or a registered trader is changed to a different closing date.",
+        "clauses": [
+          {
+            "clause_id": "estg_000003_c01",
+            "clause_span": {
+              "text": "It may cover a shorter period if  \n1. a business is opened or closed, or  \n2. the business year of a bookkeeping farmer or forester or a registered trader is changed to a different closing date.",
+              "start": 0,
+              "end": 194
+            },
+            "modality": {
+              "label": "permission",
+              "evidence": [
+                {
+                  "text": "may",
+                  "start": 3,
+                  "end": 6
+                }
+              ]
+            },
+            "actors": [
+              {
+                "text": "It",
+                "start": 0,
+                "end": 2,
+                "normalized": "it",
+                "id": "a01"
+              }
+            ],
+            "actions": [
+              {
+                "text": "cover a shorter period",
+                "start": 7,
+                "end": 29,
+                "normalized": "cover a shorter period",
+                "id": "p01"
+              }
+            ],
+            "conditions": [
+              {
+                "text": "if  \n1. a business is opened or closed, or  \n2. the business year of a bookkeeping farmer or forester or a registered trader is changed to a different closing date",
+                "start": 30,
+                "end": 193,
+                "normalized": "if 1. a business is opened or closed, or 2. the business year of a bookkeeping farmer or forester or a registered trader is changed to a different closing date",
+                "id": "c01"
+              }
+            ],
+            "constraints": [],
+            "exceptions": [],
+            "actor_action_map": [
+              {
+                "actor_id": "a01",
+                "action_id": "p01"
+              }
+            ],
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "validation": {
+          "schema_valid": true,
+          "cross_field_valid": true,
+          "errors": []
+        },
+        "unsupported_or_ambiguous": [
+          {
+            "field": "actor",
+            "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+          }
+        ]
+      },
+      "canonicalization_policy": "legacy",
+      "adapter_audit": {
+        "attempted": true,
+        "status": "adapted",
+        "spans_adapted": 3,
+        "dropped_spans": [],
+        "failed_reasons": []
+      },
+      "canonicalizer_audit": {
+        "attempted": true,
+        "status": "reanchored",
+        "policy": "legacy",
+        "cost_metric": "abs_start_plus_abs_end",
+        "clause_span_count": 1,
+        "field_span_count": 4,
+        "reanchored_count": 2,
+        "dropped_spans": [],
+        "dropped_clauses": [],
+        "dropped_edges": [],
+        "failed_reasons": [],
+        "resolution_events": [
+          {
+            "path": "clauses[0].clause_span",
+            "clause_index": 0,
+            "clause_id": "estg_000003_c01",
+            "field": "clause_span",
+            "span_index": null,
+            "span_id": null,
+            "text": "It may cover a shorter period if  \n1. a business is opened or closed, or  \n2. the business year of a bookkeeping farmer or forester or a registered trader is changed to a different closing date.",
+            "normalized": null,
+            "original_start": 0,
+            "original_end": 160,
+            "candidate_occurrences": [
+              {
+                "start": 0,
+                "end": 194
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 0,
+              "end": 194
+            },
+            "distance": null,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].modality.evidence[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000003_c01",
+            "field": "modality.evidence",
+            "span_index": 0,
+            "span_id": null,
+            "text": "may",
+            "normalized": null,
+            "original_start": 3,
+            "original_end": 6,
+            "candidate_occurrences": [
+              {
+                "start": 3,
+                "end": 6
+              }
+            ],
+            "strategy": "unchanged",
+            "chosen": {
+              "start": 3,
+              "end": 6
+            },
+            "distance": 0,
+            "outcome": "unchanged",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].actors[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000003_c01",
+            "field": "actors",
+            "span_index": 0,
+            "span_id": "a01",
+            "text": "It",
+            "normalized": "it",
+            "original_start": 0,
+            "original_end": 2,
+            "candidate_occurrences": [
+              {
+                "start": 0,
+                "end": 2
+              }
+            ],
+            "strategy": "unchanged",
+            "chosen": {
+              "start": 0,
+              "end": 2
+            },
+            "distance": 0,
+            "outcome": "unchanged",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].actions[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000003_c01",
+            "field": "actions",
+            "span_index": 0,
+            "span_id": "p01",
+            "text": "cover a shorter period",
+            "normalized": "cover a shorter period",
+            "original_start": 7,
+            "original_end": 29,
+            "candidate_occurrences": [
+              {
+                "start": 7,
+                "end": 29
+              }
+            ],
+            "strategy": "unchanged",
+            "chosen": {
+              "start": 7,
+              "end": 29
+            },
+            "distance": 0,
+            "outcome": "unchanged",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].conditions[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000003_c01",
+            "field": "conditions",
+            "span_index": 0,
+            "span_id": "c01",
+            "text": "if  \n1. a business is opened or closed, or  \n2. the business year of a bookkeeping farmer or forester or a registered trader is changed to a different closing date",
+            "normalized": "if 1. a business is opened or closed, or 2. the business year of a bookkeeping farmer or forester or a registered trader is changed to a different closing date",
+            "original_start": 30,
+            "original_end": 159,
+            "candidate_occurrences": [
+              {
+                "start": 30,
+                "end": 193
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 30,
+              "end": 193
+            },
+            "distance": 34,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          }
+        ],
+        "unchanged_spans": 3,
+        "unresolved_spans": 0,
+        "reanchored_unique_exact": 2,
+        "reanchored_repeated_exact": 0,
+        "repeated_occurrence_cases": 0,
+        "repeated_occurrence_recovered": 0,
+        "repeated_occurrence_unresolved": 0,
+        "tie_cases": 0,
+        "one_to_one_assignment_cases": 0,
+        "assignment_ambiguities": 0
+      },
+      "runtime_validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000004",
+      "request_id": "kimi:estg_000004",
+      "request_status": "ok",
+      "failure_stage": null,
+      "record": {
+        "schema_version": "1.0.0",
+        "sample_id": "estg_000004",
+        "source_id": "estg_000004",
+        "source_text": "(7) A change of the fiscal year to a different closing date is only permissible if there are substantial business reasons and the tax office has given prior consent by official notice.",
+        "clauses": [
+          {
+            "clause_id": "estg_000004_c01",
+            "clause_span": {
+              "text": "(7) A change of the fiscal year to a different closing date is only permissible if there are substantial business reasons and the tax office has given prior consent by official notice.",
+              "start": 0,
+              "end": 184
+            },
+            "modality": {
+              "label": "permission",
+              "evidence": [
+                {
+                  "text": "only permissible",
+                  "start": 63,
+                  "end": 79
+                }
+              ]
+            },
+            "actors": [
+              {
+                "text": "A change of the fiscal year to a different closing date",
+                "start": 4,
+                "end": 59,
+                "normalized": "a change of the fiscal year to a different closing date",
+                "id": "a01"
+              }
+            ],
+            "actions": [],
+            "conditions": [
+              {
+                "text": "if there are substantial business reasons and the tax office has given prior consent by official notice",
+                "start": 80,
+                "end": 183,
+                "normalized": "if there are substantial business reasons and the tax office has given prior consent by official notice",
+                "id": "d01"
+              }
+            ],
+            "constraints": [
+              {
+                "text": "only",
+                "start": 63,
+                "end": 67,
+                "normalized": "only",
+                "id": "c01"
+              }
+            ],
+            "exceptions": [],
+            "actor_action_map": [],
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "validation": {
+          "schema_valid": true,
+          "cross_field_valid": true,
+          "errors": []
+        },
+        "unsupported_or_ambiguous": [
+          {
+            "field": "actor",
+            "reason": "semantic_scope_ambiguous_in_target"
+          }
+        ]
+      },
+      "canonicalization_policy": "legacy",
+      "adapter_audit": {
+        "attempted": true,
+        "status": "adapted",
+        "spans_adapted": 3,
+        "dropped_spans": [],
+        "failed_reasons": []
+      },
+      "canonicalizer_audit": {
+        "attempted": true,
+        "status": "reanchored",
+        "policy": "legacy",
+        "cost_metric": "abs_start_plus_abs_end",
+        "clause_span_count": 1,
+        "field_span_count": 4,
+        "reanchored_count": 5,
+        "dropped_spans": [],
+        "dropped_clauses": [],
+        "dropped_edges": [],
+        "failed_reasons": [],
+        "resolution_events": [
+          {
+            "path": "clauses[0].clause_span",
+            "clause_index": 0,
+            "clause_id": "estg_000004_c01",
+            "field": "clause_span",
+            "span_index": null,
+            "span_id": null,
+            "text": "(7) A change of the fiscal year to a different closing date is only permissible if there are substantial business reasons and the tax office has given prior consent by official notice.",
+            "normalized": null,
+            "original_start": 0,
+            "original_end": 143,
+            "candidate_occurrences": [
+              {
+                "start": 0,
+                "end": 184
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 0,
+              "end": 184
+            },
+            "distance": null,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].modality.evidence[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000004_c01",
+            "field": "modality.evidence",
+            "span_index": 0,
+            "span_id": null,
+            "text": "only permissible",
+            "normalized": null,
+            "original_start": 53,
+            "original_end": 69,
+            "candidate_occurrences": [
+              {
+                "start": 63,
+                "end": 79
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 63,
+              "end": 79
+            },
+            "distance": 20,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].actors[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000004_c01",
+            "field": "actors",
+            "span_index": 0,
+            "span_id": "a01",
+            "text": "A change of the fiscal year to a different closing date",
+            "normalized": "a change of the fiscal year to a different closing date",
+            "original_start": 4,
+            "original_end": 57,
+            "candidate_occurrences": [
+              {
+                "start": 4,
+                "end": 59
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 4,
+              "end": 59
+            },
+            "distance": 2,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].conditions[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000004_c01",
+            "field": "conditions",
+            "span_index": 0,
+            "span_id": "d01",
+            "text": "if there are substantial business reasons and the tax office has given prior consent by official notice",
+            "normalized": "if there are substantial business reasons and the tax office has given prior consent by official notice",
+            "original_start": 70,
+            "original_end": 142,
+            "candidate_occurrences": [
+              {
+                "start": 80,
+                "end": 183
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 80,
+              "end": 183
+            },
+            "distance": 51,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].constraints[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000004_c01",
+            "field": "constraints",
+            "span_index": 0,
+            "span_id": "c01",
+            "text": "only",
+            "normalized": "only",
+            "original_start": 53,
+            "original_end": 57,
+            "candidate_occurrences": [
+              {
+                "start": 63,
+                "end": 67
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 63,
+              "end": 67
+            },
+            "distance": 20,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          }
+        ],
+        "unchanged_spans": 0,
+        "unresolved_spans": 0,
+        "reanchored_unique_exact": 5,
+        "reanchored_repeated_exact": 0,
+        "repeated_occurrence_cases": 0,
+        "repeated_occurrence_recovered": 0,
+        "repeated_occurrence_unresolved": 0,
+        "tie_cases": 0,
+        "one_to_one_assignment_cases": 0,
+        "assignment_ambiguities": 0
+      },
+      "runtime_validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000020",
+      "request_id": "kimi:estg_000020",
+      "request_status": "ok",
+      "failure_stage": null,
+      "record": {
+        "schema_version": "1.0.0",
+        "sample_id": "estg_000020",
+        "source_id": "estg_000020",
+        "source_text": "A prerequisite for the tax exemption is that the free drink allowance may not be sold by the employee and that it is only granted in such quantity as to actually preclude a sale. 20.",
+        "clauses": [
+          {
+            "clause_id": "estg_000020_c01",
+            "clause_span": {
+              "text": "A prerequisite for the tax exemption is that the free drink allowance may not be sold by the employee",
+              "start": 0,
+              "end": 101
+            },
+            "modality": {
+              "label": "prohibition",
+              "evidence": [
+                {
+                  "text": "may not",
+                  "start": 70,
+                  "end": 77
+                },
+                {
+                  "text": "not",
+                  "start": 74,
+                  "end": 77
+                }
+              ]
+            },
+            "actors": [
+              {
+                "text": "the employee",
+                "start": 89,
+                "end": 101,
+                "normalized": "the employee",
+                "id": "a01"
+              }
+            ],
+            "actions": [
+              {
+                "text": "sold",
+                "start": 81,
+                "end": 85,
+                "normalized": "sold",
+                "id": "p01"
+              }
+            ],
+            "conditions": [],
+            "constraints": [],
+            "exceptions": [],
+            "actor_action_map": [
+              {
+                "actor_id": "a01",
+                "action_id": "p01"
+              }
+            ],
+            "order_relations": []
+          },
+          {
+            "clause_id": "estg_000020_c02",
+            "clause_span": {
+              "text": "it is only granted in such quantity as to actually preclude a sale",
+              "start": 111,
+              "end": 177
+            },
+            "modality": {
+              "label": "obligation",
+              "evidence": [
+                {
+                  "text": "only",
+                  "start": 117,
+                  "end": 121
+                }
+              ]
+            },
+            "actors": [],
+            "actions": [
+              {
+                "text": "granted",
+                "start": 122,
+                "end": 129,
+                "normalized": "granted",
+                "id": "p02"
+              }
+            ],
+            "conditions": [],
+            "constraints": [
+              {
+                "text": "in such quantity as to actually preclude a sale",
+                "start": 130,
+                "end": 177,
+                "normalized": "in such quantity as to actually preclude a sale",
+                "id": "c01"
+              }
+            ],
+            "exceptions": [],
+            "actor_action_map": [],
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "validation": {
+          "schema_valid": true,
+          "cross_field_valid": true,
+          "errors": []
+        },
+        "unsupported_or_ambiguous": [
+          {
+            "field": "actor",
+            "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+          }
+        ]
+      },
+      "canonicalization_policy": "legacy",
+      "adapter_audit": {
+        "attempted": true,
+        "status": "adapted",
+        "spans_adapted": 5,
+        "dropped_spans": [],
+        "failed_reasons": []
+      },
+      "canonicalizer_audit": {
+        "attempted": true,
+        "status": "degraded",
+        "policy": "legacy",
+        "cost_metric": "abs_start_plus_abs_end",
+        "clause_span_count": 2,
+        "field_span_count": 8,
+        "reanchored_count": 9,
+        "dropped_spans": [
+          "clauses[1].actors[0]"
+        ],
+        "dropped_clauses": [],
+        "dropped_edges": [
+          "clauses[1].actor_action_map[0]"
+        ],
+        "failed_reasons": [],
+        "resolution_events": [
+          {
+            "path": "clauses[0].clause_span",
+            "clause_index": 0,
+            "clause_id": "estg_000020_c01",
+            "field": "clause_span",
+            "span_index": null,
+            "span_id": null,
+            "text": "A prerequisite for the tax exemption is that the free drink allowance may not be sold by the employee",
+            "normalized": null,
+            "original_start": 0,
+            "original_end": 99,
+            "candidate_occurrences": [
+              {
+                "start": 0,
+                "end": 101
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 0,
+              "end": 101
+            },
+            "distance": null,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].modality.evidence[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000020_c01",
+            "field": "modality.evidence",
+            "span_index": 0,
+            "span_id": null,
+            "text": "may not",
+            "normalized": null,
+            "original_start": 67,
+            "original_end": 74,
+            "candidate_occurrences": [
+              {
+                "start": 70,
+                "end": 77
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 70,
+              "end": 77
+            },
+            "distance": 6,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].modality.evidence[1]",
+            "clause_index": 0,
+            "clause_id": "estg_000020_c01",
+            "field": "modality.evidence",
+            "span_index": 1,
+            "span_id": null,
+            "text": "not",
+            "normalized": null,
+            "original_start": 71,
+            "original_end": 74,
+            "candidate_occurrences": [
+              {
+                "start": 74,
+                "end": 77
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 74,
+              "end": 77
+            },
+            "distance": 6,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].actors[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000020_c01",
+            "field": "actors",
+            "span_index": 0,
+            "span_id": "a01",
+            "text": "the employee",
+            "normalized": "the employee",
+            "original_start": 87,
+            "original_end": 99,
+            "candidate_occurrences": [
+              {
+                "start": 89,
+                "end": 101
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 89,
+              "end": 101
+            },
+            "distance": 4,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].actions[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000020_c01",
+            "field": "actions",
+            "span_index": 0,
+            "span_id": "p01",
+            "text": "sold",
+            "normalized": "sold",
+            "original_start": 79,
+            "original_end": 83,
+            "candidate_occurrences": [
+              {
+                "start": 81,
+                "end": 85
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 81,
+              "end": 85
+            },
+            "distance": 4,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[1].clause_span",
+            "clause_index": 1,
+            "clause_id": "estg_000020_c02",
+            "field": "clause_span",
+            "span_index": null,
+            "span_id": null,
+            "text": "it is only granted in such quantity as to actually preclude a sale",
+            "normalized": null,
+            "original_start": 104,
+            "original_end": 168,
+            "candidate_occurrences": [
+              {
+                "start": 111,
+                "end": 177
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 111,
+              "end": 177
+            },
+            "distance": null,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[1].modality.evidence[0]",
+            "clause_index": 1,
+            "clause_id": "estg_000020_c02",
+            "field": "modality.evidence",
+            "span_index": 0,
+            "span_id": null,
+            "text": "only",
+            "normalized": null,
+            "original_start": 111,
+            "original_end": 115,
+            "candidate_occurrences": [
+              {
+                "start": 117,
+                "end": 121
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 117,
+              "end": 121
+            },
+            "distance": 12,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[1].actors[0]",
+            "clause_index": 1,
+            "clause_id": "estg_000020_c02",
+            "field": "actors",
+            "span_index": 0,
+            "span_id": "a02",
+            "text": "it",
+            "normalized": "it",
+            "original_start": 104,
+            "original_end": 106,
+            "candidate_occurrences": [
+              {
+                "start": 111,
+                "end": 113
+              },
+              {
+                "start": 143,
+                "end": 145
+              }
+            ],
+            "strategy": "not_applicable",
+            "chosen": null,
+            "distance": null,
+            "outcome": "unresolved",
+            "reason": "ambiguous_occurrence",
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[1].actions[0]",
+            "clause_index": 1,
+            "clause_id": "estg_000020_c02",
+            "field": "actions",
+            "span_index": 0,
+            "span_id": "p02",
+            "text": "granted",
+            "normalized": "granted",
+            "original_start": 116,
+            "original_end": 123,
+            "candidate_occurrences": [
+              {
+                "start": 122,
+                "end": 129
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 122,
+              "end": 129
+            },
+            "distance": 12,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[1].constraints[0]",
+            "clause_index": 1,
+            "clause_id": "estg_000020_c02",
+            "field": "constraints",
+            "span_index": 0,
+            "span_id": "c01",
+            "text": "in such quantity as to actually preclude a sale",
+            "normalized": "in such quantity as to actually preclude a sale",
+            "original_start": 124,
+            "original_end": 169,
+            "candidate_occurrences": [
+              {
+                "start": 130,
+                "end": 177
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 130,
+              "end": 177
+            },
+            "distance": 14,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          }
+        ],
+        "unchanged_spans": 0,
+        "unresolved_spans": 1,
+        "reanchored_unique_exact": 9,
+        "reanchored_repeated_exact": 0,
+        "repeated_occurrence_cases": 1,
+        "repeated_occurrence_recovered": 0,
+        "repeated_occurrence_unresolved": 1,
+        "tie_cases": 0,
+        "one_to_one_assignment_cases": 0,
+        "assignment_ambiguities": 0
+      },
+      "runtime_validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000021",
+      "request_id": "kimi:estg_000021",
+      "request_status": "failed",
+      "failure_stage": "transport_or_usage",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000027",
+      "request_id": "kimi:estg_000027",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000028",
+      "request_id": "kimi:estg_000028",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000030",
+      "request_id": "kimi:estg_000030",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000031",
+      "request_id": "kimi:estg_000031",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000033",
+      "request_id": "kimi:estg_000033",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000035",
+      "request_id": "kimi:estg_000035",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000036",
+      "request_id": "kimi:estg_000036",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000037",
+      "request_id": "kimi:estg_000037",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000038",
+      "request_id": "kimi:estg_000038",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000039",
+      "request_id": "kimi:estg_000039",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000040",
+      "request_id": "kimi:estg_000040",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000043",
+      "request_id": "kimi:estg_000043",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000044",
+      "request_id": "kimi:estg_000044",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000046",
+      "request_id": "kimi:estg_000046",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000051",
+      "request_id": "kimi:estg_000051",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000052",
+      "request_id": "kimi:estg_000052",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000055",
+      "request_id": "kimi:estg_000055",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000056",
+      "request_id": "kimi:estg_000056",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000057",
+      "request_id": "kimi:estg_000057",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000059",
+      "request_id": "kimi:estg_000059",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000060",
+      "request_id": "kimi:estg_000060",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000061",
+      "request_id": "kimi:estg_000061",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000062",
+      "request_id": "kimi:estg_000062",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000068",
+      "request_id": "kimi:estg_000068",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000070",
+      "request_id": "kimi:estg_000070",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000071",
+      "request_id": "kimi:estg_000071",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000074",
+      "request_id": "kimi:estg_000074",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000075",
+      "request_id": "kimi:estg_000075",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000077",
+      "request_id": "kimi:estg_000077",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000079",
+      "request_id": "kimi:estg_000079",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000080",
+      "request_id": "kimi:estg_000080",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000082",
+      "request_id": "kimi:estg_000082",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000083",
+      "request_id": "kimi:estg_000083",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000087",
+      "request_id": "kimi:estg_000087",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000091",
+      "request_id": "kimi:estg_000091",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000092",
+      "request_id": "kimi:estg_000092",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000094",
+      "request_id": "kimi:estg_000094",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000095",
+      "request_id": "kimi:estg_000095",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000098",
+      "request_id": "kimi:estg_000098",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000103",
+      "request_id": "kimi:estg_000103",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000104",
+      "request_id": "kimi:estg_000104",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000105",
+      "request_id": "kimi:estg_000105",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000106",
+      "request_id": "kimi:estg_000106",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000108",
+      "request_id": "kimi:estg_000108",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000109",
+      "request_id": "kimi:estg_000109",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000111",
+      "request_id": "kimi:estg_000111",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000112",
+      "request_id": "kimi:estg_000112",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000113",
+      "request_id": "kimi:estg_000113",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000114",
+      "request_id": "kimi:estg_000114",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000115",
+      "request_id": "kimi:estg_000115",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000118",
+      "request_id": "kimi:estg_000118",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000119",
+      "request_id": "kimi:estg_000119",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000121",
+      "request_id": "kimi:estg_000121",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000123",
+      "request_id": "kimi:estg_000123",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000124",
+      "request_id": "kimi:estg_000124",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000125",
+      "request_id": "kimi:estg_000125",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000127",
+      "request_id": "kimi:estg_000127",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000128",
+      "request_id": "kimi:estg_000128",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000130",
+      "request_id": "kimi:estg_000130",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000131",
+      "request_id": "kimi:estg_000131",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000133",
+      "request_id": "kimi:estg_000133",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000134",
+      "request_id": "kimi:estg_000134",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000135",
+      "request_id": "kimi:estg_000135",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000136",
+      "request_id": "kimi:estg_000136",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000139",
+      "request_id": "kimi:estg_000139",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000143",
+      "request_id": "kimi:estg_000143",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000145",
+      "request_id": "kimi:estg_000145",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000146",
+      "request_id": "kimi:estg_000146",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000148",
+      "request_id": "kimi:estg_000148",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000161",
+      "request_id": "kimi:estg_000161",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000164",
+      "request_id": "kimi:estg_000164",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000173",
+      "request_id": "kimi:estg_000173",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000183",
+      "request_id": "kimi:estg_000183",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000195",
+      "request_id": "kimi:estg_000195",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000206",
+      "request_id": "kimi:estg_000206",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000207",
+      "request_id": "kimi:estg_000207",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000208",
+      "request_id": "kimi:estg_000208",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000209",
+      "request_id": "kimi:estg_000209",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000210",
+      "request_id": "kimi:estg_000210",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000214",
+      "request_id": "kimi:estg_000214",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000218",
+      "request_id": "kimi:estg_000218",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000220",
+      "request_id": "kimi:estg_000220",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000222",
+      "request_id": "kimi:estg_000222",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000223",
+      "request_id": "kimi:estg_000223",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000230",
+      "request_id": "kimi:estg_000230",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000231",
+      "request_id": "kimi:estg_000231",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000232",
+      "request_id": "kimi:estg_000232",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000245",
+      "request_id": "kimi:estg_000245",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000247",
+      "request_id": "kimi:estg_000247",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000271",
+      "request_id": "kimi:estg_000271",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000273",
+      "request_id": "kimi:estg_000273",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000277",
+      "request_id": "kimi:estg_000277",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000283",
+      "request_id": "kimi:estg_000283",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000285",
+      "request_id": "kimi:estg_000285",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000286",
+      "request_id": "kimi:estg_000286",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000293",
+      "request_id": "kimi:estg_000293",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000302",
+      "request_id": "kimi:estg_000302",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000306",
+      "request_id": "kimi:estg_000306",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000308",
+      "request_id": "kimi:estg_000308",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000313",
+      "request_id": "kimi:estg_000313",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000326",
+      "request_id": "kimi:estg_000326",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000347",
+      "request_id": "kimi:estg_000347",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000366",
+      "request_id": "kimi:estg_000366",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000375",
+      "request_id": "kimi:estg_000375",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000393",
+      "request_id": "kimi:estg_000393",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000396",
+      "request_id": "kimi:estg_000396",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000399",
+      "request_id": "kimi:estg_000399",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000414",
+      "request_id": "kimi:estg_000414",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000417",
+      "request_id": "kimi:estg_000417",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000433",
+      "request_id": "kimi:estg_000433",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000452",
+      "request_id": "kimi:estg_000452",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000457",
+      "request_id": "kimi:estg_000457",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000458",
+      "request_id": "kimi:estg_000458",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000465",
+      "request_id": "kimi:estg_000465",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000504",
+      "request_id": "kimi:estg_000504",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000505",
+      "request_id": "kimi:estg_000505",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000507",
+      "request_id": "kimi:estg_000507",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000509",
+      "request_id": "kimi:estg_000509",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000522",
+      "request_id": "kimi:estg_000522",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000525",
+      "request_id": "kimi:estg_000525",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000539",
+      "request_id": "kimi:estg_000539",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000546",
+      "request_id": "kimi:estg_000546",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000555",
+      "request_id": "kimi:estg_000555",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000560",
+      "request_id": "kimi:estg_000560",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000569",
+      "request_id": "kimi:estg_000569",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000572",
+      "request_id": "kimi:estg_000572",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000578",
+      "request_id": "kimi:estg_000578",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000599",
+      "request_id": "kimi:estg_000599",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000601",
+      "request_id": "kimi:estg_000601",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000635",
+      "request_id": "kimi:estg_000635",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000659",
+      "request_id": "kimi:estg_000659",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000664",
+      "request_id": "kimi:estg_000664",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000704",
+      "request_id": "kimi:estg_000704",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000713",
+      "request_id": "kimi:estg_000713",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000716",
+      "request_id": "kimi:estg_000716",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000720",
+      "request_id": "kimi:estg_000720",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000773",
+      "request_id": "kimi:estg_000773",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000776",
+      "request_id": "kimi:estg_000776",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000785",
+      "request_id": "kimi:estg_000785",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000786",
+      "request_id": "kimi:estg_000786",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000800",
+      "request_id": "kimi:estg_000800",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000812",
+      "request_id": "kimi:estg_000812",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000816",
+      "request_id": "kimi:estg_000816",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000854",
+      "request_id": "kimi:estg_000854",
+      "request_status": "not_attempted",
+      "record": {}
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000861",
+      "request_id": "kimi:estg_000861",
+      "request_status": "not_attempted",
+      "record": {}
+    }
+  ],
+  "claim_scope": "development_only"
+}
