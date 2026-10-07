@@ -1,0 +1,747 @@
+{
+  "parent_run_id": "kimi_rpm_remaining_20261007_v1",
+  "actual_api_calls": 0,
+  "deepseek_records": 150,
+  "deepseek_status_counts": {
+    "ok": 150
+  },
+  "failure_counts": {
+    "input_binding": 17,
+    "json_parse": 5,
+    "transport_or_usage": 3,
+    "canonical_validation": 8
+  },
+  "failures": [
+    {
+      "provider": "qwen",
+      "sample_id": "estg_000161",
+      "failure_stage": "input_binding",
+      "response_path": "outputs/development/stage2_multi_model_v1/multi_model_all_20261007_v2_qwen/responses/qwen_estg_000161.json",
+      "response_sha256": "0cbcd900f8e1c84f6a942ea76dc6a28d23adb15a527549deeafcd32afa8fad68",
+      "mismatches": {
+        "source_text": {
+          "returned_type": "str",
+          "expected_length": 1174,
+          "returned_length": 1175,
+          "whitespace_only": true,
+          "returned_is_prefix": false,
+          "diff": [
+            {
+              "operation": "insert",
+              "expected": "",
+              "returned": "\n"
+            }
+          ]
+        }
+      },
+      "presentation_only": true,
+      "source_echo_only_probe": {
+        "request_status": "ok",
+        "failure_stage": null,
+        "note": "仅内存替换重复回显原文；不修改抽取内容，不保存新预测、不改旧报告，不视为已批准的兼容策略。"
+      }
+    },
+    {
+      "provider": "qwen",
+      "sample_id": "estg_000414",
+      "failure_stage": "json_parse",
+      "response_path": "outputs/development/stage2_multi_model_v1/multi_model_all_20261007_v2_qwen/responses/qwen_estg_000414.json",
+      "response_sha256": "c26b3ad6e768ba7309ec542c89838e1b40128df538e16d7c8d4ffc095a131584",
+      "cause": "Expecting property name enclosed in double quotes",
+      "error_line": 1,
+      "error_column": 911,
+      "content_prefix": "{\"schema_version\":\"1.0.0\",\"sample_id\":\"estg_000414\",\"source_",
+      "error_context": "definition\",\"evidence\":[{\"text\":\"shall be deemed\",start\":156,\"end\":171}]},\"actors\":[],\"actions\":[{\"id\":\"p01\",\"text\":\"discharged\",\""
+    },
+    {
+      "provider": "mimo",
+      "sample_id": "estg_000002",
+      "failure_stage": "transport_or_usage",
+      "response_path": "outputs/development/stage2_multi_model_v1/multi_model_all_20261007_v2_mimo/responses/mimo_estg_000002.json",
+      "response_sha256": "d05c1424e24a71a5e61b76fcd3d3f60c332a6f28e3dd382e9e43e20e0fff5783",
+      "cause": "insufficient_balance"
+    },
+    {
+      "provider": "mimo",
+      "sample_id": "estg_000414",
+      "failure_stage": "canonical_validation",
+      "response_path": "outputs/development/stage2_multi_model_remaining_v1/multi_model_remaining_20261007_v1/mimo/responses/mimo_estg_000414.json",
+      "response_sha256": "528069d6db8bcc5bda70cf3e4209461fd962ccd1a49ed6f44b5c4aa7d6bef9dc",
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": false,
+        "errors": [
+          "clauses[0].conditions[0] not inside clause_span"
+        ]
+      }
+    },
+    {
+      "provider": "mimo",
+      "sample_id": "estg_000433",
+      "failure_stage": "input_binding",
+      "response_path": "outputs/development/stage2_multi_model_remaining_v1/multi_model_remaining_20261007_v1/mimo/responses/mimo_estg_000433.json",
+      "response_sha256": "b009e113e5e2f3a5c1845bd58fb0192d84532e8f4f3726fb1b57b5544d9024e2",
+      "mismatches": {
+        "source_text": {
+          "returned_type": "str",
+          "expected_length": 206,
+          "returned_length": 206,
+          "whitespace_only": false,
+          "returned_is_prefix": false,
+          "diff": [
+            {
+              "operation": "replace",
+              "expected": "’",
+              "returned": "'"
+            }
+          ]
+        }
+      },
+      "presentation_only": true,
+      "source_echo_only_probe": {
+        "request_status": "ok",
+        "failure_stage": null,
+        "note": "仅内存替换重复回显原文；不修改抽取内容，不保存新预测、不改旧报告，不视为已批准的兼容策略。"
+      }
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000021",
+      "failure_stage": "transport_or_usage",
+      "response_path": "outputs/development/stage2_multi_model_remaining_v1/multi_model_remaining_20261007_v1/kimi/responses/kimi_estg_000021.json",
+      "response_sha256": "958d50cffad40b79b5edd6b7cef6bf9fd710fef2dd7a169ec09c521e0783a19d",
+      "cause": "RPM3"
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000037",
+      "failure_stage": "input_binding",
+      "response_path": "outputs/development/stage2_multi_model_remaining_v1/kimi_rpm_remaining_20261007_v1/responses/kimi_estg_000037.json",
+      "response_sha256": "6f296535bfe5059922cb50b7a769824d084a9d812fa69b6e94dd88c05b820771",
+      "mismatches": {
+        "source_text": {
+          "returned_type": "str",
+          "expected_length": 611,
+          "returned_length": 611,
+          "whitespace_only": false,
+          "returned_is_prefix": false,
+          "diff": [
+            {
+              "operation": "replace",
+              "expected": "’",
+              "returned": "'"
+            },
+            {
+              "operation": "replace",
+              "expected": "’",
+              "returned": "'"
+            }
+          ]
+        }
+      },
+      "presentation_only": true,
+      "source_echo_only_probe": {
+        "request_status": "ok",
+        "failure_stage": null,
+        "note": "仅内存替换重复回显原文；不修改抽取内容，不保存新预测、不改旧报告，不视为已批准的兼容策略。"
+      }
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000039",
+      "failure_stage": "input_binding",
+      "response_path": "outputs/development/stage2_multi_model_remaining_v1/kimi_rpm_remaining_20261007_v1/responses/kimi_estg_000039.json",
+      "response_sha256": "c42ac2cea2080eb515349cc2429652c1dc04392f92eaaf31968bc2f0bb62a36f",
+      "mismatches": {
+        "source_text": {
+          "returned_type": "str",
+          "expected_length": 390,
+          "returned_length": 390,
+          "whitespace_only": false,
+          "returned_is_prefix": false,
+          "diff": [
+            {
+              "operation": "replace",
+              "expected": "’",
+              "returned": "'"
+            },
+            {
+              "operation": "replace",
+              "expected": "’",
+              "returned": "'"
+            }
+          ]
+        }
+      },
+      "presentation_only": true,
+      "source_echo_only_probe": {
+        "request_status": "ok",
+        "failure_stage": null,
+        "note": "仅内存替换重复回显原文；不修改抽取内容，不保存新预测、不改旧报告，不视为已批准的兼容策略。"
+      }
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000060",
+      "failure_stage": "input_binding",
+      "response_path": "outputs/development/stage2_multi_model_remaining_v1/kimi_rpm_remaining_20261007_v1/responses/kimi_estg_000060.json",
+      "response_sha256": "1746ba3ef8f4da3944327ed666410557732ea34f6d8b1695fde639272b3d35d2",
+      "mismatches": {
+        "source_text": {
+          "returned_type": "str",
+          "expected_length": 339,
+          "returned_length": 339,
+          "whitespace_only": false,
+          "returned_is_prefix": false,
+          "diff": [
+            {
+              "operation": "replace",
+              "expected": "’",
+              "returned": "'"
+            }
+          ]
+        }
+      },
+      "presentation_only": true,
+      "source_echo_only_probe": {
+        "request_status": "ok",
+        "failure_stage": null,
+        "note": "仅内存替换重复回显原文；不修改抽取内容，不保存新预测、不改旧报告，不视为已批准的兼容策略。"
+      }
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000077",
+      "failure_stage": "canonical_validation",
+      "response_path": "outputs/development/stage2_multi_model_remaining_v1/kimi_rpm_remaining_20261007_v1/responses/kimi_estg_000077.json",
+      "response_sha256": "2b85250cfe15efbee3b4089fda76adf0be550df2371dfa394ffa2301fdfbe826",
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": false,
+        "errors": [
+          "clauses[3].modality.label must be one of ('obligation', 'prohibition', 'permission', 'definition'), got 'condition'"
+        ]
+      }
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000111",
+      "failure_stage": "canonical_validation",
+      "response_path": "outputs/development/stage2_multi_model_remaining_v1/kimi_rpm_remaining_20261007_v1/responses/kimi_estg_000111.json",
+      "response_sha256": "0f5dd8e104ac8b3298ff8dd524fe93aa75fd26919a00c9405eff8299f24f3cd6",
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": false,
+        "errors": [
+          "clauses[0].conditions[0] not inside clause_span"
+        ]
+      }
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000283",
+      "failure_stage": "input_binding",
+      "response_path": "outputs/development/stage2_multi_model_remaining_v1/kimi_rpm_remaining_20261007_v1/responses/kimi_estg_000283.json",
+      "response_sha256": "de84b16eabb52089c5e4c1428c7f960fc4b5fe25c1e9de146f3c16f3a61d6eae",
+      "mismatches": {
+        "source_text": {
+          "returned_type": "str",
+          "expected_length": 382,
+          "returned_length": 382,
+          "whitespace_only": false,
+          "returned_is_prefix": false,
+          "diff": [
+            {
+              "operation": "replace",
+              "expected": "’",
+              "returned": "'"
+            }
+          ]
+        }
+      },
+      "presentation_only": true,
+      "source_echo_only_probe": {
+        "request_status": "ok",
+        "failure_stage": null,
+        "note": "仅内存替换重复回显原文；不修改抽取内容，不保存新预测、不改旧报告，不视为已批准的兼容策略。"
+      }
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000285",
+      "failure_stage": "input_binding",
+      "response_path": "outputs/development/stage2_multi_model_remaining_v1/kimi_rpm_remaining_20261007_v1/responses/kimi_estg_000285.json",
+      "response_sha256": "2d8bb1d3237df7b5bcbbab9e4feb65f061a5221f5b344721ba10a3e1e7708b90",
+      "mismatches": {
+        "source_text": {
+          "returned_type": "str",
+          "expected_length": 376,
+          "returned_length": 376,
+          "whitespace_only": false,
+          "returned_is_prefix": false,
+          "diff": [
+            {
+              "operation": "replace",
+              "expected": "“",
+              "returned": "\""
+            },
+            {
+              "operation": "replace",
+              "expected": "”",
+              "returned": "\""
+            }
+          ]
+        }
+      },
+      "presentation_only": true,
+      "source_echo_only_probe": {
+        "request_status": "ok",
+        "failure_stage": null,
+        "note": "仅内存替换重复回显原文；不修改抽取内容，不保存新预测、不改旧报告，不视为已批准的兼容策略。"
+      }
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000433",
+      "failure_stage": "input_binding",
+      "response_path": "outputs/development/stage2_multi_model_remaining_v1/kimi_rpm_remaining_20261007_v1/responses/kimi_estg_000433.json",
+      "response_sha256": "16ec846c3041270edf627bd2d59ed9c243293e92d18c7431639036b4faef9375",
+      "mismatches": {
+        "source_text": {
+          "returned_type": "str",
+          "expected_length": 206,
+          "returned_length": 206,
+          "whitespace_only": false,
+          "returned_is_prefix": false,
+          "diff": [
+            {
+              "operation": "replace",
+              "expected": "’",
+              "returned": "'"
+            }
+          ]
+        }
+      },
+      "presentation_only": true,
+      "source_echo_only_probe": {
+        "request_status": "ok",
+        "failure_stage": null,
+        "note": "仅内存替换重复回显原文；不修改抽取内容，不保存新预测、不改旧报告，不视为已批准的兼容策略。"
+      }
+    },
+    {
+      "provider": "grok",
+      "sample_id": "estg_000037",
+      "failure_stage": "canonical_validation",
+      "response_path": "outputs/development/stage2_multi_model_v1/multi_model_all_20261007_v2_grok/responses/grok_estg_000037.json",
+      "response_sha256": "8217312293625e3fa1481d9964e761d5b9d2e6a94c79a4a5210d2142fb719ee5",
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": false,
+        "errors": [
+          "clauses[1].modality.label must be one of ('obligation', 'prohibition', 'permission', 'definition'), got 'condition'"
+        ]
+      }
+    },
+    {
+      "provider": "grok",
+      "sample_id": "estg_000060",
+      "failure_stage": "input_binding",
+      "response_path": "outputs/development/stage2_multi_model_v1/multi_model_all_20261007_v2_grok/responses/grok_estg_000060.json",
+      "response_sha256": "6e3f0eab268327c9aaeee1dbcc0aca36f078459222e02a249dd73a81f934b9df",
+      "mismatches": {
+        "source_text": {
+          "returned_type": "str",
+          "expected_length": 339,
+          "returned_length": 339,
+          "whitespace_only": false,
+          "returned_is_prefix": false,
+          "diff": [
+            {
+              "operation": "replace",
+              "expected": "’",
+              "returned": "'"
+            }
+          ]
+        }
+      },
+      "presentation_only": true,
+      "source_echo_only_probe": {
+        "request_status": "ok",
+        "failure_stage": null,
+        "note": "仅内存替换重复回显原文；不修改抽取内容，不保存新预测、不改旧报告，不视为已批准的兼容策略。"
+      }
+    },
+    {
+      "provider": "grok",
+      "sample_id": "estg_000399",
+      "failure_stage": "input_binding",
+      "response_path": "outputs/development/stage2_multi_model_v1/multi_model_all_20261007_v2_grok/responses/grok_estg_000399.json",
+      "response_sha256": "2aebabca104007746dd619f644c8f3e3b4dad262d7aa1ea8466b03eac4154443",
+      "mismatches": {
+        "source_text": {
+          "returned_type": "str",
+          "expected_length": 530,
+          "returned_length": 527,
+          "whitespace_only": true,
+          "returned_is_prefix": false,
+          "diff": [
+            {
+              "operation": "delete",
+              "expected": "\n",
+              "returned": ""
+            },
+            {
+              "operation": "delete",
+              "expected": "\n",
+              "returned": ""
+            },
+            {
+              "operation": "delete",
+              "expected": "\n",
+              "returned": ""
+            }
+          ]
+        }
+      },
+      "presentation_only": true,
+      "source_echo_only_probe": {
+        "request_status": "ok",
+        "failure_stage": null,
+        "note": "仅内存替换重复回显原文；不修改抽取内容，不保存新预测、不改旧报告，不视为已批准的兼容策略。"
+      }
+    },
+    {
+      "provider": "glm",
+      "sample_id": "estg_000002",
+      "failure_stage": "transport_or_usage",
+      "response_path": "outputs/development/stage2_multi_model_v1/multi_model_all_20261007_v2_glm/responses/glm_estg_000002.json",
+      "response_sha256": "5aefc761d90783ffcc2089ad712b79ee7da2b150fa547ed33acd588fac98e5cf",
+      "cause": "insufficient_balance"
+    },
+    {
+      "provider": "glm",
+      "sample_id": "estg_000164",
+      "failure_stage": "canonical_validation",
+      "response_path": "outputs/development/stage2_multi_model_remaining_v1/multi_model_remaining_20261007_v1/glm/responses/glm_estg_000164.json",
+      "response_sha256": "dc86ce6cacd8cfb8dfda358470711171c1592a61b9511098069471bd6d4bb2ab",
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": false,
+        "errors": [
+          "clauses[1].actions[0].id duplicate: 'p01'",
+          "clauses[1].constraints[0].id duplicate: 'c01'",
+          "clauses[2].actions[0].id duplicate: 'p01'",
+          "clauses[2].constraints[0].id duplicate: 'c01'",
+          "clauses[2].constraints[1].id duplicate: 'c02'",
+          "clauses[3].actions[0].id duplicate: 'p01'",
+          "clauses[3].conditions[0].id duplicate: 'd01'",
+          "clauses[3].constraints[0].id duplicate: 'c01'",
+          "clauses[3].constraints[1].id duplicate: 'c02'",
+          "clauses[3].constraints[2].id duplicate: 'c03'"
+        ]
+      }
+    },
+    {
+      "provider": "glm",
+      "sample_id": "estg_000208",
+      "failure_stage": "input_binding",
+      "response_path": "outputs/development/stage2_multi_model_remaining_v1/multi_model_remaining_20261007_v1/glm/responses/glm_estg_000208.json",
+      "response_sha256": "f7422e6db86cc510f917023307f4a64ef2e10f3ef55f9684ceff649b1202865a",
+      "mismatches": {
+        "source_text": {
+          "returned_type": "str",
+          "expected_length": 1184,
+          "returned_length": 1185,
+          "whitespace_only": false,
+          "returned_is_prefix": false,
+          "diff": [
+            {
+              "operation": "insert",
+              "expected": "",
+              "returned": "s"
+            }
+          ]
+        }
+      },
+      "presentation_only": false
+    },
+    {
+      "provider": "glm",
+      "sample_id": "estg_000222",
+      "failure_stage": "json_parse",
+      "response_path": "outputs/development/stage2_multi_model_remaining_v1/multi_model_remaining_20261007_v1/glm/responses/glm_estg_000222.json",
+      "response_sha256": "df32ce38085d73fc296fa05a84c767f2b2580af84b1558da597e5e8be865c558",
+      "cause": "Expecting property name enclosed in double quotes",
+      "error_line": 1,
+      "error_column": 631,
+      "content_prefix": "{\"schema_version\":\"1.0.0\",\"sample_id\":\"estg_000222\",\"source_",
+      "error_context": ":[{\"text\":\"No\",\"start\":0,\"end\":2},{\"text\":\"shall\",start\":26,\"end\":31}]},\"actors\":[],\"actions\":[{\"id\":\"p01\",\"text\":\"take place\",\"st"
+    },
+    {
+      "provider": "glm",
+      "sample_id": "estg_000283",
+      "failure_stage": "input_binding",
+      "response_path": "outputs/development/stage2_multi_model_remaining_v1/multi_model_remaining_20261007_v1/glm/responses/glm_estg_000283.json",
+      "response_sha256": "ffe0b010536882508d30a2f449e997ba711aee574e7632436fab929858cd8f67",
+      "mismatches": {
+        "source_text": {
+          "returned_type": "str",
+          "expected_length": 382,
+          "returned_length": 382,
+          "whitespace_only": false,
+          "returned_is_prefix": false,
+          "diff": [
+            {
+              "operation": "replace",
+              "expected": "’",
+              "returned": "'"
+            }
+          ]
+        }
+      },
+      "presentation_only": true,
+      "source_echo_only_probe": {
+        "request_status": "ok",
+        "failure_stage": null,
+        "note": "仅内存替换重复回显原文；不修改抽取内容，不保存新预测、不改旧报告，不视为已批准的兼容策略。"
+      }
+    },
+    {
+      "provider": "glm",
+      "sample_id": "estg_000302",
+      "failure_stage": "input_binding",
+      "response_path": "outputs/development/stage2_multi_model_remaining_v1/multi_model_remaining_20261007_v1/glm/responses/glm_estg_000302.json",
+      "response_sha256": "6b5b52b9fcdbdad82e872aff9c37d44fa1a372e6762962db892a2fa59935704d",
+      "mismatches": {
+        "source_text": {
+          "returned_type": "str",
+          "expected_length": 163,
+          "returned_length": 162,
+          "whitespace_only": false,
+          "returned_is_prefix": false,
+          "diff": [
+            {
+              "operation": "replace",
+              "expected": "oes",
+              "returned": "id"
+            }
+          ]
+        }
+      },
+      "presentation_only": false
+    },
+    {
+      "provider": "glm",
+      "sample_id": "estg_000433",
+      "failure_stage": "input_binding",
+      "response_path": "outputs/development/stage2_multi_model_remaining_v1/multi_model_remaining_20261007_v1/glm/responses/glm_estg_000433.json",
+      "response_sha256": "9272195599fee38f5fa0b3b35288b030931774c4815e7a094d910ac71fe74d7b",
+      "mismatches": {
+        "source_text": {
+          "returned_type": "str",
+          "expected_length": 206,
+          "returned_length": 206,
+          "whitespace_only": false,
+          "returned_is_prefix": false,
+          "diff": [
+            {
+              "operation": "replace",
+              "expected": "’",
+              "returned": "'"
+            }
+          ]
+        }
+      },
+      "presentation_only": true,
+      "source_echo_only_probe": {
+        "request_status": "ok",
+        "failure_stage": null,
+        "note": "仅内存替换重复回显原文；不修改抽取内容，不保存新预测、不改旧报告，不视为已批准的兼容策略。"
+      }
+    },
+    {
+      "provider": "glm",
+      "sample_id": "estg_000716",
+      "failure_stage": "json_parse",
+      "response_path": "outputs/development/stage2_multi_model_remaining_v1/multi_model_remaining_20261007_v1/glm/responses/glm_estg_000716.json",
+      "response_sha256": "b8ab16b522ecf26e04297122b087f32865db9eef1678f0d30e57e67875af52ee",
+      "cause": "Expecting value",
+      "error_line": 1,
+      "error_column": 1,
+      "content_prefix": "```json\n{\n  \"schema_version\": \"1.0.0\",\n  \"sample_id\": \"estg_",
+      "error_context": "```json\n{\n  \"schema_version\": \"1.0.0\",\n  \"sample_id\": \"estg_000716\",\n  \"source_i"
+    },
+    {
+      "provider": "minimax",
+      "sample_id": "estg_000068",
+      "failure_stage": "json_parse",
+      "response_path": "outputs/development/stage2_multi_model_v1/multi_model_all_20261007_v2_minimax/responses/minimax_estg_000068.json",
+      "response_sha256": "7b838df2b611bbed797d0e666e449054e6d017448c41c7c96bfb8b8eb9f3b144",
+      "cause": "Expecting ',' delimiter",
+      "error_line": 1,
+      "error_column": 854,
+      "content_prefix": "{\"schema_version\": \"1.0.0\", \"sample_id\": \"estg_000068\", \"sou",
+      "error_context": "ue, \"errors\": []}, \"unsupported_or_ambiguous\": []}"
+    },
+    {
+      "provider": "minimax",
+      "sample_id": "estg_000111",
+      "failure_stage": "input_binding",
+      "response_path": "outputs/development/stage2_multi_model_v1/multi_model_all_20261007_v2_minimax/responses/minimax_estg_000111.json",
+      "response_sha256": "ca2c405cd4e91c30fd6cd3b8e699e64510d38b6e22e164a1400c90631fb0a773",
+      "mismatches": {
+        "source_text": {
+          "returned_type": "str",
+          "expected_length": 306,
+          "returned_length": 305,
+          "whitespace_only": true,
+          "returned_is_prefix": false,
+          "diff": [
+            {
+              "operation": "delete",
+              "expected": " ",
+              "returned": ""
+            }
+          ]
+        }
+      },
+      "presentation_only": true,
+      "source_echo_only_probe": {
+        "request_status": "ok",
+        "failure_stage": null,
+        "note": "仅内存替换重复回显原文；不修改抽取内容，不保存新预测、不改旧报告，不视为已批准的兼容策略。"
+      }
+    },
+    {
+      "provider": "minimax",
+      "sample_id": "estg_000164",
+      "failure_stage": "canonical_validation",
+      "response_path": "outputs/development/stage2_multi_model_v1/multi_model_all_20261007_v2_minimax/responses/minimax_estg_000164.json",
+      "response_sha256": "04aee53ff15870deb8a883c6ebb345eea24c832e8d59db6bded2e69d14eed256",
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": false,
+        "errors": [
+          "clauses[1].conditions[0].id duplicate: 'd01'",
+          "clauses[1].constraints[0].id duplicate: 'c01'",
+          "clauses[1].constraints[1].id duplicate: 'c02'",
+          "clauses[2].conditions[0].id duplicate: 'd01'",
+          "clauses[2].constraints[0].id duplicate: 'c01'",
+          "clauses[2].constraints[1].id duplicate: 'c02'"
+        ]
+      }
+    },
+    {
+      "provider": "minimax",
+      "sample_id": "estg_000283",
+      "failure_stage": "input_binding",
+      "response_path": "outputs/development/stage2_multi_model_v1/multi_model_all_20261007_v2_minimax/responses/minimax_estg_000283.json",
+      "response_sha256": "88ff144c5da574da86930dd2c7da57a947bbb0c5c054ce1a06fed2ada94151d8",
+      "mismatches": {
+        "source_text": {
+          "returned_type": "str",
+          "expected_length": 382,
+          "returned_length": 382,
+          "whitespace_only": false,
+          "returned_is_prefix": false,
+          "diff": [
+            {
+              "operation": "replace",
+              "expected": "’",
+              "returned": "'"
+            }
+          ]
+        }
+      },
+      "presentation_only": true,
+      "source_echo_only_probe": {
+        "request_status": "ok",
+        "failure_stage": null,
+        "note": "仅内存替换重复回显原文；不修改抽取内容，不保存新预测、不改旧报告，不视为已批准的兼容策略。"
+      }
+    },
+    {
+      "provider": "minimax",
+      "sample_id": "estg_000366",
+      "failure_stage": "canonical_validation",
+      "response_path": "outputs/development/stage2_multi_model_v1/multi_model_all_20261007_v2_minimax/responses/minimax_estg_000366.json",
+      "response_sha256": "066e9fe4fd8a7ed99a0c48b735e6113ce74b322e0e1f958305d91e76b936ad7c",
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": false,
+        "errors": [
+          "clauses[0].modality.label must be one of ('obligation', 'prohibition', 'permission', 'definition'), got None"
+        ]
+      }
+    },
+    {
+      "provider": "minimax",
+      "sample_id": "estg_000433",
+      "failure_stage": "input_binding",
+      "response_path": "outputs/development/stage2_multi_model_v1/multi_model_all_20261007_v2_minimax/responses/minimax_estg_000433.json",
+      "response_sha256": "ce6479fac4d194f56b3560aed196e0af7a5c0a6036e5169033582dd9dda276ef",
+      "mismatches": {
+        "source_text": {
+          "returned_type": "str",
+          "expected_length": 206,
+          "returned_length": 206,
+          "whitespace_only": false,
+          "returned_is_prefix": false,
+          "diff": [
+            {
+              "operation": "replace",
+              "expected": "’",
+              "returned": "'"
+            }
+          ]
+        }
+      },
+      "presentation_only": true,
+      "source_echo_only_probe": {
+        "request_status": "ok",
+        "failure_stage": null,
+        "note": "仅内存替换重复回显原文；不修改抽取内容，不保存新预测、不改旧报告，不视为已批准的兼容策略。"
+      }
+    },
+    {
+      "provider": "minimax",
+      "sample_id": "estg_000659",
+      "failure_stage": "canonical_validation",
+      "response_path": "outputs/development/stage2_multi_model_v1/multi_model_all_20261007_v2_minimax/responses/minimax_estg_000659.json",
+      "response_sha256": "a8ca763c31bfe4efd3940144613a3d4c6576aba252c0c2c91654c862162beb51",
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": false,
+        "errors": [
+          "clauses[0].modality.label must be one of ('obligation', 'prohibition', 'permission', 'definition'), got None"
+        ]
+      }
+    },
+    {
+      "provider": "minimax",
+      "sample_id": "estg_000786",
+      "failure_stage": "json_parse",
+      "response_path": "outputs/development/stage2_multi_model_v1/multi_model_all_20261007_v2_minimax/responses/minimax_estg_000786.json",
+      "response_sha256": "957c63d314262ad5bb1935e0217f0cd23f16cce45cd1a692c02c5a56af015d06",
+      "cause": "Extra data",
+      "error_line": 1,
+      "error_column": 3310,
+      "content_prefix": "{\"schema_version\": \"1.0.0\", \"sample_id\": \"estg_000786\", \"sou",
+      "error_context": "reference;independence_status=context_required\"}]}\"}"
+    }
+  ],
+  "created_at_utc": "2026-10-07T09:01:01.236635+00:00",
+  "claim_scope": "development_diagnostic_only",
+  "old_results_modified": false,
+  "gold_read": false,
+  "presentation_only_candidates": 15,
+  "per_provider_failure_counts": {
+    "qwen": 2,
+    "mimo": 3,
+    "kimi": 9,
+    "grok": 3,
+    "glm": 8,
+    "minimax": 8
+  }
+}

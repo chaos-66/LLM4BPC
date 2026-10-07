@@ -166,6 +166,21 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
   450 次/0 重试/USD14.77 确认，不绕过拦截或间接执行。审批证据及待确认范围见
   `outputs/reports/s2_prompt_simplification_comparison_20261006_v1_execution_blocker.json`。
 
+## 33项失败诊断已完成、用户已选15恢复加18补跑：S2-MODEL-OUTPUT-RECOVERY-V1（2026-10-07）
+
+- 历史DeepSeek固定臂150/150均ok；新增六家各150次，33失败不是少调用：回显原文
+  17、JSON语法5、跨字段结构8、余额/限流3。其中15回显仅引号/空白，2项改动实词。
+- 不读Gold的内存探查：只将15项重复回显source_text改为已发送原文，抽取字段不改，
+  原adapter与结构校验15项通过。旧预测/评分/有效数不改。
+- `outputs/reports/stage2_multi_model_failure_diagnosis_20261007_v1.json/.md` 保存逐条
+  证据与原因；33原样请求和“15格式候选+18原样补跑”各有authorized=false预检。
+- 原900预算用完；建议追加最多18次，原样请求保护上限CNY3.83+USD0.05，或原样33次
+  CNY6.95+USD0.13；Kimi21秒间隔、另列恢复/补跑结果，不保证一次全部有效。
+  用户已明确选择“恢复15条格式差异，再授权补跑其余18条（推荐）”；执行授权与门禁
+  待独立绑定准备，当前新API=0、未读.env、未读改Gold，历史预检不重写。
+- 本轮仅文档与诊断预检，内容/源hash核对，按scope不运行实验audit/代码套件。
+  原900次实测及固定主表保持；GitHub原始产物push自动审批阻塞仍待外发许可。
+
 ## 六家900次实测与本地数据验收完成：S2-MODEL-SENSITIVITY-V1（2026-10-07）
 
 - 原453、充值302、Kimi节流145合计900个唯一provider/sample尝试，六家各150、0重试，
