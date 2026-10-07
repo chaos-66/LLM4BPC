@@ -6161,3 +6161,21 @@
 - 仍存在 blocker：无
 - 备注：用户已明确授权4次带错误反馈补跑，CNY0.99、输出16384、累计922，0自动重试，Kimi>=21秒。独立授权绑定4项预检SHA，单独wrapper保留原900与15+18。只新增一个用户合同错误消息，模型/关闭思考/采样/限额保持。本次模拟无真实API，六家完整合并先保存后Gold共享评价，保留原896成功预测；非全量。GitHub外发许可未答复，push自动审批仍阻塞。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-07T09:49:30.556502+00:00 - S2-MODEL-STRUCTURAL-FEEDBACK-V1：4次完成、六家900个预测全150有效验收
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=structural_feedback_20261007_v1；阶段=stage2；方法=multi_model_direct_llm；状态=成功（`succeeded`）
+- 实际运行命令：`python scripts/run_stage2_structural_feedback_v1.py --execute --allow-llm`
+- manifest：outputs/development/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/manifest.json
+- 结果摘要：4/4合同反馈新调用全部结构有效，六家均150/150有效、900/900完整预测；累计922次，原900首轮及15+18证据/896原成功预测不改
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：5 passed in 7.32s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`bdaf18c02c2f38edf1292b823aea6768f22b8239`；相关未提交路径：43 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：已授权调用（`authorized_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：明确授权4次/CNY0.99/输出16384，0自动重试，Kimi>=21秒及空思考正文/1token已接受计数例外保留；实际新增估算CNY0.2420574，新增22次合计CNY1.0398593+USD0.00791125，实扣未核对。仅4失败请求追加实际合同错误提醒，不发Gold或修改标签，结构反馈条件与首轮/15+18分列。完整六家150预测保存后才Gold共享pooled评价，modality独立，固定表不替换。仅5具名真实产物复核，准备5匹配证据复用、非全量；GitHub原始产物外发许可未确认，push仍自动审批阻塞。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

@@ -1,0 +1,196 @@
+{
+  "schema_version": "sep_c3_coarse_five_field_evaluation@1.0.0",
+  "dataset_id": "independently_reconstructed_estg_150_v1",
+  "method_id": "multi_model_qwen",
+  "view": "coarse_sentence_level",
+  "primary_metric": "coarse_five_field_mean_f1",
+  "primary_metric_note": "arithmetic mean of the five coarse span-field F1 values; the modality label is reported separately and is never mixed into this score",
+  "match_rule": "independent_same_field_any_nonempty_character_span_intersection",
+  "five_fields": {
+    "actor": {
+      "ground_truth": 41,
+      "extracted": 101,
+      "matched_predictions": 47,
+      "matched_ground_truth": 39,
+      "misclassified": 54,
+      "missed": 2,
+      "precision": 0.46534653465346537,
+      "recall": 0.9512195121951219,
+      "f1": 0.6249573815206274
+    },
+    "action": {
+      "ground_truth": 150,
+      "extracted": 219,
+      "matched_predictions": 212,
+      "matched_ground_truth": 136,
+      "misclassified": 7,
+      "missed": 14,
+      "precision": 0.9680365296803652,
+      "recall": 0.9066666666666666,
+      "f1": 0.9363471031436738
+    },
+    "condition": {
+      "ground_truth": 122,
+      "extracted": 119,
+      "matched_predictions": 109,
+      "matched_ground_truth": 84,
+      "misclassified": 10,
+      "missed": 38,
+      "precision": 0.9159663865546218,
+      "recall": 0.6885245901639344,
+      "f1": 0.7861251824504164
+    },
+    "constraint": {
+      "ground_truth": 135,
+      "extracted": 262,
+      "matched_predictions": 199,
+      "matched_ground_truth": 104,
+      "misclassified": 63,
+      "missed": 31,
+      "precision": 0.7595419847328244,
+      "recall": 0.7703703703703704,
+      "f1": 0.7649178570768577
+    },
+    "exception": {
+      "ground_truth": 11,
+      "extracted": 8,
+      "matched_predictions": 7,
+      "matched_ground_truth": 7,
+      "misclassified": 1,
+      "missed": 4,
+      "precision": 0.875,
+      "recall": 0.6363636363636364,
+      "f1": 0.7368421052631579
+    }
+  },
+  "coarse_five_field_mean_f1": 0.7698379258909467,
+  "coarse_five_field_micro": {
+    "ground_truth": 459,
+    "extracted": 709,
+    "matched_predictions": 574,
+    "matched_ground_truth": 370,
+    "precision": 0.8095909732016925,
+    "recall": 0.8061002178649237,
+    "f1": 0.807841824585961
+  },
+  "modality_labels": {
+    "schema_version": "formal_stage2_modality_labels@1.0.0",
+    "classes": [
+      "obligation",
+      "permission",
+      "prohibition",
+      "definition"
+    ],
+    "records": 150,
+    "accuracy": 0.8666666666666667,
+    "macro_f1": 0.8234224837475974,
+    "per_class": [
+      {
+        "class": "obligation",
+        "precision": 0.9047619047619048,
+        "recall": 0.9661016949152542,
+        "f1": 0.9344262295081968
+      },
+      {
+        "class": "permission",
+        "precision": 0.9534883720930233,
+        "recall": 0.9761904761904762,
+        "f1": 0.9647058823529412
+      },
+      {
+        "class": "prohibition",
+        "precision": 0.6551724137931034,
+        "recall": 0.95,
+        "f1": 0.7755102040816326
+      },
+      {
+        "class": "definition",
+        "precision": 1.0,
+        "recall": 0.4482758620689655,
+        "f1": 0.6190476190476191
+      }
+    ],
+    "separate_from_span_metrics": true,
+    "unlabeled_predictions": 2
+  },
+  "modality_evidence_span": {
+    "available": false,
+    "policy": "published decision-only Gold has no local modality evidence spans; never zeroed or aggregated into span F1"
+  },
+  "official_formal_view": {
+    "schema_version": "formal_stage2_span_metrics@1.1.0",
+    "view": "coarse_sentence_level",
+    "dataset_id": "independently_reconstructed_estg_150_v1",
+    "method_id": "multi_model_qwen",
+    "match_rule": "independent_same_field_any_nonempty_character_span_intersection",
+    "pooled_metric_id": "pooled_five_span_fields",
+    "pooled_aggregation": "micro_pooled_over_five_span_bearing_fields",
+    "pooled_five_span_fields": {
+      "ground_truth": 459,
+      "extracted": 709,
+      "matched_predictions": 574,
+      "matched_ground_truth": 370,
+      "misclassified": 135,
+      "missed": 89,
+      "precision": 0.8095909732016925,
+      "recall": 0.8061002178649237,
+      "f1": 0.807841824585961
+    },
+    "span_fields": {
+      "actor": {
+        "ground_truth": 41,
+        "extracted": 101,
+        "precision": 0.46534653465346537,
+        "recall": 0.9512195121951219,
+        "f1": 0.6249573815206274
+      },
+      "action": {
+        "ground_truth": 150,
+        "extracted": 219,
+        "precision": 0.9680365296803652,
+        "recall": 0.9066666666666666,
+        "f1": 0.9363471031436738
+      },
+      "condition": {
+        "ground_truth": 122,
+        "extracted": 119,
+        "precision": 0.9159663865546218,
+        "recall": 0.6885245901639344,
+        "f1": 0.7861251824504164
+      },
+      "constraint": {
+        "ground_truth": 135,
+        "extracted": 262,
+        "precision": 0.7595419847328244,
+        "recall": 0.7703703703703704,
+        "f1": 0.7649178570768577
+      },
+      "exception": {
+        "ground_truth": 11,
+        "extracted": 8,
+        "precision": 0.875,
+        "recall": 0.6363636363636364,
+        "f1": 0.7368421052631579
+      }
+    },
+    "modality_span": {
+      "available": false,
+      "reason": "published formal Gold stores modality as a plain string; local modality evidence spans are not carried by the decision-only Gold",
+      "aggregated_into_any_main_metric": false,
+      "ground_truth": 150,
+      "extracted": 236
+    },
+    "overall_six_field_incl_modality_span_NON_CANONICAL": {
+      "precision": 0.8560846560846561,
+      "recall": 0.8423645320197044,
+      "f1": 0.8491691782629779,
+      "ground_truth": 609,
+      "extracted": 945,
+      "canonical": false,
+      "reason": "legacy six-field aggregate including the unavailable modality span; provenance only, never a reported result"
+    },
+    "no_cross_view_mixing": true
+  },
+  "denominator": 150,
+  "failed_count": 0
+}

@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
 **生成日期**：2026-10-07
-**收录文件**：4353 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**收录文件**：4383 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -2349,6 +2349,32 @@
 | `outputs/evidence/stage2_multi_model_remaining_v1/multi_model_remaining_20261007_v1/run/mimo/responses/mimo_estg_000854.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/stage2_multi_model_remaining_v1/multi_model_remaining_20261007_v1/run/mimo/responses/mimo_estg_000861.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/stage2_multi_model_remaining_v1/multi_model_remaining_20261007_v1/run/plan.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/index.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/reports/stage2_structural_feedback_20261007_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/reports/stage2_structural_feedback_20261007_v1.md` | 活动 | 说明、规范或研究文档 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/reports/stage2_structural_feedback_20261007_v1_analysis.md` | 活动 | 说明、规范或研究文档 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/reports/stage2_structural_feedback_20261007_v1_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/run/calls_ledger.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/run/glm/combined_predictions.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/run/glm/evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/run/grok/combined_predictions.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/run/grok/evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/run/kimi/combined_predictions.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/run/kimi/evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/run/manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/run/mimo/combined_predictions.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/run/mimo/evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/run/minimax/combined_predictions.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/run/minimax/evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/run/plan.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/run/predictions.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/run/qwen/combined_predictions.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/run/qwen/evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/run/responses/glm_estg_000164.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/run/responses/kimi_estg_000077.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/run/responses/kimi_estg_000111.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/run/responses/minimax_estg_000164.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/structural_feedback_20261007_v1/run/run_result.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/stage2_multi_model_sensitivity_v1/multi_model_all_20261007_v2/batch/execution_summary.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/stage2_multi_model_sensitivity_v1/multi_model_all_20261007_v2/batch/glm/authorization.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/stage2_multi_model_sensitivity_v1/multi_model_all_20261007_v2/batch/glm/plan.json` | 活动 | 机器可读配置、数据、事件或产物 |
@@ -3309,6 +3335,9 @@
 | `outputs/reports/stage2_multi_model_remaining_20261007_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/stage2_multi_model_remaining_20261007_v1.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/stage2_multi_model_remaining_20261007_v1_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/stage2_structural_feedback_20261007_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/stage2_structural_feedback_20261007_v1.md` | 活动 | 说明、规范或研究文档 |
+| `outputs/reports/stage2_structural_feedback_20261007_v1_analysis.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/stage2_structural_feedback_20261007_v1_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/stage2_table1_paper_final_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/stage2_table1_paper_final_v1.md` | 活动 | 说明、规范或研究文档 |
@@ -4424,6 +4453,7 @@
 | `tests/test_stage2_multi_model_remaining_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage2_multi_model_run_artifacts_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage2_prediction_schema.py` | 活动 | Python 实现、脚本或测试 |
+| `tests/test_stage2_structural_feedback_artifacts_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage2_structural_feedback_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage2_sun_literal_overlap.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage3_automatic_grounding_v1.py` | 活动 | Python 实现、脚本或测试 |

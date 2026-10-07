@@ -1,0 +1,610 @@
+{
+  "schema_version": "stage2_structural_feedback_result@1.0.0",
+  "task_id": "S2-MODEL-STRUCTURAL-FEEDBACK-V1",
+  "run_id": "structural_feedback_20261007_v1",
+  "claim_scope": "development_only",
+  "primary_metric": "coarse_five_field_micro.f1",
+  "planned_calls": 922,
+  "actual_calls": 922,
+  "retry": 0,
+  "providers": {
+    "qwen": {
+      "model": "qwen3.8-max-2026-09-02",
+      "status": "succeeded",
+      "denominator": 150,
+      "attempted": 151,
+      "valid_predictions": 150,
+      "metrics": {
+        "overall": {
+          "ground_truth": 459,
+          "extracted": 709,
+          "matched_predictions": 574,
+          "matched_ground_truth": 370,
+          "precision": 0.8095909732016925,
+          "recall": 0.8061002178649237,
+          "f1": 0.807841824585961
+        },
+        "per_field": {
+          "actor": {
+            "ground_truth": 41,
+            "extracted": 101,
+            "matched_predictions": 47,
+            "matched_ground_truth": 39,
+            "misclassified": 54,
+            "missed": 2,
+            "precision": 0.46534653465346537,
+            "recall": 0.9512195121951219,
+            "f1": 0.6249573815206274
+          },
+          "action": {
+            "ground_truth": 150,
+            "extracted": 219,
+            "matched_predictions": 212,
+            "matched_ground_truth": 136,
+            "misclassified": 7,
+            "missed": 14,
+            "precision": 0.9680365296803652,
+            "recall": 0.9066666666666666,
+            "f1": 0.9363471031436738
+          },
+          "condition": {
+            "ground_truth": 122,
+            "extracted": 119,
+            "matched_predictions": 109,
+            "matched_ground_truth": 84,
+            "misclassified": 10,
+            "missed": 38,
+            "precision": 0.9159663865546218,
+            "recall": 0.6885245901639344,
+            "f1": 0.7861251824504164
+          },
+          "constraint": {
+            "ground_truth": 135,
+            "extracted": 262,
+            "matched_predictions": 199,
+            "matched_ground_truth": 104,
+            "misclassified": 63,
+            "missed": 31,
+            "precision": 0.7595419847328244,
+            "recall": 0.7703703703703704,
+            "f1": 0.7649178570768577
+          },
+          "exception": {
+            "ground_truth": 11,
+            "extracted": 8,
+            "matched_predictions": 7,
+            "matched_ground_truth": 7,
+            "misclassified": 1,
+            "missed": 4,
+            "precision": 0.875,
+            "recall": 0.6363636363636364,
+            "f1": 0.7368421052631579
+          }
+        },
+        "modality_macro_f1": 0.8234224837475974,
+        "failed_count": 0
+      },
+      "input_tokens": 700664,
+      "output_tokens": 88320,
+      "cost_currency": "CNY",
+      "conservative_uncached_cost": 11.587488000000002,
+      "account_deduction_verified": false,
+      "first_pass_valid_predictions": 148,
+      "supplementary_calls": 1,
+      "offline_echo_recoveries": 1,
+      "previous_recovery_valid_predictions": 150,
+      "structural_feedback_calls": 0
+    },
+    "mimo": {
+      "model": "mimo-v2.6-pro",
+      "status": "succeeded",
+      "denominator": 150,
+      "attempted": 152,
+      "valid_predictions": 150,
+      "metrics": {
+        "overall": {
+          "ground_truth": 459,
+          "extracted": 718,
+          "matched_predictions": 582,
+          "matched_ground_truth": 380,
+          "precision": 0.8105849582172702,
+          "recall": 0.8278867102396514,
+          "f1": 0.8191444836641493
+        },
+        "per_field": {
+          "actor": {
+            "ground_truth": 41,
+            "extracted": 86,
+            "matched_predictions": 47,
+            "matched_ground_truth": 39,
+            "misclassified": 39,
+            "missed": 2,
+            "precision": 0.5465116279069767,
+            "recall": 0.9512195121951219,
+            "f1": 0.6941867070630562
+          },
+          "action": {
+            "ground_truth": 150,
+            "extracted": 223,
+            "matched_predictions": 211,
+            "matched_ground_truth": 136,
+            "misclassified": 12,
+            "missed": 14,
+            "precision": 0.9461883408071748,
+            "recall": 0.9066666666666666,
+            "f1": 0.926006002129788
+          },
+          "condition": {
+            "ground_truth": 122,
+            "extracted": 140,
+            "matched_predictions": 129,
+            "matched_ground_truth": 94,
+            "misclassified": 11,
+            "missed": 28,
+            "precision": 0.9214285714285714,
+            "recall": 0.7704918032786885,
+            "f1": 0.8392276282095645
+          },
+          "constraint": {
+            "ground_truth": 135,
+            "extracted": 261,
+            "matched_predictions": 188,
+            "matched_ground_truth": 104,
+            "misclassified": 73,
+            "missed": 31,
+            "precision": 0.7203065134099617,
+            "recall": 0.7703703703703704,
+            "f1": 0.7444977534079659
+          },
+          "exception": {
+            "ground_truth": 11,
+            "extracted": 8,
+            "matched_predictions": 7,
+            "matched_ground_truth": 7,
+            "misclassified": 1,
+            "missed": 4,
+            "precision": 0.875,
+            "recall": 0.6363636363636364,
+            "f1": 0.7368421052631579
+          }
+        },
+        "modality_macro_f1": 0.8221565035440151,
+        "failed_count": 0
+      },
+      "input_tokens": 666827,
+      "output_tokens": 111808,
+      "cost_currency": "CNY",
+      "conservative_uncached_cost": 2.760732,
+      "account_deduction_verified": false,
+      "retained_parent_transport_failure": true,
+      "first_pass_valid_predictions": 147,
+      "supplementary_calls": 2,
+      "offline_echo_recoveries": 1,
+      "previous_recovery_valid_predictions": 150,
+      "structural_feedback_calls": 0
+    },
+    "kimi": {
+      "model": "kimi-k2.6",
+      "status": "succeeded",
+      "denominator": 150,
+      "attempted": 155,
+      "valid_predictions": 150,
+      "metrics": {
+        "overall": {
+          "ground_truth": 459,
+          "extracted": 811,
+          "matched_predictions": 581,
+          "matched_ground_truth": 367,
+          "precision": 0.7163995067817509,
+          "recall": 0.7995642701525054,
+          "f1": 0.7557007066962482
+        },
+        "per_field": {
+          "actor": {
+            "ground_truth": 41,
+            "extracted": 160,
+            "matched_predictions": 51,
+            "matched_ground_truth": 38,
+            "misclassified": 109,
+            "missed": 3,
+            "precision": 0.31875,
+            "recall": 0.926829268292683,
+            "f1": 0.47436054338514255
+          },
+          "action": {
+            "ground_truth": 150,
+            "extracted": 255,
+            "matched_predictions": 213,
+            "matched_ground_truth": 131,
+            "misclassified": 42,
+            "missed": 19,
+            "precision": 0.8352941176470589,
+            "recall": 0.8733333333333333,
+            "f1": 0.8538902914849668
+          },
+          "condition": {
+            "ground_truth": 122,
+            "extracted": 141,
+            "matched_predictions": 124,
+            "matched_ground_truth": 92,
+            "misclassified": 17,
+            "missed": 30,
+            "precision": 0.8794326241134752,
+            "recall": 0.7540983606557377,
+            "f1": 0.8119572953736656
+          },
+          "constraint": {
+            "ground_truth": 135,
+            "extracted": 247,
+            "matched_predictions": 186,
+            "matched_ground_truth": 99,
+            "misclassified": 61,
+            "missed": 36,
+            "precision": 0.7530364372469636,
+            "recall": 0.7333333333333333,
+            "f1": 0.7430542945342292
+          },
+          "exception": {
+            "ground_truth": 11,
+            "extracted": 8,
+            "matched_predictions": 7,
+            "matched_ground_truth": 7,
+            "misclassified": 1,
+            "missed": 4,
+            "precision": 0.875,
+            "recall": 0.6363636363636364,
+            "f1": 0.7368421052631579
+          }
+        },
+        "modality_macro_f1": 0.771127273149355,
+        "failed_count": 0
+      },
+      "input_tokens": 654151,
+      "output_tokens": 119221,
+      "cost_currency": "CNY",
+      "conservative_uncached_cost": 7.922564000000002,
+      "account_deduction_verified": false,
+      "first_answer_recovered_offline": true,
+      "retained_parent_transport_failure": false,
+      "first_pass_valid_predictions": 141,
+      "supplementary_calls": 5,
+      "offline_echo_recoveries": 6,
+      "previous_recovery_valid_predictions": 148,
+      "structural_feedback_calls": 2
+    },
+    "grok": {
+      "model": "grok-4.3",
+      "status": "succeeded",
+      "denominator": 150,
+      "attempted": 151,
+      "valid_predictions": 150,
+      "metrics": {
+        "overall": {
+          "ground_truth": 459,
+          "extracted": 595,
+          "matched_predictions": 485,
+          "matched_ground_truth": 338,
+          "precision": 0.8151260504201681,
+          "recall": 0.7363834422657952,
+          "f1": 0.7737565638090742
+        },
+        "per_field": {
+          "actor": {
+            "ground_truth": 41,
+            "extracted": 97,
+            "matched_predictions": 40,
+            "matched_ground_truth": 34,
+            "misclassified": 57,
+            "missed": 7,
+            "precision": 0.41237113402061853,
+            "recall": 0.8292682926829268,
+            "f1": 0.5508302956662616
+          },
+          "action": {
+            "ground_truth": 150,
+            "extracted": 221,
+            "matched_predictions": 206,
+            "matched_ground_truth": 131,
+            "misclassified": 15,
+            "missed": 19,
+            "precision": 0.9321266968325792,
+            "recall": 0.8733333333333333,
+            "f1": 0.9017727356268065
+          },
+          "condition": {
+            "ground_truth": 122,
+            "extracted": 115,
+            "matched_predictions": 108,
+            "matched_ground_truth": 83,
+            "misclassified": 7,
+            "missed": 39,
+            "precision": 0.9391304347826087,
+            "recall": 0.680327868852459,
+            "f1": 0.7890497777386559
+          },
+          "constraint": {
+            "ground_truth": 135,
+            "extracted": 156,
+            "matched_predictions": 125,
+            "matched_ground_truth": 84,
+            "misclassified": 31,
+            "missed": 51,
+            "precision": 0.8012820512820513,
+            "recall": 0.6222222222222222,
+            "f1": 0.7004903432402682
+          },
+          "exception": {
+            "ground_truth": 11,
+            "extracted": 6,
+            "matched_predictions": 6,
+            "matched_ground_truth": 6,
+            "misclassified": 0,
+            "missed": 5,
+            "precision": 1.0,
+            "recall": 0.5454545454545454,
+            "f1": 0.7058823529411764
+          }
+        },
+        "modality_macro_f1": 0.7581787330316742,
+        "failed_count": 0
+      },
+      "input_tokens": 662768,
+      "output_tokens": 101503,
+      "cost_currency": "USD",
+      "conservative_uncached_cost": 1.0822175,
+      "account_deduction_verified": false,
+      "first_pass_valid_predictions": 147,
+      "supplementary_calls": 1,
+      "offline_echo_recoveries": 2,
+      "previous_recovery_valid_predictions": 150,
+      "structural_feedback_calls": 0
+    },
+    "glm": {
+      "model": "glm-5.2",
+      "status": "succeeded",
+      "denominator": 150,
+      "attempted": 157,
+      "valid_predictions": 150,
+      "metrics": {
+        "overall": {
+          "ground_truth": 459,
+          "extracted": 910,
+          "matched_predictions": 673,
+          "matched_ground_truth": 398,
+          "precision": 0.7395604395604396,
+          "recall": 0.8671023965141612,
+          "f1": 0.7982690768857094
+        },
+        "per_field": {
+          "actor": {
+            "ground_truth": 41,
+            "extracted": 111,
+            "matched_predictions": 46,
+            "matched_ground_truth": 38,
+            "misclassified": 65,
+            "missed": 3,
+            "precision": 0.4144144144144144,
+            "recall": 0.926829268292683,
+            "f1": 0.5727391874180865
+          },
+          "action": {
+            "ground_truth": 150,
+            "extracted": 253,
+            "matched_predictions": 225,
+            "matched_ground_truth": 136,
+            "misclassified": 28,
+            "missed": 14,
+            "precision": 0.8893280632411067,
+            "recall": 0.9066666666666666,
+            "f1": 0.8979136711757973
+          },
+          "condition": {
+            "ground_truth": 122,
+            "extracted": 163,
+            "matched_predictions": 141,
+            "matched_ground_truth": 101,
+            "misclassified": 22,
+            "missed": 21,
+            "precision": 0.8650306748466258,
+            "recall": 0.8278688524590164,
+            "f1": 0.8460418832615476
+          },
+          "constraint": {
+            "ground_truth": 135,
+            "extracted": 371,
+            "matched_predictions": 250,
+            "matched_ground_truth": 115,
+            "misclassified": 121,
+            "missed": 20,
+            "precision": 0.6738544474393531,
+            "recall": 0.8518518518518519,
+            "f1": 0.7524700647778577
+          },
+          "exception": {
+            "ground_truth": 11,
+            "extracted": 12,
+            "matched_predictions": 11,
+            "matched_ground_truth": 8,
+            "misclassified": 1,
+            "missed": 3,
+            "precision": 0.9166666666666666,
+            "recall": 0.7272727272727273,
+            "f1": 0.8110599078341013
+          }
+        },
+        "modality_macro_f1": 0.7150285114045618,
+        "failed_count": 0
+      },
+      "input_tokens": 663662,
+      "output_tokens": 123257,
+      "cost_currency": "CNY",
+      "conservative_uncached_cost": 9.047955999999997,
+      "account_deduction_verified": false,
+      "retained_parent_transport_failure": true,
+      "first_pass_valid_predictions": 142,
+      "supplementary_calls": 7,
+      "offline_echo_recoveries": 2,
+      "previous_recovery_valid_predictions": 149,
+      "structural_feedback_calls": 1
+    },
+    "minimax": {
+      "model": "MiniMax-M3",
+      "status": "succeeded",
+      "denominator": 150,
+      "attempted": 156,
+      "valid_predictions": 150,
+      "metrics": {
+        "overall": {
+          "ground_truth": 459,
+          "extracted": 823,
+          "matched_predictions": 568,
+          "matched_ground_truth": 370,
+          "precision": 0.6901579586877278,
+          "recall": 0.8061002178649237,
+          "f1": 0.7436370134212751
+        },
+        "per_field": {
+          "actor": {
+            "ground_truth": 41,
+            "extracted": 167,
+            "matched_predictions": 45,
+            "matched_ground_truth": 39,
+            "misclassified": 122,
+            "missed": 2,
+            "precision": 0.2694610778443114,
+            "recall": 0.9512195121951219,
+            "f1": 0.4199569274946159
+          },
+          "action": {
+            "ground_truth": 150,
+            "extracted": 229,
+            "matched_predictions": 208,
+            "matched_ground_truth": 130,
+            "misclassified": 21,
+            "missed": 20,
+            "precision": 0.9082969432314411,
+            "recall": 0.8666666666666667,
+            "f1": 0.8869936034115139
+          },
+          "condition": {
+            "ground_truth": 122,
+            "extracted": 161,
+            "matched_predictions": 140,
+            "matched_ground_truth": 101,
+            "misclassified": 21,
+            "missed": 21,
+            "precision": 0.8695652173913043,
+            "recall": 0.8278688524590164,
+            "f1": 0.8482049128700399
+          },
+          "constraint": {
+            "ground_truth": 135,
+            "extracted": 257,
+            "matched_predictions": 169,
+            "matched_ground_truth": 94,
+            "misclassified": 88,
+            "missed": 41,
+            "precision": 0.6575875486381323,
+            "recall": 0.6962962962962963,
+            "f1": 0.6763885636429439
+          },
+          "exception": {
+            "ground_truth": 11,
+            "extracted": 9,
+            "matched_predictions": 6,
+            "matched_ground_truth": 6,
+            "misclassified": 3,
+            "missed": 5,
+            "precision": 0.6666666666666666,
+            "recall": 0.5454545454545454,
+            "f1": 0.6
+          }
+        },
+        "modality_macro_f1": 0.81103859627621,
+        "failed_count": 0
+      },
+      "input_tokens": 687758,
+      "output_tokens": 100929,
+      "cost_currency": "CNY",
+      "conservative_uncached_cost": 2.2920954000000004,
+      "account_deduction_verified": false,
+      "first_pass_valid_predictions": 142,
+      "supplementary_calls": 6,
+      "offline_echo_recoveries": 3,
+      "previous_recovery_valid_predictions": 149,
+      "structural_feedback_calls": 1
+    }
+  },
+  "historical_baselines": {
+    "deepseek_historical": {
+      "ground_truth": 459,
+      "extracted": 590,
+      "matched_predictions": 513,
+      "matched_ground_truth": 371,
+      "precision": 0.8694915254237288,
+      "recall": 0.8082788671023965,
+      "f1": 0.8377685388362014
+    },
+    "sun_historical": {
+      "ground_truth": 459,
+      "extracted": 892,
+      "matched_predictions": 623,
+      "matched_ground_truth": 386,
+      "precision": 0.6984304932735426,
+      "recall": 0.840958605664488,
+      "f1": 0.7630963921754044
+    }
+  },
+  "limitations": [
+    "固定150条与模型/平台配置的描述性比较，无重复采样、纯模型因果或显著性结论。",
+    "保留首轮900、15回显格式恢复加18原样补跑与固定DeepSeek/Sun表；本轮4个原失败新增合同错误反馈，另列工程恢复条件，不冒充首轮成功率。",
+    "全部关闭思考；Kimi保留用户接受的空思考正文且1 token计数例外，不解释该1 token语义。",
+    "完整六家预测保存后才读Gold共享150分母五字段pooled评价，modality独立；Gold未发API或修改。",
+    "每个选定原失败恰一次新增调用、0自动重试，Kimi至少21秒；费用估算非账户实扣。",
+    "GitHub原始产物外发许可仍待确认，push自动审批阻塞未解除。"
+  ],
+  "execution": {
+    "status": "succeeded",
+    "llm_calls": 4,
+    "plan_sha256": "8fbf72d1f67a6a5cf4f3169f20780c80a9294b8b9f32f031099b8b753fdddcfd",
+    "authorization_sha256": "f6affd3df6ba52bb4ea7c25f450c75f3b72206400d29691f04cccca8a36a4d80",
+    "ledger_head_sha256": "2672ed10119ed5e333ab5e68d1afd1f2ca3f447d42162630664acac785b4d92b",
+    "predictions_sha256": "4f3825a0d5244dd2375a18da2e86373b73a36ab1b14959473098a0c69f509bed",
+    "conservative_uncached_cost": 0.2420574,
+    "runtime_seconds": 89.827,
+    "retry": 0
+  },
+  "status": "succeeded",
+  "parent_run_id": "model_output_recovery_20261007_v1",
+  "kimi_counter_policy": {
+    "model": "kimi-k2.6",
+    "required_request_thinking_type": "disabled",
+    "required_empty_reasoning_content": true,
+    "allowed_reported_reasoning_tokens": [
+      0,
+      1
+    ],
+    "retain_actual_reported_count": true,
+    "claim_one_token_is_placeholder": false,
+    "documentation": "https://platform.kimi.com/docs/guide/kimi-k2-6-quickstart"
+  },
+  "actual_new_calls_in_run": 4,
+  "condition": "source_echo_recovery_original_supplement_then_structural_feedback",
+  "offline_recoveries": 15,
+  "first_pass_results_preserved": true,
+  "additional_costs": {
+    "CNY": 0.2420574
+  },
+  "remaining_failures": [],
+  "all_150_valid": true,
+  "planned_new_calls": 4,
+  "previous_supplementary_costs": {
+    "CNY": 0.7978019000000001,
+    "USD": 0.00791125
+  },
+  "combined_supplementary_costs": {
+    "CNY": 1.0398593,
+    "USD": 0.00791125
+  },
+  "offline_recoveries_in_run": 0
+}
