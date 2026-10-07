@@ -166,6 +166,16 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
   450 次/0 重试/USD14.77 确认，不绕过拦截或间接执行。审批证据及待确认范围见
   `outputs/reports/s2_prompt_simplification_comparison_20261006_v1_execution_blocker.json`。
 
+## 4次带结构反馈已授权、准备完成：S2-MODEL-STRUCTURAL-FEEDBACK-V1（2026-10-07）
+
+- 用户明确授权剩4各一次反馈补跑，CNY0.99/16384输出/累计922、0自动重试，原预检
+  authorized=false保留，另建绑定SHA的新授权及wrapper，run structural_feedback_20261007_v1。
+- 仅对实际合同错误追加单条用户消息，模型/关闭思考/采样/限额不改，不用Gold标签；
+  反馈改变prompt另列条件，原900、15+18和固定表保持。Kimi21秒与1 token计数例外保留。
+- 5项具名离线检查25.71秒通过，完整性/正式就绪通过，真实新API0、非全量；
+  准备checkpoint后执行明确授权的4项，不重复确认，不承诺一次全有效。
+- GitHub原始产物外发许可未答复，push自动审批仍阻塞，不绕过或冒称远端备份。
+
 ## 15恢复加18补跑完成，896有效仍4结构失败：S2-MODEL-OUTPUT-RECOVERY-V1（2026-10-07）
 
 - 已执行批准的15条仅回显格式恢复及18/18原样新调用，14条新有效，累计918次、

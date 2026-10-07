@@ -6147,3 +6147,17 @@
 - 仍存在 blocker：无
 - 备注：实际18授权新调用已完成并记experiment_run。真实产物首次4通过1失败（9.69秒），唯一失败为不同聚合顺序造成0.7978019000000001与0.7978019的浮点比较；仅测试改绝对容差1e-12，不改API结果/费用/manifest/source/hash。只重跑该节点，其余4项证据复用，非全量，本次API0。15+18完成，896有效仍4结构失败；18预算已用完不自动扩大。GitHub原始产物push审批阻塞仍待明确外发许可。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-07T09:43:46.580114+00:00 - S2-MODEL-STRUCTURAL-FEEDBACK-V1：4次新授权与合同错误反馈门禁准备
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：5 passed in 25.71s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`e647f3331aa3169dad2ad35ea40281980e6e7e3a`；相关未提交路径：18 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：用户已明确授权4次带错误反馈补跑，CNY0.99、输出16384、累计922，0自动重试，Kimi>=21秒。独立授权绑定4项预检SHA，单独wrapper保留原900与15+18。只新增一个用户合同错误消息，模型/关闭思考/采样/限额保持。本次模拟无真实API，六家完整合并先保存后Gold共享评价，保留原896成功预测；非全量。GitHub外发许可未答复，push自动审批仍阻塞。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

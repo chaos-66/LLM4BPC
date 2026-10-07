@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
 **生成日期**：2026-10-07
-**收录文件**：4349 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**收录文件**：4353 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -62,6 +62,7 @@
 | `configs/authorization/stage2_model_output_recovery_20261007_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/authorization/stage2_multi_model_all_20261007_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/authorization/stage2_multi_model_remaining_20261007_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `configs/authorization/stage2_structural_feedback_20261007_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/authorization/stage3_d1_v4_r1_user_authorization_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/authorization/stage3_d1_v4_user_authorization_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/bm25_stage3_development_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
@@ -3308,6 +3309,7 @@
 | `outputs/reports/stage2_multi_model_remaining_20261007_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/stage2_multi_model_remaining_20261007_v1.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/stage2_multi_model_remaining_20261007_v1_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/stage2_structural_feedback_20261007_v1_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/stage2_table1_paper_final_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/stage2_table1_paper_final_v1.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/stage2_table2_evidence_backup_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
@@ -3864,6 +3866,7 @@
 | `scripts/run_stage2_model_output_recovery_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_stage2_multi_model_all_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_stage2_multi_model_remaining_v1.py` | 活动 | Python 实现、脚本或测试 |
+| `scripts/run_stage2_structural_feedback_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_stage3_baselines.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_stage3_binding_oracle_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_stage3_d1_v4.py` | 活动 | Python 实现、脚本或测试 |
@@ -4421,6 +4424,7 @@
 | `tests/test_stage2_multi_model_remaining_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage2_multi_model_run_artifacts_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage2_prediction_schema.py` | 活动 | Python 实现、脚本或测试 |
+| `tests/test_stage2_structural_feedback_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage2_sun_literal_overlap.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage3_automatic_grounding_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage3_binding_audit_v1.py` | 活动 | Python 实现、脚本或测试 |
