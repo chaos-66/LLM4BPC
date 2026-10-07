@@ -1,0 +1,457 @@
+{
+  "request_id": "minimax:estg_000505",
+  "raw_response_utf8": "{\"id\":\"071504aea63913bd91f37f9529b2c521\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000505\\\",\\\"source_id\\\":\\\"estg_000505\\\",\\\"source_text\\\":\\\"To the extent the limits of the first and second sentences are exceeded, such other emoluments shall be taxed like current emoluments according to the wage tax scale; in this respect, a monthly wage payment period shall be assumed.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000505_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"To the extent the limits of the first and second sentences are exceeded, such other emoluments shall be taxed like current emoluments according to the wage tax scale\\\",\\\"start\\\":0,\\\"end\\\":142},\\\"modality\\\":{\\\"label\\\":\\\"obligation\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall\\\",\\\"start\\\":95,\\\"end\\\":100}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"such other emoluments\\\",\\\"start\\\":76,\\\"end\\\":97,\\\"normalized\\\":\\\"other emoluments\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"taxed like current emoluments\\\",\\\"start\\\":98,\\\"end\\\":131,\\\"normalized\\\":\\\"tax like current emoluments\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"To the extent the limits of the first and second sentences are exceeded\\\",\\\"start\\\":0,\\\"end\\\":75,\\\"normalized\\\":\\\"to the extent the limits of the first and second sentences are exceeded\\\"}],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"according to the wage tax scale\\\",\\\"start\\\":132,\\\"end\\\":162,\\\"normalized\\\":\\\"according to the wage tax scale\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a01\\\",\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]},{\\\"clause_id\\\":\\\"estg_000505_c02\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"in this respect, a monthly wage payment period shall be assumed.\\\",\\\"start\\\":143,\\\"end\\\":203},\\\"modality\\\":{\\\"label\\\":\\\"definition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall be assumed\\\",\\\"start\\\":184,\\\"end\\\":200}]},\\\"actors\\\":[{\\\"id\\\":\\\"a02\\\",\\\"text\\\":\\\"a monthly wage payment period\\\",\\\"start\\\":159,\\\"end\\\":187,\\\"normalized\\\":\\\"monthly wage payment period\\\"}],\\\"actions\\\":[],\\\"conditions\\\":[],\\\"constraints\\\":[{\\\"id\\\":\\\"c02\\\",\\\"text\\\":\\\"in this respect\\\",\\\"start\\\":143,\\\"end\\\":158,\\\"normalized\\\":\\\"in this respect\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"actor\\\",\\\"reason\\\":\\\"reference_status=unresolved_coreference;independence_status=context_required\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791349166,\"model\":\"MiniMax-M3\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":4945,\"total_characters\":0,\"prompt_tokens\":4385,\"completion_tokens\":560,\"prompt_tokens_details\":{\"cached_tokens\":1517}},\"input_sensitive\":false,\"output_sensitive\":false,\"input_sensitive_type\":0,\"output_sensitive_type\":0,\"output_sensitive_int\":0,\"service_tier\":\"standard\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}\n",
+  "usage": {
+    "prompt_tokens": 4385,
+    "completion_tokens": 560,
+    "total_tokens": 4945
+  },
+  "returned_model": "MiniMax-M3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "minimax",
+    "sample_id": "estg_000505",
+    "request_id": "minimax:estg_000505",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000505",
+      "source_id": "estg_000505",
+      "source_text": "To the extent the limits of the first and second sentences are exceeded, such other emoluments shall be taxed like current emoluments according to the wage tax scale; in this respect, a monthly wage payment period shall be assumed.",
+      "clauses": [
+        {
+          "clause_id": "estg_000505_c01",
+          "clause_span": {
+            "text": "To the extent the limits of the first and second sentences are exceeded, such other emoluments shall be taxed like current emoluments according to the wage tax scale",
+            "start": 0,
+            "end": 165
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 95,
+                "end": 100
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "such other emoluments",
+              "start": 73,
+              "end": 94,
+              "normalized": "such other emoluments",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "taxed like current emoluments",
+              "start": 104,
+              "end": 133,
+              "normalized": "taxed like current emoluments",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "To the extent the limits of the first and second sentences are exceeded",
+              "start": 0,
+              "end": 71,
+              "normalized": "to the extent the limits of the first and second sentences are exceeded",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "according to the wage tax scale",
+              "start": 134,
+              "end": 165,
+              "normalized": "according to the wage tax scale",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000505_c02",
+          "clause_span": {
+            "text": "in this respect, a monthly wage payment period shall be assumed.",
+            "start": 167,
+            "end": 231
+          },
+          "modality": {
+            "label": "definition",
+            "evidence": [
+              {
+                "text": "shall be assumed",
+                "start": 214,
+                "end": 230
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "a monthly wage payment period",
+              "start": 184,
+              "end": 213,
+              "normalized": "a monthly wage payment period",
+              "id": "a02"
+            }
+          ],
+          "actions": [],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "in this respect",
+              "start": 167,
+              "end": 182,
+              "normalized": "in this respect",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 6,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 2,
+      "field_span_count": 8,
+      "reanchored_count": 9,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000505_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "To the extent the limits of the first and second sentences are exceeded, such other emoluments shall be taxed like current emoluments according to the wage tax scale",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 142,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 165
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 165
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000505_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 95,
+          "original_end": 100,
+          "candidate_occurrences": [
+            {
+              "start": 95,
+              "end": 100
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 95,
+            "end": 100
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000505_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "such other emoluments",
+          "normalized": "such other emoluments",
+          "original_start": 76,
+          "original_end": 97,
+          "candidate_occurrences": [
+            {
+              "start": 73,
+              "end": 94
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 73,
+            "end": 94
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000505_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "taxed like current emoluments",
+          "normalized": "taxed like current emoluments",
+          "original_start": 98,
+          "original_end": 131,
+          "candidate_occurrences": [
+            {
+              "start": 104,
+              "end": 133
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 104,
+            "end": 133
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000505_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "To the extent the limits of the first and second sentences are exceeded",
+          "normalized": "to the extent the limits of the first and second sentences are exceeded",
+          "original_start": 0,
+          "original_end": 75,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 71
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 71
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000505_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "according to the wage tax scale",
+          "normalized": "according to the wage tax scale",
+          "original_start": 132,
+          "original_end": 162,
+          "candidate_occurrences": [
+            {
+              "start": 134,
+              "end": 165
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 134,
+            "end": 165
+          },
+          "distance": 5,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000505_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "in this respect, a monthly wage payment period shall be assumed.",
+          "normalized": null,
+          "original_start": 143,
+          "original_end": 203,
+          "candidate_occurrences": [
+            {
+              "start": 167,
+              "end": 231
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 167,
+            "end": 231
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000505_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall be assumed",
+          "normalized": null,
+          "original_start": 184,
+          "original_end": 200,
+          "candidate_occurrences": [
+            {
+              "start": 214,
+              "end": 230
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 214,
+            "end": 230
+          },
+          "distance": 60,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actors[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000505_c02",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a02",
+          "text": "a monthly wage payment period",
+          "normalized": "a monthly wage payment period",
+          "original_start": 159,
+          "original_end": 187,
+          "candidate_occurrences": [
+            {
+              "start": 184,
+              "end": 213
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 184,
+            "end": 213
+          },
+          "distance": 51,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].constraints[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000505_c02",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c02",
+          "text": "in this respect",
+          "normalized": "in this respect",
+          "original_start": 143,
+          "original_end": 158,
+          "candidate_occurrences": [
+            {
+              "start": 167,
+              "end": 182
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 167,
+            "end": 182
+          },
+          "distance": 48,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 9,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

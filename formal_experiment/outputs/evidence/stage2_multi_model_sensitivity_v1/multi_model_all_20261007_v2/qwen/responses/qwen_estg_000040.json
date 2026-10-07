@@ -1,0 +1,384 @@
+{
+  "request_id": "qwen:estg_000040",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000040\\\",\\\"source_id\\\":\\\"estg_000040\\\",\\\"source_text\\\":\\\"Dependants also include spouses and children (Section 106). (ee) The contributions, together with direct benefits within the meaning of Section 3(1) item 15, must not exceed 10% of the total wages and salaries of the beneficiaries.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000040_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"Dependants also include spouses and children (Section 106).\\\",\\\"start\\\":0,\\\"end\\\":59},\\\"modality\\\":{\\\"label\\\":\\\"definition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"include\\\",\\\"start\\\":16,\\\"end\\\":23}]},\\\"actors\\\":[],\\\"actions\\\":[],\\\"conditions\\\":[],\\\"constraints\\\":[],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[],\\\"order_relations\\\":[]},{\\\"clause_id\\\":\\\"estg_000040_c02\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"The contributions, together with direct benefits within the meaning of Section 3(1) item 15, must not exceed 10% of the total wages and salaries of the beneficiaries.\\\",\\\"start\\\":64,\\\"end\\\":228},\\\"modality\\\":{\\\"label\\\":\\\"prohibition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"must not\\\",\\\"start\\\":157,\\\"end\\\":165},{\\\"text\\\":\\\"not\\\",\\\"start\\\":162,\\\"end\\\":165}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"The contributions\\\",\\\"start\\\":64,\\\"end\\\":81,\\\"normalized\\\":\\\"contributions\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"exceed 10% of the total wages and salaries of the beneficiaries\\\",\\\"start\\\":166,\\\"end\\\":228,\\\"normalized\\\":\\\"exceed 10% of the total wages and salaries of the beneficiaries\\\"}],\\\"conditions\\\":[],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"within the meaning of Section 3(1) item 15\\\",\\\"start\\\":115,\\\"end\\\":157,\\\"normalized\\\":\\\"within the meaning of section 3(1) item 15\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a01\\\",\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"constraint\\\",\\\"reason\\\":\\\"semantic_scope_ambiguous_in_target\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791348418,\"id\":\"chatcmpl-e446fc34-48de-988c-b4bf-a2cf76d058ee\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":541,\"prompt_tokens\":4626,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4626},\"total_tokens\":5167}}",
+  "usage": {
+    "prompt_tokens": 4626,
+    "completion_tokens": 541,
+    "total_tokens": 5167
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000040",
+    "request_id": "qwen:estg_000040",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000040",
+      "source_id": "estg_000040",
+      "source_text": "Dependants also include spouses and children (Section 106). (ee) The contributions, together with direct benefits within the meaning of Section 3(1) item 15, must not exceed 10% of the total wages and salaries of the beneficiaries.",
+      "clauses": [
+        {
+          "clause_id": "estg_000040_c01",
+          "clause_span": {
+            "text": "Dependants also include spouses and children (Section 106).",
+            "start": 0,
+            "end": 59
+          },
+          "modality": {
+            "label": "definition",
+            "evidence": [
+              {
+                "text": "include",
+                "start": 16,
+                "end": 23
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000040_c02",
+          "clause_span": {
+            "text": "The contributions, together with direct benefits within the meaning of Section 3(1) item 15, must not exceed 10% of the total wages and salaries of the beneficiaries.",
+            "start": 65,
+            "end": 231
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "must not",
+                "start": 158,
+                "end": 166
+              },
+              {
+                "text": "not",
+                "start": 163,
+                "end": 166
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "The contributions",
+              "start": 65,
+              "end": 82,
+              "normalized": "the contributions",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "exceed 10% of the total wages and salaries of the beneficiaries",
+              "start": 167,
+              "end": 230,
+              "normalized": "exceed 10% of the total wages and salaries of the beneficiaries",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "within the meaning of Section 3(1) item 15",
+              "start": 114,
+              "end": 156,
+              "normalized": "within the meaning of section 3(1) item 15",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "constraint",
+          "reason": "semantic_scope_ambiguous_in_target"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 2,
+      "field_span_count": 6,
+      "reanchored_count": 6,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000040_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Dependants also include spouses and children (Section 106).",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 59,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 59
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 0,
+            "end": 59
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000040_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "include",
+          "normalized": null,
+          "original_start": 16,
+          "original_end": 23,
+          "candidate_occurrences": [
+            {
+              "start": 16,
+              "end": 23
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 16,
+            "end": 23
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000040_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The contributions, together with direct benefits within the meaning of Section 3(1) item 15, must not exceed 10% of the total wages and salaries of the beneficiaries.",
+          "normalized": null,
+          "original_start": 64,
+          "original_end": 228,
+          "candidate_occurrences": [
+            {
+              "start": 65,
+              "end": 231
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 65,
+            "end": 231
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000040_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "must not",
+          "normalized": null,
+          "original_start": 157,
+          "original_end": 165,
+          "candidate_occurrences": [
+            {
+              "start": 158,
+              "end": 166
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 158,
+            "end": 166
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[1]",
+          "clause_index": 1,
+          "clause_id": "estg_000040_c02",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "not",
+          "normalized": null,
+          "original_start": 162,
+          "original_end": 165,
+          "candidate_occurrences": [
+            {
+              "start": 163,
+              "end": 166
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 163,
+            "end": 166
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actors[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000040_c02",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "The contributions",
+          "normalized": "the contributions",
+          "original_start": 64,
+          "original_end": 81,
+          "candidate_occurrences": [
+            {
+              "start": 65,
+              "end": 82
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 65,
+            "end": 82
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000040_c02",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "exceed 10% of the total wages and salaries of the beneficiaries",
+          "normalized": "exceed 10% of the total wages and salaries of the beneficiaries",
+          "original_start": 166,
+          "original_end": 228,
+          "candidate_occurrences": [
+            {
+              "start": 167,
+              "end": 230
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 167,
+            "end": 230
+          },
+          "distance": 3,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].constraints[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000040_c02",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "within the meaning of Section 3(1) item 15",
+          "normalized": "within the meaning of section 3(1) item 15",
+          "original_start": 115,
+          "original_end": 157,
+          "candidate_occurrences": [
+            {
+              "start": 114,
+              "end": 156
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 114,
+            "end": 156
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 6,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

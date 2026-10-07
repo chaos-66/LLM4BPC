@@ -1,0 +1,496 @@
+{
+  "request_id": "grok:estg_000079",
+  "raw_response_utf8": "{\"id\":\"d7d8ad6f-121b-97ae-8496-9d788c936d13\",\"object\":\"chat.completion\",\"created\":1791348457,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000079\\\",\\n  \\\"source_id\\\": \\\"estg_000079\\\",\\n  \\\"source_text\\\": \\\"The taxpayer must provide evidence or render plausible, by means of suitable documents, that the conditions for such depreciation are met. 8. a) Upon the opening of a business, the assets shall be recognized at acquisition or production cost.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000079_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"The taxpayer must provide evidence or render plausible, by means of suitable documents, that the conditions for such depreciation are met.\\\", \\\"start\\\": 0, \\\"end\\\": 124},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"must\\\", \\\"start\\\": 13, \\\"end\\\": 17}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"The taxpayer\\\", \\\"start\\\": 0, \\\"end\\\": 12, \\\"normalized\\\": \\\"taxpayer\\\"}],\\n      \\\"actions\\\": [\\n        {\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"provide evidence\\\", \\\"start\\\": 18, \\\"end\\\": 34, \\\"normalized\\\": \\\"provide evidence\\\"},\\n        {\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"render plausible\\\", \\\"start\\\": 38, \\\"end\\\": 54, \\\"normalized\\\": \\\"render plausible\\\"}\\n      ],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"by means of suitable documents\\\", \\\"start\\\": 56, \\\"end\\\": 86, \\\"normalized\\\": \\\"by means of suitable documents\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [\\n        {\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"},\\n        {\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p02\\\"}\\n      ],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000079_c02\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"Upon the opening of a business, the assets shall be recognized at acquisition or production cost.\\\", \\\"start\\\": 126, \\\"end\\\": 222},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 162, \\\"end\\\": 167}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p03\\\", \\\"text\\\": \\\"recognized\\\", \\\"start\\\": 172, \\\"end\\\": 182, \\\"normalized\\\": \\\"recognize\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"Upon the opening of a business\\\", \\\"start\\\": 126, \\\"end\\\": 156, \\\"normalized\\\": \\\"upon the opening of a business\\\"}],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"at acquisition or production cost\\\", \\\"start\\\": 183, \\\"end\\\": 217, \\\"normalized\\\": \\\"at acquisition or production cost\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p03\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4368,\"completion_tokens\":727,\"total_tokens\":5095,\"prompt_tokens_details\":{\"text_tokens\":4368,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":1536},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":56647000},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4368,
+    "completion_tokens": 727,
+    "total_tokens": 5095,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000079",
+    "request_id": "grok:estg_000079",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000079",
+      "source_id": "estg_000079",
+      "source_text": "The taxpayer must provide evidence or render plausible, by means of suitable documents, that the conditions for such depreciation are met. 8. a) Upon the opening of a business, the assets shall be recognized at acquisition or production cost.",
+      "clauses": [
+        {
+          "clause_id": "estg_000079_c01",
+          "clause_span": {
+            "text": "The taxpayer must provide evidence or render plausible, by means of suitable documents, that the conditions for such depreciation are met.",
+            "start": 0,
+            "end": 138
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "must",
+                "start": 13,
+                "end": 17
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "The taxpayer",
+              "start": 0,
+              "end": 12,
+              "normalized": "the taxpayer",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "provide evidence",
+              "start": 18,
+              "end": 34,
+              "normalized": "provide evidence",
+              "id": "p01"
+            },
+            {
+              "text": "render plausible",
+              "start": 38,
+              "end": 54,
+              "normalized": "render plausible",
+              "id": "p02"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "by means of suitable documents",
+              "start": 56,
+              "end": 86,
+              "normalized": "by means of suitable documents",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            },
+            {
+              "actor_id": "a01",
+              "action_id": "p02"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000079_c02",
+          "clause_span": {
+            "text": "Upon the opening of a business, the assets shall be recognized at acquisition or production cost.",
+            "start": 145,
+            "end": 242
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 188,
+                "end": 193
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "recognized",
+              "start": 197,
+              "end": 207,
+              "normalized": "recognized",
+              "id": "p03"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "Upon the opening of a business",
+              "start": 145,
+              "end": 175,
+              "normalized": "upon the opening of a business",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "at acquisition or production cost",
+              "start": 208,
+              "end": 241,
+              "normalized": "at acquisition or production cost",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p03"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 7,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 2,
+      "field_span_count": 9,
+      "reanchored_count": 6,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000079_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The taxpayer must provide evidence or render plausible, by means of suitable documents, that the conditions for such depreciation are met.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 124,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 138
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 138
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000079_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "must",
+          "normalized": null,
+          "original_start": 13,
+          "original_end": 17,
+          "candidate_occurrences": [
+            {
+              "start": 13,
+              "end": 17
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 13,
+            "end": 17
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000079_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "The taxpayer",
+          "normalized": "the taxpayer",
+          "original_start": 0,
+          "original_end": 12,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 12
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 0,
+            "end": 12
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000079_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "provide evidence",
+          "normalized": "provide evidence",
+          "original_start": 18,
+          "original_end": 34,
+          "candidate_occurrences": [
+            {
+              "start": 18,
+              "end": 34
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 18,
+            "end": 34
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000079_c01",
+          "field": "actions",
+          "span_index": 1,
+          "span_id": "p02",
+          "text": "render plausible",
+          "normalized": "render plausible",
+          "original_start": 38,
+          "original_end": 54,
+          "candidate_occurrences": [
+            {
+              "start": 38,
+              "end": 54
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 38,
+            "end": 54
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000079_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "by means of suitable documents",
+          "normalized": "by means of suitable documents",
+          "original_start": 56,
+          "original_end": 86,
+          "candidate_occurrences": [
+            {
+              "start": 56,
+              "end": 86
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 56,
+            "end": 86
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000079_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Upon the opening of a business, the assets shall be recognized at acquisition or production cost.",
+          "normalized": null,
+          "original_start": 126,
+          "original_end": 222,
+          "candidate_occurrences": [
+            {
+              "start": 145,
+              "end": 242
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 145,
+            "end": 242
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000079_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 162,
+          "original_end": 167,
+          "candidate_occurrences": [
+            {
+              "start": 188,
+              "end": 193
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 188,
+            "end": 193
+          },
+          "distance": 52,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000079_c02",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p03",
+          "text": "recognized",
+          "normalized": "recognized",
+          "original_start": 172,
+          "original_end": 182,
+          "candidate_occurrences": [
+            {
+              "start": 197,
+              "end": 207
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 197,
+            "end": 207
+          },
+          "distance": 50,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].conditions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000079_c02",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "Upon the opening of a business",
+          "normalized": "upon the opening of a business",
+          "original_start": 126,
+          "original_end": 156,
+          "candidate_occurrences": [
+            {
+              "start": 145,
+              "end": 175
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 145,
+            "end": 175
+          },
+          "distance": 38,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].constraints[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000079_c02",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c02",
+          "text": "at acquisition or production cost",
+          "normalized": "at acquisition or production cost",
+          "original_start": 183,
+          "original_end": 217,
+          "candidate_occurrences": [
+            {
+              "start": 208,
+              "end": 241
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 208,
+            "end": 241
+          },
+          "distance": 49,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 5,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 6,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

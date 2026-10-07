@@ -1,0 +1,495 @@
+{
+  "request_id": "grok:estg_000083",
+  "raw_response_utf8": "{\"id\":\"07575f9f-0209-927a-aaed-be6685990485\",\"object\":\"chat.completion\",\"created\":1791348477,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000083\\\",\\n  \\\"source_id\\\": \\\"estg_000083\\\",\\n  \\\"source_text\\\": \\\"This does not apply if the input tax is adjusted under Section 12(10) and (11) of the Turnover Tax Act 1972; in this case, the additional amounts shall be treated as business income and the reduced amounts as business expenses. 13.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000083_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"This does not apply if the input tax is adjusted under Section 12(10) and (11) of the Turnover Tax Act 1972\\\", \\\"start\\\": 0, \\\"end\\\": 105},\\n      \\\"modality\\\": {\\\"label\\\": \\\"prohibition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"does not apply\\\", \\\"start\\\": 5, \\\"end\\\": 19}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"This\\\", \\\"start\\\": 0, \\\"end\\\": 4, \\\"normalized\\\": \\\"this\\\"}],\\n      \\\"actions\\\": [],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"if the input tax is adjusted under Section 12(10) and (11) of the Turnover Tax Act 1972\\\", \\\"start\\\": 20, \\\"end\\\": 105, \\\"normalized\\\": \\\"if the input tax is adjusted under section 12(10) and (11) of the turnover tax act 1972\\\"}],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000083_c02\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"in this case, the additional amounts shall be treated as business income and the reduced amounts as business expenses\\\", \\\"start\\\": 107, \\\"end\\\": 221},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 136, \\\"end\\\": 141}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a02\\\", \\\"text\\\": \\\"the additional amounts\\\", \\\"start\\\": 122, \\\"end\\\": 144, \\\"normalized\\\": \\\"additional amounts\\\"}, {\\\"id\\\": \\\"a03\\\", \\\"text\\\": \\\"the reduced amounts\\\", \\\"start\\\": 160, \\\"end\\\": 179, \\\"normalized\\\": \\\"reduced amounts\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"be treated as business income\\\", \\\"start\\\": 145, \\\"end\\\": 173, \\\"normalized\\\": \\\"treat as business income\\\"}, {\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"as business expenses\\\", \\\"start\\\": 180, \\\"end\\\": 200, \\\"normalized\\\": \\\"as business expenses\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d02\\\", \\\"text\\\": \\\"in this case\\\", \\\"start\\\": 107, \\\"end\\\": 119, \\\"normalized\\\": \\\"in this case\\\"}],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a02\\\", \\\"action_id\\\": \\\"p01\\\"}, {\\\"actor_id\\\": \\\"a03\\\", \\\"action_id\\\": \\\"p02\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": [\\n    {\\\"field\\\": \\\"actor\\\", \\\"reason\\\": \\\"reference_status=unresolved_coreference;independence_status=context_required\\\"}\\n  ]\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4375,\"completion_tokens\":787,\"total_tokens\":5162,\"prompt_tokens_details\":{\"text_tokens\":4375,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":128},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":73018500},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4375,
+    "completion_tokens": 787,
+    "total_tokens": 5162,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000083",
+    "request_id": "grok:estg_000083",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000083",
+      "source_id": "estg_000083",
+      "source_text": "This does not apply if the input tax is adjusted under Section 12(10) and (11) of the Turnover Tax Act 1972; in this case, the additional amounts shall be treated as business income and the reduced amounts as business expenses. 13.",
+      "clauses": [
+        {
+          "clause_id": "estg_000083_c01",
+          "clause_span": {
+            "text": "This does not apply if the input tax is adjusted under Section 12(10) and (11) of the Turnover Tax Act 1972",
+            "start": 0,
+            "end": 107
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "does not apply",
+                "start": 5,
+                "end": 19
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "This",
+              "start": 0,
+              "end": 4,
+              "normalized": "this",
+              "id": "a01"
+            }
+          ],
+          "actions": [],
+          "conditions": [
+            {
+              "text": "if the input tax is adjusted under Section 12(10) and (11) of the Turnover Tax Act 1972",
+              "start": 20,
+              "end": 107,
+              "normalized": "if the input tax is adjusted under section 12(10) and (11) of the turnover tax act 1972",
+              "id": "d01"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000083_c02",
+          "clause_span": {
+            "text": "in this case, the additional amounts shall be treated as business income and the reduced amounts as business expenses",
+            "start": 109,
+            "end": 226
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 146,
+                "end": 151
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the additional amounts",
+              "start": 123,
+              "end": 145,
+              "normalized": "the additional amounts",
+              "id": "a02"
+            },
+            {
+              "text": "the reduced amounts",
+              "start": 186,
+              "end": 205,
+              "normalized": "the reduced amounts",
+              "id": "a03"
+            }
+          ],
+          "actions": [
+            {
+              "text": "be treated as business income",
+              "start": 152,
+              "end": 181,
+              "normalized": "be treated as business income",
+              "id": "p01"
+            },
+            {
+              "text": "as business expenses",
+              "start": 206,
+              "end": 226,
+              "normalized": "as business expenses",
+              "id": "p02"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "in this case",
+              "start": 109,
+              "end": 121,
+              "normalized": "in this case",
+              "id": "d02"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a02",
+              "action_id": "p01"
+            },
+            {
+              "actor_id": "a03",
+              "action_id": "p02"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 7,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 2,
+      "field_span_count": 9,
+      "reanchored_count": 9,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000083_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "This does not apply if the input tax is adjusted under Section 12(10) and (11) of the Turnover Tax Act 1972",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 105,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 107
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 107
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000083_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "does not apply",
+          "normalized": null,
+          "original_start": 5,
+          "original_end": 19,
+          "candidate_occurrences": [
+            {
+              "start": 5,
+              "end": 19
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 5,
+            "end": 19
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000083_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "This",
+          "normalized": "this",
+          "original_start": 0,
+          "original_end": 4,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 4
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 0,
+            "end": 4
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000083_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "if the input tax is adjusted under Section 12(10) and (11) of the Turnover Tax Act 1972",
+          "normalized": "if the input tax is adjusted under section 12(10) and (11) of the turnover tax act 1972",
+          "original_start": 20,
+          "original_end": 105,
+          "candidate_occurrences": [
+            {
+              "start": 20,
+              "end": 107
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 20,
+            "end": 107
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000083_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "in this case, the additional amounts shall be treated as business income and the reduced amounts as business expenses",
+          "normalized": null,
+          "original_start": 107,
+          "original_end": 221,
+          "candidate_occurrences": [
+            {
+              "start": 109,
+              "end": 226
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 109,
+            "end": 226
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000083_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 136,
+          "original_end": 141,
+          "candidate_occurrences": [
+            {
+              "start": 146,
+              "end": 151
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 146,
+            "end": 151
+          },
+          "distance": 20,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actors[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000083_c02",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a02",
+          "text": "the additional amounts",
+          "normalized": "the additional amounts",
+          "original_start": 122,
+          "original_end": 144,
+          "candidate_occurrences": [
+            {
+              "start": 123,
+              "end": 145
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 123,
+            "end": 145
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actors[1]",
+          "clause_index": 1,
+          "clause_id": "estg_000083_c02",
+          "field": "actors",
+          "span_index": 1,
+          "span_id": "a03",
+          "text": "the reduced amounts",
+          "normalized": "the reduced amounts",
+          "original_start": 160,
+          "original_end": 179,
+          "candidate_occurrences": [
+            {
+              "start": 186,
+              "end": 205
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 186,
+            "end": 205
+          },
+          "distance": 52,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000083_c02",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "be treated as business income",
+          "normalized": "be treated as business income",
+          "original_start": 145,
+          "original_end": 173,
+          "candidate_occurrences": [
+            {
+              "start": 152,
+              "end": 181
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 152,
+            "end": 181
+          },
+          "distance": 15,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actions[1]",
+          "clause_index": 1,
+          "clause_id": "estg_000083_c02",
+          "field": "actions",
+          "span_index": 1,
+          "span_id": "p02",
+          "text": "as business expenses",
+          "normalized": "as business expenses",
+          "original_start": 180,
+          "original_end": 200,
+          "candidate_occurrences": [
+            {
+              "start": 206,
+              "end": 226
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 206,
+            "end": 226
+          },
+          "distance": 52,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].conditions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000083_c02",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d02",
+          "text": "in this case",
+          "normalized": "in this case",
+          "original_start": 107,
+          "original_end": 119,
+          "candidate_occurrences": [
+            {
+              "start": 109,
+              "end": 121
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 109,
+            "end": 121
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 2,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 9,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

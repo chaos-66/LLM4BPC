@@ -1,0 +1,580 @@
+{
+  "request_id": "grok:estg_000664",
+  "raw_response_utf8": "{\"id\":\"64542761-6873-9d16-9805-c476095aa2e5\",\"object\":\"chat.completion\",\"created\":1791348980,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000664\\\",\\n  \\\"source_id\\\": \\\"estg_000664\\\",\\n  \\\"source_text\\\": \\\"The following shall apply to this provision:\\\\n\\\\n— Certain income, in particular foreign income, may be wholly or partially excluded from the tax base or taxed at a reduced tax rate, or\\\\n\\\\n— taxation may be based solely on the amount corresponding to domestic consumption, or\\\\n\\\\n— the tax base or the tax may also be fixed as a lump sum.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000664_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"Certain income, in particular foreign income, may be wholly or partially excluded from the tax base or taxed at a reduced tax rate, or\\\", \\\"start\\\": 43, \\\"end\\\": 166},\\n      \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may\\\", \\\"start\\\": 76, \\\"end\\\": 79}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"Certain income, in particular foreign income\\\", \\\"start\\\": 43, \\\"end\\\": 85, \\\"normalized\\\": \\\"certain income, in particular foreign income\\\"}],\\n      \\\"actions\\\": [\\n        {\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"be wholly or partially excluded from the tax base\\\", \\\"start\\\": 86, \\\"end\\\": 135, \\\"normalized\\\": \\\"be wholly or partially excluded from the tax base\\\"},\\n        {\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"taxed at a reduced tax rate\\\", \\\"start\\\": 139, \\\"end\\\": 166, \\\"normalized\\\": \\\"taxed at a reduced tax rate\\\"}\\n      ],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [\\n        {\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"},\\n        {\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p02\\\"}\\n      ],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000664_c02\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"taxation may be based solely on the amount corresponding to domestic consumption, or\\\", \\\"start\\\": 171, \\\"end\\\": 255},\\n      \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may\\\", \\\"start\\\": 180, \\\"end\\\": 183}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a02\\\", \\\"text\\\": \\\"taxation\\\", \\\"start\\\": 171, \\\"end\\\": 179, \\\"normalized\\\": \\\"taxation\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p03\\\", \\\"text\\\": \\\"be based solely on the amount corresponding to domestic consumption\\\", \\\"start\\\": 184, \\\"end\\\": 253, \\\"normalized\\\": \\\"be based solely on the amount corresponding to domestic consumption\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a02\\\", \\\"action_id\\\": \\\"p03\\\"}],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000664_c03\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"the tax base or the tax may also be fixed as a lump sum.\\\", \\\"start\\\": 260, \\\"end\\\": 314},\\n      \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may\\\", \\\"start\\\": 282, \\\"end\\\": 285}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a03\\\", \\\"text\\\": \\\"the tax base or the tax\\\", \\\"start\\\": 260, \\\"end\\\": 283, \\\"normalized\\\": \\\"the tax base or the tax\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p04\\\", \\\"text\\\": \\\"be fixed as a lump sum\\\", \\\"start\\\": 290, \\\"end\\\": 312, \\\"normalized\\\": \\\"be fixed as a lump sum\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a03\\\", \\\"action_id\\\": \\\"p04\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4390,\"completion_tokens\":946,\"total_tokens\":5336,\"prompt_tokens_details\":{\"text_tokens\":4390,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":128},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":77181000},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4390,
+    "completion_tokens": 946,
+    "total_tokens": 5336,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000664",
+    "request_id": "grok:estg_000664",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000664",
+      "source_id": "estg_000664",
+      "source_text": "The following shall apply to this provision:\n\n— Certain income, in particular foreign income, may be wholly or partially excluded from the tax base or taxed at a reduced tax rate, or\n\n— taxation may be based solely on the amount corresponding to domestic consumption, or\n\n— the tax base or the tax may also be fixed as a lump sum.",
+      "clauses": [
+        {
+          "clause_id": "estg_000664_c01",
+          "clause_span": {
+            "text": "Certain income, in particular foreign income, may be wholly or partially excluded from the tax base or taxed at a reduced tax rate, or",
+            "start": 48,
+            "end": 182
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 94,
+                "end": 97
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "Certain income, in particular foreign income",
+              "start": 48,
+              "end": 92,
+              "normalized": "certain income, in particular foreign income",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "be wholly or partially excluded from the tax base",
+              "start": 98,
+              "end": 147,
+              "normalized": "be wholly or partially excluded from the tax base",
+              "id": "p01"
+            },
+            {
+              "text": "taxed at a reduced tax rate",
+              "start": 151,
+              "end": 178,
+              "normalized": "taxed at a reduced tax rate",
+              "id": "p02"
+            }
+          ],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            },
+            {
+              "actor_id": "a01",
+              "action_id": "p02"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000664_c02",
+          "clause_span": {
+            "text": "taxation may be based solely on the amount corresponding to domestic consumption, or",
+            "start": 186,
+            "end": 270
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 195,
+                "end": 198
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "taxation",
+              "start": 186,
+              "end": 194,
+              "normalized": "taxation",
+              "id": "a02"
+            }
+          ],
+          "actions": [
+            {
+              "text": "be based solely on the amount corresponding to domestic consumption",
+              "start": 199,
+              "end": 266,
+              "normalized": "be based solely on the amount corresponding to domestic consumption",
+              "id": "p03"
+            }
+          ],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a02",
+              "action_id": "p03"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000664_c03",
+          "clause_span": {
+            "text": "the tax base or the tax may also be fixed as a lump sum.",
+            "start": 274,
+            "end": 330
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 298,
+                "end": 301
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the tax base or the tax",
+              "start": 274,
+              "end": 297,
+              "normalized": "the tax base or the tax",
+              "id": "a03"
+            }
+          ],
+          "actions": [
+            {
+              "text": "be fixed as a lump sum",
+              "start": 307,
+              "end": 329,
+              "normalized": "be fixed as a lump sum",
+              "id": "p04"
+            }
+          ],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a03",
+              "action_id": "p04"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 7,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 3,
+      "field_span_count": 10,
+      "reanchored_count": 13,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000664_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Certain income, in particular foreign income, may be wholly or partially excluded from the tax base or taxed at a reduced tax rate, or",
+          "normalized": null,
+          "original_start": 43,
+          "original_end": 166,
+          "candidate_occurrences": [
+            {
+              "start": 48,
+              "end": 182
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 48,
+            "end": 182
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000664_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 76,
+          "original_end": 79,
+          "candidate_occurrences": [
+            {
+              "start": 94,
+              "end": 97
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 94,
+            "end": 97
+          },
+          "distance": 36,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000664_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "Certain income, in particular foreign income",
+          "normalized": "certain income, in particular foreign income",
+          "original_start": 43,
+          "original_end": 85,
+          "candidate_occurrences": [
+            {
+              "start": 48,
+              "end": 92
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 48,
+            "end": 92
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000664_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "be wholly or partially excluded from the tax base",
+          "normalized": "be wholly or partially excluded from the tax base",
+          "original_start": 86,
+          "original_end": 135,
+          "candidate_occurrences": [
+            {
+              "start": 98,
+              "end": 147
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 98,
+            "end": 147
+          },
+          "distance": 24,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000664_c01",
+          "field": "actions",
+          "span_index": 1,
+          "span_id": "p02",
+          "text": "taxed at a reduced tax rate",
+          "normalized": "taxed at a reduced tax rate",
+          "original_start": 139,
+          "original_end": 166,
+          "candidate_occurrences": [
+            {
+              "start": 151,
+              "end": 178
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 151,
+            "end": 178
+          },
+          "distance": 24,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000664_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "taxation may be based solely on the amount corresponding to domestic consumption, or",
+          "normalized": null,
+          "original_start": 171,
+          "original_end": 255,
+          "candidate_occurrences": [
+            {
+              "start": 186,
+              "end": 270
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 186,
+            "end": 270
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000664_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 180,
+          "original_end": 183,
+          "candidate_occurrences": [
+            {
+              "start": 195,
+              "end": 198
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 195,
+            "end": 198
+          },
+          "distance": 30,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actors[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000664_c02",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a02",
+          "text": "taxation",
+          "normalized": "taxation",
+          "original_start": 171,
+          "original_end": 179,
+          "candidate_occurrences": [
+            {
+              "start": 186,
+              "end": 194
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 186,
+            "end": 194
+          },
+          "distance": 30,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000664_c02",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p03",
+          "text": "be based solely on the amount corresponding to domestic consumption",
+          "normalized": "be based solely on the amount corresponding to domestic consumption",
+          "original_start": 184,
+          "original_end": 253,
+          "candidate_occurrences": [
+            {
+              "start": 199,
+              "end": 266
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 199,
+            "end": 266
+          },
+          "distance": 28,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].clause_span",
+          "clause_index": 2,
+          "clause_id": "estg_000664_c03",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "the tax base or the tax may also be fixed as a lump sum.",
+          "normalized": null,
+          "original_start": 260,
+          "original_end": 314,
+          "candidate_occurrences": [
+            {
+              "start": 274,
+              "end": 330
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 274,
+            "end": 330
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].modality.evidence[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000664_c03",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 282,
+          "original_end": 285,
+          "candidate_occurrences": [
+            {
+              "start": 298,
+              "end": 301
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 298,
+            "end": 301
+          },
+          "distance": 32,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].actors[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000664_c03",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a03",
+          "text": "the tax base or the tax",
+          "normalized": "the tax base or the tax",
+          "original_start": 260,
+          "original_end": 283,
+          "candidate_occurrences": [
+            {
+              "start": 274,
+              "end": 297
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 274,
+            "end": 297
+          },
+          "distance": 28,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].actions[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000664_c03",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p04",
+          "text": "be fixed as a lump sum",
+          "normalized": "be fixed as a lump sum",
+          "original_start": 290,
+          "original_end": 312,
+          "candidate_occurrences": [
+            {
+              "start": 307,
+              "end": 329
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 307,
+            "end": 329
+          },
+          "distance": 34,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 13,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

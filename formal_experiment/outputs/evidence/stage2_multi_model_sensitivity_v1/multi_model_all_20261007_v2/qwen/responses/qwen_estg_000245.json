@@ -1,0 +1,272 @@
+{
+  "request_id": "qwen:estg_000245",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000245\\\",\\\"source_id\\\":\\\"estg_000245\\\",\\\"source_text\\\":\\\"(2) Furthermore, in determining income, expenses and expenditures shall not be deducted to the extent that they are directly economically connected with non-taxable receipts.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000245_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"in determining income, expenses and expenditures shall not be deducted to the extent that they are directly economically connected with non-taxable receipts.\\\",\\\"start\\\":16,\\\"end\\\":173},\\\"modality\\\":{\\\"label\\\":\\\"prohibition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall not\\\",\\\"start\\\":63,\\\"end\\\":72}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"deducted\\\",\\\"start\\\":76,\\\"end\\\":84,\\\"normalized\\\":\\\"deduct\\\"}],\\\"conditions\\\":[],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"in determining income\\\",\\\"start\\\":16,\\\"end\\\":37,\\\"normalized\\\":\\\"in determining income\\\"},{\\\"id\\\":\\\"c02\\\",\\\"text\\\":\\\"to the extent that they are directly economically connected with non-taxable receipts\\\",\\\"start\\\":85,\\\"end\\\":170,\\\"normalized\\\":\\\"to the extent that they are directly economically connected with non-taxable receipts\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"constraint\\\",\\\"reason\\\":\\\"semantic_scope_ambiguous_in_target\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791349255,\"id\":\"chatcmpl-18c10331-1e10-9cce-86ef-3e1592715130\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":361,\"prompt_tokens\":4601,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4601},\"total_tokens\":4962}}",
+  "usage": {
+    "prompt_tokens": 4601,
+    "completion_tokens": 361,
+    "total_tokens": 4962
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000245",
+    "request_id": "qwen:estg_000245",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000245",
+      "source_id": "estg_000245",
+      "source_text": "(2) Furthermore, in determining income, expenses and expenditures shall not be deducted to the extent that they are directly economically connected with non-taxable receipts.",
+      "clauses": [
+        {
+          "clause_id": "estg_000245_c01",
+          "clause_span": {
+            "text": "in determining income, expenses and expenditures shall not be deducted to the extent that they are directly economically connected with non-taxable receipts.",
+            "start": 17,
+            "end": 174
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "shall not",
+                "start": 66,
+                "end": 75
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "deducted",
+              "start": 79,
+              "end": 87,
+              "normalized": "deducted",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "in determining income",
+              "start": 17,
+              "end": 38,
+              "normalized": "in determining income",
+              "id": "c01"
+            },
+            {
+              "text": "to the extent that they are directly economically connected with non-taxable receipts",
+              "start": 88,
+              "end": 173,
+              "normalized": "to the extent that they are directly economically connected with non-taxable receipts",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "constraint",
+          "reason": "semantic_scope_ambiguous_in_target"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 5,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000245_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "in determining income, expenses and expenditures shall not be deducted to the extent that they are directly economically connected with non-taxable receipts.",
+          "normalized": null,
+          "original_start": 16,
+          "original_end": 173,
+          "candidate_occurrences": [
+            {
+              "start": 17,
+              "end": 174
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 17,
+            "end": 174
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000245_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall not",
+          "normalized": null,
+          "original_start": 63,
+          "original_end": 72,
+          "candidate_occurrences": [
+            {
+              "start": 66,
+              "end": 75
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 66,
+            "end": 75
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000245_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "deducted",
+          "normalized": "deducted",
+          "original_start": 76,
+          "original_end": 84,
+          "candidate_occurrences": [
+            {
+              "start": 79,
+              "end": 87
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 79,
+            "end": 87
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000245_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "in determining income",
+          "normalized": "in determining income",
+          "original_start": 16,
+          "original_end": 37,
+          "candidate_occurrences": [
+            {
+              "start": 17,
+              "end": 38
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 17,
+            "end": 38
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000245_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "to the extent that they are directly economically connected with non-taxable receipts",
+          "normalized": "to the extent that they are directly economically connected with non-taxable receipts",
+          "original_start": 85,
+          "original_end": 170,
+          "candidate_occurrences": [
+            {
+              "start": 88,
+              "end": 173
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 88,
+            "end": 173
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

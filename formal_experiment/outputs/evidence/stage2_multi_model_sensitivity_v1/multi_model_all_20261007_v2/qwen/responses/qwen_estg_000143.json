@@ -1,0 +1,267 @@
+{
+  "request_id": "qwen:estg_000143",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000143\\\",\\\"source_id\\\":\\\"estg_000143\\\",\\\"source_text\\\":\\\"(5) At the end of each financial year, bearer partial debentures of domestic debtors with a nominal amount of at least 50% of the provision amount shown in the balance sheet at the end of the preceding financial year must be present in the business assets (securities cover).\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000143_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"At the end of each financial year, bearer partial debentures of domestic debtors with a nominal amount of at least 50% of the provision amount shown in the balance sheet at the end of the preceding financial year must be present in the business assets (securities cover).\\\",\\\"start\\\":4,\\\"end\\\":276},\\\"modality\\\":{\\\"label\\\":\\\"obligation\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"must\\\",\\\"start\\\":218,\\\"end\\\":222}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"be present\\\",\\\"start\\\":223,\\\"end\\\":233,\\\"normalized\\\":\\\"be present\\\"}],\\\"conditions\\\":[],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"At the end of each financial year\\\",\\\"start\\\":4,\\\"end\\\":37,\\\"normalized\\\":\\\"at the end of each financial year\\\"},{\\\"id\\\":\\\"c02\\\",\\\"text\\\":\\\"in the business assets\\\",\\\"start\\\":234,\\\"end\\\":256,\\\"normalized\\\":\\\"in the business assets\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\"}}],\"created\":1791348977,\"id\":\"chatcmpl-3ff33469-6c1d-9adb-8298-054a1059c6ea\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":399,\"prompt_tokens\":4630,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4630},\"total_tokens\":5029}}",
+  "usage": {
+    "prompt_tokens": 4630,
+    "completion_tokens": 399,
+    "total_tokens": 5029
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000143",
+    "request_id": "qwen:estg_000143",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000143",
+      "source_id": "estg_000143",
+      "source_text": "(5) At the end of each financial year, bearer partial debentures of domestic debtors with a nominal amount of at least 50% of the provision amount shown in the balance sheet at the end of the preceding financial year must be present in the business assets (securities cover).",
+      "clauses": [
+        {
+          "clause_id": "estg_000143_c01",
+          "clause_span": {
+            "text": "At the end of each financial year, bearer partial debentures of domestic debtors with a nominal amount of at least 50% of the provision amount shown in the balance sheet at the end of the preceding financial year must be present in the business assets (securities cover).",
+            "start": 4,
+            "end": 275
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "must",
+                "start": 217,
+                "end": 221
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "be present",
+              "start": 222,
+              "end": 232,
+              "normalized": "be present",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "At the end of each financial year",
+              "start": 4,
+              "end": 37,
+              "normalized": "at the end of each financial year",
+              "id": "c01"
+            },
+            {
+              "text": "in the business assets",
+              "start": 233,
+              "end": 255,
+              "normalized": "in the business assets",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 4,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000143_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "At the end of each financial year, bearer partial debentures of domestic debtors with a nominal amount of at least 50% of the provision amount shown in the balance sheet at the end of the preceding financial year must be present in the business assets (securities cover).",
+          "normalized": null,
+          "original_start": 4,
+          "original_end": 276,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 275
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 275
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000143_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "must",
+          "normalized": null,
+          "original_start": 218,
+          "original_end": 222,
+          "candidate_occurrences": [
+            {
+              "start": 217,
+              "end": 221
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 217,
+            "end": 221
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000143_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "be present",
+          "normalized": "be present",
+          "original_start": 223,
+          "original_end": 233,
+          "candidate_occurrences": [
+            {
+              "start": 222,
+              "end": 232
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 222,
+            "end": 232
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000143_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "At the end of each financial year",
+          "normalized": "at the end of each financial year",
+          "original_start": 4,
+          "original_end": 37,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 37
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 4,
+            "end": 37
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000143_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "in the business assets",
+          "normalized": "in the business assets",
+          "original_start": 234,
+          "original_end": 256,
+          "candidate_occurrences": [
+            {
+              "start": 233,
+              "end": 255
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 233,
+            "end": 255
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 4,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

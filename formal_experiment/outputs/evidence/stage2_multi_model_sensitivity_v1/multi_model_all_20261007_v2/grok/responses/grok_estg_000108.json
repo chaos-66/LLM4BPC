@@ -1,0 +1,303 @@
+{
+  "request_id": "grok:estg_000108",
+  "raw_response_utf8": "{\"id\":\"848c019e-06ef-94cd-bbf8-ac9d48313747\",\"object\":\"chat.completion\",\"created\":1791348526,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000108\\\",\\n  \\\"source_id\\\": \\\"estg_000108\\\",\\n  \\\"source_text\\\": \\\"(3) For buildings, the investment allowance may only be claimed to the extent that they directly serve the business purpose or are intended for residential purposes of employees of the business.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000108_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"(3) For buildings, the investment allowance may only be claimed to the extent that they directly serve the business purpose or are intended for residential purposes of employees of the business.\\\", \\\"start\\\": 0, \\\"end\\\": 183},\\n      \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may\\\", \\\"start\\\": 41, \\\"end\\\": 44}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"the investment allowance\\\", \\\"start\\\": 18, \\\"end\\\": 40, \\\"normalized\\\": \\\"investment allowance\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"be claimed\\\", \\\"start\\\": 50, \\\"end\\\": 60, \\\"normalized\\\": \\\"be claimed\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"only\\\", \\\"start\\\": 45, \\\"end\\\": 49, \\\"normalized\\\": \\\"only\\\"},\\n        {\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"to the extent that they directly serve the business purpose or are intended for residential purposes of employees of the business\\\", \\\"start\\\": 61, \\\"end\\\": 182, \\\"normalized\\\": \\\"to the extent that they directly serve the business purpose or are intended for residential purposes of employees of the business\\\"}\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4356,\"completion_tokens\":480,\"total_tokens\":4836,\"prompt_tokens_details\":{\"text_tokens\":4356,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":1536},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":50322000},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4356,
+    "completion_tokens": 480,
+    "total_tokens": 4836,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000108",
+    "request_id": "grok:estg_000108",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000108",
+      "source_id": "estg_000108",
+      "source_text": "(3) For buildings, the investment allowance may only be claimed to the extent that they directly serve the business purpose or are intended for residential purposes of employees of the business.",
+      "clauses": [
+        {
+          "clause_id": "estg_000108_c01",
+          "clause_span": {
+            "text": "(3) For buildings, the investment allowance may only be claimed to the extent that they directly serve the business purpose or are intended for residential purposes of employees of the business.",
+            "start": 0,
+            "end": 194
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 44,
+                "end": 47
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the investment allowance",
+              "start": 19,
+              "end": 43,
+              "normalized": "the investment allowance",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "be claimed",
+              "start": 53,
+              "end": 63,
+              "normalized": "be claimed",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "only",
+              "start": 48,
+              "end": 52,
+              "normalized": "only",
+              "id": "c01"
+            },
+            {
+              "text": "to the extent that they directly serve the business purpose or are intended for residential purposes of employees of the business",
+              "start": 64,
+              "end": 193,
+              "normalized": "to the extent that they directly serve the business purpose or are intended for residential purposes of employees of the business",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 5,
+      "reanchored_count": 6,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000108_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "(3) For buildings, the investment allowance may only be claimed to the extent that they directly serve the business purpose or are intended for residential purposes of employees of the business.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 183,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 194
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 194
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000108_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 41,
+          "original_end": 44,
+          "candidate_occurrences": [
+            {
+              "start": 44,
+              "end": 47
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 44,
+            "end": 47
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000108_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "the investment allowance",
+          "normalized": "the investment allowance",
+          "original_start": 18,
+          "original_end": 40,
+          "candidate_occurrences": [
+            {
+              "start": 19,
+              "end": 43
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 19,
+            "end": 43
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000108_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "be claimed",
+          "normalized": "be claimed",
+          "original_start": 50,
+          "original_end": 60,
+          "candidate_occurrences": [
+            {
+              "start": 53,
+              "end": 63
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 53,
+            "end": 63
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000108_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "only",
+          "normalized": "only",
+          "original_start": 45,
+          "original_end": 49,
+          "candidate_occurrences": [
+            {
+              "start": 48,
+              "end": 52
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 48,
+            "end": 52
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000108_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "to the extent that they directly serve the business purpose or are intended for residential purposes of employees of the business",
+          "normalized": "to the extent that they directly serve the business purpose or are intended for residential purposes of employees of the business",
+          "original_start": 61,
+          "original_end": 182,
+          "candidate_occurrences": [
+            {
+              "start": 64,
+              "end": 193
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 64,
+            "end": 193
+          },
+          "distance": 14,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 6,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

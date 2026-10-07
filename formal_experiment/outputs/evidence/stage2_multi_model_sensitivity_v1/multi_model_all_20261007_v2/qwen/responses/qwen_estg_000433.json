@@ -1,0 +1,273 @@
+{
+  "request_id": "qwen:estg_000433",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000433\\\",\\\"source_id\\\":\\\"estg_000433\\\",\\\"source_text\\\":\\\"(2) If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee’s first wage tax card, it must be cancelled simultaneously with the issuance of a wage tax card for the spouse.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000433_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee’s first wage tax card, it must be cancelled simultaneously with the issuance of a wage tax card for the spouse.\\\",\\\"start\\\":4,\\\"end\\\":206},\\\"modality\\\":{\\\"label\\\":\\\"obligation\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"must\\\",\\\"start\\\":121,\\\"end\\\":125}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"cancelled\\\",\\\"start\\\":129,\\\"end\\\":138,\\\"normalized\\\":\\\"cancel\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee’s first wage tax card\\\",\\\"start\\\":4,\\\"end\\\":117,\\\"normalized\\\":\\\"if the municipality has entered the sole-earner tax credit (section 57(2)) on the employee’s first wage tax card\\\"}],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"simultaneously with the issuance of a wage tax card for the spouse\\\",\\\"start\\\":139,\\\"end\\\":205,\\\"normalized\\\":\\\"simultaneously with the issuance of a wage tax card for the spouse\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"actor\\\",\\\"reason\\\":\\\"reference_status=unresolved_coreference;independence_status=context_required\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791349466,\"id\":\"chatcmpl-aa404009-683d-909a-9614-c4539c4ba895\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":456,\"prompt_tokens\":4619,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4619},\"total_tokens\":5075}}",
+  "usage": {
+    "prompt_tokens": 4619,
+    "completion_tokens": 456,
+    "total_tokens": 5075
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000433",
+    "request_id": "qwen:estg_000433",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000433",
+      "source_id": "estg_000433",
+      "source_text": "(2) If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee’s first wage tax card, it must be cancelled simultaneously with the issuance of a wage tax card for the spouse.",
+      "clauses": [
+        {
+          "clause_id": "estg_000433_c01",
+          "clause_span": {
+            "text": "If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee’s first wage tax card, it must be cancelled simultaneously with the issuance of a wage tax card for the spouse.",
+            "start": 4,
+            "end": 206
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "must",
+                "start": 121,
+                "end": 125
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "cancelled",
+              "start": 129,
+              "end": 138,
+              "normalized": "cancelled",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee’s first wage tax card",
+              "start": 4,
+              "end": 116,
+              "normalized": "if the municipality has entered the sole-earner tax credit (section 57(2)) on the employee’s first wage tax card",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "simultaneously with the issuance of a wage tax card for the spouse",
+              "start": 139,
+              "end": 205,
+              "normalized": "simultaneously with the issuance of a wage tax card for the spouse",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 1,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000433_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee’s first wage tax card, it must be cancelled simultaneously with the issuance of a wage tax card for the spouse.",
+          "normalized": null,
+          "original_start": 4,
+          "original_end": 206,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 206
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 4,
+            "end": 206
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000433_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "must",
+          "normalized": null,
+          "original_start": 121,
+          "original_end": 125,
+          "candidate_occurrences": [
+            {
+              "start": 121,
+              "end": 125
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 121,
+            "end": 125
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000433_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "cancelled",
+          "normalized": "cancelled",
+          "original_start": 129,
+          "original_end": 138,
+          "candidate_occurrences": [
+            {
+              "start": 129,
+              "end": 138
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 129,
+            "end": 138
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000433_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee’s first wage tax card",
+          "normalized": "if the municipality has entered the sole-earner tax credit (section 57(2)) on the employee’s first wage tax card",
+          "original_start": 4,
+          "original_end": 117,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 116
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 116
+          },
+          "distance": 1,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000433_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "simultaneously with the issuance of a wage tax card for the spouse",
+          "normalized": "simultaneously with the issuance of a wage tax card for the spouse",
+          "original_start": 139,
+          "original_end": 205,
+          "candidate_occurrences": [
+            {
+              "start": 139,
+              "end": 205
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 139,
+            "end": 205
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 3,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 1,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

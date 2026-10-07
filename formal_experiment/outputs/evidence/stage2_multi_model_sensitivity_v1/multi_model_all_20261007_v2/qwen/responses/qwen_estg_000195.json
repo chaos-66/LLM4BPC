@@ -1,0 +1,82 @@
+{
+  "request_id": "qwen:estg_000195",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000195\\\",\\\"source_id\\\":\\\"estg_000195\\\",\\\"source_text\\\":\\\"Likewise, it is irrelevant whether the housing applicant has a claim to full reimbursement of the amount in the event of his withdrawal by the end of the eight-year commitment period or not. b) Amounts expended on the construction of single-family homes or condominiums.\\\",\\\"clauses\\\":[],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"clauses\\\",\\\"reason\\\":\\\"semantic_scope_ambiguous_in_target\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791349070,\"id\":\"chatcmpl-7a9f3e09-2add-9b66-8ff8-4af83663d9ff\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":156,\"prompt_tokens\":4623,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4623},\"total_tokens\":4779}}",
+  "usage": {
+    "prompt_tokens": 4623,
+    "completion_tokens": 156,
+    "total_tokens": 4779
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000195",
+    "request_id": "qwen:estg_000195",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000195",
+      "source_id": "estg_000195",
+      "source_text": "Likewise, it is irrelevant whether the housing applicant has a claim to full reimbursement of the amount in the event of his withdrawal by the end of the eight-year commitment period or not. b) Amounts expended on the construction of single-family homes or condominiums.",
+      "clauses": [],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "clauses",
+          "reason": "semantic_scope_ambiguous_in_target"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "unchanged",
+      "spans_adapted": 0,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "unchanged",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 0,
+      "field_span_count": 0,
+      "reanchored_count": 0,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 0,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

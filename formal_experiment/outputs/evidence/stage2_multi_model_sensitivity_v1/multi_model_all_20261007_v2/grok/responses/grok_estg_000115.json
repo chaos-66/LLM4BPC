@@ -1,0 +1,304 @@
+{
+  "request_id": "grok:estg_000115",
+  "raw_response_utf8": "{\"id\":\"5d77036c-a87d-92bf-af1e-0fc310ffb21c\",\"object\":\"chat.completion\",\"created\":1791348555,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000115\\\",\\n  \\\"source_id\\\": \\\"estg_000115\\\",\\n  \\\"source_text\\\": \\\"If the acquisition or production costs subsequently change, the investment allowance shall be adjusted accordingly in the year of the change (increased or reduced).\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000115_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"If the acquisition or production costs subsequently change, the investment allowance shall be adjusted accordingly in the year of the change (increased or reduced).\\\", \\\"start\\\": 0, \\\"end\\\": 147},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 79, \\\"end\\\": 84}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"the investment allowance\\\", \\\"start\\\": 55, \\\"end\\\": 78, \\\"normalized\\\": \\\"investment allowance\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"be adjusted accordingly\\\", \\\"start\\\": 85, \\\"end\\\": 108, \\\"normalized\\\": \\\"be adjusted accordingly\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"If the acquisition or production costs subsequently change\\\", \\\"start\\\": 0, \\\"end\\\": 53, \\\"normalized\\\": \\\"if the acquisition or production costs subsequently change\\\"}],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"in the year of the change\\\", \\\"start\\\": 109, \\\"end\\\": 134, \\\"normalized\\\": \\\"in the year of the change\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4348,\"completion_tokens\":450,\"total_tokens\":4798,\"prompt_tokens_details\":{\"text_tokens\":4348,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":128},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":64256000},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4348,
+    "completion_tokens": 450,
+    "total_tokens": 4798,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000115",
+    "request_id": "grok:estg_000115",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000115",
+      "source_id": "estg_000115",
+      "source_text": "If the acquisition or production costs subsequently change, the investment allowance shall be adjusted accordingly in the year of the change (increased or reduced).",
+      "clauses": [
+        {
+          "clause_id": "estg_000115_c01",
+          "clause_span": {
+            "text": "If the acquisition or production costs subsequently change, the investment allowance shall be adjusted accordingly in the year of the change (increased or reduced).",
+            "start": 0,
+            "end": 164
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 85,
+                "end": 90
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the investment allowance",
+              "start": 60,
+              "end": 84,
+              "normalized": "the investment allowance",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "be adjusted accordingly",
+              "start": 91,
+              "end": 114,
+              "normalized": "be adjusted accordingly",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If the acquisition or production costs subsequently change",
+              "start": 0,
+              "end": 58,
+              "normalized": "if the acquisition or production costs subsequently change",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "in the year of the change",
+              "start": 115,
+              "end": 140,
+              "normalized": "in the year of the change",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 5,
+      "reanchored_count": 6,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000115_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If the acquisition or production costs subsequently change, the investment allowance shall be adjusted accordingly in the year of the change (increased or reduced).",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 147,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 164
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 164
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000115_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 79,
+          "original_end": 84,
+          "candidate_occurrences": [
+            {
+              "start": 85,
+              "end": 90
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 85,
+            "end": 90
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000115_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "the investment allowance",
+          "normalized": "the investment allowance",
+          "original_start": 55,
+          "original_end": 78,
+          "candidate_occurrences": [
+            {
+              "start": 60,
+              "end": 84
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 60,
+            "end": 84
+          },
+          "distance": 11,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000115_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "be adjusted accordingly",
+          "normalized": "be adjusted accordingly",
+          "original_start": 85,
+          "original_end": 108,
+          "candidate_occurrences": [
+            {
+              "start": 91,
+              "end": 114
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 91,
+            "end": 114
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000115_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "If the acquisition or production costs subsequently change",
+          "normalized": "if the acquisition or production costs subsequently change",
+          "original_start": 0,
+          "original_end": 53,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 58
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 58
+          },
+          "distance": 5,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000115_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "in the year of the change",
+          "normalized": "in the year of the change",
+          "original_start": 109,
+          "original_end": 134,
+          "candidate_occurrences": [
+            {
+              "start": 115,
+              "end": 140
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 115,
+            "end": 140
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 6,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

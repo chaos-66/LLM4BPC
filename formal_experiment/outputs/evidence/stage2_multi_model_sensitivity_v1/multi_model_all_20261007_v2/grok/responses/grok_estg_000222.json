@@ -1,0 +1,420 @@
+{
+  "request_id": "grok:estg_000222",
+  "raw_response_utf8": "{\"id\":\"d80dfbab-9c8b-9142-b2a2-6ef58e7d7ff4\",\"object\":\"chat.completion\",\"created\":1791348735,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000222\\\",\\n  \\\"source_id\\\": \\\"estg_000222\\\",\\n  \\\"source_text\\\": \\\"No subsequent taxation shall take place if the taxpayer has died in the meantime. c) A subsequent taxation of loan repayments (Section 1, no. 3, lit. d) must be carried out if it is determined that the statutory requirements for recognition as special expenses are not met.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000222_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"No subsequent taxation shall take place if the taxpayer has died in the meantime.\\\", \\\"start\\\": 0, \\\"end\\\": 82},\\n      \\\"modality\\\": {\\\"label\\\": \\\"prohibition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"No\\\", \\\"start\\\": 0, \\\"end\\\": 2}, {\\\"text\\\": \\\"shall\\\", \\\"start\\\": 23, \\\"end\\\": 28}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"take place\\\", \\\"start\\\": 30, \\\"end\\\": 40, \\\"normalized\\\": \\\"take place\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"if the taxpayer has died in the meantime\\\", \\\"start\\\": 41, \\\"end\\\": 81, \\\"normalized\\\": \\\"if the taxpayer has died in the meantime\\\"}],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000222_c02\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"c) A subsequent taxation of loan repayments (Section 1, no. 3, lit. d) must be carried out if it is determined that the statutory requirements for recognition as special expenses are not met.\\\", \\\"start\\\": 83, \\\"end\\\": 249},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"must\\\", \\\"start\\\": 135, \\\"end\\\": 139}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"carried out\\\", \\\"start\\\": 145, \\\"end\\\": 156, \\\"normalized\\\": \\\"carry out\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d02\\\", \\\"text\\\": \\\"if it is determined that the statutory requirements for recognition as special expenses are not met\\\", \\\"start\\\": 157, \\\"end\\\": 248, \\\"normalized\\\": \\\"if it is determined that the statutory requirements for recognition as special expenses are not met\\\"}],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p02\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4379,\"completion_tokens\":670,\"total_tokens\":5049,\"prompt_tokens_details\":{\"text_tokens\":4379,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":1536},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":55359500},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4379,
+    "completion_tokens": 670,
+    "total_tokens": 5049,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000222",
+    "request_id": "grok:estg_000222",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000222",
+      "source_id": "estg_000222",
+      "source_text": "No subsequent taxation shall take place if the taxpayer has died in the meantime. c) A subsequent taxation of loan repayments (Section 1, no. 3, lit. d) must be carried out if it is determined that the statutory requirements for recognition as special expenses are not met.",
+      "clauses": [
+        {
+          "clause_id": "estg_000222_c01",
+          "clause_span": {
+            "text": "No subsequent taxation shall take place if the taxpayer has died in the meantime.",
+            "start": 0,
+            "end": 81
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "No",
+                "start": 0,
+                "end": 2
+              },
+              {
+                "text": "shall",
+                "start": 23,
+                "end": 28
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "take place",
+              "start": 29,
+              "end": 39,
+              "normalized": "take place",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "if the taxpayer has died in the meantime",
+              "start": 40,
+              "end": 80,
+              "normalized": "if the taxpayer has died in the meantime",
+              "id": "d01"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000222_c02",
+          "clause_span": {
+            "text": "c) A subsequent taxation of loan repayments (Section 1, no. 3, lit. d) must be carried out if it is determined that the statutory requirements for recognition as special expenses are not met.",
+            "start": 82,
+            "end": 273
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "must",
+                "start": 153,
+                "end": 157
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "carried out",
+              "start": 161,
+              "end": 172,
+              "normalized": "carried out",
+              "id": "p02"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "if it is determined that the statutory requirements for recognition as special expenses are not met",
+              "start": 173,
+              "end": 272,
+              "normalized": "if it is determined that the statutory requirements for recognition as special expenses are not met",
+              "id": "d02"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p02"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 2,
+      "field_span_count": 7,
+      "reanchored_count": 7,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000222_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "No subsequent taxation shall take place if the taxpayer has died in the meantime.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 82,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 81
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 81
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000222_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "No",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 2,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 2
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 0,
+            "end": 2
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000222_c01",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 23,
+          "original_end": 28,
+          "candidate_occurrences": [
+            {
+              "start": 23,
+              "end": 28
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 23,
+            "end": 28
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000222_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "take place",
+          "normalized": "take place",
+          "original_start": 30,
+          "original_end": 40,
+          "candidate_occurrences": [
+            {
+              "start": 29,
+              "end": 39
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 29,
+            "end": 39
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000222_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "if the taxpayer has died in the meantime",
+          "normalized": "if the taxpayer has died in the meantime",
+          "original_start": 41,
+          "original_end": 81,
+          "candidate_occurrences": [
+            {
+              "start": 40,
+              "end": 80
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 40,
+            "end": 80
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000222_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "c) A subsequent taxation of loan repayments (Section 1, no. 3, lit. d) must be carried out if it is determined that the statutory requirements for recognition as special expenses are not met.",
+          "normalized": null,
+          "original_start": 83,
+          "original_end": 249,
+          "candidate_occurrences": [
+            {
+              "start": 82,
+              "end": 273
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 82,
+            "end": 273
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000222_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "must",
+          "normalized": null,
+          "original_start": 135,
+          "original_end": 139,
+          "candidate_occurrences": [
+            {
+              "start": 153,
+              "end": 157
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 153,
+            "end": 157
+          },
+          "distance": 36,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000222_c02",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p02",
+          "text": "carried out",
+          "normalized": "carried out",
+          "original_start": 145,
+          "original_end": 156,
+          "candidate_occurrences": [
+            {
+              "start": 161,
+              "end": 172
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 161,
+            "end": 172
+          },
+          "distance": 32,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].conditions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000222_c02",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d02",
+          "text": "if it is determined that the statutory requirements for recognition as special expenses are not met",
+          "normalized": "if it is determined that the statutory requirements for recognition as special expenses are not met",
+          "original_start": 157,
+          "original_end": 248,
+          "candidate_occurrences": [
+            {
+              "start": 173,
+              "end": 272
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 173,
+            "end": 272
+          },
+          "distance": 40,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 2,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 7,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

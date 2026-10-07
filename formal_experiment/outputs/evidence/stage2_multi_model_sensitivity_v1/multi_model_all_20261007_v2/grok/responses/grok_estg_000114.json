@@ -1,0 +1,269 @@
+{
+  "request_id": "grok:estg_000114",
+  "raw_response_utf8": "{\"id\":\"57c87af5-3419-9dd1-8bfa-437cc9fe15cd\",\"object\":\"chat.completion\",\"created\":1791348550,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000114\\\",\\n  \\\"source_id\\\": \\\"estg_000114\\\",\\n  \\\"source_text\\\": \\\"Where the acquisition or construction of fixed assets extends beyond a balance sheet date, the investment allowance may already be claimed in respect of the partial amounts of the acquisition or construction costs to be capitalized in the respective balance sheet that are attributable to the individual year.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000114_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"Where the acquisition or construction of fixed assets extends beyond a balance sheet date, the investment allowance may already be claimed in respect of the partial amounts of the acquisition or construction costs to be capitalized in the respective balance sheet that are attributable to the individual year.\\\", \\\"start\\\": 0, \\\"end\\\": 284},\\n      \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may\\\", \\\"start\\\": 115, \\\"end\\\": 118}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"the investment allowance\\\", \\\"start\\\": 91, \\\"end\\\": 115, \\\"normalized\\\": \\\"investment allowance\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"be claimed in respect of the partial amounts of the acquisition or construction costs to be capitalized in the respective balance sheet that are attributable to the individual year\\\", \\\"start\\\": 122, \\\"end\\\": 283, \\\"normalized\\\": \\\"be claimed in respect of partial amounts of acquisition or construction costs to be capitalized in respective balance sheet attributable to individual year\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"Where the acquisition or construction of fixed assets extends beyond a balance sheet date\\\", \\\"start\\\": 0, \\\"end\\\": 89, \\\"normalized\\\": \\\"where acquisition or construction of fixed assets extends beyond balance sheet date\\\"}],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4371,\"completion_tokens\":509,\"total_tokens\":4880,\"prompt_tokens_details\":{\"text_tokens\":4371,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":128},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":66018500},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4371,
+    "completion_tokens": 509,
+    "total_tokens": 4880,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000114",
+    "request_id": "grok:estg_000114",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000114",
+      "source_id": "estg_000114",
+      "source_text": "Where the acquisition or construction of fixed assets extends beyond a balance sheet date, the investment allowance may already be claimed in respect of the partial amounts of the acquisition or construction costs to be capitalized in the respective balance sheet that are attributable to the individual year.",
+      "clauses": [
+        {
+          "clause_id": "estg_000114_c01",
+          "clause_span": {
+            "text": "Where the acquisition or construction of fixed assets extends beyond a balance sheet date, the investment allowance may already be claimed in respect of the partial amounts of the acquisition or construction costs to be capitalized in the respective balance sheet that are attributable to the individual year.",
+            "start": 0,
+            "end": 309
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 116,
+                "end": 119
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the investment allowance",
+              "start": 91,
+              "end": 115,
+              "normalized": "the investment allowance",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "be claimed in respect of the partial amounts of the acquisition or construction costs to be capitalized in the respective balance sheet that are attributable to the individual year",
+              "start": 128,
+              "end": 308,
+              "normalized": "be claimed in respect of the partial amounts of the acquisition or construction costs to be capitalized in the respective balance sheet that are attributable to the individual year",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "Where the acquisition or construction of fixed assets extends beyond a balance sheet date",
+              "start": 0,
+              "end": 89,
+              "normalized": "where the acquisition or construction of fixed assets extends beyond a balance sheet date",
+              "id": "d01"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 3,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000114_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Where the acquisition or construction of fixed assets extends beyond a balance sheet date, the investment allowance may already be claimed in respect of the partial amounts of the acquisition or construction costs to be capitalized in the respective balance sheet that are attributable to the individual year.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 284,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 309
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 309
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000114_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 115,
+          "original_end": 118,
+          "candidate_occurrences": [
+            {
+              "start": 116,
+              "end": 119
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 116,
+            "end": 119
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000114_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "the investment allowance",
+          "normalized": "the investment allowance",
+          "original_start": 91,
+          "original_end": 115,
+          "candidate_occurrences": [
+            {
+              "start": 91,
+              "end": 115
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 91,
+            "end": 115
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000114_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "be claimed in respect of the partial amounts of the acquisition or construction costs to be capitalized in the respective balance sheet that are attributable to the individual year",
+          "normalized": "be claimed in respect of the partial amounts of the acquisition or construction costs to be capitalized in the respective balance sheet that are attributable to the individual year",
+          "original_start": 122,
+          "original_end": 283,
+          "candidate_occurrences": [
+            {
+              "start": 128,
+              "end": 308
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 128,
+            "end": 308
+          },
+          "distance": 31,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000114_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "Where the acquisition or construction of fixed assets extends beyond a balance sheet date",
+          "normalized": "where the acquisition or construction of fixed assets extends beyond a balance sheet date",
+          "original_start": 0,
+          "original_end": 89,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 89
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 0,
+            "end": 89
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 2,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 3,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

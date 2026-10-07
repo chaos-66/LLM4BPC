@@ -1,0 +1,363 @@
+{
+  "request_id": "qwen:estg_000507",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000507\\\",\\\"source_id\\\":\\\"estg_000507\\\",\\\"source_text\\\":\\\"July 1988 - No. 400 2945 (8) At the tax rate which, according to the tax scale, corresponds to the wages of the last full calendar year, the following shall be taxed:\\\\n— payments for the waiver of work performance for future wage payment periods,\\\\n— payments for pension commutations, to the extent that they are not to be taxed pursuant to subsection (6) at the tax rates of subsection (1),\\\\n— back payments and subsequent payments of current and other emoluments for expired calendar years, which are made alongside current wages from the same employer or in bankruptcy proceedings and are not based on an arbitrary deferral of the payment date,\\\\n— settlement sums, regardless of whether they are based on judicial or extrajudicial settlements, and also in cases where they are not granted alongside current wages from the same employer.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000507_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"At the tax rate which, according to the tax scale, corresponds to the wages of the last full calendar year, the following shall be taxed:\\\\n— payments for the waiver of work performance for future wage payment periods,\\\\n— payments for pension commutations, to the extent that they are not to be taxed pursuant to subsection (6) at the tax rates of subsection (1),\\\\n— back payments and subsequent payments of current and other emoluments for expired calendar years, which are made alongside current wages from the same employer or in bankruptcy proceedings and are not based on an arbitrary deferral of the payment date,\\\\n— settlement sums, regardless of whether they are based on judicial or extrajudicial settlements, and also in cases where they are not granted alongside current wages from the same employer.\\\",\\\"start\\\":27,\\\"end\\\":730},\\\"modality\\\":{\\\"label\\\":\\\"obligation\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall\\\",\\\"start\\\":158,\\\"end\\\":163}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"taxed\\\",\\\"start\\\":167,\\\"end\\\":172,\\\"normalized\\\":\\\"tax\\\"},{\\\"id\\\":\\\"p02\\\",\\\"text\\\":\\\"taxed\\\",\\\"start\\\":318,\\\"end\\\":323,\\\"normalized\\\":\\\"tax\\\"}],\\\"conditions\\\":[],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"At the tax rate which, according to the tax scale, corresponds to the wages of the last full calendar year\\\",\\\"start\\\":27,\\\"end\\\":133,\\\"normalized\\\":\\\"at the tax rate which, according to the tax scale, corresponds to the wages of the last full calendar year\\\"},{\\\"id\\\":\\\"c02\\\",\\\"text\\\":\\\"pursuant to subsection (6)\\\",\\\"start\\\":324,\\\"end\\\":350,\\\"normalized\\\":\\\"pursuant to subsection (6)\\\"},{\\\"id\\\":\\\"c03\\\",\\\"text\\\":\\\"at the tax rates of subsection (1)\\\",\\\"start\\\":351,\\\"end\\\":385,\\\"normalized\\\":\\\"at the tax rates of subsection (1)\\\"}],\\\"exceptions\\\":[{\\\"id\\\":\\\"e01\\\",\\\"text\\\":\\\"to the extent that they are not to be taxed pursuant to subsection (6) at the tax rates of subsection (1)\\\",\\\"start\\\":280,\\\"end\\\":385,\\\"normalized\\\":\\\"to the extent that they are not to be taxed pursuant to subsection (6) at the tax rates of subsection (1)\\\"}],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"},{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p02\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"actor\\\",\\\"reason\\\":\\\"reference_status=unresolved_coreference;independence_status=context_required\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791349528,\"id\":\"chatcmpl-43f4e364-8196-96d6-84ea-2031addc66a5\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":837,\"prompt_tokens\":4752,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4752},\"total_tokens\":5589}}",
+  "usage": {
+    "prompt_tokens": 4752,
+    "completion_tokens": 837,
+    "total_tokens": 5589
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000507",
+    "request_id": "qwen:estg_000507",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000507",
+      "source_id": "estg_000507",
+      "source_text": "July 1988 - No. 400 2945 (8) At the tax rate which, according to the tax scale, corresponds to the wages of the last full calendar year, the following shall be taxed:\n— payments for the waiver of work performance for future wage payment periods,\n— payments for pension commutations, to the extent that they are not to be taxed pursuant to subsection (6) at the tax rates of subsection (1),\n— back payments and subsequent payments of current and other emoluments for expired calendar years, which are made alongside current wages from the same employer or in bankruptcy proceedings and are not based on an arbitrary deferral of the payment date,\n— settlement sums, regardless of whether they are based on judicial or extrajudicial settlements, and also in cases where they are not granted alongside current wages from the same employer.",
+      "clauses": [
+        {
+          "clause_id": "estg_000507_c01",
+          "clause_span": {
+            "text": "At the tax rate which, according to the tax scale, corresponds to the wages of the last full calendar year, the following shall be taxed:\n— payments for the waiver of work performance for future wage payment periods,\n— payments for pension commutations, to the extent that they are not to be taxed pursuant to subsection (6) at the tax rates of subsection (1),\n— back payments and subsequent payments of current and other emoluments for expired calendar years, which are made alongside current wages from the same employer or in bankruptcy proceedings and are not based on an arbitrary deferral of the payment date,\n— settlement sums, regardless of whether they are based on judicial or extrajudicial settlements, and also in cases where they are not granted alongside current wages from the same employer.",
+            "start": 29,
+            "end": 835
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 151,
+                "end": 156
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "At the tax rate which, according to the tax scale, corresponds to the wages of the last full calendar year",
+              "start": 29,
+              "end": 135,
+              "normalized": "at the tax rate which, according to the tax scale, corresponds to the wages of the last full calendar year",
+              "id": "c01"
+            },
+            {
+              "text": "pursuant to subsection (6)",
+              "start": 327,
+              "end": 353,
+              "normalized": "pursuant to subsection (6)",
+              "id": "c02"
+            },
+            {
+              "text": "at the tax rates of subsection (1)",
+              "start": 354,
+              "end": 388,
+              "normalized": "at the tax rates of subsection (1)",
+              "id": "c03"
+            }
+          ],
+          "exceptions": [
+            {
+              "text": "to the extent that they are not to be taxed pursuant to subsection (6) at the tax rates of subsection (1)",
+              "start": 283,
+              "end": 388,
+              "normalized": "to the extent that they are not to be taxed pursuant to subsection (6) at the tax rates of subsection (1)",
+              "id": "e01"
+            }
+          ],
+          "actor_action_map": [],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 6,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 7,
+      "reanchored_count": 6,
+      "dropped_spans": [
+        "clauses[0].actions[0]",
+        "clauses[0].actions[1]"
+      ],
+      "dropped_clauses": [],
+      "dropped_edges": [
+        "clauses[0].actor_action_map[0]",
+        "clauses[0].actor_action_map[1]"
+      ],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000507_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "At the tax rate which, according to the tax scale, corresponds to the wages of the last full calendar year, the following shall be taxed:\n— payments for the waiver of work performance for future wage payment periods,\n— payments for pension commutations, to the extent that they are not to be taxed pursuant to subsection (6) at the tax rates of subsection (1),\n— back payments and subsequent payments of current and other emoluments for expired calendar years, which are made alongside current wages from the same employer or in bankruptcy proceedings and are not based on an arbitrary deferral of the payment date,\n— settlement sums, regardless of whether they are based on judicial or extrajudicial settlements, and also in cases where they are not granted alongside current wages from the same employer.",
+          "normalized": null,
+          "original_start": 27,
+          "original_end": 730,
+          "candidate_occurrences": [
+            {
+              "start": 29,
+              "end": 835
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 29,
+            "end": 835
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000507_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 158,
+          "original_end": 163,
+          "candidate_occurrences": [
+            {
+              "start": 151,
+              "end": 156
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 151,
+            "end": 156
+          },
+          "distance": 14,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000507_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "taxed",
+          "normalized": "taxed",
+          "original_start": 167,
+          "original_end": 172,
+          "candidate_occurrences": [
+            {
+              "start": 160,
+              "end": 165
+            },
+            {
+              "start": 321,
+              "end": 326
+            }
+          ],
+          "strategy": "not_applicable",
+          "chosen": null,
+          "distance": null,
+          "outcome": "unresolved",
+          "reason": "ambiguous_occurrence",
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000507_c01",
+          "field": "actions",
+          "span_index": 1,
+          "span_id": "p02",
+          "text": "taxed",
+          "normalized": "taxed",
+          "original_start": 318,
+          "original_end": 323,
+          "candidate_occurrences": [
+            {
+              "start": 160,
+              "end": 165
+            },
+            {
+              "start": 321,
+              "end": 326
+            }
+          ],
+          "strategy": "not_applicable",
+          "chosen": null,
+          "distance": null,
+          "outcome": "unresolved",
+          "reason": "ambiguous_occurrence",
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000507_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "At the tax rate which, according to the tax scale, corresponds to the wages of the last full calendar year",
+          "normalized": "at the tax rate which, according to the tax scale, corresponds to the wages of the last full calendar year",
+          "original_start": 27,
+          "original_end": 133,
+          "candidate_occurrences": [
+            {
+              "start": 29,
+              "end": 135
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 29,
+            "end": 135
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000507_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "pursuant to subsection (6)",
+          "normalized": "pursuant to subsection (6)",
+          "original_start": 324,
+          "original_end": 350,
+          "candidate_occurrences": [
+            {
+              "start": 327,
+              "end": 353
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 327,
+            "end": 353
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[2]",
+          "clause_index": 0,
+          "clause_id": "estg_000507_c01",
+          "field": "constraints",
+          "span_index": 2,
+          "span_id": "c03",
+          "text": "at the tax rates of subsection (1)",
+          "normalized": "at the tax rates of subsection (1)",
+          "original_start": 351,
+          "original_end": 385,
+          "candidate_occurrences": [
+            {
+              "start": 354,
+              "end": 388
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 354,
+            "end": 388
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].exceptions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000507_c01",
+          "field": "exceptions",
+          "span_index": 0,
+          "span_id": "e01",
+          "text": "to the extent that they are not to be taxed pursuant to subsection (6) at the tax rates of subsection (1)",
+          "normalized": "to the extent that they are not to be taxed pursuant to subsection (6) at the tax rates of subsection (1)",
+          "original_start": 280,
+          "original_end": 385,
+          "candidate_occurrences": [
+            {
+              "start": 283,
+              "end": 388
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 283,
+            "end": 388
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 2,
+      "reanchored_unique_exact": 6,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 2,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 2,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

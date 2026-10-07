@@ -1,0 +1,233 @@
+{
+  "request_id": "qwen:estg_000035",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000035\\\",\\\"source_id\\\":\\\"estg_000035\\\",\\\"source_text\\\":\\\"(3) The excess of business receipts over business expenses may be recognised as profit if there is no statutory obligation to keep books and books are not kept voluntarily.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000035_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"The excess of business receipts over business expenses may be recognised as profit if there is no statutory obligation to keep books and books are not kept voluntarily.\\\",\\\"start\\\":4,\\\"end\\\":172},\\\"modality\\\":{\\\"label\\\":\\\"permission\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"may\\\",\\\"start\\\":61,\\\"end\\\":64}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"recognised as profit\\\",\\\"start\\\":68,\\\"end\\\":88,\\\"normalized\\\":\\\"recognise as profit\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"if there is no statutory obligation to keep books and books are not kept voluntarily\\\",\\\"start\\\":89,\\\"end\\\":172,\\\"normalized\\\":\\\"if there is no statutory obligation to keep books and books are not kept voluntarily\\\"}],\\\"constraints\\\":[],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\"}}],\"created\":1791348361,\"id\":\"chatcmpl-085827e6-0125-9950-9d16-89cfb0b41c0a\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":326,\"prompt_tokens\":4602,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4602},\"total_tokens\":4928}}",
+  "usage": {
+    "prompt_tokens": 4602,
+    "completion_tokens": 326,
+    "total_tokens": 4928
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000035",
+    "request_id": "qwen:estg_000035",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000035",
+      "source_id": "estg_000035",
+      "source_text": "(3) The excess of business receipts over business expenses may be recognised as profit if there is no statutory obligation to keep books and books are not kept voluntarily.",
+      "clauses": [
+        {
+          "clause_id": "estg_000035_c01",
+          "clause_span": {
+            "text": "The excess of business receipts over business expenses may be recognised as profit if there is no statutory obligation to keep books and books are not kept voluntarily.",
+            "start": 4,
+            "end": 172
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 59,
+                "end": 62
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "recognised as profit",
+              "start": 66,
+              "end": 86,
+              "normalized": "recognised as profit",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "if there is no statutory obligation to keep books and books are not kept voluntarily",
+              "start": 87,
+              "end": 171,
+              "normalized": "if there is no statutory obligation to keep books and books are not kept voluntarily",
+              "id": "d01"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 2,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 3,
+      "reanchored_count": 3,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000035_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The excess of business receipts over business expenses may be recognised as profit if there is no statutory obligation to keep books and books are not kept voluntarily.",
+          "normalized": null,
+          "original_start": 4,
+          "original_end": 172,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 172
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 4,
+            "end": 172
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000035_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 61,
+          "original_end": 64,
+          "candidate_occurrences": [
+            {
+              "start": 59,
+              "end": 62
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 59,
+            "end": 62
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000035_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "recognised as profit",
+          "normalized": "recognised as profit",
+          "original_start": 68,
+          "original_end": 88,
+          "candidate_occurrences": [
+            {
+              "start": 66,
+              "end": 86
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 66,
+            "end": 86
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000035_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "if there is no statutory obligation to keep books and books are not kept voluntarily",
+          "normalized": "if there is no statutory obligation to keep books and books are not kept voluntarily",
+          "original_start": 89,
+          "original_end": 172,
+          "candidate_occurrences": [
+            {
+              "start": 87,
+              "end": 171
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 87,
+            "end": 171
+          },
+          "distance": 3,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 3,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

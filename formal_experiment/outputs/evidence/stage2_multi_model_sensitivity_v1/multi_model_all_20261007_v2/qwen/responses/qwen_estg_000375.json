@@ -1,0 +1,267 @@
+{
+  "request_id": "qwen:estg_000375",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000375\\\",\\\"source_id\\\":\\\"estg_000375\\\",\\\"source_text\\\":\\\"(5) Instead of the allowance, the actual costs incurred due to the disability may also be claimed (Section 34(6)).\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000375_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"Instead of the allowance, the actual costs incurred due to the disability may also be claimed (Section 34(6)).\\\",\\\"start\\\":4,\\\"end\\\":113},\\\"modality\\\":{\\\"label\\\":\\\"permission\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"may\\\",\\\"start\\\":82,\\\"end\\\":85}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"claimed\\\",\\\"start\\\":95,\\\"end\\\":102,\\\"normalized\\\":\\\"claim\\\"}],\\\"conditions\\\":[],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"Instead of the allowance\\\",\\\"start\\\":4,\\\"end\\\":28,\\\"normalized\\\":\\\"instead of the allowance\\\"},{\\\"id\\\":\\\"c02\\\",\\\"text\\\":\\\"(Section 34(6))\\\",\\\"start\\\":103,\\\"end\\\":118,\\\"normalized\\\":\\\"(section 34(6))\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\"}}],\"created\":1791349411,\"id\":\"chatcmpl-5d3b7d82-99ef-99c4-8f30-c2e654cb30f5\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":331,\"prompt_tokens\":4598,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4598},\"total_tokens\":4929}}",
+  "usage": {
+    "prompt_tokens": 4598,
+    "completion_tokens": 331,
+    "total_tokens": 4929
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000375",
+    "request_id": "qwen:estg_000375",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000375",
+      "source_id": "estg_000375",
+      "source_text": "(5) Instead of the allowance, the actual costs incurred due to the disability may also be claimed (Section 34(6)).",
+      "clauses": [
+        {
+          "clause_id": "estg_000375_c01",
+          "clause_span": {
+            "text": "Instead of the allowance, the actual costs incurred due to the disability may also be claimed (Section 34(6)).",
+            "start": 4,
+            "end": 114
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 78,
+                "end": 81
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "claimed",
+              "start": 90,
+              "end": 97,
+              "normalized": "claimed",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "Instead of the allowance",
+              "start": 4,
+              "end": 28,
+              "normalized": "instead of the allowance",
+              "id": "c01"
+            },
+            {
+              "text": "(Section 34(6))",
+              "start": 98,
+              "end": 113,
+              "normalized": "(section 34(6))",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 4,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000375_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Instead of the allowance, the actual costs incurred due to the disability may also be claimed (Section 34(6)).",
+          "normalized": null,
+          "original_start": 4,
+          "original_end": 113,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 114
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 114
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000375_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 82,
+          "original_end": 85,
+          "candidate_occurrences": [
+            {
+              "start": 78,
+              "end": 81
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 78,
+            "end": 81
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000375_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "claimed",
+          "normalized": "claimed",
+          "original_start": 95,
+          "original_end": 102,
+          "candidate_occurrences": [
+            {
+              "start": 90,
+              "end": 97
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 90,
+            "end": 97
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000375_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "Instead of the allowance",
+          "normalized": "instead of the allowance",
+          "original_start": 4,
+          "original_end": 28,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 28
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 4,
+            "end": 28
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000375_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "(Section 34(6))",
+          "normalized": "(section 34(6))",
+          "original_start": 103,
+          "original_end": 118,
+          "candidate_occurrences": [
+            {
+              "start": 98,
+              "end": 113
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 98,
+            "end": 113
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 4,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

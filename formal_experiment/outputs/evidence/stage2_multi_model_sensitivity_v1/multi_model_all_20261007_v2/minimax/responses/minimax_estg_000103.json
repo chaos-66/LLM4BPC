@@ -1,0 +1,265 @@
+{
+  "request_id": "minimax:estg_000103",
+  "raw_response_utf8": "{\"id\":\"071502871876d8ba8161422acb7c2afb\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000103\\\",\\\"source_id\\\":\\\"estg_000103\\\",\\\"source_text\\\":\\\"If this list was not submitted to the tax office with the tax return, but it appears from the return or the annexes attached thereto that the taxpayer is forming a tax-exempt amount, the tax office shall set the taxpayer a grace period of two weeks for submission of the list.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000103_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"If this list was not submitted to the tax office with the tax return, but it appears from the return or the annexes attached thereto that the taxpayer is forming a tax-exempt amount, the tax office shall set the taxpayer a grace period of two weeks for submission of the list.\\\",\\\"start\\\":0,\\\"end\\\":244},\\\"modality\\\":{\\\"label\\\":\\\"obligation\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall\\\",\\\"start\\\":182,\\\"end\\\":187}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"the tax office\\\",\\\"start\\\":165,\\\"end\\\":178,\\\"normalized\\\":\\\"tax office\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"set the taxpayer a grace period of two weeks for submission of the list\\\",\\\"start\\\":188,\\\"end\\\":243,\\\"normalized\\\":\\\"set taxpayer a grace period of two weeks for submission of list\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"If this list was not submitted to the tax office with the tax return, but it appears from the return or the annexes attached thereto that the taxpayer is forming a tax-exempt amount\\\",\\\"start\\\":0,\\\"end\\\":164,\\\"normalized\\\":\\\"if this list was not submitted to the tax office with the tax return but it appears from the return or the annexes attached thereto that the taxpayer is forming a tax-exempt amount\\\"}],\\\"constraints\\\":[],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a01\\\",\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"actor\\\",\\\"reason\\\":\\\"reference_status=unresolved_coreference;independence_status=context_required\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791348615,\"model\":\"MiniMax-M3\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":4860,\"total_characters\":0,\"prompt_tokens\":4394,\"completion_tokens\":466,\"prompt_tokens_details\":{\"cached_tokens\":1517}},\"input_sensitive\":false,\"output_sensitive\":false,\"input_sensitive_type\":0,\"output_sensitive_type\":0,\"output_sensitive_int\":0,\"service_tier\":\"standard\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}\n",
+  "usage": {
+    "prompt_tokens": 4394,
+    "completion_tokens": 466,
+    "total_tokens": 4860
+  },
+  "returned_model": "MiniMax-M3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "minimax",
+    "sample_id": "estg_000103",
+    "request_id": "minimax:estg_000103",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000103",
+      "source_id": "estg_000103",
+      "source_text": "If this list was not submitted to the tax office with the tax return, but it appears from the return or the annexes attached thereto that the taxpayer is forming a tax-exempt amount, the tax office shall set the taxpayer a grace period of two weeks for submission of the list.",
+      "clauses": [
+        {
+          "clause_id": "estg_000103_c01",
+          "clause_span": {
+            "text": "If this list was not submitted to the tax office with the tax return, but it appears from the return or the annexes attached thereto that the taxpayer is forming a tax-exempt amount, the tax office shall set the taxpayer a grace period of two weeks for submission of the list.",
+            "start": 0,
+            "end": 276
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 198,
+                "end": 203
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "set the taxpayer a grace period of two weeks for submission of the list",
+              "start": 204,
+              "end": 275,
+              "normalized": "set the taxpayer a grace period of two weeks for submission of the list",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If this list was not submitted to the tax office with the tax return, but it appears from the return or the annexes attached thereto that the taxpayer is forming a tax-exempt amount",
+              "start": 0,
+              "end": 181,
+              "normalized": "if this list was not submitted to the tax office with the tax return, but it appears from the return or the annexes attached thereto that the taxpayer is forming a tax-exempt amount",
+              "id": "d01"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 4,
+      "dropped_spans": [
+        "clauses[0].actors[0]"
+      ],
+      "dropped_clauses": [],
+      "dropped_edges": [
+        "clauses[0].actor_action_map[0]"
+      ],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000103_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If this list was not submitted to the tax office with the tax return, but it appears from the return or the annexes attached thereto that the taxpayer is forming a tax-exempt amount, the tax office shall set the taxpayer a grace period of two weeks for submission of the list.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 244,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 276
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 276
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000103_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 182,
+          "original_end": 187,
+          "candidate_occurrences": [
+            {
+              "start": 198,
+              "end": 203
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 198,
+            "end": 203
+          },
+          "distance": 32,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000103_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "the tax office",
+          "normalized": "the tax office",
+          "original_start": 165,
+          "original_end": 178,
+          "candidate_occurrences": [
+            {
+              "start": 34,
+              "end": 48
+            },
+            {
+              "start": 183,
+              "end": 197
+            }
+          ],
+          "strategy": "not_applicable",
+          "chosen": null,
+          "distance": null,
+          "outcome": "unresolved",
+          "reason": "ambiguous_occurrence",
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000103_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "set the taxpayer a grace period of two weeks for submission of the list",
+          "normalized": "set the taxpayer a grace period of two weeks for submission of the list",
+          "original_start": 188,
+          "original_end": 243,
+          "candidate_occurrences": [
+            {
+              "start": 204,
+              "end": 275
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 204,
+            "end": 275
+          },
+          "distance": 48,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000103_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "If this list was not submitted to the tax office with the tax return, but it appears from the return or the annexes attached thereto that the taxpayer is forming a tax-exempt amount",
+          "normalized": "if this list was not submitted to the tax office with the tax return, but it appears from the return or the annexes attached thereto that the taxpayer is forming a tax-exempt amount",
+          "original_start": 0,
+          "original_end": 164,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 181
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 181
+          },
+          "distance": 17,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 1,
+      "reanchored_unique_exact": 4,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 1,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 1,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

@@ -1,0 +1,571 @@
+{
+  "request_id": "qwen:estg_000046",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000046\\\",\\\"source_id\\\":\\\"estg_000046\\\",\\\"source_text\\\":\\\"The certificate is not required if the invention is already protected by patent law. — The research allowance generally amounts to up to 12% of research expenditures. — An increased research allowance of up to 18% may be claimed if the inventions are not made available to other persons for substantial exploitation.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000046_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"The certificate is not required if the invention is already protected by patent law.\\\",\\\"start\\\":0,\\\"end\\\":84},\\\"modality\\\":{\\\"label\\\":\\\"prohibition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"not\\\",\\\"start\\\":21,\\\"end\\\":24}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"required\\\",\\\"start\\\":25,\\\"end\\\":33,\\\"normalized\\\":\\\"require\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"if the invention is already protected by patent law\\\",\\\"start\\\":34,\\\"end\\\":83,\\\"normalized\\\":\\\"if the invention is already protected by patent law\\\"}],\\\"constraints\\\":[],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]},{\\\"clause_id\\\":\\\"estg_000046_c02\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"The research allowance generally amounts to up to 12% of research expenditures.\\\",\\\"start\\\":87,\\\"end\\\":167},\\\"modality\\\":{\\\"label\\\":\\\"definition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"amounts to\\\",\\\"start\\\":116,\\\"end\\\":126}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"The research allowance\\\",\\\"start\\\":87,\\\"end\\\":109,\\\"normalized\\\":\\\"research allowance\\\"}],\\\"actions\\\":[],\\\"conditions\\\":[],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"up to 12% of research expenditures\\\",\\\"start\\\":131,\\\"end\\\":166,\\\"normalized\\\":\\\"up to 12% of research expenditures\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[],\\\"order_relations\\\":[]},{\\\"clause_id\\\":\\\"estg_000046_c03\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"An increased research allowance of up to 18% may be claimed if the inventions are not made available to other persons for substantial exploitation.\\\",\\\"start\\\":170,\\\"end\\\":318},\\\"modality\\\":{\\\"label\\\":\\\"permission\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"may\\\",\\\"start\\\":215,\\\"end\\\":218}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p02\\\",\\\"text\\\":\\\"claimed\\\",\\\"start\\\":222,\\\"end\\\":229,\\\"normalized\\\":\\\"claim\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d02\\\",\\\"text\\\":\\\"if the inventions are not made available to other persons for substantial exploitation\\\",\\\"start\\\":230,\\\"end\\\":317,\\\"normalized\\\":\\\"if the inventions are not made available to other persons for substantial exploitation\\\"}],\\\"constraints\\\":[{\\\"id\\\":\\\"c02\\\",\\\"text\\\":\\\"of up to 18%\\\",\\\"start\\\":202,\\\"end\\\":214,\\\"normalized\\\":\\\"of up to 18%\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p02\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\"}}],\"created\":1791348441,\"id\":\"chatcmpl-04a7b0a3-ada9-912c-95da-5898a584c0f0\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":735,\"prompt_tokens\":4631,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4631},\"total_tokens\":5366}}",
+  "usage": {
+    "prompt_tokens": 4631,
+    "completion_tokens": 735,
+    "total_tokens": 5366
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000046",
+    "request_id": "qwen:estg_000046",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000046",
+      "source_id": "estg_000046",
+      "source_text": "The certificate is not required if the invention is already protected by patent law. — The research allowance generally amounts to up to 12% of research expenditures. — An increased research allowance of up to 18% may be claimed if the inventions are not made available to other persons for substantial exploitation.",
+      "clauses": [
+        {
+          "clause_id": "estg_000046_c01",
+          "clause_span": {
+            "text": "The certificate is not required if the invention is already protected by patent law.",
+            "start": 0,
+            "end": 84
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "not",
+                "start": 19,
+                "end": 22
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "required",
+              "start": 23,
+              "end": 31,
+              "normalized": "required",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "if the invention is already protected by patent law",
+              "start": 32,
+              "end": 83,
+              "normalized": "if the invention is already protected by patent law",
+              "id": "d01"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000046_c02",
+          "clause_span": {
+            "text": "The research allowance generally amounts to up to 12% of research expenditures.",
+            "start": 87,
+            "end": 166
+          },
+          "modality": {
+            "label": "definition",
+            "evidence": [
+              {
+                "text": "amounts to",
+                "start": 120,
+                "end": 130
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "The research allowance",
+              "start": 87,
+              "end": 109,
+              "normalized": "the research allowance",
+              "id": "a01"
+            }
+          ],
+          "actions": [],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "up to 12% of research expenditures",
+              "start": 131,
+              "end": 165,
+              "normalized": "up to 12% of research expenditures",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000046_c03",
+          "clause_span": {
+            "text": "An increased research allowance of up to 18% may be claimed if the inventions are not made available to other persons for substantial exploitation.",
+            "start": 169,
+            "end": 316
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 214,
+                "end": 217
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "claimed",
+              "start": 221,
+              "end": 228,
+              "normalized": "claimed",
+              "id": "p02"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "if the inventions are not made available to other persons for substantial exploitation",
+              "start": 229,
+              "end": 315,
+              "normalized": "if the inventions are not made available to other persons for substantial exploitation",
+              "id": "d02"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "of up to 18%",
+              "start": 201,
+              "end": 213,
+              "normalized": "of up to 18%",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p02"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 7,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 3,
+      "field_span_count": 10,
+      "reanchored_count": 11,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000046_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The certificate is not required if the invention is already protected by patent law.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 84,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 84
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 0,
+            "end": 84
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000046_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "not",
+          "normalized": null,
+          "original_start": 21,
+          "original_end": 24,
+          "candidate_occurrences": [
+            {
+              "start": 19,
+              "end": 22
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 19,
+            "end": 22
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000046_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "required",
+          "normalized": "required",
+          "original_start": 25,
+          "original_end": 33,
+          "candidate_occurrences": [
+            {
+              "start": 23,
+              "end": 31
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 23,
+            "end": 31
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000046_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "if the invention is already protected by patent law",
+          "normalized": "if the invention is already protected by patent law",
+          "original_start": 34,
+          "original_end": 83,
+          "candidate_occurrences": [
+            {
+              "start": 32,
+              "end": 83
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 32,
+            "end": 83
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000046_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The research allowance generally amounts to up to 12% of research expenditures.",
+          "normalized": null,
+          "original_start": 87,
+          "original_end": 167,
+          "candidate_occurrences": [
+            {
+              "start": 87,
+              "end": 166
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 87,
+            "end": 166
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000046_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "amounts to",
+          "normalized": null,
+          "original_start": 116,
+          "original_end": 126,
+          "candidate_occurrences": [
+            {
+              "start": 120,
+              "end": 130
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 120,
+            "end": 130
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actors[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000046_c02",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "The research allowance",
+          "normalized": "the research allowance",
+          "original_start": 87,
+          "original_end": 109,
+          "candidate_occurrences": [
+            {
+              "start": 87,
+              "end": 109
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 87,
+            "end": 109
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].constraints[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000046_c02",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "up to 12% of research expenditures",
+          "normalized": "up to 12% of research expenditures",
+          "original_start": 131,
+          "original_end": 166,
+          "candidate_occurrences": [
+            {
+              "start": 131,
+              "end": 165
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 131,
+            "end": 165
+          },
+          "distance": 1,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].clause_span",
+          "clause_index": 2,
+          "clause_id": "estg_000046_c03",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "An increased research allowance of up to 18% may be claimed if the inventions are not made available to other persons for substantial exploitation.",
+          "normalized": null,
+          "original_start": 170,
+          "original_end": 318,
+          "candidate_occurrences": [
+            {
+              "start": 169,
+              "end": 316
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 169,
+            "end": 316
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].modality.evidence[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000046_c03",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 215,
+          "original_end": 218,
+          "candidate_occurrences": [
+            {
+              "start": 214,
+              "end": 217
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 214,
+            "end": 217
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].actions[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000046_c03",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p02",
+          "text": "claimed",
+          "normalized": "claimed",
+          "original_start": 222,
+          "original_end": 229,
+          "candidate_occurrences": [
+            {
+              "start": 221,
+              "end": 228
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 221,
+            "end": 228
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].conditions[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000046_c03",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d02",
+          "text": "if the inventions are not made available to other persons for substantial exploitation",
+          "normalized": "if the inventions are not made available to other persons for substantial exploitation",
+          "original_start": 230,
+          "original_end": 317,
+          "candidate_occurrences": [
+            {
+              "start": 229,
+              "end": 315
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 229,
+            "end": 315
+          },
+          "distance": 3,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].constraints[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000046_c03",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c02",
+          "text": "of up to 18%",
+          "normalized": "of up to 18%",
+          "original_start": 202,
+          "original_end": 214,
+          "candidate_occurrences": [
+            {
+              "start": 201,
+              "end": 213
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 201,
+            "end": 213
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 11,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

@@ -1,0 +1,717 @@
+{
+  "request_id": "grok:estg_000164",
+  "raw_response_utf8": "{\"id\":\"a823400f-51ca-90be-9406-3d29915f0827\",\"object\":\"chat.completion\",\"created\":1791348648,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000164\\\",\\n  \\\"source_id\\\": \\\"estg_000164\\\",\\n  \\\"source_text\\\": \\\"For the consideration of these expenses, the following applies:\\\\na) For a one-way distance between the residence and the place of work of up to 20 km, these expenses are generally compensated by the transport tax credit (Section 33(5) and Section 57(3)).\\\\nb) If the one-way distance between the residence and the place of work predominantly travelled by the employee during the pay period exceeds 20 km and the use of public transport is reasonable, the following additional flat-rate amounts shall be taken into account:\\\\nc) If, during the pay period, the use of public transport between the residence and the place of work is predominantly not reasonable for the employee at least with regard to half of the distance, the following flat-rate amounts shall be taken into account instead of the flat-rate amounts under lit. b:\\\\n152.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000164_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"For a one-way distance between the residence and the place of work of up to 20 km, these expenses are generally compensated by the transport tax credit (Section 33(5) and Section 57(3)).\\\", \\\"start\\\": 58, \\\"end\\\": 252},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"are generally compensated\\\", \\\"start\\\": 151, \\\"end\\\": 176}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"these expenses\\\", \\\"start\\\": 135, \\\"end\\\": 150, \\\"normalized\\\": \\\"expenses\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"compensated by the transport tax credit\\\", \\\"start\\\": 177, \\\"end\\\": 216, \\\"normalized\\\": \\\"compensate by transport tax credit\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"For a one-way distance between the residence and the place of work of up to 20 km\\\", \\\"start\\\": 58, \\\"end\\\": 133, \\\"normalized\\\": \\\"for a one-way distance between residence and place of work of up to 20 km\\\"}],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"(Section 33(5) and Section 57(3))\\\", \\\"start\\\": 217, \\\"end\\\": 251, \\\"normalized\\\": \\\"section 33(5) and section 57(3)\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000164_c02\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"If the one-way distance between the residence and the place of work predominantly travelled by the employee during the pay period exceeds 20 km and the use of public transport is reasonable, the following additional flat-rate amounts shall be taken into account:\\\", \\\"start\\\": 255, \\\"end\\\": 487},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall be taken into account\\\", \\\"start\\\": 454, \\\"end\\\": 480}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a02\\\", \\\"text\\\": \\\"the following additional flat-rate amounts\\\", \\\"start\\\": 416, \\\"end\\\": 453, \\\"normalized\\\": \\\"additional flat-rate amounts\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"taken into account\\\", \\\"start\\\": 463, \\\"end\\\": 481, \\\"normalized\\\": \\\"take into account\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d02\\\", \\\"text\\\": \\\"If the one-way distance between the residence and the place of work predominantly travelled by the employee during the pay period exceeds 20 km and the use of public transport is reasonable\\\", \\\"start\\\": 255, \\\"end\\\": 415, \\\"normalized\\\": \\\"if the one-way distance between residence and place of work predominantly travelled by employee during pay period exceeds 20 km and use of public transport is reasonable\\\"}],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a02\\\", \\\"action_id\\\": \\\"p02\\\"}],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000164_c03\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"If, during the pay period, the use of public transport between the residence and the place of work is predominantly not reasonable for the employee at least with regard to half of the distance, the following flat-rate amounts shall be taken into account instead of the flat-rate amounts under lit. b:\\\", \\\"start\\\": 490, \\\"end\\\": 733},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall be taken into account\\\", \\\"start\\\": 692, \\\"end\\\": 718}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a03\\\", \\\"text\\\": \\\"the following flat-rate amounts\\\", \\\"start\\\": 661, \\\"end\\\": 691, \\\"normalized\\\": \\\"flat-rate amounts\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p03\\\", \\\"text\\\": \\\"taken into account\\\", \\\"start\\\": 701, \\\"end\\\": 719, \\\"normalized\\\": \\\"take into account\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d03\\\", \\\"text\\\": \\\"If, during the pay period, the use of public transport between the residence and the place of work is predominantly not reasonable for the employee at least with regard to half of the distance\\\", \\\"start\\\": 490, \\\"end\\\": 660, \\\"normalized\\\": \\\"if during pay period use of public transport between residence and place of work is predominantly not reasonable for employee at least with regard to half of distance\\\"}],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"instead of the flat-rate amounts under lit. b\\\", \\\"start\\\": 720, \\\"end\\\": 763, \\\"normalized\\\": \\\"instead of flat-rate amounts under lit b\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a03\\\", \\\"action_id\\\": \\\"p03\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4489,\"completion_tokens\":1395,\"total_tokens\":5884,\"prompt_tokens_details\":{\"text_tokens\":4489,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":1536},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":74859500},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4489,
+    "completion_tokens": 1395,
+    "total_tokens": 5884,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000164",
+    "request_id": "grok:estg_000164",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000164",
+      "source_id": "estg_000164",
+      "source_text": "For the consideration of these expenses, the following applies:\na) For a one-way distance between the residence and the place of work of up to 20 km, these expenses are generally compensated by the transport tax credit (Section 33(5) and Section 57(3)).\nb) If the one-way distance between the residence and the place of work predominantly travelled by the employee during the pay period exceeds 20 km and the use of public transport is reasonable, the following additional flat-rate amounts shall be taken into account:\nc) If, during the pay period, the use of public transport between the residence and the place of work is predominantly not reasonable for the employee at least with regard to half of the distance, the following flat-rate amounts shall be taken into account instead of the flat-rate amounts under lit. b:\n152.",
+      "clauses": [
+        {
+          "clause_id": "estg_000164_c01",
+          "clause_span": {
+            "text": "For a one-way distance between the residence and the place of work of up to 20 km, these expenses are generally compensated by the transport tax credit (Section 33(5) and Section 57(3)).",
+            "start": 67,
+            "end": 253
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "are generally compensated",
+                "start": 165,
+                "end": 190
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "these expenses",
+              "start": 150,
+              "end": 164,
+              "normalized": "these expenses",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "compensated by the transport tax credit",
+              "start": 179,
+              "end": 218,
+              "normalized": "compensated by the transport tax credit",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "For a one-way distance between the residence and the place of work of up to 20 km",
+              "start": 67,
+              "end": 148,
+              "normalized": "for a one-way distance between the residence and the place of work of up to 20 km",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "(Section 33(5) and Section 57(3))",
+              "start": 219,
+              "end": 252,
+              "normalized": "(section 33(5) and section 57(3))",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000164_c02",
+          "clause_span": {
+            "text": "If the one-way distance between the residence and the place of work predominantly travelled by the employee during the pay period exceeds 20 km and the use of public transport is reasonable, the following additional flat-rate amounts shall be taken into account:",
+            "start": 257,
+            "end": 519
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall be taken into account",
+                "start": 491,
+                "end": 518
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the following additional flat-rate amounts",
+              "start": 448,
+              "end": 490,
+              "normalized": "the following additional flat-rate amounts",
+              "id": "a02"
+            }
+          ],
+          "actions": [
+            {
+              "text": "taken into account",
+              "start": 500,
+              "end": 518,
+              "normalized": "taken into account",
+              "id": "p02"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If the one-way distance between the residence and the place of work predominantly travelled by the employee during the pay period exceeds 20 km and the use of public transport is reasonable",
+              "start": 257,
+              "end": 446,
+              "normalized": "if the one-way distance between the residence and the place of work predominantly travelled by the employee during the pay period exceeds 20 km and the use of public transport is reasonable",
+              "id": "d02"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a02",
+              "action_id": "p02"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000164_c03",
+          "clause_span": {
+            "text": "If, during the pay period, the use of public transport between the residence and the place of work is predominantly not reasonable for the employee at least with regard to half of the distance, the following flat-rate amounts shall be taken into account instead of the flat-rate amounts under lit. b:",
+            "start": 523,
+            "end": 823
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall be taken into account",
+                "start": 749,
+                "end": 776
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the following flat-rate amounts",
+              "start": 717,
+              "end": 748,
+              "normalized": "the following flat-rate amounts",
+              "id": "a03"
+            }
+          ],
+          "actions": [
+            {
+              "text": "taken into account",
+              "start": 758,
+              "end": 776,
+              "normalized": "taken into account",
+              "id": "p03"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If, during the pay period, the use of public transport between the residence and the place of work is predominantly not reasonable for the employee at least with regard to half of the distance",
+              "start": 523,
+              "end": 715,
+              "normalized": "if, during the pay period, the use of public transport between the residence and the place of work is predominantly not reasonable for the employee at least with regard to half of the distance",
+              "id": "d03"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "instead of the flat-rate amounts under lit. b",
+              "start": 777,
+              "end": 822,
+              "normalized": "instead of the flat-rate amounts under lit. b",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a03",
+              "action_id": "p03"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 11,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 3,
+      "field_span_count": 14,
+      "reanchored_count": 17,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000164_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "For a one-way distance between the residence and the place of work of up to 20 km, these expenses are generally compensated by the transport tax credit (Section 33(5) and Section 57(3)).",
+          "normalized": null,
+          "original_start": 58,
+          "original_end": 252,
+          "candidate_occurrences": [
+            {
+              "start": 67,
+              "end": 253
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 67,
+            "end": 253
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000164_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "are generally compensated",
+          "normalized": null,
+          "original_start": 151,
+          "original_end": 176,
+          "candidate_occurrences": [
+            {
+              "start": 165,
+              "end": 190
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 165,
+            "end": 190
+          },
+          "distance": 28,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000164_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "these expenses",
+          "normalized": "these expenses",
+          "original_start": 135,
+          "original_end": 150,
+          "candidate_occurrences": [
+            {
+              "start": 150,
+              "end": 164
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 150,
+            "end": 164
+          },
+          "distance": 29,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000164_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "compensated by the transport tax credit",
+          "normalized": "compensated by the transport tax credit",
+          "original_start": 177,
+          "original_end": 216,
+          "candidate_occurrences": [
+            {
+              "start": 179,
+              "end": 218
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 179,
+            "end": 218
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000164_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "For a one-way distance between the residence and the place of work of up to 20 km",
+          "normalized": "for a one-way distance between the residence and the place of work of up to 20 km",
+          "original_start": 58,
+          "original_end": 133,
+          "candidate_occurrences": [
+            {
+              "start": 67,
+              "end": 148
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 67,
+            "end": 148
+          },
+          "distance": 24,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000164_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "(Section 33(5) and Section 57(3))",
+          "normalized": "(section 33(5) and section 57(3))",
+          "original_start": 217,
+          "original_end": 251,
+          "candidate_occurrences": [
+            {
+              "start": 219,
+              "end": 252
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 219,
+            "end": 252
+          },
+          "distance": 3,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000164_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If the one-way distance between the residence and the place of work predominantly travelled by the employee during the pay period exceeds 20 km and the use of public transport is reasonable, the following additional flat-rate amounts shall be taken into account:",
+          "normalized": null,
+          "original_start": 255,
+          "original_end": 487,
+          "candidate_occurrences": [
+            {
+              "start": 257,
+              "end": 519
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 257,
+            "end": 519
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000164_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall be taken into account",
+          "normalized": null,
+          "original_start": 454,
+          "original_end": 480,
+          "candidate_occurrences": [
+            {
+              "start": 491,
+              "end": 518
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 491,
+            "end": 518
+          },
+          "distance": 75,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actors[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000164_c02",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a02",
+          "text": "the following additional flat-rate amounts",
+          "normalized": "the following additional flat-rate amounts",
+          "original_start": 416,
+          "original_end": 453,
+          "candidate_occurrences": [
+            {
+              "start": 448,
+              "end": 490
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 448,
+            "end": 490
+          },
+          "distance": 69,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000164_c02",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p02",
+          "text": "taken into account",
+          "normalized": "taken into account",
+          "original_start": 463,
+          "original_end": 481,
+          "candidate_occurrences": [
+            {
+              "start": 500,
+              "end": 518
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 500,
+            "end": 518
+          },
+          "distance": 74,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].conditions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000164_c02",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d02",
+          "text": "If the one-way distance between the residence and the place of work predominantly travelled by the employee during the pay period exceeds 20 km and the use of public transport is reasonable",
+          "normalized": "if the one-way distance between the residence and the place of work predominantly travelled by the employee during the pay period exceeds 20 km and the use of public transport is reasonable",
+          "original_start": 255,
+          "original_end": 415,
+          "candidate_occurrences": [
+            {
+              "start": 257,
+              "end": 446
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 257,
+            "end": 446
+          },
+          "distance": 33,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].clause_span",
+          "clause_index": 2,
+          "clause_id": "estg_000164_c03",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If, during the pay period, the use of public transport between the residence and the place of work is predominantly not reasonable for the employee at least with regard to half of the distance, the following flat-rate amounts shall be taken into account instead of the flat-rate amounts under lit. b:",
+          "normalized": null,
+          "original_start": 490,
+          "original_end": 733,
+          "candidate_occurrences": [
+            {
+              "start": 523,
+              "end": 823
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 523,
+            "end": 823
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].modality.evidence[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000164_c03",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall be taken into account",
+          "normalized": null,
+          "original_start": 692,
+          "original_end": 718,
+          "candidate_occurrences": [
+            {
+              "start": 749,
+              "end": 776
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 749,
+            "end": 776
+          },
+          "distance": 115,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].actors[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000164_c03",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a03",
+          "text": "the following flat-rate amounts",
+          "normalized": "the following flat-rate amounts",
+          "original_start": 661,
+          "original_end": 691,
+          "candidate_occurrences": [
+            {
+              "start": 717,
+              "end": 748
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 717,
+            "end": 748
+          },
+          "distance": 113,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].actions[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000164_c03",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p03",
+          "text": "taken into account",
+          "normalized": "taken into account",
+          "original_start": 701,
+          "original_end": 719,
+          "candidate_occurrences": [
+            {
+              "start": 758,
+              "end": 776
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 758,
+            "end": 776
+          },
+          "distance": 114,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].conditions[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000164_c03",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d03",
+          "text": "If, during the pay period, the use of public transport between the residence and the place of work is predominantly not reasonable for the employee at least with regard to half of the distance",
+          "normalized": "if, during the pay period, the use of public transport between the residence and the place of work is predominantly not reasonable for the employee at least with regard to half of the distance",
+          "original_start": 490,
+          "original_end": 660,
+          "candidate_occurrences": [
+            {
+              "start": 523,
+              "end": 715
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 523,
+            "end": 715
+          },
+          "distance": 88,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].constraints[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000164_c03",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c02",
+          "text": "instead of the flat-rate amounts under lit. b",
+          "normalized": "instead of the flat-rate amounts under lit. b",
+          "original_start": 720,
+          "original_end": 763,
+          "candidate_occurrences": [
+            {
+              "start": 777,
+              "end": 822
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 777,
+            "end": 822
+          },
+          "distance": 116,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 17,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

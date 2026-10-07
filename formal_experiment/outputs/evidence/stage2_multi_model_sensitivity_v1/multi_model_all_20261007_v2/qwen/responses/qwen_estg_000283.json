@@ -1,0 +1,158 @@
+{
+  "request_id": "qwen:estg_000283",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000283\\\",\\\"source_id\\\":\\\"estg_000283\\\",\\\"source_text\\\":\\\"A business trip occurs when an employee\\\\n\\\\n— leaves their duty station (office, permanent establishment, factory premises, warehouse, etc.) on the employer’s orders to perform work duties, or\\\\n— works so far away from their permanent place of residence (family home) that they cannot reasonably be expected to return to that permanent place of residence (family home) on a daily basis.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000283_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"A business trip occurs when an employee\\\\n\\\\n— leaves their duty station (office, permanent establishment, factory premises, warehouse, etc.) on the employer’s orders to perform work duties, or\\\\n— works so far away from their permanent place of residence (family home) that they cannot reasonably be expected to return to that permanent place of residence (family home) on a daily basis.\\\",\\\"start\\\":0,\\\"end\\\":359},\\\"modality\\\":{\\\"label\\\":\\\"definition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"occurs\\\",\\\"start\\\":16,\\\"end\\\":22}]},\\\"actors\\\":[],\\\"actions\\\":[],\\\"conditions\\\":[],\\\"constraints\\\":[],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\"}}],\"created\":1791349301,\"id\":\"chatcmpl-a3fd2d34-aaa5-9d42-be2a-39b5f3d8e197\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":325,\"prompt_tokens\":4646,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4646},\"total_tokens\":4971}}",
+  "usage": {
+    "prompt_tokens": 4646,
+    "completion_tokens": 325,
+    "total_tokens": 4971
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000283",
+    "request_id": "qwen:estg_000283",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000283",
+      "source_id": "estg_000283",
+      "source_text": "A business trip occurs when an employee\n\n— leaves their duty station (office, permanent establishment, factory premises, warehouse, etc.) on the employer’s orders to perform work duties, or\n— works so far away from their permanent place of residence (family home) that they cannot reasonably be expected to return to that permanent place of residence (family home) on a daily basis.",
+      "clauses": [
+        {
+          "clause_id": "estg_000283_c01",
+          "clause_span": {
+            "text": "A business trip occurs when an employee\n\n— leaves their duty station (office, permanent establishment, factory premises, warehouse, etc.) on the employer’s orders to perform work duties, or\n— works so far away from their permanent place of residence (family home) that they cannot reasonably be expected to return to that permanent place of residence (family home) on a daily basis.",
+            "start": 0,
+            "end": 382
+          },
+          "modality": {
+            "label": "definition",
+            "evidence": [
+              {
+                "text": "occurs",
+                "start": 16,
+                "end": 22
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "unchanged",
+      "spans_adapted": 0,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 1,
+      "reanchored_count": 1,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000283_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "A business trip occurs when an employee\n\n— leaves their duty station (office, permanent establishment, factory premises, warehouse, etc.) on the employer’s orders to perform work duties, or\n— works so far away from their permanent place of residence (family home) that they cannot reasonably be expected to return to that permanent place of residence (family home) on a daily basis.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 359,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 382
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 382
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000283_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "occurs",
+          "normalized": null,
+          "original_start": 16,
+          "original_end": 22,
+          "candidate_occurrences": [
+            {
+              "start": 16,
+              "end": 22
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 16,
+            "end": 22
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 1,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

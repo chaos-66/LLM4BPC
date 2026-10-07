@@ -1,0 +1,302 @@
+{
+  "request_id": "qwen:estg_000115",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000115\\\",\\\"source_id\\\":\\\"estg_000115\\\",\\\"source_text\\\":\\\"If the acquisition or production costs subsequently change, the investment allowance shall be adjusted accordingly in the year of the change (increased or reduced).\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000115_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"If the acquisition or production costs subsequently change, the investment allowance shall be adjusted accordingly in the year of the change (increased or reduced).\\\",\\\"start\\\":0,\\\"end\\\":162},\\\"modality\\\":{\\\"label\\\":\\\"obligation\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall\\\",\\\"start\\\":85,\\\"end\\\":90}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"adjusted\\\",\\\"start\\\":94,\\\"end\\\":102,\\\"normalized\\\":\\\"adjust\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"If the acquisition or production costs subsequently change\\\",\\\"start\\\":0,\\\"end\\\":58,\\\"normalized\\\":\\\"if the acquisition or production costs subsequently change\\\"}],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"accordingly\\\",\\\"start\\\":103,\\\"end\\\":114,\\\"normalized\\\":\\\"accordingly\\\"},{\\\"id\\\":\\\"c02\\\",\\\"text\\\":\\\"in the year of the change\\\",\\\"start\\\":115,\\\"end\\\":140,\\\"normalized\\\":\\\"in the year of the change\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\"}}],\"created\":1791348856,\"id\":\"chatcmpl-cff7b5da-1c74-93d4-bd33-ca24633699bd\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":367,\"prompt_tokens\":4598,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4598},\"total_tokens\":4965}}",
+  "usage": {
+    "prompt_tokens": 4598,
+    "completion_tokens": 367,
+    "total_tokens": 4965
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000115",
+    "request_id": "qwen:estg_000115",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000115",
+      "source_id": "estg_000115",
+      "source_text": "If the acquisition or production costs subsequently change, the investment allowance shall be adjusted accordingly in the year of the change (increased or reduced).",
+      "clauses": [
+        {
+          "clause_id": "estg_000115_c01",
+          "clause_span": {
+            "text": "If the acquisition or production costs subsequently change, the investment allowance shall be adjusted accordingly in the year of the change (increased or reduced).",
+            "start": 0,
+            "end": 164
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 85,
+                "end": 90
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "adjusted",
+              "start": 94,
+              "end": 102,
+              "normalized": "adjusted",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If the acquisition or production costs subsequently change",
+              "start": 0,
+              "end": 58,
+              "normalized": "if the acquisition or production costs subsequently change",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "accordingly",
+              "start": 103,
+              "end": 114,
+              "normalized": "accordingly",
+              "id": "c01"
+            },
+            {
+              "text": "in the year of the change",
+              "start": 115,
+              "end": 140,
+              "normalized": "in the year of the change",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 5,
+      "reanchored_count": 1,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000115_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If the acquisition or production costs subsequently change, the investment allowance shall be adjusted accordingly in the year of the change (increased or reduced).",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 162,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 164
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 164
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000115_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 85,
+          "original_end": 90,
+          "candidate_occurrences": [
+            {
+              "start": 85,
+              "end": 90
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 85,
+            "end": 90
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000115_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "adjusted",
+          "normalized": "adjusted",
+          "original_start": 94,
+          "original_end": 102,
+          "candidate_occurrences": [
+            {
+              "start": 94,
+              "end": 102
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 94,
+            "end": 102
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000115_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "If the acquisition or production costs subsequently change",
+          "normalized": "if the acquisition or production costs subsequently change",
+          "original_start": 0,
+          "original_end": 58,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 58
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 0,
+            "end": 58
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000115_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "accordingly",
+          "normalized": "accordingly",
+          "original_start": 103,
+          "original_end": 114,
+          "candidate_occurrences": [
+            {
+              "start": 103,
+              "end": 114
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 103,
+            "end": 114
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000115_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "in the year of the change",
+          "normalized": "in the year of the change",
+          "original_start": 115,
+          "original_end": 140,
+          "candidate_occurrences": [
+            {
+              "start": 115,
+              "end": 140
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 115,
+            "end": 140
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 5,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 1,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

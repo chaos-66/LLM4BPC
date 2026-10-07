@@ -1,0 +1,198 @@
+{
+  "request_id": "qwen:estg_000854",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000854\\\",\\\"source_id\\\":\\\"estg_000854\\\",\\\"source_text\\\":\\\"The exclusive use of the provisions for premium refunds (profit participations) in the life, health or accident insurance business with return of premium shall also be deemed secure to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000854_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"The exclusive use of the provisions for premium refunds (profit participations) in the life, health or accident insurance business with return of premium shall also be deemed secure to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts.\\\",\\\"start\\\":0,\\\"end\\\":467},\\\"modality\\\":{\\\"label\\\":\\\"definition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall also be deemed\\\",\\\"start\\\":152,\\\"end\\\":172}]},\\\"actors\\\":[],\\\"actions\\\":[],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts\\\",\\\"start\\\":173,\\\"end\\\":466,\\\"normalized\\\":\\\"to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts\\\"}],\\\"constraints\\\":[],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"condition\\\",\\\"reason\\\":\\\"semantic_scope_ambiguous_in_target\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791349832,\"id\":\"chatcmpl-afd8baa5-d11f-9a2b-993a-afa9b15fa3a5\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":470,\"prompt_tokens\":4651,\"prompt_tokens_details\":{\"cached_tokens\":4096,\"text_tokens\":4651},\"total_tokens\":5121}}",
+  "usage": {
+    "prompt_tokens": 4651,
+    "completion_tokens": 470,
+    "total_tokens": 5121
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000854",
+    "request_id": "qwen:estg_000854",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000854",
+      "source_id": "estg_000854",
+      "source_text": "The exclusive use of the provisions for premium refunds (profit participations) in the life, health or accident insurance business with return of premium shall also be deemed secure to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts.",
+      "clauses": [
+        {
+          "clause_id": "estg_000854_c01",
+          "clause_span": {
+            "text": "The exclusive use of the provisions for premium refunds (profit participations) in the life, health or accident insurance business with return of premium shall also be deemed secure to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts.",
+            "start": 0,
+            "end": 471
+          },
+          "modality": {
+            "label": "definition",
+            "evidence": [
+              {
+                "text": "shall also be deemed",
+                "start": 154,
+                "end": 174
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [],
+          "conditions": [
+            {
+              "text": "to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts",
+              "start": 182,
+              "end": 470,
+              "normalized": "to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts",
+              "id": "d01"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "condition",
+          "reason": "semantic_scope_ambiguous_in_target"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 1,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 2,
+      "reanchored_count": 3,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000854_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The exclusive use of the provisions for premium refunds (profit participations) in the life, health or accident insurance business with return of premium shall also be deemed secure to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 467,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 471
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 471
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000854_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall also be deemed",
+          "normalized": null,
+          "original_start": 152,
+          "original_end": 172,
+          "candidate_occurrences": [
+            {
+              "start": 154,
+              "end": 174
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 154,
+            "end": 174
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000854_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts",
+          "normalized": "to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts",
+          "original_start": 173,
+          "original_end": 466,
+          "candidate_occurrences": [
+            {
+              "start": 182,
+              "end": 470
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 182,
+            "end": 470
+          },
+          "distance": 13,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 3,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

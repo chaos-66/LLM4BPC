@@ -1,0 +1,237 @@
+{
+  "request_id": "grok:estg_000095",
+  "raw_response_utf8": "{\"id\":\"c51f8fb0-d5ed-9569-b13e-a8a59e592fea\",\"object\":\"chat.completion\",\"created\":1791348501,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000095\\\",\\n  \\\"source_id\\\": \\\"estg_000095\\\",\\n  \\\"source_text\\\": \\\"This depreciation is also permissible for acquisition or construction costs incurred for listed commercial buildings in the interest of monument preservation.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000095_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"This depreciation is also permissible for acquisition or construction costs incurred for listed commercial buildings in the interest of monument preservation.\\\", \\\"start\\\": 0, \\\"end\\\": 148},\\n      \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"is also permissible\\\", \\\"start\\\": 17, \\\"end\\\": 36}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [\\n        {\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"for acquisition or construction costs incurred for listed commercial buildings\\\", \\\"start\\\": 37, \\\"end\\\": 111, \\\"normalized\\\": \\\"for acquisition or construction costs incurred for listed commercial buildings\\\"},\\n        {\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"in the interest of monument preservation\\\", \\\"start\\\": 112, \\\"end\\\": 148, \\\"normalized\\\": \\\"in the interest of monument preservation\\\"}\\n      ],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [\\n        {\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"},\\n        {\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p02\\\"}\\n      ],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4343,\"completion_tokens\":395,\"total_tokens\":4738,\"prompt_tokens_details\":{\"text_tokens\":4343,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":1536},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":48034500},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4343,
+    "completion_tokens": 395,
+    "total_tokens": 4738,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000095",
+    "request_id": "grok:estg_000095",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000095",
+      "source_id": "estg_000095",
+      "source_text": "This depreciation is also permissible for acquisition or construction costs incurred for listed commercial buildings in the interest of monument preservation.",
+      "clauses": [
+        {
+          "clause_id": "estg_000095_c01",
+          "clause_span": {
+            "text": "This depreciation is also permissible for acquisition or construction costs incurred for listed commercial buildings in the interest of monument preservation.",
+            "start": 0,
+            "end": 158
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "is also permissible",
+                "start": 18,
+                "end": 37
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "for acquisition or construction costs incurred for listed commercial buildings",
+              "start": 38,
+              "end": 116,
+              "normalized": "for acquisition or construction costs incurred for listed commercial buildings",
+              "id": "p01"
+            },
+            {
+              "text": "in the interest of monument preservation",
+              "start": 117,
+              "end": 157,
+              "normalized": "in the interest of monument preservation",
+              "id": "p02"
+            }
+          ],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            },
+            {
+              "actor_id": null,
+              "action_id": "p02"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 2,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 3,
+      "reanchored_count": 4,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000095_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "This depreciation is also permissible for acquisition or construction costs incurred for listed commercial buildings in the interest of monument preservation.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 148,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 158
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 158
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000095_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "is also permissible",
+          "normalized": null,
+          "original_start": 17,
+          "original_end": 36,
+          "candidate_occurrences": [
+            {
+              "start": 18,
+              "end": 37
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 18,
+            "end": 37
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000095_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "for acquisition or construction costs incurred for listed commercial buildings",
+          "normalized": "for acquisition or construction costs incurred for listed commercial buildings",
+          "original_start": 37,
+          "original_end": 111,
+          "candidate_occurrences": [
+            {
+              "start": 38,
+              "end": 116
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 38,
+            "end": 116
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000095_c01",
+          "field": "actions",
+          "span_index": 1,
+          "span_id": "p02",
+          "text": "in the interest of monument preservation",
+          "normalized": "in the interest of monument preservation",
+          "original_start": 112,
+          "original_end": 148,
+          "candidate_occurrences": [
+            {
+              "start": 117,
+              "end": 157
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 117,
+            "end": 157
+          },
+          "distance": 14,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 4,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

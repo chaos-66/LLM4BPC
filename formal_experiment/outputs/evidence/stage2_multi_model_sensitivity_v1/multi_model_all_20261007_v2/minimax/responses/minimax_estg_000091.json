@@ -1,0 +1,234 @@
+{
+  "request_id": "minimax:estg_000091",
+  "raw_response_utf8": "{\"id\":\"07150266b594f4c0bd728170aa77c3a4\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000091\\\",\\\"source_id\\\":\\\"estg_000091\\\",\\\"source_text\\\":\\\"(3) Taxpayers who determine profit in accordance with Section 4(3) must maintain a register (asset card file) of the assets of the depreciable fixed assets used in the business.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000091_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"Taxpayers who determine profit in accordance with Section 4(3) must maintain a register (asset card file) of the assets of the depreciable fixed assets used in the business.\\\",\\\"start\\\":4,\\\"end\\\":175},\\\"modality\\\":{\\\"label\\\":\\\"obligation\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"must\\\",\\\"start\\\":64,\\\"end\\\":68}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"Taxpayers who determine profit in accordance with Section 4(3)\\\",\\\"start\\\":4,\\\"end\\\":63,\\\"normalized\\\":\\\"taxpayers who determine profit in accordance with section 4(3)\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"maintain a register (asset card file) of the assets of the depreciable fixed assets used in the business\\\",\\\"start\\\":69,\\\"end\\\":175,\\\"normalized\\\":\\\"maintain a register (asset card file) of the assets of the depreciable fixed assets used in the business\\\"}],\\\"conditions\\\":[],\\\"constraints\\\":[],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a01\\\",\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\"}}],\"created\":1791348583,\"model\":\"MiniMax-M3\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":4740,\"total_characters\":0,\"prompt_tokens\":4378,\"completion_tokens\":362,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":1280}},\"input_sensitive\":false,\"output_sensitive\":false,\"input_sensitive_type\":0,\"output_sensitive_type\":0,\"output_sensitive_int\":0,\"service_tier\":\"standard\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}\n",
+  "usage": {
+    "prompt_tokens": 4378,
+    "completion_tokens": 362,
+    "total_tokens": 4740,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "MiniMax-M3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "minimax",
+    "sample_id": "estg_000091",
+    "request_id": "minimax:estg_000091",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000091",
+      "source_id": "estg_000091",
+      "source_text": "(3) Taxpayers who determine profit in accordance with Section 4(3) must maintain a register (asset card file) of the assets of the depreciable fixed assets used in the business.",
+      "clauses": [
+        {
+          "clause_id": "estg_000091_c01",
+          "clause_span": {
+            "text": "Taxpayers who determine profit in accordance with Section 4(3) must maintain a register (asset card file) of the assets of the depreciable fixed assets used in the business.",
+            "start": 4,
+            "end": 177
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "must",
+                "start": 67,
+                "end": 71
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "Taxpayers who determine profit in accordance with Section 4(3)",
+              "start": 4,
+              "end": 66,
+              "normalized": "taxpayers who determine profit in accordance with section 4(3)",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "maintain a register (asset card file) of the assets of the depreciable fixed assets used in the business",
+              "start": 72,
+              "end": 176,
+              "normalized": "maintain a register (asset card file) of the assets of the depreciable fixed assets used in the business",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 2,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 3,
+      "reanchored_count": 4,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000091_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Taxpayers who determine profit in accordance with Section 4(3) must maintain a register (asset card file) of the assets of the depreciable fixed assets used in the business.",
+          "normalized": null,
+          "original_start": 4,
+          "original_end": 175,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 177
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 177
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000091_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "must",
+          "normalized": null,
+          "original_start": 64,
+          "original_end": 68,
+          "candidate_occurrences": [
+            {
+              "start": 67,
+              "end": 71
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 67,
+            "end": 71
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000091_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "Taxpayers who determine profit in accordance with Section 4(3)",
+          "normalized": "taxpayers who determine profit in accordance with section 4(3)",
+          "original_start": 4,
+          "original_end": 63,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 66
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 66
+          },
+          "distance": 3,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000091_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "maintain a register (asset card file) of the assets of the depreciable fixed assets used in the business",
+          "normalized": "maintain a register (asset card file) of the assets of the depreciable fixed assets used in the business",
+          "original_start": 69,
+          "original_end": 175,
+          "candidate_occurrences": [
+            {
+              "start": 72,
+              "end": 176
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 72,
+            "end": 176
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 4,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

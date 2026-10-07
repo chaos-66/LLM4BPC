@@ -1,0 +1,348 @@
+{
+  "request_id": "grok:estg_000366",
+  "raw_response_utf8": "{\"id\":\"087db214-cfff-9b41-a9af-ea8693dfcf0f\",\"object\":\"chat.completion\",\"created\":1791348840,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000366\\\",\\n  \\\"source_id\\\": \\\"estg_000366\\\",\\n  \\\"source_text\\\": \\\"(6) The following expenses may be deducted without regard to the deductible: \\\\n— expenses for the elimination of disaster damage, in particular flood, landslide, mudslide and avalanche damage; \\\\n— costs of external vocational training under subsection (8); \\\\n— additional expenses of the taxpayer for persons for whom increased family allowance is granted pursuant to Section 8(4) of the Family Burden Equalisation Act 1967; \\\\n— expenses within the meaning of Section 35 which are claimed in lieu of the flat-rate amounts (Section 35(5)).\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000366_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"(6) The following expenses may be deducted without regard to the deductible: \\\\n— expenses for the elimination of disaster damage, in particular flood, landslide, mudslide and avalanche damage; \\\\n— costs of external vocational training under subsection (8); \\\\n— additional expenses of the taxpayer for persons for whom increased family allowance is granted pursuant to Section 8(4) of the Family Burden Equalisation Act 1967; \\\\n— expenses within the meaning of Section 35 which are claimed in lieu of the flat-rate amounts (Section 35(5)).\\\", \\\"start\\\": 0, \\\"end\\\": 497},\\n      \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may\\\", \\\"start\\\": 28, \\\"end\\\": 31}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [\\n        {\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"deducted\\\", \\\"start\\\": 39, \\\"end\\\": 47, \\\"normalized\\\": \\\"deduct\\\"},\\n        {\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"deducted\\\", \\\"start\\\": 39, \\\"end\\\": 47, \\\"normalized\\\": \\\"deduct\\\"},\\n        {\\\"id\\\": \\\"p03\\\", \\\"text\\\": \\\"deducted\\\", \\\"start\\\": 39, \\\"end\\\": 47, \\\"normalized\\\": \\\"deduct\\\"},\\n        {\\\"id\\\": \\\"p04\\\", \\\"text\\\": \\\"deducted\\\", \\\"start\\\": 39, \\\"end\\\": 47, \\\"normalized\\\": \\\"deduct\\\"}\\n      ],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"without regard to the deductible\\\", \\\"start\\\": 48, \\\"end\\\": 80, \\\"normalized\\\": \\\"without regard to the deductible\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [\\n        {\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"},\\n        {\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p02\\\"},\\n        {\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p03\\\"},\\n        {\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p04\\\"}\\n      ],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4432,\"completion_tokens\":696,\"total_tokens\":5128,\"prompt_tokens_details\":{\"text_tokens\":4432,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":1536},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":56672000},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4432,
+    "completion_tokens": 696,
+    "total_tokens": 5128,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000366",
+    "request_id": "grok:estg_000366",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000366",
+      "source_id": "estg_000366",
+      "source_text": "(6) The following expenses may be deducted without regard to the deductible: \n— expenses for the elimination of disaster damage, in particular flood, landslide, mudslide and avalanche damage; \n— costs of external vocational training under subsection (8); \n— additional expenses of the taxpayer for persons for whom increased family allowance is granted pursuant to Section 8(4) of the Family Burden Equalisation Act 1967; \n— expenses within the meaning of Section 35 which are claimed in lieu of the flat-rate amounts (Section 35(5)).",
+      "clauses": [
+        {
+          "clause_id": "estg_000366_c01",
+          "clause_span": {
+            "text": "(6) The following expenses may be deducted without regard to the deductible: \n— expenses for the elimination of disaster damage, in particular flood, landslide, mudslide and avalanche damage; \n— costs of external vocational training under subsection (8); \n— additional expenses of the taxpayer for persons for whom increased family allowance is granted pursuant to Section 8(4) of the Family Burden Equalisation Act 1967; \n— expenses within the meaning of Section 35 which are claimed in lieu of the flat-rate amounts (Section 35(5)).",
+            "start": 0,
+            "end": 534
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 27,
+                "end": 30
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "deducted",
+              "start": 34,
+              "end": 42,
+              "normalized": "deducted",
+              "id": "p01"
+            },
+            {
+              "text": "deducted",
+              "start": 34,
+              "end": 42,
+              "normalized": "deducted",
+              "id": "p02"
+            },
+            {
+              "text": "deducted",
+              "start": 34,
+              "end": 42,
+              "normalized": "deducted",
+              "id": "p03"
+            },
+            {
+              "text": "deducted",
+              "start": 34,
+              "end": 42,
+              "normalized": "deducted",
+              "id": "p04"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "without regard to the deductible",
+              "start": 43,
+              "end": 75,
+              "normalized": "without regard to the deductible",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            },
+            {
+              "actor_id": null,
+              "action_id": "p02"
+            },
+            {
+              "actor_id": null,
+              "action_id": "p03"
+            },
+            {
+              "actor_id": null,
+              "action_id": "p04"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 5,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 6,
+      "reanchored_count": 7,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000366_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "(6) The following expenses may be deducted without regard to the deductible: \n— expenses for the elimination of disaster damage, in particular flood, landslide, mudslide and avalanche damage; \n— costs of external vocational training under subsection (8); \n— additional expenses of the taxpayer for persons for whom increased family allowance is granted pursuant to Section 8(4) of the Family Burden Equalisation Act 1967; \n— expenses within the meaning of Section 35 which are claimed in lieu of the flat-rate amounts (Section 35(5)).",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 497,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 534
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 534
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000366_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 28,
+          "original_end": 31,
+          "candidate_occurrences": [
+            {
+              "start": 27,
+              "end": 30
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 27,
+            "end": 30
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000366_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "deducted",
+          "normalized": "deducted",
+          "original_start": 39,
+          "original_end": 47,
+          "candidate_occurrences": [
+            {
+              "start": 34,
+              "end": 42
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 34,
+            "end": 42
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000366_c01",
+          "field": "actions",
+          "span_index": 1,
+          "span_id": "p02",
+          "text": "deducted",
+          "normalized": "deducted",
+          "original_start": 39,
+          "original_end": 47,
+          "candidate_occurrences": [
+            {
+              "start": 34,
+              "end": 42
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 34,
+            "end": 42
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[2]",
+          "clause_index": 0,
+          "clause_id": "estg_000366_c01",
+          "field": "actions",
+          "span_index": 2,
+          "span_id": "p03",
+          "text": "deducted",
+          "normalized": "deducted",
+          "original_start": 39,
+          "original_end": 47,
+          "candidate_occurrences": [
+            {
+              "start": 34,
+              "end": 42
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 34,
+            "end": 42
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[3]",
+          "clause_index": 0,
+          "clause_id": "estg_000366_c01",
+          "field": "actions",
+          "span_index": 3,
+          "span_id": "p04",
+          "text": "deducted",
+          "normalized": "deducted",
+          "original_start": 39,
+          "original_end": 47,
+          "candidate_occurrences": [
+            {
+              "start": 34,
+              "end": 42
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 34,
+            "end": 42
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000366_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "without regard to the deductible",
+          "normalized": "without regard to the deductible",
+          "original_start": 48,
+          "original_end": 80,
+          "candidate_occurrences": [
+            {
+              "start": 43,
+              "end": 75
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 43,
+            "end": 75
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 7,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

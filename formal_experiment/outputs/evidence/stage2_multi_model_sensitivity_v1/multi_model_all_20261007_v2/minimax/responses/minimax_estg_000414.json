@@ -1,0 +1,508 @@
+{
+  "request_id": "minimax:estg_000414",
+  "raw_response_utf8": "{\"id\":\"0715048362c035bbf39e7ebb1da29933\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000414\\\",\\\"source_id\\\":\\\"estg_000414\\\",\\\"source_text\\\":\\\"(3) If neither an assessment under Section 39 nor under Section 41 takes place, the income tax attributable to income subject to withholding tax shall be deemed discharged for the taxpayer if he can neither be held liable under Section 83(2) nor under Section 95(2), nor is an annual adjustment under Section 72 to be carried out.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000414_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"(3) If neither an assessment under Section 39 nor under Section 41 takes place, the income tax attributable to income subject to withholding tax shall be deemed discharged for the taxpayer if he can neither be held liable under Section 83(2) nor under Section 95(2), nor is an annual adjustment under Section 72 to be carried out.\\\",\\\"start\\\":0,\\\"end\\\":285},\\\"modality\\\":{\\\"label\\\":\\\"obligation\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall\\\",\\\"start\\\":120,\\\"end\\\":125}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"the taxpayer\\\",\\\"start\\\":153,\\\"end\\\":165,\\\"normalized\\\":\\\"taxpayer\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"be deemed discharged\\\",\\\"start\\\":126,\\\"end\\\":146,\\\"normalized\\\":\\\"be deemed discharged\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"If neither an assessment under Section 39 nor under Section 41 takes place\\\",\\\"start\\\":4,\\\"end\\\":75,\\\"normalized\\\":\\\"if neither an assessment under section 39 nor under section 41 takes place\\\"},{\\\"id\\\":\\\"d02\\\",\\\"text\\\":\\\"if he can neither be held liable under Section 83(2) nor under Section 95(2), nor is an annual adjustment under Section 72 to be carried out\\\",\\\"start\\\":170,\\\"end\\\":284,\\\"normalized\\\":\\\"if he can neither be held liable under section 83(2) nor under section 95(2), nor is an annual adjustment under section 72 to be carried out\\\"}],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"under Section 39\\\",\\\"start\\\":42,\\\"end\\\":57,\\\"normalized\\\":\\\"under section 39\\\"},{\\\"id\\\":\\\"c02\\\",\\\"text\\\":\\\"under Section 41\\\",\\\"start\\\":62,\\\"end\\\":75,\\\"normalized\\\":\\\"under section 41\\\"},{\\\"id\\\":\\\"c03\\\",\\\"text\\\":\\\"attributable to income subject to withholding tax\\\",\\\"start\\\":91,\\\"end\\\":139,\\\"normalized\\\":\\\"attributable to income subject to withholding tax\\\"},{\\\"id\\\":\\\"c04\\\",\\\"text\\\":\\\"under Section 83(2)\\\",\\\"start\\\":204,\\\"end\\\":221,\\\"normalized\\\":\\\"under section 83(2)\\\"},{\\\"id\\\":\\\"c05\\\",\\\"text\\\":\\\"under Section 95(2)\\\",\\\"start\\\":226,\\\"end\\\":243,\\\"normalized\\\":\\\"under section 95(2)\\\"},{\\\"id\\\":\\\"c06\\\",\\\"text\\\":\\\"under Section 72\\\",\\\"start\\\":269,\\\"end\\\":282,\\\"normalized\\\":\\\"under section 72\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a01\\\",\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\"}}],\"created\":1791349124,\"model\":\"MiniMax-M3\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":5099,\"total_characters\":0,\"prompt_tokens\":4410,\"completion_tokens\":689,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":1408}},\"input_sensitive\":false,\"output_sensitive\":false,\"input_sensitive_type\":0,\"output_sensitive_type\":0,\"output_sensitive_int\":0,\"service_tier\":\"standard\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}\n",
+  "usage": {
+    "prompt_tokens": 4410,
+    "completion_tokens": 689,
+    "total_tokens": 5099,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "MiniMax-M3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "minimax",
+    "sample_id": "estg_000414",
+    "request_id": "minimax:estg_000414",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000414",
+      "source_id": "estg_000414",
+      "source_text": "(3) If neither an assessment under Section 39 nor under Section 41 takes place, the income tax attributable to income subject to withholding tax shall be deemed discharged for the taxpayer if he can neither be held liable under Section 83(2) nor under Section 95(2), nor is an annual adjustment under Section 72 to be carried out.",
+      "clauses": [
+        {
+          "clause_id": "estg_000414_c01",
+          "clause_span": {
+            "text": "(3) If neither an assessment under Section 39 nor under Section 41 takes place, the income tax attributable to income subject to withholding tax shall be deemed discharged for the taxpayer if he can neither be held liable under Section 83(2) nor under Section 95(2), nor is an annual adjustment under Section 72 to be carried out.",
+            "start": 0,
+            "end": 330
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 145,
+                "end": 150
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the taxpayer",
+              "start": 176,
+              "end": 188,
+              "normalized": "the taxpayer",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "be deemed discharged",
+              "start": 151,
+              "end": 171,
+              "normalized": "be deemed discharged",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If neither an assessment under Section 39 nor under Section 41 takes place",
+              "start": 4,
+              "end": 78,
+              "normalized": "if neither an assessment under section 39 nor under section 41 takes place",
+              "id": "d01"
+            },
+            {
+              "text": "if he can neither be held liable under Section 83(2) nor under Section 95(2), nor is an annual adjustment under Section 72 to be carried out",
+              "start": 189,
+              "end": 329,
+              "normalized": "if he can neither be held liable under section 83(2) nor under section 95(2), nor is an annual adjustment under section 72 to be carried out",
+              "id": "d02"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "under Section 39",
+              "start": 29,
+              "end": 45,
+              "normalized": "under section 39",
+              "id": "c01"
+            },
+            {
+              "text": "under Section 41",
+              "start": 50,
+              "end": 66,
+              "normalized": "under section 41",
+              "id": "c02"
+            },
+            {
+              "text": "attributable to income subject to withholding tax",
+              "start": 95,
+              "end": 144,
+              "normalized": "attributable to income subject to withholding tax",
+              "id": "c03"
+            },
+            {
+              "text": "under Section 83(2)",
+              "start": 222,
+              "end": 241,
+              "normalized": "under section 83(2)",
+              "id": "c04"
+            },
+            {
+              "text": "under Section 95(2)",
+              "start": 246,
+              "end": 265,
+              "normalized": "under section 95(2)",
+              "id": "c05"
+            },
+            {
+              "text": "under Section 72",
+              "start": 295,
+              "end": 311,
+              "normalized": "under section 72",
+              "id": "c06"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 10,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 11,
+      "reanchored_count": 12,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000414_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "(3) If neither an assessment under Section 39 nor under Section 41 takes place, the income tax attributable to income subject to withholding tax shall be deemed discharged for the taxpayer if he can neither be held liable under Section 83(2) nor under Section 95(2), nor is an annual adjustment under Section 72 to be carried out.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 285,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 330
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 330
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000414_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 120,
+          "original_end": 125,
+          "candidate_occurrences": [
+            {
+              "start": 145,
+              "end": 150
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 145,
+            "end": 150
+          },
+          "distance": 50,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000414_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "the taxpayer",
+          "normalized": "the taxpayer",
+          "original_start": 153,
+          "original_end": 165,
+          "candidate_occurrences": [
+            {
+              "start": 176,
+              "end": 188
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 176,
+            "end": 188
+          },
+          "distance": 46,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000414_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "be deemed discharged",
+          "normalized": "be deemed discharged",
+          "original_start": 126,
+          "original_end": 146,
+          "candidate_occurrences": [
+            {
+              "start": 151,
+              "end": 171
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 151,
+            "end": 171
+          },
+          "distance": 50,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000414_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "If neither an assessment under Section 39 nor under Section 41 takes place",
+          "normalized": "if neither an assessment under section 39 nor under section 41 takes place",
+          "original_start": 4,
+          "original_end": 75,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 78
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 78
+          },
+          "distance": 3,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000414_c01",
+          "field": "conditions",
+          "span_index": 1,
+          "span_id": "d02",
+          "text": "if he can neither be held liable under Section 83(2) nor under Section 95(2), nor is an annual adjustment under Section 72 to be carried out",
+          "normalized": "if he can neither be held liable under section 83(2) nor under section 95(2), nor is an annual adjustment under section 72 to be carried out",
+          "original_start": 170,
+          "original_end": 284,
+          "candidate_occurrences": [
+            {
+              "start": 189,
+              "end": 329
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 189,
+            "end": 329
+          },
+          "distance": 64,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000414_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "under Section 39",
+          "normalized": "under section 39",
+          "original_start": 42,
+          "original_end": 57,
+          "candidate_occurrences": [
+            {
+              "start": 29,
+              "end": 45
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 29,
+            "end": 45
+          },
+          "distance": 25,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000414_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "under Section 41",
+          "normalized": "under section 41",
+          "original_start": 62,
+          "original_end": 75,
+          "candidate_occurrences": [
+            {
+              "start": 50,
+              "end": 66
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 50,
+            "end": 66
+          },
+          "distance": 21,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[2]",
+          "clause_index": 0,
+          "clause_id": "estg_000414_c01",
+          "field": "constraints",
+          "span_index": 2,
+          "span_id": "c03",
+          "text": "attributable to income subject to withholding tax",
+          "normalized": "attributable to income subject to withholding tax",
+          "original_start": 91,
+          "original_end": 139,
+          "candidate_occurrences": [
+            {
+              "start": 95,
+              "end": 144
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 95,
+            "end": 144
+          },
+          "distance": 9,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[3]",
+          "clause_index": 0,
+          "clause_id": "estg_000414_c01",
+          "field": "constraints",
+          "span_index": 3,
+          "span_id": "c04",
+          "text": "under Section 83(2)",
+          "normalized": "under section 83(2)",
+          "original_start": 204,
+          "original_end": 221,
+          "candidate_occurrences": [
+            {
+              "start": 222,
+              "end": 241
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 222,
+            "end": 241
+          },
+          "distance": 38,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[4]",
+          "clause_index": 0,
+          "clause_id": "estg_000414_c01",
+          "field": "constraints",
+          "span_index": 4,
+          "span_id": "c05",
+          "text": "under Section 95(2)",
+          "normalized": "under section 95(2)",
+          "original_start": 226,
+          "original_end": 243,
+          "candidate_occurrences": [
+            {
+              "start": 246,
+              "end": 265
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 246,
+            "end": 265
+          },
+          "distance": 42,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[5]",
+          "clause_index": 0,
+          "clause_id": "estg_000414_c01",
+          "field": "constraints",
+          "span_index": 5,
+          "span_id": "c06",
+          "text": "under Section 72",
+          "normalized": "under section 72",
+          "original_start": 269,
+          "original_end": 282,
+          "candidate_occurrences": [
+            {
+              "start": 295,
+              "end": 311
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 295,
+            "end": 311
+          },
+          "distance": 55,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 12,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

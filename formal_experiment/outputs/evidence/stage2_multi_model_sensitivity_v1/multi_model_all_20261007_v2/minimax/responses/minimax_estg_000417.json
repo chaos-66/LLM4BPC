@@ -1,0 +1,409 @@
+{
+  "request_id": "minimax:estg_000417",
+  "raw_response_utf8": "{\"id\":\"0715048c50039a1a29217d2d1522bafd\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000417\\\",\\\"source_id\\\":\\\"estg_000417\\\",\\\"source_text\\\":\\\"This is the case when the person performing the activity, in the exercise of their business will, is subject to the direction of the employer or is obligated to follow the employer's instructions within the business organization of the employer.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000417_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"This is the case when the person performing the activity, in the exercise of their business will, is subject to the direction of the employer or is obligated to follow the employer's instructions within the business organization of the employer.\\\",\\\"start\\\":0,\\\"end\\\":210},\\\"modality\\\":{\\\"label\\\":\\\"definition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"is\\\",\\\"start\\\":5,\\\"end\\\":7},{\\\"text\\\":\\\"is\\\",\\\"start\\\":132,\\\"end\\\":134}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"the person performing the activity, in the exercise of their business will\\\",\\\"start\\\":26,\\\"end\\\":99,\\\"normalized\\\":\\\"person performing the activity in the exercise of their business will\\\"},{\\\"id\\\":\\\"a02\\\",\\\"text\\\":\\\"the employer\\\",\\\"start\\\":155,\\\"end\\\":167,\\\"normalized\\\":\\\"employer\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"is subject to the direction of the employer\\\",\\\"start\\\":100,\\\"end\\\":144,\\\"normalized\\\":\\\"be subject to the direction of the employer\\\"},{\\\"id\\\":\\\"p02\\\",\\\"text\\\":\\\"is obligated to follow the employer's instructions within the business organization of the employer\\\",\\\"start\\\":148,\\\"end\\\":210,\\\"normalized\\\":\\\"be obligated to follow the employer's instructions within the business organization of the employer\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"when the person performing the activity, in the exercise of their business will, is subject to the direction of the employer or is obligated to follow the employer's instructions within the business organization of the employer\\\",\\\"start\\\":18,\\\"end\\\":210,\\\"normalized\\\":\\\"when the person performing the activity in the exercise of their business will is subject to the direction of the employer or is obligated to follow the employer's instructions within the business organization of the employer\\\"}],\\\"constraints\\\":[],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a01\\\",\\\"action_id\\\":\\\"p01\\\"},{\\\"actor_id\\\":\\\"a02\\\",\\\"action_id\\\":\\\"p01\\\"},{\\\"actor_id\\\":\\\"a01\\\",\\\"action_id\\\":\\\"p02\\\"},{\\\"actor_id\\\":\\\"a02\\\",\\\"action_id\\\":\\\"p02\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"actor\\\",\\\"reason\\\":\\\"reference_status=unresolved_coreference;independence_status=context_required\\\"},{\\\"field\\\":\\\"clause_boundary\\\",\\\"reason\\\":\\\"semantic_scope_ambiguous_in_target\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791349132,\"model\":\"MiniMax-M3\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":4968,\"total_characters\":0,\"prompt_tokens\":4381,\"completion_tokens\":587,\"prompt_tokens_details\":{\"cached_tokens\":128}},\"input_sensitive\":false,\"output_sensitive\":false,\"input_sensitive_type\":0,\"output_sensitive_type\":0,\"output_sensitive_int\":0,\"service_tier\":\"standard\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}\n",
+  "usage": {
+    "prompt_tokens": 4381,
+    "completion_tokens": 587,
+    "total_tokens": 4968
+  },
+  "returned_model": "MiniMax-M3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "minimax",
+    "sample_id": "estg_000417",
+    "request_id": "minimax:estg_000417",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000417",
+      "source_id": "estg_000417",
+      "source_text": "This is the case when the person performing the activity, in the exercise of their business will, is subject to the direction of the employer or is obligated to follow the employer's instructions within the business organization of the employer.",
+      "clauses": [
+        {
+          "clause_id": "estg_000417_c01",
+          "clause_span": {
+            "text": "This is the case when the person performing the activity, in the exercise of their business will, is subject to the direction of the employer or is obligated to follow the employer's instructions within the business organization of the employer.",
+            "start": 0,
+            "end": 245
+          },
+          "modality": {
+            "label": "definition",
+            "evidence": [
+              {
+                "text": "is",
+                "start": 5,
+                "end": 7
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the person performing the activity, in the exercise of their business will",
+              "start": 22,
+              "end": 96,
+              "normalized": "the person performing the activity, in the exercise of their business will",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "is subject to the direction of the employer",
+              "start": 98,
+              "end": 141,
+              "normalized": "is subject to the direction of the employer",
+              "id": "p01"
+            },
+            {
+              "text": "is obligated to follow the employer's instructions within the business organization of the employer",
+              "start": 145,
+              "end": 244,
+              "normalized": "is obligated to follow the employer's instructions within the business organization of the employer",
+              "id": "p02"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "when the person performing the activity, in the exercise of their business will, is subject to the direction of the employer or is obligated to follow the employer's instructions within the business organization of the employer",
+              "start": 17,
+              "end": 244,
+              "normalized": "when the person performing the activity, in the exercise of their business will, is subject to the direction of the employer or is obligated to follow the employer's instructions within the business organization of the employer",
+              "id": "d01"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            },
+            {
+              "actor_id": "a01",
+              "action_id": "p02"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        },
+        {
+          "field": "clause_boundary",
+          "reason": "semantic_scope_ambiguous_in_target"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 5,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 7,
+      "reanchored_count": 5,
+      "dropped_spans": [
+        "clauses[0].modality.evidence[1]",
+        "clauses[0].actors[1]"
+      ],
+      "dropped_clauses": [],
+      "dropped_edges": [
+        "clauses[0].actor_action_map[1]",
+        "clauses[0].actor_action_map[3]"
+      ],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000417_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "This is the case when the person performing the activity, in the exercise of their business will, is subject to the direction of the employer or is obligated to follow the employer's instructions within the business organization of the employer.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 210,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 245
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 245
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000417_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "is",
+          "normalized": null,
+          "original_start": 5,
+          "original_end": 7,
+          "candidate_occurrences": [
+            {
+              "start": 2,
+              "end": 4
+            },
+            {
+              "start": 5,
+              "end": 7
+            },
+            {
+              "start": 70,
+              "end": 72
+            },
+            {
+              "start": 98,
+              "end": 100
+            },
+            {
+              "start": 145,
+              "end": 147
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 5,
+            "end": 7
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000417_c01",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "is",
+          "normalized": null,
+          "original_start": 132,
+          "original_end": 134,
+          "candidate_occurrences": [
+            {
+              "start": 2,
+              "end": 4
+            },
+            {
+              "start": 5,
+              "end": 7
+            },
+            {
+              "start": 70,
+              "end": 72
+            },
+            {
+              "start": 98,
+              "end": 100
+            },
+            {
+              "start": 145,
+              "end": 147
+            }
+          ],
+          "strategy": "not_applicable",
+          "chosen": null,
+          "distance": null,
+          "outcome": "unresolved",
+          "reason": "ambiguous_occurrence",
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000417_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "the person performing the activity, in the exercise of their business will",
+          "normalized": "the person performing the activity, in the exercise of their business will",
+          "original_start": 26,
+          "original_end": 99,
+          "candidate_occurrences": [
+            {
+              "start": 22,
+              "end": 96
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 22,
+            "end": 96
+          },
+          "distance": 7,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000417_c01",
+          "field": "actors",
+          "span_index": 1,
+          "span_id": "a02",
+          "text": "the employer",
+          "normalized": "the employer",
+          "original_start": 155,
+          "original_end": 167,
+          "candidate_occurrences": [
+            {
+              "start": 129,
+              "end": 141
+            },
+            {
+              "start": 168,
+              "end": 180
+            },
+            {
+              "start": 232,
+              "end": 244
+            }
+          ],
+          "strategy": "not_applicable",
+          "chosen": null,
+          "distance": null,
+          "outcome": "unresolved",
+          "reason": "ambiguous_occurrence",
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000417_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "is subject to the direction of the employer",
+          "normalized": "is subject to the direction of the employer",
+          "original_start": 100,
+          "original_end": 144,
+          "candidate_occurrences": [
+            {
+              "start": 98,
+              "end": 141
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 98,
+            "end": 141
+          },
+          "distance": 5,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000417_c01",
+          "field": "actions",
+          "span_index": 1,
+          "span_id": "p02",
+          "text": "is obligated to follow the employer's instructions within the business organization of the employer",
+          "normalized": "is obligated to follow the employer's instructions within the business organization of the employer",
+          "original_start": 148,
+          "original_end": 210,
+          "candidate_occurrences": [
+            {
+              "start": 145,
+              "end": 244
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 145,
+            "end": 244
+          },
+          "distance": 37,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000417_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "when the person performing the activity, in the exercise of their business will, is subject to the direction of the employer or is obligated to follow the employer's instructions within the business organization of the employer",
+          "normalized": "when the person performing the activity, in the exercise of their business will, is subject to the direction of the employer or is obligated to follow the employer's instructions within the business organization of the employer",
+          "original_start": 18,
+          "original_end": 210,
+          "candidate_occurrences": [
+            {
+              "start": 17,
+              "end": 244
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 17,
+            "end": 244
+          },
+          "distance": 35,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 2,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 2,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 2,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

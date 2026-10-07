@@ -1,0 +1,300 @@
+{
+  "request_id": "qwen:estg_000068",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000068\\\",\\\"source_id\\\":\\\"estg_000068\\\",\\\"source_text\\\":\\\"In the case of profit determination pursuant to Section 4(1), for assets that already belonged to the fixed assets at the end of the preceding business year, the balance sheet value may not exceed the last balance sheet value.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000068_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"In the case of profit determination pursuant to Section 4(1), for assets that already belonged to the fixed assets at the end of the preceding business year, the balance sheet value may not exceed the last balance sheet value.\\\",\\\"start\\\":0,\\\"end\\\":225},\\\"modality\\\":{\\\"label\\\":\\\"prohibition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"may not\\\",\\\"start\\\":179,\\\"end\\\":186},{\\\"text\\\":\\\"not\\\",\\\"start\\\":183,\\\"end\\\":186}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"exceed the last balance sheet value\\\",\\\"start\\\":187,\\\"end\\\":224,\\\"normalized\\\":\\\"exceed the last balance sheet value\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"for assets that already belonged to the fixed assets at the end of the preceding business year\\\",\\\"start\\\":62,\\\"end\\\":156,\\\"normalized\\\":\\\"for assets that already belonged to the fixed assets at the end of the preceding business year\\\"}],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"pursuant to Section 4(1)\\\",\\\"start\\\":36,\\\"end\\\":60,\\\"normalized\\\":\\\"pursuant to section 4(1)\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\"}}],\"created\":1791348567,\"id\":\"chatcmpl-ff2b955c-a604-9957-a8b8-52c17f8b4f9b\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":428,\"prompt_tokens\":4615,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4615},\"total_tokens\":5043}}",
+  "usage": {
+    "prompt_tokens": 4615,
+    "completion_tokens": 428,
+    "total_tokens": 5043
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000068",
+    "request_id": "qwen:estg_000068",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000068",
+      "source_id": "estg_000068",
+      "source_text": "In the case of profit determination pursuant to Section 4(1), for assets that already belonged to the fixed assets at the end of the preceding business year, the balance sheet value may not exceed the last balance sheet value.",
+      "clauses": [
+        {
+          "clause_id": "estg_000068_c01",
+          "clause_span": {
+            "text": "In the case of profit determination pursuant to Section 4(1), for assets that already belonged to the fixed assets at the end of the preceding business year, the balance sheet value may not exceed the last balance sheet value.",
+            "start": 0,
+            "end": 226
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "may not",
+                "start": 182,
+                "end": 189
+              },
+              {
+                "text": "not",
+                "start": 186,
+                "end": 189
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "exceed the last balance sheet value",
+              "start": 190,
+              "end": 225,
+              "normalized": "exceed the last balance sheet value",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "for assets that already belonged to the fixed assets at the end of the preceding business year",
+              "start": 62,
+              "end": 156,
+              "normalized": "for assets that already belonged to the fixed assets at the end of the preceding business year",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "pursuant to Section 4(1)",
+              "start": 36,
+              "end": 60,
+              "normalized": "pursuant to section 4(1)",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 5,
+      "reanchored_count": 4,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000068_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "In the case of profit determination pursuant to Section 4(1), for assets that already belonged to the fixed assets at the end of the preceding business year, the balance sheet value may not exceed the last balance sheet value.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 225,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 226
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 226
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000068_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may not",
+          "normalized": null,
+          "original_start": 179,
+          "original_end": 186,
+          "candidate_occurrences": [
+            {
+              "start": 182,
+              "end": 189
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 182,
+            "end": 189
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000068_c01",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "not",
+          "normalized": null,
+          "original_start": 183,
+          "original_end": 186,
+          "candidate_occurrences": [
+            {
+              "start": 186,
+              "end": 189
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 186,
+            "end": 189
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000068_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "exceed the last balance sheet value",
+          "normalized": "exceed the last balance sheet value",
+          "original_start": 187,
+          "original_end": 224,
+          "candidate_occurrences": [
+            {
+              "start": 190,
+              "end": 225
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 190,
+            "end": 225
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000068_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "for assets that already belonged to the fixed assets at the end of the preceding business year",
+          "normalized": "for assets that already belonged to the fixed assets at the end of the preceding business year",
+          "original_start": 62,
+          "original_end": 156,
+          "candidate_occurrences": [
+            {
+              "start": 62,
+              "end": 156
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 62,
+            "end": 156
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000068_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "pursuant to Section 4(1)",
+          "normalized": "pursuant to section 4(1)",
+          "original_start": 36,
+          "original_end": 60,
+          "candidate_occurrences": [
+            {
+              "start": 36,
+              "end": 60
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 36,
+            "end": 60
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 2,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 4,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

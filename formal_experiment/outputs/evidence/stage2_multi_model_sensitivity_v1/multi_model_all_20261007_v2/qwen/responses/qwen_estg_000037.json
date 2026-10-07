@@ -1,0 +1,541 @@
+{
+  "request_id": "qwen:estg_000037",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000037\\\",\\\"source_id\\\":\\\"estg_000037\\\",\\\"source_text\\\":\\\"In any event, business expenses shall include:\\\\n1. a) contributions by the insured person to compulsory insurance in the statutory health, accident and pension insurance, and\\\\nb) compulsory contributions to welfare and support institutions of the chambers of self-employed persons, to the extent that these institutions serve health, old-age, invalidity and survivors’ provision.\\\\n2. a) contributions to pension funds subject to the following conditions:\\\\naa) the fund must be subject to state supervision;\\\\nbb) the fund must grant a legal entitlement to benefits for the purpose of old-age and survivors’ provision.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000037_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"In any event, business expenses shall include:\\\\n1. a) contributions by the insured person to compulsory insurance in the statutory health, accident and pension insurance, and\\\\nb) compulsory contributions to welfare and support institutions of the chambers of self-employed persons, to the extent that these institutions serve health, old-age, invalidity and survivors’ provision.\\\\n2. a) contributions to pension funds subject to the following conditions:\\\",\\\"start\\\":0,\\\"end\\\":405},\\\"modality\\\":{\\\"label\\\":\\\"definition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall include\\\",\\\"start\\\":32,\\\"end\\\":45}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"business expenses\\\",\\\"start\\\":14,\\\"end\\\":31,\\\"normalized\\\":\\\"business expenses\\\"}],\\\"actions\\\":[],\\\"conditions\\\":[],\\\"constraints\\\":[],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[],\\\"order_relations\\\":[]},{\\\"clause_id\\\":\\\"estg_000037_c02\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"the fund must be subject to state supervision;\\\",\\\"start\\\":411,\\\"end\\\":458},\\\"modality\\\":{\\\"label\\\":\\\"obligation\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"must\\\",\\\"start\\\":421,\\\"end\\\":425}]},\\\"actors\\\":[{\\\"id\\\":\\\"a02\\\",\\\"text\\\":\\\"the fund\\\",\\\"start\\\":411,\\\"end\\\":419,\\\"normalized\\\":\\\"fund\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"be subject to state supervision\\\",\\\"start\\\":426,\\\"end\\\":457,\\\"normalized\\\":\\\"be subject to state supervision\\\"}],\\\"conditions\\\":[],\\\"constraints\\\":[],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a02\\\",\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]},{\\\"clause_id\\\":\\\"estg_000037_c03\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"the fund must grant a legal entitlement to benefits for the purpose of old-age and survivors’ provision.\\\",\\\"start\\\":462,\\\"end\\\":566},\\\"modality\\\":{\\\"label\\\":\\\"obligation\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"must\\\",\\\"start\\\":471,\\\"end\\\":475}]},\\\"actors\\\":[{\\\"id\\\":\\\"a03\\\",\\\"text\\\":\\\"the fund\\\",\\\"start\\\":462,\\\"end\\\":470,\\\"normalized\\\":\\\"fund\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p02\\\",\\\"text\\\":\\\"grant a legal entitlement to benefits\\\",\\\"start\\\":476,\\\"end\\\":515,\\\"normalized\\\":\\\"grant a legal entitlement to benefits\\\"}],\\\"conditions\\\":[],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"for the purpose of old-age and survivors’ provision\\\",\\\"start\\\":516,\\\"end\\\":566,\\\"normalized\\\":\\\"for the purpose of old-age and survivors' provision\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a03\\\",\\\"action_id\\\":\\\"p02\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"actor\\\",\\\"reason\\\":\\\"reference_status=unresolved_coreference;independence_status=context_required\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791348378,\"id\":\"chatcmpl-ba84b563-13f0-9d59-9231-0faa831a8aec\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":823,\"prompt_tokens\":4690,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4690},\"total_tokens\":5513}}",
+  "usage": {
+    "prompt_tokens": 4690,
+    "completion_tokens": 823,
+    "total_tokens": 5513
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000037",
+    "request_id": "qwen:estg_000037",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000037",
+      "source_id": "estg_000037",
+      "source_text": "In any event, business expenses shall include:\n1. a) contributions by the insured person to compulsory insurance in the statutory health, accident and pension insurance, and\nb) compulsory contributions to welfare and support institutions of the chambers of self-employed persons, to the extent that these institutions serve health, old-age, invalidity and survivors’ provision.\n2. a) contributions to pension funds subject to the following conditions:\naa) the fund must be subject to state supervision;\nbb) the fund must grant a legal entitlement to benefits for the purpose of old-age and survivors’ provision.",
+      "clauses": [
+        {
+          "clause_id": "estg_000037_c01",
+          "clause_span": {
+            "text": "In any event, business expenses shall include:\n1. a) contributions by the insured person to compulsory insurance in the statutory health, accident and pension insurance, and\nb) compulsory contributions to welfare and support institutions of the chambers of self-employed persons, to the extent that these institutions serve health, old-age, invalidity and survivors’ provision.\n2. a) contributions to pension funds subject to the following conditions:",
+            "start": 0,
+            "end": 451
+          },
+          "modality": {
+            "label": "definition",
+            "evidence": [
+              {
+                "text": "shall include",
+                "start": 32,
+                "end": 45
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "business expenses",
+              "start": 14,
+              "end": 31,
+              "normalized": "business expenses",
+              "id": "a01"
+            }
+          ],
+          "actions": [],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000037_c02",
+          "clause_span": {
+            "text": "the fund must be subject to state supervision;",
+            "start": 456,
+            "end": 502
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "must",
+                "start": 465,
+                "end": 469
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the fund",
+              "start": 456,
+              "end": 464,
+              "normalized": "the fund",
+              "id": "a02"
+            }
+          ],
+          "actions": [
+            {
+              "text": "be subject to state supervision",
+              "start": 470,
+              "end": 501,
+              "normalized": "be subject to state supervision",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a02",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000037_c03",
+          "clause_span": {
+            "text": "the fund must grant a legal entitlement to benefits for the purpose of old-age and survivors’ provision.",
+            "start": 507,
+            "end": 611
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "must",
+                "start": 516,
+                "end": 520
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the fund",
+              "start": 507,
+              "end": 515,
+              "normalized": "the fund",
+              "id": "a03"
+            }
+          ],
+          "actions": [
+            {
+              "text": "grant a legal entitlement to benefits",
+              "start": 521,
+              "end": 558,
+              "normalized": "grant a legal entitlement to benefits",
+              "id": "p02"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "for the purpose of old-age and survivors’ provision",
+              "start": 559,
+              "end": 610,
+              "normalized": "for the purpose of old-age and survivors’ provision",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a03",
+              "action_id": "p02"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 6,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 3,
+      "field_span_count": 9,
+      "reanchored_count": 10,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000037_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "In any event, business expenses shall include:\n1. a) contributions by the insured person to compulsory insurance in the statutory health, accident and pension insurance, and\nb) compulsory contributions to welfare and support institutions of the chambers of self-employed persons, to the extent that these institutions serve health, old-age, invalidity and survivors’ provision.\n2. a) contributions to pension funds subject to the following conditions:",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 405,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 451
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 451
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000037_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall include",
+          "normalized": null,
+          "original_start": 32,
+          "original_end": 45,
+          "candidate_occurrences": [
+            {
+              "start": 32,
+              "end": 45
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 32,
+            "end": 45
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000037_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "business expenses",
+          "normalized": "business expenses",
+          "original_start": 14,
+          "original_end": 31,
+          "candidate_occurrences": [
+            {
+              "start": 14,
+              "end": 31
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 14,
+            "end": 31
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000037_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "the fund must be subject to state supervision;",
+          "normalized": null,
+          "original_start": 411,
+          "original_end": 458,
+          "candidate_occurrences": [
+            {
+              "start": 456,
+              "end": 502
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 456,
+            "end": 502
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000037_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "must",
+          "normalized": null,
+          "original_start": 421,
+          "original_end": 425,
+          "candidate_occurrences": [
+            {
+              "start": 465,
+              "end": 469
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 465,
+            "end": 469
+          },
+          "distance": 88,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actors[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000037_c02",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a02",
+          "text": "the fund",
+          "normalized": "the fund",
+          "original_start": 411,
+          "original_end": 419,
+          "candidate_occurrences": [
+            {
+              "start": 456,
+              "end": 464
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 456,
+            "end": 464
+          },
+          "distance": 90,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000037_c02",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "be subject to state supervision",
+          "normalized": "be subject to state supervision",
+          "original_start": 426,
+          "original_end": 457,
+          "candidate_occurrences": [
+            {
+              "start": 470,
+              "end": 501
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 470,
+            "end": 501
+          },
+          "distance": 88,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].clause_span",
+          "clause_index": 2,
+          "clause_id": "estg_000037_c03",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "the fund must grant a legal entitlement to benefits for the purpose of old-age and survivors’ provision.",
+          "normalized": null,
+          "original_start": 462,
+          "original_end": 566,
+          "candidate_occurrences": [
+            {
+              "start": 507,
+              "end": 611
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 507,
+            "end": 611
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].modality.evidence[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000037_c03",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "must",
+          "normalized": null,
+          "original_start": 471,
+          "original_end": 475,
+          "candidate_occurrences": [
+            {
+              "start": 516,
+              "end": 520
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 516,
+            "end": 520
+          },
+          "distance": 90,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].actors[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000037_c03",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a03",
+          "text": "the fund",
+          "normalized": "the fund",
+          "original_start": 462,
+          "original_end": 470,
+          "candidate_occurrences": [
+            {
+              "start": 507,
+              "end": 515
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 507,
+            "end": 515
+          },
+          "distance": 90,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].actions[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000037_c03",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p02",
+          "text": "grant a legal entitlement to benefits",
+          "normalized": "grant a legal entitlement to benefits",
+          "original_start": 476,
+          "original_end": 515,
+          "candidate_occurrences": [
+            {
+              "start": 521,
+              "end": 558
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 521,
+            "end": 558
+          },
+          "distance": 88,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].constraints[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000037_c03",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "for the purpose of old-age and survivors’ provision",
+          "normalized": "for the purpose of old-age and survivors’ provision",
+          "original_start": 516,
+          "original_end": 566,
+          "candidate_occurrences": [
+            {
+              "start": 559,
+              "end": 610
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 559,
+            "end": 610
+          },
+          "distance": 87,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 2,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 10,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

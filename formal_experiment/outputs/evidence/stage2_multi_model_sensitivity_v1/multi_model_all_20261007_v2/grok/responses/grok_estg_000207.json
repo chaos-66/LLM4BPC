@@ -1,0 +1,711 @@
+{
+  "request_id": "grok:estg_000207",
+  "raw_response_utf8": "{\"id\":\"c8265b81-fcc9-9a58-8243-a63f50877e56\",\"object\":\"chat.completion\",\"created\":1791348681,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000207\\\",\\n  \\\"source_id\\\": \\\"estg_000207\\\",\\n  \\\"source_text\\\": \\\"A child for whom the additional amount has been claimed may not claim such special expenses itself; if the child has claimed such special expenses itself, the additional amount may not be claimed for that child. 3. a) To the extent that amounts have been recognized as special expenses under subsection 1 item 3, they may not be taken into account again as special expenses on another legal basis.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000207_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"A child for whom the additional amount has been claimed may not claim such special expenses itself\\\", \\\"start\\\": 0, \\\"end\\\": 96},\\n      \\\"modality\\\": {\\\"label\\\": \\\"prohibition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may not\\\", \\\"start\\\": 54, \\\"end\\\": 61}, {\\\"text\\\": \\\"not\\\", \\\"start\\\": 58, \\\"end\\\": 61}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"A child for whom the additional amount has been claimed\\\", \\\"start\\\": 0, \\\"end\\\": 53, \\\"normalized\\\": \\\"child\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"claim such special expenses itself\\\", \\\"start\\\": 62, \\\"end\\\": 96, \\\"normalized\\\": \\\"claim special expenses\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000207_c02\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"if the child has claimed such special expenses itself, the additional amount may not be claimed for that child\\\", \\\"start\\\": 98, \\\"end\\\": 201},\\n      \\\"modality\\\": {\\\"label\\\": \\\"prohibition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may not\\\", \\\"start\\\": 151, \\\"end\\\": 158}, {\\\"text\\\": \\\"not\\\", \\\"start\\\": 155, \\\"end\\\": 158}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a02\\\", \\\"text\\\": \\\"the additional amount\\\", \\\"start\\\": 137, \\\"end\\\": 158, \\\"normalized\\\": \\\"additional amount\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"be claimed for that child\\\", \\\"start\\\": 159, \\\"end\\\": 184, \\\"normalized\\\": \\\"claim for child\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"if the child has claimed such special expenses itself\\\", \\\"start\\\": 98, \\\"end\\\": 149, \\\"normalized\\\": \\\"if child claimed special expenses\\\"}],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p02\\\"}],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000207_c03\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"To the extent that amounts have been recognized as special expenses under subsection 1 item 3, they may not be taken into account again as special expenses on another legal basis\\\", \\\"start\\\": 204, \\\"end\\\": 407},\\n      \\\"modality\\\": {\\\"label\\\": \\\"prohibition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may not\\\", \\\"start\\\": 273, \\\"end\\\": 280}, {\\\"text\\\": \\\"not\\\", \\\"start\\\": 277, \\\"end\\\": 280}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a03\\\", \\\"text\\\": \\\"they\\\", \\\"start\\\": 269, \\\"end\\\": 273, \\\"normalized\\\": \\\"they\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p03\\\", \\\"text\\\": \\\"be taken into account again as special expenses on another legal basis\\\", \\\"start\\\": 281, \\\"end\\\": 349, \\\"normalized\\\": \\\"take into account as special expenses\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d02\\\", \\\"text\\\": \\\"To the extent that amounts have been recognized as special expenses under subsection 1 item 3\\\", \\\"start\\\": 204, \\\"end\\\": 267, \\\"normalized\\\": \\\"to extent amounts recognized as special expenses\\\"}],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a03\\\", \\\"action_id\\\": \\\"p03\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": [\\n    {\\\"field\\\": \\\"actor\\\", \\\"reason\\\": \\\"reference_status=unresolved_coreference;independence_status=context_required\\\"}\\n  ]\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4400,\"completion_tokens\":1054,\"total_tokens\":5454,\"prompt_tokens_details\":{\"text_tokens\":4400,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":128},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":80006000},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4400,
+    "completion_tokens": 1054,
+    "total_tokens": 5454,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000207",
+    "request_id": "grok:estg_000207",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000207",
+      "source_id": "estg_000207",
+      "source_text": "A child for whom the additional amount has been claimed may not claim such special expenses itself; if the child has claimed such special expenses itself, the additional amount may not be claimed for that child. 3. a) To the extent that amounts have been recognized as special expenses under subsection 1 item 3, they may not be taken into account again as special expenses on another legal basis.",
+      "clauses": [
+        {
+          "clause_id": "estg_000207_c01",
+          "clause_span": {
+            "text": "A child for whom the additional amount has been claimed may not claim such special expenses itself",
+            "start": 0,
+            "end": 98
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "may not",
+                "start": 56,
+                "end": 63
+              },
+              {
+                "text": "not",
+                "start": 60,
+                "end": 63
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "A child for whom the additional amount has been claimed",
+              "start": 0,
+              "end": 55,
+              "normalized": "a child for whom the additional amount has been claimed",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "claim such special expenses itself",
+              "start": 64,
+              "end": 98,
+              "normalized": "claim such special expenses itself",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000207_c02",
+          "clause_span": {
+            "text": "if the child has claimed such special expenses itself, the additional amount may not be claimed for that child",
+            "start": 100,
+            "end": 210
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "may not",
+                "start": 177,
+                "end": 184
+              },
+              {
+                "text": "not",
+                "start": 181,
+                "end": 184
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the additional amount",
+              "start": 155,
+              "end": 176,
+              "normalized": "the additional amount",
+              "id": "a02"
+            }
+          ],
+          "actions": [
+            {
+              "text": "be claimed for that child",
+              "start": 185,
+              "end": 210,
+              "normalized": "be claimed for that child",
+              "id": "p02"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "if the child has claimed such special expenses itself",
+              "start": 100,
+              "end": 153,
+              "normalized": "if the child has claimed such special expenses itself",
+              "id": "d01"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p02"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000207_c03",
+          "clause_span": {
+            "text": "To the extent that amounts have been recognized as special expenses under subsection 1 item 3, they may not be taken into account again as special expenses on another legal basis",
+            "start": 218,
+            "end": 396
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "may not",
+                "start": 318,
+                "end": 325
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "they",
+              "start": 313,
+              "end": 317,
+              "normalized": "they",
+              "id": "a03"
+            }
+          ],
+          "actions": [
+            {
+              "text": "be taken into account again as special expenses on another legal basis",
+              "start": 326,
+              "end": 396,
+              "normalized": "be taken into account again as special expenses on another legal basis",
+              "id": "p03"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "To the extent that amounts have been recognized as special expenses under subsection 1 item 3",
+              "start": 218,
+              "end": 311,
+              "normalized": "to the extent that amounts have been recognized as special expenses under subsection 1 item 3",
+              "id": "d02"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a03",
+              "action_id": "p03"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 8,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 3,
+      "field_span_count": 14,
+      "reanchored_count": 16,
+      "dropped_spans": [
+        "clauses[2].modality.evidence[1]"
+      ],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000207_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "A child for whom the additional amount has been claimed may not claim such special expenses itself",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 96,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 98
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 98
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000207_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may not",
+          "normalized": null,
+          "original_start": 54,
+          "original_end": 61,
+          "candidate_occurrences": [
+            {
+              "start": 56,
+              "end": 63
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 56,
+            "end": 63
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000207_c01",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "not",
+          "normalized": null,
+          "original_start": 58,
+          "original_end": 61,
+          "candidate_occurrences": [
+            {
+              "start": 60,
+              "end": 63
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 60,
+            "end": 63
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000207_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "A child for whom the additional amount has been claimed",
+          "normalized": "a child for whom the additional amount has been claimed",
+          "original_start": 0,
+          "original_end": 53,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 55
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 55
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000207_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "claim such special expenses itself",
+          "normalized": "claim such special expenses itself",
+          "original_start": 62,
+          "original_end": 96,
+          "candidate_occurrences": [
+            {
+              "start": 64,
+              "end": 98
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 64,
+            "end": 98
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000207_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "if the child has claimed such special expenses itself, the additional amount may not be claimed for that child",
+          "normalized": null,
+          "original_start": 98,
+          "original_end": 201,
+          "candidate_occurrences": [
+            {
+              "start": 100,
+              "end": 210
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 100,
+            "end": 210
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000207_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may not",
+          "normalized": null,
+          "original_start": 151,
+          "original_end": 158,
+          "candidate_occurrences": [
+            {
+              "start": 177,
+              "end": 184
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 177,
+            "end": 184
+          },
+          "distance": 52,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[1]",
+          "clause_index": 1,
+          "clause_id": "estg_000207_c02",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "not",
+          "normalized": null,
+          "original_start": 155,
+          "original_end": 158,
+          "candidate_occurrences": [
+            {
+              "start": 181,
+              "end": 184
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 181,
+            "end": 184
+          },
+          "distance": 52,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actors[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000207_c02",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a02",
+          "text": "the additional amount",
+          "normalized": "the additional amount",
+          "original_start": 137,
+          "original_end": 158,
+          "candidate_occurrences": [
+            {
+              "start": 155,
+              "end": 176
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 155,
+            "end": 176
+          },
+          "distance": 36,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000207_c02",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p02",
+          "text": "be claimed for that child",
+          "normalized": "be claimed for that child",
+          "original_start": 159,
+          "original_end": 184,
+          "candidate_occurrences": [
+            {
+              "start": 185,
+              "end": 210
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 185,
+            "end": 210
+          },
+          "distance": 52,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].conditions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000207_c02",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "if the child has claimed such special expenses itself",
+          "normalized": "if the child has claimed such special expenses itself",
+          "original_start": 98,
+          "original_end": 149,
+          "candidate_occurrences": [
+            {
+              "start": 100,
+              "end": 153
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 100,
+            "end": 153
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].clause_span",
+          "clause_index": 2,
+          "clause_id": "estg_000207_c03",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "To the extent that amounts have been recognized as special expenses under subsection 1 item 3, they may not be taken into account again as special expenses on another legal basis",
+          "normalized": null,
+          "original_start": 204,
+          "original_end": 407,
+          "candidate_occurrences": [
+            {
+              "start": 218,
+              "end": 396
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 218,
+            "end": 396
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].modality.evidence[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000207_c03",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may not",
+          "normalized": null,
+          "original_start": 273,
+          "original_end": 280,
+          "candidate_occurrences": [
+            {
+              "start": 318,
+              "end": 325
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 318,
+            "end": 325
+          },
+          "distance": 90,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].modality.evidence[1]",
+          "clause_index": 2,
+          "clause_id": "estg_000207_c03",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "not",
+          "normalized": null,
+          "original_start": 277,
+          "original_end": 280,
+          "candidate_occurrences": [
+            {
+              "start": 322,
+              "end": 325
+            },
+            {
+              "start": 378,
+              "end": 381
+            }
+          ],
+          "strategy": "not_applicable",
+          "chosen": null,
+          "distance": null,
+          "outcome": "unresolved",
+          "reason": "ambiguous_occurrence",
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].actors[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000207_c03",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a03",
+          "text": "they",
+          "normalized": "they",
+          "original_start": 269,
+          "original_end": 273,
+          "candidate_occurrences": [
+            {
+              "start": 313,
+              "end": 317
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 313,
+            "end": 317
+          },
+          "distance": 88,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].actions[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000207_c03",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p03",
+          "text": "be taken into account again as special expenses on another legal basis",
+          "normalized": "be taken into account again as special expenses on another legal basis",
+          "original_start": 281,
+          "original_end": 349,
+          "candidate_occurrences": [
+            {
+              "start": 326,
+              "end": 396
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 326,
+            "end": 396
+          },
+          "distance": 92,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].conditions[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000207_c03",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d02",
+          "text": "To the extent that amounts have been recognized as special expenses under subsection 1 item 3",
+          "normalized": "to the extent that amounts have been recognized as special expenses under subsection 1 item 3",
+          "original_start": 204,
+          "original_end": 267,
+          "candidate_occurrences": [
+            {
+              "start": 218,
+              "end": 311
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 218,
+            "end": 311
+          },
+          "distance": 58,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 1,
+      "reanchored_unique_exact": 16,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 1,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 1,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

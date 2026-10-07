@@ -1,0 +1,269 @@
+{
+  "request_id": "grok:estg_000396",
+  "raw_response_utf8": "{\"id\":\"08ec4d2b-a470-9de0-8df7-e9278838b3d0\",\"object\":\"chat.completion\",\"created\":1791348856,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000396\\\",\\n  \\\"source_id\\\": \\\"estg_000396\\\",\\n  \\\"source_text\\\": \\\"July 1988 — No. 400 2937 (3) If the income includes earnings subject to wage tax, an assessment allowance of up to 10,000 S shall be deducted from the other earnings.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000396_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"If the income includes earnings subject to wage tax, an assessment allowance of up to 10,000 S shall be deducted from the other earnings.\\\", \\\"start\\\": 24, \\\"end\\\": 150},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 94, \\\"end\\\": 99}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"deducted from the other earnings\\\", \\\"start\\\": 118, \\\"end\\\": 150, \\\"normalized\\\": \\\"deduct from other earnings\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"If the income includes earnings subject to wage tax\\\", \\\"start\\\": 24, \\\"end\\\": 72, \\\"normalized\\\": \\\"if the income includes earnings subject to wage tax\\\"}],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"of up to 10,000 S\\\", \\\"start\\\": 77, \\\"end\\\": 94, \\\"normalized\\\": \\\"of up to 10,000 s\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4365,\"completion_tokens\":443,\"total_tokens\":4808,\"prompt_tokens_details\":{\"text_tokens\":4365,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":128},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":64293500},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4365,
+    "completion_tokens": 443,
+    "total_tokens": 4808,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000396",
+    "request_id": "grok:estg_000396",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000396",
+      "source_id": "estg_000396",
+      "source_text": "July 1988 — No. 400 2937 (3) If the income includes earnings subject to wage tax, an assessment allowance of up to 10,000 S shall be deducted from the other earnings.",
+      "clauses": [
+        {
+          "clause_id": "estg_000396_c01",
+          "clause_span": {
+            "text": "If the income includes earnings subject to wage tax, an assessment allowance of up to 10,000 S shall be deducted from the other earnings.",
+            "start": 29,
+            "end": 166
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 124,
+                "end": 129
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "deducted from the other earnings",
+              "start": 133,
+              "end": 165,
+              "normalized": "deducted from the other earnings",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If the income includes earnings subject to wage tax",
+              "start": 29,
+              "end": 80,
+              "normalized": "if the income includes earnings subject to wage tax",
+              "id": "c01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "of up to 10,000 S",
+              "start": 106,
+              "end": 123,
+              "normalized": "of up to 10,000 s",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 5,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000396_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If the income includes earnings subject to wage tax, an assessment allowance of up to 10,000 S shall be deducted from the other earnings.",
+          "normalized": null,
+          "original_start": 24,
+          "original_end": 150,
+          "candidate_occurrences": [
+            {
+              "start": 29,
+              "end": 166
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 29,
+            "end": 166
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000396_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 94,
+          "original_end": 99,
+          "candidate_occurrences": [
+            {
+              "start": 124,
+              "end": 129
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 124,
+            "end": 129
+          },
+          "distance": 60,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000396_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "deducted from the other earnings",
+          "normalized": "deducted from the other earnings",
+          "original_start": 118,
+          "original_end": 150,
+          "candidate_occurrences": [
+            {
+              "start": 133,
+              "end": 165
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 133,
+            "end": 165
+          },
+          "distance": 30,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000396_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "If the income includes earnings subject to wage tax",
+          "normalized": "if the income includes earnings subject to wage tax",
+          "original_start": 24,
+          "original_end": 72,
+          "candidate_occurrences": [
+            {
+              "start": 29,
+              "end": 80
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 29,
+            "end": 80
+          },
+          "distance": 13,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000396_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c02",
+          "text": "of up to 10,000 S",
+          "normalized": "of up to 10,000 s",
+          "original_start": 77,
+          "original_end": 94,
+          "candidate_occurrences": [
+            {
+              "start": 106,
+              "end": 123
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 106,
+            "end": 123
+          },
+          "distance": 58,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

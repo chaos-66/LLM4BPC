@@ -1,0 +1,158 @@
+{
+  "request_id": "minimax:estg_000057",
+  "raw_response_utf8": "{\"id\":\"071501d16f5f67437ca862356521ff24\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000057\\\",\\\"source_id\\\":\\\"estg_000057\\\",\\\"source_text\\\":\\\"Expenditure on repairs means expenditure that is not part of the cost of acquisition or construction and which, alone or together with construction expenditure, substantially increases the value in use of the building or substantially extends its useful life.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000057_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"Expenditure on repairs means expenditure that is not part of the cost of acquisition or construction and which, alone or together with construction expenditure, substantially increases the value in use of the building or substantially extends its useful life.\\\",\\\"start\\\":0,\\\"end\\\":244},\\\"modality\\\":{\\\"label\\\":\\\"definition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"means\\\",\\\"start\\\":21,\\\"end\\\":26}]},\\\"actors\\\":[],\\\"actions\\\":[],\\\"conditions\\\":[],\\\"constraints\\\":[],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\"}}],\"created\":1791348434,\"model\":\"MiniMax-M3\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":4635,\"total_characters\":0,\"prompt_tokens\":4382,\"completion_tokens\":253,\"prompt_tokens_details\":{\"cached_tokens\":128}},\"input_sensitive\":false,\"output_sensitive\":false,\"input_sensitive_type\":0,\"output_sensitive_type\":0,\"output_sensitive_int\":0,\"service_tier\":\"standard\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}\n",
+  "usage": {
+    "prompt_tokens": 4382,
+    "completion_tokens": 253,
+    "total_tokens": 4635
+  },
+  "returned_model": "MiniMax-M3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "minimax",
+    "sample_id": "estg_000057",
+    "request_id": "minimax:estg_000057",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000057",
+      "source_id": "estg_000057",
+      "source_text": "Expenditure on repairs means expenditure that is not part of the cost of acquisition or construction and which, alone or together with construction expenditure, substantially increases the value in use of the building or substantially extends its useful life.",
+      "clauses": [
+        {
+          "clause_id": "estg_000057_c01",
+          "clause_span": {
+            "text": "Expenditure on repairs means expenditure that is not part of the cost of acquisition or construction and which, alone or together with construction expenditure, substantially increases the value in use of the building or substantially extends its useful life.",
+            "start": 0,
+            "end": 259
+          },
+          "modality": {
+            "label": "definition",
+            "evidence": [
+              {
+                "text": "means",
+                "start": 23,
+                "end": 28
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "unchanged",
+      "spans_adapted": 0,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 1,
+      "reanchored_count": 2,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000057_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Expenditure on repairs means expenditure that is not part of the cost of acquisition or construction and which, alone or together with construction expenditure, substantially increases the value in use of the building or substantially extends its useful life.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 244,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 259
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 259
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000057_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "means",
+          "normalized": null,
+          "original_start": 21,
+          "original_end": 26,
+          "candidate_occurrences": [
+            {
+              "start": 23,
+              "end": 28
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 23,
+            "end": 28
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 2,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

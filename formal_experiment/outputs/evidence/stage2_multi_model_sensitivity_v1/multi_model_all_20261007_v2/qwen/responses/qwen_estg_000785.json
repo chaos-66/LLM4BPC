@@ -1,0 +1,431 @@
+{
+  "request_id": "qwen:estg_000785",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000785\\\",\\\"source_id\\\":\\\"estg_000785\\\",\\\"source_text\\\":\\\"July 1988 — No. 401 2967 Subsidy schemes of the Federal Government or a Land exist. b) The bank may not, in accordance with its articles of association or other legal basis and its actual management, seek profit; its owners or shareholders may not receive profit shares or other benefits from the bank's funds. c) The bank may not any person through.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000785_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"The bank may not, in accordance with its articles of association or other legal basis and its actual management, seek profit\\\",\\\"start\\\":89,\\\"end\\\":213},\\\"modality\\\":{\\\"label\\\":\\\"prohibition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"may not\\\",\\\"start\\\":98,\\\"end\\\":105}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"The bank\\\",\\\"start\\\":89,\\\"end\\\":97,\\\"normalized\\\":\\\"bank\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"seek profit\\\",\\\"start\\\":202,\\\"end\\\":213,\\\"normalized\\\":\\\"seek profit\\\"}],\\\"conditions\\\":[],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"in accordance with its articles of association or other legal basis and its actual management\\\",\\\"start\\\":107,\\\"end\\\":199,\\\"normalized\\\":\\\"in accordance with its articles of association or other legal basis and its actual management\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a01\\\",\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]},{\\\"clause_id\\\":\\\"estg_000785_c02\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"its owners or shareholders may not receive profit shares or other benefits from the bank's funds\\\",\\\"start\\\":215,\\\"end\\\":311},\\\"modality\\\":{\\\"label\\\":\\\"prohibition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"may not\\\",\\\"start\\\":242,\\\"end\\\":249}]},\\\"actors\\\":[{\\\"id\\\":\\\"a02\\\",\\\"text\\\":\\\"its owners or shareholders\\\",\\\"start\\\":215,\\\"end\\\":241,\\\"normalized\\\":\\\"its owners or shareholders\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p02\\\",\\\"text\\\":\\\"receive profit shares or other benefits from the bank's funds\\\",\\\"start\\\":250,\\\"end\\\":311,\\\"normalized\\\":\\\"receive profit shares or other benefits from the bank's funds\\\"}],\\\"conditions\\\":[],\\\"constraints\\\":[],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a02\\\",\\\"action_id\\\":\\\"p02\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"actor\\\",\\\"reason\\\":\\\"reference_status=unresolved_coreference;independence_status=context_required\\\"},{\\\"field\\\":\\\"clause\\\",\\\"reason\\\":\\\"semantic_scope_ambiguous_in_target\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791349756,\"id\":\"chatcmpl-9972e03b-d8d8-93e0-9a9c-d780bc767560\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":635,\"prompt_tokens\":4655,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4655},\"total_tokens\":5290}}",
+  "usage": {
+    "prompt_tokens": 4655,
+    "completion_tokens": 635,
+    "total_tokens": 5290
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000785",
+    "request_id": "qwen:estg_000785",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000785",
+      "source_id": "estg_000785",
+      "source_text": "July 1988 — No. 401 2967 Subsidy schemes of the Federal Government or a Land exist. b) The bank may not, in accordance with its articles of association or other legal basis and its actual management, seek profit; its owners or shareholders may not receive profit shares or other benefits from the bank's funds. c) The bank may not any person through.",
+      "clauses": [
+        {
+          "clause_id": "estg_000785_c01",
+          "clause_span": {
+            "text": "The bank may not, in accordance with its articles of association or other legal basis and its actual management, seek profit",
+            "start": 87,
+            "end": 211
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "may not",
+                "start": 96,
+                "end": 103
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "The bank",
+              "start": 87,
+              "end": 95,
+              "normalized": "the bank",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "seek profit",
+              "start": 200,
+              "end": 211,
+              "normalized": "seek profit",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "in accordance with its articles of association or other legal basis and its actual management",
+              "start": 105,
+              "end": 198,
+              "normalized": "in accordance with its articles of association or other legal basis and its actual management",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000785_c02",
+          "clause_span": {
+            "text": "its owners or shareholders may not receive profit shares or other benefits from the bank's funds",
+            "start": 213,
+            "end": 309
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "may not",
+                "start": 240,
+                "end": 247
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "its owners or shareholders",
+              "start": 213,
+              "end": 239,
+              "normalized": "its owners or shareholders",
+              "id": "a02"
+            }
+          ],
+          "actions": [
+            {
+              "text": "receive profit shares or other benefits from the bank's funds",
+              "start": 248,
+              "end": 309,
+              "normalized": "receive profit shares or other benefits from the bank's funds",
+              "id": "p02"
+            }
+          ],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a02",
+              "action_id": "p02"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        },
+        {
+          "field": "clause",
+          "reason": "semantic_scope_ambiguous_in_target"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 5,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 2,
+      "field_span_count": 7,
+      "reanchored_count": 9,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000785_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The bank may not, in accordance with its articles of association or other legal basis and its actual management, seek profit",
+          "normalized": null,
+          "original_start": 89,
+          "original_end": 213,
+          "candidate_occurrences": [
+            {
+              "start": 87,
+              "end": 211
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 87,
+            "end": 211
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000785_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may not",
+          "normalized": null,
+          "original_start": 98,
+          "original_end": 105,
+          "candidate_occurrences": [
+            {
+              "start": 96,
+              "end": 103
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 96,
+            "end": 103
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000785_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "The bank",
+          "normalized": "the bank",
+          "original_start": 89,
+          "original_end": 97,
+          "candidate_occurrences": [
+            {
+              "start": 87,
+              "end": 95
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 87,
+            "end": 95
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000785_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "seek profit",
+          "normalized": "seek profit",
+          "original_start": 202,
+          "original_end": 213,
+          "candidate_occurrences": [
+            {
+              "start": 200,
+              "end": 211
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 200,
+            "end": 211
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000785_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "in accordance with its articles of association or other legal basis and its actual management",
+          "normalized": "in accordance with its articles of association or other legal basis and its actual management",
+          "original_start": 107,
+          "original_end": 199,
+          "candidate_occurrences": [
+            {
+              "start": 105,
+              "end": 198
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 105,
+            "end": 198
+          },
+          "distance": 3,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000785_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "its owners or shareholders may not receive profit shares or other benefits from the bank's funds",
+          "normalized": null,
+          "original_start": 215,
+          "original_end": 311,
+          "candidate_occurrences": [
+            {
+              "start": 213,
+              "end": 309
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 213,
+            "end": 309
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000785_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may not",
+          "normalized": null,
+          "original_start": 242,
+          "original_end": 249,
+          "candidate_occurrences": [
+            {
+              "start": 240,
+              "end": 247
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 240,
+            "end": 247
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actors[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000785_c02",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a02",
+          "text": "its owners or shareholders",
+          "normalized": "its owners or shareholders",
+          "original_start": 215,
+          "original_end": 241,
+          "candidate_occurrences": [
+            {
+              "start": 213,
+              "end": 239
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 213,
+            "end": 239
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000785_c02",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p02",
+          "text": "receive profit shares or other benefits from the bank's funds",
+          "normalized": "receive profit shares or other benefits from the bank's funds",
+          "original_start": 250,
+          "original_end": 311,
+          "candidate_occurrences": [
+            {
+              "start": 248,
+              "end": 309
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 248,
+            "end": 309
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 9,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

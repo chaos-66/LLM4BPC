@@ -1,0 +1,268 @@
+{
+  "request_id": "qwen:estg_000555",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000555\\\",\\\"source_id\\\":\\\"estg_000555\\\",\\\"source_text\\\":\\\"If the child supplements have not had an effect, or not in full, with regard to the sole earner tax credit, the full child supplement or the differential amount shall be refunded, taking into account Section 72(5).\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000555_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"If the child supplements have not had an effect, or not in full, with regard to the sole earner tax credit, the full child supplement or the differential amount shall be refunded, taking into account Section 72(5).\\\",\\\"start\\\":0,\\\"end\\\":216},\\\"modality\\\":{\\\"label\\\":\\\"obligation\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall\\\",\\\"start\\\":163,\\\"end\\\":168}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"refunded\\\",\\\"start\\\":169,\\\"end\\\":177,\\\"normalized\\\":\\\"refund\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"If the child supplements have not had an effect, or not in full, with regard to the sole earner tax credit\\\",\\\"start\\\":0,\\\"end\\\":106,\\\"normalized\\\":\\\"if the child supplements have not had an effect, or not in full, with regard to the sole earner tax credit\\\"}],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"taking into account Section 72(5)\\\",\\\"start\\\":179,\\\"end\\\":212,\\\"normalized\\\":\\\"taking into account section 72(5)\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\"}}],\"created\":1791349600,\"id\":\"chatcmpl-2eab12d5-6932-914b-91f9-d362fc9c1c49\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":421,\"prompt_tokens\":4617,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4617},\"total_tokens\":5038}}",
+  "usage": {
+    "prompt_tokens": 4617,
+    "completion_tokens": 421,
+    "total_tokens": 5038
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000555",
+    "request_id": "qwen:estg_000555",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000555",
+      "source_id": "estg_000555",
+      "source_text": "If the child supplements have not had an effect, or not in full, with regard to the sole earner tax credit, the full child supplement or the differential amount shall be refunded, taking into account Section 72(5).",
+      "clauses": [
+        {
+          "clause_id": "estg_000555_c01",
+          "clause_span": {
+            "text": "If the child supplements have not had an effect, or not in full, with regard to the sole earner tax credit, the full child supplement or the differential amount shall be refunded, taking into account Section 72(5).",
+            "start": 0,
+            "end": 214
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 161,
+                "end": 166
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "refunded",
+              "start": 170,
+              "end": 178,
+              "normalized": "refunded",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If the child supplements have not had an effect, or not in full, with regard to the sole earner tax credit",
+              "start": 0,
+              "end": 106,
+              "normalized": "if the child supplements have not had an effect, or not in full, with regard to the sole earner tax credit",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "taking into account Section 72(5)",
+              "start": 180,
+              "end": 213,
+              "normalized": "taking into account section 72(5)",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 4,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000555_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If the child supplements have not had an effect, or not in full, with regard to the sole earner tax credit, the full child supplement or the differential amount shall be refunded, taking into account Section 72(5).",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 216,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 214
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 214
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000555_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 163,
+          "original_end": 168,
+          "candidate_occurrences": [
+            {
+              "start": 161,
+              "end": 166
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 161,
+            "end": 166
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000555_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "refunded",
+          "normalized": "refunded",
+          "original_start": 169,
+          "original_end": 177,
+          "candidate_occurrences": [
+            {
+              "start": 170,
+              "end": 178
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 170,
+            "end": 178
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000555_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "If the child supplements have not had an effect, or not in full, with regard to the sole earner tax credit",
+          "normalized": "if the child supplements have not had an effect, or not in full, with regard to the sole earner tax credit",
+          "original_start": 0,
+          "original_end": 106,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 106
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 0,
+            "end": 106
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000555_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "taking into account Section 72(5)",
+          "normalized": "taking into account section 72(5)",
+          "original_start": 179,
+          "original_end": 212,
+          "candidate_occurrences": [
+            {
+              "start": 180,
+              "end": 213
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 180,
+            "end": 213
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 4,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

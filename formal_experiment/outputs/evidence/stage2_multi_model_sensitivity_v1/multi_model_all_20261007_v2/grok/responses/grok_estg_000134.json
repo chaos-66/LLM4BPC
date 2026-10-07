@@ -1,0 +1,269 @@
+{
+  "request_id": "grok:estg_000134",
+  "raw_response_utf8": "{\"id\":\"e9c8e583-f0a5-9799-9d51-e895975f2c04\",\"object\":\"chat.completion\",\"created\":1791348605,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000134\\\",\\n  \\\"source_id\\\": \\\"estg_000134\\\",\\n  \\\"source_text\\\": \\\"(7) Hidden reserves may be allocated to a tax-free reserve in the year of their disclosure, provided that no transfer is effected in the same business year.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000134_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"(7) Hidden reserves may be allocated to a tax-free reserve in the year of their disclosure, provided that no transfer is effected in the same business year.\\\", \\\"start\\\": 0, \\\"end\\\": 144},\\n      \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may\\\", \\\"start\\\": 19, \\\"end\\\": 22}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"be allocated to a tax-free reserve\\\", \\\"start\\\": 23, \\\"end\\\": 57, \\\"normalized\\\": \\\"be allocated to a tax-free reserve\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"provided that no transfer is effected in the same business year\\\", \\\"start\\\": 80, \\\"end\\\": 143, \\\"normalized\\\": \\\"provided that no transfer is effected in the same business year\\\"}],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"in the year of their disclosure\\\", \\\"start\\\": 58, \\\"end\\\": 88, \\\"normalized\\\": \\\"in the year of their disclosure\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4353,\"completion_tokens\":434,\"total_tokens\":4787,\"prompt_tokens_details\":{\"text_tokens\":4353,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":1536},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":49134500},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4353,
+    "completion_tokens": 434,
+    "total_tokens": 4787,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000134",
+    "request_id": "grok:estg_000134",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000134",
+      "source_id": "estg_000134",
+      "source_text": "(7) Hidden reserves may be allocated to a tax-free reserve in the year of their disclosure, provided that no transfer is effected in the same business year.",
+      "clauses": [
+        {
+          "clause_id": "estg_000134_c01",
+          "clause_span": {
+            "text": "(7) Hidden reserves may be allocated to a tax-free reserve in the year of their disclosure, provided that no transfer is effected in the same business year.",
+            "start": 0,
+            "end": 156
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 20,
+                "end": 23
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "be allocated to a tax-free reserve",
+              "start": 24,
+              "end": 58,
+              "normalized": "be allocated to a tax-free reserve",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "provided that no transfer is effected in the same business year",
+              "start": 92,
+              "end": 155,
+              "normalized": "provided that no transfer is effected in the same business year",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "in the year of their disclosure",
+              "start": 59,
+              "end": 90,
+              "normalized": "in the year of their disclosure",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 5,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000134_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "(7) Hidden reserves may be allocated to a tax-free reserve in the year of their disclosure, provided that no transfer is effected in the same business year.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 144,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 156
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 156
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000134_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 19,
+          "original_end": 22,
+          "candidate_occurrences": [
+            {
+              "start": 20,
+              "end": 23
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 20,
+            "end": 23
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000134_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "be allocated to a tax-free reserve",
+          "normalized": "be allocated to a tax-free reserve",
+          "original_start": 23,
+          "original_end": 57,
+          "candidate_occurrences": [
+            {
+              "start": 24,
+              "end": 58
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 24,
+            "end": 58
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000134_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "provided that no transfer is effected in the same business year",
+          "normalized": "provided that no transfer is effected in the same business year",
+          "original_start": 80,
+          "original_end": 143,
+          "candidate_occurrences": [
+            {
+              "start": 92,
+              "end": 155
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 92,
+            "end": 155
+          },
+          "distance": 24,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000134_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "in the year of their disclosure",
+          "normalized": "in the year of their disclosure",
+          "original_start": 58,
+          "original_end": 88,
+          "candidate_occurrences": [
+            {
+              "start": 59,
+              "end": 90
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 59,
+            "end": 90
+          },
+          "distance": 3,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

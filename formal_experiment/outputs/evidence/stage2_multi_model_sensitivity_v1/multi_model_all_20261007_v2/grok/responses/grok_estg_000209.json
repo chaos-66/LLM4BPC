@@ -1,0 +1,423 @@
+{
+  "request_id": "grok:estg_000209",
+  "raw_response_utf8": "{\"id\":\"964ebc49-7d35-9cd3-b3a4-4cb2df0f9d66\",\"object\":\"chat.completion\",\"created\":1791348702,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000209\\\",\\n  \\\"source_id\\\": \\\"estg_000209\\\",\\n  \\\"source_text\\\": \\\"Shares issued as a result of a capital increase are not eligible if the resolution on the increase of the share capital (Section 149(1) of the Stock Corporation Act 1965) was adopted within two years after the registration of the resolution on the reduction of the share capital for the purpose of repaying parts of the share capital (Section 177 of the Stock Corporation Act 1965); this also applies to capital reductions by a stock corporation or a limited liability company as the legal predecessor of the stock corporation (Sections 219 and 245 of the Stock Corporation Act 1965, Section 2 of the Federal Act on the Transformation of Commercial Companies, Federal Law Gazette).\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000209_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"Shares issued as a result of a capital increase are not eligible if the resolution on the increase of the share capital (Section 149(1) of the Stock Corporation Act 1965) was adopted within two years after the registration of the resolution on the reduction of the share capital for the purpose of repaying parts of the share capital (Section 177 of the Stock Corporation Act 1965)\\\", \\\"start\\\": 0, \\\"end\\\": 367},\\n      \\\"modality\\\": {\\\"label\\\": \\\"prohibition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"are not eligible\\\", \\\"start\\\": 43, \\\"end\\\": 59}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"Shares issued as a result of a capital increase\\\", \\\"start\\\": 0, \\\"end\\\": 44, \\\"normalized\\\": \\\"shares issued as a result of a capital increase\\\"}],\\n      \\\"actions\\\": [],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"if the resolution on the increase of the share capital (Section 149(1) of the Stock Corporation Act 1965) was adopted within two years after the registration of the resolution on the reduction of the share capital for the purpose of repaying parts of the share capital (Section 177 of the Stock Corporation Act 1965)\\\", \\\"start\\\": 60, \\\"end\\\": 367, \\\"normalized\\\": \\\"if the resolution on the increase of the share capital (section 149(1) of the stock corporation act 1965) was adopted within two years after the registration of the resolution on the reduction of the share capital for the purpose of repaying parts of the share capital (section 177 of the stock corporation act 1965)\\\"}],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000209_c02\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"this also applies to capital reductions by a stock corporation or a limited liability company as the legal predecessor of the stock corporation (Sections 219 and 245 of the Stock Corporation Act 1965, Section 2 of the Federal Act on the Transformation of Commercial Companies, Federal Law Gazette)\\\", \\\"start\\\": 369, \\\"end\\\": 623},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"applies\\\", \\\"start\\\": 379, \\\"end\\\": 386}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a02\\\", \\\"text\\\": \\\"this\\\", \\\"start\\\": 369, \\\"end\\\": 373, \\\"normalized\\\": \\\"this\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"applies to capital reductions\\\", \\\"start\\\": 374, \\\"end\\\": 403, \\\"normalized\\\": \\\"apply to capital reductions\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"by a stock corporation or a limited liability company as the legal predecessor of the stock corporation (Sections 219 and 245 of the Stock Corporation Act 1965, Section 2 of the Federal Act on the Transformation of Commercial Companies, Federal Law Gazette)\\\", \\\"start\\\": 404, \\\"end\\\": 623, \\\"normalized\\\": \\\"by a stock corporation or a limited liability company as the legal predecessor of the stock corporation (sections 219 and 245 of the stock corporation act 1965, section 2 of the federal act on the transformation of commercial companies, federal law gazette)\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a02\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": [\\n    {\\\"field\\\": \\\"actor\\\", \\\"reason\\\": \\\"reference_status=unresolved_coreference;independence_status=context_required\\\"}\\n  ]\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4458,\"completion_tokens\":1067,\"total_tokens\":5525,\"prompt_tokens_details\":{\"text_tokens\":4458,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":1536},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":66272000},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4458,
+    "completion_tokens": 1067,
+    "total_tokens": 5525,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000209",
+    "request_id": "grok:estg_000209",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000209",
+      "source_id": "estg_000209",
+      "source_text": "Shares issued as a result of a capital increase are not eligible if the resolution on the increase of the share capital (Section 149(1) of the Stock Corporation Act 1965) was adopted within two years after the registration of the resolution on the reduction of the share capital for the purpose of repaying parts of the share capital (Section 177 of the Stock Corporation Act 1965); this also applies to capital reductions by a stock corporation or a limited liability company as the legal predecessor of the stock corporation (Sections 219 and 245 of the Stock Corporation Act 1965, Section 2 of the Federal Act on the Transformation of Commercial Companies, Federal Law Gazette).",
+      "clauses": [
+        {
+          "clause_id": "estg_000209_c01",
+          "clause_span": {
+            "text": "Shares issued as a result of a capital increase are not eligible if the resolution on the increase of the share capital (Section 149(1) of the Stock Corporation Act 1965) was adopted within two years after the registration of the resolution on the reduction of the share capital for the purpose of repaying parts of the share capital (Section 177 of the Stock Corporation Act 1965)",
+            "start": 0,
+            "end": 381
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "are not eligible",
+                "start": 48,
+                "end": 64
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "Shares issued as a result of a capital increase",
+              "start": 0,
+              "end": 47,
+              "normalized": "shares issued as a result of a capital increase",
+              "id": "a01"
+            }
+          ],
+          "actions": [],
+          "conditions": [
+            {
+              "text": "if the resolution on the increase of the share capital (Section 149(1) of the Stock Corporation Act 1965) was adopted within two years after the registration of the resolution on the reduction of the share capital for the purpose of repaying parts of the share capital (Section 177 of the Stock Corporation Act 1965)",
+              "start": 65,
+              "end": 381,
+              "normalized": "if the resolution on the increase of the share capital (section 149(1) of the stock corporation act 1965) was adopted within two years after the registration of the resolution on the reduction of the share capital for the purpose of repaying parts of the share capital (section 177 of the stock corporation act 1965)",
+              "id": "c01"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000209_c02",
+          "clause_span": {
+            "text": "this also applies to capital reductions by a stock corporation or a limited liability company as the legal predecessor of the stock corporation (Sections 219 and 245 of the Stock Corporation Act 1965, Section 2 of the Federal Act on the Transformation of Commercial Companies, Federal Law Gazette)",
+            "start": 383,
+            "end": 680
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "applies",
+                "start": 393,
+                "end": 400
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "this",
+              "start": 383,
+              "end": 387,
+              "normalized": "this",
+              "id": "a02"
+            }
+          ],
+          "actions": [
+            {
+              "text": "applies to capital reductions",
+              "start": 393,
+              "end": 422,
+              "normalized": "applies to capital reductions",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "by a stock corporation or a limited liability company as the legal predecessor of the stock corporation (Sections 219 and 245 of the Stock Corporation Act 1965, Section 2 of the Federal Act on the Transformation of Commercial Companies, Federal Law Gazette)",
+              "start": 423,
+              "end": 680,
+              "normalized": "by a stock corporation or a limited liability company as the legal predecessor of the stock corporation (sections 219 and 245 of the stock corporation act 1965, section 2 of the federal act on the transformation of commercial companies, federal law gazette)",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a02",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 5,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 2,
+      "field_span_count": 7,
+      "reanchored_count": 9,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000209_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Shares issued as a result of a capital increase are not eligible if the resolution on the increase of the share capital (Section 149(1) of the Stock Corporation Act 1965) was adopted within two years after the registration of the resolution on the reduction of the share capital for the purpose of repaying parts of the share capital (Section 177 of the Stock Corporation Act 1965)",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 367,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 381
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 381
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000209_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "are not eligible",
+          "normalized": null,
+          "original_start": 43,
+          "original_end": 59,
+          "candidate_occurrences": [
+            {
+              "start": 48,
+              "end": 64
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 48,
+            "end": 64
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000209_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "Shares issued as a result of a capital increase",
+          "normalized": "shares issued as a result of a capital increase",
+          "original_start": 0,
+          "original_end": 44,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 47
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 47
+          },
+          "distance": 3,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000209_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "if the resolution on the increase of the share capital (Section 149(1) of the Stock Corporation Act 1965) was adopted within two years after the registration of the resolution on the reduction of the share capital for the purpose of repaying parts of the share capital (Section 177 of the Stock Corporation Act 1965)",
+          "normalized": "if the resolution on the increase of the share capital (section 149(1) of the stock corporation act 1965) was adopted within two years after the registration of the resolution on the reduction of the share capital for the purpose of repaying parts of the share capital (section 177 of the stock corporation act 1965)",
+          "original_start": 60,
+          "original_end": 367,
+          "candidate_occurrences": [
+            {
+              "start": 65,
+              "end": 381
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 65,
+            "end": 381
+          },
+          "distance": 19,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000209_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "this also applies to capital reductions by a stock corporation or a limited liability company as the legal predecessor of the stock corporation (Sections 219 and 245 of the Stock Corporation Act 1965, Section 2 of the Federal Act on the Transformation of Commercial Companies, Federal Law Gazette)",
+          "normalized": null,
+          "original_start": 369,
+          "original_end": 623,
+          "candidate_occurrences": [
+            {
+              "start": 383,
+              "end": 680
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 383,
+            "end": 680
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000209_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "applies",
+          "normalized": null,
+          "original_start": 379,
+          "original_end": 386,
+          "candidate_occurrences": [
+            {
+              "start": 393,
+              "end": 400
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 393,
+            "end": 400
+          },
+          "distance": 28,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actors[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000209_c02",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a02",
+          "text": "this",
+          "normalized": "this",
+          "original_start": 369,
+          "original_end": 373,
+          "candidate_occurrences": [
+            {
+              "start": 383,
+              "end": 387
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 383,
+            "end": 387
+          },
+          "distance": 28,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000209_c02",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "applies to capital reductions",
+          "normalized": "applies to capital reductions",
+          "original_start": 374,
+          "original_end": 403,
+          "candidate_occurrences": [
+            {
+              "start": 393,
+              "end": 422
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 393,
+            "end": 422
+          },
+          "distance": 38,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].constraints[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000209_c02",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c02",
+          "text": "by a stock corporation or a limited liability company as the legal predecessor of the stock corporation (Sections 219 and 245 of the Stock Corporation Act 1965, Section 2 of the Federal Act on the Transformation of Commercial Companies, Federal Law Gazette)",
+          "normalized": "by a stock corporation or a limited liability company as the legal predecessor of the stock corporation (sections 219 and 245 of the stock corporation act 1965, section 2 of the federal act on the transformation of commercial companies, federal law gazette)",
+          "original_start": 404,
+          "original_end": 623,
+          "candidate_occurrences": [
+            {
+              "start": 423,
+              "end": 680
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 423,
+            "end": 680
+          },
+          "distance": 76,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 9,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

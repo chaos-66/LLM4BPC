@@ -1,0 +1,303 @@
+{
+  "request_id": "minimax:estg_000030",
+  "raw_response_utf8": "{\"id\":\"07150166c1c169397847fbcbe14e9902\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000030\\\",\\n  \\\"source_id\\\": \\\"estg_000030\\\",\\n  \\\"source_text\\\": \\\"(3) Income within the meaning of paragraph 1 items 10 and 11 shall be taken into account when determining the tax for the employee's other income.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000030_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"Income within the meaning of paragraph 1 items 10 and 11 shall be taken into account when determining the tax for the employee's other income.\\\", \\\"start\\\": 4, \\\"end\\\": 140},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 56, \\\"end\\\": 61}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"taken into account\\\", \\\"start\\\": 62, \\\"end\\\": 80, \\\"normalized\\\": \\\"take into account\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"when determining the tax for the employee's other income\\\", \\\"start\\\": 81, \\\"end\\\": 139, \\\"normalized\\\": \\\"when determining the tax for the employee's other income\\\"}],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"within the meaning of paragraph 1 items 10 and 11\\\", \\\"start\\\": 11, \\\"end\\\": 55, \\\"normalized\\\": \\\"within the meaning of paragraph 1 items 10 and 11\\\"},\\n        {\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"for the employee's other income\\\", \\\"start\\\": 114, \\\"end\\\": 139, \\\"normalized\\\": \\\"for the employee's other income\\\"}\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"role\":\"assistant\"}}],\"created\":1791348328,\"model\":\"MiniMax-M3\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":4857,\"total_characters\":0,\"prompt_tokens\":4370,\"completion_tokens\":487,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":128}},\"input_sensitive\":false,\"output_sensitive\":false,\"input_sensitive_type\":0,\"output_sensitive_type\":0,\"output_sensitive_int\":0,\"service_tier\":\"standard\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}\n",
+  "usage": {
+    "prompt_tokens": 4370,
+    "completion_tokens": 487,
+    "total_tokens": 4857,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "MiniMax-M3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "minimax",
+    "sample_id": "estg_000030",
+    "request_id": "minimax:estg_000030",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000030",
+      "source_id": "estg_000030",
+      "source_text": "(3) Income within the meaning of paragraph 1 items 10 and 11 shall be taken into account when determining the tax for the employee's other income.",
+      "clauses": [
+        {
+          "clause_id": "estg_000030_c01",
+          "clause_span": {
+            "text": "Income within the meaning of paragraph 1 items 10 and 11 shall be taken into account when determining the tax for the employee's other income.",
+            "start": 4,
+            "end": 146
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 61,
+                "end": 66
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "taken into account",
+              "start": 70,
+              "end": 88,
+              "normalized": "taken into account",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "when determining the tax for the employee's other income",
+              "start": 89,
+              "end": 145,
+              "normalized": "when determining the tax for the employee's other income",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "within the meaning of paragraph 1 items 10 and 11",
+              "start": 11,
+              "end": 60,
+              "normalized": "within the meaning of paragraph 1 items 10 and 11",
+              "id": "c01"
+            },
+            {
+              "text": "for the employee's other income",
+              "start": 114,
+              "end": 145,
+              "normalized": "for the employee's other income",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 5,
+      "reanchored_count": 6,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000030_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Income within the meaning of paragraph 1 items 10 and 11 shall be taken into account when determining the tax for the employee's other income.",
+          "normalized": null,
+          "original_start": 4,
+          "original_end": 140,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 146
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 146
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000030_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 56,
+          "original_end": 61,
+          "candidate_occurrences": [
+            {
+              "start": 61,
+              "end": 66
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 61,
+            "end": 66
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000030_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "taken into account",
+          "normalized": "taken into account",
+          "original_start": 62,
+          "original_end": 80,
+          "candidate_occurrences": [
+            {
+              "start": 70,
+              "end": 88
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 70,
+            "end": 88
+          },
+          "distance": 16,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000030_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "when determining the tax for the employee's other income",
+          "normalized": "when determining the tax for the employee's other income",
+          "original_start": 81,
+          "original_end": 139,
+          "candidate_occurrences": [
+            {
+              "start": 89,
+              "end": 145
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 89,
+            "end": 145
+          },
+          "distance": 14,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000030_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "within the meaning of paragraph 1 items 10 and 11",
+          "normalized": "within the meaning of paragraph 1 items 10 and 11",
+          "original_start": 11,
+          "original_end": 55,
+          "candidate_occurrences": [
+            {
+              "start": 11,
+              "end": 60
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 11,
+            "end": 60
+          },
+          "distance": 5,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000030_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "for the employee's other income",
+          "normalized": "for the employee's other income",
+          "original_start": 114,
+          "original_end": 139,
+          "candidate_occurrences": [
+            {
+              "start": 114,
+              "end": 145
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 114,
+            "end": 145
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 6,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

@@ -1,0 +1,319 @@
+{
+  "request_id": "grok:estg_000111",
+  "raw_response_utf8": "{\"id\":\"97f2dcf6-4b02-92fd-9bd5-7f1bc8e32dc7\",\"object\":\"chat.completion\",\"created\":1791348534,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000111\\\",\\n  \\\"source_id\\\": \\\"estg_000111\\\",\\n  \\\"source_text\\\": \\\"(5) In the following cases, an investment allowance may be claimed neither as a reduction of profit nor through the designated use of an investment reserve (a tax-free amount):  \\\\n— For aircraft used for passenger transport, except aircraft of air transport companies (Section 101 of the Aviation Act, BGBl.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000111_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"an investment allowance may be claimed neither as a reduction of profit nor through the designated use of an investment reserve (a tax-free amount)\\\", \\\"start\\\": 24, \\\"end\\\": 171},\\n      \\\"modality\\\": {\\\"label\\\": \\\"prohibition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may be claimed neither\\\", \\\"start\\\": 46, \\\"end\\\": 68}, {\\\"text\\\": \\\"neither\\\", \\\"start\\\": 49, \\\"end\\\": 56}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [\\n        {\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"claimed as a reduction of profit\\\", \\\"start\\\": 69, \\\"end\\\": 101, \\\"normalized\\\": \\\"claim as a reduction of profit\\\"},\\n        {\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"claimed through the designated use of an investment reserve\\\", \\\"start\\\": 105, \\\"end\\\": 163, \\\"normalized\\\": \\\"claim through the designated use of an investment reserve\\\"}\\n      ],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"In the following cases\\\", \\\"start\\\": 4, \\\"end\\\": 24, \\\"normalized\\\": \\\"in the following cases\\\"}],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [\\n        {\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"},\\n        {\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p02\\\"}\\n      ],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000111_c02\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"For aircraft used for passenger transport, except aircraft of air transport companies (Section 101 of the Aviation Act, BGBl.\\\", \\\"start\\\": 175, \\\"end\\\": 312},\\n      \\\"modality\\\": {\\\"label\\\": \\\"prohibition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"neither\\\", \\\"start\\\": 49, \\\"end\\\": 56}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [{\\\"id\\\": \\\"e01\\\", \\\"text\\\": \\\"except aircraft of air transport companies (Section 101 of the Aviation Act, BGBl.\\\", \\\"start\\\": 214, \\\"end\\\": 312, \\\"normalized\\\": \\\"except aircraft of air transport companies (section 101 of the aviation act, bgbl.\\\"}],\\n      \\\"actor_action_map\\\": [],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4383,\"completion_tokens\":696,\"total_tokens\":5079,\"prompt_tokens_details\":{\"text_tokens\":4383,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":128},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":70843500},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4383,
+    "completion_tokens": 696,
+    "total_tokens": 5079,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000111",
+    "request_id": "grok:estg_000111",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000111",
+      "source_id": "estg_000111",
+      "source_text": "(5) In the following cases, an investment allowance may be claimed neither as a reduction of profit nor through the designated use of an investment reserve (a tax-free amount):  \n— For aircraft used for passenger transport, except aircraft of air transport companies (Section 101 of the Aviation Act, BGBl.",
+      "clauses": [
+        {
+          "clause_id": "estg_000111_c01",
+          "clause_span": {
+            "text": "an investment allowance may be claimed neither as a reduction of profit nor through the designated use of an investment reserve (a tax-free amount)",
+            "start": 28,
+            "end": 175
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "may be claimed neither",
+                "start": 52,
+                "end": 74
+              },
+              {
+                "text": "neither",
+                "start": 67,
+                "end": 74
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000111_c02",
+          "clause_span": {
+            "text": "For aircraft used for passenger transport, except aircraft of air transport companies (Section 101 of the Aviation Act, BGBl.",
+            "start": 181,
+            "end": 306
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": []
+          },
+          "actors": [],
+          "actions": [],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [
+            {
+              "text": "except aircraft of air transport companies (Section 101 of the Aviation Act, BGBl.",
+              "start": 224,
+              "end": 306,
+              "normalized": "except aircraft of air transport companies (section 101 of the aviation act, bgbl.",
+              "id": "e01"
+            }
+          ],
+          "actor_action_map": [],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "spans_adapted": 2,
+      "dropped_spans": [
+        "actions[0]_text_not_in_source",
+        "actions[1]_text_not_in_source"
+      ],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 2,
+      "field_span_count": 5,
+      "reanchored_count": 5,
+      "dropped_spans": [
+        "clauses[0].conditions[0]",
+        "clauses[1].modality.evidence[0]"
+      ],
+      "dropped_clauses": [],
+      "dropped_edges": [
+        "clauses[0].actor_action_map[0]",
+        "clauses[0].actor_action_map[1]"
+      ],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000111_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "an investment allowance may be claimed neither as a reduction of profit nor through the designated use of an investment reserve (a tax-free amount)",
+          "normalized": null,
+          "original_start": 24,
+          "original_end": 171,
+          "candidate_occurrences": [
+            {
+              "start": 28,
+              "end": 175
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 28,
+            "end": 175
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000111_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may be claimed neither",
+          "normalized": null,
+          "original_start": 46,
+          "original_end": 68,
+          "candidate_occurrences": [
+            {
+              "start": 52,
+              "end": 74
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 52,
+            "end": 74
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000111_c01",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "neither",
+          "normalized": null,
+          "original_start": 49,
+          "original_end": 56,
+          "candidate_occurrences": [
+            {
+              "start": 67,
+              "end": 74
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 67,
+            "end": 74
+          },
+          "distance": 36,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000111_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "In the following cases",
+          "normalized": "in the following cases",
+          "original_start": 4,
+          "original_end": 24,
+          "candidate_occurrences": [],
+          "strategy": "not_applicable",
+          "chosen": null,
+          "distance": null,
+          "outcome": "unresolved",
+          "reason": "zero_occurrence",
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000111_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "For aircraft used for passenger transport, except aircraft of air transport companies (Section 101 of the Aviation Act, BGBl.",
+          "normalized": null,
+          "original_start": 175,
+          "original_end": 312,
+          "candidate_occurrences": [
+            {
+              "start": 181,
+              "end": 306
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 181,
+            "end": 306
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000111_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "neither",
+          "normalized": null,
+          "original_start": 49,
+          "original_end": 56,
+          "candidate_occurrences": [],
+          "strategy": "not_applicable",
+          "chosen": null,
+          "distance": null,
+          "outcome": "unresolved",
+          "reason": "zero_occurrence",
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].exceptions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000111_c02",
+          "field": "exceptions",
+          "span_index": 0,
+          "span_id": "e01",
+          "text": "except aircraft of air transport companies (Section 101 of the Aviation Act, BGBl.",
+          "normalized": "except aircraft of air transport companies (section 101 of the aviation act, bgbl.",
+          "original_start": 214,
+          "original_end": 312,
+          "candidate_occurrences": [
+            {
+              "start": 224,
+              "end": 306
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 224,
+            "end": 306
+          },
+          "distance": 16,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 2,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

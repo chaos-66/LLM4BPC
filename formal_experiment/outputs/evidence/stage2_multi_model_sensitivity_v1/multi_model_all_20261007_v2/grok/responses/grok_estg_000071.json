@@ -1,0 +1,499 @@
+{
+  "request_id": "grok:estg_000071",
+  "raw_response_utf8": "{\"id\":\"d19f540d-95f9-9f69-a4cb-53137cd750e3\",\"object\":\"chat.completion\",\"created\":1791348432,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000071\\\",\\n  \\\"source_id\\\": \\\"estg_000071\\\",\\n  \\\"source_text\\\": \\\"For registered traders, Item 13 applies. — The lump-sum depreciation is claimed only to the extent that no partial write-down under subparagraph a was claimed for the receivables. — The qualifying receivables and the amount of the depreciation are shown separately in the balance sheets.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000071_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"For registered traders, Item 13 applies.\\\", \\\"start\\\": 0, \\\"end\\\": 39},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"applies\\\", \\\"start\\\": 32, \\\"end\\\": 39}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"applies\\\", \\\"start\\\": 32, \\\"end\\\": 39, \\\"normalized\\\": \\\"apply\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000071_c02\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"The lump-sum depreciation is claimed only to the extent that no partial write-down under subparagraph a was claimed for the receivables.\\\", \\\"start\\\": 43, \\\"end\\\": 175},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"is claimed\\\", \\\"start\\\": 66, \\\"end\\\": 76}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"claimed\\\", \\\"start\\\": 69, \\\"end\\\": 76, \\\"normalized\\\": \\\"claim\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"only to the extent that no partial write-down under subparagraph a was claimed for the receivables\\\", \\\"start\\\": 77, \\\"end\\\": 174, \\\"normalized\\\": \\\"only to the extent that no partial write-down under subparagraph a was claimed for the receivables\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p02\\\"}],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000071_c03\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"The qualifying receivables and the amount of the depreciation are shown separately in the balance sheets.\\\", \\\"start\\\": 179, \\\"end\\\": 281},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"are shown\\\", \\\"start\\\": 220, \\\"end\\\": 229}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p03\\\", \\\"text\\\": \\\"shown\\\", \\\"start\\\": 223, \\\"end\\\": 229, \\\"normalized\\\": \\\"show\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"separately in the balance sheets\\\", \\\"start\\\": 230, \\\"end\\\": 280, \\\"normalized\\\": \\\"separately in the balance sheets\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p03\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4373,\"completion_tokens\":790,\"total_tokens\":5163,\"prompt_tokens_details\":{\"text_tokens\":4373,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":128},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":73068500},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4373,
+    "completion_tokens": 790,
+    "total_tokens": 5163,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000071",
+    "request_id": "grok:estg_000071",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000071",
+      "source_id": "estg_000071",
+      "source_text": "For registered traders, Item 13 applies. — The lump-sum depreciation is claimed only to the extent that no partial write-down under subparagraph a was claimed for the receivables. — The qualifying receivables and the amount of the depreciation are shown separately in the balance sheets.",
+      "clauses": [
+        {
+          "clause_id": "estg_000071_c01",
+          "clause_span": {
+            "text": "For registered traders, Item 13 applies.",
+            "start": 0,
+            "end": 40
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "applies",
+                "start": 32,
+                "end": 39
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "applies",
+              "start": 32,
+              "end": 39,
+              "normalized": "applies",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000071_c02",
+          "clause_span": {
+            "text": "The lump-sum depreciation is claimed only to the extent that no partial write-down under subparagraph a was claimed for the receivables.",
+            "start": 43,
+            "end": 179
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "is claimed",
+                "start": 69,
+                "end": 79
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "only to the extent that no partial write-down under subparagraph a was claimed for the receivables",
+              "start": 80,
+              "end": 178,
+              "normalized": "only to the extent that no partial write-down under subparagraph a was claimed for the receivables",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000071_c03",
+          "clause_span": {
+            "text": "The qualifying receivables and the amount of the depreciation are shown separately in the balance sheets.",
+            "start": 182,
+            "end": 287
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "are shown",
+                "start": 244,
+                "end": 253
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "shown",
+              "start": 248,
+              "end": 253,
+              "normalized": "shown",
+              "id": "p03"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "separately in the balance sheets",
+              "start": 254,
+              "end": 286,
+              "normalized": "separately in the balance sheets",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p03"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 5,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 3,
+      "field_span_count": 8,
+      "reanchored_count": 8,
+      "dropped_spans": [
+        "clauses[1].actions[0]"
+      ],
+      "dropped_clauses": [],
+      "dropped_edges": [
+        "clauses[1].actor_action_map[0]"
+      ],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000071_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "For registered traders, Item 13 applies.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 39,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 40
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 40
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000071_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "applies",
+          "normalized": null,
+          "original_start": 32,
+          "original_end": 39,
+          "candidate_occurrences": [
+            {
+              "start": 32,
+              "end": 39
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 32,
+            "end": 39
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000071_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "applies",
+          "normalized": "applies",
+          "original_start": 32,
+          "original_end": 39,
+          "candidate_occurrences": [
+            {
+              "start": 32,
+              "end": 39
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 32,
+            "end": 39
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000071_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The lump-sum depreciation is claimed only to the extent that no partial write-down under subparagraph a was claimed for the receivables.",
+          "normalized": null,
+          "original_start": 43,
+          "original_end": 175,
+          "candidate_occurrences": [
+            {
+              "start": 43,
+              "end": 179
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 43,
+            "end": 179
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000071_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "is claimed",
+          "normalized": null,
+          "original_start": 66,
+          "original_end": 76,
+          "candidate_occurrences": [
+            {
+              "start": 69,
+              "end": 79
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 69,
+            "end": 79
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000071_c02",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p02",
+          "text": "claimed",
+          "normalized": "claimed",
+          "original_start": 69,
+          "original_end": 76,
+          "candidate_occurrences": [
+            {
+              "start": 72,
+              "end": 79
+            },
+            {
+              "start": 151,
+              "end": 158
+            }
+          ],
+          "strategy": "not_applicable",
+          "chosen": null,
+          "distance": null,
+          "outcome": "unresolved",
+          "reason": "ambiguous_occurrence",
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].constraints[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000071_c02",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "only to the extent that no partial write-down under subparagraph a was claimed for the receivables",
+          "normalized": "only to the extent that no partial write-down under subparagraph a was claimed for the receivables",
+          "original_start": 77,
+          "original_end": 174,
+          "candidate_occurrences": [
+            {
+              "start": 80,
+              "end": 178
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 80,
+            "end": 178
+          },
+          "distance": 7,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].clause_span",
+          "clause_index": 2,
+          "clause_id": "estg_000071_c03",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The qualifying receivables and the amount of the depreciation are shown separately in the balance sheets.",
+          "normalized": null,
+          "original_start": 179,
+          "original_end": 281,
+          "candidate_occurrences": [
+            {
+              "start": 182,
+              "end": 287
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 182,
+            "end": 287
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].modality.evidence[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000071_c03",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "are shown",
+          "normalized": null,
+          "original_start": 220,
+          "original_end": 229,
+          "candidate_occurrences": [
+            {
+              "start": 244,
+              "end": 253
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 244,
+            "end": 253
+          },
+          "distance": 48,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].actions[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000071_c03",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p03",
+          "text": "shown",
+          "normalized": "shown",
+          "original_start": 223,
+          "original_end": 229,
+          "candidate_occurrences": [
+            {
+              "start": 248,
+              "end": 253
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 248,
+            "end": 253
+          },
+          "distance": 49,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].constraints[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000071_c03",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c02",
+          "text": "separately in the balance sheets",
+          "normalized": "separately in the balance sheets",
+          "original_start": 230,
+          "original_end": 280,
+          "candidate_occurrences": [
+            {
+              "start": 254,
+              "end": 286
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 254,
+            "end": 286
+          },
+          "distance": 30,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 2,
+      "unresolved_spans": 1,
+      "reanchored_unique_exact": 8,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 1,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 1,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

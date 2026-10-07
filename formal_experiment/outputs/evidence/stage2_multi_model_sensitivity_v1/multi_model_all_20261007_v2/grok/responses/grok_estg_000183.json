@@ -1,0 +1,372 @@
+{
+  "request_id": "grok:estg_000183",
+  "raw_response_utf8": "{\"id\":\"01a684ab-458f-908d-9909-bf42d8a3eeec\",\"object\":\"chat.completion\",\"created\":1791348663,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000183\\\",\\n  \\\"source_id\\\": \\\"estg_000183\\\",\\n  \\\"source_text\\\": \\\"If the precise determination of income-related expenses is associated with disproportionate difficulties, the Federal Minister of Finance may, in addition to the flat-rate amount for income-related expenses pursuant to Section 16(3), establish average rates for income-related expenses by regulation for certain groups of taxpayers according to the respective practical experience.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000183_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"If the precise determination of income-related expenses is associated with disproportionate difficulties, the Federal Minister of Finance may, in addition to the flat-rate amount for income-related expenses pursuant to Section 16(3), establish average rates for income-related expenses by regulation for certain groups of taxpayers according to the respective practical experience.\\\", \\\"start\\\": 0, \\\"end\\\": 331},\\n      \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may\\\", \\\"start\\\": 122, \\\"end\\\": 125}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"the Federal Minister of Finance\\\", \\\"start\\\": 95, \\\"end\\\": 127, \\\"normalized\\\": \\\"federal minister of finance\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"establish average rates for income-related expenses by regulation\\\", \\\"start\\\": 155, \\\"end\\\": 217, \\\"normalized\\\": \\\"establish average rates for income-related expenses by regulation\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"If the precise determination of income-related expenses is associated with disproportionate difficulties\\\", \\\"start\\\": 0, \\\"end\\\": 93, \\\"normalized\\\": \\\"if the precise determination of income-related expenses is associated with disproportionate difficulties\\\"}],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"in addition to the flat-rate amount for income-related expenses pursuant to Section 16(3)\\\", \\\"start\\\": 129, \\\"end\\\": 218, \\\"normalized\\\": \\\"in addition to the flat-rate amount for income-related expenses pursuant to section 16(3)\\\"},\\n        {\\\"id\\\": \\\"c03\\\", \\\"text\\\": \\\"for certain groups of taxpayers\\\", \\\"start\\\": 218, \\\"end\\\": 249, \\\"normalized\\\": \\\"for certain groups of taxpayers\\\"},\\n        {\\\"id\\\": \\\"c04\\\", \\\"text\\\": \\\"according to the respective practical experience\\\", \\\"start\\\": 250, \\\"end\\\": 296, \\\"normalized\\\": \\\"according to the respective practical experience\\\"}\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4382,\"completion_tokens\":652,\"total_tokens\":5034,\"prompt_tokens_details\":{\"text_tokens\":4382,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":1536},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":54947000},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4382,
+    "completion_tokens": 652,
+    "total_tokens": 5034,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000183",
+    "request_id": "grok:estg_000183",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000183",
+      "source_id": "estg_000183",
+      "source_text": "If the precise determination of income-related expenses is associated with disproportionate difficulties, the Federal Minister of Finance may, in addition to the flat-rate amount for income-related expenses pursuant to Section 16(3), establish average rates for income-related expenses by regulation for certain groups of taxpayers according to the respective practical experience.",
+      "clauses": [
+        {
+          "clause_id": "estg_000183_c01",
+          "clause_span": {
+            "text": "If the precise determination of income-related expenses is associated with disproportionate difficulties, the Federal Minister of Finance may, in addition to the flat-rate amount for income-related expenses pursuant to Section 16(3), establish average rates for income-related expenses by regulation for certain groups of taxpayers according to the respective practical experience.",
+            "start": 0,
+            "end": 381
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 138,
+                "end": 141
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the Federal Minister of Finance",
+              "start": 106,
+              "end": 137,
+              "normalized": "the federal minister of finance",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "establish average rates for income-related expenses by regulation",
+              "start": 234,
+              "end": 299,
+              "normalized": "establish average rates for income-related expenses by regulation",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If the precise determination of income-related expenses is associated with disproportionate difficulties",
+              "start": 0,
+              "end": 104,
+              "normalized": "if the precise determination of income-related expenses is associated with disproportionate difficulties",
+              "id": "c01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "in addition to the flat-rate amount for income-related expenses pursuant to Section 16(3)",
+              "start": 143,
+              "end": 232,
+              "normalized": "in addition to the flat-rate amount for income-related expenses pursuant to section 16(3)",
+              "id": "c02"
+            },
+            {
+              "text": "for certain groups of taxpayers",
+              "start": 300,
+              "end": 331,
+              "normalized": "for certain groups of taxpayers",
+              "id": "c03"
+            },
+            {
+              "text": "according to the respective practical experience",
+              "start": 332,
+              "end": 380,
+              "normalized": "according to the respective practical experience",
+              "id": "c04"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 6,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 7,
+      "reanchored_count": 8,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000183_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If the precise determination of income-related expenses is associated with disproportionate difficulties, the Federal Minister of Finance may, in addition to the flat-rate amount for income-related expenses pursuant to Section 16(3), establish average rates for income-related expenses by regulation for certain groups of taxpayers according to the respective practical experience.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 331,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 381
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 381
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000183_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 122,
+          "original_end": 125,
+          "candidate_occurrences": [
+            {
+              "start": 138,
+              "end": 141
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 138,
+            "end": 141
+          },
+          "distance": 32,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000183_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "the Federal Minister of Finance",
+          "normalized": "the federal minister of finance",
+          "original_start": 95,
+          "original_end": 127,
+          "candidate_occurrences": [
+            {
+              "start": 106,
+              "end": 137
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 106,
+            "end": 137
+          },
+          "distance": 21,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000183_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "establish average rates for income-related expenses by regulation",
+          "normalized": "establish average rates for income-related expenses by regulation",
+          "original_start": 155,
+          "original_end": 217,
+          "candidate_occurrences": [
+            {
+              "start": 234,
+              "end": 299
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 234,
+            "end": 299
+          },
+          "distance": 161,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000183_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "If the precise determination of income-related expenses is associated with disproportionate difficulties",
+          "normalized": "if the precise determination of income-related expenses is associated with disproportionate difficulties",
+          "original_start": 0,
+          "original_end": 93,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 104
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 104
+          },
+          "distance": 11,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000183_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c02",
+          "text": "in addition to the flat-rate amount for income-related expenses pursuant to Section 16(3)",
+          "normalized": "in addition to the flat-rate amount for income-related expenses pursuant to section 16(3)",
+          "original_start": 129,
+          "original_end": 218,
+          "candidate_occurrences": [
+            {
+              "start": 143,
+              "end": 232
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 143,
+            "end": 232
+          },
+          "distance": 28,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000183_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c03",
+          "text": "for certain groups of taxpayers",
+          "normalized": "for certain groups of taxpayers",
+          "original_start": 218,
+          "original_end": 249,
+          "candidate_occurrences": [
+            {
+              "start": 300,
+              "end": 331
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 300,
+            "end": 331
+          },
+          "distance": 164,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[2]",
+          "clause_index": 0,
+          "clause_id": "estg_000183_c01",
+          "field": "constraints",
+          "span_index": 2,
+          "span_id": "c04",
+          "text": "according to the respective practical experience",
+          "normalized": "according to the respective practical experience",
+          "original_start": 250,
+          "original_end": 296,
+          "candidate_occurrences": [
+            {
+              "start": 332,
+              "end": 380
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 332,
+            "end": 380
+          },
+          "distance": 166,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 8,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

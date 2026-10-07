@@ -1,0 +1,269 @@
+{
+  "request_id": "grok:estg_000146",
+  "raw_response_utf8": "{\"id\":\"19ec4ab5-6d88-90b2-ac64-e530d379ec6f\",\"object\":\"chat.completion\",\"created\":1791348629,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000146\\\",\\n  \\\"source_id\\\": \\\"estg_000146\\\",\\n  \\\"source_text\\\": \\\"The benefit may only be claimed if the tax-exempt amounts are shown in a continuously maintained record submitted to the tax office together with the profit declaration for the relevant business year.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000146_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"The benefit may only be claimed if the tax-exempt amounts are shown in a continuously maintained record submitted to the tax office together with the profit declaration for the relevant business year.\\\", \\\"start\\\": 0, \\\"end\\\": 197},\\n      \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may\\\", \\\"start\\\": 12, \\\"end\\\": 15}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"claimed\\\", \\\"start\\\": 25, \\\"end\\\": 32, \\\"normalized\\\": \\\"claim\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"if the tax-exempt amounts are shown in a continuously maintained record submitted to the tax office together with the profit declaration for the relevant business year\\\", \\\"start\\\": 33, \\\"end\\\": 196, \\\"normalized\\\": \\\"if the tax-exempt amounts are shown in a continuously maintained record submitted to the tax office together with the profit declaration for the relevant business year\\\"}],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"only\\\", \\\"start\\\": 16, \\\"end\\\": 20, \\\"normalized\\\": \\\"only\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4355,\"completion_tokens\":450,\"total_tokens\":4805,\"prompt_tokens_details\":{\"text_tokens\":4355,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":1536},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":49559500},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4355,
+    "completion_tokens": 450,
+    "total_tokens": 4805,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000146",
+    "request_id": "grok:estg_000146",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000146",
+      "source_id": "estg_000146",
+      "source_text": "The benefit may only be claimed if the tax-exempt amounts are shown in a continuously maintained record submitted to the tax office together with the profit declaration for the relevant business year.",
+      "clauses": [
+        {
+          "clause_id": "estg_000146_c01",
+          "clause_span": {
+            "text": "The benefit may only be claimed if the tax-exempt amounts are shown in a continuously maintained record submitted to the tax office together with the profit declaration for the relevant business year.",
+            "start": 0,
+            "end": 200
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 12,
+                "end": 15
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "claimed",
+              "start": 24,
+              "end": 31,
+              "normalized": "claimed",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "if the tax-exempt amounts are shown in a continuously maintained record submitted to the tax office together with the profit declaration for the relevant business year",
+              "start": 32,
+              "end": 199,
+              "normalized": "if the tax-exempt amounts are shown in a continuously maintained record submitted to the tax office together with the profit declaration for the relevant business year",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "only",
+              "start": 16,
+              "end": 20,
+              "normalized": "only",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 3,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000146_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The benefit may only be claimed if the tax-exempt amounts are shown in a continuously maintained record submitted to the tax office together with the profit declaration for the relevant business year.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 197,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 200
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 200
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000146_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 12,
+          "original_end": 15,
+          "candidate_occurrences": [
+            {
+              "start": 12,
+              "end": 15
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 12,
+            "end": 15
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000146_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "claimed",
+          "normalized": "claimed",
+          "original_start": 25,
+          "original_end": 32,
+          "candidate_occurrences": [
+            {
+              "start": 24,
+              "end": 31
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 24,
+            "end": 31
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000146_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "if the tax-exempt amounts are shown in a continuously maintained record submitted to the tax office together with the profit declaration for the relevant business year",
+          "normalized": "if the tax-exempt amounts are shown in a continuously maintained record submitted to the tax office together with the profit declaration for the relevant business year",
+          "original_start": 33,
+          "original_end": 196,
+          "candidate_occurrences": [
+            {
+              "start": 32,
+              "end": 199
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 32,
+            "end": 199
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000146_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "only",
+          "normalized": "only",
+          "original_start": 16,
+          "original_end": 20,
+          "candidate_occurrences": [
+            {
+              "start": 16,
+              "end": 20
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 16,
+            "end": 20
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 2,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 3,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

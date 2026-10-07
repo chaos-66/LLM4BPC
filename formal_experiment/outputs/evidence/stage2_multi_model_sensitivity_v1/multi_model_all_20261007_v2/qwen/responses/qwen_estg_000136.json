@@ -1,0 +1,233 @@
+{
+  "request_id": "qwen:estg_000136",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000136\\\",\\\"source_id\\\":\\\"estg_000136\\\",\\\"source_text\\\":\\\"The assets to which the reserves (tax-free amounts) may be transferred shall be determined by the assets in respect of which the hidden reserves were disclosed (paragraph 3).\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000136_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"The assets to which the reserves (tax-free amounts) may be transferred shall be determined by the assets in respect of which the hidden reserves were disclosed (paragraph 3).\\\",\\\"start\\\":0,\\\"end\\\":175},\\\"modality\\\":{\\\"label\\\":\\\"obligation\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall\\\",\\\"start\\\":75,\\\"end\\\":80}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"determined\\\",\\\"start\\\":84,\\\"end\\\":94,\\\"normalized\\\":\\\"determine\\\"}],\\\"conditions\\\":[],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"by the assets in respect of which the hidden reserves were disclosed (paragraph 3)\\\",\\\"start\\\":95,\\\"end\\\":175,\\\"normalized\\\":\\\"by the assets in respect of which the hidden reserves were disclosed (paragraph 3)\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\"}}],\"created\":1791348964,\"id\":\"chatcmpl-785e2928-ba77-96ae-be5b-ac3795b5a48d\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":335,\"prompt_tokens\":4604,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4604},\"total_tokens\":4939}}",
+  "usage": {
+    "prompt_tokens": 4604,
+    "completion_tokens": 335,
+    "total_tokens": 4939
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000136",
+    "request_id": "qwen:estg_000136",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000136",
+      "source_id": "estg_000136",
+      "source_text": "The assets to which the reserves (tax-free amounts) may be transferred shall be determined by the assets in respect of which the hidden reserves were disclosed (paragraph 3).",
+      "clauses": [
+        {
+          "clause_id": "estg_000136_c01",
+          "clause_span": {
+            "text": "The assets to which the reserves (tax-free amounts) may be transferred shall be determined by the assets in respect of which the hidden reserves were disclosed (paragraph 3).",
+            "start": 0,
+            "end": 174
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 71,
+                "end": 76
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "determined",
+              "start": 80,
+              "end": 90,
+              "normalized": "determined",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "by the assets in respect of which the hidden reserves were disclosed (paragraph 3)",
+              "start": 91,
+              "end": 173,
+              "normalized": "by the assets in respect of which the hidden reserves were disclosed (paragraph 3)",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 2,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 3,
+      "reanchored_count": 4,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000136_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The assets to which the reserves (tax-free amounts) may be transferred shall be determined by the assets in respect of which the hidden reserves were disclosed (paragraph 3).",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 175,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 174
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 174
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000136_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 75,
+          "original_end": 80,
+          "candidate_occurrences": [
+            {
+              "start": 71,
+              "end": 76
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 71,
+            "end": 76
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000136_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "determined",
+          "normalized": "determined",
+          "original_start": 84,
+          "original_end": 94,
+          "candidate_occurrences": [
+            {
+              "start": 80,
+              "end": 90
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 80,
+            "end": 90
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000136_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "by the assets in respect of which the hidden reserves were disclosed (paragraph 3)",
+          "normalized": "by the assets in respect of which the hidden reserves were disclosed (paragraph 3)",
+          "original_start": 95,
+          "original_end": 175,
+          "candidate_occurrences": [
+            {
+              "start": 91,
+              "end": 173
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 91,
+            "end": 173
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 4,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

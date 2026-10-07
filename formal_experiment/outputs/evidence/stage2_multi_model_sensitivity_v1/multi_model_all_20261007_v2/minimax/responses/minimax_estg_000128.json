@@ -1,0 +1,339 @@
+{
+  "request_id": "minimax:estg_000128",
+  "raw_response_utf8": "{\"id\":\"071502ec0e254bbfe7bf0ce7e5526ec4\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000128\\\",\\\"source_id\\\":\\\"estg_000128\\\",\\\"source_text\\\":\\\"(2) A transfer is only permissible if 1. the disposed-of asset at the time of disposal has belonged to the fixed assets of this business for at least seven years and 2. the asset to which hidden reserves are to be transferred is used in a domestic permanent establishment; Section 10(2) last sentence shall apply.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000128_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"A transfer is only permissible if 1. the disposed-of asset at the time of disposal has belonged to the fixed assets of this business for at least seven years and 2. the asset to which hidden reserves are to be transferred is used in a domestic permanent establishment; Section 10(2) last sentence shall apply.\\\",\\\"start\\\":4,\\\"end\\\":271},\\\"modality\\\":{\\\"label\\\":\\\"permission\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"is only permissible\\\",\\\"start\\\":17,\\\"end\\\":36},{\\\"text\\\":\\\"only\\\",\\\"start\\\":20,\\\"end\\\":24}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"A transfer\\\",\\\"start\\\":4,\\\"end\\\":15,\\\"normalized\\\":\\\"transfer\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"be permissible\\\",\\\"start\\\":20,\\\"end\\\":36,\\\"normalized\\\":\\\"be permissible\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"if 1. the disposed-of asset at the time of disposal has belonged to the fixed assets of this business for at least seven years and 2. the asset to which hidden reserves are to be transferred is used in a domestic permanent establishment\\\",\\\"start\\\":37,\\\"end\\\":244,\\\"normalized\\\":\\\"if 1. the disposed-of asset at the time of disposal has belonged to the fixed assets of this business for at least seven years and 2. the asset to which hidden reserves are to be transferred is used in a domestic permanent establishment\\\"}],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"only\\\",\\\"start\\\":20,\\\"end\\\":24,\\\"normalized\\\":\\\"only\\\"},{\\\"id\\\":\\\"c02\\\",\\\"text\\\":\\\"Section 10(2) last sentence\\\",\\\"start\\\":246,\\\"end\\\":271,\\\"normalized\\\":\\\"section 10(2) last sentence\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a01\\\",\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"actor\\\",\\\"reason\\\":\\\"reference_status=unresolved_coreference;independence_status=context_required\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791348716,\"model\":\"MiniMax-M3\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":4963,\"total_characters\":0,\"prompt_tokens\":4406,\"completion_tokens\":557,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":1408}},\"input_sensitive\":false,\"output_sensitive\":false,\"input_sensitive_type\":0,\"output_sensitive_type\":0,\"output_sensitive_int\":0,\"service_tier\":\"standard\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}\n",
+  "usage": {
+    "prompt_tokens": 4406,
+    "completion_tokens": 557,
+    "total_tokens": 4963,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "MiniMax-M3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "minimax",
+    "sample_id": "estg_000128",
+    "request_id": "minimax:estg_000128",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000128",
+      "source_id": "estg_000128",
+      "source_text": "(2) A transfer is only permissible if 1. the disposed-of asset at the time of disposal has belonged to the fixed assets of this business for at least seven years and 2. the asset to which hidden reserves are to be transferred is used in a domestic permanent establishment; Section 10(2) last sentence shall apply.",
+      "clauses": [
+        {
+          "clause_id": "estg_000128_c01",
+          "clause_span": {
+            "text": "A transfer is only permissible if 1. the disposed-of asset at the time of disposal has belonged to the fixed assets of this business for at least seven years and 2. the asset to which hidden reserves are to be transferred is used in a domestic permanent establishment; Section 10(2) last sentence shall apply.",
+            "start": 4,
+            "end": 313
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "is only permissible",
+                "start": 15,
+                "end": 34
+              },
+              {
+                "text": "only",
+                "start": 18,
+                "end": 22
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "A transfer",
+              "start": 4,
+              "end": 14,
+              "normalized": "a transfer",
+              "id": "a01"
+            }
+          ],
+          "actions": [],
+          "conditions": [
+            {
+              "text": "if 1. the disposed-of asset at the time of disposal has belonged to the fixed assets of this business for at least seven years and 2. the asset to which hidden reserves are to be transferred is used in a domestic permanent establishment",
+              "start": 35,
+              "end": 271,
+              "normalized": "if 1. the disposed-of asset at the time of disposal has belonged to the fixed assets of this business for at least seven years and 2. the asset to which hidden reserves are to be transferred is used in a domestic permanent establishment",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "only",
+              "start": 18,
+              "end": 22,
+              "normalized": "only",
+              "id": "c01"
+            },
+            {
+              "text": "Section 10(2) last sentence",
+              "start": 273,
+              "end": 300,
+              "normalized": "section 10(2) last sentence",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "spans_adapted": 4,
+      "dropped_spans": [
+        "actions[0]_text_not_in_source"
+      ],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 6,
+      "reanchored_count": 7,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [
+        "clauses[0].actor_action_map[0]"
+      ],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000128_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "A transfer is only permissible if 1. the disposed-of asset at the time of disposal has belonged to the fixed assets of this business for at least seven years and 2. the asset to which hidden reserves are to be transferred is used in a domestic permanent establishment; Section 10(2) last sentence shall apply.",
+          "normalized": null,
+          "original_start": 4,
+          "original_end": 271,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 313
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 313
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000128_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "is only permissible",
+          "normalized": null,
+          "original_start": 17,
+          "original_end": 36,
+          "candidate_occurrences": [
+            {
+              "start": 15,
+              "end": 34
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 15,
+            "end": 34
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000128_c01",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "only",
+          "normalized": null,
+          "original_start": 20,
+          "original_end": 24,
+          "candidate_occurrences": [
+            {
+              "start": 18,
+              "end": 22
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 18,
+            "end": 22
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000128_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "A transfer",
+          "normalized": "a transfer",
+          "original_start": 4,
+          "original_end": 15,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 14
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 14
+          },
+          "distance": 1,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000128_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "if 1. the disposed-of asset at the time of disposal has belonged to the fixed assets of this business for at least seven years and 2. the asset to which hidden reserves are to be transferred is used in a domestic permanent establishment",
+          "normalized": "if 1. the disposed-of asset at the time of disposal has belonged to the fixed assets of this business for at least seven years and 2. the asset to which hidden reserves are to be transferred is used in a domestic permanent establishment",
+          "original_start": 37,
+          "original_end": 244,
+          "candidate_occurrences": [
+            {
+              "start": 35,
+              "end": 271
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 35,
+            "end": 271
+          },
+          "distance": 29,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000128_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "only",
+          "normalized": "only",
+          "original_start": 20,
+          "original_end": 24,
+          "candidate_occurrences": [
+            {
+              "start": 18,
+              "end": 22
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 18,
+            "end": 22
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000128_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "Section 10(2) last sentence",
+          "normalized": "section 10(2) last sentence",
+          "original_start": 246,
+          "original_end": 271,
+          "candidate_occurrences": [
+            {
+              "start": 273,
+              "end": 300
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 273,
+            "end": 300
+          },
+          "distance": 56,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 7,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

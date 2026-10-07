@@ -1,0 +1,242 @@
+{
+  "request_id": "qwen:estg_000277",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000277\\\",\\\"source_id\\\":\\\"estg_000277\\\",\\\"source_text\\\":\\\"Special increment amounts from supplementary insurance in the pension insurance or supplementary insurance pensions are to be recorded at only 25%. \\\\nb) Similar emoluments from welfare and support institutions of the chambers of self-employed persons. \\\\nc) Pensions from a foreign statutory social insurance that corresponds to a domestic statutory social insurance. \\\\n4. a) Emoluments, expense allowances and retirement (pension) benefits within the meaning of the Emoluments Act and the Constitutional Court Act. \\\\nb) Similar emoluments, expense allowances and retirement (pension) benefits received by members of a provincial government (of the Vienna City Senate) and members of a provincial parliament and their survivors on the basis of provincial legislation, furthermore emoluments, expense allowances and retirement (pension) benefits received by mayors, deputy mayors (mayoral representatives) or city councillors (executive municipal councillors), district chairpersons (deputies) of the City of Vienna and their survivors on the basis of provincial legislation.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000277_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"Special increment amounts from supplementary insurance in the pension insurance or supplementary insurance pensions are to be recorded at only 25%. \\\",\\\"start\\\":0,\\\"end\\\":148},\\\"modality\\\":{\\\"label\\\":\\\"obligation\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"are to be\\\",\\\"start\\\":106,\\\"end\\\":115}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"recorded\\\",\\\"start\\\":116,\\\"end\\\":124,\\\"normalized\\\":\\\"record\\\"}],\\\"conditions\\\":[],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"at only 25%\\\",\\\"start\\\":125,\\\"end\\\":136,\\\"normalized\\\":\\\"at only 25%\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"clause\\\",\\\"reason\\\":\\\"semantic_scope_ambiguous_in_target\\\"},{\\\"field\\\":\\\"clause\\\",\\\"reason\\\":\\\"context_required\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791349293,\"id\":\"chatcmpl-a5abd266-f3b1-99a3-a3f8-fa34a42cb9d2\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":500,\"prompt_tokens\":4772,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4772},\"total_tokens\":5272}}",
+  "usage": {
+    "prompt_tokens": 4772,
+    "completion_tokens": 500,
+    "total_tokens": 5272
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000277",
+    "request_id": "qwen:estg_000277",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000277",
+      "source_id": "estg_000277",
+      "source_text": "Special increment amounts from supplementary insurance in the pension insurance or supplementary insurance pensions are to be recorded at only 25%. \nb) Similar emoluments from welfare and support institutions of the chambers of self-employed persons. \nc) Pensions from a foreign statutory social insurance that corresponds to a domestic statutory social insurance. \n4. a) Emoluments, expense allowances and retirement (pension) benefits within the meaning of the Emoluments Act and the Constitutional Court Act. \nb) Similar emoluments, expense allowances and retirement (pension) benefits received by members of a provincial government (of the Vienna City Senate) and members of a provincial parliament and their survivors on the basis of provincial legislation, furthermore emoluments, expense allowances and retirement (pension) benefits received by mayors, deputy mayors (mayoral representatives) or city councillors (executive municipal councillors), district chairpersons (deputies) of the City of Vienna and their survivors on the basis of provincial legislation.",
+      "clauses": [
+        {
+          "clause_id": "estg_000277_c01",
+          "clause_span": {
+            "text": "Special increment amounts from supplementary insurance in the pension insurance or supplementary insurance pensions are to be recorded at only 25%. ",
+            "start": 0,
+            "end": 148
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "are to be",
+                "start": 116,
+                "end": 125
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "recorded",
+              "start": 126,
+              "end": 134,
+              "normalized": "recorded",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "at only 25%",
+              "start": 135,
+              "end": 146,
+              "normalized": "at only 25%",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "clause",
+          "reason": "semantic_scope_ambiguous_in_target"
+        },
+        {
+          "field": "clause",
+          "reason": "context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 2,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 3,
+      "reanchored_count": 3,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000277_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Special increment amounts from supplementary insurance in the pension insurance or supplementary insurance pensions are to be recorded at only 25%. ",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 148,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 148
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 0,
+            "end": 148
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000277_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "are to be",
+          "normalized": null,
+          "original_start": 106,
+          "original_end": 115,
+          "candidate_occurrences": [
+            {
+              "start": 116,
+              "end": 125
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 116,
+            "end": 125
+          },
+          "distance": 20,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000277_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "recorded",
+          "normalized": "recorded",
+          "original_start": 116,
+          "original_end": 124,
+          "candidate_occurrences": [
+            {
+              "start": 126,
+              "end": 134
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 126,
+            "end": 134
+          },
+          "distance": 20,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000277_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "at only 25%",
+          "normalized": "at only 25%",
+          "original_start": 125,
+          "original_end": 136,
+          "candidate_occurrences": [
+            {
+              "start": 135,
+              "end": 146
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 135,
+            "end": 146
+          },
+          "distance": 20,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 3,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

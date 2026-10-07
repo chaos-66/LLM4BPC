@@ -1,0 +1,456 @@
+{
+  "request_id": "qwen:estg_000039",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000039\\\",\\\"source_id\\\":\\\"estg_000039\\\",\\\"source_text\\\":\\\"The agreement must provide that the taxpayer’s ongoing contribution payments may only be suspended or restricted for compelling economic reasons and only after consultation with the works council. dd) The contributions are deductible to the extent that they are required under the articles of association for benefit entitlements of current and former members of the taxpayer’s enterprises.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000039_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"The agreement must provide that the taxpayer’s ongoing contribution payments may only be suspended or restricted for compelling economic reasons and only after consultation with the works council.\\\",\\\"start\\\":0,\\\"end\\\":197},\\\"modality\\\":{\\\"label\\\":\\\"obligation\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"must\\\",\\\"start\\\":14,\\\"end\\\":18}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"The agreement\\\",\\\"start\\\":0,\\\"end\\\":13,\\\"normalized\\\":\\\"agreement\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"provide that the taxpayer’s ongoing contribution payments may only be suspended or restricted\\\",\\\"start\\\":19,\\\"end\\\":112,\\\"normalized\\\":\\\"provide that the taxpayer's ongoing contribution payments may only be suspended or restricted\\\"}],\\\"conditions\\\":[],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"for compelling economic reasons\\\",\\\"start\\\":113,\\\"end\\\":144,\\\"normalized\\\":\\\"for compelling economic reasons\\\"},{\\\"id\\\":\\\"c02\\\",\\\"text\\\":\\\"only after consultation with the works council\\\",\\\"start\\\":149,\\\"end\\\":195,\\\"normalized\\\":\\\"only after consultation with the works council\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a01\\\",\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]},{\\\"clause_id\\\":\\\"estg_000039_c02\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"dd) The contributions are deductible to the extent that they are required under the articles of association for benefit entitlements of current and former members of the taxpayer’s enterprises.\\\",\\\"start\\\":198,\\\"end\\\":393},\\\"modality\\\":{\\\"label\\\":\\\"definition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"are deductible\\\",\\\"start\\\":218,\\\"end\\\":232}]},\\\"actors\\\":[{\\\"id\\\":\\\"a02\\\",\\\"text\\\":\\\"The contributions\\\",\\\"start\\\":202,\\\"end\\\":219,\\\"normalized\\\":\\\"contributions\\\"}],\\\"actions\\\":[],\\\"conditions\\\":[],\\\"constraints\\\":[{\\\"id\\\":\\\"c03\\\",\\\"text\\\":\\\"to the extent that they are required under the articles of association for benefit entitlements of current and former members of the taxpayer’s enterprises\\\",\\\"start\\\":233,\\\"end\\\":392,\\\"normalized\\\":\\\"to the extent that they are required under the articles of association for benefit entitlements of current and former members of the taxpayer's enterprises\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"actor\\\",\\\"reason\\\":\\\"reference_status=unresolved_coreference;independence_status=context_required\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791348406,\"id\":\"chatcmpl-2471241b-adb3-9b4b-872f-d305b4a22a4c\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":668,\"prompt_tokens\":4633,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4633},\"total_tokens\":5301}}",
+  "usage": {
+    "prompt_tokens": 4633,
+    "completion_tokens": 668,
+    "total_tokens": 5301
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000039",
+    "request_id": "qwen:estg_000039",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000039",
+      "source_id": "estg_000039",
+      "source_text": "The agreement must provide that the taxpayer’s ongoing contribution payments may only be suspended or restricted for compelling economic reasons and only after consultation with the works council. dd) The contributions are deductible to the extent that they are required under the articles of association for benefit entitlements of current and former members of the taxpayer’s enterprises.",
+      "clauses": [
+        {
+          "clause_id": "estg_000039_c01",
+          "clause_span": {
+            "text": "The agreement must provide that the taxpayer’s ongoing contribution payments may only be suspended or restricted for compelling economic reasons and only after consultation with the works council.",
+            "start": 0,
+            "end": 196
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "must",
+                "start": 14,
+                "end": 18
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "The agreement",
+              "start": 0,
+              "end": 13,
+              "normalized": "the agreement",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "provide that the taxpayer’s ongoing contribution payments may only be suspended or restricted",
+              "start": 19,
+              "end": 112,
+              "normalized": "provide that the taxpayer’s ongoing contribution payments may only be suspended or restricted",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "for compelling economic reasons",
+              "start": 113,
+              "end": 144,
+              "normalized": "for compelling economic reasons",
+              "id": "c01"
+            },
+            {
+              "text": "only after consultation with the works council",
+              "start": 149,
+              "end": 195,
+              "normalized": "only after consultation with the works council",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000039_c02",
+          "clause_span": {
+            "text": "dd) The contributions are deductible to the extent that they are required under the articles of association for benefit entitlements of current and former members of the taxpayer’s enterprises.",
+            "start": 197,
+            "end": 390
+          },
+          "modality": {
+            "label": "definition",
+            "evidence": [
+              {
+                "text": "are deductible",
+                "start": 219,
+                "end": 233
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "The contributions",
+              "start": 201,
+              "end": 218,
+              "normalized": "the contributions",
+              "id": "a02"
+            }
+          ],
+          "actions": [],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "to the extent that they are required under the articles of association for benefit entitlements of current and former members of the taxpayer’s enterprises",
+              "start": 234,
+              "end": 389,
+              "normalized": "to the extent that they are required under the articles of association for benefit entitlements of current and former members of the taxpayer’s enterprises",
+              "id": "c03"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 6,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 2,
+      "field_span_count": 8,
+      "reanchored_count": 5,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000039_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The agreement must provide that the taxpayer’s ongoing contribution payments may only be suspended or restricted for compelling economic reasons and only after consultation with the works council.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 197,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 196
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 196
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000039_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "must",
+          "normalized": null,
+          "original_start": 14,
+          "original_end": 18,
+          "candidate_occurrences": [
+            {
+              "start": 14,
+              "end": 18
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 14,
+            "end": 18
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000039_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "The agreement",
+          "normalized": "the agreement",
+          "original_start": 0,
+          "original_end": 13,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 13
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 0,
+            "end": 13
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000039_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "provide that the taxpayer’s ongoing contribution payments may only be suspended or restricted",
+          "normalized": "provide that the taxpayer’s ongoing contribution payments may only be suspended or restricted",
+          "original_start": 19,
+          "original_end": 112,
+          "candidate_occurrences": [
+            {
+              "start": 19,
+              "end": 112
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 19,
+            "end": 112
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000039_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "for compelling economic reasons",
+          "normalized": "for compelling economic reasons",
+          "original_start": 113,
+          "original_end": 144,
+          "candidate_occurrences": [
+            {
+              "start": 113,
+              "end": 144
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 113,
+            "end": 144
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000039_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "only after consultation with the works council",
+          "normalized": "only after consultation with the works council",
+          "original_start": 149,
+          "original_end": 195,
+          "candidate_occurrences": [
+            {
+              "start": 149,
+              "end": 195
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 149,
+            "end": 195
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000039_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "dd) The contributions are deductible to the extent that they are required under the articles of association for benefit entitlements of current and former members of the taxpayer’s enterprises.",
+          "normalized": null,
+          "original_start": 198,
+          "original_end": 393,
+          "candidate_occurrences": [
+            {
+              "start": 197,
+              "end": 390
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 197,
+            "end": 390
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000039_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "are deductible",
+          "normalized": null,
+          "original_start": 218,
+          "original_end": 232,
+          "candidate_occurrences": [
+            {
+              "start": 219,
+              "end": 233
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 219,
+            "end": 233
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actors[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000039_c02",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a02",
+          "text": "The contributions",
+          "normalized": "the contributions",
+          "original_start": 202,
+          "original_end": 219,
+          "candidate_occurrences": [
+            {
+              "start": 201,
+              "end": 218
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 201,
+            "end": 218
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].constraints[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000039_c02",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c03",
+          "text": "to the extent that they are required under the articles of association for benefit entitlements of current and former members of the taxpayer’s enterprises",
+          "normalized": "to the extent that they are required under the articles of association for benefit entitlements of current and former members of the taxpayer’s enterprises",
+          "original_start": 233,
+          "original_end": 392,
+          "candidate_occurrences": [
+            {
+              "start": 234,
+              "end": 389
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 234,
+            "end": 389
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 5,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

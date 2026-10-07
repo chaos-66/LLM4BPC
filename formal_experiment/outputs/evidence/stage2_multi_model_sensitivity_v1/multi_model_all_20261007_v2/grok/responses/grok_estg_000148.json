@@ -1,0 +1,269 @@
+{
+  "request_id": "grok:estg_000148",
+  "raw_response_utf8": "{\"id\":\"982a8ed1-5b99-9548-97be-905588b616ae\",\"object\":\"chat.completion\",\"created\":1791348632,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000148\\\",\\n  \\\"source_id\\\": \\\"estg_000148\\\",\\n  \\\"source_text\\\": \\\"(7) Taxpayers who determine their profit pursuant to Section 4(1) or Section 5 may form pension provisions for written, legally binding, and irrevocable pension commitments.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000148_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"(7) Taxpayers who determine their profit pursuant to Section 4(1) or Section 5 may form pension provisions for written, legally binding, and irrevocable pension commitments.\\\", \\\"start\\\": 0, \\\"end\\\": 176},\\n      \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may\\\", \\\"start\\\": 75, \\\"end\\\": 78}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"Taxpayers who determine their profit pursuant to Section 4(1) or Section 5\\\", \\\"start\\\": 4, \\\"end\\\": 74, \\\"normalized\\\": \\\"taxpayers who determine their profit pursuant to section 4(1) or section 5\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"form pension provisions for written, legally binding, and irrevocable pension commitments\\\", \\\"start\\\": 79, \\\"end\\\": 175, \\\"normalized\\\": \\\"form pension provisions for written, legally binding, and irrevocable pension commitments\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"pursuant to Section 4(1) or Section 5\\\", \\\"start\\\": 37, \\\"end\\\": 74, \\\"normalized\\\": \\\"pursuant to section 4(1) or section 5\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4357,\"completion_tokens\":486,\"total_tokens\":4843,\"prompt_tokens_details\":{\"text_tokens\":4357,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":1536},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":50484500},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4357,
+    "completion_tokens": 486,
+    "total_tokens": 4843,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000148",
+    "request_id": "grok:estg_000148",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000148",
+      "source_id": "estg_000148",
+      "source_text": "(7) Taxpayers who determine their profit pursuant to Section 4(1) or Section 5 may form pension provisions for written, legally binding, and irrevocable pension commitments.",
+      "clauses": [
+        {
+          "clause_id": "estg_000148_c01",
+          "clause_span": {
+            "text": "(7) Taxpayers who determine their profit pursuant to Section 4(1) or Section 5 may form pension provisions for written, legally binding, and irrevocable pension commitments.",
+            "start": 0,
+            "end": 173
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 79,
+                "end": 82
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "Taxpayers who determine their profit pursuant to Section 4(1) or Section 5",
+              "start": 4,
+              "end": 78,
+              "normalized": "taxpayers who determine their profit pursuant to section 4(1) or section 5",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "form pension provisions for written, legally binding, and irrevocable pension commitments",
+              "start": 83,
+              "end": 172,
+              "normalized": "form pension provisions for written, legally binding, and irrevocable pension commitments",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "pursuant to Section 4(1) or Section 5",
+              "start": 41,
+              "end": 78,
+              "normalized": "pursuant to section 4(1) or section 5",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 5,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000148_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "(7) Taxpayers who determine their profit pursuant to Section 4(1) or Section 5 may form pension provisions for written, legally binding, and irrevocable pension commitments.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 176,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 173
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 173
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000148_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 75,
+          "original_end": 78,
+          "candidate_occurrences": [
+            {
+              "start": 79,
+              "end": 82
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 79,
+            "end": 82
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000148_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "Taxpayers who determine their profit pursuant to Section 4(1) or Section 5",
+          "normalized": "taxpayers who determine their profit pursuant to section 4(1) or section 5",
+          "original_start": 4,
+          "original_end": 74,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 78
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 78
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000148_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "form pension provisions for written, legally binding, and irrevocable pension commitments",
+          "normalized": "form pension provisions for written, legally binding, and irrevocable pension commitments",
+          "original_start": 79,
+          "original_end": 175,
+          "candidate_occurrences": [
+            {
+              "start": 83,
+              "end": 172
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 83,
+            "end": 172
+          },
+          "distance": 7,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000148_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "pursuant to Section 4(1) or Section 5",
+          "normalized": "pursuant to section 4(1) or section 5",
+          "original_start": 37,
+          "original_end": 74,
+          "candidate_occurrences": [
+            {
+              "start": 41,
+              "end": 78
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 41,
+            "end": 78
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

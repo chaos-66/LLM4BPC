@@ -1,0 +1,238 @@
+{
+  "request_id": "qwen:estg_000522",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000522\\\",\\\"source_id\\\":\\\"estg_000522\\\",\\\"source_text\\\":\\\"(7) Pursuant to paragraphs 1 to 5, the following shall also be treated as such — allowances and supplementary payments included in the remuneration continued to be paid to released members of the works council, — similar allowances and supplementary payments to staff representatives within the meaning of the Federal Staff Representation Act (Bundes-Personalvertretungsgesetz) and similar state legislation, — allowances and supplementary payments included in wages continued to be paid to the employee in the event of illness.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000522_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"Pursuant to paragraphs 1 to 5, the following shall also be treated as such — allowances and supplementary payments included in the remuneration continued to be paid to released members of the works council, — similar allowances and supplementary payments to staff representatives within the meaning of the Federal Staff Representation Act (Bundes-Personalvertretungsgesetz) and similar state legislation, — allowances and supplementary payments included in wages continued to be paid to the employee in the event of illness.\\\",\\\"start\\\":4,\\\"end\\\":518},\\\"modality\\\":{\\\"label\\\":\\\"obligation\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall\\\",\\\"start\\\":49,\\\"end\\\":54}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"treated as such\\\",\\\"start\\\":60,\\\"end\\\":75,\\\"normalized\\\":\\\"treat as such\\\"}],\\\"conditions\\\":[],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"Pursuant to paragraphs 1 to 5\\\",\\\"start\\\":4,\\\"end\\\":33,\\\"normalized\\\":\\\"pursuant to paragraphs 1 to 5\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"actor\\\",\\\"reason\\\":\\\"reference_status=unresolved_coreference;independence_status=context_required\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791349553,\"id\":\"chatcmpl-6462011b-8cde-925f-8d8d-fc0c40daa8b0\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":468,\"prompt_tokens\":4668,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4668},\"total_tokens\":5136}}",
+  "usage": {
+    "prompt_tokens": 4668,
+    "completion_tokens": 468,
+    "total_tokens": 5136
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000522",
+    "request_id": "qwen:estg_000522",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000522",
+      "source_id": "estg_000522",
+      "source_text": "(7) Pursuant to paragraphs 1 to 5, the following shall also be treated as such — allowances and supplementary payments included in the remuneration continued to be paid to released members of the works council, — similar allowances and supplementary payments to staff representatives within the meaning of the Federal Staff Representation Act (Bundes-Personalvertretungsgesetz) and similar state legislation, — allowances and supplementary payments included in wages continued to be paid to the employee in the event of illness.",
+      "clauses": [
+        {
+          "clause_id": "estg_000522_c01",
+          "clause_span": {
+            "text": "Pursuant to paragraphs 1 to 5, the following shall also be treated as such — allowances and supplementary payments included in the remuneration continued to be paid to released members of the works council, — similar allowances and supplementary payments to staff representatives within the meaning of the Federal Staff Representation Act (Bundes-Personalvertretungsgesetz) and similar state legislation, — allowances and supplementary payments included in wages continued to be paid to the employee in the event of illness.",
+            "start": 4,
+            "end": 528
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 49,
+                "end": 54
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "treated as such",
+              "start": 63,
+              "end": 78,
+              "normalized": "treated as such",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "Pursuant to paragraphs 1 to 5",
+              "start": 4,
+              "end": 33,
+              "normalized": "pursuant to paragraphs 1 to 5",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 2,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 3,
+      "reanchored_count": 2,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000522_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Pursuant to paragraphs 1 to 5, the following shall also be treated as such — allowances and supplementary payments included in the remuneration continued to be paid to released members of the works council, — similar allowances and supplementary payments to staff representatives within the meaning of the Federal Staff Representation Act (Bundes-Personalvertretungsgesetz) and similar state legislation, — allowances and supplementary payments included in wages continued to be paid to the employee in the event of illness.",
+          "normalized": null,
+          "original_start": 4,
+          "original_end": 518,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 528
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 528
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000522_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 49,
+          "original_end": 54,
+          "candidate_occurrences": [
+            {
+              "start": 49,
+              "end": 54
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 49,
+            "end": 54
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000522_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "treated as such",
+          "normalized": "treated as such",
+          "original_start": 60,
+          "original_end": 75,
+          "candidate_occurrences": [
+            {
+              "start": 63,
+              "end": 78
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 63,
+            "end": 78
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000522_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "Pursuant to paragraphs 1 to 5",
+          "normalized": "pursuant to paragraphs 1 to 5",
+          "original_start": 4,
+          "original_end": 33,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 33
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 4,
+            "end": 33
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 2,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 2,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

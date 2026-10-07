@@ -5963,3 +5963,21 @@
 - 仍存在 blocker：无
 - 备注：首次7项编排测试180秒超时，未扩大为全量。诊断为账本每行重复编码约4MB不可变计划；本次每次执行/账本读取只计算一次整计划哈希，各请求哈希和历史链校验仍逐条执行。影响共用runner，因此仅复验既有51项和新增7项；模拟HTTP、禁止实际.env。原v1预检保留，未发请求；新v2绑定最终代码。国内CNY184.26+Grok USD6.16保护上限，900次0重试。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-07T05:12:04.159799+00:00 - S2-MODEL-SENSITIVITY-V1：记录六家非思考比较的真实结果与阻塞
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=multi_model_all_20261007_v2；阶段=stage2；方法=direct_llm_multi_provider；状态=部分完成（`partial`）
+- 实际运行命令：`python -X utf8 formal_experiment/scripts/run_stage2_multi_model_all_v1.py --execute --allow-llm`
+- manifest：outputs/development/stage2_multi_model_full_v1/multi_model_all_20261007_v2/manifest.json
+- 结果摘要：实际453/900次、0重试；Qwen/Grok/MiniMax各150，F1分别0.8030430908/0.7722720134/0.7344557566，失败2/3/8。MiMo和GLM余额不足，各1次后停；Kimi关闭参数下仍报1个reasoning token、无思考正文，按严格门禁停1次，性能null。剩余447未发送。国内保守费用含异常预留CNY14.3221826、Grok USD1.07430625；账户实扣未验证。
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：6 passed in 4.08s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`eef2f8334ffeb3e81f2970ea563c65551295668e`；相关未提交路径：515 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：已授权调用（`authorized_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：响应、预测、账本及共享评价均固定；原始失败保留150分母，modality独立。真实运行1572.297秒；代码checkpoint eef2f8334ffeb3e81f2970ea563c65551295668e。独立数据复核仅六项具名测试，禁止HTTP和实际.env读取，不复验准备模拟/全量套件。本地字节相同证据副本索引已生成，未推送GitHub；此前原始响应外发自动审批仍待用户确认。固定表一和历史DeepSeek/Sun来源未改。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

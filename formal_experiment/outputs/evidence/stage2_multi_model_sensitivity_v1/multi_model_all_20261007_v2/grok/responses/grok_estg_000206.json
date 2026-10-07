@@ -1,0 +1,548 @@
+{
+  "request_id": "grok:estg_000206",
+  "raw_response_utf8": "{\"id\":\"7f78d068-766d-91a0-8777-53db45d80b09\",\"object\":\"chat.completion\",\"created\":1791348672,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000206\\\",\\n  \\\"source_id\\\": \\\"estg_000206\\\",\\n  \\\"source_text\\\": \\\"If these expenses in total — are lower than the relevant maximum amount, half of the expenses shall be deducted as special expenses — are equal to or higher than the relevant maximum amount, half of the maximum amount shall be deducted as special expenses. b) If the taxpayer has claimed the increased amount for a child for special expenses within the meaning of paragraph 1 items 2 to 4, with the exception of contributions for voluntary continued insurance in the statutory pension insurance and comparable contributions to pension and support institutions of the chambers of self-employed persons, the spouse shall not be entitled to an increased amount for that child.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000206_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"If these expenses in total — are lower than the relevant maximum amount, half of the expenses shall be deducted as special expenses\\\", \\\"start\\\": 0, \\\"end\\\": 121},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 77, \\\"end\\\": 82}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"these expenses\\\", \\\"start\\\": 3, \\\"end\\\": 17, \\\"normalized\\\": \\\"expenses\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"deducted as special expenses\\\", \\\"start\\\": 94, \\\"end\\\": 120, \\\"normalized\\\": \\\"deduct as special expenses\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"If these expenses in total — are lower than the relevant maximum amount\\\", \\\"start\\\": 0, \\\"end\\\": 68, \\\"normalized\\\": \\\"if these expenses in total — are lower than the relevant maximum amount\\\"}],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"half of the expenses\\\", \\\"start\\\": 70, \\\"end\\\": 90, \\\"normalized\\\": \\\"half of the expenses\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000206_c02\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"If these expenses in total — are equal to or higher than the relevant maximum amount, half of the maximum amount shall be deducted as special expenses\\\", \\\"start\\\": 124, \\\"end\\\": 262},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 218, \\\"end\\\": 223}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a02\\\", \\\"text\\\": \\\"these expenses\\\", \\\"start\\\": 127, \\\"end\\\": 141, \\\"normalized\\\": \\\"expenses\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"deducted as special expenses\\\", \\\"start\\\": 236, \\\"end\\\": 262, \\\"normalized\\\": \\\"deduct as special expenses\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d02\\\", \\\"text\\\": \\\"If these expenses in total — are equal to or higher than the relevant maximum amount\\\", \\\"start\\\": 124, \\\"end\\\": 209, \\\"normalized\\\": \\\"if these expenses in total — are equal to or higher than the relevant maximum amount\\\"}],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"half of the maximum amount\\\", \\\"start\\\": 211, \\\"end\\\": 237, \\\"normalized\\\": \\\"half of the maximum amount\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a02\\\", \\\"action_id\\\": \\\"p02\\\"}],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000206_c03\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"If the taxpayer has claimed the increased amount for a child for special expenses within the meaning of paragraph 1 items 2 to 4, with the exception of contributions for voluntary continued insurance in the statutory pension insurance and comparable contributions to pension and support institutions of the chambers of self-employed persons, the spouse shall not be entitled to an increased amount for that child.\\\", \\\"start\\\": 265, \\\"end\\\": 579},\\n      \\\"modality\\\": {\\\"label\\\": \\\"prohibition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall not\\\", \\\"start\\\": 458, \\\"end\\\": 467}, {\\\"text\\\": \\\"not\\\", \\\"start\\\": 463, \\\"end\\\": 466}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a03\\\", \\\"text\\\": \\\"the spouse\\\", \\\"start\\\": 447, \\\"end\\\": 457, \\\"normalized\\\": \\\"spouse\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p03\\\", \\\"text\\\": \\\"entitled to an increased amount for that child\\\", \\\"start\\\": 468, \\\"end\\\": 512, \\\"normalized\\\": \\\"entitled to an increased amount for that child\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d03\\\", \\\"text\\\": \\\"If the taxpayer has claimed the increased amount for a child for special expenses within the meaning of paragraph 1 items 2 to 4, with the exception of contributions for voluntary continued insurance in the statutory pension insurance and comparable contributions to pension and support institutions of the chambers of self-employed persons\\\", \\\"start\\\": 265, \\\"end\\\": 445, \\\"normalized\\\": \\\"if the taxpayer has claimed the increased amount for a child for special expenses within the meaning of paragraph 1 items 2 to 4, with the exception of contributions for voluntary continued insurance in the statutory pension insurance and comparable contributions to pension and support institutions of the chambers of self-employed persons\\\"}],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a03\\\", \\\"action_id\\\": \\\"p03\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4443,\"completion_tokens\":1320,\"total_tokens\":5763,\"prompt_tokens_details\":{\"text_tokens\":4443,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":128},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":87193500},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4443,
+    "completion_tokens": 1320,
+    "total_tokens": 5763,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000206",
+    "request_id": "grok:estg_000206",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000206",
+      "source_id": "estg_000206",
+      "source_text": "If these expenses in total — are lower than the relevant maximum amount, half of the expenses shall be deducted as special expenses — are equal to or higher than the relevant maximum amount, half of the maximum amount shall be deducted as special expenses. b) If the taxpayer has claimed the increased amount for a child for special expenses within the meaning of paragraph 1 items 2 to 4, with the exception of contributions for voluntary continued insurance in the statutory pension insurance and comparable contributions to pension and support institutions of the chambers of self-employed persons, the spouse shall not be entitled to an increased amount for that child.",
+      "clauses": [
+        {
+          "clause_id": "estg_000206_c01",
+          "clause_span": {
+            "text": "If these expenses in total — are lower than the relevant maximum amount, half of the expenses shall be deducted as special expenses",
+            "start": 0,
+            "end": 131
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 94,
+                "end": 99
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "these expenses",
+              "start": 3,
+              "end": 17,
+              "normalized": "these expenses",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "deducted as special expenses",
+              "start": 103,
+              "end": 131,
+              "normalized": "deducted as special expenses",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If these expenses in total — are lower than the relevant maximum amount",
+              "start": 0,
+              "end": 71,
+              "normalized": "if these expenses in total — are lower than the relevant maximum amount",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "half of the expenses",
+              "start": 73,
+              "end": 93,
+              "normalized": "half of the expenses",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000206_c03",
+          "clause_span": {
+            "text": "If the taxpayer has claimed the increased amount for a child for special expenses within the meaning of paragraph 1 items 2 to 4, with the exception of contributions for voluntary continued insurance in the statutory pension insurance and comparable contributions to pension and support institutions of the chambers of self-employed persons, the spouse shall not be entitled to an increased amount for that child.",
+            "start": 260,
+            "end": 673
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "shall not",
+                "start": 613,
+                "end": 622
+              },
+              {
+                "text": "not",
+                "start": 619,
+                "end": 622
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the spouse",
+              "start": 602,
+              "end": 612,
+              "normalized": "the spouse",
+              "id": "a03"
+            }
+          ],
+          "actions": [
+            {
+              "text": "entitled to an increased amount for that child",
+              "start": 626,
+              "end": 672,
+              "normalized": "entitled to an increased amount for that child",
+              "id": "p03"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If the taxpayer has claimed the increased amount for a child for special expenses within the meaning of paragraph 1 items 2 to 4, with the exception of contributions for voluntary continued insurance in the statutory pension insurance and comparable contributions to pension and support institutions of the chambers of self-employed persons",
+              "start": 260,
+              "end": 600,
+              "normalized": "if the taxpayer has claimed the increased amount for a child for special expenses within the meaning of paragraph 1 items 2 to 4, with the exception of contributions for voluntary continued insurance in the statutory pension insurance and comparable contributions to pension and support institutions of the chambers of self-employed persons",
+              "id": "d03"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a03",
+              "action_id": "p03"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "spans_adapted": 10,
+      "dropped_spans": [
+        "conditions[0]_text_not_in_source"
+      ],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 2,
+      "field_span_count": 10,
+      "reanchored_count": 11,
+      "dropped_spans": [],
+      "dropped_clauses": [
+        1
+      ],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000206_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If these expenses in total — are lower than the relevant maximum amount, half of the expenses shall be deducted as special expenses",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 121,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 131
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 131
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000206_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 77,
+          "original_end": 82,
+          "candidate_occurrences": [
+            {
+              "start": 94,
+              "end": 99
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 94,
+            "end": 99
+          },
+          "distance": 34,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000206_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "these expenses",
+          "normalized": "these expenses",
+          "original_start": 3,
+          "original_end": 17,
+          "candidate_occurrences": [
+            {
+              "start": 3,
+              "end": 17
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 3,
+            "end": 17
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000206_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "deducted as special expenses",
+          "normalized": "deducted as special expenses",
+          "original_start": 94,
+          "original_end": 120,
+          "candidate_occurrences": [
+            {
+              "start": 103,
+              "end": 131
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 103,
+            "end": 131
+          },
+          "distance": 20,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000206_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "If these expenses in total — are lower than the relevant maximum amount",
+          "normalized": "if these expenses in total — are lower than the relevant maximum amount",
+          "original_start": 0,
+          "original_end": 68,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 71
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 71
+          },
+          "distance": 3,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000206_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "half of the expenses",
+          "normalized": "half of the expenses",
+          "original_start": 70,
+          "original_end": 90,
+          "candidate_occurrences": [
+            {
+              "start": 73,
+              "end": 93
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 73,
+            "end": 93
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000206_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If these expenses in total — are equal to or higher than the relevant maximum amount, half of the maximum amount shall be deducted as special expenses",
+          "normalized": null,
+          "original_start": 124,
+          "original_end": 262,
+          "candidate_occurrences": [],
+          "strategy": "not_applicable",
+          "chosen": null,
+          "distance": null,
+          "outcome": "unresolved",
+          "reason": "zero_occurrence",
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].clause_span",
+          "clause_index": 2,
+          "clause_id": "estg_000206_c03",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If the taxpayer has claimed the increased amount for a child for special expenses within the meaning of paragraph 1 items 2 to 4, with the exception of contributions for voluntary continued insurance in the statutory pension insurance and comparable contributions to pension and support institutions of the chambers of self-employed persons, the spouse shall not be entitled to an increased amount for that child.",
+          "normalized": null,
+          "original_start": 265,
+          "original_end": 579,
+          "candidate_occurrences": [
+            {
+              "start": 260,
+              "end": 673
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 260,
+            "end": 673
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].modality.evidence[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000206_c03",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall not",
+          "normalized": null,
+          "original_start": 458,
+          "original_end": 467,
+          "candidate_occurrences": [
+            {
+              "start": 613,
+              "end": 622
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 613,
+            "end": 622
+          },
+          "distance": 310,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].modality.evidence[1]",
+          "clause_index": 2,
+          "clause_id": "estg_000206_c03",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "not",
+          "normalized": null,
+          "original_start": 463,
+          "original_end": 466,
+          "candidate_occurrences": [
+            {
+              "start": 619,
+              "end": 622
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 619,
+            "end": 622
+          },
+          "distance": 312,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].actors[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000206_c03",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a03",
+          "text": "the spouse",
+          "normalized": "the spouse",
+          "original_start": 447,
+          "original_end": 457,
+          "candidate_occurrences": [
+            {
+              "start": 602,
+              "end": 612
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 602,
+            "end": 612
+          },
+          "distance": 310,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].actions[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000206_c03",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p03",
+          "text": "entitled to an increased amount for that child",
+          "normalized": "entitled to an increased amount for that child",
+          "original_start": 468,
+          "original_end": 512,
+          "candidate_occurrences": [
+            {
+              "start": 626,
+              "end": 672
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 626,
+            "end": 672
+          },
+          "distance": 318,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].conditions[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000206_c03",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d03",
+          "text": "If the taxpayer has claimed the increased amount for a child for special expenses within the meaning of paragraph 1 items 2 to 4, with the exception of contributions for voluntary continued insurance in the statutory pension insurance and comparable contributions to pension and support institutions of the chambers of self-employed persons",
+          "normalized": "if the taxpayer has claimed the increased amount for a child for special expenses within the meaning of paragraph 1 items 2 to 4, with the exception of contributions for voluntary continued insurance in the statutory pension insurance and comparable contributions to pension and support institutions of the chambers of self-employed persons",
+          "original_start": 265,
+          "original_end": 445,
+          "candidate_occurrences": [
+            {
+              "start": 260,
+              "end": 600
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 260,
+            "end": 600
+          },
+          "distance": 160,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 11,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

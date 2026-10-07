@@ -1,0 +1,268 @@
+{
+  "request_id": "minimax:estg_000247",
+  "raw_response_utf8": "{\"id\":\"071503eaa7df0afc225dba93f3a31a79\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000247\\\",\\\"source_id\\\":\\\"estg_000247\\\",\\\"source_text\\\":\\\"Otherwise, expenses and outlays that are not deductible from the individual categories of income may, if the statutory requirements are met, be deducted as special expenses or extraordinary burdens. 9.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000247_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"Otherwise, expenses and outlays that are not deductible from the individual categories of income may, if the statutory requirements are met, be deducted as special expenses or extraordinary burdens.\\\",\\\"start\\\":0,\\\"end\\\":161},\\\"modality\\\":{\\\"label\\\":\\\"permission\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"may\\\",\\\"start\\\":93,\\\"end\\\":96}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"expenses and outlays that are not deductible from the individual categories of income\\\",\\\"start\\\":11,\\\"end\\\":91,\\\"normalized\\\":\\\"expenses and outlays not deductible from the individual categories of income\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"be deducted as special expenses or extraordinary burdens\\\",\\\"start\\\":120,\\\"end\\\":171,\\\"normalized\\\":\\\"be deducted as special expenses or extraordinary burdens\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"if the statutory requirements are met\\\",\\\"start\\\":99,\\\"end\\\":134,\\\"normalized\\\":\\\"if the statutory requirements are met\\\"}],\\\"constraints\\\":[],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a01\\\",\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\"}}],\"created\":1791348970,\"model\":\"MiniMax-M3\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":4732,\"total_characters\":0,\"prompt_tokens\":4375,\"completion_tokens\":357,\"prompt_tokens_details\":{\"cached_tokens\":128}},\"input_sensitive\":false,\"output_sensitive\":false,\"input_sensitive_type\":0,\"output_sensitive_type\":0,\"output_sensitive_int\":0,\"service_tier\":\"standard\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}\n",
+  "usage": {
+    "prompt_tokens": 4375,
+    "completion_tokens": 357,
+    "total_tokens": 4732
+  },
+  "returned_model": "MiniMax-M3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "minimax",
+    "sample_id": "estg_000247",
+    "request_id": "minimax:estg_000247",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000247",
+      "source_id": "estg_000247",
+      "source_text": "Otherwise, expenses and outlays that are not deductible from the individual categories of income may, if the statutory requirements are met, be deducted as special expenses or extraordinary burdens. 9.",
+      "clauses": [
+        {
+          "clause_id": "estg_000247_c01",
+          "clause_span": {
+            "text": "Otherwise, expenses and outlays that are not deductible from the individual categories of income may, if the statutory requirements are met, be deducted as special expenses or extraordinary burdens.",
+            "start": 0,
+            "end": 198
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 97,
+                "end": 100
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "expenses and outlays that are not deductible from the individual categories of income",
+              "start": 11,
+              "end": 96,
+              "normalized": "expenses and outlays that are not deductible from the individual categories of income",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "be deducted as special expenses or extraordinary burdens",
+              "start": 141,
+              "end": 197,
+              "normalized": "be deducted as special expenses or extraordinary burdens",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "if the statutory requirements are met",
+              "start": 102,
+              "end": 139,
+              "normalized": "if the statutory requirements are met",
+              "id": "d01"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 5,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000247_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Otherwise, expenses and outlays that are not deductible from the individual categories of income may, if the statutory requirements are met, be deducted as special expenses or extraordinary burdens.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 161,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 198
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 198
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000247_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 93,
+          "original_end": 96,
+          "candidate_occurrences": [
+            {
+              "start": 97,
+              "end": 100
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 97,
+            "end": 100
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000247_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "expenses and outlays that are not deductible from the individual categories of income",
+          "normalized": "expenses and outlays that are not deductible from the individual categories of income",
+          "original_start": 11,
+          "original_end": 91,
+          "candidate_occurrences": [
+            {
+              "start": 11,
+              "end": 96
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 11,
+            "end": 96
+          },
+          "distance": 5,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000247_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "be deducted as special expenses or extraordinary burdens",
+          "normalized": "be deducted as special expenses or extraordinary burdens",
+          "original_start": 120,
+          "original_end": 171,
+          "candidate_occurrences": [
+            {
+              "start": 141,
+              "end": 197
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 141,
+            "end": 197
+          },
+          "distance": 47,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000247_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "if the statutory requirements are met",
+          "normalized": "if the statutory requirements are met",
+          "original_start": 99,
+          "original_end": 134,
+          "candidate_occurrences": [
+            {
+              "start": 102,
+              "end": 139
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 102,
+            "end": 139
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

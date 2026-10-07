@@ -1,0 +1,274 @@
+{
+  "request_id": "grok:estg_000074",
+  "raw_response_utf8": "{\"id\":\"1c829362-374d-9436-81b8-a998bcaf833c\",\"object\":\"chat.completion\",\"created\":1791348439,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000074\\\",\\n  \\\"source_id\\\": \\\"estg_000074\\\",\\n  \\\"source_text\\\": \\\"If they were used to generate non-business income, the acquisition or production costs shall be reduced by the amounts taken into account for depreciation for wear and tear or for privileged depreciation of production expenditure.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000074_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"If they were used to generate non-business income, the acquisition or production costs shall be reduced by the amounts taken into account for depreciation for wear and tear or for privileged depreciation of production expenditure.\\\", \\\"start\\\": 0, \\\"end\\\": 226},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 96, \\\"end\\\": 101}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"they\\\", \\\"start\\\": 3, \\\"end\\\": 7, \\\"normalized\\\": \\\"they\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"be reduced by the amounts taken into account for depreciation for wear and tear or for privileged depreciation of production expenditure\\\", \\\"start\\\": 101, \\\"end\\\": 225, \\\"normalized\\\": \\\"be reduced by the amounts taken into account for depreciation for wear and tear or for privileged depreciation of production expenditure\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"If they were used to generate non-business income\\\", \\\"start\\\": 0, \\\"end\\\": 48, \\\"normalized\\\": \\\"if they were used to generate non-business income\\\"}],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": [\\n    {\\\"field\\\": \\\"actor\\\", \\\"reason\\\": \\\"reference_status=unresolved_coreference;independence_status=context_required\\\"}\\n  ]\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4359,\"completion_tokens\":491,\"total_tokens\":4850,\"prompt_tokens_details\":{\"text_tokens\":4359,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":128},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":65418500},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4359,
+    "completion_tokens": 491,
+    "total_tokens": 4850,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000074",
+    "request_id": "grok:estg_000074",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000074",
+      "source_id": "estg_000074",
+      "source_text": "If they were used to generate non-business income, the acquisition or production costs shall be reduced by the amounts taken into account for depreciation for wear and tear or for privileged depreciation of production expenditure.",
+      "clauses": [
+        {
+          "clause_id": "estg_000074_c01",
+          "clause_span": {
+            "text": "If they were used to generate non-business income, the acquisition or production costs shall be reduced by the amounts taken into account for depreciation for wear and tear or for privileged depreciation of production expenditure.",
+            "start": 0,
+            "end": 230
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 87,
+                "end": 92
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "they",
+              "start": 3,
+              "end": 7,
+              "normalized": "they",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "be reduced by the amounts taken into account for depreciation for wear and tear or for privileged depreciation of production expenditure",
+              "start": 93,
+              "end": 229,
+              "normalized": "be reduced by the amounts taken into account for depreciation for wear and tear or for privileged depreciation of production expenditure",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If they were used to generate non-business income",
+              "start": 0,
+              "end": 49,
+              "normalized": "if they were used to generate non-business income",
+              "id": "c01"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 4,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000074_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If they were used to generate non-business income, the acquisition or production costs shall be reduced by the amounts taken into account for depreciation for wear and tear or for privileged depreciation of production expenditure.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 226,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 230
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 230
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000074_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 96,
+          "original_end": 101,
+          "candidate_occurrences": [
+            {
+              "start": 87,
+              "end": 92
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 87,
+            "end": 92
+          },
+          "distance": 18,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000074_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "they",
+          "normalized": "they",
+          "original_start": 3,
+          "original_end": 7,
+          "candidate_occurrences": [
+            {
+              "start": 3,
+              "end": 7
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 3,
+            "end": 7
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000074_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "be reduced by the amounts taken into account for depreciation for wear and tear or for privileged depreciation of production expenditure",
+          "normalized": "be reduced by the amounts taken into account for depreciation for wear and tear or for privileged depreciation of production expenditure",
+          "original_start": 101,
+          "original_end": 225,
+          "candidate_occurrences": [
+            {
+              "start": 93,
+              "end": 229
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 93,
+            "end": 229
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000074_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "If they were used to generate non-business income",
+          "normalized": "if they were used to generate non-business income",
+          "original_start": 0,
+          "original_end": 48,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 49
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 49
+          },
+          "distance": 1,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 4,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

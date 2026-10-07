@@ -1,0 +1,371 @@
+{
+  "request_id": "minimax:estg_000118",
+  "raw_response_utf8": "{\"id\":\"071502cd1f9c45f1a53e090038d4a246\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000118\\\",\\\"source_id\\\":\\\"estg_000118\\\",\\\"source_text\\\":\\\"(10) If the profit is determined in accordance with Section 4(3), an investment allowance may only be claimed for those assets that are recorded in a special register.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000118_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"(10) If the profit is determined in accordance with Section 4(3), an investment allowance may only be claimed for those assets that are recorded in a special register.\\\",\\\"start\\\":0,\\\"end\\\":156},\\\"modality\\\":{\\\"label\\\":\\\"permission\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"may\\\",\\\"start\\\":92,\\\"end\\\":95}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"an investment allowance\\\",\\\"start\\\":51,\\\"end\\\":74,\\\"normalized\\\":\\\"investment allowance\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"claimed\\\",\\\"start\\\":95,\\\"end\\\":102,\\\"normalized\\\":\\\"claim\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"If the profit is determined in accordance with Section 4(3)\\\",\\\"start\\\":1,\\\"end\\\":62,\\\"normalized\\\":\\\"if the profit is determined in accordance with section 4(3)\\\"}],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"in accordance with Section 4(3)\\\",\\\"start\\\":29,\\\"end\\\":62,\\\"normalized\\\":\\\"in accordance with section 4(3)\\\"},{\\\"id\\\":\\\"c02\\\",\\\"text\\\":\\\"only\\\",\\\"start\\\":83,\\\"end\\\":87,\\\"normalized\\\":\\\"only\\\"},{\\\"id\\\":\\\"c03\\\",\\\"text\\\":\\\"for those assets that are recorded in a special register\\\",\\\"start\\\":103,\\\"end\\\":155,\\\"normalized\\\":\\\"for those assets that are recorded in a special register\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a01\\\",\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\"}}],\"created\":1791348685,\"model\":\"MiniMax-M3\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":4805,\"total_characters\":0,\"prompt_tokens\":4373,\"completion_tokens\":432,\"prompt_tokens_details\":{\"cached_tokens\":128}},\"input_sensitive\":false,\"output_sensitive\":false,\"input_sensitive_type\":0,\"output_sensitive_type\":0,\"output_sensitive_int\":0,\"service_tier\":\"standard\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}\n",
+  "usage": {
+    "prompt_tokens": 4373,
+    "completion_tokens": 432,
+    "total_tokens": 4805
+  },
+  "returned_model": "MiniMax-M3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "minimax",
+    "sample_id": "estg_000118",
+    "request_id": "minimax:estg_000118",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000118",
+      "source_id": "estg_000118",
+      "source_text": "(10) If the profit is determined in accordance with Section 4(3), an investment allowance may only be claimed for those assets that are recorded in a special register.",
+      "clauses": [
+        {
+          "clause_id": "estg_000118_c01",
+          "clause_span": {
+            "text": "(10) If the profit is determined in accordance with Section 4(3), an investment allowance may only be claimed for those assets that are recorded in a special register.",
+            "start": 0,
+            "end": 167
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 90,
+                "end": 93
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "an investment allowance",
+              "start": 66,
+              "end": 89,
+              "normalized": "an investment allowance",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "claimed",
+              "start": 102,
+              "end": 109,
+              "normalized": "claimed",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If the profit is determined in accordance with Section 4(3)",
+              "start": 5,
+              "end": 64,
+              "normalized": "if the profit is determined in accordance with section 4(3)",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "in accordance with Section 4(3)",
+              "start": 33,
+              "end": 64,
+              "normalized": "in accordance with section 4(3)",
+              "id": "c01"
+            },
+            {
+              "text": "only",
+              "start": 94,
+              "end": 98,
+              "normalized": "only",
+              "id": "c02"
+            },
+            {
+              "text": "for those assets that are recorded in a special register",
+              "start": 110,
+              "end": 166,
+              "normalized": "for those assets that are recorded in a special register",
+              "id": "c03"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 6,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 7,
+      "reanchored_count": 8,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000118_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "(10) If the profit is determined in accordance with Section 4(3), an investment allowance may only be claimed for those assets that are recorded in a special register.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 156,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 167
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 167
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000118_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 92,
+          "original_end": 95,
+          "candidate_occurrences": [
+            {
+              "start": 90,
+              "end": 93
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 90,
+            "end": 93
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000118_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "an investment allowance",
+          "normalized": "an investment allowance",
+          "original_start": 51,
+          "original_end": 74,
+          "candidate_occurrences": [
+            {
+              "start": 66,
+              "end": 89
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 66,
+            "end": 89
+          },
+          "distance": 30,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000118_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "claimed",
+          "normalized": "claimed",
+          "original_start": 95,
+          "original_end": 102,
+          "candidate_occurrences": [
+            {
+              "start": 102,
+              "end": 109
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 102,
+            "end": 109
+          },
+          "distance": 14,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000118_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "If the profit is determined in accordance with Section 4(3)",
+          "normalized": "if the profit is determined in accordance with section 4(3)",
+          "original_start": 1,
+          "original_end": 62,
+          "candidate_occurrences": [
+            {
+              "start": 5,
+              "end": 64
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 5,
+            "end": 64
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000118_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "in accordance with Section 4(3)",
+          "normalized": "in accordance with section 4(3)",
+          "original_start": 29,
+          "original_end": 62,
+          "candidate_occurrences": [
+            {
+              "start": 33,
+              "end": 64
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 33,
+            "end": 64
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000118_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "only",
+          "normalized": "only",
+          "original_start": 83,
+          "original_end": 87,
+          "candidate_occurrences": [
+            {
+              "start": 94,
+              "end": 98
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 94,
+            "end": 98
+          },
+          "distance": 22,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[2]",
+          "clause_index": 0,
+          "clause_id": "estg_000118_c01",
+          "field": "constraints",
+          "span_index": 2,
+          "span_id": "c03",
+          "text": "for those assets that are recorded in a special register",
+          "normalized": "for those assets that are recorded in a special register",
+          "original_start": 103,
+          "original_end": 155,
+          "candidate_occurrences": [
+            {
+              "start": 110,
+              "end": 166
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 110,
+            "end": 166
+          },
+          "distance": 18,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 8,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

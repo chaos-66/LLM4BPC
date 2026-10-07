@@ -1,0 +1,268 @@
+{
+  "request_id": "qwen:estg_000114",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000114\\\",\\\"source_id\\\":\\\"estg_000114\\\",\\\"source_text\\\":\\\"Where the acquisition or construction of fixed assets extends beyond a balance sheet date, the investment allowance may already be claimed in respect of the partial amounts of the acquisition or construction costs to be capitalized in the respective balance sheet that are attributable to the individual year.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000114_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"Where the acquisition or construction of fixed assets extends beyond a balance sheet date, the investment allowance may already be claimed in respect of the partial amounts of the acquisition or construction costs to be capitalized in the respective balance sheet that are attributable to the individual year.\\\",\\\"start\\\":0,\\\"end\\\":307},\\\"modality\\\":{\\\"label\\\":\\\"permission\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"may\\\",\\\"start\\\":142,\\\"end\\\":145}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"claimed\\\",\\\"start\\\":160,\\\"end\\\":167,\\\"normalized\\\":\\\"claim\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"Where the acquisition or construction of fixed assets extends beyond a balance sheet date\\\",\\\"start\\\":0,\\\"end\\\":89,\\\"normalized\\\":\\\"where the acquisition or construction of fixed assets extends beyond a balance sheet date\\\"}],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"in respect of the partial amounts of the acquisition or construction costs to be capitalized in the respective balance sheet that are attributable to the individual year\\\",\\\"start\\\":168,\\\"end\\\":306,\\\"normalized\\\":\\\"in respect of the partial amounts of the acquisition or construction costs to be capitalized in the respective balance sheet that are attributable to the individual year\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\"}}],\"created\":1791348849,\"id\":\"chatcmpl-83ac7085-ec74-9a79-bb88-f3ef5bc708ae\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":437,\"prompt_tokens\":4620,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4620},\"total_tokens\":5057}}",
+  "usage": {
+    "prompt_tokens": 4620,
+    "completion_tokens": 437,
+    "total_tokens": 5057
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000114",
+    "request_id": "qwen:estg_000114",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000114",
+      "source_id": "estg_000114",
+      "source_text": "Where the acquisition or construction of fixed assets extends beyond a balance sheet date, the investment allowance may already be claimed in respect of the partial amounts of the acquisition or construction costs to be capitalized in the respective balance sheet that are attributable to the individual year.",
+      "clauses": [
+        {
+          "clause_id": "estg_000114_c01",
+          "clause_span": {
+            "text": "Where the acquisition or construction of fixed assets extends beyond a balance sheet date, the investment allowance may already be claimed in respect of the partial amounts of the acquisition or construction costs to be capitalized in the respective balance sheet that are attributable to the individual year.",
+            "start": 0,
+            "end": 309
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 116,
+                "end": 119
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "claimed",
+              "start": 131,
+              "end": 138,
+              "normalized": "claimed",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "Where the acquisition or construction of fixed assets extends beyond a balance sheet date",
+              "start": 0,
+              "end": 89,
+              "normalized": "where the acquisition or construction of fixed assets extends beyond a balance sheet date",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "in respect of the partial amounts of the acquisition or construction costs to be capitalized in the respective balance sheet that are attributable to the individual year",
+              "start": 139,
+              "end": 308,
+              "normalized": "in respect of the partial amounts of the acquisition or construction costs to be capitalized in the respective balance sheet that are attributable to the individual year",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 4,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000114_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Where the acquisition or construction of fixed assets extends beyond a balance sheet date, the investment allowance may already be claimed in respect of the partial amounts of the acquisition or construction costs to be capitalized in the respective balance sheet that are attributable to the individual year.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 307,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 309
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 309
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000114_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 142,
+          "original_end": 145,
+          "candidate_occurrences": [
+            {
+              "start": 116,
+              "end": 119
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 116,
+            "end": 119
+          },
+          "distance": 52,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000114_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "claimed",
+          "normalized": "claimed",
+          "original_start": 160,
+          "original_end": 167,
+          "candidate_occurrences": [
+            {
+              "start": 131,
+              "end": 138
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 131,
+            "end": 138
+          },
+          "distance": 58,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000114_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "Where the acquisition or construction of fixed assets extends beyond a balance sheet date",
+          "normalized": "where the acquisition or construction of fixed assets extends beyond a balance sheet date",
+          "original_start": 0,
+          "original_end": 89,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 89
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 0,
+            "end": 89
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000114_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "in respect of the partial amounts of the acquisition or construction costs to be capitalized in the respective balance sheet that are attributable to the individual year",
+          "normalized": "in respect of the partial amounts of the acquisition or construction costs to be capitalized in the respective balance sheet that are attributable to the individual year",
+          "original_start": 168,
+          "original_end": 306,
+          "candidate_occurrences": [
+            {
+              "start": 139,
+              "end": 308
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 139,
+            "end": 308
+          },
+          "distance": 31,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 4,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

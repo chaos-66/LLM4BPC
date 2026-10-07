@@ -1,0 +1,543 @@
+{
+  "request_id": "grok:estg_000210",
+  "raw_response_utf8": "{\"id\":\"49c4d75f-e646-9eb5-87a4-2d52bcf1f8b2\",\"object\":\"chat.completion\",\"created\":1791348709,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000210\\\",\\n  \\\"source_id\\\": \\\"estg_000210\\\",\\n  \\\"source_text\\\": \\\"Shares for which guarantees regarding value or dividend claims are provided are not eligible.\\\\nb) Stock corporations within the meaning of paragraph 1 item 4 are stock corporations having their registered seat and place of management in the country,\\\\naa) which belong to the \\\\\\\"Trade\\\\\\\" or \\\\\\\"Industry\\\\\\\" sections of a chamber of commerce and whose main business focus, according to the articles of association and the preparatory acts or the actual management, is demonstrably the industrial manufacture of tangible assets in the country, excluding the generation of electrical energy, gas or heat, and\\\\nbb) for which no general deficiency guarantees for the event of insolvency have been assumed.\\\\nc) A stock corporation whose 152.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000210_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"Shares for which guarantees regarding value or dividend claims are provided are not eligible.\\\", \\\"start\\\": 0, \\\"end\\\": 88},\\n      \\\"modality\\\": {\\\"label\\\": \\\"prohibition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"not eligible\\\", \\\"start\\\": 77, \\\"end\\\": 88}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"eligible\\\", \\\"start\\\": 81, \\\"end\\\": 88, \\\"normalized\\\": \\\"eligible\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000210_c02\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"Stock corporations within the meaning of paragraph 1 item 4 are stock corporations having their registered seat and place of management in the country,\\\", \\\"start\\\": 90, \\\"end\\\": 247},\\n      \\\"modality\\\": {\\\"label\\\": \\\"definition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"are\\\", \\\"start\\\": 131, \\\"end\\\": 134}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"within the meaning of paragraph 1 item 4\\\", \\\"start\\\": 92, \\\"end\\\": 130, \\\"normalized\\\": \\\"within the meaning of paragraph 1 item 4\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000210_c03\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"which belong to the \\\\\\\"Trade\\\\\\\" or \\\\\\\"Industry\\\\\\\" sections of a chamber of commerce and whose main business focus, according to the articles of association and the preparatory acts or the actual management, is demonstrably the industrial manufacture of tangible assets in the country, excluding the generation of electrical energy, gas or heat,\\\", \\\"start\\\": 249, \\\"end\\\": 533},\\n      \\\"modality\\\": {\\\"label\\\": \\\"definition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"are\\\", \\\"start\\\": 131, \\\"end\\\": 134}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [{\\\"id\\\": \\\"e01\\\", \\\"text\\\": \\\"excluding the generation of electrical energy, gas or heat\\\", \\\"start\\\": 466, \\\"end\\\": 523, \\\"normalized\\\": \\\"excluding the generation of electrical energy, gas or heat\\\"}],\\n      \\\"actor_action_map\\\": [],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000210_c04\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"for which no general deficiency guarantees for the event of insolvency have been assumed.\\\", \\\"start\\\": 535, \\\"end\\\": 622},\\n      \\\"modality\\\": {\\\"label\\\": \\\"prohibition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"no\\\", \\\"start\\\": 545, \\\"end\\\": 547}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"assumed\\\", \\\"start\\\": 615, \\\"end\\\": 622, \\\"normalized\\\": \\\"assume\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p02\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": [\\n    {\\\"field\\\": \\\"clause\\\", \\\"reason\\\": \\\"clause_boundary_ambiguous\\\"},\\n    {\\\"field\\\": \\\"clause\\\", \\\"reason\\\": \\\"semantic_scope_ambiguous_in_target\\\"}\\n  ]\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4457,\"completion_tokens\":1044,\"total_tokens\":5501,\"prompt_tokens_details\":{\"text_tokens\":4457,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":1536},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":65684500},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4457,
+    "completion_tokens": 1044,
+    "total_tokens": 5501,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000210",
+    "request_id": "grok:estg_000210",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000210",
+      "source_id": "estg_000210",
+      "source_text": "Shares for which guarantees regarding value or dividend claims are provided are not eligible.\nb) Stock corporations within the meaning of paragraph 1 item 4 are stock corporations having their registered seat and place of management in the country,\naa) which belong to the \"Trade\" or \"Industry\" sections of a chamber of commerce and whose main business focus, according to the articles of association and the preparatory acts or the actual management, is demonstrably the industrial manufacture of tangible assets in the country, excluding the generation of electrical energy, gas or heat, and\nbb) for which no general deficiency guarantees for the event of insolvency have been assumed.\nc) A stock corporation whose 152.",
+      "clauses": [
+        {
+          "clause_id": "estg_000210_c01",
+          "clause_span": {
+            "text": "Shares for which guarantees regarding value or dividend claims are provided are not eligible.",
+            "start": 0,
+            "end": 93
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "not eligible",
+                "start": 80,
+                "end": 92
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "eligible",
+              "start": 84,
+              "end": 92,
+              "normalized": "eligible",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000210_c02",
+          "clause_span": {
+            "text": "Stock corporations within the meaning of paragraph 1 item 4 are stock corporations having their registered seat and place of management in the country,",
+            "start": 97,
+            "end": 248
+          },
+          "modality": {
+            "label": "definition",
+            "evidence": [
+              {
+                "text": "are",
+                "start": 157,
+                "end": 160
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "within the meaning of paragraph 1 item 4",
+              "start": 116,
+              "end": 156,
+              "normalized": "within the meaning of paragraph 1 item 4",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000210_c03",
+          "clause_span": {
+            "text": "which belong to the \"Trade\" or \"Industry\" sections of a chamber of commerce and whose main business focus, according to the articles of association and the preparatory acts or the actual management, is demonstrably the industrial manufacture of tangible assets in the country, excluding the generation of electrical energy, gas or heat,",
+            "start": 253,
+            "end": 589
+          },
+          "modality": {
+            "label": "definition",
+            "evidence": []
+          },
+          "actors": [],
+          "actions": [],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [
+            {
+              "text": "excluding the generation of electrical energy, gas or heat",
+              "start": 530,
+              "end": 588,
+              "normalized": "excluding the generation of electrical energy, gas or heat",
+              "id": "e01"
+            }
+          ],
+          "actor_action_map": [],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000210_c04",
+          "clause_span": {
+            "text": "for which no general deficiency guarantees for the event of insolvency have been assumed.",
+            "start": 598,
+            "end": 687
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "no",
+                "start": 608,
+                "end": 610
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "assumed",
+              "start": 679,
+              "end": 686,
+              "normalized": "assumed",
+              "id": "p02"
+            }
+          ],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p02"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "clause",
+          "reason": "clause_boundary_ambiguous"
+        },
+        {
+          "field": "clause",
+          "reason": "semantic_scope_ambiguous_in_target"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 4,
+      "field_span_count": 8,
+      "reanchored_count": 11,
+      "dropped_spans": [
+        "clauses[2].modality.evidence[0]"
+      ],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000210_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Shares for which guarantees regarding value or dividend claims are provided are not eligible.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 88,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 93
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 93
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000210_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "not eligible",
+          "normalized": null,
+          "original_start": 77,
+          "original_end": 88,
+          "candidate_occurrences": [
+            {
+              "start": 80,
+              "end": 92
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 80,
+            "end": 92
+          },
+          "distance": 7,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000210_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "eligible",
+          "normalized": "eligible",
+          "original_start": 81,
+          "original_end": 88,
+          "candidate_occurrences": [
+            {
+              "start": 84,
+              "end": 92
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 84,
+            "end": 92
+          },
+          "distance": 7,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000210_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Stock corporations within the meaning of paragraph 1 item 4 are stock corporations having their registered seat and place of management in the country,",
+          "normalized": null,
+          "original_start": 90,
+          "original_end": 247,
+          "candidate_occurrences": [
+            {
+              "start": 97,
+              "end": 248
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 97,
+            "end": 248
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000210_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "are",
+          "normalized": null,
+          "original_start": 131,
+          "original_end": 134,
+          "candidate_occurrences": [
+            {
+              "start": 157,
+              "end": 160
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 157,
+            "end": 160
+          },
+          "distance": 52,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].constraints[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000210_c02",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "within the meaning of paragraph 1 item 4",
+          "normalized": "within the meaning of paragraph 1 item 4",
+          "original_start": 92,
+          "original_end": 130,
+          "candidate_occurrences": [
+            {
+              "start": 116,
+              "end": 156
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 116,
+            "end": 156
+          },
+          "distance": 50,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].clause_span",
+          "clause_index": 2,
+          "clause_id": "estg_000210_c03",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "which belong to the \"Trade\" or \"Industry\" sections of a chamber of commerce and whose main business focus, according to the articles of association and the preparatory acts or the actual management, is demonstrably the industrial manufacture of tangible assets in the country, excluding the generation of electrical energy, gas or heat,",
+          "normalized": null,
+          "original_start": 249,
+          "original_end": 533,
+          "candidate_occurrences": [
+            {
+              "start": 253,
+              "end": 589
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 253,
+            "end": 589
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].modality.evidence[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000210_c03",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "are",
+          "normalized": null,
+          "original_start": 131,
+          "original_end": 134,
+          "candidate_occurrences": [],
+          "strategy": "not_applicable",
+          "chosen": null,
+          "distance": null,
+          "outcome": "unresolved",
+          "reason": "zero_occurrence",
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].exceptions[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000210_c03",
+          "field": "exceptions",
+          "span_index": 0,
+          "span_id": "e01",
+          "text": "excluding the generation of electrical energy, gas or heat",
+          "normalized": "excluding the generation of electrical energy, gas or heat",
+          "original_start": 466,
+          "original_end": 523,
+          "candidate_occurrences": [
+            {
+              "start": 530,
+              "end": 588
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 530,
+            "end": 588
+          },
+          "distance": 129,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[3].clause_span",
+          "clause_index": 3,
+          "clause_id": "estg_000210_c04",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "for which no general deficiency guarantees for the event of insolvency have been assumed.",
+          "normalized": null,
+          "original_start": 535,
+          "original_end": 622,
+          "candidate_occurrences": [
+            {
+              "start": 598,
+              "end": 687
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 598,
+            "end": 687
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[3].modality.evidence[0]",
+          "clause_index": 3,
+          "clause_id": "estg_000210_c04",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "no",
+          "normalized": null,
+          "original_start": 545,
+          "original_end": 547,
+          "candidate_occurrences": [
+            {
+              "start": 608,
+              "end": 610
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 608,
+            "end": 610
+          },
+          "distance": 126,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[3].actions[0]",
+          "clause_index": 3,
+          "clause_id": "estg_000210_c04",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p02",
+          "text": "assumed",
+          "normalized": "assumed",
+          "original_start": 615,
+          "original_end": 622,
+          "candidate_occurrences": [
+            {
+              "start": 679,
+              "end": 686
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 679,
+            "end": 686
+          },
+          "distance": 128,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 1,
+      "reanchored_unique_exact": 11,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

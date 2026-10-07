@@ -1,0 +1,233 @@
+{
+  "request_id": "minimax:estg_000776",
+  "raw_response_utf8": "{\"id\":\"0715055f032ed38c4c4389a96dbbbd73\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000776\\\",\\\"source_id\\\":\\\"estg_000776\\\",\\\"source_text\\\":\\\"An exercise of public authority shall be assumed in particular where services are involved the acceptance of which the recipient is obliged to accept by virtue of a statutory or official order.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000776_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"An exercise of public authority shall be assumed in particular where services are involved the acceptance of which the recipient is obliged to accept by virtue of a statutory or official order.\\\",\\\"start\\\":0,\\\"end\\\":158},\\\"modality\\\":{\\\"label\\\":\\\"definition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall be assumed\\\",\\\"start\\\":30,\\\"end\\\":47}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"the recipient\\\",\\\"start\\\":101,\\\"end\\\":113,\\\"normalized\\\":\\\"recipient\\\"}],\\\"actions\\\":[],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"by virtue of a statutory or official order\\\",\\\"start\\\":140,\\\"end\\\":182,\\\"normalized\\\":\\\"by virtue of a statutory or official order\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"actor\\\",\\\"reason\\\":\\\"reference_status=unresolved_coreference;independence_status=context_required\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791349343,\"model\":\"MiniMax-M3\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":4676,\"total_characters\":0,\"prompt_tokens\":4371,\"completion_tokens\":305,\"prompt_tokens_details\":{\"cached_tokens\":128}},\"input_sensitive\":false,\"output_sensitive\":false,\"input_sensitive_type\":0,\"output_sensitive_type\":0,\"output_sensitive_int\":0,\"service_tier\":\"standard\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}\n",
+  "usage": {
+    "prompt_tokens": 4371,
+    "completion_tokens": 305,
+    "total_tokens": 4676
+  },
+  "returned_model": "MiniMax-M3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "minimax",
+    "sample_id": "estg_000776",
+    "request_id": "minimax:estg_000776",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000776",
+      "source_id": "estg_000776",
+      "source_text": "An exercise of public authority shall be assumed in particular where services are involved the acceptance of which the recipient is obliged to accept by virtue of a statutory or official order.",
+      "clauses": [
+        {
+          "clause_id": "estg_000776_c01",
+          "clause_span": {
+            "text": "An exercise of public authority shall be assumed in particular where services are involved the acceptance of which the recipient is obliged to accept by virtue of a statutory or official order.",
+            "start": 0,
+            "end": 193
+          },
+          "modality": {
+            "label": "definition",
+            "evidence": [
+              {
+                "text": "shall be assumed",
+                "start": 32,
+                "end": 48
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the recipient",
+              "start": 115,
+              "end": 128,
+              "normalized": "the recipient",
+              "id": "a01"
+            }
+          ],
+          "actions": [],
+          "constraints": [
+            {
+              "text": "by virtue of a statutory or official order",
+              "start": 150,
+              "end": 192,
+              "normalized": "by virtue of a statutory or official order",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": [],
+          "conditions": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 2,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 3,
+      "reanchored_count": 4,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000776_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "An exercise of public authority shall be assumed in particular where services are involved the acceptance of which the recipient is obliged to accept by virtue of a statutory or official order.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 158,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 193
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 193
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000776_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall be assumed",
+          "normalized": null,
+          "original_start": 30,
+          "original_end": 47,
+          "candidate_occurrences": [
+            {
+              "start": 32,
+              "end": 48
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 32,
+            "end": 48
+          },
+          "distance": 3,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000776_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "the recipient",
+          "normalized": "the recipient",
+          "original_start": 101,
+          "original_end": 113,
+          "candidate_occurrences": [
+            {
+              "start": 115,
+              "end": 128
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 115,
+            "end": 128
+          },
+          "distance": 29,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000776_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "by virtue of a statutory or official order",
+          "normalized": "by virtue of a statutory or official order",
+          "original_start": 140,
+          "original_end": 182,
+          "candidate_occurrences": [
+            {
+              "start": 150,
+              "end": 192
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 150,
+            "end": 192
+          },
+          "distance": 20,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 4,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

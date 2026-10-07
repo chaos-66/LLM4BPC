@@ -1,0 +1,308 @@
+{
+  "request_id": "minimax:estg_000854",
+  "raw_response_utf8": "{\"id\":\"071505915f731438234c2d3993e71dee\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000854\\\",\\\"source_id\\\":\\\"estg_000854\\\",\\\"source_text\\\":\\\"The exclusive use of the provisions for premium refunds (profit participations) in the life, health or accident insurance business with return of premium shall also be deemed secure to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000854_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"The exclusive use of the provisions for premium refunds (profit participations) in the life, health or accident insurance business with return of premium shall also be deemed secure to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts.\\\",\\\"start\\\":0,\\\"end\\\":396},\\\"modality\\\":{\\\"label\\\":\\\"permission\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"may\\\",\\\"start\\\":249,\\\"end\\\":252}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"withdrawn from these provisions\\\",\\\"start\\\":253,\\\"end\\\":285,\\\"normalized\\\":\\\"withdraw from these provisions\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"to the extent that, in exceptional cases\\\",\\\"start\\\":184,\\\"end\\\":227,\\\"normalized\\\":\\\"to the extent that, in exceptional cases, amounts may be withdrawn from these provisions\\\"}],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"in accordance with the business plan and with the approval of the insurance supervisory authority\\\",\\\"start\\\":286,\\\"end\\\":379,\\\"normalized\\\":\\\"in accordance with the business plan and with the approval of the insurance supervisory authority\\\"},{\\\"id\\\":\\\"c02\\\",\\\"text\\\":\\\"in order to ensure the permanent ability to meet the obligations arising from the insurance contracts\\\",\\\"start\\\":380,\\\"end\\\":473,\\\"normalized\\\":\\\"in order to ensure the permanent ability to meet the obligations arising from the insurance contracts\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"condition\\\",\\\"reason\\\":\\\"clause_boundary_ambiguous\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791349393,\"model\":\"MiniMax-M3\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":4935,\"total_characters\":0,\"prompt_tokens\":4418,\"completion_tokens\":517,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":1408}},\"input_sensitive\":false,\"output_sensitive\":false,\"input_sensitive_type\":0,\"output_sensitive_type\":0,\"output_sensitive_int\":0,\"service_tier\":\"standard\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}\n",
+  "usage": {
+    "prompt_tokens": 4418,
+    "completion_tokens": 517,
+    "total_tokens": 4935,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "MiniMax-M3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "minimax",
+    "sample_id": "estg_000854",
+    "request_id": "minimax:estg_000854",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000854",
+      "source_id": "estg_000854",
+      "source_text": "The exclusive use of the provisions for premium refunds (profit participations) in the life, health or accident insurance business with return of premium shall also be deemed secure to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts.",
+      "clauses": [
+        {
+          "clause_id": "estg_000854_c01",
+          "clause_span": {
+            "text": "The exclusive use of the provisions for premium refunds (profit participations) in the life, health or accident insurance business with return of premium shall also be deemed secure to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts.",
+            "start": 0,
+            "end": 471
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 232,
+                "end": 235
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "withdrawn from these provisions",
+              "start": 239,
+              "end": 270,
+              "normalized": "withdrawn from these provisions",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "to the extent that, in exceptional cases",
+              "start": 182,
+              "end": 222,
+              "normalized": "to the extent that, in exceptional cases",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "in accordance with the business plan and with the approval of the insurance supervisory authority",
+              "start": 271,
+              "end": 368,
+              "normalized": "in accordance with the business plan and with the approval of the insurance supervisory authority",
+              "id": "c01"
+            },
+            {
+              "text": "in order to ensure the permanent ability to meet the obligations arising from the insurance contracts",
+              "start": 369,
+              "end": 470,
+              "normalized": "in order to ensure the permanent ability to meet the obligations arising from the insurance contracts",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "condition",
+          "reason": "clause_boundary_ambiguous"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 5,
+      "reanchored_count": 6,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000854_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The exclusive use of the provisions for premium refunds (profit participations) in the life, health or accident insurance business with return of premium shall also be deemed secure to the extent that, in exceptional cases, amounts may be withdrawn from these provisions in accordance with the business plan and with the approval of the insurance supervisory authority in order to ensure the permanent ability to meet the obligations arising from the insurance contracts.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 396,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 471
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 471
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000854_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 249,
+          "original_end": 252,
+          "candidate_occurrences": [
+            {
+              "start": 232,
+              "end": 235
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 232,
+            "end": 235
+          },
+          "distance": 34,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000854_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "withdrawn from these provisions",
+          "normalized": "withdrawn from these provisions",
+          "original_start": 253,
+          "original_end": 285,
+          "candidate_occurrences": [
+            {
+              "start": 239,
+              "end": 270
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 239,
+            "end": 270
+          },
+          "distance": 29,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000854_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "to the extent that, in exceptional cases",
+          "normalized": "to the extent that, in exceptional cases",
+          "original_start": 184,
+          "original_end": 227,
+          "candidate_occurrences": [
+            {
+              "start": 182,
+              "end": 222
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 182,
+            "end": 222
+          },
+          "distance": 7,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000854_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "in accordance with the business plan and with the approval of the insurance supervisory authority",
+          "normalized": "in accordance with the business plan and with the approval of the insurance supervisory authority",
+          "original_start": 286,
+          "original_end": 379,
+          "candidate_occurrences": [
+            {
+              "start": 271,
+              "end": 368
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 271,
+            "end": 368
+          },
+          "distance": 26,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000854_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "in order to ensure the permanent ability to meet the obligations arising from the insurance contracts",
+          "normalized": "in order to ensure the permanent ability to meet the obligations arising from the insurance contracts",
+          "original_start": 380,
+          "original_end": 473,
+          "candidate_occurrences": [
+            {
+              "start": 369,
+              "end": 470
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 369,
+            "end": 470
+          },
+          "distance": 14,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 6,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

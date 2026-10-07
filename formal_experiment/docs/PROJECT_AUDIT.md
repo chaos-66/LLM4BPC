@@ -166,7 +166,28 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
   450 次/0 重试/USD14.77 确认，不绕过拦截或间接执行。审批证据及待确认范围见
   `outputs/reports/s2_prompt_simplification_comparison_20261006_v1_execution_blocker.json`。
 
-## 已授权、执行准备：S2-MODEL-SENSITIVITY-V1 六家各150条（2026-10-07）
+## 部分实测完成：S2-MODEL-SENSITIVITY-V1（2026-10-07；六家全量尚未完成）
+
+- 批次 `multi_model_all_20261007_v2`，实际453/900次、0重试、用时1572.297秒。
+  Qwen/Grok/MiniMax各完成150条，结构有效148/147/142；失败2/3/8保留完整分母。
+  主指标为共享coarse五字段pooled F1：**0.8030 / 0.7723 / 0.7345**，modality单列。
+  历史DeepSeek0.8378/Sun本地Rules-Only0.7631复核一致，未重跑或改固定表一。
+- MiMo首条HTTP402/insufficient_balance；GLM首条HTTP429/code1113余额不足或
+  无资源包；二者待用户充值。Kimi关闭参数下无思考正文，但返回reasoning_tokens=1，
+  按严格门禁停批，不把它擅自当占位符或断言实际思考。三家各1次，性能null；
+  447条尚未发送，不自动重试、改型号或放宽关闭思考条件。
+- 结果 `outputs/reports/stage2_multi_model_all_20261007_v2.json/.md`，详细可读数据
+  为同目录 `_analysis.md`；源、原始响应、账本、预测和共享评价绑定于全批manifest。
+  `outputs/evidence/stage2_multi_model_sensitivity_v1/multi_model_all_20261007_v2/index.json`
+  保存497份产物的字节相同本地副本映射；本地总498文件约30.23MB，尚未外发GitHub。
+- 已报告输入2,019,480/output284,388 tokens；MiMo/GLM缺少usage，0仅表示未报告。
+  国内保守估算含异常预留CNY14.3221826、Grok USD1.07430625，未核对账户实扣。
+- 准备58项相关测试证据复用；真实产物6项具名离线复核通过（4.08秒）及结束
+  完整性检查通过，experiment_run已追加。未跑全量；六家全量DoD仍为partial。
+  三家新F1相差6.86个百分点，MiniMax低于Rules-Only；保留负结果，不改Gold追分。
+  原始响应GitHub外发此前被自动审批拒绝，许可仍待答复，本批不绕过当前push阻塞。
+
+## 已授权、执行准备历史：S2-MODEL-SENSITIVITY-V1 六家各150条（2026-10-07）
 
 - 用户追加“全部跑出来看一下数据”：六家已确认非思考配置，各跑同一冻结150条一次，
   新调用上限900、每provider/sample一次、0重试、输出4096/条。唯一批次

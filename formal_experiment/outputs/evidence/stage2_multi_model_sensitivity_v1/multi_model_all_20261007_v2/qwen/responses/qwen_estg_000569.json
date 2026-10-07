@@ -1,0 +1,376 @@
+{
+  "request_id": "qwen:estg_000569",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000569\\\",\\\"source_id\\\":\\\"estg_000569\\\",\\\"source_text\\\":\\\"The tax office may, however, upon application, permit that the tax-exempt income components pursuant to Section 3 and the income referred to in Section 26 are not recorded in the wage account if the possibility of verification (Sections 86 et seq.) is ensured in another manner or if it concerns cases of minor significance.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000569_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"The tax office may, however, upon application, permit that the tax-exempt income components pursuant to Section 3 and the income referred to in Section 26 are not recorded in the wage account if the possibility of verification (Sections 86 et seq.) is ensured in another manner or if it concerns cases of minor significance.\\\",\\\"start\\\":0,\\\"end\\\":324},\\\"modality\\\":{\\\"label\\\":\\\"permission\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"may\\\",\\\"start\\\":15,\\\"end\\\":18}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"The tax office\\\",\\\"start\\\":0,\\\"end\\\":14,\\\"normalized\\\":\\\"tax office\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"permit that the tax-exempt income components pursuant to Section 3 and the income referred to in Section 26 are not recorded in the wage account\\\",\\\"start\\\":45,\\\"end\\\":190,\\\"normalized\\\":\\\"permit that the tax-exempt income components pursuant to section 3 and the income referred to in section 26 are not recorded in the wage account\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"if the possibility of verification (Sections 86 et seq.) is ensured in another manner\\\",\\\"start\\\":191,\\\"end\\\":276,\\\"normalized\\\":\\\"if the possibility of verification (sections 86 et seq.) is ensured in another manner\\\"},{\\\"id\\\":\\\"d02\\\",\\\"text\\\":\\\"if it concerns cases of minor significance\\\",\\\"start\\\":280,\\\"end\\\":322,\\\"normalized\\\":\\\"if it concerns cases of minor significance\\\"}],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"upon application\\\",\\\"start\\\":29,\\\"end\\\":45,\\\"normalized\\\":\\\"upon application\\\"},{\\\"id\\\":\\\"c02\\\",\\\"text\\\":\\\"pursuant to Section 3\\\",\\\"start\\\":98,\\\"end\\\":119,\\\"normalized\\\":\\\"pursuant to section 3\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a01\\\",\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"condition\\\",\\\"reason\\\":\\\"reference_status=unresolved_coreference;independence_status=context_required\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791349616,\"id\":\"chatcmpl-898e38f1-b07e-9885-9a4f-ae1d1d198d2d\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":608,\"prompt_tokens\":4637,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4637},\"total_tokens\":5245}}",
+  "usage": {
+    "prompt_tokens": 4637,
+    "completion_tokens": 608,
+    "total_tokens": 5245
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000569",
+    "request_id": "qwen:estg_000569",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000569",
+      "source_id": "estg_000569",
+      "source_text": "The tax office may, however, upon application, permit that the tax-exempt income components pursuant to Section 3 and the income referred to in Section 26 are not recorded in the wage account if the possibility of verification (Sections 86 et seq.) is ensured in another manner or if it concerns cases of minor significance.",
+      "clauses": [
+        {
+          "clause_id": "estg_000569_c01",
+          "clause_span": {
+            "text": "The tax office may, however, upon application, permit that the tax-exempt income components pursuant to Section 3 and the income referred to in Section 26 are not recorded in the wage account if the possibility of verification (Sections 86 et seq.) is ensured in another manner or if it concerns cases of minor significance.",
+            "start": 0,
+            "end": 324
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 15,
+                "end": 18
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "The tax office",
+              "start": 0,
+              "end": 14,
+              "normalized": "the tax office",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "permit that the tax-exempt income components pursuant to Section 3 and the income referred to in Section 26 are not recorded in the wage account",
+              "start": 47,
+              "end": 191,
+              "normalized": "permit that the tax-exempt income components pursuant to section 3 and the income referred to in section 26 are not recorded in the wage account",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "if the possibility of verification (Sections 86 et seq.) is ensured in another manner",
+              "start": 192,
+              "end": 277,
+              "normalized": "if the possibility of verification (sections 86 et seq.) is ensured in another manner",
+              "id": "d01"
+            },
+            {
+              "text": "if it concerns cases of minor significance",
+              "start": 281,
+              "end": 323,
+              "normalized": "if it concerns cases of minor significance",
+              "id": "d02"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "upon application",
+              "start": 29,
+              "end": 45,
+              "normalized": "upon application",
+              "id": "c01"
+            },
+            {
+              "text": "pursuant to Section 3",
+              "start": 92,
+              "end": 113,
+              "normalized": "pursuant to section 3",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "condition",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 6,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 7,
+      "reanchored_count": 4,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000569_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The tax office may, however, upon application, permit that the tax-exempt income components pursuant to Section 3 and the income referred to in Section 26 are not recorded in the wage account if the possibility of verification (Sections 86 et seq.) is ensured in another manner or if it concerns cases of minor significance.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 324,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 324
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 0,
+            "end": 324
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000569_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 15,
+          "original_end": 18,
+          "candidate_occurrences": [
+            {
+              "start": 15,
+              "end": 18
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 15,
+            "end": 18
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000569_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "The tax office",
+          "normalized": "the tax office",
+          "original_start": 0,
+          "original_end": 14,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 14
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 0,
+            "end": 14
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000569_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "permit that the tax-exempt income components pursuant to Section 3 and the income referred to in Section 26 are not recorded in the wage account",
+          "normalized": "permit that the tax-exempt income components pursuant to section 3 and the income referred to in section 26 are not recorded in the wage account",
+          "original_start": 45,
+          "original_end": 190,
+          "candidate_occurrences": [
+            {
+              "start": 47,
+              "end": 191
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 47,
+            "end": 191
+          },
+          "distance": 3,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000569_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "if the possibility of verification (Sections 86 et seq.) is ensured in another manner",
+          "normalized": "if the possibility of verification (sections 86 et seq.) is ensured in another manner",
+          "original_start": 191,
+          "original_end": 276,
+          "candidate_occurrences": [
+            {
+              "start": 192,
+              "end": 277
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 192,
+            "end": 277
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000569_c01",
+          "field": "conditions",
+          "span_index": 1,
+          "span_id": "d02",
+          "text": "if it concerns cases of minor significance",
+          "normalized": "if it concerns cases of minor significance",
+          "original_start": 280,
+          "original_end": 322,
+          "candidate_occurrences": [
+            {
+              "start": 281,
+              "end": 323
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 281,
+            "end": 323
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000569_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "upon application",
+          "normalized": "upon application",
+          "original_start": 29,
+          "original_end": 45,
+          "candidate_occurrences": [
+            {
+              "start": 29,
+              "end": 45
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 29,
+            "end": 45
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000569_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "pursuant to Section 3",
+          "normalized": "pursuant to section 3",
+          "original_start": 98,
+          "original_end": 119,
+          "candidate_occurrences": [
+            {
+              "start": 92,
+              "end": 113
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 92,
+            "end": 113
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 3,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 4,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

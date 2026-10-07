@@ -1,0 +1,26 @@
+{
+  "request_id": "grok:estg_000399",
+  "raw_response_utf8": "{\"id\":\"306a52ab-f930-9468-b41b-569ce5ba6179\",\"object\":\"chat.completion\",\"created\":1791348859,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000399\\\",\\n  \\\"source_id\\\": \\\"estg_000399\\\",\\n  \\\"source_text\\\": \\\"(2) The taxpayer with limited tax liability shall submit a tax return for the domestic income of the preceding calendar year (assessment period) if  1. the tax office requests the taxpayer to do so, or  2. the domestic income consisted wholly or partly of income within the meaning of Section 2(3) numbers 1 to 3 and the profit had to be determined or has been determined on the basis of a comparison of business assets, or  3. the total domestic income assessable to income tax pursuant to Section 102 has exceeded ATS 15,000.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000399_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"(2) The taxpayer with limited tax liability shall submit a tax return for the domestic income of the preceding calendar year (assessment period) if  1. the tax office requests the taxpayer to do so, or  2. the domestic income consisted wholly or partly of income within the meaning of Section 2(3) numbers 1 to 3 and the profit had to be determined or has been determined on the basis of a comparison of business assets, or  3. the total domestic income assessable to income tax pursuant to Section 102 has exceeded ATS 15,000.\\\", \\\"start\\\": 0, \\\"end\\\": 406},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 41, \\\"end\\\": 46}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"The taxpayer with limited tax liability\\\", \\\"start\\\": 4, \\\"end\\\": 40, \\\"normalized\\\": \\\"taxpayer with limited tax liability\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"submit a tax return for the domestic income of the preceding calendar year (assessment period)\\\", \\\"start\\\": 47, \\\"end\\\": 139, \\\"normalized\\\": \\\"submit a tax return for the domestic income of the preceding calendar year (assessment period)\\\"}],\\n      \\\"conditions\\\": [\\n        {\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"if  1. the tax office requests the taxpayer to do so\\\", \\\"start\\\": 140, \\\"end\\\": 190, \\\"normalized\\\": \\\"if the tax office requests the taxpayer to do so\\\"},\\n        {\\\"id\\\": \\\"d02\\\", \\\"text\\\": \\\"or  2. the domestic income consisted wholly or partly of income within the meaning of Section 2(3) numbers 1 to 3 and the profit had to be determined or has been determined on the basis of a comparison of business assets\\\", \\\"start\\\": 191, \\\"end\\\": 367, \\\"normalized\\\": \\\"or the domestic income consisted wholly or partly of income within the meaning of section 2(3) numbers 1 to 3 and the profit had to be determined or has been determined on the basis of a comparison of business assets\\\"},\\n        {\\\"id\\\": \\\"d03\\\", \\\"text\\\": \\\"or  3. the total domestic income assessable to income tax pursuant to Section 102 has exceeded ATS 15,000\\\", \\\"start\\\": 368, \\\"end\\\": 405, \\\"normalized\\\": \\\"or the total domestic income assessable to income tax pursuant to section 102 has exceeded ats 15,000\\\"}\\n      ],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4438,\"completion_tokens\":840,\"total_tokens\":5278,\"prompt_tokens_details\":{\"text_tokens\":4438,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":1536},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":60347000},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4438,
+    "completion_tokens": 840,
+    "total_tokens": 5278,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000399",
+    "request_id": "grok:estg_000399",
+    "request_status": "failed",
+    "failure_stage": "input_binding",
+    "record": {},
+    "canonicalization_policy": "legacy"
+  }
+}

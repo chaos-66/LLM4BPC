@@ -1,0 +1,305 @@
+{
+  "request_id": "minimax:estg_000004",
+  "raw_response_utf8": "{\"id\":\"07150143ba59a56a90d7e9657bc1af06\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000004\\\",\\\"source_id\\\":\\\"estg_000004\\\",\\\"source_text\\\":\\\"(7) A change of the fiscal year to a different closing date is only permissible if there are substantial business reasons and the tax office has given prior consent by official notice.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000004_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"A change of the fiscal year to a different closing date is only permissible if there are substantial business reasons and the tax office has given prior consent by official notice.\\\",\\\"start\\\":4,\\\"end\\\":161},\\\"modality\\\":{\\\"label\\\":\\\"permission\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"is only permissible\\\",\\\"start\\\":57,\\\"end\\\":74},{\\\"text\\\":\\\"only\\\",\\\"start\\\":60,\\\"end\\\":64}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"change of the fiscal year to a different closing date\\\",\\\"start\\\":6,\\\"end\\\":56,\\\"normalized\\\":\\\"change of the fiscal year to a different closing date\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"if there are substantial business reasons\\\",\\\"start\\\":75,\\\"end\\\":116,\\\"normalized\\\":\\\"if there are substantial business reasons\\\"},{\\\"id\\\":\\\"d02\\\",\\\"text\\\":\\\"the tax office has given prior consent by official notice\\\",\\\"start\\\":121,\\\"end\\\":177,\\\"normalized\\\":\\\"the tax office has given prior consent by official notice\\\"}],\\\"constraints\\\":[],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"condition\\\",\\\"reason\\\":\\\"clause_boundary_ambiguous\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791348292,\"model\":\"MiniMax-M3\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":4750,\"total_characters\":0,\"prompt_tokens\":4373,\"completion_tokens\":377,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":128}},\"input_sensitive\":false,\"output_sensitive\":false,\"input_sensitive_type\":0,\"output_sensitive_type\":0,\"output_sensitive_int\":0,\"service_tier\":\"standard\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}\n",
+  "usage": {
+    "prompt_tokens": 4373,
+    "completion_tokens": 377,
+    "total_tokens": 4750,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "MiniMax-M3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "minimax",
+    "sample_id": "estg_000004",
+    "request_id": "minimax:estg_000004",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000004",
+      "source_id": "estg_000004",
+      "source_text": "(7) A change of the fiscal year to a different closing date is only permissible if there are substantial business reasons and the tax office has given prior consent by official notice.",
+      "clauses": [
+        {
+          "clause_id": "estg_000004_c01",
+          "clause_span": {
+            "text": "A change of the fiscal year to a different closing date is only permissible if there are substantial business reasons and the tax office has given prior consent by official notice.",
+            "start": 4,
+            "end": 184
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "is only permissible",
+                "start": 60,
+                "end": 79
+              },
+              {
+                "text": "only",
+                "start": 63,
+                "end": 67
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "change of the fiscal year to a different closing date",
+              "start": 6,
+              "end": 59,
+              "normalized": "change of the fiscal year to a different closing date",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "if there are substantial business reasons",
+              "start": 80,
+              "end": 121,
+              "normalized": "if there are substantial business reasons",
+              "id": "d01"
+            },
+            {
+              "text": "the tax office has given prior consent by official notice",
+              "start": 126,
+              "end": 183,
+              "normalized": "the tax office has given prior consent by official notice",
+              "id": "d02"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "condition",
+          "reason": "clause_boundary_ambiguous"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 5,
+      "reanchored_count": 6,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000004_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "A change of the fiscal year to a different closing date is only permissible if there are substantial business reasons and the tax office has given prior consent by official notice.",
+          "normalized": null,
+          "original_start": 4,
+          "original_end": 161,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 184
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 184
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000004_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "is only permissible",
+          "normalized": null,
+          "original_start": 57,
+          "original_end": 74,
+          "candidate_occurrences": [
+            {
+              "start": 60,
+              "end": 79
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 60,
+            "end": 79
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000004_c01",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "only",
+          "normalized": null,
+          "original_start": 60,
+          "original_end": 64,
+          "candidate_occurrences": [
+            {
+              "start": 63,
+              "end": 67
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 63,
+            "end": 67
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000004_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "change of the fiscal year to a different closing date",
+          "normalized": "change of the fiscal year to a different closing date",
+          "original_start": 6,
+          "original_end": 56,
+          "candidate_occurrences": [
+            {
+              "start": 6,
+              "end": 59
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 6,
+            "end": 59
+          },
+          "distance": 3,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000004_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "if there are substantial business reasons",
+          "normalized": "if there are substantial business reasons",
+          "original_start": 75,
+          "original_end": 116,
+          "candidate_occurrences": [
+            {
+              "start": 80,
+              "end": 121
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 80,
+            "end": 121
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000004_c01",
+          "field": "conditions",
+          "span_index": 1,
+          "span_id": "d02",
+          "text": "the tax office has given prior consent by official notice",
+          "normalized": "the tax office has given prior consent by official notice",
+          "original_start": 121,
+          "original_end": 177,
+          "candidate_occurrences": [
+            {
+              "start": 126,
+              "end": 183
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 126,
+            "end": 183
+          },
+          "distance": 11,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 6,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

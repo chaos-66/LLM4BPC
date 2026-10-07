@@ -1,0 +1,237 @@
+{
+  "request_id": "minimax:estg_000812",
+  "raw_response_utf8": "{\"id\":\"07150584315e53340e97770fce2f1b4c\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000812\\\",\\\"source_id\\\":\\\"estg_000812\\\",\\\"source_text\\\":\\\"For commercial enterprises (Section 2) that are required to keep books under commercial law provisions, and for trading and business cooperatives, the profit shall be determined in accordance with Section 5 of the Income Tax Act 1988.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000812_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"For commercial enterprises (Section 2) that are required to keep books under commercial law provisions, and for trading and business cooperatives, the profit shall be determined in accordance with Section 5 of the Income Tax Act 1988.\\\",\\\"start\\\":0,\\\"end\\\":189},\\\"modality\\\":{\\\"label\\\":\\\"obligation\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall\\\",\\\"start\\\":135,\\\"end\\\":140}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"commercial enterprises (Section 2) that are required to keep books under commercial law provisions, and trading and business cooperatives\\\",\\\"start\\\":4,\\\"end\\\":126,\\\"normalized\\\":\\\"commercial enterprises and trading and business cooperatives\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"determined\\\",\\\"start\\\":141,\\\"end\\\":151,\\\"normalized\\\":\\\"determine\\\"}],\\\"conditions\\\":[],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"in accordance with Section 5 of the Income Tax Act 1988\\\",\\\"start\\\":152,\\\"end\\\":209,\\\"normalized\\\":\\\"in accordance with section 5 of the Income Tax Act 1988\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a01\\\",\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"actor\\\",\\\"reason\\\":\\\"semantic_scope_ambiguous_in_target\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791349380,\"model\":\"MiniMax-M3\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":4782,\"total_characters\":0,\"prompt_tokens\":4384,\"completion_tokens\":398,\"prompt_tokens_details\":{\"cached_tokens\":128}},\"input_sensitive\":false,\"output_sensitive\":false,\"input_sensitive_type\":0,\"output_sensitive_type\":0,\"output_sensitive_int\":0,\"service_tier\":\"standard\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}\n",
+  "usage": {
+    "prompt_tokens": 4384,
+    "completion_tokens": 398,
+    "total_tokens": 4782
+  },
+  "returned_model": "MiniMax-M3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "minimax",
+    "sample_id": "estg_000812",
+    "request_id": "minimax:estg_000812",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000812",
+      "source_id": "estg_000812",
+      "source_text": "For commercial enterprises (Section 2) that are required to keep books under commercial law provisions, and for trading and business cooperatives, the profit shall be determined in accordance with Section 5 of the Income Tax Act 1988.",
+      "clauses": [
+        {
+          "clause_id": "estg_000812_c01",
+          "clause_span": {
+            "text": "For commercial enterprises (Section 2) that are required to keep books under commercial law provisions, and for trading and business cooperatives, the profit shall be determined in accordance with Section 5 of the Income Tax Act 1988.",
+            "start": 0,
+            "end": 234
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 158,
+                "end": 163
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "determined",
+              "start": 167,
+              "end": 177,
+              "normalized": "determined",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "in accordance with Section 5 of the Income Tax Act 1988",
+              "start": 178,
+              "end": 233,
+              "normalized": "in accordance with section 5 of the income tax act 1988",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "semantic_scope_ambiguous_in_target"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "spans_adapted": 2,
+      "dropped_spans": [
+        "actors[0]_text_not_in_source"
+      ],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 3,
+      "reanchored_count": 4,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [
+        "clauses[0].actor_action_map[0]"
+      ],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000812_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "For commercial enterprises (Section 2) that are required to keep books under commercial law provisions, and for trading and business cooperatives, the profit shall be determined in accordance with Section 5 of the Income Tax Act 1988.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 189,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 234
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 234
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000812_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 135,
+          "original_end": 140,
+          "candidate_occurrences": [
+            {
+              "start": 158,
+              "end": 163
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 158,
+            "end": 163
+          },
+          "distance": 46,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000812_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "determined",
+          "normalized": "determined",
+          "original_start": 141,
+          "original_end": 151,
+          "candidate_occurrences": [
+            {
+              "start": 167,
+              "end": 177
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 167,
+            "end": 177
+          },
+          "distance": 52,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000812_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "in accordance with Section 5 of the Income Tax Act 1988",
+          "normalized": "in accordance with section 5 of the income tax act 1988",
+          "original_start": 152,
+          "original_end": 209,
+          "candidate_occurrences": [
+            {
+              "start": 178,
+              "end": 233
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 178,
+            "end": 233
+          },
+          "distance": 50,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 4,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

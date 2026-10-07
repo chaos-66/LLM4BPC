@@ -1,0 +1,338 @@
+{
+  "request_id": "grok:estg_000560",
+  "raw_response_utf8": "{\"id\":\"e1e49f14-bfb0-920a-83a8-a95e37b7f2f3\",\"object\":\"chat.completion\",\"created\":1791348946,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000560\\\",\\n  \\\"source_id\\\": \\\"estg_000560\\\",\\n  \\\"source_text\\\": \\\"During the calendar year, wage tax cards may only be exchanged upon corresponding application at the tax office of domicile if the wages taxed under the first wage tax card are no longer received.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000560_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"During the calendar year, wage tax cards may only be exchanged upon corresponding application at the tax office of domicile if the wages taxed under the first wage tax card are no longer received.\\\", \\\"start\\\": 0, \\\"end\\\": 188},\\n      \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may\\\", \\\"start\\\": 30, \\\"end\\\": 33}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"wage tax cards\\\", \\\"start\\\": 24, \\\"end\\\": 38, \\\"normalized\\\": \\\"wage tax cards\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"be exchanged\\\", \\\"start\\\": 44, \\\"end\\\": 56, \\\"normalized\\\": \\\"exchange\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"if the wages taxed under the first wage tax card are no longer received\\\", \\\"start\\\": 119, \\\"end\\\": 187, \\\"normalized\\\": \\\"if the wages taxed under the first wage tax card are no longer received\\\"}],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"only\\\", \\\"start\\\": 34, \\\"end\\\": 38, \\\"normalized\\\": \\\"only\\\"},\\n        {\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"upon corresponding application at the tax office of domicile\\\", \\\"start\\\": 57, \\\"end\\\": 117, \\\"normalized\\\": \\\"upon corresponding application at the tax office of domicile\\\"}\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4357,\"completion_tokens\":519,\"total_tokens\":4876,\"prompt_tokens_details\":{\"text_tokens\":4357,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":1536},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":51309500},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4357,
+    "completion_tokens": 519,
+    "total_tokens": 4876,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000560",
+    "request_id": "grok:estg_000560",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000560",
+      "source_id": "estg_000560",
+      "source_text": "During the calendar year, wage tax cards may only be exchanged upon corresponding application at the tax office of domicile if the wages taxed under the first wage tax card are no longer received.",
+      "clauses": [
+        {
+          "clause_id": "estg_000560_c01",
+          "clause_span": {
+            "text": "During the calendar year, wage tax cards may only be exchanged upon corresponding application at the tax office of domicile if the wages taxed under the first wage tax card are no longer received.",
+            "start": 0,
+            "end": 196
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 41,
+                "end": 44
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "wage tax cards",
+              "start": 26,
+              "end": 40,
+              "normalized": "wage tax cards",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "be exchanged",
+              "start": 50,
+              "end": 62,
+              "normalized": "be exchanged",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "if the wages taxed under the first wage tax card are no longer received",
+              "start": 124,
+              "end": 195,
+              "normalized": "if the wages taxed under the first wage tax card are no longer received",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "only",
+              "start": 45,
+              "end": 49,
+              "normalized": "only",
+              "id": "c01"
+            },
+            {
+              "text": "upon corresponding application at the tax office of domicile",
+              "start": 63,
+              "end": 123,
+              "normalized": "upon corresponding application at the tax office of domicile",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 5,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 6,
+      "reanchored_count": 7,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000560_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "During the calendar year, wage tax cards may only be exchanged upon corresponding application at the tax office of domicile if the wages taxed under the first wage tax card are no longer received.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 188,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 196
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 196
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000560_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 30,
+          "original_end": 33,
+          "candidate_occurrences": [
+            {
+              "start": 41,
+              "end": 44
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 41,
+            "end": 44
+          },
+          "distance": 22,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000560_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "wage tax cards",
+          "normalized": "wage tax cards",
+          "original_start": 24,
+          "original_end": 38,
+          "candidate_occurrences": [
+            {
+              "start": 26,
+              "end": 40
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 26,
+            "end": 40
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000560_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "be exchanged",
+          "normalized": "be exchanged",
+          "original_start": 44,
+          "original_end": 56,
+          "candidate_occurrences": [
+            {
+              "start": 50,
+              "end": 62
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 50,
+            "end": 62
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000560_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "if the wages taxed under the first wage tax card are no longer received",
+          "normalized": "if the wages taxed under the first wage tax card are no longer received",
+          "original_start": 119,
+          "original_end": 187,
+          "candidate_occurrences": [
+            {
+              "start": 124,
+              "end": 195
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 124,
+            "end": 195
+          },
+          "distance": 13,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000560_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "only",
+          "normalized": "only",
+          "original_start": 34,
+          "original_end": 38,
+          "candidate_occurrences": [
+            {
+              "start": 45,
+              "end": 49
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 45,
+            "end": 49
+          },
+          "distance": 22,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000560_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "upon corresponding application at the tax office of domicile",
+          "normalized": "upon corresponding application at the tax office of domicile",
+          "original_start": 57,
+          "original_end": 117,
+          "candidate_occurrences": [
+            {
+              "start": 63,
+              "end": 123
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 63,
+            "end": 123
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 7,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

@@ -1,0 +1,302 @@
+{
+  "request_id": "grok:estg_000051",
+  "raw_response_utf8": "{\"id\":\"217a2955-d984-963d-bdbf-3631ca17877f\",\"object\":\"chat.completion\",\"created\":1791348367,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000051\\\",\\n  \\\"source_id\\\": \\\"estg_000051\\\",\\n  \\\"source_text\\\": \\\"All institutions to which such a notice has been issued shall be published once a year by the Federal Minister for Science and Research in the official gazette of the Wiener Zeitung.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000051_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"All institutions to which such a notice has been issued shall be published once a year by the Federal Minister for Science and Research in the official gazette of the Wiener Zeitung.\\\", \\\"start\\\": 0, \\\"end\\\": 169},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 53, \\\"end\\\": 58}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"be published\\\", \\\"start\\\": 59, \\\"end\\\": 71, \\\"normalized\\\": \\\"publish\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"once a year\\\", \\\"start\\\": 72, \\\"end\\\": 83, \\\"normalized\\\": \\\"once a year\\\"},\\n        {\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"by the Federal Minister for Science and Research\\\", \\\"start\\\": 84, \\\"end\\\": 130, \\\"normalized\\\": \\\"by the federal minister for science and research\\\"},\\n        {\\\"id\\\": \\\"c03\\\", \\\"text\\\": \\\"in the official gazette of the Wiener Zeitung\\\", \\\"start\\\": 131, \\\"end\\\": 174, \\\"normalized\\\": \\\"in the official gazette of the wiener zeitung\\\"}\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4355,\"completion_tokens\":471,\"total_tokens\":4826,\"prompt_tokens_details\":{\"text_tokens\":4355,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":1536},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":50084500},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4355,
+    "completion_tokens": 471,
+    "total_tokens": 4826,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000051",
+    "request_id": "grok:estg_000051",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000051",
+      "source_id": "estg_000051",
+      "source_text": "All institutions to which such a notice has been issued shall be published once a year by the Federal Minister for Science and Research in the official gazette of the Wiener Zeitung.",
+      "clauses": [
+        {
+          "clause_id": "estg_000051_c01",
+          "clause_span": {
+            "text": "All institutions to which such a notice has been issued shall be published once a year by the Federal Minister for Science and Research in the official gazette of the Wiener Zeitung.",
+            "start": 0,
+            "end": 182
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 56,
+                "end": 61
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "be published",
+              "start": 62,
+              "end": 74,
+              "normalized": "be published",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "once a year",
+              "start": 75,
+              "end": 86,
+              "normalized": "once a year",
+              "id": "c01"
+            },
+            {
+              "text": "by the Federal Minister for Science and Research",
+              "start": 87,
+              "end": 135,
+              "normalized": "by the federal minister for science and research",
+              "id": "c02"
+            },
+            {
+              "text": "in the official gazette of the Wiener Zeitung",
+              "start": 136,
+              "end": 181,
+              "normalized": "in the official gazette of the wiener zeitung",
+              "id": "c03"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 5,
+      "reanchored_count": 6,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000051_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "All institutions to which such a notice has been issued shall be published once a year by the Federal Minister for Science and Research in the official gazette of the Wiener Zeitung.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 169,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 182
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 182
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000051_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 53,
+          "original_end": 58,
+          "candidate_occurrences": [
+            {
+              "start": 56,
+              "end": 61
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 56,
+            "end": 61
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000051_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "be published",
+          "normalized": "be published",
+          "original_start": 59,
+          "original_end": 71,
+          "candidate_occurrences": [
+            {
+              "start": 62,
+              "end": 74
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 62,
+            "end": 74
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000051_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "once a year",
+          "normalized": "once a year",
+          "original_start": 72,
+          "original_end": 83,
+          "candidate_occurrences": [
+            {
+              "start": 75,
+              "end": 86
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 75,
+            "end": 86
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000051_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "by the Federal Minister for Science and Research",
+          "normalized": "by the federal minister for science and research",
+          "original_start": 84,
+          "original_end": 130,
+          "candidate_occurrences": [
+            {
+              "start": 87,
+              "end": 135
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 87,
+            "end": 135
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[2]",
+          "clause_index": 0,
+          "clause_id": "estg_000051_c01",
+          "field": "constraints",
+          "span_index": 2,
+          "span_id": "c03",
+          "text": "in the official gazette of the Wiener Zeitung",
+          "normalized": "in the official gazette of the wiener zeitung",
+          "original_start": 131,
+          "original_end": 174,
+          "candidate_occurrences": [
+            {
+              "start": 136,
+              "end": 181
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 136,
+            "end": 181
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 6,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

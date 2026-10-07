@@ -1,0 +1,427 @@
+{
+  "request_id": "minimax:estg_000504",
+  "raw_response_utf8": "{\"id\":\"071504a72100a257f34fde7de4d9034f\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000504\\\",\\\"source_id\\\":\\\"estg_000504\\\",\\\"source_text\\\":\\\"The employee shall provide proof of the period of service to be taken into account and of whether and to what amount severance payments within the meaning of paragraph 3 or of this paragraph have already been paid out earlier; it is left to the employee up to which point in time back employment relationships are to be proven.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000504_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"The employee shall provide proof of the period of service to be taken into account and of whether and to what amount severance payments within the meaning of paragraph 3 or of this paragraph have already been paid out earlier\\\",\\\"start\\\":0,\\\"end\\\":207},\\\"modality\\\":{\\\"label\\\":\\\"obligation\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall\\\",\\\"start\\\":13,\\\"end\\\":18}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"The employee\\\",\\\"start\\\":0,\\\"end\\\":12,\\\"normalized\\\":\\\"employee\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"provide proof of the period of service to be taken into account and of whether and to what amount severance payments within the meaning of paragraph 3 or of this paragraph have already been paid out earlier\\\",\\\"start\\\":19,\\\"end\\\":207,\\\"normalized\\\":\\\"provide proof of the period of service to be taken into account and of whether and to what amount severance payments within the meaning of paragraph 3 or of this paragraph have already been paid out earlier\\\"}],\\\"conditions\\\":[],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"within the meaning of paragraph 3 or of this paragraph\\\",\\\"start\\\":135,\\\"end\\\":191,\\\"normalized\\\":\\\"within the meaning of paragraph 3 or of this paragraph\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a01\\\",\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]},{\\\"clause_id\\\":\\\"estg_000504_c02\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"it is left to the employee up to which point in time back employment relationships are to be proven\\\",\\\"start\\\":208,\\\"end\\\":300},\\\"modality\\\":{\\\"label\\\":\\\"permission\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"is left to\\\",\\\"start\\\":211,\\\"end\\\":221}]},\\\"actors\\\":[{\\\"id\\\":\\\"a02\\\",\\\"text\\\":\\\"it\\\",\\\"start\\\":208,\\\"end\\\":210,\\\"normalized\\\":\\\"it\\\"},{\\\"id\\\":\\\"a03\\\",\\\"text\\\":\\\"the employee\\\",\\\"start\\\":225,\\\"end\\\":237,\\\"normalized\\\":\\\"employee\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p02\\\",\\\"text\\\":\\\"determine up to which point in time back employment relationships are to be proven\\\",\\\"start\\\":222,\\\"end\\\":299,\\\"normalized\\\":\\\"determine up to which point in time back employment relationships are to be proven\\\"}],\\\"conditions\\\":[],\\\"constraints\\\":[],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a02\\\",\\\"action_id\\\":\\\"p02\\\"},{\\\"actor_id\\\":\\\"a03\\\",\\\"action_id\\\":\\\"p02\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"actor\\\",\\\"reason\\\":\\\"reference_status=unresolved_coreference;independence_status=context_required\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791349160,\"model\":\"MiniMax-M3\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":5072,\"total_characters\":0,\"prompt_tokens\":4400,\"completion_tokens\":672,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":1280}},\"input_sensitive\":false,\"output_sensitive\":false,\"input_sensitive_type\":0,\"output_sensitive_type\":0,\"output_sensitive_int\":0,\"service_tier\":\"standard\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}\n",
+  "usage": {
+    "prompt_tokens": 4400,
+    "completion_tokens": 672,
+    "total_tokens": 5072,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "MiniMax-M3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "minimax",
+    "sample_id": "estg_000504",
+    "request_id": "minimax:estg_000504",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000504",
+      "source_id": "estg_000504",
+      "source_text": "The employee shall provide proof of the period of service to be taken into account and of whether and to what amount severance payments within the meaning of paragraph 3 or of this paragraph have already been paid out earlier; it is left to the employee up to which point in time back employment relationships are to be proven.",
+      "clauses": [
+        {
+          "clause_id": "estg_000504_c01",
+          "clause_span": {
+            "text": "The employee shall provide proof of the period of service to be taken into account and of whether and to what amount severance payments within the meaning of paragraph 3 or of this paragraph have already been paid out earlier",
+            "start": 0,
+            "end": 225
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 13,
+                "end": 18
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "The employee",
+              "start": 0,
+              "end": 12,
+              "normalized": "the employee",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "provide proof of the period of service to be taken into account and of whether and to what amount severance payments within the meaning of paragraph 3 or of this paragraph have already been paid out earlier",
+              "start": 19,
+              "end": 225,
+              "normalized": "provide proof of the period of service to be taken into account and of whether and to what amount severance payments within the meaning of paragraph 3 or of this paragraph have already been paid out earlier",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "within the meaning of paragraph 3 or of this paragraph",
+              "start": 136,
+              "end": 190,
+              "normalized": "within the meaning of paragraph 3 or of this paragraph",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000504_c02",
+          "clause_span": {
+            "text": "it is left to the employee up to which point in time back employment relationships are to be proven",
+            "start": 227,
+            "end": 326
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "is left to",
+                "start": 230,
+                "end": 240
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "it",
+              "start": 227,
+              "end": 229,
+              "normalized": "it",
+              "id": "a02"
+            },
+            {
+              "text": "the employee",
+              "start": 241,
+              "end": 253,
+              "normalized": "the employee",
+              "id": "a03"
+            }
+          ],
+          "actions": [],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "spans_adapted": 5,
+      "dropped_spans": [
+        "actions[0]_text_not_in_source"
+      ],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 2,
+      "field_span_count": 7,
+      "reanchored_count": 7,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [
+        "clauses[1].actor_action_map[0]",
+        "clauses[1].actor_action_map[1]"
+      ],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000504_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The employee shall provide proof of the period of service to be taken into account and of whether and to what amount severance payments within the meaning of paragraph 3 or of this paragraph have already been paid out earlier",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 207,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 225
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 225
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000504_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 13,
+          "original_end": 18,
+          "candidate_occurrences": [
+            {
+              "start": 13,
+              "end": 18
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 13,
+            "end": 18
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000504_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "The employee",
+          "normalized": "the employee",
+          "original_start": 0,
+          "original_end": 12,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 12
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 0,
+            "end": 12
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000504_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "provide proof of the period of service to be taken into account and of whether and to what amount severance payments within the meaning of paragraph 3 or of this paragraph have already been paid out earlier",
+          "normalized": "provide proof of the period of service to be taken into account and of whether and to what amount severance payments within the meaning of paragraph 3 or of this paragraph have already been paid out earlier",
+          "original_start": 19,
+          "original_end": 207,
+          "candidate_occurrences": [
+            {
+              "start": 19,
+              "end": 225
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 19,
+            "end": 225
+          },
+          "distance": 18,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000504_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "within the meaning of paragraph 3 or of this paragraph",
+          "normalized": "within the meaning of paragraph 3 or of this paragraph",
+          "original_start": 135,
+          "original_end": 191,
+          "candidate_occurrences": [
+            {
+              "start": 136,
+              "end": 190
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 136,
+            "end": 190
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000504_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "it is left to the employee up to which point in time back employment relationships are to be proven",
+          "normalized": null,
+          "original_start": 208,
+          "original_end": 300,
+          "candidate_occurrences": [
+            {
+              "start": 227,
+              "end": 326
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 227,
+            "end": 326
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000504_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "is left to",
+          "normalized": null,
+          "original_start": 211,
+          "original_end": 221,
+          "candidate_occurrences": [
+            {
+              "start": 230,
+              "end": 240
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 230,
+            "end": 240
+          },
+          "distance": 38,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actors[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000504_c02",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a02",
+          "text": "it",
+          "normalized": "it",
+          "original_start": 208,
+          "original_end": 210,
+          "candidate_occurrences": [
+            {
+              "start": 227,
+              "end": 229
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 227,
+            "end": 229
+          },
+          "distance": 38,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actors[1]",
+          "clause_index": 1,
+          "clause_id": "estg_000504_c02",
+          "field": "actors",
+          "span_index": 1,
+          "span_id": "a03",
+          "text": "the employee",
+          "normalized": "the employee",
+          "original_start": 225,
+          "original_end": 237,
+          "candidate_occurrences": [
+            {
+              "start": 241,
+              "end": 253
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 241,
+            "end": 253
+          },
+          "distance": 32,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 2,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 7,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

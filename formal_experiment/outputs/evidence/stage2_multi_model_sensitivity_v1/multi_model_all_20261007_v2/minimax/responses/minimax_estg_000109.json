@@ -1,0 +1,340 @@
+{
+  "request_id": "minimax:estg_000109",
+  "raw_response_utf8": "{\"id\":\"071502a82cc5d44940dda0ace7e6b79d\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\": \\\"1.0.0\\\", \\\"sample_id\\\": \\\"estg_000109\\\", \\\"source_id\\\": \\\"estg_000109\\\", \\\"source_text\\\": \\\"For buildings intended for lease for consideration to third parties (excluding employees of the business), an investment allowance is only available if the exclusive business object is the commercial leasing of assets.\\\", \\\"clauses\\\": [{\\\"clause_id\\\": \\\"estg_000109_c01\\\", \\\"clause_span\\\": {\\\"text\\\": \\\"For buildings intended for lease for consideration to third parties (excluding employees of the business), an investment allowance is only available if the exclusive business object is the commercial leasing of assets.\\\", \\\"start\\\": 0, \\\"end\\\": 173}, \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"is only available\\\", \\\"start\\\": 96, \\\"end\\\": 112}, {\\\"text\\\": \\\"only\\\", \\\"start\\\": 100, \\\"end\\\": 104}]}, \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"an investment allowance\\\", \\\"start\\\": 85, \\\"end\\\": 109, \\\"normalized\\\": \\\"investment allowance\\\"}], \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"is only available\\\", \\\"start\\\": 96, \\\"end\\\": 112, \\\"normalized\\\": \\\"be available\\\"}], \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"if the exclusive business object is the commercial leasing of assets\\\", \\\"start\\\": 113, \\\"end\\\": 172, \\\"normalized\\\": \\\"if the exclusive business object is the commercial leasing of assets\\\"}], \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"only\\\", \\\"start\\\": 100, \\\"end\\\": 104, \\\"normalized\\\": \\\"only\\\"}], \\\"exceptions\\\": [], \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}], \\\"order_relations\\\": []}], \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"}, \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []}, \\\"unsupported_or_ambiguous\\\": [{\\\"field\\\": \\\"actor\\\", \\\"reason\\\": \\\"reference_status=unresolved_coreference;independence_status=context_required\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791348648,\"model\":\"MiniMax-M3\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":4855,\"total_characters\":0,\"prompt_tokens\":4373,\"completion_tokens\":482,\"prompt_tokens_details\":{\"cached_tokens\":128}},\"input_sensitive\":false,\"output_sensitive\":false,\"input_sensitive_type\":0,\"output_sensitive_type\":0,\"output_sensitive_int\":0,\"service_tier\":\"standard\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}\n",
+  "usage": {
+    "prompt_tokens": 4373,
+    "completion_tokens": 482,
+    "total_tokens": 4855
+  },
+  "returned_model": "MiniMax-M3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "minimax",
+    "sample_id": "estg_000109",
+    "request_id": "minimax:estg_000109",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000109",
+      "source_id": "estg_000109",
+      "source_text": "For buildings intended for lease for consideration to third parties (excluding employees of the business), an investment allowance is only available if the exclusive business object is the commercial leasing of assets.",
+      "clauses": [
+        {
+          "clause_id": "estg_000109_c01",
+          "clause_span": {
+            "text": "For buildings intended for lease for consideration to third parties (excluding employees of the business), an investment allowance is only available if the exclusive business object is the commercial leasing of assets.",
+            "start": 0,
+            "end": 218
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "is only available",
+                "start": 131,
+                "end": 148
+              },
+              {
+                "text": "only",
+                "start": 134,
+                "end": 138
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "an investment allowance",
+              "start": 107,
+              "end": 130,
+              "normalized": "an investment allowance",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "is only available",
+              "start": 131,
+              "end": 148,
+              "normalized": "is only available",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "if the exclusive business object is the commercial leasing of assets",
+              "start": 149,
+              "end": 217,
+              "normalized": "if the exclusive business object is the commercial leasing of assets",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "only",
+              "start": 134,
+              "end": 138,
+              "normalized": "only",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 6,
+      "reanchored_count": 7,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000109_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "For buildings intended for lease for consideration to third parties (excluding employees of the business), an investment allowance is only available if the exclusive business object is the commercial leasing of assets.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 173,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 218
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 218
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000109_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "is only available",
+          "normalized": null,
+          "original_start": 96,
+          "original_end": 112,
+          "candidate_occurrences": [
+            {
+              "start": 131,
+              "end": 148
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 131,
+            "end": 148
+          },
+          "distance": 71,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000109_c01",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "only",
+          "normalized": null,
+          "original_start": 100,
+          "original_end": 104,
+          "candidate_occurrences": [
+            {
+              "start": 134,
+              "end": 138
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 134,
+            "end": 138
+          },
+          "distance": 68,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000109_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "an investment allowance",
+          "normalized": "an investment allowance",
+          "original_start": 85,
+          "original_end": 109,
+          "candidate_occurrences": [
+            {
+              "start": 107,
+              "end": 130
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 107,
+            "end": 130
+          },
+          "distance": 43,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000109_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "is only available",
+          "normalized": "is only available",
+          "original_start": 96,
+          "original_end": 112,
+          "candidate_occurrences": [
+            {
+              "start": 131,
+              "end": 148
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 131,
+            "end": 148
+          },
+          "distance": 71,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000109_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "if the exclusive business object is the commercial leasing of assets",
+          "normalized": "if the exclusive business object is the commercial leasing of assets",
+          "original_start": 113,
+          "original_end": 172,
+          "candidate_occurrences": [
+            {
+              "start": 149,
+              "end": 217
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 149,
+            "end": 217
+          },
+          "distance": 81,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000109_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "only",
+          "normalized": "only",
+          "original_start": 100,
+          "original_end": 104,
+          "candidate_occurrences": [
+            {
+              "start": 134,
+              "end": 138
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 134,
+            "end": 138
+          },
+          "distance": 68,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 7,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

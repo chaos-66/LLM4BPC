@@ -1,0 +1,94 @@
+{
+  "request_id": "minimax:estg_000027",
+  "raw_response_utf8": "{\"id\":\"0715015bbe34f960fca06a99f8b97150\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000027\\\",\\\"source_id\\\":\\\"estg_000027\\\",\\\"source_text\\\":\\\"Section 25(1) items 7, 8, 8a, 9 of the Civilian Service Act 1986) only for part of the calendar year, the income as defined in Section 2(3) items 1 to 3 earned in the remainder of the calendar year and current income from employment as defined in Section 41(4) shall be converted to an annual amount for the purpose of determining the tax rate.\\\",\\\"clauses\\\":[],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"clause\\\",\\\"reason\\\":\\\"clause_boundary_ambiguous\\\"},{\\\"field\\\":\\\"actor\\\",\\\"reason\\\":\\\"reference_status=unresolved_coreference;independence_status=context_required\\\"},{\\\"field\\\":\\\"modality\\\",\\\"reason\\\":\\\"context_required\\\"},{\\\"field\\\":\\\"condition\\\",\\\"reason\\\":\\\"context_required\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791348315,\"model\":\"MiniMax-M3\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":4661,\"total_characters\":0,\"prompt_tokens\":4430,\"completion_tokens\":231,\"prompt_tokens_details\":{\"cached_tokens\":128}},\"input_sensitive\":false,\"output_sensitive\":false,\"input_sensitive_type\":0,\"output_sensitive_type\":0,\"output_sensitive_int\":0,\"service_tier\":\"standard\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}\n",
+  "usage": {
+    "prompt_tokens": 4430,
+    "completion_tokens": 231,
+    "total_tokens": 4661
+  },
+  "returned_model": "MiniMax-M3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "minimax",
+    "sample_id": "estg_000027",
+    "request_id": "minimax:estg_000027",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000027",
+      "source_id": "estg_000027",
+      "source_text": "Section 25(1) items 7, 8, 8a, 9 of the Civilian Service Act 1986) only for part of the calendar year, the income as defined in Section 2(3) items 1 to 3 earned in the remainder of the calendar year and current income from employment as defined in Section 41(4) shall be converted to an annual amount for the purpose of determining the tax rate.",
+      "clauses": [],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "clause",
+          "reason": "clause_boundary_ambiguous"
+        },
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        },
+        {
+          "field": "modality",
+          "reason": "context_required"
+        },
+        {
+          "field": "condition",
+          "reason": "context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "unchanged",
+      "spans_adapted": 0,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "unchanged",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 0,
+      "field_span_count": 0,
+      "reanchored_count": 0,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 0,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

@@ -1,0 +1,307 @@
+{
+  "request_id": "grok:estg_000214",
+  "raw_response_utf8": "{\"id\":\"d6720b20-8aa2-9926-b1bd-b8aea89907f6\",\"object\":\"chat.completion\",\"created\":1791348718,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000214\\\",\\n  \\\"source_id\\\": \\\"estg_000214\\\",\\n  \\\"source_text\\\": \\\"Subsequent taxation of insurance premiums (Section 1(2)(2)) shall be effected if —  \\\\nthe claims under the insurance contract for the event of survival are, in whole or in part, assigned or \\\\nsurrendered within twenty years from the conclusion of the contract.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000214_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"Subsequent taxation of insurance premiums (Section 1(2)(2)) shall be effected if —  \\\\nthe claims under the insurance contract for the event of survival are, in whole or in part, assigned or \\\\nsurrendered within twenty years from the conclusion of the contract.\\\", \\\"start\\\": 0, \\\"end\\\": 228},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 46, \\\"end\\\": 51}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [\\n        {\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"assigned\\\", \\\"start\\\": 161, \\\"end\\\": 169, \\\"normalized\\\": \\\"assign\\\"},\\n        {\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"surrendered\\\", \\\"start\\\": 173, \\\"end\\\": 184, \\\"normalized\\\": \\\"surrender\\\"}\\n      ],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"if —  \\\\nthe claims under the insurance contract for the event of survival are, in whole or in part, assigned or \\\\nsurrendered within twenty years from the conclusion of the contract.\\\", \\\"start\\\": 55, \\\"end\\\": 228, \\\"normalized\\\": \\\"if the claims under the insurance contract for the event of survival are, in whole or in part, assigned or surrendered within twenty years from the conclusion of the contract\\\"}],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"within twenty years from the conclusion of the contract\\\", \\\"start\\\": 185, \\\"end\\\": 238, \\\"normalized\\\": \\\"within twenty years from the conclusion of the contract\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [\\n        {\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"},\\n        {\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p02\\\"}\\n      ],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4377,\"completion_tokens\":587,\"total_tokens\":4964,\"prompt_tokens_details\":{\"text_tokens\":4377,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":1536},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":53259500},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4377,
+    "completion_tokens": 587,
+    "total_tokens": 4964,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000214",
+    "request_id": "grok:estg_000214",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000214",
+      "source_id": "estg_000214",
+      "source_text": "Subsequent taxation of insurance premiums (Section 1(2)(2)) shall be effected if —  \nthe claims under the insurance contract for the event of survival are, in whole or in part, assigned or \nsurrendered within twenty years from the conclusion of the contract.",
+      "clauses": [
+        {
+          "clause_id": "estg_000214_c01",
+          "clause_span": {
+            "text": "Subsequent taxation of insurance premiums (Section 1(2)(2)) shall be effected if —  \nthe claims under the insurance contract for the event of survival are, in whole or in part, assigned or \nsurrendered within twenty years from the conclusion of the contract.",
+            "start": 0,
+            "end": 258
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 60,
+                "end": 65
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "assigned",
+              "start": 177,
+              "end": 185,
+              "normalized": "assigned",
+              "id": "p01"
+            },
+            {
+              "text": "surrendered",
+              "start": 190,
+              "end": 201,
+              "normalized": "surrendered",
+              "id": "p02"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "if —  \nthe claims under the insurance contract for the event of survival are, in whole or in part, assigned or \nsurrendered within twenty years from the conclusion of the contract.",
+              "start": 78,
+              "end": 258,
+              "normalized": "if — the claims under the insurance contract for the event of survival are, in whole or in part, assigned or surrendered within twenty years from the conclusion of the contract.",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "within twenty years from the conclusion of the contract",
+              "start": 202,
+              "end": 257,
+              "normalized": "within twenty years from the conclusion of the contract",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            },
+            {
+              "actor_id": null,
+              "action_id": "p02"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 5,
+      "reanchored_count": 6,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000214_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Subsequent taxation of insurance premiums (Section 1(2)(2)) shall be effected if —  \nthe claims under the insurance contract for the event of survival are, in whole or in part, assigned or \nsurrendered within twenty years from the conclusion of the contract.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 228,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 258
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 258
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000214_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 46,
+          "original_end": 51,
+          "candidate_occurrences": [
+            {
+              "start": 60,
+              "end": 65
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 60,
+            "end": 65
+          },
+          "distance": 28,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000214_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "assigned",
+          "normalized": "assigned",
+          "original_start": 161,
+          "original_end": 169,
+          "candidate_occurrences": [
+            {
+              "start": 177,
+              "end": 185
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 177,
+            "end": 185
+          },
+          "distance": 32,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000214_c01",
+          "field": "actions",
+          "span_index": 1,
+          "span_id": "p02",
+          "text": "surrendered",
+          "normalized": "surrendered",
+          "original_start": 173,
+          "original_end": 184,
+          "candidate_occurrences": [
+            {
+              "start": 190,
+              "end": 201
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 190,
+            "end": 201
+          },
+          "distance": 34,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000214_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "if —  \nthe claims under the insurance contract for the event of survival are, in whole or in part, assigned or \nsurrendered within twenty years from the conclusion of the contract.",
+          "normalized": "if — the claims under the insurance contract for the event of survival are, in whole or in part, assigned or surrendered within twenty years from the conclusion of the contract.",
+          "original_start": 55,
+          "original_end": 228,
+          "candidate_occurrences": [
+            {
+              "start": 78,
+              "end": 258
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 78,
+            "end": 258
+          },
+          "distance": 53,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000214_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "within twenty years from the conclusion of the contract",
+          "normalized": "within twenty years from the conclusion of the contract",
+          "original_start": 185,
+          "original_end": 238,
+          "candidate_occurrences": [
+            {
+              "start": 202,
+              "end": 257
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 202,
+            "end": 257
+          },
+          "distance": 36,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 6,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

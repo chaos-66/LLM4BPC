@@ -1,0 +1,528 @@
+{
+  "request_id": "grok:estg_000062",
+  "raw_response_utf8": "{\"id\":\"4e706b53-40a7-9a8d-8b4e-54d8aed13952\",\"object\":\"chat.completion\",\"created\":1791348411,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000062\\\",\\n  \\\"source_id\\\": \\\"estg_000062\\\",\\n  \\\"source_text\\\": \\\"If the land was acquired within the last ten years, the acquisition costs must not be exceeded. b) Upon transition from the profit determination method pursuant to Section 5 to another profit determination method, the hidden reserves of the land and the elective business assets must be disclosed and taxed.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000062_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"If the land was acquired within the last ten years, the acquisition costs must not be exceeded.\\\", \\\"start\\\": 0, \\\"end\\\": 92},\\n      \\\"modality\\\": {\\\"label\\\": \\\"prohibition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"must not\\\", \\\"start\\\": 67, \\\"end\\\": 75}, {\\\"text\\\": \\\"not\\\", \\\"start\\\": 72, \\\"end\\\": 75}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"exceeded\\\", \\\"start\\\": 84, \\\"end\\\": 92, \\\"normalized\\\": \\\"exceed\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"If the land was acquired within the last ten years\\\", \\\"start\\\": 0, \\\"end\\\": 48, \\\"normalized\\\": \\\"if the land was acquired within the last ten years\\\"}],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"within the last ten years\\\", \\\"start\\\": 26, \\\"end\\\": 51, \\\"normalized\\\": \\\"within the last ten years\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000062_c02\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"b) Upon transition from the profit determination method pursuant to Section 5 to another profit determination method, the hidden reserves of the land and the elective business assets must be disclosed and taxed.\\\", \\\"start\\\": 93, \\\"end\\\": 267},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"must\\\", \\\"start\\\": 196, \\\"end\\\": 200}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [\\n        {\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"disclosed\\\", \\\"start\\\": 233, \\\"end\\\": 242, \\\"normalized\\\": \\\"disclose\\\"},\\n        {\\\"id\\\": \\\"p03\\\", \\\"text\\\": \\\"taxed\\\", \\\"start\\\": 247, \\\"end\\\": 252, \\\"normalized\\\": \\\"tax\\\"}\\n      ],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"c03\\\", \\\"text\\\": \\\"Upon transition from the profit determination method pursuant to Section 5 to another profit determination method\\\", \\\"start\\\": 96, \\\"end\\\": 194, \\\"normalized\\\": \\\"upon transition from the profit determination method pursuant to section 5 to another profit determination method\\\"}],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c04\\\", \\\"text\\\": \\\"pursuant to Section 5\\\", \\\"start\\\": 144, \\\"end\\\": 165, \\\"normalized\\\": \\\"pursuant to section 5\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [\\n        {\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p02\\\"},\\n        {\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p03\\\"}\\n      ],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4377,\"completion_tokens\":808,\"total_tokens\":5185,\"prompt_tokens_details\":{\"text_tokens\":4377,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":1536},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":58784500},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4377,
+    "completion_tokens": 808,
+    "total_tokens": 5185,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000062",
+    "request_id": "grok:estg_000062",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000062",
+      "source_id": "estg_000062",
+      "source_text": "If the land was acquired within the last ten years, the acquisition costs must not be exceeded. b) Upon transition from the profit determination method pursuant to Section 5 to another profit determination method, the hidden reserves of the land and the elective business assets must be disclosed and taxed.",
+      "clauses": [
+        {
+          "clause_id": "estg_000062_c01",
+          "clause_span": {
+            "text": "If the land was acquired within the last ten years, the acquisition costs must not be exceeded.",
+            "start": 0,
+            "end": 95
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "must not",
+                "start": 74,
+                "end": 82
+              },
+              {
+                "text": "not",
+                "start": 79,
+                "end": 82
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "exceeded",
+              "start": 86,
+              "end": 94,
+              "normalized": "exceeded",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If the land was acquired within the last ten years",
+              "start": 0,
+              "end": 50,
+              "normalized": "if the land was acquired within the last ten years",
+              "id": "c01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "within the last ten years",
+              "start": 25,
+              "end": 50,
+              "normalized": "within the last ten years",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000062_c02",
+          "clause_span": {
+            "text": "b) Upon transition from the profit determination method pursuant to Section 5 to another profit determination method, the hidden reserves of the land and the elective business assets must be disclosed and taxed.",
+            "start": 96,
+            "end": 307
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "must",
+                "start": 279,
+                "end": 283
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "disclosed",
+              "start": 287,
+              "end": 296,
+              "normalized": "disclosed",
+              "id": "p02"
+            },
+            {
+              "text": "taxed",
+              "start": 301,
+              "end": 306,
+              "normalized": "taxed",
+              "id": "p03"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "Upon transition from the profit determination method pursuant to Section 5 to another profit determination method",
+              "start": 99,
+              "end": 212,
+              "normalized": "upon transition from the profit determination method pursuant to section 5 to another profit determination method",
+              "id": "c03"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "pursuant to Section 5",
+              "start": 152,
+              "end": 173,
+              "normalized": "pursuant to section 5",
+              "id": "c04"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p02"
+            },
+            {
+              "actor_id": null,
+              "action_id": "p03"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 7,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 2,
+      "field_span_count": 10,
+      "reanchored_count": 12,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000062_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If the land was acquired within the last ten years, the acquisition costs must not be exceeded.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 92,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 95
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 95
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000062_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "must not",
+          "normalized": null,
+          "original_start": 67,
+          "original_end": 75,
+          "candidate_occurrences": [
+            {
+              "start": 74,
+              "end": 82
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 74,
+            "end": 82
+          },
+          "distance": 14,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000062_c01",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "not",
+          "normalized": null,
+          "original_start": 72,
+          "original_end": 75,
+          "candidate_occurrences": [
+            {
+              "start": 79,
+              "end": 82
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 79,
+            "end": 82
+          },
+          "distance": 14,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000062_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "exceeded",
+          "normalized": "exceeded",
+          "original_start": 84,
+          "original_end": 92,
+          "candidate_occurrences": [
+            {
+              "start": 86,
+              "end": 94
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 86,
+            "end": 94
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000062_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "If the land was acquired within the last ten years",
+          "normalized": "if the land was acquired within the last ten years",
+          "original_start": 0,
+          "original_end": 48,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 50
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 50
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000062_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c02",
+          "text": "within the last ten years",
+          "normalized": "within the last ten years",
+          "original_start": 26,
+          "original_end": 51,
+          "candidate_occurrences": [
+            {
+              "start": 25,
+              "end": 50
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 25,
+            "end": 50
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000062_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "b) Upon transition from the profit determination method pursuant to Section 5 to another profit determination method, the hidden reserves of the land and the elective business assets must be disclosed and taxed.",
+          "normalized": null,
+          "original_start": 93,
+          "original_end": 267,
+          "candidate_occurrences": [
+            {
+              "start": 96,
+              "end": 307
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 96,
+            "end": 307
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000062_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "must",
+          "normalized": null,
+          "original_start": 196,
+          "original_end": 200,
+          "candidate_occurrences": [
+            {
+              "start": 279,
+              "end": 283
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 279,
+            "end": 283
+          },
+          "distance": 166,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000062_c02",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p02",
+          "text": "disclosed",
+          "normalized": "disclosed",
+          "original_start": 233,
+          "original_end": 242,
+          "candidate_occurrences": [
+            {
+              "start": 287,
+              "end": 296
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 287,
+            "end": 296
+          },
+          "distance": 108,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actions[1]",
+          "clause_index": 1,
+          "clause_id": "estg_000062_c02",
+          "field": "actions",
+          "span_index": 1,
+          "span_id": "p03",
+          "text": "taxed",
+          "normalized": "taxed",
+          "original_start": 247,
+          "original_end": 252,
+          "candidate_occurrences": [
+            {
+              "start": 301,
+              "end": 306
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 301,
+            "end": 306
+          },
+          "distance": 108,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].conditions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000062_c02",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "c03",
+          "text": "Upon transition from the profit determination method pursuant to Section 5 to another profit determination method",
+          "normalized": "upon transition from the profit determination method pursuant to section 5 to another profit determination method",
+          "original_start": 96,
+          "original_end": 194,
+          "candidate_occurrences": [
+            {
+              "start": 99,
+              "end": 212
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 99,
+            "end": 212
+          },
+          "distance": 21,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].constraints[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000062_c02",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c04",
+          "text": "pursuant to Section 5",
+          "normalized": "pursuant to section 5",
+          "original_start": 144,
+          "original_end": 165,
+          "candidate_occurrences": [
+            {
+              "start": 152,
+              "end": 173
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 152,
+            "end": 173
+          },
+          "distance": 16,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 12,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

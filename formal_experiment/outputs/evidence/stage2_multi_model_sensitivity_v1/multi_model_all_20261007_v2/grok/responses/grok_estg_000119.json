@@ -1,0 +1,204 @@
+{
+  "request_id": "grok:estg_000119",
+  "raw_response_utf8": "{\"id\":\"63ee0f72-7abd-9d0e-94fd-bfb0249dcf7c\",\"object\":\"chat.completion\",\"created\":1791348562,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000119\\\",\\n  \\\"source_id\\\": \\\"estg_000119\\\",\\n  \\\"source_text\\\": \\\"This list must contain the following:  \\\\n— acquisition or production costs,  \\\\n— date of acquisition or production,  \\\\n— name and address of the supplier,  \\\\n— the investment allowance claimed.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000119_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"This list must contain the following:  \\\\n— acquisition or production costs,  \\\\n— date of acquisition or production,  \\\\n— name and address of the supplier,  \\\\n— the investment allowance claimed.\\\", \\\"start\\\": 0, \\\"end\\\": 187},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"must\\\", \\\"start\\\": 10, \\\"end\\\": 14}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"This list\\\", \\\"start\\\": 0, \\\"end\\\": 9, \\\"normalized\\\": \\\"list\\\"}],\\n      \\\"actions\\\": [\\n        {\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"contain acquisition or production costs\\\", \\\"start\\\": 15, \\\"end\\\": 54, \\\"normalized\\\": \\\"contain acquisition or production costs\\\"},\\n        {\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"contain date of acquisition or production\\\", \\\"start\\\": 59, \\\"end\\\": 100, \\\"normalized\\\": \\\"contain date of acquisition or production\\\"},\\n        {\\\"id\\\": \\\"p03\\\", \\\"text\\\": \\\"contain name and address of the supplier\\\", \\\"start\\\": 105, \\\"end\\\": 145, \\\"normalized\\\": \\\"contain name and address of the supplier\\\"},\\n        {\\\"id\\\": \\\"p04\\\", \\\"text\\\": \\\"contain the investment allowance claimed\\\", \\\"start\\\": 150, \\\"end\\\": 190, \\\"normalized\\\": \\\"contain the investment allowance claimed\\\"}\\n      ],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [\\n        {\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"},\\n        {\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p02\\\"},\\n        {\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p03\\\"},\\n        {\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p04\\\"}\\n      ],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4359,\"completion_tokens\":585,\"total_tokens\":4944,\"prompt_tokens_details\":{\"text_tokens\":4359,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":1536},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":52984500},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4359,
+    "completion_tokens": 585,
+    "total_tokens": 4944,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000119",
+    "request_id": "grok:estg_000119",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000119",
+      "source_id": "estg_000119",
+      "source_text": "This list must contain the following:  \n— acquisition or production costs,  \n— date of acquisition or production,  \n— name and address of the supplier,  \n— the investment allowance claimed.",
+      "clauses": [
+        {
+          "clause_id": "estg_000119_c01",
+          "clause_span": {
+            "text": "This list must contain the following:  \n— acquisition or production costs,  \n— date of acquisition or production,  \n— name and address of the supplier,  \n— the investment allowance claimed.",
+            "start": 0,
+            "end": 189
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "must",
+                "start": 10,
+                "end": 14
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "This list",
+              "start": 0,
+              "end": 9,
+              "normalized": "this list",
+              "id": "a01"
+            }
+          ],
+          "actions": [],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "spans_adapted": 1,
+      "dropped_spans": [
+        "actions[0]_text_not_in_source",
+        "actions[1]_text_not_in_source",
+        "actions[2]_text_not_in_source",
+        "actions[3]_text_not_in_source"
+      ],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 2,
+      "reanchored_count": 1,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [
+        "clauses[0].actor_action_map[0]",
+        "clauses[0].actor_action_map[1]",
+        "clauses[0].actor_action_map[2]",
+        "clauses[0].actor_action_map[3]"
+      ],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000119_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "This list must contain the following:  \n— acquisition or production costs,  \n— date of acquisition or production,  \n— name and address of the supplier,  \n— the investment allowance claimed.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 187,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 189
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 189
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000119_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "must",
+          "normalized": null,
+          "original_start": 10,
+          "original_end": 14,
+          "candidate_occurrences": [
+            {
+              "start": 10,
+              "end": 14
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 10,
+            "end": 14
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000119_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "This list",
+          "normalized": "this list",
+          "original_start": 0,
+          "original_end": 9,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 9
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 0,
+            "end": 9
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 2,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 1,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": "stage2_multi_model_manifest@1.0.0",
+  "task_id": "S2-MODEL-API-SETUP",
+  "run_id": "multi_model_all_20261007_v2_qwen",
+  "timestamp_utc": "2026-10-07T05:10:48.303528+00:00",
+  "status": "succeeded",
+  "claim_scope": "development_only",
+  "real_api": true,
+  "llm_calls": 150,
+  "planned_calls": 150,
+  "retry": 0,
+  "metrics": null,
+  "thinking_requirement": "disabled",
+  "gold_read_by_runner": false,
+  "plan_sha256": "daecf4497bebf228f4798df223c411a719057e07ad52d88c6fe4a2a01bf3c5b0",
+  "authorization_sha256": "a623e840b1c2459bfe15c5cd94445511f7c390545289cd519411b5d06a66a28f",
+  "profiles": {
+    "qwen": {
+      "display_name": "千问",
+      "api_key_env": "LLM4BPC_QWEN_API_KEY",
+      "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "model": "qwen3.8-max-2026-09-02",
+      "accepted_returned_models": [
+        "qwen3.8-max-2026-09-02",
+        "qwen3.8-max-0902"
+      ],
+      "request_parameters": {
+        "temperature": 0,
+        "top_p": 1,
+        "enable_thinking": false
+      },
+      "output_limit_parameter": "max_tokens",
+      "thinking_mode": "disabled",
+      "documentation": "https://www.alibabacloud.com/help/en/model-studio/qwen-api-via-openai-chat-completions"
+    }
+  },
+  "bindings": {
+    "configs/models/stage2_multi_model_v1.json": "1f3de160621a907c775ed9fe8b46fb05e244a9522f2ffc92f800e7d3f7944532",
+    "prompts/sun_compat/direct_llm_sun_record_prompt_v6_d1r1_2026_08_05.md": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+    "data/input/estg150_formal_inference_input_v2.json": "52a73aa1109970b6c4fbc17214b0828ed0dd64b330001e884cdc803b1ce81dc2",
+    "src/bpc_hybrid/multi_model_stage2.py": "af8c31bc1568410d48077da85c5be9eab7536818a1ce176578eabba0bb4595a0",
+    "scripts/stage2_multi_model.py": "69bdce67f6eb4e62505ae290b694c1dde61703a059d2571c4218f44eb50f5bd5",
+    "src/bpc_hybrid/prompt_loader.py": "8a2bce2f88a65e6b6a1b3e58c4dc7c52af9372e8d7b227146c87b7c5765e9572",
+    "src/bpc_hybrid/d1_schema_adapter.py": "457d01cfcc663e8594a163db603c2e1d31cbffce4523d3ed7cdfaf16328edbf3",
+    "src/bpc_hybrid/d1_span_canonicalizer.py": "47d87ed5779e60bcdf7adb7f7fb289239ac036c5f1d60d1cc50395624be88668",
+    "src/bpc_hybrid/stage2_canonical.py": "39bd93ef30f5744fc977a382ecd484d4802fc8074aec312034625e0398fd4e70",
+    "src/bpc_hybrid/h1_transport.py": "5e54a41fa48c01377295b2ac6422e27852a40dc4fbd5cb7df90d6651ddfe8be9",
+    "configs/schemas/stage2_prediction.schema.json": "d94941c1f7ea90f768d7244bdb72ac3c588b727e0f1fcb4e4732ef8b239259ea"
+  },
+  "canonicalization_policy": "legacy",
+  "ledger_head_sha256": "28ce432dbe6066c036b0c7e7089bea6acee7e698f00a12f395355a1f22da96ff",
+  "conservative_uncached_cost_by_provider": {
+    "qwen": 11.504868000000002
+  },
+  "predictions_sha256": "fc61a32ae79a66963fb6e8be6bb41a59748df73c6c0cef35e80a78bfff0959b4",
+  "valid_predictions": 148,
+  "failed_or_unattempted_predictions": 2
+}

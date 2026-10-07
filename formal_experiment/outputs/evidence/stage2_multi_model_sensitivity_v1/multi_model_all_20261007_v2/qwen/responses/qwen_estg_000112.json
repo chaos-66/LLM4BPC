@@ -1,0 +1,82 @@
+{
+  "request_id": "qwen:estg_000112",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000112\\\",\\\"source_id\\\":\\\"estg_000112\\\",\\\"source_text\\\":\\\"No. 253/1957) and civil aviation schools. — For low-value assets written off pursuant to Section 13. — Upon acquisition of a business, a part of a business or an interest of a partner who is deemed to be an entrepreneur (co-entrepreneur). — For used assets which are intended, directly or indirectly, for transfer for consideration to the seller (sale and lease back) or for resale to the seller (sale and sale back). — For used assets acquired by a group company within a group as defined by Section 15 of the Stock Corporation Act 1965.\\\",\\\"clauses\\\":[],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"clauses\\\",\\\"reason\\\":\\\"context_required\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791348837,\"id\":\"chatcmpl-ada9a7ff-2d06-9d1d-afc1-64b99fef5b60\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":228,\"prompt_tokens\":4699,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4699},\"total_tokens\":4927}}",
+  "usage": {
+    "prompt_tokens": 4699,
+    "completion_tokens": 228,
+    "total_tokens": 4927
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000112",
+    "request_id": "qwen:estg_000112",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000112",
+      "source_id": "estg_000112",
+      "source_text": "No. 253/1957) and civil aviation schools. — For low-value assets written off pursuant to Section 13. — Upon acquisition of a business, a part of a business or an interest of a partner who is deemed to be an entrepreneur (co-entrepreneur). — For used assets which are intended, directly or indirectly, for transfer for consideration to the seller (sale and lease back) or for resale to the seller (sale and sale back). — For used assets acquired by a group company within a group as defined by Section 15 of the Stock Corporation Act 1965.",
+      "clauses": [],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "clauses",
+          "reason": "context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "unchanged",
+      "spans_adapted": 0,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "unchanged",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 0,
+      "field_span_count": 0,
+      "reanchored_count": 0,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 0,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

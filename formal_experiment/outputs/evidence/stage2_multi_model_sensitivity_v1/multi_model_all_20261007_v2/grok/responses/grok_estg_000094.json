@@ -1,0 +1,269 @@
+{
+  "request_id": "grok:estg_000094",
+  "raw_response_utf8": "{\"id\":\"ecac985b-30f0-96fe-b8b4-1ee2d0ed3970\",\"object\":\"chat.completion\",\"created\":1791348498,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000094\\\",\\n  \\\"source_id\\\": \\\"estg_000094\\\",\\n  \\\"source_text\\\": \\\"(2) Acquisition or production costs incurred for the rehabilitation of business buildings may, instead of being depreciated at the rates under subsection (1), be depreciated in equal annual instalments over ten years, if the rehabilitation is carried out pursuant to the Urban Renewal Act.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000094_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"(2) Acquisition or production costs incurred for the rehabilitation of business buildings may, instead of being depreciated at the rates under subsection (1), be depreciated in equal annual instalments over ten years, if the rehabilitation is carried out pursuant to the Urban Renewal Act.\\\", \\\"start\\\": 0, \\\"end\\\": 252},\\n      \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may\\\", \\\"start\\\": 87, \\\"end\\\": 90}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [\\n        {\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"be depreciated in equal annual instalments over ten years\\\", \\\"start\\\": 92, \\\"end\\\": 151, \\\"normalized\\\": \\\"be depreciated in equal annual instalments over ten years\\\"}\\n      ],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"if the rehabilitation is carried out pursuant to the Urban Renewal Act\\\", \\\"start\\\": 153, \\\"end\\\": 251, \\\"normalized\\\": \\\"if the rehabilitation is carried out pursuant to the urban renewal act\\\"}],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"instead of being depreciated at the rates under subsection (1)\\\", \\\"start\\\": 92, \\\"end\\\": 154, \\\"normalized\\\": \\\"instead of being depreciated at the rates under subsection (1)\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [\\n        {\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}\\n      ],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4375,\"completion_tokens\":507,\"total_tokens\":4882,\"prompt_tokens_details\":{\"text_tokens\":4375,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":128},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":66018500},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4375,
+    "completion_tokens": 507,
+    "total_tokens": 4882,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000094",
+    "request_id": "grok:estg_000094",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000094",
+      "source_id": "estg_000094",
+      "source_text": "(2) Acquisition or production costs incurred for the rehabilitation of business buildings may, instead of being depreciated at the rates under subsection (1), be depreciated in equal annual instalments over ten years, if the rehabilitation is carried out pursuant to the Urban Renewal Act.",
+      "clauses": [
+        {
+          "clause_id": "estg_000094_c01",
+          "clause_span": {
+            "text": "(2) Acquisition or production costs incurred for the rehabilitation of business buildings may, instead of being depreciated at the rates under subsection (1), be depreciated in equal annual instalments over ten years, if the rehabilitation is carried out pursuant to the Urban Renewal Act.",
+            "start": 0,
+            "end": 289
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 90,
+                "end": 93
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "be depreciated in equal annual instalments over ten years",
+              "start": 159,
+              "end": 216,
+              "normalized": "be depreciated in equal annual instalments over ten years",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "if the rehabilitation is carried out pursuant to the Urban Renewal Act",
+              "start": 218,
+              "end": 288,
+              "normalized": "if the rehabilitation is carried out pursuant to the urban renewal act",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "instead of being depreciated at the rates under subsection (1)",
+              "start": 95,
+              "end": 157,
+              "normalized": "instead of being depreciated at the rates under subsection (1)",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 5,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000094_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "(2) Acquisition or production costs incurred for the rehabilitation of business buildings may, instead of being depreciated at the rates under subsection (1), be depreciated in equal annual instalments over ten years, if the rehabilitation is carried out pursuant to the Urban Renewal Act.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 252,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 289
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 289
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000094_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 87,
+          "original_end": 90,
+          "candidate_occurrences": [
+            {
+              "start": 90,
+              "end": 93
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 90,
+            "end": 93
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000094_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "be depreciated in equal annual instalments over ten years",
+          "normalized": "be depreciated in equal annual instalments over ten years",
+          "original_start": 92,
+          "original_end": 151,
+          "candidate_occurrences": [
+            {
+              "start": 159,
+              "end": 216
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 159,
+            "end": 216
+          },
+          "distance": 132,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000094_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "if the rehabilitation is carried out pursuant to the Urban Renewal Act",
+          "normalized": "if the rehabilitation is carried out pursuant to the urban renewal act",
+          "original_start": 153,
+          "original_end": 251,
+          "candidate_occurrences": [
+            {
+              "start": 218,
+              "end": 288
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 218,
+            "end": 288
+          },
+          "distance": 102,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000094_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "instead of being depreciated at the rates under subsection (1)",
+          "normalized": "instead of being depreciated at the rates under subsection (1)",
+          "original_start": 92,
+          "original_end": 154,
+          "candidate_occurrences": [
+            {
+              "start": 95,
+              "end": 157
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 95,
+            "end": 157
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

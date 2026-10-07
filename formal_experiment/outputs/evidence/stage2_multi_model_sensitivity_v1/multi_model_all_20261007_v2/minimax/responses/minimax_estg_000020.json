@@ -1,0 +1,381 @@
+{
+  "request_id": "minimax:estg_000020",
+  "raw_response_utf8": "{\"id\":\"0715014a4b44d433a9298f2728a736e9\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000020\\\",\\\"source_id\\\":\\\"estg_000020\\\",\\\"source_text\\\":\\\"A prerequisite for the tax exemption is that the free drink allowance may not be sold by the employee and that it is only granted in such quantity as to actually preclude a sale. 20.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000020_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"the free drink allowance may not be sold by the employee\\\",\\\"start\\\":42,\\\"end\\\":93},\\\"modality\\\":{\\\"label\\\":\\\"prohibition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"may not\\\",\\\"start\\\":66,\\\"end\\\":73},{\\\"text\\\":\\\"not\\\",\\\"start\\\":70,\\\"end\\\":73}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"the employee\\\",\\\"start\\\":85,\\\"end\\\":97,\\\"normalized\\\":\\\"employee\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"sold the free drink allowance\\\",\\\"start\\\":74,\\\"end\\\":84,\\\"normalized\\\":\\\"sell the free drink allowance\\\"}],\\\"conditions\\\":[],\\\"constraints\\\":[],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a01\\\",\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]},{\\\"clause_id\\\":\\\"estg_000020_c02\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"it is only granted in such quantity as to actually preclude a sale\\\",\\\"start\\\":105,\\\"end\\\":164},\\\"modality\\\":{\\\"label\\\":\\\"prohibition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"only\\\",\\\"start\\\":112,\\\"end\\\":116}]},\\\"actors\\\":[{\\\"id\\\":\\\"a02\\\",\\\"text\\\":\\\"it\\\",\\\"start\\\":105,\\\"end\\\":107,\\\"normalized\\\":\\\"it\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p02\\\",\\\"text\\\":\\\"granted it\\\",\\\"start\\\":108,\\\"end\\\":117,\\\"normalized\\\":\\\"grant it\\\"}],\\\"conditions\\\":[],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"in such quantity as to actually preclude a sale\\\",\\\"start\\\":121,\\\"end\\\":163,\\\"normalized\\\":\\\"in such quantity as to actually preclude a sale\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a02\\\",\\\"action_id\\\":\\\"p02\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"actor\\\",\\\"reason\\\":\\\"reference_status=unresolved_coreference;independence_status=context_required\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791348298,\"model\":\"MiniMax-M3\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":4874,\"total_characters\":0,\"prompt_tokens\":4376,\"completion_tokens\":498,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":128}},\"input_sensitive\":false,\"output_sensitive\":false,\"input_sensitive_type\":0,\"output_sensitive_type\":0,\"output_sensitive_int\":0,\"service_tier\":\"standard\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}\n",
+  "usage": {
+    "prompt_tokens": 4376,
+    "completion_tokens": 498,
+    "total_tokens": 4874,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "MiniMax-M3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "minimax",
+    "sample_id": "estg_000020",
+    "request_id": "minimax:estg_000020",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000020",
+      "source_id": "estg_000020",
+      "source_text": "A prerequisite for the tax exemption is that the free drink allowance may not be sold by the employee and that it is only granted in such quantity as to actually preclude a sale. 20.",
+      "clauses": [
+        {
+          "clause_id": "estg_000020_c01",
+          "clause_span": {
+            "text": "the free drink allowance may not be sold by the employee",
+            "start": 45,
+            "end": 101
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "may not",
+                "start": 70,
+                "end": 77
+              },
+              {
+                "text": "not",
+                "start": 74,
+                "end": 77
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the employee",
+              "start": 89,
+              "end": 101,
+              "normalized": "the employee",
+              "id": "a01"
+            }
+          ],
+          "actions": [],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000020_c02",
+          "clause_span": {
+            "text": "it is only granted in such quantity as to actually preclude a sale",
+            "start": 111,
+            "end": 177
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "only",
+                "start": 117,
+                "end": 121
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "in such quantity as to actually preclude a sale",
+              "start": 130,
+              "end": 177,
+              "normalized": "in such quantity as to actually preclude a sale",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "spans_adapted": 3,
+      "dropped_spans": [
+        "actions[0]_text_not_in_source",
+        "actions[0]_text_not_in_source"
+      ],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 2,
+      "field_span_count": 6,
+      "reanchored_count": 7,
+      "dropped_spans": [
+        "clauses[1].actors[0]"
+      ],
+      "dropped_clauses": [],
+      "dropped_edges": [
+        "clauses[0].actor_action_map[0]",
+        "clauses[1].actor_action_map[0]"
+      ],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000020_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "the free drink allowance may not be sold by the employee",
+          "normalized": null,
+          "original_start": 42,
+          "original_end": 93,
+          "candidate_occurrences": [
+            {
+              "start": 45,
+              "end": 101
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 45,
+            "end": 101
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000020_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may not",
+          "normalized": null,
+          "original_start": 66,
+          "original_end": 73,
+          "candidate_occurrences": [
+            {
+              "start": 70,
+              "end": 77
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 70,
+            "end": 77
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000020_c01",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "not",
+          "normalized": null,
+          "original_start": 70,
+          "original_end": 73,
+          "candidate_occurrences": [
+            {
+              "start": 74,
+              "end": 77
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 74,
+            "end": 77
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000020_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "the employee",
+          "normalized": "the employee",
+          "original_start": 85,
+          "original_end": 97,
+          "candidate_occurrences": [
+            {
+              "start": 89,
+              "end": 101
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 89,
+            "end": 101
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000020_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "it is only granted in such quantity as to actually preclude a sale",
+          "normalized": null,
+          "original_start": 105,
+          "original_end": 164,
+          "candidate_occurrences": [
+            {
+              "start": 111,
+              "end": 177
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 111,
+            "end": 177
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000020_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "only",
+          "normalized": null,
+          "original_start": 112,
+          "original_end": 116,
+          "candidate_occurrences": [
+            {
+              "start": 117,
+              "end": 121
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 117,
+            "end": 121
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actors[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000020_c02",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a02",
+          "text": "it",
+          "normalized": "it",
+          "original_start": 105,
+          "original_end": 107,
+          "candidate_occurrences": [
+            {
+              "start": 111,
+              "end": 113
+            },
+            {
+              "start": 143,
+              "end": 145
+            }
+          ],
+          "strategy": "not_applicable",
+          "chosen": null,
+          "distance": null,
+          "outcome": "unresolved",
+          "reason": "ambiguous_occurrence",
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].constraints[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000020_c02",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "in such quantity as to actually preclude a sale",
+          "normalized": "in such quantity as to actually preclude a sale",
+          "original_start": 121,
+          "original_end": 163,
+          "candidate_occurrences": [
+            {
+              "start": 130,
+              "end": 177
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 130,
+            "end": 177
+          },
+          "distance": 23,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 1,
+      "reanchored_unique_exact": 7,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 1,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 1,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

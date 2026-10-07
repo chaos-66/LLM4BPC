@@ -1,0 +1,272 @@
+{
+  "request_id": "qwen:estg_000293",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000293\\\",\\\"source_id\\\":\\\"estg_000293\\\",\\\"source_text\\\":\\\"(1) The following income shall constitute income from capital, to the extent that it does not fall within the income categories referred to in Section 2(1) to (4): 1. a) profit shares (dividends), interest and other distributions from shares or interests in limited liability companies; b) similar distributions and patronage refunds from interests in commercial and industrial cooperatives, excluding those under Section 13 of the Corporate Income Tax Act 1988; c) similar distributions from profit participation rights and from participation capital within the meaning of the Banking Act or the Insurance Supervision Act. 2.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000293_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"The following income shall constitute income from capital, to the extent that it does not fall within the income categories referred to in Section 2(1) to (4): 1. a) profit shares (dividends), interest and other distributions from shares or interests in limited liability companies; b) similar distributions and patronage refunds from interests in commercial and industrial cooperatives, excluding those under Section 13 of the Corporate Income Tax Act 1988; c) similar distributions from profit participation rights and from participation capital within the meaning of the Banking Act or the Insurance Supervision Act. 2.\\\",\\\"start\\\":4,\\\"end\\\":625},\\\"modality\\\":{\\\"label\\\":\\\"definition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall constitute\\\",\\\"start\\\":25,\\\"end\\\":41}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"The following income\\\",\\\"start\\\":4,\\\"end\\\":24,\\\"normalized\\\":\\\"following income\\\"}],\\\"actions\\\":[],\\\"conditions\\\":[],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"to the extent that it does not fall within the income categories referred to in Section 2(1) to (4)\\\",\\\"start\\\":63,\\\"end\\\":161,\\\"normalized\\\":\\\"to the extent that it does not fall within the income categories referred to in section 2(1) to (4)\\\"}],\\\"exceptions\\\":[{\\\"id\\\":\\\"e01\\\",\\\"text\\\":\\\"excluding those under Section 13 of the Corporate Income Tax Act 1988\\\",\\\"start\\\":437,\\\"end\\\":507,\\\"normalized\\\":\\\"excluding those under section 13 of the corporate income tax act 1988\\\"}],\\\"actor_action_map\\\":[],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"actor\\\",\\\"reason\\\":\\\"reference_status=unresolved_coreference;independence_status=context_required\\\"},{\\\"field\\\":\\\"exception\\\",\\\"reason\\\":\\\"semantic_scope_ambiguous_in_target\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791349340,\"id\":\"chatcmpl-d483c36d-1e16-90c6-ad7d-896e80dd6006\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":613,\"prompt_tokens\":4697,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4697},\"total_tokens\":5310}}",
+  "usage": {
+    "prompt_tokens": 4697,
+    "completion_tokens": 613,
+    "total_tokens": 5310
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000293",
+    "request_id": "qwen:estg_000293",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000293",
+      "source_id": "estg_000293",
+      "source_text": "(1) The following income shall constitute income from capital, to the extent that it does not fall within the income categories referred to in Section 2(1) to (4): 1. a) profit shares (dividends), interest and other distributions from shares or interests in limited liability companies; b) similar distributions and patronage refunds from interests in commercial and industrial cooperatives, excluding those under Section 13 of the Corporate Income Tax Act 1988; c) similar distributions from profit participation rights and from participation capital within the meaning of the Banking Act or the Insurance Supervision Act. 2.",
+      "clauses": [
+        {
+          "clause_id": "estg_000293_c01",
+          "clause_span": {
+            "text": "The following income shall constitute income from capital, to the extent that it does not fall within the income categories referred to in Section 2(1) to (4): 1. a) profit shares (dividends), interest and other distributions from shares or interests in limited liability companies; b) similar distributions and patronage refunds from interests in commercial and industrial cooperatives, excluding those under Section 13 of the Corporate Income Tax Act 1988; c) similar distributions from profit participation rights and from participation capital within the meaning of the Banking Act or the Insurance Supervision Act. 2.",
+            "start": 4,
+            "end": 626
+          },
+          "modality": {
+            "label": "definition",
+            "evidence": [
+              {
+                "text": "shall constitute",
+                "start": 25,
+                "end": 41
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "The following income",
+              "start": 4,
+              "end": 24,
+              "normalized": "the following income",
+              "id": "a01"
+            }
+          ],
+          "actions": [],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "to the extent that it does not fall within the income categories referred to in Section 2(1) to (4)",
+              "start": 63,
+              "end": 162,
+              "normalized": "to the extent that it does not fall within the income categories referred to in section 2(1) to (4)",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [
+            {
+              "text": "excluding those under Section 13 of the Corporate Income Tax Act 1988",
+              "start": 392,
+              "end": 461,
+              "normalized": "excluding those under section 13 of the corporate income tax act 1988",
+              "id": "e01"
+            }
+          ],
+          "actor_action_map": [],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        },
+        {
+          "field": "exception",
+          "reason": "semantic_scope_ambiguous_in_target"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 3,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000293_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The following income shall constitute income from capital, to the extent that it does not fall within the income categories referred to in Section 2(1) to (4): 1. a) profit shares (dividends), interest and other distributions from shares or interests in limited liability companies; b) similar distributions and patronage refunds from interests in commercial and industrial cooperatives, excluding those under Section 13 of the Corporate Income Tax Act 1988; c) similar distributions from profit participation rights and from participation capital within the meaning of the Banking Act or the Insurance Supervision Act. 2.",
+          "normalized": null,
+          "original_start": 4,
+          "original_end": 625,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 626
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 626
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000293_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall constitute",
+          "normalized": null,
+          "original_start": 25,
+          "original_end": 41,
+          "candidate_occurrences": [
+            {
+              "start": 25,
+              "end": 41
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 25,
+            "end": 41
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000293_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "The following income",
+          "normalized": "the following income",
+          "original_start": 4,
+          "original_end": 24,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 24
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 4,
+            "end": 24
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000293_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "to the extent that it does not fall within the income categories referred to in Section 2(1) to (4)",
+          "normalized": "to the extent that it does not fall within the income categories referred to in section 2(1) to (4)",
+          "original_start": 63,
+          "original_end": 161,
+          "candidate_occurrences": [
+            {
+              "start": 63,
+              "end": 162
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 63,
+            "end": 162
+          },
+          "distance": 1,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].exceptions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000293_c01",
+          "field": "exceptions",
+          "span_index": 0,
+          "span_id": "e01",
+          "text": "excluding those under Section 13 of the Corporate Income Tax Act 1988",
+          "normalized": "excluding those under section 13 of the corporate income tax act 1988",
+          "original_start": 437,
+          "original_end": 507,
+          "candidate_occurrences": [
+            {
+              "start": 392,
+              "end": 461
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 392,
+            "end": 461
+          },
+          "distance": 91,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 2,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 3,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

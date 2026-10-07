@@ -1,0 +1,233 @@
+{
+  "request_id": "qwen:estg_000601",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000601\\\",\\\"source_id\\\":\\\"estg_000601\\\",\\\"source_text\\\":\\\"(2) The audit body is also entitled to require from persons in respect of whom it is doubtful whether they are employees of the business any information to ascertain their tax situation.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000601_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"The audit body is also entitled to require from persons in respect of whom it is doubtful whether they are employees of the business any information to ascertain their tax situation.\\\",\\\"start\\\":4,\\\"end\\\":187},\\\"modality\\\":{\\\"label\\\":\\\"permission\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"entitled to\\\",\\\"start\\\":21,\\\"end\\\":32}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"The audit body\\\",\\\"start\\\":4,\\\"end\\\":18,\\\"normalized\\\":\\\"audit body\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"require from persons in respect of whom it is doubtful whether they are employees of the business any information to ascertain their tax situation\\\",\\\"start\\\":35,\\\"end\\\":186,\\\"normalized\\\":\\\"require from persons in respect of whom it is doubtful whether they are employees of the business any information to ascertain their tax situation\\\"}],\\\"conditions\\\":[],\\\"constraints\\\":[],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a01\\\",\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\"}}],\"created\":1791349654,\"id\":\"chatcmpl-06549f0a-2dd7-9dcb-afb0-8ab02bd9b4b2\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":350,\"prompt_tokens\":4605,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4605},\"total_tokens\":4955}}",
+  "usage": {
+    "prompt_tokens": 4605,
+    "completion_tokens": 350,
+    "total_tokens": 4955
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000601",
+    "request_id": "qwen:estg_000601",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000601",
+      "source_id": "estg_000601",
+      "source_text": "(2) The audit body is also entitled to require from persons in respect of whom it is doubtful whether they are employees of the business any information to ascertain their tax situation.",
+      "clauses": [
+        {
+          "clause_id": "estg_000601_c01",
+          "clause_span": {
+            "text": "The audit body is also entitled to require from persons in respect of whom it is doubtful whether they are employees of the business any information to ascertain their tax situation.",
+            "start": 4,
+            "end": 186
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "entitled to",
+                "start": 27,
+                "end": 38
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "The audit body",
+              "start": 4,
+              "end": 18,
+              "normalized": "the audit body",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "require from persons in respect of whom it is doubtful whether they are employees of the business any information to ascertain their tax situation",
+              "start": 39,
+              "end": 185,
+              "normalized": "require from persons in respect of whom it is doubtful whether they are employees of the business any information to ascertain their tax situation",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 2,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 3,
+      "reanchored_count": 3,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000601_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The audit body is also entitled to require from persons in respect of whom it is doubtful whether they are employees of the business any information to ascertain their tax situation.",
+          "normalized": null,
+          "original_start": 4,
+          "original_end": 187,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 186
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 186
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000601_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "entitled to",
+          "normalized": null,
+          "original_start": 21,
+          "original_end": 32,
+          "candidate_occurrences": [
+            {
+              "start": 27,
+              "end": 38
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 27,
+            "end": 38
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000601_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "The audit body",
+          "normalized": "the audit body",
+          "original_start": 4,
+          "original_end": 18,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 18
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 4,
+            "end": 18
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000601_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "require from persons in respect of whom it is doubtful whether they are employees of the business any information to ascertain their tax situation",
+          "normalized": "require from persons in respect of whom it is doubtful whether they are employees of the business any information to ascertain their tax situation",
+          "original_start": 35,
+          "original_end": 186,
+          "candidate_occurrences": [
+            {
+              "start": 39,
+              "end": 185
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 39,
+            "end": 185
+          },
+          "distance": 5,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 3,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

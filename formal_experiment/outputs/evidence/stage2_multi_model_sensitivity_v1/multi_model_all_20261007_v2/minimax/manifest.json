@@ -1,0 +1,59 @@
+{
+  "schema_version": "stage2_multi_model_manifest@1.0.0",
+  "task_id": "S2-MODEL-API-SETUP",
+  "run_id": "multi_model_all_20261007_v2_minimax",
+  "timestamp_utc": "2026-10-07T05:03:28.779135+00:00",
+  "status": "succeeded",
+  "claim_scope": "development_only",
+  "real_api": true,
+  "llm_calls": 150,
+  "planned_calls": 150,
+  "retry": 0,
+  "metrics": null,
+  "thinking_requirement": "disabled",
+  "gold_read_by_runner": false,
+  "plan_sha256": "83d97fa6966ee58019e153c21ea12eabe2887e3869201a4acbb8cd02e7014dba",
+  "authorization_sha256": "9e513b8562e375d6900e9cb817fc87b97f718a18c96dbe962175641652173bba",
+  "profiles": {
+    "minimax": {
+      "display_name": "MiniMax",
+      "api_key_env": "LLM4BPC_MINIMAX_API_KEY",
+      "base_url": "https://api.minimax.cn/v1",
+      "model": "MiniMax-M3",
+      "accepted_returned_models": [
+        "MiniMax-M3"
+      ],
+      "request_parameters": {
+        "temperature": 0,
+        "top_p": 0.95,
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "output_limit_parameter": "max_completion_tokens",
+      "thinking_mode": "disabled",
+      "documentation": "https://platform.minimax.cn/docs/api-reference/text-openai-api"
+    }
+  },
+  "bindings": {
+    "configs/models/stage2_multi_model_v1.json": "1f3de160621a907c775ed9fe8b46fb05e244a9522f2ffc92f800e7d3f7944532",
+    "prompts/sun_compat/direct_llm_sun_record_prompt_v6_d1r1_2026_08_05.md": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+    "data/input/estg150_formal_inference_input_v2.json": "52a73aa1109970b6c4fbc17214b0828ed0dd64b330001e884cdc803b1ce81dc2",
+    "src/bpc_hybrid/multi_model_stage2.py": "af8c31bc1568410d48077da85c5be9eab7536818a1ce176578eabba0bb4595a0",
+    "scripts/stage2_multi_model.py": "69bdce67f6eb4e62505ae290b694c1dde61703a059d2571c4218f44eb50f5bd5",
+    "src/bpc_hybrid/prompt_loader.py": "8a2bce2f88a65e6b6a1b3e58c4dc7c52af9372e8d7b227146c87b7c5765e9572",
+    "src/bpc_hybrid/d1_schema_adapter.py": "457d01cfcc663e8594a163db603c2e1d31cbffce4523d3ed7cdfaf16328edbf3",
+    "src/bpc_hybrid/d1_span_canonicalizer.py": "47d87ed5779e60bcdf7adb7f7fb289239ac036c5f1d60d1cc50395624be88668",
+    "src/bpc_hybrid/stage2_canonical.py": "39bd93ef30f5744fc977a382ecd484d4802fc8074aec312034625e0398fd4e70",
+    "src/bpc_hybrid/h1_transport.py": "5e54a41fa48c01377295b2ac6422e27852a40dc4fbd5cb7df90d6651ddfe8be9",
+    "configs/schemas/stage2_prediction.schema.json": "d94941c1f7ea90f768d7244bdb72ac3c588b727e0f1fcb4e4732ef8b239259ea"
+  },
+  "canonicalization_policy": "legacy",
+  "ledger_head_sha256": "054fb365ade6b5663a60ab3c7be5153d245a99b943c7cbfca27a5073f9708934",
+  "conservative_uncached_cost_by_provider": {
+    "minimax": 2.1894621000000005
+  },
+  "predictions_sha256": "9ab0ac6d0d1c8266c395b134c36f510183040447fb6dc9f0667ef3ad2c2ee8a7",
+  "valid_predictions": 142,
+  "failed_or_unattempted_predictions": 8
+}

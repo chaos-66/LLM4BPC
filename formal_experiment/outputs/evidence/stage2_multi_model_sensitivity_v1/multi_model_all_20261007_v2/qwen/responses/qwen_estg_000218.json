@@ -1,0 +1,466 @@
+{
+  "request_id": "qwen:estg_000218",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000218\\\",\\\"source_id\\\":\\\"estg_000218\\\",\\\"source_text\\\":\\\"In the case of a reduction in deductible insurance premiums (Section 1(2), last sentence), the notification obligation does not apply if the refunded amounts are offset against future insurance premiums.\\\\n\\\\n2. a) Subsequent taxation of amounts tied up for eight years (Section 1(3)(a)) shall be applied to the extent that the amounts paid are refunded, in whole or in part, before the expiry of eight years from the conclusion of the contract.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000218_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"In the case of a reduction in deductible insurance premiums (Section 1(2), last sentence), the notification obligation does not apply if the refunded amounts are offset against future insurance premiums.\\\",\\\"start\\\":0,\\\"end\\\":204},\\\"modality\\\":{\\\"label\\\":\\\"prohibition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"does not\\\", \\\"start\\\":106,\\\"end\\\":114}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"the notification obligation\\\",\\\"start\\\":90,\\\"end\\\":117,\\\"normalized\\\":\\\"notification obligation\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"apply\\\",\\\"start\\\":115,\\\"end\\\":120,\\\"normalized\\\":\\\"apply\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"if the refunded amounts are offset against future insurance premiums\\\",\\\"start\\\":121,\\\"end\\\":189,\\\"normalized\\\":\\\"if the refunded amounts are offset against future insurance premiums\\\"}],\\\"constraints\\\":[],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a01\\\",\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]},{\\\"clause_id\\\":\\\"estg_000218_c02\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"Subsequent taxation of amounts tied up for eight years (Section 1(3)(a)) shall be applied to the extent that the amounts paid are refunded, in whole or in part, before the expiry of eight years from the conclusion of the contract.\\\",\\\"start\\\":208,\\\"end\\\":438},\\\"modality\\\":{\\\"label\\\":\\\"obligation\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall\\\",\\\"start\\\":281,\\\"end\\\":286}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p02\\\",\\\"text\\\":\\\"applied\\\",\\\"start\\\":290,\\\"end\\\":297,\\\"normalized\\\":\\\"apply\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d02\\\",\\\"text\\\":\\\"to the extent that the amounts paid are refunded, in whole or in part, before the expiry of eight years from the conclusion of the contract\\\",\\\"start\\\":298,\\\"end\\\":437,\\\"normalized\\\":\\\"to the extent that the amounts paid are refunded, in whole or in part, before the expiry of eight years from the conclusion of the contract\\\"}],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"before the expiry of eight years from the conclusion of the contract\\\",\\\"start\\\":369,\\\"end\\\":437,\\\"normalized\\\":\\\"before the expiry of eight years from the conclusion of the contract\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p02\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"condition\\\",\\\"reason\\\":\\\"semantic_scope_ambiguous_in_target\\\"},{\\\"field\\\":\\\"constraint\\\",\\\"reason\\\":\\\"semantic_scope_ambiguous_in_target\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791349186,\"id\":\"chatcmpl-de5b26ad-cf58-9017-823b-1ae131e44c13\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":749,\"prompt_tokens\":4663,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4663},\"total_tokens\":5412}}",
+  "usage": {
+    "prompt_tokens": 4663,
+    "completion_tokens": 749,
+    "total_tokens": 5412
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000218",
+    "request_id": "qwen:estg_000218",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000218",
+      "source_id": "estg_000218",
+      "source_text": "In the case of a reduction in deductible insurance premiums (Section 1(2), last sentence), the notification obligation does not apply if the refunded amounts are offset against future insurance premiums.\n\n2. a) Subsequent taxation of amounts tied up for eight years (Section 1(3)(a)) shall be applied to the extent that the amounts paid are refunded, in whole or in part, before the expiry of eight years from the conclusion of the contract.",
+      "clauses": [
+        {
+          "clause_id": "estg_000218_c01",
+          "clause_span": {
+            "text": "In the case of a reduction in deductible insurance premiums (Section 1(2), last sentence), the notification obligation does not apply if the refunded amounts are offset against future insurance premiums.",
+            "start": 0,
+            "end": 203
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "does not",
+                "start": 119,
+                "end": 127
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the notification obligation",
+              "start": 91,
+              "end": 118,
+              "normalized": "the notification obligation",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "apply",
+              "start": 128,
+              "end": 133,
+              "normalized": "apply",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "if the refunded amounts are offset against future insurance premiums",
+              "start": 134,
+              "end": 202,
+              "normalized": "if the refunded amounts are offset against future insurance premiums",
+              "id": "d01"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000218_c02",
+          "clause_span": {
+            "text": "Subsequent taxation of amounts tied up for eight years (Section 1(3)(a)) shall be applied to the extent that the amounts paid are refunded, in whole or in part, before the expiry of eight years from the conclusion of the contract.",
+            "start": 211,
+            "end": 441
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 284,
+                "end": 289
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "applied",
+              "start": 293,
+              "end": 300,
+              "normalized": "applied",
+              "id": "p02"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "to the extent that the amounts paid are refunded, in whole or in part, before the expiry of eight years from the conclusion of the contract",
+              "start": 301,
+              "end": 440,
+              "normalized": "to the extent that the amounts paid are refunded, in whole or in part, before the expiry of eight years from the conclusion of the contract",
+              "id": "d02"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "before the expiry of eight years from the conclusion of the contract",
+              "start": 372,
+              "end": 440,
+              "normalized": "before the expiry of eight years from the conclusion of the contract",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p02"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "condition",
+          "reason": "semantic_scope_ambiguous_in_target"
+        },
+        {
+          "field": "constraint",
+          "reason": "semantic_scope_ambiguous_in_target"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 6,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 2,
+      "field_span_count": 8,
+      "reanchored_count": 10,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000218_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "In the case of a reduction in deductible insurance premiums (Section 1(2), last sentence), the notification obligation does not apply if the refunded amounts are offset against future insurance premiums.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 204,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 203
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 203
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000218_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "does not",
+          "normalized": null,
+          "original_start": 106,
+          "original_end": 114,
+          "candidate_occurrences": [
+            {
+              "start": 119,
+              "end": 127
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 119,
+            "end": 127
+          },
+          "distance": 26,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000218_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "the notification obligation",
+          "normalized": "the notification obligation",
+          "original_start": 90,
+          "original_end": 117,
+          "candidate_occurrences": [
+            {
+              "start": 91,
+              "end": 118
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 91,
+            "end": 118
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000218_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "apply",
+          "normalized": "apply",
+          "original_start": 115,
+          "original_end": 120,
+          "candidate_occurrences": [
+            {
+              "start": 128,
+              "end": 133
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 128,
+            "end": 133
+          },
+          "distance": 26,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000218_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "if the refunded amounts are offset against future insurance premiums",
+          "normalized": "if the refunded amounts are offset against future insurance premiums",
+          "original_start": 121,
+          "original_end": 189,
+          "candidate_occurrences": [
+            {
+              "start": 134,
+              "end": 202
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 134,
+            "end": 202
+          },
+          "distance": 26,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000218_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Subsequent taxation of amounts tied up for eight years (Section 1(3)(a)) shall be applied to the extent that the amounts paid are refunded, in whole or in part, before the expiry of eight years from the conclusion of the contract.",
+          "normalized": null,
+          "original_start": 208,
+          "original_end": 438,
+          "candidate_occurrences": [
+            {
+              "start": 211,
+              "end": 441
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 211,
+            "end": 441
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000218_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 281,
+          "original_end": 286,
+          "candidate_occurrences": [
+            {
+              "start": 284,
+              "end": 289
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 284,
+            "end": 289
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000218_c02",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p02",
+          "text": "applied",
+          "normalized": "applied",
+          "original_start": 290,
+          "original_end": 297,
+          "candidate_occurrences": [
+            {
+              "start": 293,
+              "end": 300
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 293,
+            "end": 300
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].conditions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000218_c02",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d02",
+          "text": "to the extent that the amounts paid are refunded, in whole or in part, before the expiry of eight years from the conclusion of the contract",
+          "normalized": "to the extent that the amounts paid are refunded, in whole or in part, before the expiry of eight years from the conclusion of the contract",
+          "original_start": 298,
+          "original_end": 437,
+          "candidate_occurrences": [
+            {
+              "start": 301,
+              "end": 440
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 301,
+            "end": 440
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].constraints[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000218_c02",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "before the expiry of eight years from the conclusion of the contract",
+          "normalized": "before the expiry of eight years from the conclusion of the contract",
+          "original_start": 369,
+          "original_end": 437,
+          "candidate_occurrences": [
+            {
+              "start": 372,
+              "end": 440
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 372,
+            "end": 440
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 10,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

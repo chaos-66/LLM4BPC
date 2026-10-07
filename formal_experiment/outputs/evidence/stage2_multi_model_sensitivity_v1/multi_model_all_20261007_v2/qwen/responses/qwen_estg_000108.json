@@ -1,0 +1,301 @@
+{
+  "request_id": "qwen:estg_000108",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000108\\\",\\\"source_id\\\":\\\"estg_000108\\\",\\\"source_text\\\":\\\"(3) For buildings, the investment allowance may only be claimed to the extent that they directly serve the business purpose or are intended for residential purposes of employees of the business.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000108_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"For buildings, the investment allowance may only be claimed to the extent that they directly serve the business purpose or are intended for residential purposes of employees of the business.\\\",\\\"start\\\":4,\\\"end\\\":195},\\\"modality\\\":{\\\"label\\\":\\\"permission\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"may\\\",\\\"start\\\":44,\\\"end\\\":47}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"claimed\\\",\\\"start\\\":60,\\\"end\\\":67,\\\"normalized\\\":\\\"claim\\\"}],\\\"conditions\\\":[],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"For buildings\\\",\\\"start\\\":4,\\\"end\\\":17,\\\"normalized\\\":\\\"for buildings\\\"},{\\\"id\\\":\\\"c02\\\",\\\"text\\\":\\\"only\\\",\\\"start\\\":48,\\\"end\\\":52,\\\"normalized\\\":\\\"only\\\"},{\\\"id\\\":\\\"c03\\\",\\\"text\\\":\\\"to the extent that they directly serve the business purpose or are intended for residential purposes of employees of the business\\\",\\\"start\\\":68,\\\"end\\\":195,\\\"normalized\\\":\\\"to the extent that they directly serve the business purpose or are intended for residential purposes of employees of the business\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\"}}],\"created\":1791348810,\"id\":\"chatcmpl-f80596fb-bd8d-9d88-b255-f2b54abd75b0\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":387,\"prompt_tokens\":4605,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4605},\"total_tokens\":4992}}",
+  "usage": {
+    "prompt_tokens": 4605,
+    "completion_tokens": 387,
+    "total_tokens": 4992
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000108",
+    "request_id": "qwen:estg_000108",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000108",
+      "source_id": "estg_000108",
+      "source_text": "(3) For buildings, the investment allowance may only be claimed to the extent that they directly serve the business purpose or are intended for residential purposes of employees of the business.",
+      "clauses": [
+        {
+          "clause_id": "estg_000108_c01",
+          "clause_span": {
+            "text": "For buildings, the investment allowance may only be claimed to the extent that they directly serve the business purpose or are intended for residential purposes of employees of the business.",
+            "start": 4,
+            "end": 194
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 44,
+                "end": 47
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "claimed",
+              "start": 56,
+              "end": 63,
+              "normalized": "claimed",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "For buildings",
+              "start": 4,
+              "end": 17,
+              "normalized": "for buildings",
+              "id": "c01"
+            },
+            {
+              "text": "only",
+              "start": 48,
+              "end": 52,
+              "normalized": "only",
+              "id": "c02"
+            },
+            {
+              "text": "to the extent that they directly serve the business purpose or are intended for residential purposes of employees of the business",
+              "start": 64,
+              "end": 193,
+              "normalized": "to the extent that they directly serve the business purpose or are intended for residential purposes of employees of the business",
+              "id": "c03"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 5,
+      "reanchored_count": 3,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000108_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "For buildings, the investment allowance may only be claimed to the extent that they directly serve the business purpose or are intended for residential purposes of employees of the business.",
+          "normalized": null,
+          "original_start": 4,
+          "original_end": 195,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 194
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 194
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000108_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 44,
+          "original_end": 47,
+          "candidate_occurrences": [
+            {
+              "start": 44,
+              "end": 47
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 44,
+            "end": 47
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000108_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "claimed",
+          "normalized": "claimed",
+          "original_start": 60,
+          "original_end": 67,
+          "candidate_occurrences": [
+            {
+              "start": 56,
+              "end": 63
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 56,
+            "end": 63
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000108_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "For buildings",
+          "normalized": "for buildings",
+          "original_start": 4,
+          "original_end": 17,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 17
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 4,
+            "end": 17
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000108_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "only",
+          "normalized": "only",
+          "original_start": 48,
+          "original_end": 52,
+          "candidate_occurrences": [
+            {
+              "start": 48,
+              "end": 52
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 48,
+            "end": 52
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[2]",
+          "clause_index": 0,
+          "clause_id": "estg_000108_c01",
+          "field": "constraints",
+          "span_index": 2,
+          "span_id": "c03",
+          "text": "to the extent that they directly serve the business purpose or are intended for residential purposes of employees of the business",
+          "normalized": "to the extent that they directly serve the business purpose or are intended for residential purposes of employees of the business",
+          "original_start": 68,
+          "original_end": 195,
+          "candidate_occurrences": [
+            {
+              "start": 64,
+              "end": 193
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 64,
+            "end": 193
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 3,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 3,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

@@ -1,0 +1,309 @@
+{
+  "request_id": "minimax:estg_000293",
+  "raw_response_utf8": "{\"id\":\"07150436155925614865b413c0d24224\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000293\\\",\\\"source_id\\\":\\\"estg_000293\\\",\\\"source_text\\\":\\\"(1) The following income shall constitute income from capital, to the extent that it does not fall within the income categories referred to in Section 2(1) to (4): 1. a) profit shares (dividends), interest and other distributions from shares or interests in limited liability companies; b) similar distributions and patronage refunds from interests in commercial and industrial cooperatives, excluding those under Section 13 of the Corporate Income Tax Act 1988; c) similar distributions from profit participation rights and from participation capital within the meaning of the Banking Act or the Insurance Supervision Act. 2.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000293_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"The following income shall constitute income from capital, to the extent that it does not fall within the income categories referred to in Section 2(1) to (4)\\\",\\\"start\\\":4,\\\"end\\\":154},\\\"modality\\\":{\\\"label\\\":\\\"definition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall constitute\\\",\\\"start\\\":29,\\\"end\\\":46}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"The following income\\\",\\\"start\\\":4,\\\"end\\\":25,\\\"normalized\\\":\\\"following income\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"constitute income from capital\\\",\\\"start\\\":47,\\\"end\\\":76,\\\"normalized\\\":\\\"constitute income from capital\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"to the extent that it does not fall within the income categories referred to in Section 2(1) to (4)\\\",\\\"start\\\":78,\\\"end\\\":154,\\\"normalized\\\":\\\"to the extent that it does not fall within the income categories referred to in section 2(1) to (4)\\\"}],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"referred to in Section 2(1) to (4)\\\",\\\"start\\\":131,\\\"end\\\":154,\\\"normalized\\\":\\\"referred to in section 2(1) to (4)\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a01\\\",\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"actor\\\",\\\"reason\\\":\\\"reference_status=unresolved_coreference;independence_status=context_required\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791349046,\"model\":\"MiniMax-M3\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":4976,\"total_characters\":0,\"prompt_tokens\":4459,\"completion_tokens\":517,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":1408}},\"input_sensitive\":false,\"output_sensitive\":false,\"input_sensitive_type\":0,\"output_sensitive_type\":0,\"output_sensitive_int\":0,\"service_tier\":\"standard\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}\n",
+  "usage": {
+    "prompt_tokens": 4459,
+    "completion_tokens": 517,
+    "total_tokens": 4976,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "MiniMax-M3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "minimax",
+    "sample_id": "estg_000293",
+    "request_id": "minimax:estg_000293",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000293",
+      "source_id": "estg_000293",
+      "source_text": "(1) The following income shall constitute income from capital, to the extent that it does not fall within the income categories referred to in Section 2(1) to (4): 1. a) profit shares (dividends), interest and other distributions from shares or interests in limited liability companies; b) similar distributions and patronage refunds from interests in commercial and industrial cooperatives, excluding those under Section 13 of the Corporate Income Tax Act 1988; c) similar distributions from profit participation rights and from participation capital within the meaning of the Banking Act or the Insurance Supervision Act. 2.",
+      "clauses": [
+        {
+          "clause_id": "estg_000293_c01",
+          "clause_span": {
+            "text": "The following income shall constitute income from capital, to the extent that it does not fall within the income categories referred to in Section 2(1) to (4)",
+            "start": 4,
+            "end": 162
+          },
+          "modality": {
+            "label": "definition",
+            "evidence": [
+              {
+                "text": "shall constitute",
+                "start": 25,
+                "end": 41
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "The following income",
+              "start": 4,
+              "end": 24,
+              "normalized": "the following income",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "constitute income from capital",
+              "start": 31,
+              "end": 61,
+              "normalized": "constitute income from capital",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "to the extent that it does not fall within the income categories referred to in Section 2(1) to (4)",
+              "start": 63,
+              "end": 162,
+              "normalized": "to the extent that it does not fall within the income categories referred to in section 2(1) to (4)",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "referred to in Section 2(1) to (4)",
+              "start": 128,
+              "end": 162,
+              "normalized": "referred to in section 2(1) to (4)",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 5,
+      "reanchored_count": 6,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000293_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The following income shall constitute income from capital, to the extent that it does not fall within the income categories referred to in Section 2(1) to (4)",
+          "normalized": null,
+          "original_start": 4,
+          "original_end": 154,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 162
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 162
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000293_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall constitute",
+          "normalized": null,
+          "original_start": 29,
+          "original_end": 46,
+          "candidate_occurrences": [
+            {
+              "start": 25,
+              "end": 41
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 25,
+            "end": 41
+          },
+          "distance": 9,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000293_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "The following income",
+          "normalized": "the following income",
+          "original_start": 4,
+          "original_end": 25,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 24
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 24
+          },
+          "distance": 1,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000293_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "constitute income from capital",
+          "normalized": "constitute income from capital",
+          "original_start": 47,
+          "original_end": 76,
+          "candidate_occurrences": [
+            {
+              "start": 31,
+              "end": 61
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 31,
+            "end": 61
+          },
+          "distance": 31,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000293_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "to the extent that it does not fall within the income categories referred to in Section 2(1) to (4)",
+          "normalized": "to the extent that it does not fall within the income categories referred to in section 2(1) to (4)",
+          "original_start": 78,
+          "original_end": 154,
+          "candidate_occurrences": [
+            {
+              "start": 63,
+              "end": 162
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 63,
+            "end": 162
+          },
+          "distance": 23,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000293_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "referred to in Section 2(1) to (4)",
+          "normalized": "referred to in section 2(1) to (4)",
+          "original_start": 131,
+          "original_end": 154,
+          "candidate_occurrences": [
+            {
+              "start": 128,
+              "end": 162
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 128,
+            "end": 162
+          },
+          "distance": 11,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 6,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

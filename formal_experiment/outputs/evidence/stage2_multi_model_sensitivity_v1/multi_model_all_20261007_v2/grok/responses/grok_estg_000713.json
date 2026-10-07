@@ -1,0 +1,338 @@
+{
+  "request_id": "grok:estg_000713",
+  "raw_response_utf8": "{\"id\":\"f01da6d8-95d0-92ef-a80e-b058be5c8fe2\",\"object\":\"chat.completion\",\"created\":1791348991,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000713\\\",\\n  \\\"source_id\\\": \\\"estg_000713\\\",\\n  \\\"source_text\\\": \\\"(6) The building society shall be obliged to notify the tax authority, without any official request, if contributions that were paid as the basis for a tax refund and the refunded tax itself are repaid in whole or in part, or if claims under the home savings contract serve as security.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000713_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"The building society shall be obliged to notify the tax authority, without any official request, if contributions that were paid as the basis for a tax refund and the refunded tax itself are repaid in whole or in part, or if claims under the home savings contract serve as security.\\\", \\\"start\\\": 4, \\\"end\\\": 248},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall be obliged to\\\", \\\"start\\\": 24, \\\"end\\\": 42}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"The building society\\\", \\\"start\\\": 4, \\\"end\\\": 24, \\\"normalized\\\": \\\"building society\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"notify the tax authority\\\", \\\"start\\\": 46, \\\"end\\\": 70, \\\"normalized\\\": \\\"notify the tax authority\\\"}],\\n      \\\"conditions\\\": [\\n        {\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"if contributions that were paid as the basis for a tax refund and the refunded tax itself are repaid in whole or in part\\\", \\\"start\\\": 95, \\\"end\\\": 216, \\\"normalized\\\": \\\"if contributions that were paid as the basis for a tax refund and the refunded tax itself are repaid in whole or in part\\\"},\\n        {\\\"id\\\": \\\"d02\\\", \\\"text\\\": \\\"if claims under the home savings contract serve as security\\\", \\\"start\\\": 220, \\\"end\\\": 247, \\\"normalized\\\": \\\"if claims under the home savings contract serve as security\\\"}\\n      ],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"without any official request\\\", \\\"start\\\": 72, \\\"end\\\": 100, \\\"normalized\\\": \\\"without any official request\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4378,\"completion_tokens\":590,\"total_tokens\":4968,\"prompt_tokens_details\":{\"text_tokens\":4378,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":1536},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":53347000},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4378,
+    "completion_tokens": 590,
+    "total_tokens": 4968,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000713",
+    "request_id": "grok:estg_000713",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000713",
+      "source_id": "estg_000713",
+      "source_text": "(6) The building society shall be obliged to notify the tax authority, without any official request, if contributions that were paid as the basis for a tax refund and the refunded tax itself are repaid in whole or in part, or if claims under the home savings contract serve as security.",
+      "clauses": [
+        {
+          "clause_id": "estg_000713_c01",
+          "clause_span": {
+            "text": "The building society shall be obliged to notify the tax authority, without any official request, if contributions that were paid as the basis for a tax refund and the refunded tax itself are repaid in whole or in part, or if claims under the home savings contract serve as security.",
+            "start": 4,
+            "end": 286
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall be obliged to",
+                "start": 25,
+                "end": 44
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "The building society",
+              "start": 4,
+              "end": 24,
+              "normalized": "the building society",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "notify the tax authority",
+              "start": 45,
+              "end": 69,
+              "normalized": "notify the tax authority",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "if contributions that were paid as the basis for a tax refund and the refunded tax itself are repaid in whole or in part",
+              "start": 101,
+              "end": 221,
+              "normalized": "if contributions that were paid as the basis for a tax refund and the refunded tax itself are repaid in whole or in part",
+              "id": "d01"
+            },
+            {
+              "text": "if claims under the home savings contract serve as security",
+              "start": 226,
+              "end": 285,
+              "normalized": "if claims under the home savings contract serve as security",
+              "id": "d02"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "without any official request",
+              "start": 71,
+              "end": 99,
+              "normalized": "without any official request",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 5,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 6,
+      "reanchored_count": 6,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000713_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The building society shall be obliged to notify the tax authority, without any official request, if contributions that were paid as the basis for a tax refund and the refunded tax itself are repaid in whole or in part, or if claims under the home savings contract serve as security.",
+          "normalized": null,
+          "original_start": 4,
+          "original_end": 248,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 286
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 286
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000713_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall be obliged to",
+          "normalized": null,
+          "original_start": 24,
+          "original_end": 42,
+          "candidate_occurrences": [
+            {
+              "start": 25,
+              "end": 44
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 25,
+            "end": 44
+          },
+          "distance": 3,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000713_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "The building society",
+          "normalized": "the building society",
+          "original_start": 4,
+          "original_end": 24,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 24
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 4,
+            "end": 24
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000713_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "notify the tax authority",
+          "normalized": "notify the tax authority",
+          "original_start": 46,
+          "original_end": 70,
+          "candidate_occurrences": [
+            {
+              "start": 45,
+              "end": 69
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 45,
+            "end": 69
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000713_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "if contributions that were paid as the basis for a tax refund and the refunded tax itself are repaid in whole or in part",
+          "normalized": "if contributions that were paid as the basis for a tax refund and the refunded tax itself are repaid in whole or in part",
+          "original_start": 95,
+          "original_end": 216,
+          "candidate_occurrences": [
+            {
+              "start": 101,
+              "end": 221
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 101,
+            "end": 221
+          },
+          "distance": 11,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000713_c01",
+          "field": "conditions",
+          "span_index": 1,
+          "span_id": "d02",
+          "text": "if claims under the home savings contract serve as security",
+          "normalized": "if claims under the home savings contract serve as security",
+          "original_start": 220,
+          "original_end": 247,
+          "candidate_occurrences": [
+            {
+              "start": 226,
+              "end": 285
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 226,
+            "end": 285
+          },
+          "distance": 44,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000713_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "without any official request",
+          "normalized": "without any official request",
+          "original_start": 72,
+          "original_end": 100,
+          "candidate_occurrences": [
+            {
+              "start": 71,
+              "end": 99
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 71,
+            "end": 99
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 6,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

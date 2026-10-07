@@ -1,0 +1,296 @@
+{
+  "request_id": "minimax:estg_000539",
+  "raw_response_utf8": "{\"id\":\"071504d526def80bcde5fa3bbc3055df\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\": \\\"1.0.0\\\", \\\"sample_id\\\": \\\"estg_000539\\\", \\\"source_id\\\": \\\"estg_000539\\\", \\\"source_text\\\": \\\"(2) If the conditions for carrying out an ex officio annual adjustment (paragraph 3) are not met, the tax office shall carry out an annual adjustment upon application of the employee if\\\\n1. the employer is not responsible pursuant to paragraph 1 or the employer issued a wage tax statement (Section 84) before carrying out an annual adjustment, or\\\\n2. the employee did not claim the sole earner deduction in due time, or\\\\n3. an allowance notice was issued or the employee claims income-related expenses, special expenses or extraordinary burdens, or\\\\n4. the child supplements to the sole earner deduction were not taken into account or not taken into full account.\\\", \\\"clauses\\\": [{\\\"clause_id\\\": \\\"estg_000539_c01\\\", \\\"clause_span\\\": {\\\"text\\\": \\\"the tax office shall carry out an annual adjustment upon application of the employee\\\", \\\"start\\\": 102, \\\"end\\\": 186}, \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 116, \\\"end\\\": 121}]}, \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"the tax office\\\", \\\"start\\\": 102, \\\"end\\\": 115, \\\"normalized\\\": \\\"tax office\\\"}], \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"carry out an annual adjustment\\\", \\\"start\\\": 122, \\\"end\\\": 152, \\\"normalized\\\": \\\"carry out an annual adjustment\\\"}], \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"If the conditions for carrying out an ex officio annual adjustment (paragraph 3) are not met\\\", \\\"start\\\": 3, \\\"end\\\": 94}, {\\\"id\\\": \\\"d02\\\", \\\"text\\\": \\\"if 1. the employer is not responsible pursuant to paragraph 1 or the employer issued a wage tax statement (Section 84) before carrying out an annual adjustment, or 2. the employee did not claim the sole earner deduction in due time, or 3. an allowance notice was issued or the employee claims income-related expenses, special expenses or extraordinary burdens, or 4. the child supplements to the sole earner deduction were not taken into account or not taken into full account.\\\", \\\"start\\\": 203, \\\"end\\\": 565}], \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"upon application of the employee\\\", \\\"start\\\": 153, \\\"end\\\": 185, \\\"normalized\\\": \\\"upon application of the employee\\\"}], \\\"exceptions\\\": [], \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}], \\\"order_relations\\\": []}], \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"}, \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []}, \\\"unsupported_or_ambiguous\\\": [{\\\"field\\\": \\\"condition\\\", \\\"reason\\\": \\\"semantic_scope_ambiguous_in_target\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791349205,\"model\":\"MiniMax-M3\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":5143,\"total_characters\":0,\"prompt_tokens\":4476,\"completion_tokens\":667,\"prompt_tokens_details\":{\"cached_tokens\":128}},\"input_sensitive\":false,\"output_sensitive\":false,\"input_sensitive_type\":0,\"output_sensitive_type\":0,\"output_sensitive_int\":0,\"service_tier\":\"standard\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}\n",
+  "usage": {
+    "prompt_tokens": 4476,
+    "completion_tokens": 667,
+    "total_tokens": 5143
+  },
+  "returned_model": "MiniMax-M3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "minimax",
+    "sample_id": "estg_000539",
+    "request_id": "minimax:estg_000539",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000539",
+      "source_id": "estg_000539",
+      "source_text": "(2) If the conditions for carrying out an ex officio annual adjustment (paragraph 3) are not met, the tax office shall carry out an annual adjustment upon application of the employee if\n1. the employer is not responsible pursuant to paragraph 1 or the employer issued a wage tax statement (Section 84) before carrying out an annual adjustment, or\n2. the employee did not claim the sole earner deduction in due time, or\n3. an allowance notice was issued or the employee claims income-related expenses, special expenses or extraordinary burdens, or\n4. the child supplements to the sole earner deduction were not taken into account or not taken into full account.",
+      "clauses": [
+        {
+          "clause_id": "estg_000539_c01",
+          "clause_span": {
+            "text": "the tax office shall carry out an annual adjustment upon application of the employee",
+            "start": 98,
+            "end": 182
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 113,
+                "end": 118
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the tax office",
+              "start": 98,
+              "end": 112,
+              "normalized": "the tax office",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "carry out an annual adjustment",
+              "start": 119,
+              "end": 149,
+              "normalized": "carry out an annual adjustment",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "upon application of the employee",
+              "start": 150,
+              "end": 182,
+              "normalized": "upon application of the employee",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "condition",
+          "reason": "semantic_scope_ambiguous_in_target"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "spans_adapted": 4,
+      "dropped_spans": [
+        "conditions[1]_text_not_in_source"
+      ],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 5,
+      "reanchored_count": 5,
+      "dropped_spans": [
+        "clauses[0].conditions[0]"
+      ],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000539_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "the tax office shall carry out an annual adjustment upon application of the employee",
+          "normalized": null,
+          "original_start": 102,
+          "original_end": 186,
+          "candidate_occurrences": [
+            {
+              "start": 98,
+              "end": 182
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 98,
+            "end": 182
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000539_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 116,
+          "original_end": 121,
+          "candidate_occurrences": [
+            {
+              "start": 113,
+              "end": 118
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 113,
+            "end": 118
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000539_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "the tax office",
+          "normalized": "the tax office",
+          "original_start": 102,
+          "original_end": 115,
+          "candidate_occurrences": [
+            {
+              "start": 98,
+              "end": 112
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 98,
+            "end": 112
+          },
+          "distance": 7,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000539_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "carry out an annual adjustment",
+          "normalized": "carry out an annual adjustment",
+          "original_start": 122,
+          "original_end": 152,
+          "candidate_occurrences": [
+            {
+              "start": 119,
+              "end": 149
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 119,
+            "end": 149
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000539_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "If the conditions for carrying out an ex officio annual adjustment (paragraph 3) are not met",
+          "normalized": "if the conditions for carrying out an ex officio annual adjustment (paragraph 3) are not met",
+          "original_start": 3,
+          "original_end": 94,
+          "candidate_occurrences": [],
+          "strategy": "not_applicable",
+          "chosen": null,
+          "distance": null,
+          "outcome": "unresolved",
+          "reason": "zero_occurrence",
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000539_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "upon application of the employee",
+          "normalized": "upon application of the employee",
+          "original_start": 153,
+          "original_end": 185,
+          "candidate_occurrences": [
+            {
+              "start": 150,
+              "end": 182
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 150,
+            "end": 182
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 1,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "request_id": "grok:estg_000659",
+  "raw_response_utf8": "{\"id\":\"b2ea0b68-9c46-90d7-bd97-9466f8e13948\",\"object\":\"chat.completion\",\"created\":1791348977,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000659\\\",\\n  \\\"source_id\\\": \\\"estg_000659\\\",\\n  \\\"source_text\\\": \\\"(1) Persons with limited tax liability shall be assessed for income tax on their income from which no withholding of tax on wages, on capital yield, or under Sections 99 to 101 is to be made.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000659_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"(1) Persons with limited tax liability shall be assessed for income tax on their income from which no withholding of tax on wages, on capital yield, or under Sections 99 to 101 is to be made.\\\", \\\"start\\\": 0, \\\"end\\\": 172},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 35, \\\"end\\\": 40}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"Persons with limited tax liability\\\", \\\"start\\\": 4, \\\"end\\\": 34, \\\"normalized\\\": \\\"persons with limited tax liability\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"be assessed for income tax on their income\\\", \\\"start\\\": 41, \\\"end\\\": 81, \\\"normalized\\\": \\\"be assessed for income tax on their income\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4364,\"completion_tokens\":407,\"total_tokens\":4771,\"prompt_tokens_details\":{\"text_tokens\":4364,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":1536},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":48597000},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4364,
+    "completion_tokens": 407,
+    "total_tokens": 4771,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000659",
+    "request_id": "grok:estg_000659",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000659",
+      "source_id": "estg_000659",
+      "source_text": "(1) Persons with limited tax liability shall be assessed for income tax on their income from which no withholding of tax on wages, on capital yield, or under Sections 99 to 101 is to be made.",
+      "clauses": [
+        {
+          "clause_id": "estg_000659_c01",
+          "clause_span": {
+            "text": "(1) Persons with limited tax liability shall be assessed for income tax on their income from which no withholding of tax on wages, on capital yield, or under Sections 99 to 101 is to be made.",
+            "start": 0,
+            "end": 191
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 39,
+                "end": 44
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "Persons with limited tax liability",
+              "start": 4,
+              "end": 38,
+              "normalized": "persons with limited tax liability",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "be assessed for income tax on their income",
+              "start": 45,
+              "end": 87,
+              "normalized": "be assessed for income tax on their income",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 2,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 3,
+      "reanchored_count": 4,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000659_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "(1) Persons with limited tax liability shall be assessed for income tax on their income from which no withholding of tax on wages, on capital yield, or under Sections 99 to 101 is to be made.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 172,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 191
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 191
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000659_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 35,
+          "original_end": 40,
+          "candidate_occurrences": [
+            {
+              "start": 39,
+              "end": 44
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 39,
+            "end": 44
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000659_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "Persons with limited tax liability",
+          "normalized": "persons with limited tax liability",
+          "original_start": 4,
+          "original_end": 34,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 38
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 38
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000659_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "be assessed for income tax on their income",
+          "normalized": "be assessed for income tax on their income",
+          "original_start": 41,
+          "original_end": 81,
+          "candidate_occurrences": [
+            {
+              "start": 45,
+              "end": 87
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 45,
+            "end": 87
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 4,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

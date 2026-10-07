@@ -1,0 +1,307 @@
+{
+  "request_id": "minimax:estg_000060",
+  "raw_response_utf8": "{\"id\":\"071501e283120ca36b240377e85d84e7\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000060\\\",\\\"source_id\\\":\\\"estg_000060\\\",\\\"source_text\\\":\\\"The additions and deductions shall be taken into account in the profit of the first profit determination period after the change, and in the case of the sale or abandonment of the entire business, of a part-business or of a co-entrepreneur\\\\u2019s interest in the profit of the last profit determination period before the sale or abandonment. 2.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000060_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"The additions and deductions shall be taken into account in the profit of the first profit determination period after the change, and in the case of the sale or abandonment of the entire business, of a part-business or of a co-entrepreneur\\\\u2019s interest in the profit of the last profit determination period before the sale or abandonment.\\\",\\\"start\\\":0,\\\"end\\\":319},\\\"modality\\\":{\\\"label\\\":\\\"obligation\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall\\\",\\\"start\\\":32,\\\"end\\\":37}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"The additions and deductions\\\",\\\"start\\\":0,\\\"end\\\":28,\\\"normalized\\\":\\\"additions and deductions\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"taken into account in the profit of the first profit determination period after the change, and in the profit of the last profit determination period before the sale or abandonment\\\",\\\"start\\\":38,\\\"end\\\":248,\\\"normalized\\\":\\\"take additions and deductions into account in the relevant profit\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"in the case of the sale or abandonment of the entire business, of a part-business or of a co-entrepreneur\\\\u2019s interest\\\",\\\"start\\\":253,\\\"end\\\":380,\\\"normalized\\\":\\\"in the case of the sale or abandonment of the entire business, of a part-business or of a co-entrepreneur's interest\\\"}],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"after the change\\\",\\\"start\\\":138,\\\"end\\\":155,\\\"normalized\\\":\\\"after the change\\\"},{\\\"id\\\":\\\"c02\\\",\\\"text\\\":\\\"before the sale or abandonment\\\",\\\"start\\\":293,\\\"end\\\":319,\\\"normalized\\\":\\\"before the sale or abandonment\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a01\\\",\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"actor\\\",\\\"reason\\\":\\\"reference_status=unresolved_coreference;independence_status=context_required\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791348451,\"model\":\"MiniMax-M3\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":4946,\"total_characters\":0,\"prompt_tokens\":4404,\"completion_tokens\":542,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":128}},\"input_sensitive\":false,\"output_sensitive\":false,\"input_sensitive_type\":0,\"output_sensitive_type\":0,\"output_sensitive_int\":0,\"service_tier\":\"standard\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}\n",
+  "usage": {
+    "prompt_tokens": 4404,
+    "completion_tokens": 542,
+    "total_tokens": 4946,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "MiniMax-M3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "minimax",
+    "sample_id": "estg_000060",
+    "request_id": "minimax:estg_000060",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000060",
+      "source_id": "estg_000060",
+      "source_text": "The additions and deductions shall be taken into account in the profit of the first profit determination period after the change, and in the case of the sale or abandonment of the entire business, of a part-business or of a co-entrepreneur’s interest in the profit of the last profit determination period before the sale or abandonment. 2.",
+      "clauses": [
+        {
+          "clause_id": "estg_000060_c01",
+          "clause_span": {
+            "text": "The additions and deductions shall be taken into account in the profit of the first profit determination period after the change, and in the case of the sale or abandonment of the entire business, of a part-business or of a co-entrepreneur’s interest in the profit of the last profit determination period before the sale or abandonment.",
+            "start": 0,
+            "end": 336
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 29,
+                "end": 34
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "The additions and deductions",
+              "start": 0,
+              "end": 28,
+              "normalized": "the additions and deductions",
+              "id": "a01"
+            }
+          ],
+          "actions": [],
+          "conditions": [
+            {
+              "text": "in the case of the sale or abandonment of the entire business, of a part-business or of a co-entrepreneur’s interest",
+              "start": 134,
+              "end": 250,
+              "normalized": "in the case of the sale or abandonment of the entire business, of a part-business or of a co-entrepreneur’s interest",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "after the change",
+              "start": 112,
+              "end": 128,
+              "normalized": "after the change",
+              "id": "c01"
+            },
+            {
+              "text": "before the sale or abandonment",
+              "start": 305,
+              "end": 335,
+              "normalized": "before the sale or abandonment",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "spans_adapted": 4,
+      "dropped_spans": [
+        "actions[0]_text_not_in_source"
+      ],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 5,
+      "reanchored_count": 5,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [
+        "clauses[0].actor_action_map[0]"
+      ],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000060_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The additions and deductions shall be taken into account in the profit of the first profit determination period after the change, and in the case of the sale or abandonment of the entire business, of a part-business or of a co-entrepreneur’s interest in the profit of the last profit determination period before the sale or abandonment.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 319,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 336
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 336
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000060_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 32,
+          "original_end": 37,
+          "candidate_occurrences": [
+            {
+              "start": 29,
+              "end": 34
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 29,
+            "end": 34
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000060_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "The additions and deductions",
+          "normalized": "the additions and deductions",
+          "original_start": 0,
+          "original_end": 28,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 28
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 0,
+            "end": 28
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000060_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "in the case of the sale or abandonment of the entire business, of a part-business or of a co-entrepreneur’s interest",
+          "normalized": "in the case of the sale or abandonment of the entire business, of a part-business or of a co-entrepreneur’s interest",
+          "original_start": 253,
+          "original_end": 380,
+          "candidate_occurrences": [
+            {
+              "start": 134,
+              "end": 250
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 134,
+            "end": 250
+          },
+          "distance": 249,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000060_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "after the change",
+          "normalized": "after the change",
+          "original_start": 138,
+          "original_end": 155,
+          "candidate_occurrences": [
+            {
+              "start": 112,
+              "end": 128
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 112,
+            "end": 128
+          },
+          "distance": 53,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000060_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "before the sale or abandonment",
+          "normalized": "before the sale or abandonment",
+          "original_start": 293,
+          "original_end": 319,
+          "candidate_occurrences": [
+            {
+              "start": 305,
+              "end": 335
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 305,
+            "end": 335
+          },
+          "distance": 28,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

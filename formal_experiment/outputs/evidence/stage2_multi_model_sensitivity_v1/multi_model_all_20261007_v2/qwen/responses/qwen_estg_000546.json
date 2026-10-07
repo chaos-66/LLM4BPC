@@ -1,0 +1,334 @@
+{
+  "request_id": "qwen:estg_000546",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000546\\\",\\\"source_id\\\":\\\"estg_000546\\\",\\\"source_text\\\":\\\"(4) An annual adjustment pursuant to subsection 2 or 3 shall not take place if the income from employment is assessed for income tax pursuant to Section 41.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000546_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"An annual adjustment pursuant to subsection 2 or 3 shall not take place if the income from employment is assessed for income tax pursuant to Section 41.\\\",\\\"start\\\":4,\\\"end\\\":155},\\\"modality\\\":{\\\"label\\\":\\\"prohibition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"shall not\\\",\\\"start\\\":57,\\\"end\\\":66},{\\\"text\\\":\\\"not\\\",\\\"start\\\":63,\\\"end\\\":66}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"take place\\\",\\\"start\\\":67,\\\"end\\\":77,\\\"normalized\\\":\\\"take place\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"if the income from employment is assessed for income tax pursuant to Section 41\\\",\\\"start\\\":78,\\\"end\\\":155,\\\"normalized\\\":\\\"if the income from employment is assessed for income tax pursuant to section 41\\\"}],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"pursuant to subsection 2 or 3\\\",\\\"start\\\":25,\\\"end\\\":54,\\\"normalized\\\":\\\"pursuant to subsection 2 or 3\\\"},{\\\"id\\\":\\\"c02\\\",\\\"text\\\":\\\"pursuant to Section 41\\\",\\\"start\\\":133,\\\"end\\\":155,\\\"normalized\\\":\\\"pursuant to section 41\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\"}}],\"created\":1791349592,\"id\":\"chatcmpl-f1b44df1-f6ca-9a86-b747-5233a94f9cb8\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":428,\"prompt_tokens\":4605,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4605},\"total_tokens\":5033}}",
+  "usage": {
+    "prompt_tokens": 4605,
+    "completion_tokens": 428,
+    "total_tokens": 5033
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000546",
+    "request_id": "qwen:estg_000546",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000546",
+      "source_id": "estg_000546",
+      "source_text": "(4) An annual adjustment pursuant to subsection 2 or 3 shall not take place if the income from employment is assessed for income tax pursuant to Section 41.",
+      "clauses": [
+        {
+          "clause_id": "estg_000546_c01",
+          "clause_span": {
+            "text": "An annual adjustment pursuant to subsection 2 or 3 shall not take place if the income from employment is assessed for income tax pursuant to Section 41.",
+            "start": 4,
+            "end": 156
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "shall not",
+                "start": 55,
+                "end": 64
+              },
+              {
+                "text": "not",
+                "start": 61,
+                "end": 64
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "take place",
+              "start": 65,
+              "end": 75,
+              "normalized": "take place",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "if the income from employment is assessed for income tax pursuant to Section 41",
+              "start": 76,
+              "end": 155,
+              "normalized": "if the income from employment is assessed for income tax pursuant to section 41",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "pursuant to subsection 2 or 3",
+              "start": 25,
+              "end": 54,
+              "normalized": "pursuant to subsection 2 or 3",
+              "id": "c01"
+            },
+            {
+              "text": "pursuant to Section 41",
+              "start": 133,
+              "end": 155,
+              "normalized": "pursuant to section 41",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 6,
+      "reanchored_count": 5,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000546_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "An annual adjustment pursuant to subsection 2 or 3 shall not take place if the income from employment is assessed for income tax pursuant to Section 41.",
+          "normalized": null,
+          "original_start": 4,
+          "original_end": 155,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 156
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 156
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000546_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall not",
+          "normalized": null,
+          "original_start": 57,
+          "original_end": 66,
+          "candidate_occurrences": [
+            {
+              "start": 55,
+              "end": 64
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 55,
+            "end": 64
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000546_c01",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "not",
+          "normalized": null,
+          "original_start": 63,
+          "original_end": 66,
+          "candidate_occurrences": [
+            {
+              "start": 61,
+              "end": 64
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 61,
+            "end": 64
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000546_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "take place",
+          "normalized": "take place",
+          "original_start": 67,
+          "original_end": 77,
+          "candidate_occurrences": [
+            {
+              "start": 65,
+              "end": 75
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 65,
+            "end": 75
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000546_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "if the income from employment is assessed for income tax pursuant to Section 41",
+          "normalized": "if the income from employment is assessed for income tax pursuant to section 41",
+          "original_start": 78,
+          "original_end": 155,
+          "candidate_occurrences": [
+            {
+              "start": 76,
+              "end": 155
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 76,
+            "end": 155
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000546_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "pursuant to subsection 2 or 3",
+          "normalized": "pursuant to subsection 2 or 3",
+          "original_start": 25,
+          "original_end": 54,
+          "candidate_occurrences": [
+            {
+              "start": 25,
+              "end": 54
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 25,
+            "end": 54
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000546_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "pursuant to Section 41",
+          "normalized": "pursuant to section 41",
+          "original_start": 133,
+          "original_end": 155,
+          "candidate_occurrences": [
+            {
+              "start": 133,
+              "end": 155
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 133,
+            "end": 155
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 2,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

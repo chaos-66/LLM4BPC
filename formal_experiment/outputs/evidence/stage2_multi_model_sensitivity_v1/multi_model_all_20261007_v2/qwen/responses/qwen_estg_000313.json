@@ -1,0 +1,273 @@
+{
+  "request_id": "qwen:estg_000313",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000313\\\",\\\"source_id\\\":\\\"estg_000313\\\",\\\"source_text\\\":\\\"If the building is transferred to another person, the remaining instalments of the production costs spread over ten to fifteen years may no longer be deducted from the calendar year following the transfer.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000313_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"If the building is transferred to another person, the remaining instalments of the production costs spread over ten to fifteen years may no longer be deducted from the calendar year following the transfer.\\\",\\\"start\\\":0,\\\"end\\\":204},\\\"modality\\\":{\\\"label\\\":\\\"prohibition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"may no longer\\\",\\\"start\\\":139,\\\"end\\\":152}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"deducted\\\",\\\"start\\\":156,\\\"end\\\":164,\\\"normalized\\\":\\\"deduct\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"If the building is transferred to another person\\\",\\\"start\\\":0,\\\"end\\\":48,\\\"normalized\\\":\\\"if the building is transferred to another person\\\"}],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"from the calendar year following the transfer\\\",\\\"start\\\":165,\\\"end\\\":210,\\\"normalized\\\":\\\"from the calendar year following the transfer\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"constraint\\\",\\\"reason\\\":\\\"semantic_scope_ambiguous_in_target\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791349381,\"id\":\"chatcmpl-c87a9b7c-9491-90a9-b832-6b3d05c8534f\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":376,\"prompt_tokens\":4606,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4606},\"total_tokens\":4982}}",
+  "usage": {
+    "prompt_tokens": 4606,
+    "completion_tokens": 376,
+    "total_tokens": 4982
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000313",
+    "request_id": "qwen:estg_000313",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000313",
+      "source_id": "estg_000313",
+      "source_text": "If the building is transferred to another person, the remaining instalments of the production costs spread over ten to fifteen years may no longer be deducted from the calendar year following the transfer.",
+      "clauses": [
+        {
+          "clause_id": "estg_000313_c01",
+          "clause_span": {
+            "text": "If the building is transferred to another person, the remaining instalments of the production costs spread over ten to fifteen years may no longer be deducted from the calendar year following the transfer.",
+            "start": 0,
+            "end": 205
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "may no longer",
+                "start": 133,
+                "end": 146
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "deducted",
+              "start": 150,
+              "end": 158,
+              "normalized": "deducted",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If the building is transferred to another person",
+              "start": 0,
+              "end": 48,
+              "normalized": "if the building is transferred to another person",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "from the calendar year following the transfer",
+              "start": 159,
+              "end": 204,
+              "normalized": "from the calendar year following the transfer",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "constraint",
+          "reason": "semantic_scope_ambiguous_in_target"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 4,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000313_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If the building is transferred to another person, the remaining instalments of the production costs spread over ten to fifteen years may no longer be deducted from the calendar year following the transfer.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 204,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 205
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 205
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000313_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may no longer",
+          "normalized": null,
+          "original_start": 139,
+          "original_end": 152,
+          "candidate_occurrences": [
+            {
+              "start": 133,
+              "end": 146
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 133,
+            "end": 146
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000313_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "deducted",
+          "normalized": "deducted",
+          "original_start": 156,
+          "original_end": 164,
+          "candidate_occurrences": [
+            {
+              "start": 150,
+              "end": 158
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 150,
+            "end": 158
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000313_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "If the building is transferred to another person",
+          "normalized": "if the building is transferred to another person",
+          "original_start": 0,
+          "original_end": 48,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 48
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 0,
+            "end": 48
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000313_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "from the calendar year following the transfer",
+          "normalized": "from the calendar year following the transfer",
+          "original_start": 165,
+          "original_end": 210,
+          "candidate_occurrences": [
+            {
+              "start": 159,
+              "end": 204
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 159,
+            "end": 204
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 4,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

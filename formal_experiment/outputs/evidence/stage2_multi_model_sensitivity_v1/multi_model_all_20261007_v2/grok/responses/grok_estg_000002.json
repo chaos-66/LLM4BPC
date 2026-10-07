@@ -1,0 +1,423 @@
+{
+  "request_id": "grok:estg_000002",
+  "raw_response_utf8": "{\"id\":\"8f647d17-cf4c-984c-9bf6-c73dc9c6e6d3\",\"object\":\"chat.completion\",\"created\":1791348277,\"model\":\"grok-4.3\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000002\\\",\\n  \\\"source_id\\\": \\\"estg_000002\\\",\\n  \\\"source_text\\\": \\\"Bookkeeping farmers and foresters and registered traders (Section 5) may, however, have a business year deviating from the calendar year; in this case, the profit shall be taken into account in determining the income for that calendar year in which the business year ends.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000002_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"Bookkeeping farmers and foresters and registered traders (Section 5) may, however, have a business year deviating from the calendar year\\\", \\\"start\\\": 0, \\\"end\\\": 130},\\n      \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may\\\", \\\"start\\\": 67, \\\"end\\\": 70}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"Bookkeeping farmers and foresters and registered traders (Section 5)\\\", \\\"start\\\": 0, \\\"end\\\": 64, \\\"normalized\\\": \\\"bookkeeping farmers and foresters and registered traders\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"have a business year deviating from the calendar year\\\", \\\"start\\\": 74, \\\"end\\\": 130, \\\"normalized\\\": \\\"have a business year deviating from the calendar year\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000002_c02\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"in this case, the profit shall be taken into account in determining the income for that calendar year in which the business year ends\\\", \\\"start\\\": 132, \\\"end\\\": 264},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 156, \\\"end\\\": 161}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a02\\\", \\\"text\\\": \\\"the profit\\\", \\\"start\\\": 146, \\\"end\\\": 156, \\\"normalized\\\": \\\"profit\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"be taken into account in determining the income for that calendar year in which the business year ends\\\", \\\"start\\\": 162, \\\"end\\\": 264, \\\"normalized\\\": \\\"be taken into account in determining the income for that calendar year in which the business year ends\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"in this case\\\", \\\"start\\\": 132, \\\"end\\\": 144, \\\"normalized\\\": \\\"in this case\\\"}],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a02\\\", \\\"action_id\\\": \\\"p02\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\",\"refusal\":null},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4376,\"completion_tokens\":708,\"total_tokens\":5084,\"prompt_tokens_details\":{\"text_tokens\":4376,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":128},\"completion_tokens_details\":{\"reasoning_tokens\":0,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":71056000},\"system_fingerprint\":\"fp_eb3c003fc66c14ed\",\"service_tier\":\"default\"}",
+  "usage": {
+    "prompt_tokens": 4376,
+    "completion_tokens": 708,
+    "total_tokens": 5084,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "grok-4.3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "grok",
+    "sample_id": "estg_000002",
+    "request_id": "grok:estg_000002",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000002",
+      "source_id": "estg_000002",
+      "source_text": "Bookkeeping farmers and foresters and registered traders (Section 5) may, however, have a business year deviating from the calendar year; in this case, the profit shall be taken into account in determining the income for that calendar year in which the business year ends.",
+      "clauses": [
+        {
+          "clause_id": "estg_000002_c01",
+          "clause_span": {
+            "text": "Bookkeeping farmers and foresters and registered traders (Section 5) may, however, have a business year deviating from the calendar year",
+            "start": 0,
+            "end": 136
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 69,
+                "end": 72
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "Bookkeeping farmers and foresters and registered traders (Section 5)",
+              "start": 0,
+              "end": 68,
+              "normalized": "bookkeeping farmers and foresters and registered traders (section 5)",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "have a business year deviating from the calendar year",
+              "start": 83,
+              "end": 136,
+              "normalized": "have a business year deviating from the calendar year",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000002_c02",
+          "clause_span": {
+            "text": "in this case, the profit shall be taken into account in determining the income for that calendar year in which the business year ends",
+            "start": 138,
+            "end": 271
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 163,
+                "end": 168
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the profit",
+              "start": 152,
+              "end": 162,
+              "normalized": "the profit",
+              "id": "a02"
+            }
+          ],
+          "actions": [
+            {
+              "text": "be taken into account in determining the income for that calendar year in which the business year ends",
+              "start": 169,
+              "end": 271,
+              "normalized": "be taken into account in determining the income for that calendar year in which the business year ends",
+              "id": "p02"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "in this case",
+              "start": 138,
+              "end": 150,
+              "normalized": "in this case",
+              "id": "d01"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a02",
+              "action_id": "p02"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 5,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 2,
+      "field_span_count": 7,
+      "reanchored_count": 9,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000002_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Bookkeeping farmers and foresters and registered traders (Section 5) may, however, have a business year deviating from the calendar year",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 130,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 136
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 136
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000002_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 67,
+          "original_end": 70,
+          "candidate_occurrences": [
+            {
+              "start": 69,
+              "end": 72
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 69,
+            "end": 72
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000002_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "Bookkeeping farmers and foresters and registered traders (Section 5)",
+          "normalized": "bookkeeping farmers and foresters and registered traders (section 5)",
+          "original_start": 0,
+          "original_end": 64,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 68
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 68
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000002_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "have a business year deviating from the calendar year",
+          "normalized": "have a business year deviating from the calendar year",
+          "original_start": 74,
+          "original_end": 130,
+          "candidate_occurrences": [
+            {
+              "start": 83,
+              "end": 136
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 83,
+            "end": 136
+          },
+          "distance": 15,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000002_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "in this case, the profit shall be taken into account in determining the income for that calendar year in which the business year ends",
+          "normalized": null,
+          "original_start": 132,
+          "original_end": 264,
+          "candidate_occurrences": [
+            {
+              "start": 138,
+              "end": 271
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 138,
+            "end": 271
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000002_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 156,
+          "original_end": 161,
+          "candidate_occurrences": [
+            {
+              "start": 163,
+              "end": 168
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 163,
+            "end": 168
+          },
+          "distance": 14,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actors[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000002_c02",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a02",
+          "text": "the profit",
+          "normalized": "the profit",
+          "original_start": 146,
+          "original_end": 156,
+          "candidate_occurrences": [
+            {
+              "start": 152,
+              "end": 162
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 152,
+            "end": 162
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000002_c02",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p02",
+          "text": "be taken into account in determining the income for that calendar year in which the business year ends",
+          "normalized": "be taken into account in determining the income for that calendar year in which the business year ends",
+          "original_start": 162,
+          "original_end": 264,
+          "candidate_occurrences": [
+            {
+              "start": 169,
+              "end": 271
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 169,
+            "end": 271
+          },
+          "distance": 14,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].conditions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000002_c02",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "in this case",
+          "normalized": "in this case",
+          "original_start": 132,
+          "original_end": 144,
+          "candidate_occurrences": [
+            {
+              "start": 138,
+              "end": 150
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 138,
+            "end": 150
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 9,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

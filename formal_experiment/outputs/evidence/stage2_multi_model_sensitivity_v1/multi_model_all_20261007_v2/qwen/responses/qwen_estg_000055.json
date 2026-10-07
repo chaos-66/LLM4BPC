@@ -1,0 +1,302 @@
+{
+  "request_id": "qwen:estg_000055",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000055\\\",\\\"source_id\\\":\\\"estg_000055\\\",\\\"source_text\\\":\\\"(6) Prepayments not subject to capitalization for advisory, suretyship, borrowed funds, guarantee, rental, trust, brokerage, distribution and administration costs must be allocated evenly over the period of the prepayment, unless they relate only to the current and the following year.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000055_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"Prepayments not subject to capitalization for advisory, suretyship, borrowed funds, guarantee, rental, trust, brokerage, distribution and administration costs must be allocated evenly over the period of the prepayment, unless they relate only to the current and the following year.\\\",\\\"start\\\":4,\\\"end\\\":283},\\\"modality\\\":{\\\"label\\\":\\\"obligation\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"must\\\",\\\"start\\\":179,\\\"end\\\":183}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"allocated\\\",\\\"start\\\":187,\\\"end\\\":196,\\\"normalized\\\":\\\"allocate\\\"}],\\\"conditions\\\":[],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"evenly\\\",\\\"start\\\":197,\\\"end\\\":203,\\\"normalized\\\":\\\"evenly\\\"},{\\\"id\\\":\\\"c02\\\",\\\"text\\\":\\\"over the period of the prepayment\\\",\\\"start\\\":204,\\\"end\\\":237,\\\"normalized\\\":\\\"over the period of the prepayment\\\"}],\\\"exceptions\\\":[{\\\"id\\\":\\\"e01\\\",\\\"text\\\":\\\"unless they relate only to the current and the following year\\\",\\\"start\\\":239,\\\"end\\\":300,\\\"normalized\\\":\\\"unless they relate only to the current and the following year\\\"}],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\"}}],\"created\":1791348472,\"id\":\"chatcmpl-c7bf4133-b3cd-9819-9937-b9a02be27bba\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":432,\"prompt_tokens\":4626,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4626},\"total_tokens\":5058}}",
+  "usage": {
+    "prompt_tokens": 4626,
+    "completion_tokens": 432,
+    "total_tokens": 5058
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000055",
+    "request_id": "qwen:estg_000055",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000055",
+      "source_id": "estg_000055",
+      "source_text": "(6) Prepayments not subject to capitalization for advisory, suretyship, borrowed funds, guarantee, rental, trust, brokerage, distribution and administration costs must be allocated evenly over the period of the prepayment, unless they relate only to the current and the following year.",
+      "clauses": [
+        {
+          "clause_id": "estg_000055_c01",
+          "clause_span": {
+            "text": "Prepayments not subject to capitalization for advisory, suretyship, borrowed funds, guarantee, rental, trust, brokerage, distribution and administration costs must be allocated evenly over the period of the prepayment, unless they relate only to the current and the following year.",
+            "start": 4,
+            "end": 285
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "must",
+                "start": 163,
+                "end": 167
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "allocated",
+              "start": 171,
+              "end": 180,
+              "normalized": "allocated",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "evenly",
+              "start": 181,
+              "end": 187,
+              "normalized": "evenly",
+              "id": "c01"
+            },
+            {
+              "text": "over the period of the prepayment",
+              "start": 188,
+              "end": 221,
+              "normalized": "over the period of the prepayment",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [
+            {
+              "text": "unless they relate only to the current and the following year",
+              "start": 223,
+              "end": 284,
+              "normalized": "unless they relate only to the current and the following year",
+              "id": "e01"
+            }
+          ],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 5,
+      "reanchored_count": 6,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000055_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Prepayments not subject to capitalization for advisory, suretyship, borrowed funds, guarantee, rental, trust, brokerage, distribution and administration costs must be allocated evenly over the period of the prepayment, unless they relate only to the current and the following year.",
+          "normalized": null,
+          "original_start": 4,
+          "original_end": 283,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 285
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 285
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000055_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "must",
+          "normalized": null,
+          "original_start": 179,
+          "original_end": 183,
+          "candidate_occurrences": [
+            {
+              "start": 163,
+              "end": 167
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 163,
+            "end": 167
+          },
+          "distance": 32,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000055_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "allocated",
+          "normalized": "allocated",
+          "original_start": 187,
+          "original_end": 196,
+          "candidate_occurrences": [
+            {
+              "start": 171,
+              "end": 180
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 171,
+            "end": 180
+          },
+          "distance": 32,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000055_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "evenly",
+          "normalized": "evenly",
+          "original_start": 197,
+          "original_end": 203,
+          "candidate_occurrences": [
+            {
+              "start": 181,
+              "end": 187
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 181,
+            "end": 187
+          },
+          "distance": 32,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000055_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "over the period of the prepayment",
+          "normalized": "over the period of the prepayment",
+          "original_start": 204,
+          "original_end": 237,
+          "candidate_occurrences": [
+            {
+              "start": 188,
+              "end": 221
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 188,
+            "end": 221
+          },
+          "distance": 32,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].exceptions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000055_c01",
+          "field": "exceptions",
+          "span_index": 0,
+          "span_id": "e01",
+          "text": "unless they relate only to the current and the following year",
+          "normalized": "unless they relate only to the current and the following year",
+          "original_start": 239,
+          "original_end": 300,
+          "candidate_occurrences": [
+            {
+              "start": 223,
+              "end": 284
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 223,
+            "end": 284
+          },
+          "distance": 32,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 6,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

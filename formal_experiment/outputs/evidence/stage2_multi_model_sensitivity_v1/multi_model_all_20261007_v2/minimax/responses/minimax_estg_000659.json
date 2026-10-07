@@ -1,0 +1,199 @@
+{
+  "request_id": "minimax:estg_000659",
+  "raw_response_utf8": "{\"id\":\"0715051d301aa2d0de9a59d0fe11b0ae\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000659\\\",\\\"source_id\\\":\\\"estg_000659\\\",\\\"source_text\\\":\\\"(1) Persons with limited tax liability shall be assessed for income tax on their income from which no withholding of tax on wages, on capital yield, or under Sections 99 to 101 is to be made.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000659_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"Persons with limited tax liability shall be assessed for income tax on their income from which no withholding of tax on wages, on capital yield, or under Sections 99 to 101 is to be made.\\\",\\\"start\\\":4,\\\"end\\\":182},\\\"modality\\\":{\\\"label\\\":null,\\\"evidence\\\":[{\\\"text\\\":\\\"shall\\\",\\\"start\\\":37,\\\"end\\\":42}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"Persons with limited tax liability\\\",\\\"start\\\":4,\\\"end\\\":36,\\\"normalized\\\":\\\"persons with limited tax liability\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"be assessed for income tax\\\",\\\"start\\\":43,\\\"end\\\":69,\\\"normalized\\\":\\\"be assessed for income tax\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"from which no withholding of tax on wages, on capital yield, or under Sections 99 to 101 is to be made\\\",\\\"start\\\":74,\\\"end\\\":178,\\\"normalized\\\":\\\"from their income from which no withholding of tax on wages, on capital yield, or under sections 99 to 101 is to be made\\\"}],\\\"constraints\\\":[],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a01\\\",\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"modality\\\",\\\"reason\\\":\\\"semantic_scope_ambiguous_in_target\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791349277,\"model\":\"MiniMax-M3\",\"object\":\"chat.completion\",\"usage\":{\"total_tokens\":4783,\"total_characters\":0,\"prompt_tokens\":4381,\"completion_tokens\":402,\"prompt_tokens_details\":{\"cached_tokens\":128}},\"input_sensitive\":false,\"output_sensitive\":false,\"input_sensitive_type\":0,\"output_sensitive_type\":0,\"output_sensitive_int\":0,\"service_tier\":\"standard\",\"base_resp\":{\"status_code\":0,\"status_msg\":\"\"}}\n",
+  "usage": {
+    "prompt_tokens": 4381,
+    "completion_tokens": 402,
+    "total_tokens": 4783
+  },
+  "returned_model": "MiniMax-M3",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "minimax",
+    "sample_id": "estg_000659",
+    "request_id": "minimax:estg_000659",
+    "request_status": "failed",
+    "failure_stage": "canonical_validation",
+    "record": {},
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 5,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000659_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Persons with limited tax liability shall be assessed for income tax on their income from which no withholding of tax on wages, on capital yield, or under Sections 99 to 101 is to be made.",
+          "normalized": null,
+          "original_start": 4,
+          "original_end": 182,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 191
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 191
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000659_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 37,
+          "original_end": 42,
+          "candidate_occurrences": [
+            {
+              "start": 39,
+              "end": 44
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 39,
+            "end": 44
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000659_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "Persons with limited tax liability",
+          "normalized": "persons with limited tax liability",
+          "original_start": 4,
+          "original_end": 36,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 38
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 38
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000659_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "be assessed for income tax",
+          "normalized": "be assessed for income tax",
+          "original_start": 43,
+          "original_end": 69,
+          "candidate_occurrences": [
+            {
+              "start": 45,
+              "end": 71
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 45,
+            "end": 71
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000659_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "from which no withholding of tax on wages, on capital yield, or under Sections 99 to 101 is to be made",
+          "normalized": "from which no withholding of tax on wages, on capital yield, or under sections 99 to 101 is to be made",
+          "original_start": 74,
+          "original_end": 178,
+          "candidate_occurrences": [
+            {
+              "start": 88,
+              "end": 190
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 88,
+            "end": 190
+          },
+          "distance": 26,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": false,
+      "errors": [
+        "clauses[0].modality.label must be one of ('obligation', 'prohibition', 'permission', 'definition'), got None"
+      ]
+    }
+  }
+}

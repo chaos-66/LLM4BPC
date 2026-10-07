@@ -1,0 +1,493 @@
+{
+  "request_id": "qwen:estg_000786",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000786\\\",\\\"source_id\\\":\\\"estg_000786\\\",\\\"source_text\\\":\\\"Administrative expenses that are unrelated to the purpose of the bank and do not benefit any board member, managing director, or supervisory board member through disproportionately high remuneration. d) In the event of the dissolution of the bank, the owners or shareholders may not recover those capital contributions that are needed to cover losses from obligations arising from guarantees and other liabilities existing at the time of dissolution; the remaining assets of the bank may only be used within the scope of the approved business purpose. 4.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000786_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"In the event of the dissolution of the bank, the owners or shareholders may not recover those capital contributions that are needed to cover losses from obligations arising from guarantees and other liabilities existing at the time of dissolution\\\",\\\"start\\\":213,\\\"end\\\":462},\\\"modality\\\":{\\\"label\\\":\\\"prohibition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"may not\\\",\\\"start\\\":289,\\\"end\\\":296},{\\\"text\\\":\\\"not\\\",\\\"start\\\":293,\\\"end\\\":296}]},\\\"actors\\\":[{\\\"id\\\":\\\"a01\\\",\\\"text\\\":\\\"the owners or shareholders\\\",\\\"start\\\":258,\\\"end\\\":284,\\\"normalized\\\":\\\"owners or shareholders\\\"}],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"recover those capital contributions\\\",\\\"start\\\":297,\\\"end\\\":332,\\\"normalized\\\":\\\"recover those capital contributions\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"In the event of the dissolution of the bank\\\",\\\"start\\\":213,\\\"end\\\":256,\\\"normalized\\\":\\\"in the event of the dissolution of the bank\\\"}],\\\"constraints\\\":[],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":\\\"a01\\\",\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]},{\\\"clause_id\\\":\\\"estg_000786_c02\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"the remaining assets of the bank may only be used within the scope of the approved business purpose\\\",\\\"start\\\":464,\\\"end\\\":563},\\\"modality\\\":{\\\"label\\\":\\\"permission\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"may\\\",\\\"start\\\":497,\\\"end\\\":500}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p02\\\",\\\"text\\\":\\\"used\\\",\\\"start\\\":509,\\\"end\\\":513,\\\"normalized\\\":\\\"use\\\"}],\\\"conditions\\\":[],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"only\\\",\\\"start\\\":501,\\\"end\\\":505,\\\"normalized\\\":\\\"only\\\"},{\\\"id\\\":\\\"c02\\\",\\\"text\\\":\\\"within the scope of the approved business purpose\\\",\\\"start\\\":514,\\\"end\\\":563,\\\"normalized\\\":\\\"within the scope of the approved business purpose\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p02\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[{\\\"field\\\":\\\"actor\\\",\\\"reason\\\":\\\"semantic_scope_ambiguous_in_target\\\"}]}\",\"role\":\"assistant\"}}],\"created\":1791349768,\"id\":\"chatcmpl-384b459a-c6ae-97ff-af22-9d1587f3b3c2\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":673,\"prompt_tokens\":4669,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4669},\"total_tokens\":5342}}",
+  "usage": {
+    "prompt_tokens": 4669,
+    "completion_tokens": 673,
+    "total_tokens": 5342
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000786",
+    "request_id": "qwen:estg_000786",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000786",
+      "source_id": "estg_000786",
+      "source_text": "Administrative expenses that are unrelated to the purpose of the bank and do not benefit any board member, managing director, or supervisory board member through disproportionately high remuneration. d) In the event of the dissolution of the bank, the owners or shareholders may not recover those capital contributions that are needed to cover losses from obligations arising from guarantees and other liabilities existing at the time of dissolution; the remaining assets of the bank may only be used within the scope of the approved business purpose. 4.",
+      "clauses": [
+        {
+          "clause_id": "estg_000786_c01",
+          "clause_span": {
+            "text": "In the event of the dissolution of the bank, the owners or shareholders may not recover those capital contributions that are needed to cover losses from obligations arising from guarantees and other liabilities existing at the time of dissolution",
+            "start": 203,
+            "end": 449
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "may not",
+                "start": 275,
+                "end": 282
+              },
+              {
+                "text": "not",
+                "start": 279,
+                "end": 282
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the owners or shareholders",
+              "start": 248,
+              "end": 274,
+              "normalized": "the owners or shareholders",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "recover those capital contributions",
+              "start": 283,
+              "end": 318,
+              "normalized": "recover those capital contributions",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "In the event of the dissolution of the bank",
+              "start": 203,
+              "end": 246,
+              "normalized": "in the event of the dissolution of the bank",
+              "id": "d01"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000786_c02",
+          "clause_span": {
+            "text": "the remaining assets of the bank may only be used within the scope of the approved business purpose",
+            "start": 451,
+            "end": 550
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 484,
+                "end": 487
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "used",
+              "start": 496,
+              "end": 500,
+              "normalized": "used",
+              "id": "p02"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "only",
+              "start": 488,
+              "end": 492,
+              "normalized": "only",
+              "id": "c01"
+            },
+            {
+              "text": "within the scope of the approved business purpose",
+              "start": 501,
+              "end": 550,
+              "normalized": "within the scope of the approved business purpose",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p02"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "semantic_scope_ambiguous_in_target"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 6,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 2,
+      "field_span_count": 9,
+      "reanchored_count": 11,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000786_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "In the event of the dissolution of the bank, the owners or shareholders may not recover those capital contributions that are needed to cover losses from obligations arising from guarantees and other liabilities existing at the time of dissolution",
+          "normalized": null,
+          "original_start": 213,
+          "original_end": 462,
+          "candidate_occurrences": [
+            {
+              "start": 203,
+              "end": 449
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 203,
+            "end": 449
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000786_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may not",
+          "normalized": null,
+          "original_start": 289,
+          "original_end": 296,
+          "candidate_occurrences": [
+            {
+              "start": 275,
+              "end": 282
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 275,
+            "end": 282
+          },
+          "distance": 28,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000786_c01",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "not",
+          "normalized": null,
+          "original_start": 293,
+          "original_end": 296,
+          "candidate_occurrences": [
+            {
+              "start": 279,
+              "end": 282
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 279,
+            "end": 282
+          },
+          "distance": 28,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000786_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "the owners or shareholders",
+          "normalized": "the owners or shareholders",
+          "original_start": 258,
+          "original_end": 284,
+          "candidate_occurrences": [
+            {
+              "start": 248,
+              "end": 274
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 248,
+            "end": 274
+          },
+          "distance": 20,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000786_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "recover those capital contributions",
+          "normalized": "recover those capital contributions",
+          "original_start": 297,
+          "original_end": 332,
+          "candidate_occurrences": [
+            {
+              "start": 283,
+              "end": 318
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 283,
+            "end": 318
+          },
+          "distance": 28,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000786_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "In the event of the dissolution of the bank",
+          "normalized": "in the event of the dissolution of the bank",
+          "original_start": 213,
+          "original_end": 256,
+          "candidate_occurrences": [
+            {
+              "start": 203,
+              "end": 246
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 203,
+            "end": 246
+          },
+          "distance": 20,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000786_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "the remaining assets of the bank may only be used within the scope of the approved business purpose",
+          "normalized": null,
+          "original_start": 464,
+          "original_end": 563,
+          "candidate_occurrences": [
+            {
+              "start": 451,
+              "end": 550
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 451,
+            "end": 550
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000786_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 497,
+          "original_end": 500,
+          "candidate_occurrences": [
+            {
+              "start": 484,
+              "end": 487
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 484,
+            "end": 487
+          },
+          "distance": 26,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000786_c02",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p02",
+          "text": "used",
+          "normalized": "used",
+          "original_start": 509,
+          "original_end": 513,
+          "candidate_occurrences": [
+            {
+              "start": 496,
+              "end": 500
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 496,
+            "end": 500
+          },
+          "distance": 26,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].constraints[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000786_c02",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "only",
+          "normalized": "only",
+          "original_start": 501,
+          "original_end": 505,
+          "candidate_occurrences": [
+            {
+              "start": 488,
+              "end": 492
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 488,
+            "end": 492
+          },
+          "distance": 26,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].constraints[1]",
+          "clause_index": 1,
+          "clause_id": "estg_000786_c02",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "within the scope of the approved business purpose",
+          "normalized": "within the scope of the approved business purpose",
+          "original_start": 514,
+          "original_end": 563,
+          "candidate_occurrences": [
+            {
+              "start": 501,
+              "end": 550
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 501,
+            "end": 550
+          },
+          "distance": 26,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 11,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

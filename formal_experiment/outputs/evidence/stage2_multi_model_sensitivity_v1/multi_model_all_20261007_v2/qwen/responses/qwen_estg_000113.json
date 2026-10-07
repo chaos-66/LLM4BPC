@@ -1,0 +1,268 @@
+{
+  "request_id": "qwen:estg_000113",
+  "raw_response_utf8": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\\"schema_version\\\":\\\"1.0.0\\\",\\\"sample_id\\\":\\\"estg_000113\\\",\\\"source_id\\\":\\\"estg_000113\\\",\\\"source_text\\\":\\\"(6) To the extent that an investment reserve (a tax-free amount) is to be used in accordance with its designated purpose, an investment allowance may not be claimed as a profit reduction. 152.\\\",\\\"clauses\\\":[{\\\"clause_id\\\":\\\"estg_000113_c01\\\",\\\"clause_span\\\":{\\\"text\\\":\\\"To the extent that an investment reserve (a tax-free amount) is to be used in accordance with its designated purpose, an investment allowance may not be claimed as a profit reduction.\\\",\\\"start\\\":4,\\\"end\\\":190},\\\"modality\\\":{\\\"label\\\":\\\"prohibition\\\",\\\"evidence\\\":[{\\\"text\\\":\\\"may not\\\",\\\"start\\\":152,\\\"end\\\":159}]},\\\"actors\\\":[],\\\"actions\\\":[{\\\"id\\\":\\\"p01\\\",\\\"text\\\":\\\"claimed as a profit reduction\\\",\\\"start\\\":163,\\\"end\\\":192,\\\"normalized\\\":\\\"claim as a profit reduction\\\"}],\\\"conditions\\\":[{\\\"id\\\":\\\"d01\\\",\\\"text\\\":\\\"To the extent that an investment reserve (a tax-free amount) is to be used in accordance with its designated purpose\\\",\\\"start\\\":4,\\\"end\\\":120,\\\"normalized\\\":\\\"to the extent that an investment reserve (a tax-free amount) is to be used in accordance with its designated purpose\\\"}],\\\"constraints\\\":[{\\\"id\\\":\\\"c01\\\",\\\"text\\\":\\\"in accordance with its designated purpose\\\",\\\"start\\\":79,\\\"end\\\":120,\\\"normalized\\\":\\\"in accordance with its designated purpose\\\"}],\\\"exceptions\\\":[],\\\"actor_action_map\\\":[{\\\"actor_id\\\":null,\\\"action_id\\\":\\\"p01\\\"}],\\\"order_relations\\\":[]}],\\\"method\\\":{\\\"name\\\":\\\"direct_llm\\\",\\\"schema_source\\\":\\\"stage2_prediction.schema.json@1.0.0\\\"},\\\"validation\\\":{\\\"schema_valid\\\":true,\\\"cross_field_valid\\\":true,\\\"errors\\\":[]},\\\"unsupported_or_ambiguous\\\":[]}\",\"role\":\"assistant\"}}],\"created\":1791348842,\"id\":\"chatcmpl-97e249cc-a132-97ed-a51c-9ca1b99c716b\",\"model\":\"qwen3.8-max-0902\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":403,\"prompt_tokens\":4614,\"prompt_tokens_details\":{\"cached_tokens\":1024,\"text_tokens\":4614},\"total_tokens\":5017}}",
+  "usage": {
+    "prompt_tokens": 4614,
+    "completion_tokens": 403,
+    "total_tokens": 5017
+  },
+  "returned_model": "qwen3.8-max-0902",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": null
+  },
+  "error": null,
+  "prediction": {
+    "provider": "qwen",
+    "sample_id": "estg_000113",
+    "request_id": "qwen:estg_000113",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000113",
+      "source_id": "estg_000113",
+      "source_text": "(6) To the extent that an investment reserve (a tax-free amount) is to be used in accordance with its designated purpose, an investment allowance may not be claimed as a profit reduction. 152.",
+      "clauses": [
+        {
+          "clause_id": "estg_000113_c01",
+          "clause_span": {
+            "text": "To the extent that an investment reserve (a tax-free amount) is to be used in accordance with its designated purpose, an investment allowance may not be claimed as a profit reduction.",
+            "start": 4,
+            "end": 187
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "may not",
+                "start": 146,
+                "end": 153
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "claimed as a profit reduction",
+              "start": 157,
+              "end": 186,
+              "normalized": "claimed as a profit reduction",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "To the extent that an investment reserve (a tax-free amount) is to be used in accordance with its designated purpose",
+              "start": 4,
+              "end": 120,
+              "normalized": "to the extent that an investment reserve (a tax-free amount) is to be used in accordance with its designated purpose",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "in accordance with its designated purpose",
+              "start": 79,
+              "end": 120,
+              "normalized": "in accordance with its designated purpose",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 3,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000113_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "To the extent that an investment reserve (a tax-free amount) is to be used in accordance with its designated purpose, an investment allowance may not be claimed as a profit reduction.",
+          "normalized": null,
+          "original_start": 4,
+          "original_end": 190,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 187
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 187
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000113_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may not",
+          "normalized": null,
+          "original_start": 152,
+          "original_end": 159,
+          "candidate_occurrences": [
+            {
+              "start": 146,
+              "end": 153
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 146,
+            "end": 153
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000113_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "claimed as a profit reduction",
+          "normalized": "claimed as a profit reduction",
+          "original_start": 163,
+          "original_end": 192,
+          "candidate_occurrences": [
+            {
+              "start": 157,
+              "end": 186
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 157,
+            "end": 186
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000113_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "To the extent that an investment reserve (a tax-free amount) is to be used in accordance with its designated purpose",
+          "normalized": "to the extent that an investment reserve (a tax-free amount) is to be used in accordance with its designated purpose",
+          "original_start": 4,
+          "original_end": 120,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 120
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 4,
+            "end": 120
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000113_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "in accordance with its designated purpose",
+          "normalized": "in accordance with its designated purpose",
+          "original_start": 79,
+          "original_end": 120,
+          "candidate_occurrences": [
+            {
+              "start": 79,
+              "end": 120
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 79,
+            "end": 120
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 2,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 3,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}
