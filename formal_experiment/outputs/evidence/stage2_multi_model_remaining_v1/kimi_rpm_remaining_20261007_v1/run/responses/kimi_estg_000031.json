@@ -1,0 +1,161 @@
+{
+  "request_id": "kimi:estg_000031",
+  "raw_response_utf8": "{\"id\":\"chatcmpl-6ac5e182c578797db90806fa\",\"object\":\"chat.completion\",\"created\":1791353218,\"model\":\"kimi-k2.6\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000031\\\",\\n  \\\"source_id\\\": \\\"estg_000031\\\",\\n  \\\"source_text\\\": \\\"(1) Profit is the difference, to be determined by double-entry bookkeeping, between the business assets at the end of the financial year and the business assets at the end of the preceding financial year.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000031_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"(1) Profit is the difference, to be determined by double-entry bookkeeping, between the business assets at the end of the financial year and the business assets at the end of the preceding financial year.\\\", \\\"start\\\": 0, \\\"end\\\": 152},\\n      \\\"modality\\\": {\\\"label\\\": \\\"definition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"is\\\", \\\"start\\\": 8, \\\"end\\\": 10}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"reasoning_content\":\"\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4216,\"completion_tokens\":308,\"total_tokens\":4524,\"cached_tokens\":1024,\"completion_tokens_details\":{\"reasoning_tokens\":1},\"prompt_tokens_details\":{\"cached_tokens\":1024}}}",
+  "usage": {
+    "prompt_tokens": 4216,
+    "completion_tokens": 308,
+    "total_tokens": 4524,
+    "reasoning_tokens": 1
+  },
+  "returned_model": "kimi-k2.6",
+  "nonthinking_check": {
+    "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 1,
+    "counter_exception_user_authorized": true,
+    "one_token_meaning_verified": false
+  },
+  "error": null,
+  "prediction": {
+    "provider": "kimi",
+    "sample_id": "estg_000031",
+    "request_id": "kimi:estg_000031",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000031",
+      "source_id": "estg_000031",
+      "source_text": "(1) Profit is the difference, to be determined by double-entry bookkeeping, between the business assets at the end of the financial year and the business assets at the end of the preceding financial year.",
+      "clauses": [
+        {
+          "clause_id": "estg_000031_c01",
+          "clause_span": {
+            "text": "(1) Profit is the difference, to be determined by double-entry bookkeeping, between the business assets at the end of the financial year and the business assets at the end of the preceding financial year.",
+            "start": 0,
+            "end": 204
+          },
+          "modality": {
+            "label": "definition",
+            "evidence": [
+              {
+                "text": "is",
+                "start": 11,
+                "end": 13
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "unchanged",
+      "spans_adapted": 0,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 1,
+      "reanchored_count": 2,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000031_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "(1) Profit is the difference, to be determined by double-entry bookkeeping, between the business assets at the end of the financial year and the business assets at the end of the preceding financial year.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 152,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 204
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 204
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000031_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "is",
+          "normalized": null,
+          "original_start": 8,
+          "original_end": 10,
+          "candidate_occurrences": [
+            {
+              "start": 11,
+              "end": 13
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 11,
+            "end": 13
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 2,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

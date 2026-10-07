@@ -1,0 +1,718 @@
+{
+  "request_id": "kimi:estg_000306",
+  "raw_response_utf8": "{\"id\":\"chatcmpl-6ac5e9c4f86868c775a45b47\",\"object\":\"chat.completion\",\"created\":1791355333,\"model\":\"kimi-k2.6\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000306\\\",\\n  \\\"source_id\\\": \\\"estg_000306\\\",\\n  \\\"source_text\\\": \\\"For buildings serving residential purposes, the following applies with respect to repair and maintenance expenses: \\\\n— Repair and maintenance expenses that are incurred using correspondingly earmarked tax-free subsidies from public funds are, to that extent, excluded from the determination of income. \\\\n— If, after offsetting the losses determined without taking into account the repair and maintenance expenses within the meaning of Section 5(3), there remain tax-free amounts under Section 5, then the repair and maintenance expenses not covered by tax-free subsidies shall be offset against these tax-free amounts. \\\\n— Those repair and maintenance expenses that were not covered by tax-free subsidies and were not required to be offset against tax-free amounts shall be deducted in equal instalments spread over ten years.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000306_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"Repair and maintenance expenses that are incurred using correspondingly earmarked tax-free subsidies from public funds are, to that extent, excluded from the determination of income.\\\", \\\"start\\\": 107, \\\"end\\\": 247},\\n      \\\"modality\\\": {\\\"label\\\": \\\"prohibition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"excluded\\\", \\\"start\\\": 219, \\\"end\\\": 227}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"Repair and maintenance expenses\\\", \\\"start\\\": 107, \\\"end\\\": 138, \\\"normalized\\\": \\\"repair and maintenance expenses\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"incurred using correspondingly earmarked tax-free subsidies from public funds\\\", \\\"start\\\": 149, \\\"end\\\": 226, \\\"normalized\\\": \\\"incur using correspondingly earmarked tax-free subsidies from public funds\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"to that extent\\\", \\\"start\\\": 229, \\\"end\\\": 243, \\\"normalized\\\": \\\"to that extent\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000306_c02\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"If, after offsetting the losses determined without taking into account the repair and maintenance expenses within the meaning of Section 5(3), there remain tax-free amounts under Section 5, then the repair and maintenance expenses not covered by tax-free subsidies shall be offset against these tax-free amounts.\\\", \\\"start\\\": 250, \\\"end\\\": 456},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 441, \\\"end\\\": 446}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a02\\\", \\\"text\\\": \\\"the repair and maintenance expenses not covered by tax-free subsidies\\\", \\\"start\\\": 392, \\\"end\\\": 461, \\\"normalized\\\": \\\"repair and maintenance expenses not covered by tax-free subsidies\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"offset against these tax-free amounts\\\", \\\"start\\\": 447, \\\"end\\\": 484, \\\"normalized\\\": \\\"offset against these tax-free amounts\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"If, after offsetting the losses determined without taking into account the repair and maintenance expenses within the meaning of Section 5(3), there remain tax-free amounts under Section 5\\\", \\\"start\\\": 250, \\\"end\\\": 387, \\\"normalized\\\": \\\"if after offsetting the losses determined without taking into account the repair and maintenance expenses within the meaning of section 5(3) there remain tax-free amounts under section 5\\\"}],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"within the meaning of Section 5(3)\\\", \\\"start\\\": 337, \\\"end\\\": 371, \\\"normalized\\\": \\\"within the meaning of section 5(3)\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a02\\\", \\\"action_id\\\": \\\"p02\\\"}],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000306_c03\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"Those repair and maintenance expenses that were not covered by tax-free subsidies and were not required to be offset against tax-free amounts shall be deducted in equal instalments spread over ten years.\\\", \\\"start\\\": 459, \\\"end\\\": 600},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 558, \\\"end\\\": 563}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a03\\\", \\\"text\\\": \\\"Those repair and maintenance expenses that were not covered by tax-free subsidies and were not required to be offset against tax-free amounts\\\", \\\"start\\\": 459, \\\"end\\\": 557, \\\"normalized\\\": \\\"those repair and maintenance expenses that were not covered by tax-free subsidies and were not required to be offset against tax-free amounts\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p03\\\", \\\"text\\\": \\\"deducted\\\", \\\"start\\\": 567, \\\"end\\\": 575, \\\"normalized\\\": \\\"deduct\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c03\\\", \\\"text\\\": \\\"in equal instalments\\\", \\\"start\\\": 576, \\\"end\\\": 596, \\\"normalized\\\": \\\"in equal instalments\\\"},\\n        {\\\"id\\\": \\\"c04\\\", \\\"text\\\": \\\"spread over ten years\\\", \\\"start\\\": 597, \\\"end\\\": 618, \\\"normalized\\\": \\\"spread over ten years\\\"}\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a03\\\", \\\"action_id\\\": \\\"p03\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"reasoning_content\":\"\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4324,\"completion_tokens\":1338,\"total_tokens\":5662,\"cached_tokens\":1024,\"completion_tokens_details\":{\"reasoning_tokens\":1},\"prompt_tokens_details\":{\"cached_tokens\":1024}}}",
+  "usage": {
+    "prompt_tokens": 4324,
+    "completion_tokens": 1338,
+    "total_tokens": 5662,
+    "reasoning_tokens": 1
+  },
+  "returned_model": "kimi-k2.6",
+  "nonthinking_check": {
+    "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 1,
+    "counter_exception_user_authorized": true,
+    "one_token_meaning_verified": false
+  },
+  "error": null,
+  "prediction": {
+    "provider": "kimi",
+    "sample_id": "estg_000306",
+    "request_id": "kimi:estg_000306",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000306",
+      "source_id": "estg_000306",
+      "source_text": "For buildings serving residential purposes, the following applies with respect to repair and maintenance expenses: \n— Repair and maintenance expenses that are incurred using correspondingly earmarked tax-free subsidies from public funds are, to that extent, excluded from the determination of income. \n— If, after offsetting the losses determined without taking into account the repair and maintenance expenses within the meaning of Section 5(3), there remain tax-free amounts under Section 5, then the repair and maintenance expenses not covered by tax-free subsidies shall be offset against these tax-free amounts. \n— Those repair and maintenance expenses that were not covered by tax-free subsidies and were not required to be offset against tax-free amounts shall be deducted in equal instalments spread over ten years.",
+      "clauses": [
+        {
+          "clause_id": "estg_000306_c01",
+          "clause_span": {
+            "text": "Repair and maintenance expenses that are incurred using correspondingly earmarked tax-free subsidies from public funds are, to that extent, excluded from the determination of income.",
+            "start": 118,
+            "end": 300
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "excluded",
+                "start": 258,
+                "end": 266
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "Repair and maintenance expenses",
+              "start": 118,
+              "end": 149,
+              "normalized": "repair and maintenance expenses",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "incurred using correspondingly earmarked tax-free subsidies from public funds",
+              "start": 159,
+              "end": 236,
+              "normalized": "incurred using correspondingly earmarked tax-free subsidies from public funds",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "to that extent",
+              "start": 242,
+              "end": 256,
+              "normalized": "to that extent",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000306_c02",
+          "clause_span": {
+            "text": "If, after offsetting the losses determined without taking into account the repair and maintenance expenses within the meaning of Section 5(3), there remain tax-free amounts under Section 5, then the repair and maintenance expenses not covered by tax-free subsidies shall be offset against these tax-free amounts.",
+            "start": 304,
+            "end": 616
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 569,
+                "end": 574
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the repair and maintenance expenses not covered by tax-free subsidies",
+              "start": 499,
+              "end": 568,
+              "normalized": "the repair and maintenance expenses not covered by tax-free subsidies",
+              "id": "a02"
+            }
+          ],
+          "actions": [
+            {
+              "text": "offset against these tax-free amounts",
+              "start": 578,
+              "end": 615,
+              "normalized": "offset against these tax-free amounts",
+              "id": "p02"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If, after offsetting the losses determined without taking into account the repair and maintenance expenses within the meaning of Section 5(3), there remain tax-free amounts under Section 5",
+              "start": 304,
+              "end": 492,
+              "normalized": "if, after offsetting the losses determined without taking into account the repair and maintenance expenses within the meaning of section 5(3), there remain tax-free amounts under section 5",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "within the meaning of Section 5(3)",
+              "start": 411,
+              "end": 445,
+              "normalized": "within the meaning of section 5(3)",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a02",
+              "action_id": "p02"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000306_c03",
+          "clause_span": {
+            "text": "Those repair and maintenance expenses that were not covered by tax-free subsidies and were not required to be offset against tax-free amounts shall be deducted in equal instalments spread over ten years.",
+            "start": 620,
+            "end": 823
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 762,
+                "end": 767
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "Those repair and maintenance expenses that were not covered by tax-free subsidies and were not required to be offset against tax-free amounts",
+              "start": 620,
+              "end": 761,
+              "normalized": "those repair and maintenance expenses that were not covered by tax-free subsidies and were not required to be offset against tax-free amounts",
+              "id": "a03"
+            }
+          ],
+          "actions": [
+            {
+              "text": "deducted",
+              "start": 771,
+              "end": 779,
+              "normalized": "deducted",
+              "id": "p03"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "in equal instalments",
+              "start": 780,
+              "end": 800,
+              "normalized": "in equal instalments",
+              "id": "c03"
+            },
+            {
+              "text": "spread over ten years",
+              "start": 801,
+              "end": 822,
+              "normalized": "spread over ten years",
+              "id": "c04"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a03",
+              "action_id": "p03"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 11,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 3,
+      "field_span_count": 14,
+      "reanchored_count": 17,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000306_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Repair and maintenance expenses that are incurred using correspondingly earmarked tax-free subsidies from public funds are, to that extent, excluded from the determination of income.",
+          "normalized": null,
+          "original_start": 107,
+          "original_end": 247,
+          "candidate_occurrences": [
+            {
+              "start": 118,
+              "end": 300
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 118,
+            "end": 300
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000306_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "excluded",
+          "normalized": null,
+          "original_start": 219,
+          "original_end": 227,
+          "candidate_occurrences": [
+            {
+              "start": 258,
+              "end": 266
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 258,
+            "end": 266
+          },
+          "distance": 78,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000306_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "Repair and maintenance expenses",
+          "normalized": "repair and maintenance expenses",
+          "original_start": 107,
+          "original_end": 138,
+          "candidate_occurrences": [
+            {
+              "start": 118,
+              "end": 149
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 118,
+            "end": 149
+          },
+          "distance": 22,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000306_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "incurred using correspondingly earmarked tax-free subsidies from public funds",
+          "normalized": "incurred using correspondingly earmarked tax-free subsidies from public funds",
+          "original_start": 149,
+          "original_end": 226,
+          "candidate_occurrences": [
+            {
+              "start": 159,
+              "end": 236
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 159,
+            "end": 236
+          },
+          "distance": 20,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000306_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "to that extent",
+          "normalized": "to that extent",
+          "original_start": 229,
+          "original_end": 243,
+          "candidate_occurrences": [
+            {
+              "start": 242,
+              "end": 256
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 242,
+            "end": 256
+          },
+          "distance": 26,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000306_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If, after offsetting the losses determined without taking into account the repair and maintenance expenses within the meaning of Section 5(3), there remain tax-free amounts under Section 5, then the repair and maintenance expenses not covered by tax-free subsidies shall be offset against these tax-free amounts.",
+          "normalized": null,
+          "original_start": 250,
+          "original_end": 456,
+          "candidate_occurrences": [
+            {
+              "start": 304,
+              "end": 616
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 304,
+            "end": 616
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000306_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 441,
+          "original_end": 446,
+          "candidate_occurrences": [
+            {
+              "start": 569,
+              "end": 574
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 569,
+            "end": 574
+          },
+          "distance": 256,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actors[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000306_c02",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a02",
+          "text": "the repair and maintenance expenses not covered by tax-free subsidies",
+          "normalized": "the repair and maintenance expenses not covered by tax-free subsidies",
+          "original_start": 392,
+          "original_end": 461,
+          "candidate_occurrences": [
+            {
+              "start": 499,
+              "end": 568
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 499,
+            "end": 568
+          },
+          "distance": 214,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000306_c02",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p02",
+          "text": "offset against these tax-free amounts",
+          "normalized": "offset against these tax-free amounts",
+          "original_start": 447,
+          "original_end": 484,
+          "candidate_occurrences": [
+            {
+              "start": 578,
+              "end": 615
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 578,
+            "end": 615
+          },
+          "distance": 262,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].conditions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000306_c02",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "If, after offsetting the losses determined without taking into account the repair and maintenance expenses within the meaning of Section 5(3), there remain tax-free amounts under Section 5",
+          "normalized": "if, after offsetting the losses determined without taking into account the repair and maintenance expenses within the meaning of section 5(3), there remain tax-free amounts under section 5",
+          "original_start": 250,
+          "original_end": 387,
+          "candidate_occurrences": [
+            {
+              "start": 304,
+              "end": 492
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 304,
+            "end": 492
+          },
+          "distance": 159,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].constraints[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000306_c02",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c02",
+          "text": "within the meaning of Section 5(3)",
+          "normalized": "within the meaning of section 5(3)",
+          "original_start": 337,
+          "original_end": 371,
+          "candidate_occurrences": [
+            {
+              "start": 411,
+              "end": 445
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 411,
+            "end": 445
+          },
+          "distance": 148,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].clause_span",
+          "clause_index": 2,
+          "clause_id": "estg_000306_c03",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Those repair and maintenance expenses that were not covered by tax-free subsidies and were not required to be offset against tax-free amounts shall be deducted in equal instalments spread over ten years.",
+          "normalized": null,
+          "original_start": 459,
+          "original_end": 600,
+          "candidate_occurrences": [
+            {
+              "start": 620,
+              "end": 823
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 620,
+            "end": 823
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].modality.evidence[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000306_c03",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 558,
+          "original_end": 563,
+          "candidate_occurrences": [
+            {
+              "start": 762,
+              "end": 767
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 762,
+            "end": 767
+          },
+          "distance": 408,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].actors[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000306_c03",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a03",
+          "text": "Those repair and maintenance expenses that were not covered by tax-free subsidies and were not required to be offset against tax-free amounts",
+          "normalized": "those repair and maintenance expenses that were not covered by tax-free subsidies and were not required to be offset against tax-free amounts",
+          "original_start": 459,
+          "original_end": 557,
+          "candidate_occurrences": [
+            {
+              "start": 620,
+              "end": 761
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 620,
+            "end": 761
+          },
+          "distance": 365,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].actions[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000306_c03",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p03",
+          "text": "deducted",
+          "normalized": "deducted",
+          "original_start": 567,
+          "original_end": 575,
+          "candidate_occurrences": [
+            {
+              "start": 771,
+              "end": 779
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 771,
+            "end": 779
+          },
+          "distance": 408,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].constraints[0]",
+          "clause_index": 2,
+          "clause_id": "estg_000306_c03",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c03",
+          "text": "in equal instalments",
+          "normalized": "in equal instalments",
+          "original_start": 576,
+          "original_end": 596,
+          "candidate_occurrences": [
+            {
+              "start": 780,
+              "end": 800
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 780,
+            "end": 800
+          },
+          "distance": 408,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[2].constraints[1]",
+          "clause_index": 2,
+          "clause_id": "estg_000306_c03",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c04",
+          "text": "spread over ten years",
+          "normalized": "spread over ten years",
+          "original_start": 597,
+          "original_end": 618,
+          "candidate_occurrences": [
+            {
+              "start": 801,
+              "end": 822
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 801,
+            "end": 822
+          },
+          "distance": 408,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 17,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

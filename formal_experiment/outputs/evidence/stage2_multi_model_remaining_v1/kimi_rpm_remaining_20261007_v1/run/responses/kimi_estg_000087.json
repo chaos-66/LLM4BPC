@@ -1,0 +1,266 @@
+{
+  "request_id": "kimi:estg_000087",
+  "raw_response_utf8": "{\"id\":\"chatcmpl-6ac5e425add3131074014cba\",\"object\":\"chat.completion\",\"created\":1791353893,\"model\":\"kimi-k2.6\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000087\\\",\\n  \\\"source_id\\\": \\\"estg_000087\\\",\\n  \\\"source_text\\\": \\\"In the exchange of shares in a company or cooperative, no exchange shall be deemed to exist if the exchange takes place on the basis of a merger that does not result in liquidation taxation.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000087_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"no exchange shall be deemed to exist if the exchange takes place on the basis of a merger that does not result in liquidation taxation\\\", \\\"start\\\": 52, \\\"end\\\": 146},\\n      \\\"modality\\\": {\\\"label\\\": \\\"prohibition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"no\\\", \\\"start\\\": 52, \\\"end\\\": 54}, {\\\"text\\\": \\\"shall\\\", \\\"start\\\": 64, \\\"end\\\": 69}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"deemed to exist\\\", \\\"start\\\": 70, \\\"end\\\": 85, \\\"normalized\\\": \\\"deemed to exist\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"if the exchange takes place on the basis of a merger that does not result in liquidation taxation\\\", \\\"start\\\": 86, \\\"end\\\": 146, \\\"normalized\\\": \\\"if the exchange takes place on the basis of a merger that does not result in liquidation taxation\\\"}],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"reasoning_content\":\"\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4213,\"completion_tokens\":429,\"total_tokens\":4642,\"cached_tokens\":1024,\"completion_tokens_details\":{\"reasoning_tokens\":1},\"prompt_tokens_details\":{\"cached_tokens\":1024}}}",
+  "usage": {
+    "prompt_tokens": 4213,
+    "completion_tokens": 429,
+    "total_tokens": 4642,
+    "reasoning_tokens": 1
+  },
+  "returned_model": "kimi-k2.6",
+  "nonthinking_check": {
+    "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 1,
+    "counter_exception_user_authorized": true,
+    "one_token_meaning_verified": false
+  },
+  "error": null,
+  "prediction": {
+    "provider": "kimi",
+    "sample_id": "estg_000087",
+    "request_id": "kimi:estg_000087",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000087",
+      "source_id": "estg_000087",
+      "source_text": "In the exchange of shares in a company or cooperative, no exchange shall be deemed to exist if the exchange takes place on the basis of a merger that does not result in liquidation taxation.",
+      "clauses": [
+        {
+          "clause_id": "estg_000087_c01",
+          "clause_span": {
+            "text": "no exchange shall be deemed to exist if the exchange takes place on the basis of a merger that does not result in liquidation taxation",
+            "start": 55,
+            "end": 189
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 67,
+                "end": 72
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "deemed to exist",
+              "start": 76,
+              "end": 91,
+              "normalized": "deemed to exist",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "if the exchange takes place on the basis of a merger that does not result in liquidation taxation",
+              "start": 92,
+              "end": 189,
+              "normalized": "if the exchange takes place on the basis of a merger that does not result in liquidation taxation",
+              "id": "d01"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 2,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 4,
+      "dropped_spans": [
+        "clauses[0].modality.evidence[0]"
+      ],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000087_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "no exchange shall be deemed to exist if the exchange takes place on the basis of a merger that does not result in liquidation taxation",
+          "normalized": null,
+          "original_start": 52,
+          "original_end": 146,
+          "candidate_occurrences": [
+            {
+              "start": 55,
+              "end": 189
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 55,
+            "end": 189
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000087_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "no",
+          "normalized": null,
+          "original_start": 52,
+          "original_end": 54,
+          "candidate_occurrences": [
+            {
+              "start": 55,
+              "end": 57
+            },
+            {
+              "start": 155,
+              "end": 157
+            }
+          ],
+          "strategy": "not_applicable",
+          "chosen": null,
+          "distance": null,
+          "outcome": "unresolved",
+          "reason": "ambiguous_occurrence",
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000087_c01",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 64,
+          "original_end": 69,
+          "candidate_occurrences": [
+            {
+              "start": 67,
+              "end": 72
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 67,
+            "end": 72
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000087_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "deemed to exist",
+          "normalized": "deemed to exist",
+          "original_start": 70,
+          "original_end": 85,
+          "candidate_occurrences": [
+            {
+              "start": 76,
+              "end": 91
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 76,
+            "end": 91
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000087_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "if the exchange takes place on the basis of a merger that does not result in liquidation taxation",
+          "normalized": "if the exchange takes place on the basis of a merger that does not result in liquidation taxation",
+          "original_start": 86,
+          "original_end": 146,
+          "candidate_occurrences": [
+            {
+              "start": 92,
+              "end": 189
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 92,
+            "end": 189
+          },
+          "distance": 49,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 1,
+      "reanchored_unique_exact": 4,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 1,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 1,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

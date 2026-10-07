@@ -1,0 +1,383 @@
+{
+  "request_id": "kimi:estg_000043",
+  "raw_response_utf8": "{\"id\":\"chatcmpl-6ac5e22f53b6eb36bb95e2b1\",\"object\":\"chat.completion\",\"created\":1791353392,\"model\":\"kimi-k2.6\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000043\\\",\\n  \\\"source_id\\\": \\\"estg_000043\\\",\\n  \\\"source_text\\\": \\\"The actuarial reserve shall be calculated in accordance with the Annex to this Federal Act. — In the case of funds that do not provide ongoing benefits, the average annual requirement of the fund.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000043_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"The actuarial reserve shall be calculated in accordance with the Annex to this Federal Act.\\\", \\\"start\\\": 0, \\\"end\\\": 90},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 24, \\\"end\\\": 29}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"calculated\\\", \\\"start\\\": 33, \\\"end\\\": 43, \\\"normalized\\\": \\\"calculate\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"in accordance with the Annex to this Federal Act\\\", \\\"start\\\": 44, \\\"end\\\": 89, \\\"normalized\\\": \\\"in accordance with the annex to this federal act\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    },\\n    {\\n      \\\"clause_id\\\": \\\"estg_000043_c02\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"In the case of funds that do not provide ongoing benefits, the average annual requirement of the fund.\\\", \\\"start\\\": 93, \\\"end\\\": 196},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 24, \\\"end\\\": 29}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"the average annual requirement of the fund\\\", \\\"start\\\": 152, \\\"end\\\": 195, \\\"normalized\\\": \\\"average annual requirement of fund\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"In the case of funds that do not provide ongoing benefits\\\", \\\"start\\\": 93, \\\"end\\\": 150, \\\"normalized\\\": \\\"in the case of funds that do not provide ongoing benefits\\\"}],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p02\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": [\\n    {\\\"field\\\": \\\"modality\\\", \\\"reason\\\": \\\"semantic_scope_ambiguous_in_target\\\"}\\n  ]\\n}\\n```\",\"reasoning_content\":\"\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4215,\"completion_tokens\":643,\"total_tokens\":4858,\"cached_tokens\":1024,\"completion_tokens_details\":{\"reasoning_tokens\":1},\"prompt_tokens_details\":{\"cached_tokens\":1024}}}",
+  "usage": {
+    "prompt_tokens": 4215,
+    "completion_tokens": 643,
+    "total_tokens": 4858,
+    "reasoning_tokens": 1
+  },
+  "returned_model": "kimi-k2.6",
+  "nonthinking_check": {
+    "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 1,
+    "counter_exception_user_authorized": true,
+    "one_token_meaning_verified": false
+  },
+  "error": null,
+  "prediction": {
+    "provider": "kimi",
+    "sample_id": "estg_000043",
+    "request_id": "kimi:estg_000043",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000043",
+      "source_id": "estg_000043",
+      "source_text": "The actuarial reserve shall be calculated in accordance with the Annex to this Federal Act. — In the case of funds that do not provide ongoing benefits, the average annual requirement of the fund.",
+      "clauses": [
+        {
+          "clause_id": "estg_000043_c01",
+          "clause_span": {
+            "text": "The actuarial reserve shall be calculated in accordance with the Annex to this Federal Act.",
+            "start": 0,
+            "end": 91
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 22,
+                "end": 27
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "calculated",
+              "start": 31,
+              "end": 41,
+              "normalized": "calculated",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "in accordance with the Annex to this Federal Act",
+              "start": 42,
+              "end": 90,
+              "normalized": "in accordance with the annex to this federal act",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        },
+        {
+          "clause_id": "estg_000043_c02",
+          "clause_span": {
+            "text": "In the case of funds that do not provide ongoing benefits, the average annual requirement of the fund.",
+            "start": 94,
+            "end": 196
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": []
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "the average annual requirement of the fund",
+              "start": 153,
+              "end": 195,
+              "normalized": "the average annual requirement of the fund",
+              "id": "p02"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "In the case of funds that do not provide ongoing benefits",
+              "start": 94,
+              "end": 151,
+              "normalized": "in the case of funds that do not provide ongoing benefits",
+              "id": "d01"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p02"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "modality",
+          "reason": "semantic_scope_ambiguous_in_target"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 2,
+      "field_span_count": 6,
+      "reanchored_count": 7,
+      "dropped_spans": [
+        "clauses[1].modality.evidence[0]"
+      ],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000043_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The actuarial reserve shall be calculated in accordance with the Annex to this Federal Act.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 90,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 91
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 91
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000043_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 24,
+          "original_end": 29,
+          "candidate_occurrences": [
+            {
+              "start": 22,
+              "end": 27
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 22,
+            "end": 27
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000043_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "calculated",
+          "normalized": "calculated",
+          "original_start": 33,
+          "original_end": 43,
+          "candidate_occurrences": [
+            {
+              "start": 31,
+              "end": 41
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 31,
+            "end": 41
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000043_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "in accordance with the Annex to this Federal Act",
+          "normalized": "in accordance with the annex to this federal act",
+          "original_start": 44,
+          "original_end": 89,
+          "candidate_occurrences": [
+            {
+              "start": 42,
+              "end": 90
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 42,
+            "end": 90
+          },
+          "distance": 3,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].clause_span",
+          "clause_index": 1,
+          "clause_id": "estg_000043_c02",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "In the case of funds that do not provide ongoing benefits, the average annual requirement of the fund.",
+          "normalized": null,
+          "original_start": 93,
+          "original_end": 196,
+          "candidate_occurrences": [
+            {
+              "start": 94,
+              "end": 196
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 94,
+            "end": 196
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].modality.evidence[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000043_c02",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 24,
+          "original_end": 29,
+          "candidate_occurrences": [],
+          "strategy": "not_applicable",
+          "chosen": null,
+          "distance": null,
+          "outcome": "unresolved",
+          "reason": "zero_occurrence",
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].actions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000043_c02",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p02",
+          "text": "the average annual requirement of the fund",
+          "normalized": "the average annual requirement of the fund",
+          "original_start": 152,
+          "original_end": 195,
+          "candidate_occurrences": [
+            {
+              "start": 153,
+              "end": 195
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 153,
+            "end": 195
+          },
+          "distance": 1,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[1].conditions[0]",
+          "clause_index": 1,
+          "clause_id": "estg_000043_c02",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "In the case of funds that do not provide ongoing benefits",
+          "normalized": "in the case of funds that do not provide ongoing benefits",
+          "original_start": 93,
+          "original_end": 150,
+          "candidate_occurrences": [
+            {
+              "start": 94,
+              "end": 151
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 94,
+            "end": 151
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 1,
+      "reanchored_unique_exact": 7,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

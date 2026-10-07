@@ -1,0 +1,350 @@
+{
+  "request_id": "kimi:estg_000525",
+  "raw_response_utf8": "{\"id\":\"chatcmpl-6ac5eb9342a8e540a9dc2143\",\"object\":\"chat.completion\",\"created\":1791355795,\"model\":\"kimi-k2.6\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000525\\\",\\n  \\\"source_id\\\": \\\"estg_000525\\\",\\n  \\\"source_text\\\": \\\"(1) The Federal Minister of Finance may exempt certain groups of — exclusively manual workers, — employees who carry out statistical surveys for regional authorities, — employees in the occupational categories of musicians, stage performers, artists and film makers who are employed continuously for not more than one week, from the obligation to submit a wage tax card and, deviating from Sections 57 to 66, 71, 74 and 75, permit the withholding and remittance of wage tax at a flat-rate amount.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000525_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"(1) The Federal Minister of Finance may exempt certain groups of — exclusively manual workers, — employees who carry out statistical surveys for regional authorities, — employees in the occupational categories of musicians, stage performers, artists and film makers who are employed continuously for not more than one week, from the obligation to submit a wage tax card and, deviating from Sections 57 to 66, 71, 74 and 75, permit the withholding and remittance of wage tax at a flat-rate amount.\\\", \\\"start\\\": 0, \\\"end\\\": 387},\\n      \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may\\\", \\\"start\\\": 34, \\\"end\\\": 37}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"The Federal Minister of Finance\\\", \\\"start\\\": 4, \\\"end\\\": 33, \\\"normalized\\\": \\\"federal minister of finance\\\"}],\\n      \\\"actions\\\": [\\n        {\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"exempt certain groups of — exclusively manual workers, — employees who carry out statistical surveys for regional authorities, — employees in the occupational categories of musicians, stage performers, artists and film makers who are employed continuously for not more than one week, from the obligation to submit a wage tax card\\\", \\\"start\\\": 38, \\\"end\\\": 305, \\\"normalized\\\": \\\"exempt certain groups from obligation to submit wage tax card\\\"},\\n        {\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"permit the withholding and remittance of wage tax\\\", \\\"start\\\": 315, \\\"end\\\": 364, \\\"normalized\\\": \\\"permit withholding and remittance of wage tax\\\"}\\n      ],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"deviating from Sections 57 to 66, 71, 74 and 75\\\", \\\"start\\\": 311, \\\"end\\\": 358, \\\"normalized\\\": \\\"deviating from sections 57 to 66, 71, 74 and 75\\\"},\\n        {\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"at a flat-rate amount\\\", \\\"start\\\": 365, \\\"end\\\": 386, \\\"normalized\\\": \\\"at flat-rate amount\\\"}\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [\\n        {\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"},\\n        {\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p02\\\"}\\n      ],\\n      \\\"order_relations\\\": [{\\\"from_action_id\\\": \\\"p01\\\", \\\"to_action_id\\\": \\\"p02\\\", \\\"relation\\\": \\\"sequence\\\", \\\"evidence\\\": {\\\"text\\\": \\\"and\\\", \\\"start\\\": 305, \\\"end\\\": 308}}]\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": [\\n    {\\\"field\\\": \\\"action\\\", \\\"reason\\\": \\\"semantic_scope_ambiguous_in_target\\\"}\\n  ]\\n}\\n```\",\"reasoning_content\":\"\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4277,\"completion_tokens\":827,\"total_tokens\":5104,\"cached_tokens\":1024,\"completion_tokens_details\":{\"reasoning_tokens\":1},\"prompt_tokens_details\":{\"cached_tokens\":1024}}}",
+  "usage": {
+    "prompt_tokens": 4277,
+    "completion_tokens": 827,
+    "total_tokens": 5104,
+    "reasoning_tokens": 1
+  },
+  "returned_model": "kimi-k2.6",
+  "nonthinking_check": {
+    "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 1,
+    "counter_exception_user_authorized": true,
+    "one_token_meaning_verified": false
+  },
+  "error": null,
+  "prediction": {
+    "provider": "kimi",
+    "sample_id": "estg_000525",
+    "request_id": "kimi:estg_000525",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000525",
+      "source_id": "estg_000525",
+      "source_text": "(1) The Federal Minister of Finance may exempt certain groups of — exclusively manual workers, — employees who carry out statistical surveys for regional authorities, — employees in the occupational categories of musicians, stage performers, artists and film makers who are employed continuously for not more than one week, from the obligation to submit a wage tax card and, deviating from Sections 57 to 66, 71, 74 and 75, permit the withholding and remittance of wage tax at a flat-rate amount.",
+      "clauses": [
+        {
+          "clause_id": "estg_000525_c01",
+          "clause_span": {
+            "text": "(1) The Federal Minister of Finance may exempt certain groups of — exclusively manual workers, — employees who carry out statistical surveys for regional authorities, — employees in the occupational categories of musicians, stage performers, artists and film makers who are employed continuously for not more than one week, from the obligation to submit a wage tax card and, deviating from Sections 57 to 66, 71, 74 and 75, permit the withholding and remittance of wage tax at a flat-rate amount.",
+            "start": 0,
+            "end": 496
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 36,
+                "end": 39
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "The Federal Minister of Finance",
+              "start": 4,
+              "end": 35,
+              "normalized": "the federal minister of finance",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "exempt certain groups of — exclusively manual workers, — employees who carry out statistical surveys for regional authorities, — employees in the occupational categories of musicians, stage performers, artists and film makers who are employed continuously for not more than one week, from the obligation to submit a wage tax card",
+              "start": 40,
+              "end": 369,
+              "normalized": "exempt certain groups of — exclusively manual workers, — employees who carry out statistical surveys for regional authorities, — employees in the occupational categories of musicians, stage performers, artists and film makers who are employed continuously for not more than one week, from the obligation to submit a wage tax card",
+              "id": "p01"
+            },
+            {
+              "text": "permit the withholding and remittance of wage tax",
+              "start": 424,
+              "end": 473,
+              "normalized": "permit the withholding and remittance of wage tax",
+              "id": "p02"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "deviating from Sections 57 to 66, 71, 74 and 75",
+              "start": 375,
+              "end": 422,
+              "normalized": "deviating from sections 57 to 66, 71, 74 and 75",
+              "id": "c01"
+            },
+            {
+              "text": "at a flat-rate amount",
+              "start": 474,
+              "end": 495,
+              "normalized": "at a flat-rate amount",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            },
+            {
+              "actor_id": "a01",
+              "action_id": "p02"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "action",
+          "reason": "semantic_scope_ambiguous_in_target"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 5,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 6,
+      "reanchored_count": 7,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [
+        "clauses[0].order_relations[0]"
+      ],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000525_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "(1) The Federal Minister of Finance may exempt certain groups of — exclusively manual workers, — employees who carry out statistical surveys for regional authorities, — employees in the occupational categories of musicians, stage performers, artists and film makers who are employed continuously for not more than one week, from the obligation to submit a wage tax card and, deviating from Sections 57 to 66, 71, 74 and 75, permit the withholding and remittance of wage tax at a flat-rate amount.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 387,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 496
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 496
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000525_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 34,
+          "original_end": 37,
+          "candidate_occurrences": [
+            {
+              "start": 36,
+              "end": 39
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 36,
+            "end": 39
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000525_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "The Federal Minister of Finance",
+          "normalized": "the federal minister of finance",
+          "original_start": 4,
+          "original_end": 33,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 35
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 35
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000525_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "exempt certain groups of — exclusively manual workers, — employees who carry out statistical surveys for regional authorities, — employees in the occupational categories of musicians, stage performers, artists and film makers who are employed continuously for not more than one week, from the obligation to submit a wage tax card",
+          "normalized": "exempt certain groups of — exclusively manual workers, — employees who carry out statistical surveys for regional authorities, — employees in the occupational categories of musicians, stage performers, artists and film makers who are employed continuously for not more than one week, from the obligation to submit a wage tax card",
+          "original_start": 38,
+          "original_end": 305,
+          "candidate_occurrences": [
+            {
+              "start": 40,
+              "end": 369
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 40,
+            "end": 369
+          },
+          "distance": 66,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000525_c01",
+          "field": "actions",
+          "span_index": 1,
+          "span_id": "p02",
+          "text": "permit the withholding and remittance of wage tax",
+          "normalized": "permit the withholding and remittance of wage tax",
+          "original_start": 315,
+          "original_end": 364,
+          "candidate_occurrences": [
+            {
+              "start": 424,
+              "end": 473
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 424,
+            "end": 473
+          },
+          "distance": 218,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000525_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "deviating from Sections 57 to 66, 71, 74 and 75",
+          "normalized": "deviating from sections 57 to 66, 71, 74 and 75",
+          "original_start": 311,
+          "original_end": 358,
+          "candidate_occurrences": [
+            {
+              "start": 375,
+              "end": 422
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 375,
+            "end": 422
+          },
+          "distance": 128,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000525_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "at a flat-rate amount",
+          "normalized": "at a flat-rate amount",
+          "original_start": 365,
+          "original_end": 386,
+          "candidate_occurrences": [
+            {
+              "start": 474,
+              "end": 495
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 474,
+            "end": 495
+          },
+          "distance": 218,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 7,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

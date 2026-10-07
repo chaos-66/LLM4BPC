@@ -1,0 +1,271 @@
+{
+  "request_id": "kimi:estg_000125",
+  "raw_response_utf8": "{\"id\":\"chatcmpl-6ac5e5f3add3131074014d55\",\"object\":\"chat.completion\",\"created\":1791354356,\"model\":\"kimi-k2.6\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000125\\\",\\n  \\\"source_id\\\": \\\"estg_000125\\\",\\n  \\\"source_text\\\": \\\"(2) In the case of profit determination pursuant to Section 4(3), a tax-exempt amount may be established in accordance with the provisions of paragraph (1).\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000125_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"(2) In the case of profit determination pursuant to Section 4(3), a tax-exempt amount may be established in accordance with the provisions of paragraph (1).\\\", \\\"start\\\": 0, \\\"end\\\": 116},\\n      \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may\\\", \\\"start\\\": 71, \\\"end\\\": 74}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"established\\\", \\\"start\\\": 78, \\\"end\\\": 89, \\\"normalized\\\": \\\"establish\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"In the case of profit determination pursuant to Section 4(3)\\\", \\\"start\\\": 4, \\\"end\\\": 65, \\\"normalized\\\": \\\"in the case of profit determination pursuant to section 4(3)\\\"}],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"in accordance with the provisions of paragraph (1)\\\", \\\"start\\\": 90, \\\"end\\\": 115, \\\"normalized\\\": \\\"in accordance with the provisions of paragraph (1)\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"reasoning_content\":\"\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4211,\"completion_tokens\":448,\"total_tokens\":4659,\"cached_tokens\":1024,\"completion_tokens_details\":{\"reasoning_tokens\":1},\"prompt_tokens_details\":{\"cached_tokens\":1024}}}",
+  "usage": {
+    "prompt_tokens": 4211,
+    "completion_tokens": 448,
+    "total_tokens": 4659,
+    "reasoning_tokens": 1
+  },
+  "returned_model": "kimi-k2.6",
+  "nonthinking_check": {
+    "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 1,
+    "counter_exception_user_authorized": true,
+    "one_token_meaning_verified": false
+  },
+  "error": null,
+  "prediction": {
+    "provider": "kimi",
+    "sample_id": "estg_000125",
+    "request_id": "kimi:estg_000125",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000125",
+      "source_id": "estg_000125",
+      "source_text": "(2) In the case of profit determination pursuant to Section 4(3), a tax-exempt amount may be established in accordance with the provisions of paragraph (1).",
+      "clauses": [
+        {
+          "clause_id": "estg_000125_c01",
+          "clause_span": {
+            "text": "(2) In the case of profit determination pursuant to Section 4(3), a tax-exempt amount may be established in accordance with the provisions of paragraph (1).",
+            "start": 0,
+            "end": 156
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 86,
+                "end": 89
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "established",
+              "start": 93,
+              "end": 104,
+              "normalized": "established",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "In the case of profit determination pursuant to Section 4(3)",
+              "start": 4,
+              "end": 64,
+              "normalized": "in the case of profit determination pursuant to section 4(3)",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "in accordance with the provisions of paragraph (1)",
+              "start": 105,
+              "end": 155,
+              "normalized": "in accordance with the provisions of paragraph (1)",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 5,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000125_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "(2) In the case of profit determination pursuant to Section 4(3), a tax-exempt amount may be established in accordance with the provisions of paragraph (1).",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 116,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 156
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 156
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000125_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 71,
+          "original_end": 74,
+          "candidate_occurrences": [
+            {
+              "start": 86,
+              "end": 89
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 86,
+            "end": 89
+          },
+          "distance": 30,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000125_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "established",
+          "normalized": "established",
+          "original_start": 78,
+          "original_end": 89,
+          "candidate_occurrences": [
+            {
+              "start": 93,
+              "end": 104
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 93,
+            "end": 104
+          },
+          "distance": 30,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000125_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "In the case of profit determination pursuant to Section 4(3)",
+          "normalized": "in the case of profit determination pursuant to section 4(3)",
+          "original_start": 4,
+          "original_end": 65,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 64
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 64
+          },
+          "distance": 1,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000125_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "in accordance with the provisions of paragraph (1)",
+          "normalized": "in accordance with the provisions of paragraph (1)",
+          "original_start": 90,
+          "original_end": 115,
+          "candidate_occurrences": [
+            {
+              "start": 105,
+              "end": 155
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 105,
+            "end": 155
+          },
+          "distance": 55,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

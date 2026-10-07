@@ -1,0 +1,340 @@
+{
+  "request_id": "kimi:estg_000052",
+  "raw_response_utf8": "{\"id\":\"chatcmpl-6ac5e283ca3c2cbe1c43d105\",\"object\":\"chat.completion\",\"created\":1791353476,\"model\":\"kimi-k2.6\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000052\\\",\\n  \\\"source_id\\\": \\\"estg_000052\\\",\\n  \\\"source_text\\\": \\\"The contributions are only deductible insofar as they, together with contributions within the meaning of item 6, do not exceed a total of 10% of the profit of the immediately preceding business year. 6.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000052_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"The contributions are only deductible insofar as they, together with contributions within the meaning of item 6, do not exceed a total of 10% of the profit of the immediately preceding business year.\\\", \\\"start\\\": 0, \\\"end\\\": 147},\\n      \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"only deductible\\\", \\\"start\\\": 20, \\\"end\\\": 35}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"The contributions\\\", \\\"start\\\": 0, \\\"end\\\": 17, \\\"normalized\\\": \\\"contributions\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"deductible\\\", \\\"start\\\": 24, \\\"end\\\": 35, \\\"normalized\\\": \\\"deductible\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"insofar as they, together with contributions within the meaning of item 6, do not exceed a total of 10% of the profit of the immediately preceding business year\\\", \\\"start\\\": 36, \\\"end\\\": 146, \\\"normalized\\\": \\\"insofar as they, together with contributions within the meaning of item 6, do not exceed a total of 10% of the profit of the immediately preceding business year\\\"}],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"within the meaning of item 6\\\", \\\"start\\\": 79, \\\"end\\\": 107, \\\"normalized\\\": \\\"within the meaning of item 6\\\"},\\n        {\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"a total of 10% of the profit of the immediately preceding business year\\\", \\\"start\\\": 126, \\\"end\\\": 197, \\\"normalized\\\": \\\"a total of 10% of the profit of the immediately preceding business year\\\"}\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"reasoning_content\":\"\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4220,\"completion_tokens\":605,\"total_tokens\":4825,\"cached_tokens\":1024,\"completion_tokens_details\":{\"reasoning_tokens\":1},\"prompt_tokens_details\":{\"cached_tokens\":1024}}}",
+  "usage": {
+    "prompt_tokens": 4220,
+    "completion_tokens": 605,
+    "total_tokens": 4825,
+    "reasoning_tokens": 1
+  },
+  "returned_model": "kimi-k2.6",
+  "nonthinking_check": {
+    "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 1,
+    "counter_exception_user_authorized": true,
+    "one_token_meaning_verified": false
+  },
+  "error": null,
+  "prediction": {
+    "provider": "kimi",
+    "sample_id": "estg_000052",
+    "request_id": "kimi:estg_000052",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000052",
+      "source_id": "estg_000052",
+      "source_text": "The contributions are only deductible insofar as they, together with contributions within the meaning of item 6, do not exceed a total of 10% of the profit of the immediately preceding business year. 6.",
+      "clauses": [
+        {
+          "clause_id": "estg_000052_c01",
+          "clause_span": {
+            "text": "The contributions are only deductible insofar as they, together with contributions within the meaning of item 6, do not exceed a total of 10% of the profit of the immediately preceding business year.",
+            "start": 0,
+            "end": 199
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "only deductible",
+                "start": 22,
+                "end": 37
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "The contributions",
+              "start": 0,
+              "end": 17,
+              "normalized": "the contributions",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "deductible",
+              "start": 27,
+              "end": 37,
+              "normalized": "deductible",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "insofar as they, together with contributions within the meaning of item 6, do not exceed a total of 10% of the profit of the immediately preceding business year",
+              "start": 38,
+              "end": 198,
+              "normalized": "insofar as they, together with contributions within the meaning of item 6, do not exceed a total of 10% of the profit of the immediately preceding business year",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "within the meaning of item 6",
+              "start": 83,
+              "end": 111,
+              "normalized": "within the meaning of item 6",
+              "id": "c01"
+            },
+            {
+              "text": "a total of 10% of the profit of the immediately preceding business year",
+              "start": 127,
+              "end": 198,
+              "normalized": "a total of 10% of the profit of the immediately preceding business year",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 5,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 6,
+      "reanchored_count": 6,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000052_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The contributions are only deductible insofar as they, together with contributions within the meaning of item 6, do not exceed a total of 10% of the profit of the immediately preceding business year.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 147,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 199
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 199
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000052_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "only deductible",
+          "normalized": null,
+          "original_start": 20,
+          "original_end": 35,
+          "candidate_occurrences": [
+            {
+              "start": 22,
+              "end": 37
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 22,
+            "end": 37
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000052_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "The contributions",
+          "normalized": "the contributions",
+          "original_start": 0,
+          "original_end": 17,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 17
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 0,
+            "end": 17
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000052_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "deductible",
+          "normalized": "deductible",
+          "original_start": 24,
+          "original_end": 35,
+          "candidate_occurrences": [
+            {
+              "start": 27,
+              "end": 37
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 27,
+            "end": 37
+          },
+          "distance": 5,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000052_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "insofar as they, together with contributions within the meaning of item 6, do not exceed a total of 10% of the profit of the immediately preceding business year",
+          "normalized": "insofar as they, together with contributions within the meaning of item 6, do not exceed a total of 10% of the profit of the immediately preceding business year",
+          "original_start": 36,
+          "original_end": 146,
+          "candidate_occurrences": [
+            {
+              "start": 38,
+              "end": 198
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 38,
+            "end": 198
+          },
+          "distance": 54,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000052_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "within the meaning of item 6",
+          "normalized": "within the meaning of item 6",
+          "original_start": 79,
+          "original_end": 107,
+          "candidate_occurrences": [
+            {
+              "start": 83,
+              "end": 111
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 83,
+            "end": 111
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000052_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "a total of 10% of the profit of the immediately preceding business year",
+          "normalized": "a total of 10% of the profit of the immediately preceding business year",
+          "original_start": 126,
+          "original_end": 197,
+          "candidate_occurrences": [
+            {
+              "start": 127,
+              "end": 198
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 127,
+            "end": 198
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 6,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

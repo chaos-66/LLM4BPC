@@ -166,7 +166,24 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
   450 次/0 重试/USD14.77 确认，不绕过拦截或间接执行。审批证据及待确认范围见
   `outputs/reports/s2_prompt_simplification_comparison_20261006_v1_execution_blocker.json`。
 
-## 五家全150数据已核验、Kimi节流中：S2-MODEL-SENSITIVITY-V1（2026-10-07）
+## 六家900次实测与本地数据验收完成：S2-MODEL-SENSITIVITY-V1（2026-10-07）
+
+- 原453、充值302、Kimi节流145合计900个唯一provider/sample尝试，六家各150、0重试，
+  原预算保护未扩大。完整报告 `outputs/reports/stage2_kimi_rpm_remaining_20261007_v1.json`
+  与 `_analysis.md`；三个独立批次证据/manifest/响应/账本与本地副本保留，旧字节不改。
+- 共享coarse五字段pooled F1（有效/150）：MiMo **0.8184（147）**、Qwen
+  **0.8030（148）**、GLM **0.7833（142）**、Grok **0.7723（147）**、Kimi
+  **0.7464（141）**、MiniMax **0.7345（142）**。33个失败保留，modality独立。
+- GLM/MiMo原余额失败、Kimi一次RPM429都不重发；Kimi首条离线恢复、不额外调用。
+  Kimi149份报告1 reasoning token、无返回思考正文，1次429缺usage；按用户例外保留
+  实际计数，不解释为占位符。历史DeepSeek/Sun与固定表一0.8378/0.7631不变。
+- 最终6项具名产物复核通过（5.97秒），快速完整性通过，experiment_run已记录，155份
+  新相同字节副本保存；原具名证据复用，无全量。CNY32.5709761加USD1.07430625为
+  全900次保守用量估算含异常预留，非账户实扣；单次开发性比较不作因果或显著性断言。
+- 本地数据验收完成；GitHub原始响应push仍被自动审批拒绝，具体外发许可未答复。
+  远端备份仍外部阻塞，本地checkpoint不能冒称已push。
+
+## 五家全150数据核验历史、Kimi节流中：S2-MODEL-SENSITIVITY-V1（2026-10-07）
 
 - 充值后批次302新次结束，原453加本批合计755、0重试。GLM/MiMo各完整150尝试，
   有效142/147，失败8/3含各自原首余额失败；共享Overall F1为0.7833/0.8184。

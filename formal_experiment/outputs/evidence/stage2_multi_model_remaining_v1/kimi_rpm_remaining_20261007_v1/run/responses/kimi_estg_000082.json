@@ -1,0 +1,311 @@
+{
+  "request_id": "kimi:estg_000082",
+  "raw_response_utf8": "{\"id\":\"chatcmpl-6ac5e3fb53b6eb36bb95e395\",\"object\":\"chat.completion\",\"created\":1791353851,\"model\":\"kimi-k2.6\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000082\\\",\\n  \\\"source_id\\\": \\\"estg_000082\\\",\\n  \\\"source_text\\\": \\\"To the extent that the input tax can be deducted (Section 12(1) of the Value Added Tax Act 1972), it does not form part of the acquisition or production costs of the asset on the acquisition or production of which it is incurred, and shall be reported as a receivable.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000082_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"To the extent that the input tax can be deducted (Section 12(1) of the Value Added Tax Act 1972), it does not form part of the acquisition or production costs of the asset on the acquisition or production of which it is incurred, and shall be reported as a receivable.\\\", \\\"start\\\": 0, \\\"end\\\": 217},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 190, \\\"end\\\": 195}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"it\\\", \\\"start\\\": 78, \\\"end\\\": 80, \\\"normalized\\\": \\\"it\\\"}],\\n      \\\"actions\\\": [\\n        {\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"does not form part of the acquisition or production costs of the asset\\\", \\\"start\\\": 81, \\\"end\\\": 149, \\\"normalized\\\": \\\"does not form part of acquisition or production costs of asset\\\"},\\n        {\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"be reported as a receivable\\\", \\\"start\\\": 196, \\\"end\\\": 223, \\\"normalized\\\": \\\"be reported as receivable\\\"}\\n      ],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"To the extent that the input tax can be deducted (Section 12(1) of the Value Added Tax Act 1972)\\\", \\\"start\\\": 0, \\\"end\\\": 76, \\\"normalized\\\": \\\"to the extent that input tax can be deducted (section 12(1) of value added tax act 1972)\\\"}],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [\\n        {\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"},\\n        {\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p02\\\"}\\n      ],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": [\\n    {\\\"field\\\": \\\"actor\\\", \\\"reason\\\": \\\"reference_status=unresolved_coreference;independence_status=context_required\\\"}\\n  ]\\n}\\n```\",\"reasoning_content\":\"\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4237,\"completion_tokens\":624,\"total_tokens\":4861,\"cached_tokens\":1024,\"completion_tokens_details\":{\"reasoning_tokens\":1},\"prompt_tokens_details\":{\"cached_tokens\":1024}}}",
+  "usage": {
+    "prompt_tokens": 4237,
+    "completion_tokens": 624,
+    "total_tokens": 4861,
+    "reasoning_tokens": 1
+  },
+  "returned_model": "kimi-k2.6",
+  "nonthinking_check": {
+    "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 1,
+    "counter_exception_user_authorized": true,
+    "one_token_meaning_verified": false
+  },
+  "error": null,
+  "prediction": {
+    "provider": "kimi",
+    "sample_id": "estg_000082",
+    "request_id": "kimi:estg_000082",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000082",
+      "source_id": "estg_000082",
+      "source_text": "To the extent that the input tax can be deducted (Section 12(1) of the Value Added Tax Act 1972), it does not form part of the acquisition or production costs of the asset on the acquisition or production of which it is incurred, and shall be reported as a receivable.",
+      "clauses": [
+        {
+          "clause_id": "estg_000082_c01",
+          "clause_span": {
+            "text": "To the extent that the input tax can be deducted (Section 12(1) of the Value Added Tax Act 1972), it does not form part of the acquisition or production costs of the asset on the acquisition or production of which it is incurred, and shall be reported as a receivable.",
+            "start": 0,
+            "end": 268
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 234,
+                "end": 239
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "does not form part of the acquisition or production costs of the asset",
+              "start": 101,
+              "end": 171,
+              "normalized": "does not form part of the acquisition or production costs of the asset",
+              "id": "p01"
+            },
+            {
+              "text": "be reported as a receivable",
+              "start": 240,
+              "end": 267,
+              "normalized": "be reported as a receivable",
+              "id": "p02"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "To the extent that the input tax can be deducted (Section 12(1) of the Value Added Tax Act 1972)",
+              "start": 0,
+              "end": 96,
+              "normalized": "to the extent that the input tax can be deducted (section 12(1) of the value added tax act 1972)",
+              "id": "d01"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 4,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 5,
+      "reanchored_count": 5,
+      "dropped_spans": [
+        "clauses[0].actors[0]"
+      ],
+      "dropped_clauses": [],
+      "dropped_edges": [
+        "clauses[0].actor_action_map[0]",
+        "clauses[0].actor_action_map[1]"
+      ],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000082_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "To the extent that the input tax can be deducted (Section 12(1) of the Value Added Tax Act 1972), it does not form part of the acquisition or production costs of the asset on the acquisition or production of which it is incurred, and shall be reported as a receivable.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 217,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 268
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 268
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000082_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 190,
+          "original_end": 195,
+          "candidate_occurrences": [
+            {
+              "start": 234,
+              "end": 239
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 234,
+            "end": 239
+          },
+          "distance": 88,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000082_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "it",
+          "normalized": "it",
+          "original_start": 78,
+          "original_end": 80,
+          "candidate_occurrences": [
+            {
+              "start": 98,
+              "end": 100
+            },
+            {
+              "start": 133,
+              "end": 135
+            },
+            {
+              "start": 185,
+              "end": 187
+            },
+            {
+              "start": 214,
+              "end": 216
+            }
+          ],
+          "strategy": "not_applicable",
+          "chosen": null,
+          "distance": null,
+          "outcome": "unresolved",
+          "reason": "ambiguous_occurrence",
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000082_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "does not form part of the acquisition or production costs of the asset",
+          "normalized": "does not form part of the acquisition or production costs of the asset",
+          "original_start": 81,
+          "original_end": 149,
+          "candidate_occurrences": [
+            {
+              "start": 101,
+              "end": 171
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 101,
+            "end": 171
+          },
+          "distance": 42,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000082_c01",
+          "field": "actions",
+          "span_index": 1,
+          "span_id": "p02",
+          "text": "be reported as a receivable",
+          "normalized": "be reported as a receivable",
+          "original_start": 196,
+          "original_end": 223,
+          "candidate_occurrences": [
+            {
+              "start": 240,
+              "end": 267
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 240,
+            "end": 267
+          },
+          "distance": 88,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000082_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "To the extent that the input tax can be deducted (Section 12(1) of the Value Added Tax Act 1972)",
+          "normalized": "to the extent that the input tax can be deducted (section 12(1) of the value added tax act 1972)",
+          "original_start": 0,
+          "original_end": 76,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 96
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 96
+          },
+          "distance": 20,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 1,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 1,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 1,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

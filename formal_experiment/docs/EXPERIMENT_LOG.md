@@ -6055,3 +6055,21 @@
 - 仍存在 blocker：无
 - 备注：首次scoped git add因新副本重复长目录Filename too long拒绝，索引无新增。只将本批未提交长路径副本保留到formal/.tmp、生成同321份相同字节的短目录副本及新映射；原API产物、父497副本、源/账本/预测/指标/manifest不改。因副本路径/索引变化，仅复跑此具名副本节点；其他4项16.65秒与计数节点2.45秒证据仍匹配，不重跑或全量。无新增API；Kimi原授权节流继续，GitHub外发许可未确认、push仍阻塞。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-07T07:00:54.161685+00:00 - S2-MODEL-SENSITIVITY-V1：Kimi145条节流完成、六家900唯一尝试全分母数据验收
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=kimi_rpm_remaining_20261007_v1；阶段=stage2；方法=multi_model_direct_llm；状态=成功（`succeeded`）
+- 实际运行命令：`python scripts/run_stage2_kimi_rpm_remaining_v1.py --execute --allow-llm`
+- manifest：outputs/development/stage2_multi_model_remaining_v1/kimi_rpm_remaining_20261007_v1/manifest.json
+- 结果摘要：Kimi145未发送项完成137有效，完整150有效141失败9，F1=0.7464；原453+充值302+节流145=900唯一尝试，0重试，原预算不增，六家共享150分母评分完成
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：6 passed in 5.97s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`e0c41844ba031b93ef014c8f3f493450156fb1fd`；相关未提交路径：173 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：已授权调用（`authorized_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：Kimi145从未发送项已完成，用时3189.299秒；21秒最小开始间隔、无新增限流、0重试。完整Kimi有效141、失败9含原一次RPM429；首条原严格失败保留，合并离线恢复，实际reasoning_tokens=1不归零、不解释为占位；无返回思考正文。原453次及充值302次全部字节不变；其他五家评分与原固定DeepSeek/Sun结果复用。完整预测保存后读取Gold共享coarse五字段pooled与modality独立评价。新字节相同本地副本与分析保存；只6项最终具名产物复核，原4+1+1真实产物和13/6准备证据复用、不全量。API全部授权，原900上限耗尽不扩大；GitHub原始产物外发许可未答复，自动审批拒绝push仍未解除。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

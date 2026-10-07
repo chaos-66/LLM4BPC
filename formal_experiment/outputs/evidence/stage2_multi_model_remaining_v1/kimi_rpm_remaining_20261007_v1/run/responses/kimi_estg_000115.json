@@ -1,0 +1,416 @@
+{
+  "request_id": "kimi:estg_000115",
+  "raw_response_utf8": "{\"id\":\"chatcmpl-6ac5e5754e3f74a1c3fbbf7d\",\"object\":\"chat.completion\",\"created\":1791354230,\"model\":\"kimi-k2.6\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000115\\\",\\n  \\\"source_id\\\": \\\"estg_000115\\\",\\n  \\\"source_text\\\": \\\"If the acquisition or production costs subsequently change, the investment allowance shall be adjusted accordingly in the year of the change (increased or reduced).\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000115_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"If the acquisition or production costs subsequently change, the investment allowance shall be adjusted accordingly in the year of the change (increased or reduced).\\\", \\\"start\\\": 0, \\\"end\\\": 127},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 67, \\\"end\\\": 72}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"the investment allowance\\\", \\\"start\\\": 45, \\\"end\\\": 69, \\\"normalized\\\": \\\"investment allowance\\\"}],\\n      \\\"actions\\\": [\\n        {\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"adjusted\\\", \\\"start\\\": 73, \\\"end\\\": 81, \\\"normalized\\\": \\\"adjust\\\"},\\n        {\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"increased\\\", \\\"start\\\": 114, \\\"end\\\": 123, \\\"normalized\\\": \\\"increase\\\"},\\n        {\\\"id\\\": \\\"p03\\\", \\\"text\\\": \\\"reduced\\\", \\\"start\\\": 127, \\\"end\\\": 134, \\\"normalized\\\": \\\"reduce\\\"}\\n      ],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"If the acquisition or production costs subsequently change\\\", \\\"start\\\": 0, \\\"end\\\": 58, \\\"normalized\\\": \\\"if the acquisition or production costs subsequently change\\\"}],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"accordingly\\\", \\\"start\\\": 82, \\\"end\\\": 93, \\\"normalized\\\": \\\"accordingly\\\"},\\n        {\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"in the year of the change\\\", \\\"start\\\": 94, \\\"end\\\": 119, \\\"normalized\\\": \\\"in the year of the change\\\"}\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [\\n        {\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"},\\n        {\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p02\\\"},\\n        {\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p03\\\"}\\n      ],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"reasoning_content\":\"\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4205,\"completion_tokens\":605,\"total_tokens\":4810,\"cached_tokens\":1024,\"completion_tokens_details\":{\"reasoning_tokens\":1},\"prompt_tokens_details\":{\"cached_tokens\":1024}}}",
+  "usage": {
+    "prompt_tokens": 4205,
+    "completion_tokens": 605,
+    "total_tokens": 4810,
+    "reasoning_tokens": 1
+  },
+  "returned_model": "kimi-k2.6",
+  "nonthinking_check": {
+    "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 1,
+    "counter_exception_user_authorized": true,
+    "one_token_meaning_verified": false
+  },
+  "error": null,
+  "prediction": {
+    "provider": "kimi",
+    "sample_id": "estg_000115",
+    "request_id": "kimi:estg_000115",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000115",
+      "source_id": "estg_000115",
+      "source_text": "If the acquisition or production costs subsequently change, the investment allowance shall be adjusted accordingly in the year of the change (increased or reduced).",
+      "clauses": [
+        {
+          "clause_id": "estg_000115_c01",
+          "clause_span": {
+            "text": "If the acquisition or production costs subsequently change, the investment allowance shall be adjusted accordingly in the year of the change (increased or reduced).",
+            "start": 0,
+            "end": 164
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 85,
+                "end": 90
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the investment allowance",
+              "start": 60,
+              "end": 84,
+              "normalized": "the investment allowance",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "adjusted",
+              "start": 94,
+              "end": 102,
+              "normalized": "adjusted",
+              "id": "p01"
+            },
+            {
+              "text": "increased",
+              "start": 142,
+              "end": 151,
+              "normalized": "increased",
+              "id": "p02"
+            },
+            {
+              "text": "reduced",
+              "start": 155,
+              "end": 162,
+              "normalized": "reduced",
+              "id": "p03"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If the acquisition or production costs subsequently change",
+              "start": 0,
+              "end": 58,
+              "normalized": "if the acquisition or production costs subsequently change",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "accordingly",
+              "start": 103,
+              "end": 114,
+              "normalized": "accordingly",
+              "id": "c01"
+            },
+            {
+              "text": "in the year of the change",
+              "start": 115,
+              "end": 140,
+              "normalized": "in the year of the change",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            },
+            {
+              "actor_id": "a01",
+              "action_id": "p02"
+            },
+            {
+              "actor_id": "a01",
+              "action_id": "p03"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 7,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 8,
+      "reanchored_count": 8,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000115_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If the acquisition or production costs subsequently change, the investment allowance shall be adjusted accordingly in the year of the change (increased or reduced).",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 127,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 164
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 164
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000115_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 67,
+          "original_end": 72,
+          "candidate_occurrences": [
+            {
+              "start": 85,
+              "end": 90
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 85,
+            "end": 90
+          },
+          "distance": 36,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000115_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "the investment allowance",
+          "normalized": "the investment allowance",
+          "original_start": 45,
+          "original_end": 69,
+          "candidate_occurrences": [
+            {
+              "start": 60,
+              "end": 84
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 60,
+            "end": 84
+          },
+          "distance": 30,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000115_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "adjusted",
+          "normalized": "adjusted",
+          "original_start": 73,
+          "original_end": 81,
+          "candidate_occurrences": [
+            {
+              "start": 94,
+              "end": 102
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 94,
+            "end": 102
+          },
+          "distance": 42,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000115_c01",
+          "field": "actions",
+          "span_index": 1,
+          "span_id": "p02",
+          "text": "increased",
+          "normalized": "increased",
+          "original_start": 114,
+          "original_end": 123,
+          "candidate_occurrences": [
+            {
+              "start": 142,
+              "end": 151
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 142,
+            "end": 151
+          },
+          "distance": 56,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[2]",
+          "clause_index": 0,
+          "clause_id": "estg_000115_c01",
+          "field": "actions",
+          "span_index": 2,
+          "span_id": "p03",
+          "text": "reduced",
+          "normalized": "reduced",
+          "original_start": 127,
+          "original_end": 134,
+          "candidate_occurrences": [
+            {
+              "start": 155,
+              "end": 162
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 155,
+            "end": 162
+          },
+          "distance": 56,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000115_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "If the acquisition or production costs subsequently change",
+          "normalized": "if the acquisition or production costs subsequently change",
+          "original_start": 0,
+          "original_end": 58,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 58
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 0,
+            "end": 58
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000115_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "accordingly",
+          "normalized": "accordingly",
+          "original_start": 82,
+          "original_end": 93,
+          "candidate_occurrences": [
+            {
+              "start": 103,
+              "end": 114
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 103,
+            "end": 114
+          },
+          "distance": 42,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000115_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "in the year of the change",
+          "normalized": "in the year of the change",
+          "original_start": 94,
+          "original_end": 119,
+          "candidate_occurrences": [
+            {
+              "start": 115,
+              "end": 140
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 115,
+            "end": 140
+          },
+          "distance": 42,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 8,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "request_id": "kimi:estg_000230",
+  "raw_response_utf8": "{\"id\":\"chatcmpl-6ac5e88ff86868c775a45ae2\",\"object\":\"chat.completion\",\"created\":1791355024,\"model\":\"kimi-k2.6\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000230\\\",\\n  \\\"source_id\\\": \\\"estg_000230\\\",\\n  \\\"source_text\\\": \\\"To the extent that the special expense deduction related to the acquisition of new shares, recapture taxation cannot be avoided by acquiring participation certificates.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000230_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"To the extent that the special expense deduction related to the acquisition of new shares, recapture taxation cannot be avoided by acquiring participation certificates.\\\", \\\"start\\\": 0, \\\"end\\\": 137},\\n      \\\"modality\\\": {\\\"label\\\": \\\"prohibition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"cannot\\\", \\\"start\\\": 86, \\\"end\\\": 92}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"avoided\\\", \\\"start\\\": 93, \\\"end\\\": 100, \\\"normalized\\\": \\\"avoid\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"To the extent that the special expense deduction related to the acquisition of new shares\\\", \\\"start\\\": 0, \\\"end\\\": 85, \\\"normalized\\\": \\\"to the extent that the special expense deduction related to the acquisition of new shares\\\"}],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": [\\n    {\\\"field\\\": \\\"actor\\\", \\\"reason\\\": \\\"semantic_scope_ambiguous_in_target\\\"}\\n  ]\\n}\\n```\",\"reasoning_content\":\"\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4203,\"completion_tokens\":410,\"total_tokens\":4613,\"cached_tokens\":1024,\"completion_tokens_details\":{\"reasoning_tokens\":1},\"prompt_tokens_details\":{\"cached_tokens\":1024}}}",
+  "usage": {
+    "prompt_tokens": 4203,
+    "completion_tokens": 410,
+    "total_tokens": 4613,
+    "reasoning_tokens": 1
+  },
+  "returned_model": "kimi-k2.6",
+  "nonthinking_check": {
+    "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 1,
+    "counter_exception_user_authorized": true,
+    "one_token_meaning_verified": false
+  },
+  "error": null,
+  "prediction": {
+    "provider": "kimi",
+    "sample_id": "estg_000230",
+    "request_id": "kimi:estg_000230",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000230",
+      "source_id": "estg_000230",
+      "source_text": "To the extent that the special expense deduction related to the acquisition of new shares, recapture taxation cannot be avoided by acquiring participation certificates.",
+      "clauses": [
+        {
+          "clause_id": "estg_000230_c01",
+          "clause_span": {
+            "text": "To the extent that the special expense deduction related to the acquisition of new shares, recapture taxation cannot be avoided by acquiring participation certificates.",
+            "start": 0,
+            "end": 168
+          },
+          "modality": {
+            "label": "prohibition",
+            "evidence": [
+              {
+                "text": "cannot",
+                "start": 110,
+                "end": 116
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "avoided",
+              "start": 120,
+              "end": 127,
+              "normalized": "avoided",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "To the extent that the special expense deduction related to the acquisition of new shares",
+              "start": 0,
+              "end": 89,
+              "normalized": "to the extent that the special expense deduction related to the acquisition of new shares",
+              "id": "d01"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "semantic_scope_ambiguous_in_target"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 2,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 3,
+      "reanchored_count": 4,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000230_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "To the extent that the special expense deduction related to the acquisition of new shares, recapture taxation cannot be avoided by acquiring participation certificates.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 137,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 168
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 168
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000230_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "cannot",
+          "normalized": null,
+          "original_start": 86,
+          "original_end": 92,
+          "candidate_occurrences": [
+            {
+              "start": 110,
+              "end": 116
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 110,
+            "end": 116
+          },
+          "distance": 48,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000230_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "avoided",
+          "normalized": "avoided",
+          "original_start": 93,
+          "original_end": 100,
+          "candidate_occurrences": [
+            {
+              "start": 120,
+              "end": 127
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 120,
+            "end": 127
+          },
+          "distance": 54,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000230_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "To the extent that the special expense deduction related to the acquisition of new shares",
+          "normalized": "to the extent that the special expense deduction related to the acquisition of new shares",
+          "original_start": 0,
+          "original_end": 85,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 89
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 89
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 4,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

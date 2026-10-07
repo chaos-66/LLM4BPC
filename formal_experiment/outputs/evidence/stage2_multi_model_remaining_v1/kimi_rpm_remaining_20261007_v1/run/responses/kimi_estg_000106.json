@@ -1,0 +1,406 @@
+{
+  "request_id": "kimi:estg_000106",
+  "raw_response_utf8": "{\"id\":\"chatcmpl-6ac5e4e2f86868c775a4592b\",\"object\":\"chat.completion\",\"created\":1791354082,\"model\":\"kimi-k2.6\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000106\\\",\\n  \\\"source_id\\\": \\\"estg_000106\\\",\\n  \\\"source_text\\\": \\\"(2) The investment allowance may only be claimed for business assets which\\\\n— have a normal useful life in the business of at least four years, and\\\\n— are used in a domestic permanent establishment that serves to generate income within the meaning of Section 2(3) items 1 to 3.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000106_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"The investment allowance may only be claimed for business assets which\\\\n— have a normal useful life in the business of at least four years, and\\\\n— are used in a domestic permanent establishment that serves to generate income within the meaning of Section 2(3) items 1 to 3.\\\", \\\"start\\\": 4, \\\"end\\\": 218},\\n      \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may\\\", \\\"start\\\": 28, \\\"end\\\": 31}, {\\\"text\\\": \\\"only\\\", \\\"start\\\": 32, \\\"end\\\": 36}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"The investment allowance\\\", \\\"start\\\": 4, \\\"end\\\": 28, \\\"normalized\\\": \\\"investment allowance\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"claimed\\\", \\\"start\\\": 37, \\\"end\\\": 44, \\\"normalized\\\": \\\"claim\\\"}],\\n      \\\"conditions\\\": [\\n        {\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"for business assets which\\\\n— have a normal useful life in the business of at least four years, and\\\\n— are used in a domestic permanent establishment that serves to generate income within the meaning of Section 2(3) items 1 to 3\\\", \\\"start\\\": 45, \\\"end\\\": 218, \\\"normalized\\\": \\\"for business assets which have a normal useful life in the business of at least four years and are used in a domestic permanent establishment that serves to generate income within the meaning of section 2(3) items 1 to 3\\\"}\\n      ],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"only\\\", \\\"start\\\": 32, \\\"end\\\": 36, \\\"normalized\\\": \\\"only\\\"},\\n        {\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"of at least four years\\\", \\\"start\\\": 102, \\\"end\\\": 124, \\\"normalized\\\": \\\"of at least four years\\\"},\\n        {\\\"id\\\": \\\"c03\\\", \\\"text\\\": \\\"within the meaning of Section 2(3) items 1 to 3\\\", \\\"start\\\": 171, \\\"end\\\": 218, \\\"normalized\\\": \\\"within the meaning of section 2(3) items 1 to 3\\\"}\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"reasoning_content\":\"\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4238,\"completion_tokens\":715,\"total_tokens\":4953,\"cached_tokens\":1024,\"completion_tokens_details\":{\"reasoning_tokens\":1},\"prompt_tokens_details\":{\"cached_tokens\":1024}}}",
+  "usage": {
+    "prompt_tokens": 4238,
+    "completion_tokens": 715,
+    "total_tokens": 4953,
+    "reasoning_tokens": 1
+  },
+  "returned_model": "kimi-k2.6",
+  "nonthinking_check": {
+    "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 1,
+    "counter_exception_user_authorized": true,
+    "one_token_meaning_verified": false
+  },
+  "error": null,
+  "prediction": {
+    "provider": "kimi",
+    "sample_id": "estg_000106",
+    "request_id": "kimi:estg_000106",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000106",
+      "source_id": "estg_000106",
+      "source_text": "(2) The investment allowance may only be claimed for business assets which\n— have a normal useful life in the business of at least four years, and\n— are used in a domestic permanent establishment that serves to generate income within the meaning of Section 2(3) items 1 to 3.",
+      "clauses": [
+        {
+          "clause_id": "estg_000106_c01",
+          "clause_span": {
+            "text": "The investment allowance may only be claimed for business assets which\n— have a normal useful life in the business of at least four years, and\n— are used in a domestic permanent establishment that serves to generate income within the meaning of Section 2(3) items 1 to 3.",
+            "start": 4,
+            "end": 275
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 29,
+                "end": 32
+              },
+              {
+                "text": "only",
+                "start": 33,
+                "end": 37
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "The investment allowance",
+              "start": 4,
+              "end": 28,
+              "normalized": "the investment allowance",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "claimed",
+              "start": 41,
+              "end": 48,
+              "normalized": "claimed",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "for business assets which\n— have a normal useful life in the business of at least four years, and\n— are used in a domestic permanent establishment that serves to generate income within the meaning of Section 2(3) items 1 to 3",
+              "start": 49,
+              "end": 274,
+              "normalized": "for business assets which — have a normal useful life in the business of at least four years, and — are used in a domestic permanent establishment that serves to generate income within the meaning of section 2(3) items 1 to 3",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "only",
+              "start": 33,
+              "end": 37,
+              "normalized": "only",
+              "id": "c01"
+            },
+            {
+              "text": "of at least four years",
+              "start": 119,
+              "end": 141,
+              "normalized": "of at least four years",
+              "id": "c02"
+            },
+            {
+              "text": "within the meaning of Section 2(3) items 1 to 3",
+              "start": 227,
+              "end": 274,
+              "normalized": "within the meaning of section 2(3) items 1 to 3",
+              "id": "c03"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 6,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 8,
+      "reanchored_count": 8,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000106_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The investment allowance may only be claimed for business assets which\n— have a normal useful life in the business of at least four years, and\n— are used in a domestic permanent establishment that serves to generate income within the meaning of Section 2(3) items 1 to 3.",
+          "normalized": null,
+          "original_start": 4,
+          "original_end": 218,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 275
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 275
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000106_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 28,
+          "original_end": 31,
+          "candidate_occurrences": [
+            {
+              "start": 29,
+              "end": 32
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 29,
+            "end": 32
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000106_c01",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "only",
+          "normalized": null,
+          "original_start": 32,
+          "original_end": 36,
+          "candidate_occurrences": [
+            {
+              "start": 33,
+              "end": 37
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 33,
+            "end": 37
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000106_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "The investment allowance",
+          "normalized": "the investment allowance",
+          "original_start": 4,
+          "original_end": 28,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 28
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 4,
+            "end": 28
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000106_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "claimed",
+          "normalized": "claimed",
+          "original_start": 37,
+          "original_end": 44,
+          "candidate_occurrences": [
+            {
+              "start": 41,
+              "end": 48
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 41,
+            "end": 48
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000106_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "for business assets which\n— have a normal useful life in the business of at least four years, and\n— are used in a domestic permanent establishment that serves to generate income within the meaning of Section 2(3) items 1 to 3",
+          "normalized": "for business assets which — have a normal useful life in the business of at least four years, and — are used in a domestic permanent establishment that serves to generate income within the meaning of section 2(3) items 1 to 3",
+          "original_start": 45,
+          "original_end": 218,
+          "candidate_occurrences": [
+            {
+              "start": 49,
+              "end": 274
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 49,
+            "end": 274
+          },
+          "distance": 60,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000106_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "only",
+          "normalized": "only",
+          "original_start": 32,
+          "original_end": 36,
+          "candidate_occurrences": [
+            {
+              "start": 33,
+              "end": 37
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 33,
+            "end": 37
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000106_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "of at least four years",
+          "normalized": "of at least four years",
+          "original_start": 102,
+          "original_end": 124,
+          "candidate_occurrences": [
+            {
+              "start": 119,
+              "end": 141
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 119,
+            "end": 141
+          },
+          "distance": 34,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[2]",
+          "clause_index": 0,
+          "clause_id": "estg_000106_c01",
+          "field": "constraints",
+          "span_index": 2,
+          "span_id": "c03",
+          "text": "within the meaning of Section 2(3) items 1 to 3",
+          "normalized": "within the meaning of section 2(3) items 1 to 3",
+          "original_start": 171,
+          "original_end": 218,
+          "candidate_occurrences": [
+            {
+              "start": 227,
+              "end": 274
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 227,
+            "end": 274
+          },
+          "distance": 112,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 8,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

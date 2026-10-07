@@ -1,0 +1,28 @@
+{
+  "request_id": "kimi:estg_000433",
+  "raw_response_utf8": "{\"id\":\"chatcmpl-6ac5eac142a8e540a9dc2100\",\"object\":\"chat.completion\",\"created\":1791355585,\"model\":\"kimi-k2.6\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000433\\\",\\n  \\\"source_id\\\": \\\"estg_000433\\\",\\n  \\\"source_text\\\": \\\"(2) If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee's first wage tax card, it must be cancelled simultaneously with the issuance of a wage tax card for the spouse.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000433_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee's first wage tax card, it must be cancelled simultaneously with the issuance of a wage tax card for the spouse.\\\", \\\"start\\\": 4, \\\"end\\\": 154},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"must\\\", \\\"start\\\": 103, \\\"end\\\": 107}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"it\\\", \\\"start\\\": 101, \\\"end\\\": 103, \\\"normalized\\\": \\\"it\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"cancelled\\\", \\\"start\\\": 108, \\\"end\\\": 117, \\\"normalized\\\": \\\"cancel\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee's first wage tax card\\\", \\\"start\\\": 4, \\\"end\\\": 99, \\\"normalized\\\": \\\"if the municipality has entered the sole-earner tax credit (section 57(2)) on the employee's first wage tax card\\\"}],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"simultaneously with the issuance of a wage tax card for the spouse\\\", \\\"start\\\": 118, \\\"end\\\": 153, \\\"normalized\\\": \\\"simultaneously with the issuance of a wage tax card for the spouse\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": [\\n    {\\\"field\\\": \\\"actor\\\", \\\"reason\\\": \\\"reference_status=unresolved_coreference;independence_status=context_required\\\"}\\n  ]\\n}\\n```\",\"reasoning_content\":\"\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4223,\"completion_tokens\":565,\"total_tokens\":4788,\"cached_tokens\":1024,\"completion_tokens_details\":{\"reasoning_tokens\":1},\"prompt_tokens_details\":{\"cached_tokens\":1024}}}",
+  "usage": {
+    "prompt_tokens": 4223,
+    "completion_tokens": 565,
+    "total_tokens": 4788,
+    "reasoning_tokens": 1
+  },
+  "returned_model": "kimi-k2.6",
+  "nonthinking_check": {
+    "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 1,
+    "counter_exception_user_authorized": true,
+    "one_token_meaning_verified": false
+  },
+  "error": null,
+  "prediction": {
+    "provider": "kimi",
+    "sample_id": "estg_000433",
+    "request_id": "kimi:estg_000433",
+    "request_status": "failed",
+    "failure_stage": "input_binding",
+    "record": {},
+    "canonicalization_policy": "legacy"
+  }
+}

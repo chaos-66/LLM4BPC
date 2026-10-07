@@ -1,0 +1,345 @@
+{
+  "request_id": "kimi:estg_000578",
+  "raw_response_utf8": "{\"id\":\"chatcmpl-6ac5ec2642a8e540a9dc216f\",\"object\":\"chat.completion\",\"created\":1791355942,\"model\":\"kimi-k2.6\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000578\\\",\\n  \\\"source_id\\\": \\\"estg_000578\\\",\\n  \\\"source_text\\\": \\\"(4) If the wages consist wholly or partly of non-cash benefits and the cash wage is insufficient to cover the wage tax to be withheld, taking into account the value of the non-cash benefits (Section 15(2)), the employee shall pay to the employer the amount required to cover the wage tax to the extent that it is not covered by the cash wage.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000578_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"If the wages consist wholly or partly of non-cash benefits and the cash wage is insufficient to cover the wage tax to be withheld, taking into account the value of the non-cash benefits (Section 15(2)), the employee shall pay to the employer the amount required to cover the wage tax to the extent that it is not covered by the cash wage.\\\", \\\"start\\\": 4, \\\"end\\\": 267},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 183, \\\"end\\\": 188}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"the employee\\\", \\\"start\\\": 171, \\\"end\\\": 183, \\\"normalized\\\": \\\"employee\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"pay to the employer the amount required to cover the wage tax\\\", \\\"start\\\": 189, \\\"end\\\": 250, \\\"normalized\\\": \\\"pay to employer amount required to cover wage tax\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"If the wages consist wholly or partly of non-cash benefits and the cash wage is insufficient to cover the wage tax to be withheld\\\", \\\"start\\\": 4, \\\"end\\\": 131, \\\"normalized\\\": \\\"if wages consist wholly or partly of non-cash benefits and cash wage is insufficient to cover wage tax to be withheld\\\"}],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"taking into account the value of the non-cash benefits (Section 15(2))\\\", \\\"start\\\": 133, \\\"end\\\": 202, \\\"normalized\\\": \\\"taking into account value of non-cash benefits (section 15(2))\\\"},\\n        {\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"to the extent that it is not covered by the cash wage\\\", \\\"start\\\": 251, \\\"end\\\": 264, \\\"normalized\\\": \\\"to extent that it is not covered by cash wage\\\"}\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": [\\n    {\\\"field\\\": \\\"actor\\\", \\\"reason\\\": \\\"reference_status=unresolved_coreference;independence_status=context_required\\\"}\\n  ]\\n}\\n```\",\"reasoning_content\":\"\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4252,\"completion_tokens\":703,\"total_tokens\":4955,\"cached_tokens\":1024,\"completion_tokens_details\":{\"reasoning_tokens\":1},\"prompt_tokens_details\":{\"cached_tokens\":1024}}}",
+  "usage": {
+    "prompt_tokens": 4252,
+    "completion_tokens": 703,
+    "total_tokens": 4955,
+    "reasoning_tokens": 1
+  },
+  "returned_model": "kimi-k2.6",
+  "nonthinking_check": {
+    "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 1,
+    "counter_exception_user_authorized": true,
+    "one_token_meaning_verified": false
+  },
+  "error": null,
+  "prediction": {
+    "provider": "kimi",
+    "sample_id": "estg_000578",
+    "request_id": "kimi:estg_000578",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000578",
+      "source_id": "estg_000578",
+      "source_text": "(4) If the wages consist wholly or partly of non-cash benefits and the cash wage is insufficient to cover the wage tax to be withheld, taking into account the value of the non-cash benefits (Section 15(2)), the employee shall pay to the employer the amount required to cover the wage tax to the extent that it is not covered by the cash wage.",
+      "clauses": [
+        {
+          "clause_id": "estg_000578_c01",
+          "clause_span": {
+            "text": "If the wages consist wholly or partly of non-cash benefits and the cash wage is insufficient to cover the wage tax to be withheld, taking into account the value of the non-cash benefits (Section 15(2)), the employee shall pay to the employer the amount required to cover the wage tax to the extent that it is not covered by the cash wage.",
+            "start": 4,
+            "end": 342
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 220,
+                "end": 225
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the employee",
+              "start": 207,
+              "end": 219,
+              "normalized": "the employee",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "pay to the employer the amount required to cover the wage tax",
+              "start": 226,
+              "end": 287,
+              "normalized": "pay to the employer the amount required to cover the wage tax",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If the wages consist wholly or partly of non-cash benefits and the cash wage is insufficient to cover the wage tax to be withheld",
+              "start": 4,
+              "end": 133,
+              "normalized": "if the wages consist wholly or partly of non-cash benefits and the cash wage is insufficient to cover the wage tax to be withheld",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "taking into account the value of the non-cash benefits (Section 15(2))",
+              "start": 135,
+              "end": 205,
+              "normalized": "taking into account the value of the non-cash benefits (section 15(2))",
+              "id": "c01"
+            },
+            {
+              "text": "to the extent that it is not covered by the cash wage",
+              "start": 288,
+              "end": 341,
+              "normalized": "to the extent that it is not covered by the cash wage",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 5,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 6,
+      "reanchored_count": 7,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000578_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If the wages consist wholly or partly of non-cash benefits and the cash wage is insufficient to cover the wage tax to be withheld, taking into account the value of the non-cash benefits (Section 15(2)), the employee shall pay to the employer the amount required to cover the wage tax to the extent that it is not covered by the cash wage.",
+          "normalized": null,
+          "original_start": 4,
+          "original_end": 267,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 342
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 342
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000578_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 183,
+          "original_end": 188,
+          "candidate_occurrences": [
+            {
+              "start": 220,
+              "end": 225
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 220,
+            "end": 225
+          },
+          "distance": 74,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000578_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "the employee",
+          "normalized": "the employee",
+          "original_start": 171,
+          "original_end": 183,
+          "candidate_occurrences": [
+            {
+              "start": 207,
+              "end": 219
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 207,
+            "end": 219
+          },
+          "distance": 72,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000578_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "pay to the employer the amount required to cover the wage tax",
+          "normalized": "pay to the employer the amount required to cover the wage tax",
+          "original_start": 189,
+          "original_end": 250,
+          "candidate_occurrences": [
+            {
+              "start": 226,
+              "end": 287
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 226,
+            "end": 287
+          },
+          "distance": 74,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000578_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "If the wages consist wholly or partly of non-cash benefits and the cash wage is insufficient to cover the wage tax to be withheld",
+          "normalized": "if the wages consist wholly or partly of non-cash benefits and the cash wage is insufficient to cover the wage tax to be withheld",
+          "original_start": 4,
+          "original_end": 131,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 133
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 133
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000578_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "taking into account the value of the non-cash benefits (Section 15(2))",
+          "normalized": "taking into account the value of the non-cash benefits (section 15(2))",
+          "original_start": 133,
+          "original_end": 202,
+          "candidate_occurrences": [
+            {
+              "start": 135,
+              "end": 205
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 135,
+            "end": 205
+          },
+          "distance": 5,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000578_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "to the extent that it is not covered by the cash wage",
+          "normalized": "to the extent that it is not covered by the cash wage",
+          "original_start": 251,
+          "original_end": 264,
+          "candidate_occurrences": [
+            {
+              "start": 288,
+              "end": 341
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 288,
+            "end": 341
+          },
+          "distance": 114,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 7,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

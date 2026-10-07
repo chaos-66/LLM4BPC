@@ -1,0 +1,412 @@
+{
+  "request_id": "kimi:estg_000098",
+  "raw_response_utf8": "{\"id\":\"chatcmpl-6ac5e48ef86868c775a45905\",\"object\":\"chat.completion\",\"created\":1791353998,\"model\":\"kimi-k2.6\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000098\\\",\\n  \\\"source_id\\\": \\\"estg_000098\\\",\\n  \\\"source_text\\\": \\\"(1) Tax-free reserves (in the case of profit determination pursuant to Section 4(3), tax-free amounts) may be formed up to 10% of the profit — before deduction of trade tax and of an investment allowance claimed as a profit-reducing item and — after deduction of all other business expenses.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000098_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"(1) Tax-free reserves (in the case of profit determination pursuant to Section 4(3), tax-free amounts) may be formed up to 10% of the profit — before deduction of trade tax and of an investment allowance claimed as a profit-reducing item and — after deduction of all other business expenses.\\\", \\\"start\\\": 0, \\\"end\\\": 210},\\n      \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may\\\", \\\"start\\\": 82, \\\"end\\\": 85}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"Tax-free reserves\\\", \\\"start\\\": 4, \\\"end\\\": 21, \\\"normalized\\\": \\\"tax-free reserves\\\"}, {\\\"id\\\": \\\"a02\\\", \\\"text\\\": \\\"tax-free amounts\\\", \\\"start\\\": 72, \\\"end\\\": 88, \\\"normalized\\\": \\\"tax-free amounts\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"be formed\\\", \\\"start\\\": 86, \\\"end\\\": 95, \\\"normalized\\\": \\\"be formed\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"in the case of profit determination pursuant to Section 4(3)\\\", \\\"start\\\": 22, \\\"end\\\": 71, \\\"normalized\\\": \\\"in the case of profit determination pursuant to section 4(3)\\\"}],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"up to 10% of the profit\\\", \\\"start\\\": 96, \\\"end\\\": 119, \\\"normalized\\\": \\\"up to 10% of the profit\\\"}, {\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"before deduction of trade tax and of an investment allowance claimed as a profit-reducing item\\\", \\\"start\\\": 122, \\\"end\\\": 216, \\\"normalized\\\": \\\"before deduction of trade tax and of an investment allowance claimed as a profit-reducing item\\\"}, {\\\"id\\\": \\\"c03\\\", \\\"text\\\": \\\"after deduction of all other business expenses\\\", \\\"start\\\": 223, \\\"end\\\": 269, \\\"normalized\\\": \\\"after deduction of all other business expenses\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}, {\\\"actor_id\\\": \\\"a02\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"reasoning_content\":\"\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4240,\"completion_tokens\":697,\"total_tokens\":4937,\"cached_tokens\":1024,\"completion_tokens_details\":{\"reasoning_tokens\":1},\"prompt_tokens_details\":{\"cached_tokens\":1024}}}",
+  "usage": {
+    "prompt_tokens": 4240,
+    "completion_tokens": 697,
+    "total_tokens": 4937,
+    "reasoning_tokens": 1
+  },
+  "returned_model": "kimi-k2.6",
+  "nonthinking_check": {
+    "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 1,
+    "counter_exception_user_authorized": true,
+    "one_token_meaning_verified": false
+  },
+  "error": null,
+  "prediction": {
+    "provider": "kimi",
+    "sample_id": "estg_000098",
+    "request_id": "kimi:estg_000098",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000098",
+      "source_id": "estg_000098",
+      "source_text": "(1) Tax-free reserves (in the case of profit determination pursuant to Section 4(3), tax-free amounts) may be formed up to 10% of the profit — before deduction of trade tax and of an investment allowance claimed as a profit-reducing item and — after deduction of all other business expenses.",
+      "clauses": [
+        {
+          "clause_id": "estg_000098_c01",
+          "clause_span": {
+            "text": "(1) Tax-free reserves (in the case of profit determination pursuant to Section 4(3), tax-free amounts) may be formed up to 10% of the profit — before deduction of trade tax and of an investment allowance claimed as a profit-reducing item and — after deduction of all other business expenses.",
+            "start": 0,
+            "end": 291
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 103,
+                "end": 106
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "Tax-free reserves",
+              "start": 4,
+              "end": 21,
+              "normalized": "tax-free reserves",
+              "id": "a01"
+            },
+            {
+              "text": "tax-free amounts",
+              "start": 85,
+              "end": 101,
+              "normalized": "tax-free amounts",
+              "id": "a02"
+            }
+          ],
+          "actions": [
+            {
+              "text": "be formed",
+              "start": 107,
+              "end": 116,
+              "normalized": "be formed",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "in the case of profit determination pursuant to Section 4(3)",
+              "start": 23,
+              "end": 83,
+              "normalized": "in the case of profit determination pursuant to section 4(3)",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "up to 10% of the profit",
+              "start": 117,
+              "end": 140,
+              "normalized": "up to 10% of the profit",
+              "id": "c01"
+            },
+            {
+              "text": "before deduction of trade tax and of an investment allowance claimed as a profit-reducing item",
+              "start": 143,
+              "end": 237,
+              "normalized": "before deduction of trade tax and of an investment allowance claimed as a profit-reducing item",
+              "id": "c02"
+            },
+            {
+              "text": "after deduction of all other business expenses",
+              "start": 244,
+              "end": 290,
+              "normalized": "after deduction of all other business expenses",
+              "id": "c03"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            },
+            {
+              "actor_id": "a02",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 7,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 8,
+      "reanchored_count": 8,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000098_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "(1) Tax-free reserves (in the case of profit determination pursuant to Section 4(3), tax-free amounts) may be formed up to 10% of the profit — before deduction of trade tax and of an investment allowance claimed as a profit-reducing item and — after deduction of all other business expenses.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 210,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 291
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 291
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000098_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 82,
+          "original_end": 85,
+          "candidate_occurrences": [
+            {
+              "start": 103,
+              "end": 106
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 103,
+            "end": 106
+          },
+          "distance": 42,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000098_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "Tax-free reserves",
+          "normalized": "tax-free reserves",
+          "original_start": 4,
+          "original_end": 21,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 21
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 4,
+            "end": 21
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000098_c01",
+          "field": "actors",
+          "span_index": 1,
+          "span_id": "a02",
+          "text": "tax-free amounts",
+          "normalized": "tax-free amounts",
+          "original_start": 72,
+          "original_end": 88,
+          "candidate_occurrences": [
+            {
+              "start": 85,
+              "end": 101
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 85,
+            "end": 101
+          },
+          "distance": 26,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000098_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "be formed",
+          "normalized": "be formed",
+          "original_start": 86,
+          "original_end": 95,
+          "candidate_occurrences": [
+            {
+              "start": 107,
+              "end": 116
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 107,
+            "end": 116
+          },
+          "distance": 42,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000098_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "in the case of profit determination pursuant to Section 4(3)",
+          "normalized": "in the case of profit determination pursuant to section 4(3)",
+          "original_start": 22,
+          "original_end": 71,
+          "candidate_occurrences": [
+            {
+              "start": 23,
+              "end": 83
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 23,
+            "end": 83
+          },
+          "distance": 13,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000098_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "up to 10% of the profit",
+          "normalized": "up to 10% of the profit",
+          "original_start": 96,
+          "original_end": 119,
+          "candidate_occurrences": [
+            {
+              "start": 117,
+              "end": 140
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 117,
+            "end": 140
+          },
+          "distance": 42,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000098_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "before deduction of trade tax and of an investment allowance claimed as a profit-reducing item",
+          "normalized": "before deduction of trade tax and of an investment allowance claimed as a profit-reducing item",
+          "original_start": 122,
+          "original_end": 216,
+          "candidate_occurrences": [
+            {
+              "start": 143,
+              "end": 237
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 143,
+            "end": 237
+          },
+          "distance": 42,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[2]",
+          "clause_index": 0,
+          "clause_id": "estg_000098_c01",
+          "field": "constraints",
+          "span_index": 2,
+          "span_id": "c03",
+          "text": "after deduction of all other business expenses",
+          "normalized": "after deduction of all other business expenses",
+          "original_start": 223,
+          "original_end": 269,
+          "candidate_occurrences": [
+            {
+              "start": 244,
+              "end": 290
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 244,
+            "end": 290
+          },
+          "distance": 42,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 8,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

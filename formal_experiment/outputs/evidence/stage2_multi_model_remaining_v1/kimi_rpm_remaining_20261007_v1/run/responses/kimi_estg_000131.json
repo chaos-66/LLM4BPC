@@ -1,0 +1,336 @@
+{
+  "request_id": "kimi:estg_000131",
+  "raw_response_utf8": "{\"id\":\"chatcmpl-6ac5e6484189947e780f0d32\",\"object\":\"chat.completion\",\"created\":1791354440,\"model\":\"kimi-k2.6\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000131\\\",\\n  \\\"source_id\\\": \\\"estg_000131\\\",\\n  \\\"source_text\\\": \\\"In the case of participations, a transfer shall only be permissible to participations in corporations, acquisition and economic cooperatives, or as a silent partner, and, furthermore, only if the management or the registered office is located in the domestic territory.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000131_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"a transfer shall only be permissible to participations in corporations, acquisition and economic cooperatives, or as a silent partner, and, furthermore, only if the management or the registered office is located in the domestic territory\\\", \\\"start\\\": 27, \\\"end\\\": 206},\\n      \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall only be permissible\\\", \\\"start\\\": 38, \\\"end\\\": 63}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"a transfer\\\", \\\"start\\\": 27, \\\"end\\\": 37, \\\"normalized\\\": \\\"transfer\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"permissible to participations in corporations, acquisition and economic cooperatives, or as a silent partner\\\", \\\"start\\\": 53, \\\"end\\\": 160, \\\"normalized\\\": \\\"permissible to participations in corporations, acquisition and economic cooperatives, or as silent partner\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"if the management or the registered office is located in the domestic territory\\\", \\\"start\\\": 180, \\\"end\\\": 259, \\\"normalized\\\": \\\"if the management or the registered office is located in the domestic territory\\\"}],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"only\\\", \\\"start\\\": 43, \\\"end\\\": 47, \\\"normalized\\\": \\\"only\\\"},\\n        {\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"only if\\\", \\\"start\\\": 176, \\\"end\\\": 183, \\\"normalized\\\": \\\"only if\\\"}\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"reasoning_content\":\"\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4226,\"completion_tokens\":566,\"total_tokens\":4792,\"cached_tokens\":1024,\"completion_tokens_details\":{\"reasoning_tokens\":1},\"prompt_tokens_details\":{\"cached_tokens\":1024}}}",
+  "usage": {
+    "prompt_tokens": 4226,
+    "completion_tokens": 566,
+    "total_tokens": 4792,
+    "reasoning_tokens": 1
+  },
+  "returned_model": "kimi-k2.6",
+  "nonthinking_check": {
+    "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 1,
+    "counter_exception_user_authorized": true,
+    "one_token_meaning_verified": false
+  },
+  "error": null,
+  "prediction": {
+    "provider": "kimi",
+    "sample_id": "estg_000131",
+    "request_id": "kimi:estg_000131",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000131",
+      "source_id": "estg_000131",
+      "source_text": "In the case of participations, a transfer shall only be permissible to participations in corporations, acquisition and economic cooperatives, or as a silent partner, and, furthermore, only if the management or the registered office is located in the domestic territory.",
+      "clauses": [
+        {
+          "clause_id": "estg_000131_c01",
+          "clause_span": {
+            "text": "a transfer shall only be permissible to participations in corporations, acquisition and economic cooperatives, or as a silent partner, and, furthermore, only if the management or the registered office is located in the domestic territory",
+            "start": 31,
+            "end": 268
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "shall only be permissible",
+                "start": 42,
+                "end": 67
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "a transfer",
+              "start": 31,
+              "end": 41,
+              "normalized": "a transfer",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "permissible to participations in corporations, acquisition and economic cooperatives, or as a silent partner",
+              "start": 56,
+              "end": 164,
+              "normalized": "permissible to participations in corporations, acquisition and economic cooperatives, or as a silent partner",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "if the management or the registered office is located in the domestic territory",
+              "start": 189,
+              "end": 268,
+              "normalized": "if the management or the registered office is located in the domestic territory",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "only if",
+              "start": 184,
+              "end": 191,
+              "normalized": "only if",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 5,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 6,
+      "reanchored_count": 6,
+      "dropped_spans": [
+        "clauses[0].constraints[0]"
+      ],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000131_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "a transfer shall only be permissible to participations in corporations, acquisition and economic cooperatives, or as a silent partner, and, furthermore, only if the management or the registered office is located in the domestic territory",
+          "normalized": null,
+          "original_start": 27,
+          "original_end": 206,
+          "candidate_occurrences": [
+            {
+              "start": 31,
+              "end": 268
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 31,
+            "end": 268
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000131_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall only be permissible",
+          "normalized": null,
+          "original_start": 38,
+          "original_end": 63,
+          "candidate_occurrences": [
+            {
+              "start": 42,
+              "end": 67
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 42,
+            "end": 67
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000131_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "a transfer",
+          "normalized": "a transfer",
+          "original_start": 27,
+          "original_end": 37,
+          "candidate_occurrences": [
+            {
+              "start": 31,
+              "end": 41
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 31,
+            "end": 41
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000131_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "permissible to participations in corporations, acquisition and economic cooperatives, or as a silent partner",
+          "normalized": "permissible to participations in corporations, acquisition and economic cooperatives, or as a silent partner",
+          "original_start": 53,
+          "original_end": 160,
+          "candidate_occurrences": [
+            {
+              "start": 56,
+              "end": 164
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 56,
+            "end": 164
+          },
+          "distance": 7,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000131_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "if the management or the registered office is located in the domestic territory",
+          "normalized": "if the management or the registered office is located in the domestic territory",
+          "original_start": 180,
+          "original_end": 259,
+          "candidate_occurrences": [
+            {
+              "start": 189,
+              "end": 268
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 189,
+            "end": 268
+          },
+          "distance": 18,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000131_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "only",
+          "normalized": "only",
+          "original_start": 43,
+          "original_end": 47,
+          "candidate_occurrences": [
+            {
+              "start": 48,
+              "end": 52
+            },
+            {
+              "start": 184,
+              "end": 188
+            }
+          ],
+          "strategy": "not_applicable",
+          "chosen": null,
+          "distance": null,
+          "outcome": "unresolved",
+          "reason": "ambiguous_occurrence",
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000131_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "only if",
+          "normalized": "only if",
+          "original_start": 176,
+          "original_end": 183,
+          "candidate_occurrences": [
+            {
+              "start": 184,
+              "end": 191
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 184,
+            "end": 191
+          },
+          "distance": 16,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 1,
+      "reanchored_unique_exact": 6,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 1,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 1,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

@@ -1,0 +1,373 @@
+{
+  "request_id": "kimi:estg_000124",
+  "raw_response_utf8": "{\"id\":\"chatcmpl-6ac5e5def86868c775a459a0\",\"object\":\"chat.completion\",\"created\":1791354334,\"model\":\"kimi-k2.6\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000124\\\",\\n  \\\"source_id\\\": \\\"estg_000124\\\",\\n  \\\"source_text\\\": \\\"Reserves (parts of reserves) which were not required to be offset by the end of the 9-year period pursuant to item 3 shall be released with an increase in profit at that time.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000124_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"Reserves (parts of reserves) which were not required to be offset by the end of the 9-year period pursuant to item 3 shall be released with an increase in profit at that time.\\\", \\\"start\\\": 0, \\\"end\\\": 146},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 87, \\\"end\\\": 92}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"released\\\", \\\"start\\\": 96, \\\"end\\\": 104, \\\"normalized\\\": \\\"release\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"which were not required to be offset by the end of the 9-year period pursuant to item 3\\\", \\\"start\\\": 29, \\\"end\\\": 86, \\\"normalized\\\": \\\"which were not required to be offset by the end of the 9-year period pursuant to item 3\\\"}],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"by the end of the 9-year period\\\", \\\"start\\\": 55, \\\"end\\\": 86, \\\"normalized\\\": \\\"by the end of the 9-year period\\\"},\\n        {\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"pursuant to item 3\\\", \\\"start\\\": 68, \\\"end\\\": 86, \\\"normalized\\\": \\\"pursuant to item 3\\\"},\\n        {\\\"id\\\": \\\"c03\\\", \\\"text\\\": \\\"with an increase in profit\\\", \\\"start\\\": 105, \\\"end\\\": 131, \\\"normalized\\\": \\\"with an increase in profit\\\"},\\n        {\\\"id\\\": \\\"c04\\\", \\\"text\\\": \\\"at that time\\\", \\\"start\\\": 132, \\\"end\\\": 144, \\\"normalized\\\": \\\"at that time\\\"}\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"reasoning_content\":\"\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4216,\"completion_tokens\":598,\"total_tokens\":4814,\"cached_tokens\":1024,\"completion_tokens_details\":{\"reasoning_tokens\":1},\"prompt_tokens_details\":{\"cached_tokens\":1024}}}",
+  "usage": {
+    "prompt_tokens": 4216,
+    "completion_tokens": 598,
+    "total_tokens": 4814,
+    "reasoning_tokens": 1
+  },
+  "returned_model": "kimi-k2.6",
+  "nonthinking_check": {
+    "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 1,
+    "counter_exception_user_authorized": true,
+    "one_token_meaning_verified": false
+  },
+  "error": null,
+  "prediction": {
+    "provider": "kimi",
+    "sample_id": "estg_000124",
+    "request_id": "kimi:estg_000124",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000124",
+      "source_id": "estg_000124",
+      "source_text": "Reserves (parts of reserves) which were not required to be offset by the end of the 9-year period pursuant to item 3 shall be released with an increase in profit at that time.",
+      "clauses": [
+        {
+          "clause_id": "estg_000124_c01",
+          "clause_span": {
+            "text": "Reserves (parts of reserves) which were not required to be offset by the end of the 9-year period pursuant to item 3 shall be released with an increase in profit at that time.",
+            "start": 0,
+            "end": 175
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 117,
+                "end": 122
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "released",
+              "start": 126,
+              "end": 134,
+              "normalized": "released",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "which were not required to be offset by the end of the 9-year period pursuant to item 3",
+              "start": 29,
+              "end": 116,
+              "normalized": "which were not required to be offset by the end of the 9-year period pursuant to item 3",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "by the end of the 9-year period",
+              "start": 66,
+              "end": 97,
+              "normalized": "by the end of the 9-year period",
+              "id": "c01"
+            },
+            {
+              "text": "pursuant to item 3",
+              "start": 98,
+              "end": 116,
+              "normalized": "pursuant to item 3",
+              "id": "c02"
+            },
+            {
+              "text": "with an increase in profit",
+              "start": 135,
+              "end": 161,
+              "normalized": "with an increase in profit",
+              "id": "c03"
+            },
+            {
+              "text": "at that time",
+              "start": 162,
+              "end": 174,
+              "normalized": "at that time",
+              "id": "c04"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 6,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 7,
+      "reanchored_count": 8,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000124_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Reserves (parts of reserves) which were not required to be offset by the end of the 9-year period pursuant to item 3 shall be released with an increase in profit at that time.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 146,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 175
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 175
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000124_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 87,
+          "original_end": 92,
+          "candidate_occurrences": [
+            {
+              "start": 117,
+              "end": 122
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 117,
+            "end": 122
+          },
+          "distance": 60,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000124_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "released",
+          "normalized": "released",
+          "original_start": 96,
+          "original_end": 104,
+          "candidate_occurrences": [
+            {
+              "start": 126,
+              "end": 134
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 126,
+            "end": 134
+          },
+          "distance": 60,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000124_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "which were not required to be offset by the end of the 9-year period pursuant to item 3",
+          "normalized": "which were not required to be offset by the end of the 9-year period pursuant to item 3",
+          "original_start": 29,
+          "original_end": 86,
+          "candidate_occurrences": [
+            {
+              "start": 29,
+              "end": 116
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 29,
+            "end": 116
+          },
+          "distance": 30,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000124_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "by the end of the 9-year period",
+          "normalized": "by the end of the 9-year period",
+          "original_start": 55,
+          "original_end": 86,
+          "candidate_occurrences": [
+            {
+              "start": 66,
+              "end": 97
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 66,
+            "end": 97
+          },
+          "distance": 22,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000124_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "pursuant to item 3",
+          "normalized": "pursuant to item 3",
+          "original_start": 68,
+          "original_end": 86,
+          "candidate_occurrences": [
+            {
+              "start": 98,
+              "end": 116
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 98,
+            "end": 116
+          },
+          "distance": 60,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[2]",
+          "clause_index": 0,
+          "clause_id": "estg_000124_c01",
+          "field": "constraints",
+          "span_index": 2,
+          "span_id": "c03",
+          "text": "with an increase in profit",
+          "normalized": "with an increase in profit",
+          "original_start": 105,
+          "original_end": 131,
+          "candidate_occurrences": [
+            {
+              "start": 135,
+              "end": 161
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 135,
+            "end": 161
+          },
+          "distance": 60,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[3]",
+          "clause_index": 0,
+          "clause_id": "estg_000124_c01",
+          "field": "constraints",
+          "span_index": 3,
+          "span_id": "c04",
+          "text": "at that time",
+          "normalized": "at that time",
+          "original_start": 132,
+          "original_end": 144,
+          "candidate_occurrences": [
+            {
+              "start": 162,
+              "end": 174
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 162,
+            "end": 174
+          },
+          "distance": 60,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 8,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

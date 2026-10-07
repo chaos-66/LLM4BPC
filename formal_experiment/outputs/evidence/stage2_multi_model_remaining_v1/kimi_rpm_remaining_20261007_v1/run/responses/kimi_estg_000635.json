@@ -1,0 +1,310 @@
+{
+  "request_id": "kimi:estg_000635",
+  "raw_response_utf8": "{\"id\":\"chatcmpl-6ac5ec65add3131074015017\",\"object\":\"chat.completion\",\"created\":1791356005,\"model\":\"kimi-k2.6\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000635\\\",\\n  \\\"source_id\\\": \\\"estg_000635\\\",\\n  \\\"source_text\\\": \\\"(4) The person required to make the deduction shall issue to the recipient a certificate indicating the amount of the capital yields and the tax amount, the payment date, and the period for which the capital yields have been paid, and shall state therein the tax office to which the tax amount has been remitted.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000635_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"The person required to make the deduction shall issue to the recipient a certificate indicating the amount of the capital yields and the tax amount, the payment date, and the period for which the capital yields have been paid, and shall state therein the tax office to which the tax amount has been remitted.\\\", \\\"start\\\": 4, \\\"end\\\": 280},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 46, \\\"end\\\": 51}, {\\\"text\\\": \\\"shall\\\", \\\"start\\\": 232, \\\"end\\\": 237}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"The person required to make the deduction\\\", \\\"start\\\": 4, \\\"end\\\": 45, \\\"normalized\\\": \\\"person required to make deduction\\\"}],\\n      \\\"actions\\\": [\\n        {\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"issue to the recipient a certificate indicating the amount of the capital yields and the tax amount, the payment date, and the period for which the capital yields have been paid\\\", \\\"start\\\": 52, \\\"end\\\": 227, \\\"normalized\\\": \\\"issue to recipient certificate indicating amount of capital yields and tax amount, payment date, and period for which capital yields have been paid\\\"},\\n        {\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"state therein the tax office to which the tax amount has been remitted\\\", \\\"start\\\": 238, \\\"end\\\": 279, \\\"normalized\\\": \\\"state therein tax office to which tax amount has been remitted\\\"}\\n      ],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [\\n        {\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"},\\n        {\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p02\\\"}\\n      ],\\n      \\\"order_relations\\\": [{\\\"from_action_id\\\": \\\"p01\\\", \\\"to_action_id\\\": \\\"p02\\\", \\\"relation_type\\\": \\\"sequence\\\", \\\"evidence\\\": {\\\"text\\\": \\\"and shall\\\", \\\"start\\\": 228, \\\"end\\\": 237}}]\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"reasoning_content\":\"\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4238,\"completion_tokens\":642,\"total_tokens\":4880,\"cached_tokens\":1024,\"completion_tokens_details\":{\"reasoning_tokens\":1},\"prompt_tokens_details\":{\"cached_tokens\":1024}}}",
+  "usage": {
+    "prompt_tokens": 4238,
+    "completion_tokens": 642,
+    "total_tokens": 4880,
+    "reasoning_tokens": 1
+  },
+  "returned_model": "kimi-k2.6",
+  "nonthinking_check": {
+    "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 1,
+    "counter_exception_user_authorized": true,
+    "one_token_meaning_verified": false
+  },
+  "error": null,
+  "prediction": {
+    "provider": "kimi",
+    "sample_id": "estg_000635",
+    "request_id": "kimi:estg_000635",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000635",
+      "source_id": "estg_000635",
+      "source_text": "(4) The person required to make the deduction shall issue to the recipient a certificate indicating the amount of the capital yields and the tax amount, the payment date, and the period for which the capital yields have been paid, and shall state therein the tax office to which the tax amount has been remitted.",
+      "clauses": [
+        {
+          "clause_id": "estg_000635_c01",
+          "clause_span": {
+            "text": "The person required to make the deduction shall issue to the recipient a certificate indicating the amount of the capital yields and the tax amount, the payment date, and the period for which the capital yields have been paid, and shall state therein the tax office to which the tax amount has been remitted.",
+            "start": 4,
+            "end": 312
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 46,
+                "end": 51
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "The person required to make the deduction",
+              "start": 4,
+              "end": 45,
+              "normalized": "the person required to make the deduction",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "issue to the recipient a certificate indicating the amount of the capital yields and the tax amount, the payment date, and the period for which the capital yields have been paid",
+              "start": 52,
+              "end": 229,
+              "normalized": "issue to the recipient a certificate indicating the amount of the capital yields and the tax amount, the payment date, and the period for which the capital yields have been paid",
+              "id": "p01"
+            },
+            {
+              "text": "state therein the tax office to which the tax amount has been remitted",
+              "start": 241,
+              "end": 311,
+              "normalized": "state therein the tax office to which the tax amount has been remitted",
+              "id": "p02"
+            }
+          ],
+          "conditions": [],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            },
+            {
+              "actor_id": "a01",
+              "action_id": "p02"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 5,
+      "reanchored_count": 3,
+      "dropped_spans": [
+        "clauses[0].modality.evidence[1]"
+      ],
+      "dropped_clauses": [],
+      "dropped_edges": [
+        "clauses[0].order_relations[0]"
+      ],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000635_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "The person required to make the deduction shall issue to the recipient a certificate indicating the amount of the capital yields and the tax amount, the payment date, and the period for which the capital yields have been paid, and shall state therein the tax office to which the tax amount has been remitted.",
+          "normalized": null,
+          "original_start": 4,
+          "original_end": 280,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 312
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 312
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000635_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 46,
+          "original_end": 51,
+          "candidate_occurrences": [
+            {
+              "start": 46,
+              "end": 51
+            },
+            {
+              "start": 235,
+              "end": 240
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 46,
+            "end": 51
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000635_c01",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 232,
+          "original_end": 237,
+          "candidate_occurrences": [
+            {
+              "start": 46,
+              "end": 51
+            },
+            {
+              "start": 235,
+              "end": 240
+            }
+          ],
+          "strategy": "not_applicable",
+          "chosen": null,
+          "distance": null,
+          "outcome": "unresolved",
+          "reason": "ambiguous_occurrence",
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000635_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "The person required to make the deduction",
+          "normalized": "the person required to make the deduction",
+          "original_start": 4,
+          "original_end": 45,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 45
+            }
+          ],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 4,
+            "end": 45
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000635_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "issue to the recipient a certificate indicating the amount of the capital yields and the tax amount, the payment date, and the period for which the capital yields have been paid",
+          "normalized": "issue to the recipient a certificate indicating the amount of the capital yields and the tax amount, the payment date, and the period for which the capital yields have been paid",
+          "original_start": 52,
+          "original_end": 227,
+          "candidate_occurrences": [
+            {
+              "start": 52,
+              "end": 229
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 52,
+            "end": 229
+          },
+          "distance": 2,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000635_c01",
+          "field": "actions",
+          "span_index": 1,
+          "span_id": "p02",
+          "text": "state therein the tax office to which the tax amount has been remitted",
+          "normalized": "state therein the tax office to which the tax amount has been remitted",
+          "original_start": 238,
+          "original_end": 279,
+          "candidate_occurrences": [
+            {
+              "start": 241,
+              "end": 311
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 241,
+            "end": 311
+          },
+          "distance": 35,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 2,
+      "unresolved_spans": 1,
+      "reanchored_unique_exact": 3,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 1,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 1,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

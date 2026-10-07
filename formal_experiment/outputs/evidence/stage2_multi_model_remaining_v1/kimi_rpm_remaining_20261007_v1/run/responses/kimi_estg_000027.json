@@ -1,0 +1,276 @@
+{
+  "request_id": "kimi:estg_000027",
+  "raw_response_utf8": "{\"id\":\"chatcmpl-6ac5e143c578797db90806e4\",\"object\":\"chat.completion\",\"created\":1791353155,\"model\":\"kimi-k2.6\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000027\\\",\\n  \\\"source_id\\\": \\\"estg_000027\\\",\\n  \\\"source_text\\\": \\\"Section 25(1) items 7, 8, 8a, 9 of the Civilian Service Act 1986) only for part of the calendar year, the income as defined in Section 2(3) items 1 to 3 earned in the remainder of the calendar year and current income from employment as defined in Section 41(4) shall be converted to an annual amount for the purpose of determining the tax rate.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000027_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"Section 25(1) items 7, 8, 8a, 9 of the Civilian Service Act 1986) only for part of the calendar year, the income as defined in Section 2(3) items 1 to 3 earned in the remainder of the calendar year and current income from employment as defined in Section 41(4) shall be converted to an annual amount for the purpose of determining the tax rate.\\\", \\\"start\\\": 0, \\\"end\\\": 264},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 185, \\\"end\\\": 190}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [\\n        {\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"converted to an annual amount\\\", \\\"start\\\": 191, \\\"end\\\": 220, \\\"normalized\\\": \\\"convert to annual amount\\\"}\\n      ],\\n      \\\"conditions\\\": [\\n        {\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"only for part of the calendar year\\\", \\\"start\\\": 64, \\\"end\\\": 98, \\\"normalized\\\": \\\"only for part of the calendar year\\\"}\\n      ],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"for the purpose of determining the tax rate\\\", \\\"start\\\": 221, \\\"end\\\": 264, \\\"normalized\\\": \\\"for the purpose of determining the tax rate\\\"}\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [\\n        {\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}\\n      ],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": [\\n    {\\\"field\\\": \\\"actor\\\", \\\"reason\\\": \\\"reference_status=unresolved_coreference;independence_status=context_required\\\"}\\n  ]\\n}\\n```\",\"reasoning_content\":\"\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4268,\"completion_tokens\":595,\"total_tokens\":4863,\"completion_tokens_details\":{\"reasoning_tokens\":1}}}",
+  "usage": {
+    "prompt_tokens": 4268,
+    "completion_tokens": 595,
+    "total_tokens": 4863,
+    "reasoning_tokens": 1
+  },
+  "returned_model": "kimi-k2.6",
+  "nonthinking_check": {
+    "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 1,
+    "counter_exception_user_authorized": true,
+    "one_token_meaning_verified": false
+  },
+  "error": null,
+  "prediction": {
+    "provider": "kimi",
+    "sample_id": "estg_000027",
+    "request_id": "kimi:estg_000027",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000027",
+      "source_id": "estg_000027",
+      "source_text": "Section 25(1) items 7, 8, 8a, 9 of the Civilian Service Act 1986) only for part of the calendar year, the income as defined in Section 2(3) items 1 to 3 earned in the remainder of the calendar year and current income from employment as defined in Section 41(4) shall be converted to an annual amount for the purpose of determining the tax rate.",
+      "clauses": [
+        {
+          "clause_id": "estg_000027_c01",
+          "clause_span": {
+            "text": "Section 25(1) items 7, 8, 8a, 9 of the Civilian Service Act 1986) only for part of the calendar year, the income as defined in Section 2(3) items 1 to 3 earned in the remainder of the calendar year and current income from employment as defined in Section 41(4) shall be converted to an annual amount for the purpose of determining the tax rate.",
+            "start": 0,
+            "end": 344
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 261,
+                "end": 266
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "converted to an annual amount",
+              "start": 270,
+              "end": 299,
+              "normalized": "converted to an annual amount",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "only for part of the calendar year",
+              "start": 66,
+              "end": 100,
+              "normalized": "only for part of the calendar year",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "for the purpose of determining the tax rate",
+              "start": 300,
+              "end": 343,
+              "normalized": "for the purpose of determining the tax rate",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 5,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000027_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Section 25(1) items 7, 8, 8a, 9 of the Civilian Service Act 1986) only for part of the calendar year, the income as defined in Section 2(3) items 1 to 3 earned in the remainder of the calendar year and current income from employment as defined in Section 41(4) shall be converted to an annual amount for the purpose of determining the tax rate.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 264,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 344
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 344
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000027_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 185,
+          "original_end": 190,
+          "candidate_occurrences": [
+            {
+              "start": 261,
+              "end": 266
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 261,
+            "end": 266
+          },
+          "distance": 152,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000027_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "converted to an annual amount",
+          "normalized": "converted to an annual amount",
+          "original_start": 191,
+          "original_end": 220,
+          "candidate_occurrences": [
+            {
+              "start": 270,
+              "end": 299
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 270,
+            "end": 299
+          },
+          "distance": 158,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000027_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "only for part of the calendar year",
+          "normalized": "only for part of the calendar year",
+          "original_start": 64,
+          "original_end": 98,
+          "candidate_occurrences": [
+            {
+              "start": 66,
+              "end": 100
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 66,
+            "end": 100
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000027_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "for the purpose of determining the tax rate",
+          "normalized": "for the purpose of determining the tax rate",
+          "original_start": 221,
+          "original_end": 264,
+          "candidate_occurrences": [
+            {
+              "start": 300,
+              "end": 343
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 300,
+            "end": 343
+          },
+          "distance": 158,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

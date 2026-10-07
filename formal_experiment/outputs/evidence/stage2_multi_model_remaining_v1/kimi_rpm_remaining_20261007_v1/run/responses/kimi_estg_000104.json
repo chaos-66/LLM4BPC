@@ -1,0 +1,340 @@
+{
+  "request_id": "kimi:estg_000104",
+  "raw_response_utf8": "{\"id\":\"chatcmpl-6ac5e4b8add3131074014ce9\",\"object\":\"chat.completion\",\"created\":1791354040,\"model\":\"kimi-k2.6\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000104\\\",\\n  \\\"source_id\\\": \\\"estg_000104\\\",\\n  \\\"source_text\\\": \\\"(1) Upon the acquisition or production of depreciable fixed assets, the taxpayer may claim an investment allowance of up to 20% of the acquisition or production costs as a profit-reducing deduction.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000104_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"(1) Upon the acquisition or production of depreciable fixed assets, the taxpayer may claim an investment allowance of up to 20% of the acquisition or production costs as a profit-reducing deduction.\\\", \\\"start\\\": 0, \\\"end\\\": 154},\\n      \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may\\\", \\\"start\\\": 75, \\\"end\\\": 78}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"the taxpayer\\\", \\\"start\\\": 63, \\\"end\\\": 75, \\\"normalized\\\": \\\"taxpayer\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"claim an investment allowance\\\", \\\"start\\\": 79, \\\"end\\\": 108, \\\"normalized\\\": \\\"claim investment allowance\\\"}],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"Upon the acquisition or production of depreciable fixed assets\\\", \\\"start\\\": 4, \\\"end\\\": 62, \\\"normalized\\\": \\\"upon the acquisition or production of depreciable fixed assets\\\"}],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"of up to 20% of the acquisition or production costs\\\", \\\"start\\\": 109, \\\"end\\\": 160, \\\"normalized\\\": \\\"of up to 20% of the acquisition or production costs\\\"},\\n        {\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"as a profit-reducing deduction\\\", \\\"start\\\": 161, \\\"end\\\": 191, \\\"normalized\\\": \\\"as profit-reducing deduction\\\"}\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"reasoning_content\":\"\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4216,\"completion_tokens\":540,\"total_tokens\":4756,\"cached_tokens\":1024,\"completion_tokens_details\":{\"reasoning_tokens\":1},\"prompt_tokens_details\":{\"cached_tokens\":1024}}}",
+  "usage": {
+    "prompt_tokens": 4216,
+    "completion_tokens": 540,
+    "total_tokens": 4756,
+    "reasoning_tokens": 1
+  },
+  "returned_model": "kimi-k2.6",
+  "nonthinking_check": {
+    "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 1,
+    "counter_exception_user_authorized": true,
+    "one_token_meaning_verified": false
+  },
+  "error": null,
+  "prediction": {
+    "provider": "kimi",
+    "sample_id": "estg_000104",
+    "request_id": "kimi:estg_000104",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000104",
+      "source_id": "estg_000104",
+      "source_text": "(1) Upon the acquisition or production of depreciable fixed assets, the taxpayer may claim an investment allowance of up to 20% of the acquisition or production costs as a profit-reducing deduction.",
+      "clauses": [
+        {
+          "clause_id": "estg_000104_c01",
+          "clause_span": {
+            "text": "(1) Upon the acquisition or production of depreciable fixed assets, the taxpayer may claim an investment allowance of up to 20% of the acquisition or production costs as a profit-reducing deduction.",
+            "start": 0,
+            "end": 198
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 81,
+                "end": 84
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the taxpayer",
+              "start": 68,
+              "end": 80,
+              "normalized": "the taxpayer",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "claim an investment allowance",
+              "start": 85,
+              "end": 114,
+              "normalized": "claim an investment allowance",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "Upon the acquisition or production of depreciable fixed assets",
+              "start": 4,
+              "end": 66,
+              "normalized": "upon the acquisition or production of depreciable fixed assets",
+              "id": "d01"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "of up to 20% of the acquisition or production costs",
+              "start": 115,
+              "end": 166,
+              "normalized": "of up to 20% of the acquisition or production costs",
+              "id": "c01"
+            },
+            {
+              "text": "as a profit-reducing deduction",
+              "start": 167,
+              "end": 197,
+              "normalized": "as a profit-reducing deduction",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 5,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 6,
+      "reanchored_count": 7,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000104_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "(1) Upon the acquisition or production of depreciable fixed assets, the taxpayer may claim an investment allowance of up to 20% of the acquisition or production costs as a profit-reducing deduction.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 154,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 198
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 198
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000104_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 75,
+          "original_end": 78,
+          "candidate_occurrences": [
+            {
+              "start": 81,
+              "end": 84
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 81,
+            "end": 84
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000104_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "the taxpayer",
+          "normalized": "the taxpayer",
+          "original_start": 63,
+          "original_end": 75,
+          "candidate_occurrences": [
+            {
+              "start": 68,
+              "end": 80
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 68,
+            "end": 80
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000104_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "claim an investment allowance",
+          "normalized": "claim an investment allowance",
+          "original_start": 79,
+          "original_end": 108,
+          "candidate_occurrences": [
+            {
+              "start": 85,
+              "end": 114
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 85,
+            "end": 114
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000104_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "Upon the acquisition or production of depreciable fixed assets",
+          "normalized": "upon the acquisition or production of depreciable fixed assets",
+          "original_start": 4,
+          "original_end": 62,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 66
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 66
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000104_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "of up to 20% of the acquisition or production costs",
+          "normalized": "of up to 20% of the acquisition or production costs",
+          "original_start": 109,
+          "original_end": 160,
+          "candidate_occurrences": [
+            {
+              "start": 115,
+              "end": 166
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 115,
+            "end": 166
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000104_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "as a profit-reducing deduction",
+          "normalized": "as a profit-reducing deduction",
+          "original_start": 161,
+          "original_end": 191,
+          "candidate_occurrences": [
+            {
+              "start": 167,
+              "end": 197
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 167,
+            "end": 197
+          },
+          "distance": 12,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 7,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

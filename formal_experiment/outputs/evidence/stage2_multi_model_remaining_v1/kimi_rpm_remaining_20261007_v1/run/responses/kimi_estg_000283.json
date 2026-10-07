@@ -1,0 +1,28 @@
+{
+  "request_id": "kimi:estg_000283",
+  "raw_response_utf8": "{\"id\":\"chatcmpl-6ac5e95153b6eb36bb95e603\",\"object\":\"chat.completion\",\"created\":1791355217,\"model\":\"kimi-k2.6\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000283\\\",\\n  \\\"source_id\\\": \\\"estg_000283\\\",\\n  \\\"source_text\\\": \\\"A business trip occurs when an employee\\\\n\\\\n— leaves their duty station (office, permanent establishment, factory premises, warehouse, etc.) on the employer's orders to perform work duties, or\\\\n— works so far away from their permanent place of residence (family home) that they cannot reasonably be expected to return to that permanent place of residence (family home) on a daily basis.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000283_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"A business trip occurs when an employee\\\\n\\\\n— leaves their duty station (office, permanent establishment, factory premises, warehouse, etc.) on the employer's orders to perform work duties, or\\\\n— works so far away from their permanent place of residence (family home) that they cannot reasonably be expected to return to that permanent place of residence (family home) on a daily basis.\\\", \\\"start\\\": 0, \\\"end\\\": 298},\\n      \\\"modality\\\": {\\\"label\\\": \\\"definition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"occurs when\\\", \\\"start\\\": 17, \\\"end\\\": 28}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"an employee\\\", \\\"start\\\": 29, \\\"end\\\": 40, \\\"normalized\\\": \\\"employee\\\"}],\\n      \\\"actions\\\": [\\n        {\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"leaves their duty station\\\", \\\"start\\\": 44, \\\"end\\\": 69, \\\"normalized\\\": \\\"leave duty station\\\"},\\n        {\\\"id\\\": \\\"p02\\\", \\\"text\\\": \\\"works so far away from their permanent place of residence\\\", \\\"start\\\": 164, \\\"end\\\": 221, \\\"normalized\\\": \\\"work far away from permanent place of residence\\\"}\\n      ],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"on the employer's orders to perform work duties\\\", \\\"start\\\": 118, \\\"end\\\": 163, \\\"normalized\\\": \\\"on employer's orders to perform work duties\\\"},\\n        {\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"that they cannot reasonably be expected to return to that permanent place of residence (family home) on a daily basis\\\", \\\"start\\\": 222, \\\"end\\\": 340, \\\"normalized\\\": \\\"that they cannot reasonably be expected to return to that permanent place of residence on daily basis\\\"}\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [\\n        {\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"},\\n        {\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p02\\\"}\\n      ],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"reasoning_content\":\"\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4252,\"completion_tokens\":660,\"total_tokens\":4912,\"cached_tokens\":1024,\"completion_tokens_details\":{\"reasoning_tokens\":1},\"prompt_tokens_details\":{\"cached_tokens\":1024}}}",
+  "usage": {
+    "prompt_tokens": 4252,
+    "completion_tokens": 660,
+    "total_tokens": 4912,
+    "reasoning_tokens": 1
+  },
+  "returned_model": "kimi-k2.6",
+  "nonthinking_check": {
+    "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 1,
+    "counter_exception_user_authorized": true,
+    "one_token_meaning_verified": false
+  },
+  "error": null,
+  "prediction": {
+    "provider": "kimi",
+    "sample_id": "estg_000283",
+    "request_id": "kimi:estg_000283",
+    "request_status": "failed",
+    "failure_stage": "input_binding",
+    "record": {},
+    "canonicalization_policy": "legacy"
+  }
+}

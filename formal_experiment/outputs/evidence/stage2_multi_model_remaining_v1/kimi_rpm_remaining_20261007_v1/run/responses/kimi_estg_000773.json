@@ -1,0 +1,339 @@
+{
+  "request_id": "kimi:estg_000773",
+  "raw_response_utf8": "{\"id\":\"chatcmpl-6ac5ecf953b6eb36bb95e80d\",\"object\":\"chat.completion\",\"created\":1791356154,\"model\":\"kimi-k2.6\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000773\\\",\\n  \\\"source_id\\\": \\\"estg_000773\\\",\\n  \\\"source_text\\\": \\\"If the legal person under private law is held exclusively, directly or indirectly, by corporations under public law, activities conducted in a separate set of accounts within the meaning of subsection (3) shall be deemed a single activity, even if the individual activities lack the intention of making a profit.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000773_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"If the legal person under private law is held exclusively, directly or indirectly, by corporations under public law, activities conducted in a separate set of accounts within the meaning of subsection (3) shall be deemed a single activity, even if the individual activities lack the intention of making a profit.\\\", \\\"start\\\": 0, \\\"end\\\": 238},\\n      \\\"modality\\\": {\\\"label\\\": \\\"obligation\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"shall\\\", \\\"start\\\": 158, \\\"end\\\": 163}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"deemed a single activity\\\", \\\"start\\\": 169, \\\"end\\\": 193, \\\"normalized\\\": \\\"deem a single activity\\\"}],\\n      \\\"conditions\\\": [\\n        {\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"If the legal person under private law is held exclusively, directly or indirectly, by corporations under public law\\\", \\\"start\\\": 0, \\\"end\\\": 118, \\\"normalized\\\": \\\"if the legal person under private law is held exclusively, directly or indirectly, by corporations under public law\\\"},\\n        {\\\"id\\\": \\\"d02\\\", \\\"text\\\": \\\"even if the individual activities lack the intention of making a profit\\\", \\\"start\\\": 195, \\\"end\\\": 266, \\\"normalized\\\": \\\"even if the individual activities lack the intention of making a profit\\\"}\\n      ],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"conducted in a separate set of accounts\\\", \\\"start\\\": 120, \\\"end\\\": 159, \\\"normalized\\\": \\\"conducted in a separate set of accounts\\\"},\\n        {\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"within the meaning of subsection (3)\\\", \\\"start\\\": 160, \\\"end\\\": 196, \\\"normalized\\\": \\\"within the meaning of subsection (3)\\\"}\\n      ],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"reasoning_content\":\"\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4233,\"completion_tokens\":618,\"total_tokens\":4851,\"cached_tokens\":1024,\"completion_tokens_details\":{\"reasoning_tokens\":1},\"prompt_tokens_details\":{\"cached_tokens\":1024}}}",
+  "usage": {
+    "prompt_tokens": 4233,
+    "completion_tokens": 618,
+    "total_tokens": 4851,
+    "reasoning_tokens": 1
+  },
+  "returned_model": "kimi-k2.6",
+  "nonthinking_check": {
+    "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 1,
+    "counter_exception_user_authorized": true,
+    "one_token_meaning_verified": false
+  },
+  "error": null,
+  "prediction": {
+    "provider": "kimi",
+    "sample_id": "estg_000773",
+    "request_id": "kimi:estg_000773",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000773",
+      "source_id": "estg_000773",
+      "source_text": "If the legal person under private law is held exclusively, directly or indirectly, by corporations under public law, activities conducted in a separate set of accounts within the meaning of subsection (3) shall be deemed a single activity, even if the individual activities lack the intention of making a profit.",
+      "clauses": [
+        {
+          "clause_id": "estg_000773_c01",
+          "clause_span": {
+            "text": "If the legal person under private law is held exclusively, directly or indirectly, by corporations under public law, activities conducted in a separate set of accounts within the meaning of subsection (3) shall be deemed a single activity, even if the individual activities lack the intention of making a profit.",
+            "start": 0,
+            "end": 312
+          },
+          "modality": {
+            "label": "obligation",
+            "evidence": [
+              {
+                "text": "shall",
+                "start": 205,
+                "end": 210
+              }
+            ]
+          },
+          "actors": [],
+          "actions": [
+            {
+              "text": "deemed a single activity",
+              "start": 214,
+              "end": 238,
+              "normalized": "deemed a single activity",
+              "id": "p01"
+            }
+          ],
+          "conditions": [
+            {
+              "text": "If the legal person under private law is held exclusively, directly or indirectly, by corporations under public law",
+              "start": 0,
+              "end": 115,
+              "normalized": "if the legal person under private law is held exclusively, directly or indirectly, by corporations under public law",
+              "id": "d01"
+            },
+            {
+              "text": "even if the individual activities lack the intention of making a profit",
+              "start": 240,
+              "end": 311,
+              "normalized": "even if the individual activities lack the intention of making a profit",
+              "id": "d02"
+            }
+          ],
+          "constraints": [
+            {
+              "text": "conducted in a separate set of accounts",
+              "start": 128,
+              "end": 167,
+              "normalized": "conducted in a separate set of accounts",
+              "id": "c01"
+            },
+            {
+              "text": "within the meaning of subsection (3)",
+              "start": 168,
+              "end": 204,
+              "normalized": "within the meaning of subsection (3)",
+              "id": "c02"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": null,
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 5,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 6,
+      "reanchored_count": 7,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000773_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "If the legal person under private law is held exclusively, directly or indirectly, by corporations under public law, activities conducted in a separate set of accounts within the meaning of subsection (3) shall be deemed a single activity, even if the individual activities lack the intention of making a profit.",
+          "normalized": null,
+          "original_start": 0,
+          "original_end": 238,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 312
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 312
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000773_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall",
+          "normalized": null,
+          "original_start": 158,
+          "original_end": 163,
+          "candidate_occurrences": [
+            {
+              "start": 205,
+              "end": 210
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 205,
+            "end": 210
+          },
+          "distance": 94,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000773_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "deemed a single activity",
+          "normalized": "deemed a single activity",
+          "original_start": 169,
+          "original_end": 193,
+          "candidate_occurrences": [
+            {
+              "start": 214,
+              "end": 238
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 214,
+            "end": 238
+          },
+          "distance": 90,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000773_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "If the legal person under private law is held exclusively, directly or indirectly, by corporations under public law",
+          "normalized": "if the legal person under private law is held exclusively, directly or indirectly, by corporations under public law",
+          "original_start": 0,
+          "original_end": 118,
+          "candidate_occurrences": [
+            {
+              "start": 0,
+              "end": 115
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 0,
+            "end": 115
+          },
+          "distance": 3,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000773_c01",
+          "field": "conditions",
+          "span_index": 1,
+          "span_id": "d02",
+          "text": "even if the individual activities lack the intention of making a profit",
+          "normalized": "even if the individual activities lack the intention of making a profit",
+          "original_start": 195,
+          "original_end": 266,
+          "candidate_occurrences": [
+            {
+              "start": 240,
+              "end": 311
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 240,
+            "end": 311
+          },
+          "distance": 90,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000773_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "conducted in a separate set of accounts",
+          "normalized": "conducted in a separate set of accounts",
+          "original_start": 120,
+          "original_end": 159,
+          "candidate_occurrences": [
+            {
+              "start": 128,
+              "end": 167
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 128,
+            "end": 167
+          },
+          "distance": 16,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000773_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "within the meaning of subsection (3)",
+          "normalized": "within the meaning of subsection (3)",
+          "original_start": 160,
+          "original_end": 196,
+          "candidate_occurrences": [
+            {
+              "start": 168,
+              "end": 204
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 168,
+            "end": 204
+          },
+          "distance": 16,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 7,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}

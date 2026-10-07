@@ -1,0 +1,271 @@
+{
+  "request_id": "kimi:estg_000145",
+  "raw_response_utf8": "{\"id\":\"chatcmpl-6ac5e6db4189947e780f0d5d\",\"object\":\"chat.completion\",\"created\":1791354587,\"model\":\"kimi-k2.6\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000145\\\",\\n  \\\"source_id\\\": \\\"estg_000145\\\",\\n  \\\"source_text\\\": \\\"(6) Taxpayers who determine their profit in accordance with Section 4(3) may apply in the tax return for an amount to be left tax-free for the notional severance pay claims existing at the end of the business year.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000145_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"Taxpayers who determine their profit in accordance with Section 4(3) may apply in the tax return for an amount to be left tax-free for the notional severance pay claims existing at the end of the business year.\\\", \\\"start\\\": 4, \\\"end\\\": 183},\\n      \\\"modality\\\": {\\\"label\\\": \\\"permission\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may\\\", \\\"start\\\": 70, \\\"end\\\": 73}]},\\n      \\\"actors\\\": [{\\\"id\\\": \\\"a01\\\", \\\"text\\\": \\\"Taxpayers who determine their profit in accordance with Section 4(3)\\\", \\\"start\\\": 4, \\\"end\\\": 69, \\\"normalized\\\": \\\"taxpayers who determine their profit in accordance with section 4(3)\\\"}],\\n      \\\"actions\\\": [{\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"apply in the tax return for an amount to be left tax-free\\\", \\\"start\\\": 74, \\\"end\\\": 131, \\\"normalized\\\": \\\"apply in tax return for amount to be left tax-free\\\"}],\\n      \\\"conditions\\\": [],\\n      \\\"constraints\\\": [{\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"for the notional severance pay claims existing at the end of the business year\\\", \\\"start\\\": 132, \\\"end\\\": 182, \\\"normalized\\\": \\\"for notional severance pay claims existing at end of business year\\\"}],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": \\\"a01\\\", \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": []\\n}\\n```\",\"reasoning_content\":\"\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4226,\"completion_tokens\":512,\"total_tokens\":4738,\"cached_tokens\":1024,\"completion_tokens_details\":{\"reasoning_tokens\":1},\"prompt_tokens_details\":{\"cached_tokens\":1024}}}",
+  "usage": {
+    "prompt_tokens": 4226,
+    "completion_tokens": 512,
+    "total_tokens": 4738,
+    "reasoning_tokens": 1
+  },
+  "returned_model": "kimi-k2.6",
+  "nonthinking_check": {
+    "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 1,
+    "counter_exception_user_authorized": true,
+    "one_token_meaning_verified": false
+  },
+  "error": null,
+  "prediction": {
+    "provider": "kimi",
+    "sample_id": "estg_000145",
+    "request_id": "kimi:estg_000145",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000145",
+      "source_id": "estg_000145",
+      "source_text": "(6) Taxpayers who determine their profit in accordance with Section 4(3) may apply in the tax return for an amount to be left tax-free for the notional severance pay claims existing at the end of the business year.",
+      "clauses": [
+        {
+          "clause_id": "estg_000145_c01",
+          "clause_span": {
+            "text": "Taxpayers who determine their profit in accordance with Section 4(3) may apply in the tax return for an amount to be left tax-free for the notional severance pay claims existing at the end of the business year.",
+            "start": 4,
+            "end": 214
+          },
+          "modality": {
+            "label": "permission",
+            "evidence": [
+              {
+                "text": "may",
+                "start": 73,
+                "end": 76
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "Taxpayers who determine their profit in accordance with Section 4(3)",
+              "start": 4,
+              "end": 72,
+              "normalized": "taxpayers who determine their profit in accordance with section 4(3)",
+              "id": "a01"
+            }
+          ],
+          "actions": [
+            {
+              "text": "apply in the tax return for an amount to be left tax-free",
+              "start": 77,
+              "end": 134,
+              "normalized": "apply in the tax return for an amount to be left tax-free",
+              "id": "p01"
+            }
+          ],
+          "conditions": [],
+          "constraints": [
+            {
+              "text": "for the notional severance pay claims existing at the end of the business year",
+              "start": 135,
+              "end": 213,
+              "normalized": "for the notional severance pay claims existing at the end of the business year",
+              "id": "c01"
+            }
+          ],
+          "exceptions": [],
+          "actor_action_map": [
+            {
+              "actor_id": "a01",
+              "action_id": "p01"
+            }
+          ],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": []
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "reanchored",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 5,
+      "dropped_spans": [],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000145_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "Taxpayers who determine their profit in accordance with Section 4(3) may apply in the tax return for an amount to be left tax-free for the notional severance pay claims existing at the end of the business year.",
+          "normalized": null,
+          "original_start": 4,
+          "original_end": 183,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 214
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 214
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000145_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 70,
+          "original_end": 73,
+          "candidate_occurrences": [
+            {
+              "start": 73,
+              "end": 76
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 73,
+            "end": 76
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000145_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "Taxpayers who determine their profit in accordance with Section 4(3)",
+          "normalized": "taxpayers who determine their profit in accordance with section 4(3)",
+          "original_start": 4,
+          "original_end": 69,
+          "candidate_occurrences": [
+            {
+              "start": 4,
+              "end": 72
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 4,
+            "end": 72
+          },
+          "distance": 3,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000145_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "apply in the tax return for an amount to be left tax-free",
+          "normalized": "apply in the tax return for an amount to be left tax-free",
+          "original_start": 74,
+          "original_end": 131,
+          "candidate_occurrences": [
+            {
+              "start": 77,
+              "end": 134
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 77,
+            "end": 134
+          },
+          "distance": 6,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000145_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "for the notional severance pay claims existing at the end of the business year",
+          "normalized": "for the notional severance pay claims existing at the end of the business year",
+          "original_start": 132,
+          "original_end": 182,
+          "candidate_occurrences": [
+            {
+              "start": 135,
+              "end": 213
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 135,
+            "end": 213
+          },
+          "distance": 34,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 0,
+      "reanchored_unique_exact": 5,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  }
+}
