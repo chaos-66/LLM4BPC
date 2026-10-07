@@ -1,0 +1,256 @@
+{
+  "request_id": "mimo:estg_000414",
+  "raw_response_utf8": "\n\n\n\n{\"id\":\"4747d9c0-7978-49ea-8b78-b6965bc2e319_9ec26aa3dfbc4f9293d022af83a779fe\",\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"content\":\"{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000414\\\",\\n  \\\"source_id\\\": \\\"estg_000414\\\",\\n  \\\"source_text\\\": \\\"(3) If neither an assessment under Section 39 nor under Section 41 takes place, the income tax attributable to income subject to withholding tax shall be deemed discharged for the taxpayer if he can neither be held liable under Section 83(2) nor under Section 95(2), nor is an annual adjustment under Section 72 to be carried out.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000414_c01\\\",\\n      \\\"clause_span\\\": {\\n        \\\"text\\\": \\\"the income tax attributable to income subject to withholding tax shall be deemed discharged for the taxpayer if he can neither be held liable under Section 83(2) nor under Section 95(2), nor is an annual adjustment under Section 72 to be carried out.\\\",\\n        \\\"start\\\": 78,\\n        \\\"end\\\": 313\\n      },\\n      \\\"modality\\\": {\\n        \\\"label\\\": \\\"definition\\\",\\n        \\\"evidence\\\": [\\n          {\\n            \\\"text\\\": \\\"shall be deemed discharged\\\",\\n            \\\"start\\\": 132,\\n            \\\"end\\\": 158\\n          }\\n        ]\\n      },\\n      \\\"actors\\\": [\\n        {\\n          \\\"id\\\": \\\"a01\\\",\\n          \\\"text\\\": \\\"the taxpayer\\\",\\n          \\\"start\\\": 163,\\n          \\\"end\\\": 175,\\n          \\\"normalized\\\": \\\"taxpayer\\\"\\n        }\\n      ],\\n      \\\"actions\\\": [],\\n      \\\"conditions\\\": [\\n        {\\n          \\\"id\\\": \\\"d01\\\",\\n          \\\"text\\\": \\\"If neither an assessment under Section 39 nor under Section 41 takes place\\\",\\n          \\\"start\\\": 4,\\n          \\\"end\\\": 77,\\n          \\\"normalized\\\": \\\"if neither an assessment under section 39 nor under section 41 takes place\\\"\\n        },\\n        {\\n          \\\"id\\\": \\\"d02\\\",\\n          \\\"text\\\": \\\"if he can neither be held liable under Section 83(2) nor under Section 95(2), nor is an annual adjustment under Section 72 to be carried out\\\",\\n          \\\"start\\\": 176,\\n          \\\"end\\\": 312,\\n          \\\"normalized\\\": \\\"if he can neither be held liable under section 83(2) nor under section 95(2), nor is an annual adjustment under section 72 to be carried out\\\"\\n        }\\n      ],\\n      \\\"constraints\\\": [],\\n      \\\"exceptions\\\": [],\\n      \\\"actor_action_map\\\": [],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\n    \\\"name\\\": \\\"direct_llm\\\",\\n    \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"\\n  },\\n  \\\"validation\\\": {\\n    \\\"schema_valid\\\": true,\\n    \\\"cross_field_valid\\\": true,\\n    \\\"errors\\\": []\\n  },\\n  \\\"unsupported_or_ambiguous\\\": [\\n    {\\n      \\\"field\\\": \\\"actor\\\",\\n      \\\"reason\\\": \\\"reference_status=unresolved_coreference;independence_status=context_required\\\"\\n    }\\n  ]\\n}\",\"role\":\"assistant\",\"tool_calls\":null}}],\"created\":1791365217,\"model\":\"mimo-v2.6-pro\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":684,\"prompt_tokens\":4423,\"total_tokens\":5107,\"completion_tokens_details\":{\"reasoning_tokens\":0},\"prompt_tokens_details\":{\"cached_tokens\":4352}}}",
+  "usage": {
+    "prompt_tokens": 4423,
+    "completion_tokens": 684,
+    "total_tokens": 5107,
+    "reasoning_tokens": 0
+  },
+  "returned_model": "mimo-v2.6-pro",
+  "nonthinking_check": {
+    "status": "no_reported_reasoning",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 0
+  },
+  "error": null,
+  "prediction": {
+    "provider": "mimo",
+    "sample_id": "estg_000414",
+    "request_id": "mimo:estg_000414",
+    "request_status": "ok",
+    "failure_stage": null,
+    "record": {
+      "schema_version": "1.0.0",
+      "sample_id": "estg_000414",
+      "source_id": "estg_000414",
+      "source_text": "(3) If neither an assessment under Section 39 nor under Section 41 takes place, the income tax attributable to income subject to withholding tax shall be deemed discharged for the taxpayer if he can neither be held liable under Section 83(2) nor under Section 95(2), nor is an annual adjustment under Section 72 to be carried out.",
+      "clauses": [
+        {
+          "clause_id": "estg_000414_c01",
+          "clause_span": {
+            "text": "the income tax attributable to income subject to withholding tax shall be deemed discharged for the taxpayer if he can neither be held liable under Section 83(2) nor under Section 95(2), nor is an annual adjustment under Section 72 to be carried out.",
+            "start": 80,
+            "end": 330
+          },
+          "modality": {
+            "label": "definition",
+            "evidence": [
+              {
+                "text": "shall be deemed discharged",
+                "start": 145,
+                "end": 171
+              }
+            ]
+          },
+          "actors": [
+            {
+              "text": "the taxpayer",
+              "start": 176,
+              "end": 188,
+              "normalized": "the taxpayer",
+              "id": "a01"
+            }
+          ],
+          "actions": [],
+          "conditions": [
+            {
+              "text": "if he can neither be held liable under Section 83(2) nor under Section 95(2), nor is an annual adjustment under Section 72 to be carried out",
+              "start": 189,
+              "end": 329,
+              "normalized": "if he can neither be held liable under section 83(2) nor under section 95(2), nor is an annual adjustment under section 72 to be carried out",
+              "id": "d02"
+            }
+          ],
+          "constraints": [],
+          "exceptions": [],
+          "actor_action_map": [],
+          "order_relations": []
+        }
+      ],
+      "method": {
+        "name": "direct_llm",
+        "schema_source": "stage2_prediction.schema.json@1.0.0"
+      },
+      "validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      },
+      "unsupported_or_ambiguous": [
+        {
+          "field": "actor",
+          "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+        }
+      ]
+    },
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 3,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 4,
+      "reanchored_count": 4,
+      "dropped_spans": [
+        "clauses[0].conditions[0]"
+      ],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000414_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "the income tax attributable to income subject to withholding tax shall be deemed discharged for the taxpayer if he can neither be held liable under Section 83(2) nor under Section 95(2), nor is an annual adjustment under Section 72 to be carried out.",
+          "normalized": null,
+          "original_start": 78,
+          "original_end": 313,
+          "candidate_occurrences": [
+            {
+              "start": 80,
+              "end": 330
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 80,
+            "end": 330
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000414_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "shall be deemed discharged",
+          "normalized": null,
+          "original_start": 132,
+          "original_end": 158,
+          "candidate_occurrences": [
+            {
+              "start": 145,
+              "end": 171
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 145,
+            "end": 171
+          },
+          "distance": 26,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actors[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000414_c01",
+          "field": "actors",
+          "span_index": 0,
+          "span_id": "a01",
+          "text": "the taxpayer",
+          "normalized": "the taxpayer",
+          "original_start": 163,
+          "original_end": 175,
+          "candidate_occurrences": [
+            {
+              "start": 176,
+              "end": 188
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 176,
+            "end": 188
+          },
+          "distance": 26,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000414_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "If neither an assessment under Section 39 nor under Section 41 takes place",
+          "normalized": "if neither an assessment under section 39 nor under section 41 takes place",
+          "original_start": 4,
+          "original_end": 77,
+          "candidate_occurrences": [],
+          "strategy": "not_applicable",
+          "chosen": null,
+          "distance": null,
+          "outcome": "unresolved",
+          "reason": "zero_occurrence",
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000414_c01",
+          "field": "conditions",
+          "span_index": 1,
+          "span_id": "d02",
+          "text": "if he can neither be held liable under Section 83(2) nor under Section 95(2), nor is an annual adjustment under Section 72 to be carried out",
+          "normalized": "if he can neither be held liable under section 83(2) nor under section 95(2), nor is an annual adjustment under section 72 to be carried out",
+          "original_start": 176,
+          "original_end": 312,
+          "candidate_occurrences": [
+            {
+              "start": 189,
+              "end": 329
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 189,
+            "end": 329
+          },
+          "distance": 30,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 0,
+      "unresolved_spans": 1,
+      "reanchored_unique_exact": 4,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": true,
+      "errors": []
+    }
+  },
+  "echo_recovery_audit": null
+}

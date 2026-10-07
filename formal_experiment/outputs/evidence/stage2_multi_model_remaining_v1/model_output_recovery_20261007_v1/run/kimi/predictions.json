@@ -1,0 +1,1422 @@
+{
+  "records": [
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000021",
+      "request_id": "kimi:estg_000021",
+      "request_status": "ok",
+      "failure_stage": null,
+      "record": {
+        "schema_version": "1.0.0",
+        "sample_id": "estg_000021",
+        "source_id": "estg_000021",
+        "source_text": "Free tobacco, free cigars and free cigarettes to employees in tobacco processing establishments, if the products granted may not be sold and are granted only in such a quantity that actually precludes a sale. 21.",
+        "clauses": [
+          {
+            "clause_id": "estg_000021_c01",
+            "clause_span": {
+              "text": "Free tobacco, free cigars and free cigarettes to employees in tobacco processing establishments, if the products granted may not be sold and are granted only in such a quantity that actually precludes a sale.",
+              "start": 0,
+              "end": 208
+            },
+            "modality": {
+              "label": "permission",
+              "evidence": [
+                {
+                  "text": "Free",
+                  "start": 0,
+                  "end": 4
+                }
+              ]
+            },
+            "actors": [],
+            "actions": [
+              {
+                "text": "Free tobacco",
+                "start": 0,
+                "end": 12,
+                "normalized": "free tobacco",
+                "id": "p01"
+              },
+              {
+                "text": "free cigars",
+                "start": 14,
+                "end": 25,
+                "normalized": "free cigars",
+                "id": "p02"
+              },
+              {
+                "text": "free cigarettes",
+                "start": 30,
+                "end": 45,
+                "normalized": "free cigarettes",
+                "id": "p03"
+              }
+            ],
+            "conditions": [
+              {
+                "text": "if the products granted may not be sold and are granted only in such a quantity that actually precludes a sale",
+                "start": 97,
+                "end": 207,
+                "normalized": "if the products granted may not be sold and are granted only in such a quantity that actually precludes a sale",
+                "id": "d01"
+              }
+            ],
+            "constraints": [
+              {
+                "text": "only in such a quantity that actually precludes a sale",
+                "start": 153,
+                "end": 207,
+                "normalized": "only in such a quantity that actually precludes a sale",
+                "id": "c01"
+              }
+            ],
+            "exceptions": [],
+            "actor_action_map": [
+              {
+                "actor_id": null,
+                "action_id": "p01"
+              },
+              {
+                "actor_id": null,
+                "action_id": "p02"
+              },
+              {
+                "actor_id": null,
+                "action_id": "p03"
+              }
+            ],
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "validation": {
+          "schema_valid": true,
+          "cross_field_valid": true,
+          "errors": []
+        },
+        "unsupported_or_ambiguous": [
+          {
+            "field": "actor",
+            "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+          }
+        ]
+      },
+      "canonicalization_policy": "legacy",
+      "adapter_audit": {
+        "attempted": true,
+        "status": "adapted",
+        "spans_adapted": 5,
+        "dropped_spans": [],
+        "failed_reasons": []
+      },
+      "canonicalizer_audit": {
+        "attempted": true,
+        "status": "reanchored",
+        "policy": "legacy",
+        "cost_metric": "abs_start_plus_abs_end",
+        "clause_span_count": 1,
+        "field_span_count": 6,
+        "reanchored_count": 3,
+        "dropped_spans": [],
+        "dropped_clauses": [],
+        "dropped_edges": [],
+        "failed_reasons": [],
+        "resolution_events": [
+          {
+            "path": "clauses[0].clause_span",
+            "clause_index": 0,
+            "clause_id": "estg_000021_c01",
+            "field": "clause_span",
+            "span_index": null,
+            "span_id": null,
+            "text": "Free tobacco, free cigars and free cigarettes to employees in tobacco processing establishments, if the products granted may not be sold and are granted only in such a quantity that actually precludes a sale.",
+            "normalized": null,
+            "original_start": 0,
+            "original_end": 147,
+            "candidate_occurrences": [
+              {
+                "start": 0,
+                "end": 208
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 0,
+              "end": 208
+            },
+            "distance": null,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].modality.evidence[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000021_c01",
+            "field": "modality.evidence",
+            "span_index": 0,
+            "span_id": null,
+            "text": "Free",
+            "normalized": null,
+            "original_start": 0,
+            "original_end": 4,
+            "candidate_occurrences": [
+              {
+                "start": 0,
+                "end": 4
+              }
+            ],
+            "strategy": "unchanged",
+            "chosen": {
+              "start": 0,
+              "end": 4
+            },
+            "distance": 0,
+            "outcome": "unchanged",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].actions[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000021_c01",
+            "field": "actions",
+            "span_index": 0,
+            "span_id": "p01",
+            "text": "Free tobacco",
+            "normalized": "free tobacco",
+            "original_start": 0,
+            "original_end": 12,
+            "candidate_occurrences": [
+              {
+                "start": 0,
+                "end": 12
+              }
+            ],
+            "strategy": "unchanged",
+            "chosen": {
+              "start": 0,
+              "end": 12
+            },
+            "distance": 0,
+            "outcome": "unchanged",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].actions[1]",
+            "clause_index": 0,
+            "clause_id": "estg_000021_c01",
+            "field": "actions",
+            "span_index": 1,
+            "span_id": "p02",
+            "text": "free cigars",
+            "normalized": "free cigars",
+            "original_start": 14,
+            "original_end": 25,
+            "candidate_occurrences": [
+              {
+                "start": 14,
+                "end": 25
+              }
+            ],
+            "strategy": "unchanged",
+            "chosen": {
+              "start": 14,
+              "end": 25
+            },
+            "distance": 0,
+            "outcome": "unchanged",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].actions[2]",
+            "clause_index": 0,
+            "clause_id": "estg_000021_c01",
+            "field": "actions",
+            "span_index": 2,
+            "span_id": "p03",
+            "text": "free cigarettes",
+            "normalized": "free cigarettes",
+            "original_start": 30,
+            "original_end": 45,
+            "candidate_occurrences": [
+              {
+                "start": 30,
+                "end": 45
+              }
+            ],
+            "strategy": "unchanged",
+            "chosen": {
+              "start": 30,
+              "end": 45
+            },
+            "distance": 0,
+            "outcome": "unchanged",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].conditions[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000021_c01",
+            "field": "conditions",
+            "span_index": 0,
+            "span_id": "d01",
+            "text": "if the products granted may not be sold and are granted only in such a quantity that actually precludes a sale",
+            "normalized": "if the products granted may not be sold and are granted only in such a quantity that actually precludes a sale",
+            "original_start": 67,
+            "original_end": 146,
+            "candidate_occurrences": [
+              {
+                "start": 97,
+                "end": 207
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 97,
+              "end": 207
+            },
+            "distance": 91,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].constraints[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000021_c01",
+            "field": "constraints",
+            "span_index": 0,
+            "span_id": "c01",
+            "text": "only in such a quantity that actually precludes a sale",
+            "normalized": "only in such a quantity that actually precludes a sale",
+            "original_start": 100,
+            "original_end": 146,
+            "candidate_occurrences": [
+              {
+                "start": 153,
+                "end": 207
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 153,
+              "end": 207
+            },
+            "distance": 114,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          }
+        ],
+        "unchanged_spans": 4,
+        "unresolved_spans": 0,
+        "reanchored_unique_exact": 3,
+        "reanchored_repeated_exact": 0,
+        "repeated_occurrence_cases": 0,
+        "repeated_occurrence_recovered": 0,
+        "repeated_occurrence_unresolved": 0,
+        "tie_cases": 0,
+        "one_to_one_assignment_cases": 0,
+        "assignment_ambiguities": 0
+      },
+      "runtime_validation": {
+        "schema_valid": true,
+        "cross_field_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000077",
+      "request_id": "kimi:estg_000077",
+      "request_status": "failed",
+      "failure_stage": "canonical_validation",
+      "record": {},
+      "canonicalization_policy": "legacy",
+      "adapter_audit": {
+        "attempted": true,
+        "status": "adapted",
+        "spans_adapted": 19,
+        "dropped_spans": [],
+        "failed_reasons": []
+      },
+      "canonicalizer_audit": {
+        "attempted": true,
+        "status": "reanchored",
+        "policy": "legacy",
+        "cost_metric": "abs_start_plus_abs_end",
+        "clause_span_count": 5,
+        "field_span_count": 24,
+        "reanchored_count": 29,
+        "dropped_spans": [],
+        "dropped_clauses": [],
+        "dropped_edges": [],
+        "failed_reasons": [],
+        "resolution_events": [
+          {
+            "path": "clauses[0].clause_span",
+            "clause_index": 0,
+            "clause_id": "estg_000077_c01",
+            "field": "clause_span",
+            "span_index": null,
+            "span_id": null,
+            "text": "Participations and loan receivables in companies with registered office or place of management abroad may, under the following conditions, be recognized in the year of acquisition at a value of 90% of the acquisition costs:",
+            "normalized": null,
+            "original_start": 0,
+            "original_end": 199,
+            "candidate_occurrences": [
+              {
+                "start": 0,
+                "end": 223
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 0,
+              "end": 223
+            },
+            "distance": null,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].modality.evidence[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000077_c01",
+            "field": "modality.evidence",
+            "span_index": 0,
+            "span_id": null,
+            "text": "may",
+            "normalized": null,
+            "original_start": 96,
+            "original_end": 99,
+            "candidate_occurrences": [
+              {
+                "start": 102,
+                "end": 105
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 102,
+              "end": 105
+            },
+            "distance": 12,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].actors[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000077_c01",
+            "field": "actors",
+            "span_index": 0,
+            "span_id": "a01",
+            "text": "Participations and loan receivables in companies with registered office or place of management abroad",
+            "normalized": "participations and loan receivables in companies with registered office or place of management abroad",
+            "original_start": 0,
+            "original_end": 95,
+            "candidate_occurrences": [
+              {
+                "start": 0,
+                "end": 101
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 0,
+              "end": 101
+            },
+            "distance": 6,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].actions[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000077_c01",
+            "field": "actions",
+            "span_index": 0,
+            "span_id": "p01",
+            "text": "be recognized",
+            "normalized": "be recognized",
+            "original_start": 128,
+            "original_end": 141,
+            "candidate_occurrences": [
+              {
+                "start": 139,
+                "end": 152
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 139,
+              "end": 152
+            },
+            "distance": 22,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].conditions[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000077_c01",
+            "field": "conditions",
+            "span_index": 0,
+            "span_id": "d01",
+            "text": "under the following conditions",
+            "normalized": "under the following conditions",
+            "original_start": 101,
+            "original_end": 127,
+            "candidate_occurrences": [
+              {
+                "start": 107,
+                "end": 137
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 107,
+              "end": 137
+            },
+            "distance": 16,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].constraints[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000077_c01",
+            "field": "constraints",
+            "span_index": 0,
+            "span_id": "c01",
+            "text": "in the year of acquisition",
+            "normalized": "in the year of acquisition",
+            "original_start": 142,
+            "original_end": 168,
+            "candidate_occurrences": [
+              {
+                "start": 153,
+                "end": 179
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 153,
+              "end": 179
+            },
+            "distance": 22,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].constraints[1]",
+            "clause_index": 0,
+            "clause_id": "estg_000077_c01",
+            "field": "constraints",
+            "span_index": 1,
+            "span_id": "c02",
+            "text": "at a value of 90% of the acquisition costs",
+            "normalized": "at a value of 90% of the acquisition costs",
+            "original_start": 169,
+            "original_end": 198,
+            "candidate_occurrences": [
+              {
+                "start": 180,
+                "end": 222
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 180,
+              "end": 222
+            },
+            "distance": 35,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[1].clause_span",
+            "clause_index": 1,
+            "clause_id": "estg_000077_c02",
+            "field": "clause_span",
+            "span_index": null,
+            "span_id": null,
+            "text": "The funds are used for a permanent establishment abroad which serves the distribution, setting up or servicing of goods produced in Austria.",
+            "normalized": null,
+            "original_start": 201,
+            "original_end": 342,
+            "candidate_occurrences": [
+              {
+                "start": 227,
+                "end": 367
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 227,
+              "end": 367
+            },
+            "distance": null,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[1].modality.evidence[0]",
+            "clause_index": 1,
+            "clause_id": "estg_000077_c02",
+            "field": "modality.evidence",
+            "span_index": 0,
+            "span_id": null,
+            "text": "are used",
+            "normalized": null,
+            "original_start": 211,
+            "original_end": 219,
+            "candidate_occurrences": [
+              {
+                "start": 237,
+                "end": 245
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 237,
+              "end": 245
+            },
+            "distance": 52,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[1].actors[0]",
+            "clause_index": 1,
+            "clause_id": "estg_000077_c02",
+            "field": "actors",
+            "span_index": 0,
+            "span_id": "a02",
+            "text": "The funds",
+            "normalized": "the funds",
+            "original_start": 201,
+            "original_end": 210,
+            "candidate_occurrences": [
+              {
+                "start": 227,
+                "end": 236
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 227,
+              "end": 236
+            },
+            "distance": 52,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[1].actions[0]",
+            "clause_index": 1,
+            "clause_id": "estg_000077_c02",
+            "field": "actions",
+            "span_index": 0,
+            "span_id": "p02",
+            "text": "used",
+            "normalized": "used",
+            "original_start": 215,
+            "original_end": 219,
+            "candidate_occurrences": [
+              {
+                "start": 241,
+                "end": 245
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 241,
+              "end": 245
+            },
+            "distance": 52,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[1].constraints[0]",
+            "clause_index": 1,
+            "clause_id": "estg_000077_c02",
+            "field": "constraints",
+            "span_index": 0,
+            "span_id": "c03",
+            "text": "for a permanent establishment abroad which serves the distribution, setting up or servicing of goods produced in Austria",
+            "normalized": "for a permanent establishment abroad which serves the distribution, setting up or servicing of goods produced in austria",
+            "original_start": 220,
+            "original_end": 341,
+            "candidate_occurrences": [
+              {
+                "start": 246,
+                "end": 366
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 246,
+              "end": 366
+            },
+            "distance": 51,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[2].clause_span",
+            "clause_index": 2,
+            "clause_id": "estg_000077_c03",
+            "field": "clause_span",
+            "span_index": null,
+            "span_id": null,
+            "text": "In the case of corporations, there must be\n— significant participations (participation of more than 25% in the share capital) acquired upon formation or a capital increase, or\n— shareholder loans from substantial shareholders, if the loans were granted upon formation or a considerable expansion of the company.",
+            "normalized": null,
+            "original_start": 344,
+            "original_end": 603,
+            "candidate_occurrences": [
+              {
+                "start": 371,
+                "end": 682
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 371,
+              "end": 682
+            },
+            "distance": null,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[2].modality.evidence[0]",
+            "clause_index": 2,
+            "clause_id": "estg_000077_c03",
+            "field": "modality.evidence",
+            "span_index": 0,
+            "span_id": null,
+            "text": "must",
+            "normalized": null,
+            "original_start": 376,
+            "original_end": 380,
+            "candidate_occurrences": [
+              {
+                "start": 406,
+                "end": 410
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 406,
+              "end": 410
+            },
+            "distance": 60,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[2].actors[0]",
+            "clause_index": 2,
+            "clause_id": "estg_000077_c03",
+            "field": "actors",
+            "span_index": 0,
+            "span_id": "a03",
+            "text": "there",
+            "normalized": "there",
+            "original_start": 372,
+            "original_end": 375,
+            "candidate_occurrences": [
+              {
+                "start": 400,
+                "end": 405
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 400,
+              "end": 405
+            },
+            "distance": 58,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[2].actions[0]",
+            "clause_index": 2,
+            "clause_id": "estg_000077_c03",
+            "field": "actions",
+            "span_index": 0,
+            "span_id": "p03",
+            "text": "significant participations (participation of more than 25% in the share capital) acquired",
+            "normalized": "significant participations (participation of more than 25% in the share capital) acquired",
+            "original_start": 384,
+            "original_end": 472,
+            "candidate_occurrences": [
+              {
+                "start": 416,
+                "end": 505
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 416,
+              "end": 505
+            },
+            "distance": 65,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[2].actions[1]",
+            "clause_index": 2,
+            "clause_id": "estg_000077_c03",
+            "field": "actions",
+            "span_index": 1,
+            "span_id": "p04",
+            "text": "shareholder loans from substantial shareholders",
+            "normalized": "shareholder loans from substantial shareholders",
+            "original_start": 478,
+            "original_end": 525,
+            "candidate_occurrences": [
+              {
+                "start": 549,
+                "end": 596
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 549,
+              "end": 596
+            },
+            "distance": 142,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[2].constraints[0]",
+            "clause_index": 2,
+            "clause_id": "estg_000077_c03",
+            "field": "constraints",
+            "span_index": 0,
+            "span_id": "c04",
+            "text": "In the case of corporations",
+            "normalized": "in the case of corporations",
+            "original_start": 344,
+            "original_end": 370,
+            "candidate_occurrences": [
+              {
+                "start": 371,
+                "end": 398
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 371,
+              "end": 398
+            },
+            "distance": 55,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[2].constraints[1]",
+            "clause_index": 2,
+            "clause_id": "estg_000077_c03",
+            "field": "constraints",
+            "span_index": 1,
+            "span_id": "c05",
+            "text": "upon formation or a capital increase",
+            "normalized": "upon formation or a capital increase",
+            "original_start": 473,
+            "original_end": 509,
+            "candidate_occurrences": [
+              {
+                "start": 506,
+                "end": 542
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 506,
+              "end": 542
+            },
+            "distance": 66,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[3].clause_span",
+            "clause_index": 3,
+            "clause_id": "estg_000077_c04",
+            "field": "clause_span",
+            "span_index": null,
+            "span_id": null,
+            "text": "if the loans were granted upon formation or a considerable expansion of the company",
+            "normalized": null,
+            "original_start": 527,
+            "original_end": 602,
+            "candidate_occurrences": [
+              {
+                "start": 598,
+                "end": 681
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 598,
+              "end": 681
+            },
+            "distance": null,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[3].modality.evidence[0]",
+            "clause_index": 3,
+            "clause_id": "estg_000077_c04",
+            "field": "modality.evidence",
+            "span_index": 0,
+            "span_id": null,
+            "text": "if",
+            "normalized": null,
+            "original_start": 527,
+            "original_end": 529,
+            "candidate_occurrences": [
+              {
+                "start": 598,
+                "end": 600
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 598,
+              "end": 600
+            },
+            "distance": 142,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[3].actors[0]",
+            "clause_index": 3,
+            "clause_id": "estg_000077_c04",
+            "field": "actors",
+            "span_index": 0,
+            "span_id": "a04",
+            "text": "the loans",
+            "normalized": "the loans",
+            "original_start": 530,
+            "original_end": 539,
+            "candidate_occurrences": [
+              {
+                "start": 601,
+                "end": 610
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 601,
+              "end": 610
+            },
+            "distance": 142,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[3].actions[0]",
+            "clause_index": 3,
+            "clause_id": "estg_000077_c04",
+            "field": "actions",
+            "span_index": 0,
+            "span_id": "p05",
+            "text": "granted",
+            "normalized": "granted",
+            "original_start": 544,
+            "original_end": 551,
+            "candidate_occurrences": [
+              {
+                "start": 616,
+                "end": 623
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 616,
+              "end": 623
+            },
+            "distance": 144,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[3].constraints[0]",
+            "clause_index": 3,
+            "clause_id": "estg_000077_c04",
+            "field": "constraints",
+            "span_index": 0,
+            "span_id": "c06",
+            "text": "upon formation or a considerable expansion of the company",
+            "normalized": "upon formation or a considerable expansion of the company",
+            "original_start": 552,
+            "original_end": 602,
+            "candidate_occurrences": [
+              {
+                "start": 624,
+                "end": 681
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 624,
+              "end": 681
+            },
+            "distance": 151,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[4].clause_span",
+            "clause_index": 4,
+            "clause_id": "estg_000077_c05",
+            "field": "clause_span",
+            "span_index": null,
+            "span_id": null,
+            "text": "In the case of partnerships in which the partners are considered co-entrepreneurs, significant participations within the meaning of letter (b) acquired upon formation or a considerable expansion of the company must exist.",
+            "normalized": null,
+            "original_start": 605,
+            "original_end": 806,
+            "candidate_occurrences": [
+              {
+                "start": 686,
+                "end": 907
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 686,
+              "end": 907
+            },
+            "distance": null,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[4].modality.evidence[0]",
+            "clause_index": 4,
+            "clause_id": "estg_000077_c05",
+            "field": "modality.evidence",
+            "span_index": 0,
+            "span_id": null,
+            "text": "must",
+            "normalized": null,
+            "original_start": 796,
+            "original_end": 800,
+            "candidate_occurrences": [
+              {
+                "start": 896,
+                "end": 900
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 896,
+              "end": 900
+            },
+            "distance": 200,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[4].actors[0]",
+            "clause_index": 4,
+            "clause_id": "estg_000077_c05",
+            "field": "actors",
+            "span_index": 0,
+            "span_id": "a05",
+            "text": "significant participations within the meaning of letter (b) acquired upon formation or a considerable expansion of the company",
+            "normalized": "significant participations within the meaning of letter (b) acquired upon formation or a considerable expansion of the company",
+            "original_start": 660,
+            "original_end": 795,
+            "candidate_occurrences": [
+              {
+                "start": 769,
+                "end": 895
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 769,
+              "end": 895
+            },
+            "distance": 209,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[4].actions[0]",
+            "clause_index": 4,
+            "clause_id": "estg_000077_c05",
+            "field": "actions",
+            "span_index": 0,
+            "span_id": "p06",
+            "text": "exist",
+            "normalized": "exist",
+            "original_start": 801,
+            "original_end": 806,
+            "candidate_occurrences": [
+              {
+                "start": 901,
+                "end": 906
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 901,
+              "end": 906
+            },
+            "distance": 200,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[4].constraints[0]",
+            "clause_index": 4,
+            "clause_id": "estg_000077_c05",
+            "field": "constraints",
+            "span_index": 0,
+            "span_id": "c07",
+            "text": "In the case of partnerships in which the partners are considered co-entrepreneurs",
+            "normalized": "in the case of partnerships in which the partners are considered co-entrepreneurs",
+            "original_start": 605,
+            "original_end": 658,
+            "candidate_occurrences": [
+              {
+                "start": 686,
+                "end": 767
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 686,
+              "end": 767
+            },
+            "distance": 190,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          }
+        ],
+        "unchanged_spans": 0,
+        "unresolved_spans": 0,
+        "reanchored_unique_exact": 29,
+        "reanchored_repeated_exact": 0,
+        "repeated_occurrence_cases": 0,
+        "repeated_occurrence_recovered": 0,
+        "repeated_occurrence_unresolved": 0,
+        "tie_cases": 0,
+        "one_to_one_assignment_cases": 0,
+        "assignment_ambiguities": 0
+      },
+      "runtime_validation": {
+        "schema_valid": true,
+        "cross_field_valid": false,
+        "errors": [
+          "clauses[3].modality.label must be one of ('obligation', 'prohibition', 'permission', 'definition'), got 'condition'"
+        ]
+      }
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000111",
+      "request_id": "kimi:estg_000111",
+      "request_status": "failed",
+      "failure_stage": "canonical_validation",
+      "record": {},
+      "canonicalization_policy": "legacy",
+      "adapter_audit": {
+        "attempted": true,
+        "status": "adapted",
+        "spans_adapted": 5,
+        "dropped_spans": [],
+        "failed_reasons": []
+      },
+      "canonicalizer_audit": {
+        "attempted": true,
+        "status": "degraded",
+        "policy": "legacy",
+        "cost_metric": "abs_start_plus_abs_end",
+        "clause_span_count": 1,
+        "field_span_count": 7,
+        "reanchored_count": 6,
+        "dropped_spans": [
+          "clauses[0].exceptions[0]"
+        ],
+        "dropped_clauses": [],
+        "dropped_edges": [],
+        "failed_reasons": [],
+        "resolution_events": [
+          {
+            "path": "clauses[0].clause_span",
+            "clause_index": 0,
+            "clause_id": "estg_000111_c01",
+            "field": "clause_span",
+            "span_index": null,
+            "span_id": null,
+            "text": "an investment allowance may be claimed neither as a reduction of profit nor through the designated use of an investment reserve (a tax-free amount)",
+            "normalized": null,
+            "original_start": 26,
+            "original_end": 174,
+            "candidate_occurrences": [
+              {
+                "start": 28,
+                "end": 175
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 28,
+              "end": 175
+            },
+            "distance": null,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].modality.evidence[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000111_c01",
+            "field": "modality.evidence",
+            "span_index": 0,
+            "span_id": null,
+            "text": "may",
+            "normalized": null,
+            "original_start": 50,
+            "original_end": 53,
+            "candidate_occurrences": [
+              {
+                "start": 52,
+                "end": 55
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 52,
+              "end": 55
+            },
+            "distance": 4,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].modality.evidence[1]",
+            "clause_index": 0,
+            "clause_id": "estg_000111_c01",
+            "field": "modality.evidence",
+            "span_index": 1,
+            "span_id": null,
+            "text": "neither",
+            "normalized": null,
+            "original_start": 63,
+            "original_end": 70,
+            "candidate_occurrences": [
+              {
+                "start": 67,
+                "end": 74
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 67,
+              "end": 74
+            },
+            "distance": 8,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].actions[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000111_c01",
+            "field": "actions",
+            "span_index": 0,
+            "span_id": "p01",
+            "text": "claimed",
+            "normalized": "claimed",
+            "original_start": 54,
+            "original_end": 61,
+            "candidate_occurrences": [
+              {
+                "start": 59,
+                "end": 66
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 59,
+              "end": 66
+            },
+            "distance": 10,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].conditions[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000111_c01",
+            "field": "conditions",
+            "span_index": 0,
+            "span_id": "d01",
+            "text": "In the following cases",
+            "normalized": "in the following cases",
+            "original_start": 4,
+            "original_end": 26,
+            "candidate_occurrences": [],
+            "strategy": "unchanged",
+            "chosen": {
+              "start": 4,
+              "end": 26
+            },
+            "distance": 0,
+            "outcome": "unchanged",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].constraints[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000111_c01",
+            "field": "constraints",
+            "span_index": 0,
+            "span_id": "c01",
+            "text": "as a reduction of profit",
+            "normalized": "as a reduction of profit",
+            "original_start": 71,
+            "original_end": 95,
+            "candidate_occurrences": [
+              {
+                "start": 75,
+                "end": 99
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 75,
+              "end": 99
+            },
+            "distance": 8,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].constraints[1]",
+            "clause_index": 0,
+            "clause_id": "estg_000111_c01",
+            "field": "constraints",
+            "span_index": 1,
+            "span_id": "c02",
+            "text": "through the designated use of an investment reserve (a tax-free amount)",
+            "normalized": "through the designated use of an investment reserve (a tax-free amount)",
+            "original_start": 99,
+            "original_end": 170,
+            "candidate_occurrences": [
+              {
+                "start": 104,
+                "end": 175
+              }
+            ],
+            "strategy": "unique_exact",
+            "chosen": {
+              "start": 104,
+              "end": 175
+            },
+            "distance": 10,
+            "outcome": "reanchored_unique_exact",
+            "reason": null,
+            "cost_metric": "abs_start_plus_abs_end"
+          },
+          {
+            "path": "clauses[0].exceptions[0]",
+            "clause_index": 0,
+            "clause_id": "estg_000111_c01",
+            "field": "exceptions",
+            "span_index": 0,
+            "span_id": "e01",
+            "text": "except aircraft of air transport companies (Section 101 of the Aviation Act, BGBl.",
+            "normalized": "except aircraft of air transport companies (section 101 of the aviation act, bgbl.",
+            "original_start": 224,
+            "original_end": 305,
+            "candidate_occurrences": [],
+            "strategy": "not_applicable",
+            "chosen": null,
+            "distance": null,
+            "outcome": "unresolved",
+            "reason": "zero_occurrence",
+            "cost_metric": "abs_start_plus_abs_end"
+          }
+        ],
+        "unchanged_spans": 1,
+        "unresolved_spans": 1,
+        "reanchored_unique_exact": 6,
+        "reanchored_repeated_exact": 0,
+        "repeated_occurrence_cases": 0,
+        "repeated_occurrence_recovered": 0,
+        "repeated_occurrence_unresolved": 0,
+        "tie_cases": 0,
+        "one_to_one_assignment_cases": 0,
+        "assignment_ambiguities": 0
+      },
+      "runtime_validation": {
+        "schema_valid": true,
+        "cross_field_valid": false,
+        "errors": [
+          "clauses[0].conditions[0] not inside clause_span"
+        ]
+      }
+    }
+  ],
+  "claim_scope": "development_only"
+}

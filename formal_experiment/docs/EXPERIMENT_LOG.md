@@ -6115,3 +6115,35 @@
 - 仍存在 blocker：无
 - 备注：前次label拒绝节点已通过，其余两个模拟测试仅缺少汇总所需预检文件；只补测试fixture，不改runner/授权/冻结源hash。首轮8项与label节点1项匹配证据复用，本次仅2项，非全量；真实API仍0。旧900产物/固定表/Gold不改；GitHub外发许可未答复，push仍审批阻塞。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-07T09:29:37.347577+00:00 - S2-MODEL-OUTPUT-RECOVERY-V1：15格式恢复和18补跑完成、918次证据验收
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=model_output_recovery_20261007_v1；阶段=stage2；方法=multi_model_direct_llm；状态=成功（`succeeded`）
+- 实际运行命令：`python scripts/run_stage2_model_output_recovery_v1.py --execute --allow-llm`
+- manifest：outputs/development/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/manifest.json
+- 结果摘要：18/18新调用14通过，15离线恢复，当前Qwen/MiMo/Grok150、GLM/MiniMax149、Kimi148；累计918次、896/900有效，4结构失败保留，无新余额或限流失败
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：否；正式实验就绪：是
+- 测试：1 failed, 4 passed in 9.69s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`76b730557b57c4d488cd655335b6bc0573d3f1f5`；相关未提交路径：72 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：已授权调用（`authorized_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：明确授权恰18原样新尝试，0自动重试，Kimi>=21秒及空思考/1token已接受例外保持；新增估算CNY0.7978019+USD0.00791125，实扣未核对，低于3.83/0.05。原900所有字节/固定表不变，15恢复仅source_text引号空白，867原成功预测逐条不改。完整六家合并150先保存后读Gold共享评价；剩4结构失败不自动追加。仅5具名真实产物核对，准备11项匹配8+1+2证据复用，非全量；GitHub原始产物push自动审批仍阻塞，外发许可未答复。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-07T09:32:47.895051+00:00 - S2-MODEL-OUTPUT-RECOVERY-V1：仅修正费用浮点求和测试并复核最后产物节点
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：1 passed in 0.30s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`76b730557b57c4d488cd655335b6bc0573d3f1f5`；相关未提交路径：76 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：实际18授权新调用已完成并记experiment_run。真实产物首次4通过1失败（9.69秒），唯一失败为不同聚合顺序造成0.7978019000000001与0.7978019的浮点比较；仅测试改绝对容差1e-12，不改API结果/费用/manifest/source/hash。只重跑该节点，其余4项证据复用，非全量，本次API0。15+18完成，896有效仍4结构失败；18预算已用完不自动扩大。GitHub原始产物push审批阻塞仍待明确外发许可。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

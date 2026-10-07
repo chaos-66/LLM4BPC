@@ -1,0 +1,3387 @@
+{
+  "records": [
+    {
+      "provider": "qwen",
+      "sample_id": "estg_000161",
+      "prediction": {
+        "provider": "qwen",
+        "sample_id": "estg_000161",
+        "request_id": "qwen:estg_000161",
+        "request_status": "ok",
+        "failure_stage": null,
+        "record": {
+          "clauses": [
+            {
+              "actions": [
+                {
+                  "text": "deductible",
+                  "start": 22,
+                  "end": 32,
+                  "normalized": "deductible",
+                  "id": "p01"
+                }
+              ],
+              "actor_action_map": [
+                {
+                  "action_id": "p01",
+                  "actor_id": null
+                }
+              ],
+              "actors": [],
+              "clause_id": "estg_000161_c01",
+              "clause_span": {
+                "end": 69,
+                "start": 0,
+                "text": "The contributions are deductible only under the following conditions:"
+              },
+              "conditions": [],
+              "constraints": [
+                {
+                  "text": "only under the following conditions",
+                  "start": 33,
+                  "end": 68,
+                  "normalized": "only under the following conditions",
+                  "id": "c01"
+                }
+              ],
+              "exceptions": [],
+              "modality": {
+                "evidence": [
+                  {
+                    "end": 37,
+                    "start": 18,
+                    "text": "are deductible only"
+                  }
+                ],
+                "label": "permission"
+              },
+              "order_relations": []
+            },
+            {
+              "actions": [
+                {
+                  "text": "be concerned exclusively or predominantly with safeguarding the professional interests of their members",
+                  "start": 186,
+                  "end": 289,
+                  "normalized": "be concerned exclusively or predominantly with safeguarding the professional interests of their members",
+                  "id": "p02"
+                }
+              ],
+              "actor_action_map": [
+                {
+                  "action_id": "p02",
+                  "actor_id": "a01"
+                },
+                {
+                  "action_id": "p02",
+                  "actor_id": "a02"
+                }
+              ],
+              "actors": [
+                {
+                  "text": "The professional associations",
+                  "start": 73,
+                  "end": 102,
+                  "normalized": "the professional associations",
+                  "id": "a01"
+                },
+                {
+                  "text": "interest groups",
+                  "start": 107,
+                  "end": 122,
+                  "normalized": "interest groups",
+                  "id": "a02"
+                }
+              ],
+              "clause_id": "estg_000161_c02",
+              "clause_span": {
+                "end": 290,
+                "start": 73,
+                "text": "The professional associations and interest groups must, in accordance with their statutes and actual management, be concerned exclusively or predominantly with safeguarding the professional interests of their members."
+              },
+              "conditions": [],
+              "constraints": [
+                {
+                  "text": "in accordance with their statutes and actual management",
+                  "start": 129,
+                  "end": 184,
+                  "normalized": "in accordance with their statutes and actual management",
+                  "id": "c02"
+                }
+              ],
+              "exceptions": [],
+              "modality": {
+                "evidence": [
+                  {
+                    "end": 127,
+                    "start": 123,
+                    "text": "must"
+                  }
+                ],
+                "label": "obligation"
+              },
+              "order_relations": []
+            },
+            {
+              "actions": [
+                {
+                  "text": "be deducted",
+                  "start": 321,
+                  "end": 332,
+                  "normalized": "be deducted",
+                  "id": "p03"
+                }
+              ],
+              "actor_action_map": [
+                {
+                  "action_id": "p03",
+                  "actor_id": null
+                }
+              ],
+              "actors": [],
+              "clause_id": "estg_000161_c03",
+              "clause_span": {
+                "end": 381,
+                "start": 294,
+                "text": "The contributions may only be deducted in a reasonable amount as fixed in the statutes."
+              },
+              "conditions": [],
+              "constraints": [
+                {
+                  "text": "only",
+                  "start": 316,
+                  "end": 320,
+                  "normalized": "only",
+                  "id": "c03"
+                },
+                {
+                  "text": "in a reasonable amount as fixed in the statutes",
+                  "start": 333,
+                  "end": 380,
+                  "normalized": "in a reasonable amount as fixed in the statutes",
+                  "id": "c04"
+                }
+              ],
+              "exceptions": [],
+              "modality": {
+                "evidence": [
+                  {
+                    "end": 315,
+                    "start": 312,
+                    "text": "may"
+                  }
+                ],
+                "label": "permission"
+              },
+              "order_relations": []
+            }
+          ],
+          "method": {
+            "name": "direct_llm",
+            "schema_source": "stage2_prediction.schema.json@1.0.0"
+          },
+          "sample_id": "estg_000161",
+          "schema_version": "1.0.0",
+          "source_id": "estg_000161",
+          "source_text": "The contributions are deductible only under the following conditions:\n\n— The professional associations and interest groups must, in accordance with their statutes and actual management, be concerned exclusively or predominantly with safeguarding the professional interests of their members.\n\n— The contributions may only be deducted in a reasonable amount as fixed in the statutes.\n\n4. a) Contributions of the insured person to compulsory insurance under the statutory social insurance scheme.\n\nb) Contributions to the supplementary pension insurance schemes operated by the Pension Institute of Linz Electricity, District Heating and Transport Company (Linzer Elektrizitäts-, Fernwärme- und Verkehrsbetriebe AG) and under the Federal Forestry Service Regulations (Bundesforste-Dienstordnung).\n\nc) Compulsory pension (provident fund) contributions of employees of regional authorities and compulsory contributions of employees of public-law corporations to pension institutions, insofar as an obligation to participate in such a pension institution exists under public-law provisions.\n\nd) Contributions based on statutory obligations of those under Section 25(1) point 4 and",
+          "unsupported_or_ambiguous": [
+            {
+              "field": "actor",
+              "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+            },
+            {
+              "field": "clause",
+              "reason": "semantic_scope_ambiguous_in_target"
+            }
+          ],
+          "validation": {
+            "schema_valid": true,
+            "cross_field_valid": true,
+            "errors": []
+          }
+        },
+        "canonicalization_policy": "legacy",
+        "adapter_audit": {
+          "attempted": true,
+          "status": "adapted",
+          "spans_adapted": 9,
+          "dropped_spans": [],
+          "failed_reasons": []
+        },
+        "canonicalizer_audit": {
+          "attempted": true,
+          "status": "reanchored",
+          "policy": "legacy",
+          "cost_metric": "abs_start_plus_abs_end",
+          "clause_span_count": 3,
+          "field_span_count": 12,
+          "reanchored_count": 9,
+          "dropped_spans": [],
+          "dropped_clauses": [],
+          "dropped_edges": [],
+          "failed_reasons": [],
+          "resolution_events": [
+            {
+              "path": "clauses[0].clause_span",
+              "clause_index": 0,
+              "clause_id": "estg_000161_c01",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "The contributions are deductible only under the following conditions:",
+              "normalized": null,
+              "original_start": 0,
+              "original_end": 69,
+              "candidate_occurrences": [
+                {
+                  "start": 0,
+                  "end": 69
+                }
+              ],
+              "strategy": "unchanged",
+              "chosen": {
+                "start": 0,
+                "end": 69
+              },
+              "distance": 0,
+              "outcome": "unchanged",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[0].modality.evidence[0]",
+              "clause_index": 0,
+              "clause_id": "estg_000161_c01",
+              "field": "modality.evidence",
+              "span_index": 0,
+              "span_id": null,
+              "text": "are deductible only",
+              "normalized": null,
+              "original_start": 18,
+              "original_end": 37,
+              "candidate_occurrences": [
+                {
+                  "start": 18,
+                  "end": 37
+                }
+              ],
+              "strategy": "unchanged",
+              "chosen": {
+                "start": 18,
+                "end": 37
+              },
+              "distance": 0,
+              "outcome": "unchanged",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[0].actions[0]",
+              "clause_index": 0,
+              "clause_id": "estg_000161_c01",
+              "field": "actions",
+              "span_index": 0,
+              "span_id": "p01",
+              "text": "deductible",
+              "normalized": "deductible",
+              "original_start": 22,
+              "original_end": 32,
+              "candidate_occurrences": [
+                {
+                  "start": 22,
+                  "end": 32
+                }
+              ],
+              "strategy": "unchanged",
+              "chosen": {
+                "start": 22,
+                "end": 32
+              },
+              "distance": 0,
+              "outcome": "unchanged",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[0].constraints[0]",
+              "clause_index": 0,
+              "clause_id": "estg_000161_c01",
+              "field": "constraints",
+              "span_index": 0,
+              "span_id": "c01",
+              "text": "only under the following conditions",
+              "normalized": "only under the following conditions",
+              "original_start": 33,
+              "original_end": 68,
+              "candidate_occurrences": [
+                {
+                  "start": 33,
+                  "end": 68
+                }
+              ],
+              "strategy": "unchanged",
+              "chosen": {
+                "start": 33,
+                "end": 68
+              },
+              "distance": 0,
+              "outcome": "unchanged",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[1].clause_span",
+              "clause_index": 1,
+              "clause_id": "estg_000161_c02",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "The professional associations and interest groups must, in accordance with their statutes and actual management, be concerned exclusively or predominantly with safeguarding the professional interests of their members.",
+              "normalized": null,
+              "original_start": 73,
+              "original_end": 287,
+              "candidate_occurrences": [
+                {
+                  "start": 73,
+                  "end": 290
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 73,
+                "end": 290
+              },
+              "distance": null,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[1].modality.evidence[0]",
+              "clause_index": 1,
+              "clause_id": "estg_000161_c02",
+              "field": "modality.evidence",
+              "span_index": 0,
+              "span_id": null,
+              "text": "must",
+              "normalized": null,
+              "original_start": 124,
+              "original_end": 128,
+              "candidate_occurrences": [
+                {
+                  "start": 123,
+                  "end": 127
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 123,
+                "end": 127
+              },
+              "distance": 2,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[1].actors[0]",
+              "clause_index": 1,
+              "clause_id": "estg_000161_c02",
+              "field": "actors",
+              "span_index": 0,
+              "span_id": "a01",
+              "text": "The professional associations",
+              "normalized": "the professional associations",
+              "original_start": 73,
+              "original_end": 102,
+              "candidate_occurrences": [
+                {
+                  "start": 73,
+                  "end": 102
+                }
+              ],
+              "strategy": "unchanged",
+              "chosen": {
+                "start": 73,
+                "end": 102
+              },
+              "distance": 0,
+              "outcome": "unchanged",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[1].actors[1]",
+              "clause_index": 1,
+              "clause_id": "estg_000161_c02",
+              "field": "actors",
+              "span_index": 1,
+              "span_id": "a02",
+              "text": "interest groups",
+              "normalized": "interest groups",
+              "original_start": 107,
+              "original_end": 122,
+              "candidate_occurrences": [
+                {
+                  "start": 107,
+                  "end": 122
+                }
+              ],
+              "strategy": "unchanged",
+              "chosen": {
+                "start": 107,
+                "end": 122
+              },
+              "distance": 0,
+              "outcome": "unchanged",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[1].actions[0]",
+              "clause_index": 1,
+              "clause_id": "estg_000161_c02",
+              "field": "actions",
+              "span_index": 0,
+              "span_id": "p02",
+              "text": "be concerned exclusively or predominantly with safeguarding the professional interests of their members",
+              "normalized": "be concerned exclusively or predominantly with safeguarding the professional interests of their members",
+              "original_start": 184,
+              "original_end": 286,
+              "candidate_occurrences": [
+                {
+                  "start": 186,
+                  "end": 289
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 186,
+                "end": 289
+              },
+              "distance": 5,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[1].constraints[0]",
+              "clause_index": 1,
+              "clause_id": "estg_000161_c02",
+              "field": "constraints",
+              "span_index": 0,
+              "span_id": "c02",
+              "text": "in accordance with their statutes and actual management",
+              "normalized": "in accordance with their statutes and actual management",
+              "original_start": 130,
+              "original_end": 185,
+              "candidate_occurrences": [
+                {
+                  "start": 129,
+                  "end": 184
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 129,
+                "end": 184
+              },
+              "distance": 2,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[2].clause_span",
+              "clause_index": 2,
+              "clause_id": "estg_000161_c03",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "The contributions may only be deducted in a reasonable amount as fixed in the statutes.",
+              "normalized": null,
+              "original_start": 291,
+              "original_end": 380,
+              "candidate_occurrences": [
+                {
+                  "start": 294,
+                  "end": 381
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 294,
+                "end": 381
+              },
+              "distance": null,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[2].modality.evidence[0]",
+              "clause_index": 2,
+              "clause_id": "estg_000161_c03",
+              "field": "modality.evidence",
+              "span_index": 0,
+              "span_id": null,
+              "text": "may",
+              "normalized": null,
+              "original_start": 309,
+              "original_end": 312,
+              "candidate_occurrences": [
+                {
+                  "start": 312,
+                  "end": 315
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 312,
+                "end": 315
+              },
+              "distance": 6,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[2].actions[0]",
+              "clause_index": 2,
+              "clause_id": "estg_000161_c03",
+              "field": "actions",
+              "span_index": 0,
+              "span_id": "p03",
+              "text": "be deducted",
+              "normalized": "be deducted",
+              "original_start": 319,
+              "original_end": 330,
+              "candidate_occurrences": [
+                {
+                  "start": 321,
+                  "end": 332
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 321,
+                "end": 332
+              },
+              "distance": 4,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[2].constraints[0]",
+              "clause_index": 2,
+              "clause_id": "estg_000161_c03",
+              "field": "constraints",
+              "span_index": 0,
+              "span_id": "c03",
+              "text": "only",
+              "normalized": "only",
+              "original_start": 313,
+              "original_end": 317,
+              "candidate_occurrences": [
+                {
+                  "start": 316,
+                  "end": 320
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 316,
+                "end": 320
+              },
+              "distance": 6,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[2].constraints[1]",
+              "clause_index": 2,
+              "clause_id": "estg_000161_c03",
+              "field": "constraints",
+              "span_index": 1,
+              "span_id": "c04",
+              "text": "in a reasonable amount as fixed in the statutes",
+              "normalized": "in a reasonable amount as fixed in the statutes",
+              "original_start": 331,
+              "original_end": 378,
+              "candidate_occurrences": [
+                {
+                  "start": 333,
+                  "end": 380
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 333,
+                "end": 380
+              },
+              "distance": 4,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            }
+          ],
+          "unchanged_spans": 5,
+          "unresolved_spans": 0,
+          "reanchored_unique_exact": 9,
+          "reanchored_repeated_exact": 0,
+          "repeated_occurrence_cases": 0,
+          "repeated_occurrence_recovered": 0,
+          "repeated_occurrence_unresolved": 0,
+          "tie_cases": 0,
+          "one_to_one_assignment_cases": 0,
+          "assignment_ambiguities": 0
+        },
+        "runtime_validation": {
+          "schema_valid": true,
+          "cross_field_valid": true,
+          "errors": []
+        },
+        "source_echo_recovery": {
+          "policy": "source_echo_quotes_whitespace_only@1",
+          "changed_fields": [
+            "source_text"
+          ],
+          "original_echo": "The contributions are deductible only under the following conditions:\n\n— The professional associations and interest groups must, in accordance with their statutes and actual management, be concerned exclusively or predominantly with safeguarding the professional interests of their members.\n\n— The contributions may only be deducted in a reasonable amount as fixed in the statutes.\n\n4. a) Contributions of the insured person to compulsory insurance under the statutory social insurance scheme.\n\nb) Contributions to the supplementary pension insurance schemes operated by the Pension Institute of Linz Electricity, District Heating and Transport Company (Linzer Elektrizitäts-, Fernwärme- und Verkehrsbetriebe AG) and under the Federal Forestry Service Regulations (Bundesforste-Dienstordnung).\n\nc) Compulsory pension (provident fund) contributions of employees of regional authorities and compulsory contributions of employees of public-law corporations to pension institutions, insofar as an obligation to participate in such a pension institution exists under public-law provisions.\n\nd) Contributions based on statutory obligations of those under Section 25(1) point 4 and\n",
+          "restored_echo": "The contributions are deductible only under the following conditions:\n\n— The professional associations and interest groups must, in accordance with their statutes and actual management, be concerned exclusively or predominantly with safeguarding the professional interests of their members.\n\n— The contributions may only be deducted in a reasonable amount as fixed in the statutes.\n\n4. a) Contributions of the insured person to compulsory insurance under the statutory social insurance scheme.\n\nb) Contributions to the supplementary pension insurance schemes operated by the Pension Institute of Linz Electricity, District Heating and Transport Company (Linzer Elektrizitäts-, Fernwärme- und Verkehrsbetriebe AG) and under the Federal Forestry Service Regulations (Bundesforste-Dienstordnung).\n\nc) Compulsory pension (provident fund) contributions of employees of regional authorities and compulsory contributions of employees of public-law corporations to pension institutions, insofar as an obligation to participate in such a pension institution exists under public-law provisions.\n\nd) Contributions based on statutory obligations of those under Section 25(1) point 4 and",
+          "extraction_fields_unchanged": true,
+          "original_content_sha256": "ed16625390f165f463d9b8a4b0a43c33aa16646848514ba367ab915c9cce0574",
+          "recovered_payload_sha256": "4bca60befea7308042fb60732e93ad75870c2f66099f73cbea23d41bf5e80671",
+          "gold_used": false
+        }
+      },
+      "source_response_path": "outputs/development/stage2_multi_model_v1/multi_model_all_20261007_v2_qwen/responses/qwen_estg_000161.json",
+      "source_response_sha256": "0cbcd900f8e1c84f6a942ea76dc6a28d23adb15a527549deeafcd32afa8fad68",
+      "nonthinking_check": {
+        "status": "no_reported_reasoning",
+        "reasoning_content_present": false,
+        "reported_reasoning_tokens": null
+      },
+      "additional_api_calls": 0
+    },
+    {
+      "provider": "mimo",
+      "sample_id": "estg_000433",
+      "prediction": {
+        "provider": "mimo",
+        "sample_id": "estg_000433",
+        "request_id": "mimo:estg_000433",
+        "request_status": "ok",
+        "failure_stage": null,
+        "record": {
+          "clauses": [],
+          "method": {
+            "name": "direct_llm",
+            "schema_source": "stage2_prediction.schema.json@1.0.0"
+          },
+          "sample_id": "estg_000433",
+          "schema_version": "1.0.0",
+          "source_id": "estg_000433",
+          "source_text": "(2) If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee’s first wage tax card, it must be cancelled simultaneously with the issuance of a wage tax card for the spouse.",
+          "unsupported_or_ambiguous": [
+            {
+              "field": "actor",
+              "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+            }
+          ],
+          "validation": {
+            "schema_valid": true,
+            "cross_field_valid": true,
+            "errors": []
+          }
+        },
+        "canonicalization_policy": "legacy",
+        "adapter_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "spans_adapted": 3,
+          "dropped_spans": [
+            "conditions[0]_text_not_in_source"
+          ],
+          "failed_reasons": []
+        },
+        "canonicalizer_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "policy": "legacy",
+          "cost_metric": "abs_start_plus_abs_end",
+          "clause_span_count": 0,
+          "field_span_count": 0,
+          "reanchored_count": 0,
+          "dropped_spans": [],
+          "dropped_clauses": [
+            0
+          ],
+          "dropped_edges": [],
+          "failed_reasons": [],
+          "resolution_events": [
+            {
+              "path": "clauses[0].clause_span",
+              "clause_index": 0,
+              "clause_id": "estg_000433_c01",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee's first wage tax card, it must be cancelled simultaneously with the issuance of a wage tax card for the spouse.",
+              "normalized": null,
+              "original_start": 4,
+              "original_end": 205,
+              "candidate_occurrences": [],
+              "strategy": "not_applicable",
+              "chosen": null,
+              "distance": null,
+              "outcome": "unresolved",
+              "reason": "zero_occurrence",
+              "cost_metric": "abs_start_plus_abs_end"
+            }
+          ],
+          "unchanged_spans": 0,
+          "unresolved_spans": 0,
+          "reanchored_unique_exact": 0,
+          "reanchored_repeated_exact": 0,
+          "repeated_occurrence_cases": 0,
+          "repeated_occurrence_recovered": 0,
+          "repeated_occurrence_unresolved": 0,
+          "tie_cases": 0,
+          "one_to_one_assignment_cases": 0,
+          "assignment_ambiguities": 0
+        },
+        "runtime_validation": {
+          "schema_valid": true,
+          "cross_field_valid": true,
+          "errors": []
+        },
+        "source_echo_recovery": {
+          "policy": "source_echo_quotes_whitespace_only@1",
+          "changed_fields": [
+            "source_text"
+          ],
+          "original_echo": "(2) If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee's first wage tax card, it must be cancelled simultaneously with the issuance of a wage tax card for the spouse.",
+          "restored_echo": "(2) If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee’s first wage tax card, it must be cancelled simultaneously with the issuance of a wage tax card for the spouse.",
+          "extraction_fields_unchanged": true,
+          "original_content_sha256": "0944ff00c0e7f44e81414305e506769831ce8bf92bc93748d9e3c7dc4cc7b945",
+          "recovered_payload_sha256": "a2e49577c38c17b368feebb56ebf55186b3bc0749238523814cd3040c058a6dc",
+          "gold_used": false
+        }
+      },
+      "source_response_path": "outputs/development/stage2_multi_model_remaining_v1/multi_model_remaining_20261007_v1/mimo/responses/mimo_estg_000433.json",
+      "source_response_sha256": "b009e113e5e2f3a5c1845bd58fb0192d84532e8f4f3726fb1b57b5544d9024e2",
+      "nonthinking_check": {
+        "status": "no_reported_reasoning",
+        "reasoning_content_present": false,
+        "reported_reasoning_tokens": 0
+      },
+      "additional_api_calls": 0
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000037",
+      "prediction": {
+        "provider": "kimi",
+        "sample_id": "estg_000037",
+        "request_id": "kimi:estg_000037",
+        "request_status": "ok",
+        "failure_stage": null,
+        "record": {
+          "clauses": [
+            {
+              "actions": [
+                {
+                  "text": "contributions to pension funds",
+                  "start": 384,
+                  "end": 414,
+                  "normalized": "contributions to pension funds",
+                  "id": "p03"
+                }
+              ],
+              "actor_action_map": [
+                {
+                  "action_id": "p03",
+                  "actor_id": null
+                }
+              ],
+              "actors": [],
+              "clause_id": "estg_000037_c02",
+              "clause_span": {
+                "end": 451,
+                "start": 384,
+                "text": "contributions to pension funds subject to the following conditions:"
+              },
+              "conditions": [],
+              "constraints": [
+                {
+                  "text": "subject to the following conditions",
+                  "start": 415,
+                  "end": 450,
+                  "normalized": "subject to the following conditions",
+                  "id": "c02"
+                }
+              ],
+              "exceptions": [],
+              "modality": {
+                "evidence": [],
+                "label": "obligation"
+              },
+              "order_relations": []
+            },
+            {
+              "actions": [
+                {
+                  "text": "be subject to state supervision",
+                  "start": 470,
+                  "end": 501,
+                  "normalized": "be subject to state supervision",
+                  "id": "p04"
+                }
+              ],
+              "actor_action_map": [
+                {
+                  "action_id": "p04",
+                  "actor_id": "a01"
+                }
+              ],
+              "actors": [
+                {
+                  "text": "the fund",
+                  "start": 456,
+                  "end": 464,
+                  "normalized": "the fund",
+                  "id": "a01"
+                }
+              ],
+              "clause_id": "estg_000037_c03",
+              "clause_span": {
+                "end": 501,
+                "start": 456,
+                "text": "the fund must be subject to state supervision"
+              },
+              "conditions": [],
+              "constraints": [],
+              "exceptions": [],
+              "modality": {
+                "evidence": [
+                  {
+                    "end": 469,
+                    "start": 465,
+                    "text": "must"
+                  }
+                ],
+                "label": "obligation"
+              },
+              "order_relations": []
+            }
+          ],
+          "method": {
+            "name": "direct_llm",
+            "schema_source": "stage2_prediction.schema.json@1.0.0"
+          },
+          "sample_id": "estg_000037",
+          "schema_version": "1.0.0",
+          "source_id": "estg_000037",
+          "source_text": "In any event, business expenses shall include:\n1. a) contributions by the insured person to compulsory insurance in the statutory health, accident and pension insurance, and\nb) compulsory contributions to welfare and support institutions of the chambers of self-employed persons, to the extent that these institutions serve health, old-age, invalidity and survivors’ provision.\n2. a) contributions to pension funds subject to the following conditions:\naa) the fund must be subject to state supervision;\nbb) the fund must grant a legal entitlement to benefits for the purpose of old-age and survivors’ provision.",
+          "unsupported_or_ambiguous": [],
+          "validation": {
+            "schema_valid": true,
+            "cross_field_valid": true,
+            "errors": []
+          }
+        },
+        "canonicalization_policy": "legacy",
+        "adapter_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "spans_adapted": 8,
+          "dropped_spans": [
+            "constraints[0]_text_not_in_source",
+            "constraints[0]_text_not_in_source"
+          ],
+          "failed_reasons": []
+        },
+        "canonicalizer_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "policy": "legacy",
+          "cost_metric": "abs_start_plus_abs_end",
+          "clause_span_count": 2,
+          "field_span_count": 6,
+          "reanchored_count": 7,
+          "dropped_spans": [
+            "clauses[1].modality.evidence[0]"
+          ],
+          "dropped_clauses": [
+            0,
+            3
+          ],
+          "dropped_edges": [],
+          "failed_reasons": [],
+          "resolution_events": [
+            {
+              "path": "clauses[0].clause_span",
+              "clause_index": 0,
+              "clause_id": "estg_000037_c01",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "business expenses shall include:\n1. a) contributions by the insured person to compulsory insurance in the statutory health, accident and pension insurance, and\nb) compulsory contributions to welfare and support institutions of the chambers of self-employed persons, to the extent that these institutions serve health, old-age, invalidity and survivors' provision.",
+              "normalized": null,
+              "original_start": 14,
+              "original_end": 286,
+              "candidate_occurrences": [],
+              "strategy": "not_applicable",
+              "chosen": null,
+              "distance": null,
+              "outcome": "unresolved",
+              "reason": "zero_occurrence",
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[1].clause_span",
+              "clause_index": 1,
+              "clause_id": "estg_000037_c02",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "contributions to pension funds subject to the following conditions:",
+              "normalized": null,
+              "original_start": 395,
+              "original_end": 462,
+              "candidate_occurrences": [
+                {
+                  "start": 384,
+                  "end": 451
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 384,
+                "end": 451
+              },
+              "distance": null,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[1].modality.evidence[0]",
+              "clause_index": 1,
+              "clause_id": "estg_000037_c02",
+              "field": "modality.evidence",
+              "span_index": 0,
+              "span_id": null,
+              "text": "shall",
+              "normalized": null,
+              "original_start": 30,
+              "original_end": 35,
+              "candidate_occurrences": [],
+              "strategy": "not_applicable",
+              "chosen": null,
+              "distance": null,
+              "outcome": "unresolved",
+              "reason": "zero_occurrence",
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[1].actions[0]",
+              "clause_index": 1,
+              "clause_id": "estg_000037_c02",
+              "field": "actions",
+              "span_index": 0,
+              "span_id": "p03",
+              "text": "contributions to pension funds",
+              "normalized": "contributions to pension funds",
+              "original_start": 395,
+              "original_end": 425,
+              "candidate_occurrences": [
+                {
+                  "start": 384,
+                  "end": 414
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 384,
+                "end": 414
+              },
+              "distance": 22,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[1].constraints[0]",
+              "clause_index": 1,
+              "clause_id": "estg_000037_c02",
+              "field": "constraints",
+              "span_index": 0,
+              "span_id": "c02",
+              "text": "subject to the following conditions",
+              "normalized": "subject to the following conditions",
+              "original_start": 426,
+              "original_end": 461,
+              "candidate_occurrences": [
+                {
+                  "start": 415,
+                  "end": 450
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 415,
+                "end": 450
+              },
+              "distance": 22,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[2].clause_span",
+              "clause_index": 2,
+              "clause_id": "estg_000037_c03",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "the fund must be subject to state supervision",
+              "normalized": null,
+              "original_start": 466,
+              "original_end": 511,
+              "candidate_occurrences": [
+                {
+                  "start": 456,
+                  "end": 501
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 456,
+                "end": 501
+              },
+              "distance": null,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[2].modality.evidence[0]",
+              "clause_index": 2,
+              "clause_id": "estg_000037_c03",
+              "field": "modality.evidence",
+              "span_index": 0,
+              "span_id": null,
+              "text": "must",
+              "normalized": null,
+              "original_start": 476,
+              "original_end": 480,
+              "candidate_occurrences": [
+                {
+                  "start": 465,
+                  "end": 469
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 465,
+                "end": 469
+              },
+              "distance": 22,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[2].actors[0]",
+              "clause_index": 2,
+              "clause_id": "estg_000037_c03",
+              "field": "actors",
+              "span_index": 0,
+              "span_id": "a01",
+              "text": "the fund",
+              "normalized": "the fund",
+              "original_start": 466,
+              "original_end": 474,
+              "candidate_occurrences": [
+                {
+                  "start": 456,
+                  "end": 464
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 456,
+                "end": 464
+              },
+              "distance": 20,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[2].actions[0]",
+              "clause_index": 2,
+              "clause_id": "estg_000037_c03",
+              "field": "actions",
+              "span_index": 0,
+              "span_id": "p04",
+              "text": "be subject to state supervision",
+              "normalized": "be subject to state supervision",
+              "original_start": 481,
+              "original_end": 512,
+              "candidate_occurrences": [
+                {
+                  "start": 470,
+                  "end": 501
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 470,
+                "end": 501
+              },
+              "distance": 22,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[3].clause_span",
+              "clause_index": 3,
+              "clause_id": "estg_000037_c04",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "the fund must grant a legal entitlement to benefits for the purpose of old-age and survivors' provision",
+              "normalized": null,
+              "original_start": 517,
+              "original_end": 620,
+              "candidate_occurrences": [],
+              "strategy": "not_applicable",
+              "chosen": null,
+              "distance": null,
+              "outcome": "unresolved",
+              "reason": "zero_occurrence",
+              "cost_metric": "abs_start_plus_abs_end"
+            }
+          ],
+          "unchanged_spans": 0,
+          "unresolved_spans": 1,
+          "reanchored_unique_exact": 7,
+          "reanchored_repeated_exact": 0,
+          "repeated_occurrence_cases": 0,
+          "repeated_occurrence_recovered": 0,
+          "repeated_occurrence_unresolved": 0,
+          "tie_cases": 0,
+          "one_to_one_assignment_cases": 0,
+          "assignment_ambiguities": 0
+        },
+        "runtime_validation": {
+          "schema_valid": true,
+          "cross_field_valid": true,
+          "errors": []
+        },
+        "source_echo_recovery": {
+          "policy": "source_echo_quotes_whitespace_only@1",
+          "changed_fields": [
+            "source_text"
+          ],
+          "original_echo": "In any event, business expenses shall include:\n1. a) contributions by the insured person to compulsory insurance in the statutory health, accident and pension insurance, and\nb) compulsory contributions to welfare and support institutions of the chambers of self-employed persons, to the extent that these institutions serve health, old-age, invalidity and survivors' provision.\n2. a) contributions to pension funds subject to the following conditions:\naa) the fund must be subject to state supervision;\nbb) the fund must grant a legal entitlement to benefits for the purpose of old-age and survivors' provision.",
+          "restored_echo": "In any event, business expenses shall include:\n1. a) contributions by the insured person to compulsory insurance in the statutory health, accident and pension insurance, and\nb) compulsory contributions to welfare and support institutions of the chambers of self-employed persons, to the extent that these institutions serve health, old-age, invalidity and survivors’ provision.\n2. a) contributions to pension funds subject to the following conditions:\naa) the fund must be subject to state supervision;\nbb) the fund must grant a legal entitlement to benefits for the purpose of old-age and survivors’ provision.",
+          "extraction_fields_unchanged": true,
+          "original_content_sha256": "3afcff9f23bbf1f324b9bd47435da07015486d009969ce5fb32588c4ee027539",
+          "recovered_payload_sha256": "2fc2a7ade2d313bffa6c3e6c011c768de90acb136de4be4786aeffdc31b7ece0",
+          "gold_used": false
+        }
+      },
+      "source_response_path": "outputs/development/stage2_multi_model_remaining_v1/kimi_rpm_remaining_20261007_v1/responses/kimi_estg_000037.json",
+      "source_response_sha256": "6f296535bfe5059922cb50b7a769824d084a9d812fa69b6e94dd88c05b820771",
+      "nonthinking_check": {
+        "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+        "reasoning_content_present": false,
+        "reported_reasoning_tokens": 1,
+        "counter_exception_user_authorized": true,
+        "one_token_meaning_verified": false
+      },
+      "additional_api_calls": 0
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000039",
+      "prediction": {
+        "provider": "kimi",
+        "sample_id": "estg_000039",
+        "request_id": "kimi:estg_000039",
+        "request_status": "ok",
+        "failure_stage": null,
+        "record": {
+          "clauses": [],
+          "method": {
+            "name": "direct_llm",
+            "schema_source": "stage2_prediction.schema.json@1.0.0"
+          },
+          "sample_id": "estg_000039",
+          "schema_version": "1.0.0",
+          "source_id": "estg_000039",
+          "source_text": "The agreement must provide that the taxpayer’s ongoing contribution payments may only be suspended or restricted for compelling economic reasons and only after consultation with the works council. dd) The contributions are deductible to the extent that they are required under the articles of association for benefit entitlements of current and former members of the taxpayer’s enterprises.",
+          "unsupported_or_ambiguous": [
+            {
+              "field": "actor",
+              "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+            }
+          ],
+          "validation": {
+            "schema_valid": true,
+            "cross_field_valid": true,
+            "errors": []
+          }
+        },
+        "canonicalization_policy": "legacy",
+        "adapter_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "spans_adapted": 6,
+          "dropped_spans": [
+            "actions[0]_text_not_in_source",
+            "conditions[0]_text_not_in_source"
+          ],
+          "failed_reasons": []
+        },
+        "canonicalizer_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "policy": "legacy",
+          "cost_metric": "abs_start_plus_abs_end",
+          "clause_span_count": 0,
+          "field_span_count": 0,
+          "reanchored_count": 0,
+          "dropped_spans": [],
+          "dropped_clauses": [
+            0,
+            1
+          ],
+          "dropped_edges": [],
+          "failed_reasons": [],
+          "resolution_events": [
+            {
+              "path": "clauses[0].clause_span",
+              "clause_index": 0,
+              "clause_id": "estg_000039_c01",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "The agreement must provide that the taxpayer's ongoing contribution payments may only be suspended or restricted for compelling economic reasons and only after consultation with the works council.",
+              "normalized": null,
+              "original_start": 0,
+              "original_end": 148,
+              "candidate_occurrences": [],
+              "strategy": "not_applicable",
+              "chosen": null,
+              "distance": null,
+              "outcome": "unresolved",
+              "reason": "zero_occurrence",
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[1].clause_span",
+              "clause_index": 1,
+              "clause_id": "estg_000039_c02",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "The contributions are deductible to the extent that they are required under the articles of association for benefit entitlements of current and former members of the taxpayer's enterprises.",
+              "normalized": null,
+              "original_start": 154,
+              "original_end": 291,
+              "candidate_occurrences": [],
+              "strategy": "not_applicable",
+              "chosen": null,
+              "distance": null,
+              "outcome": "unresolved",
+              "reason": "zero_occurrence",
+              "cost_metric": "abs_start_plus_abs_end"
+            }
+          ],
+          "unchanged_spans": 0,
+          "unresolved_spans": 0,
+          "reanchored_unique_exact": 0,
+          "reanchored_repeated_exact": 0,
+          "repeated_occurrence_cases": 0,
+          "repeated_occurrence_recovered": 0,
+          "repeated_occurrence_unresolved": 0,
+          "tie_cases": 0,
+          "one_to_one_assignment_cases": 0,
+          "assignment_ambiguities": 0
+        },
+        "runtime_validation": {
+          "schema_valid": true,
+          "cross_field_valid": true,
+          "errors": []
+        },
+        "source_echo_recovery": {
+          "policy": "source_echo_quotes_whitespace_only@1",
+          "changed_fields": [
+            "source_text"
+          ],
+          "original_echo": "The agreement must provide that the taxpayer's ongoing contribution payments may only be suspended or restricted for compelling economic reasons and only after consultation with the works council. dd) The contributions are deductible to the extent that they are required under the articles of association for benefit entitlements of current and former members of the taxpayer's enterprises.",
+          "restored_echo": "The agreement must provide that the taxpayer’s ongoing contribution payments may only be suspended or restricted for compelling economic reasons and only after consultation with the works council. dd) The contributions are deductible to the extent that they are required under the articles of association for benefit entitlements of current and former members of the taxpayer’s enterprises.",
+          "extraction_fields_unchanged": true,
+          "original_content_sha256": "b5bbedba75a968449992db2113d280aceba12d085377ebd754b538fb5e0a9ce5",
+          "recovered_payload_sha256": "d23184dd36a786cf04beaaf170e5d9e9b18ee6552ed5b76a035140d8a4343eba",
+          "gold_used": false
+        }
+      },
+      "source_response_path": "outputs/development/stage2_multi_model_remaining_v1/kimi_rpm_remaining_20261007_v1/responses/kimi_estg_000039.json",
+      "source_response_sha256": "c42ac2cea2080eb515349cc2429652c1dc04392f92eaaf31968bc2f0bb62a36f",
+      "nonthinking_check": {
+        "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+        "reasoning_content_present": false,
+        "reported_reasoning_tokens": 1,
+        "counter_exception_user_authorized": true,
+        "one_token_meaning_verified": false
+      },
+      "additional_api_calls": 0
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000060",
+      "prediction": {
+        "provider": "kimi",
+        "sample_id": "estg_000060",
+        "request_id": "kimi:estg_000060",
+        "request_status": "ok",
+        "failure_stage": null,
+        "record": {
+          "clauses": [],
+          "method": {
+            "name": "direct_llm",
+            "schema_source": "stage2_prediction.schema.json@1.0.0"
+          },
+          "sample_id": "estg_000060",
+          "schema_version": "1.0.0",
+          "source_id": "estg_000060",
+          "source_text": "The additions and deductions shall be taken into account in the profit of the first profit determination period after the change, and in the case of the sale or abandonment of the entire business, of a part-business or of a co-entrepreneur’s interest in the profit of the last profit determination period before the sale or abandonment. 2.",
+          "unsupported_or_ambiguous": [
+            {
+              "field": "condition",
+              "reason": "semantic_scope_ambiguous_in_target"
+            }
+          ],
+          "validation": {
+            "schema_valid": true,
+            "cross_field_valid": true,
+            "errors": []
+          }
+        },
+        "canonicalization_policy": "legacy",
+        "adapter_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "spans_adapted": 5,
+          "dropped_spans": [
+            "conditions[1]_text_not_in_source"
+          ],
+          "failed_reasons": []
+        },
+        "canonicalizer_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "policy": "legacy",
+          "cost_metric": "abs_start_plus_abs_end",
+          "clause_span_count": 0,
+          "field_span_count": 0,
+          "reanchored_count": 0,
+          "dropped_spans": [],
+          "dropped_clauses": [
+            0
+          ],
+          "dropped_edges": [],
+          "failed_reasons": [],
+          "resolution_events": [
+            {
+              "path": "clauses[0].clause_span",
+              "clause_index": 0,
+              "clause_id": "estg_000060_c01",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "The additions and deductions shall be taken into account in the profit of the first profit determination period after the change, and in the case of the sale or abandonment of the entire business, of a part-business or of a co-entrepreneur's interest in the profit of the last profit determination period before the sale or abandonment.",
+              "normalized": null,
+              "original_start": 0,
+              "original_end": 262,
+              "candidate_occurrences": [],
+              "strategy": "not_applicable",
+              "chosen": null,
+              "distance": null,
+              "outcome": "unresolved",
+              "reason": "zero_occurrence",
+              "cost_metric": "abs_start_plus_abs_end"
+            }
+          ],
+          "unchanged_spans": 0,
+          "unresolved_spans": 0,
+          "reanchored_unique_exact": 0,
+          "reanchored_repeated_exact": 0,
+          "repeated_occurrence_cases": 0,
+          "repeated_occurrence_recovered": 0,
+          "repeated_occurrence_unresolved": 0,
+          "tie_cases": 0,
+          "one_to_one_assignment_cases": 0,
+          "assignment_ambiguities": 0
+        },
+        "runtime_validation": {
+          "schema_valid": true,
+          "cross_field_valid": true,
+          "errors": []
+        },
+        "source_echo_recovery": {
+          "policy": "source_echo_quotes_whitespace_only@1",
+          "changed_fields": [
+            "source_text"
+          ],
+          "original_echo": "The additions and deductions shall be taken into account in the profit of the first profit determination period after the change, and in the case of the sale or abandonment of the entire business, of a part-business or of a co-entrepreneur's interest in the profit of the last profit determination period before the sale or abandonment. 2.",
+          "restored_echo": "The additions and deductions shall be taken into account in the profit of the first profit determination period after the change, and in the case of the sale or abandonment of the entire business, of a part-business or of a co-entrepreneur’s interest in the profit of the last profit determination period before the sale or abandonment. 2.",
+          "extraction_fields_unchanged": true,
+          "original_content_sha256": "c32a78b8961d4cd9b3166926f3a67ab5af8e7459a8fab537d36026dc6f3a559c",
+          "recovered_payload_sha256": "252fda602b969e2096fe85b9247af863ed0948218d3370ba746b75edbb57e387",
+          "gold_used": false
+        }
+      },
+      "source_response_path": "outputs/development/stage2_multi_model_remaining_v1/kimi_rpm_remaining_20261007_v1/responses/kimi_estg_000060.json",
+      "source_response_sha256": "1746ba3ef8f4da3944327ed666410557732ea34f6d8b1695fde639272b3d35d2",
+      "nonthinking_check": {
+        "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+        "reasoning_content_present": false,
+        "reported_reasoning_tokens": 1,
+        "counter_exception_user_authorized": true,
+        "one_token_meaning_verified": false
+      },
+      "additional_api_calls": 0
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000283",
+      "prediction": {
+        "provider": "kimi",
+        "sample_id": "estg_000283",
+        "request_id": "kimi:estg_000283",
+        "request_status": "ok",
+        "failure_stage": null,
+        "record": {
+          "clauses": [],
+          "method": {
+            "name": "direct_llm",
+            "schema_source": "stage2_prediction.schema.json@1.0.0"
+          },
+          "sample_id": "estg_000283",
+          "schema_version": "1.0.0",
+          "source_id": "estg_000283",
+          "source_text": "A business trip occurs when an employee\n\n— leaves their duty station (office, permanent establishment, factory premises, warehouse, etc.) on the employer’s orders to perform work duties, or\n— works so far away from their permanent place of residence (family home) that they cannot reasonably be expected to return to that permanent place of residence (family home) on a daily basis.",
+          "unsupported_or_ambiguous": [],
+          "validation": {
+            "schema_valid": true,
+            "cross_field_valid": true,
+            "errors": []
+          }
+        },
+        "canonicalization_policy": "legacy",
+        "adapter_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "spans_adapted": 4,
+          "dropped_spans": [
+            "constraints[0]_text_not_in_source"
+          ],
+          "failed_reasons": []
+        },
+        "canonicalizer_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "policy": "legacy",
+          "cost_metric": "abs_start_plus_abs_end",
+          "clause_span_count": 0,
+          "field_span_count": 0,
+          "reanchored_count": 0,
+          "dropped_spans": [],
+          "dropped_clauses": [
+            0
+          ],
+          "dropped_edges": [],
+          "failed_reasons": [],
+          "resolution_events": [
+            {
+              "path": "clauses[0].clause_span",
+              "clause_index": 0,
+              "clause_id": "estg_000283_c01",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "A business trip occurs when an employee\n\n— leaves their duty station (office, permanent establishment, factory premises, warehouse, etc.) on the employer's orders to perform work duties, or\n— works so far away from their permanent place of residence (family home) that they cannot reasonably be expected to return to that permanent place of residence (family home) on a daily basis.",
+              "normalized": null,
+              "original_start": 0,
+              "original_end": 298,
+              "candidate_occurrences": [],
+              "strategy": "not_applicable",
+              "chosen": null,
+              "distance": null,
+              "outcome": "unresolved",
+              "reason": "zero_occurrence",
+              "cost_metric": "abs_start_plus_abs_end"
+            }
+          ],
+          "unchanged_spans": 0,
+          "unresolved_spans": 0,
+          "reanchored_unique_exact": 0,
+          "reanchored_repeated_exact": 0,
+          "repeated_occurrence_cases": 0,
+          "repeated_occurrence_recovered": 0,
+          "repeated_occurrence_unresolved": 0,
+          "tie_cases": 0,
+          "one_to_one_assignment_cases": 0,
+          "assignment_ambiguities": 0
+        },
+        "runtime_validation": {
+          "schema_valid": true,
+          "cross_field_valid": true,
+          "errors": []
+        },
+        "source_echo_recovery": {
+          "policy": "source_echo_quotes_whitespace_only@1",
+          "changed_fields": [
+            "source_text"
+          ],
+          "original_echo": "A business trip occurs when an employee\n\n— leaves their duty station (office, permanent establishment, factory premises, warehouse, etc.) on the employer's orders to perform work duties, or\n— works so far away from their permanent place of residence (family home) that they cannot reasonably be expected to return to that permanent place of residence (family home) on a daily basis.",
+          "restored_echo": "A business trip occurs when an employee\n\n— leaves their duty station (office, permanent establishment, factory premises, warehouse, etc.) on the employer’s orders to perform work duties, or\n— works so far away from their permanent place of residence (family home) that they cannot reasonably be expected to return to that permanent place of residence (family home) on a daily basis.",
+          "extraction_fields_unchanged": true,
+          "original_content_sha256": "7b6c6cc33f06a3bb418345ce162e64f50e06411163025cbdde781827e89e1d3b",
+          "recovered_payload_sha256": "e9e9e612b496e5faf2283bd0123b66a276f92e04561fe230a5ac822cb15cd03b",
+          "gold_used": false
+        }
+      },
+      "source_response_path": "outputs/development/stage2_multi_model_remaining_v1/kimi_rpm_remaining_20261007_v1/responses/kimi_estg_000283.json",
+      "source_response_sha256": "de84b16eabb52089c5e4c1428c7f960fc4b5fe25c1e9de146f3c16f3a61d6eae",
+      "nonthinking_check": {
+        "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+        "reasoning_content_present": false,
+        "reported_reasoning_tokens": 1,
+        "counter_exception_user_authorized": true,
+        "one_token_meaning_verified": false
+      },
+      "additional_api_calls": 0
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000285",
+      "prediction": {
+        "provider": "kimi",
+        "sample_id": "estg_000285",
+        "request_id": "kimi:estg_000285",
+        "request_status": "ok",
+        "failure_stage": null,
+        "record": {
+          "clauses": [
+            {
+              "actions": [
+                {
+                  "text": "be taken into account",
+                  "start": 212,
+                  "end": 233,
+                  "normalized": "be taken into account",
+                  "id": "p02"
+                }
+              ],
+              "actor_action_map": [
+                {
+                  "action_id": "p02",
+                  "actor_id": "a02"
+                }
+              ],
+              "actors": [
+                {
+                  "text": "The mileage allowance",
+                  "start": 184,
+                  "end": 205,
+                  "normalized": "the mileage allowance",
+                  "id": "a02"
+                }
+              ],
+              "clause_id": "estg_000285_c02",
+              "clause_span": {
+                "end": 287,
+                "start": 181,
+                "text": "a) The mileage allowance shall be taken into account at most at the rates applicable to federal employees."
+              },
+              "conditions": [],
+              "constraints": [
+                {
+                  "text": "at most at the rates applicable to federal employees",
+                  "start": 234,
+                  "end": 286,
+                  "normalized": "at most at the rates applicable to federal employees",
+                  "id": "c01"
+                }
+              ],
+              "exceptions": [],
+              "modality": {
+                "evidence": [
+                  {
+                    "end": 211,
+                    "start": 206,
+                    "text": "shall"
+                  }
+                ],
+                "label": "obligation"
+              },
+              "order_relations": []
+            },
+            {
+              "actions": [
+                {
+                  "text": "amount",
+                  "start": 344,
+                  "end": 350,
+                  "normalized": "amount",
+                  "id": "p03"
+                }
+              ],
+              "actor_action_map": [
+                {
+                  "action_id": "p03",
+                  "actor_id": "a03"
+                }
+              ],
+              "actors": [
+                {
+                  "text": "The daily allowance for domestic business trips",
+                  "start": 292,
+                  "end": 339,
+                  "normalized": "the daily allowance for domestic business trips",
+                  "id": "a03"
+                }
+              ],
+              "clause_id": "estg_000285_c03",
+              "clause_span": {
+                "end": 376,
+                "start": 289,
+                "text": "b) The daily allowance for domestic business trips may amount to up to ATS 240 per day."
+              },
+              "conditions": [],
+              "constraints": [
+                {
+                  "text": "to up to ATS 240 per day",
+                  "start": 351,
+                  "end": 375,
+                  "normalized": "to up to ats 240 per day",
+                  "id": "c02"
+                }
+              ],
+              "exceptions": [],
+              "modality": {
+                "evidence": [
+                  {
+                    "end": 343,
+                    "start": 340,
+                    "text": "may"
+                  }
+                ],
+                "label": "permission"
+              },
+              "order_relations": []
+            }
+          ],
+          "method": {
+            "name": "direct_llm",
+            "schema_source": "stage2_prediction.schema.json@1.0.0"
+          },
+          "sample_id": "estg_000285",
+          "schema_version": "1.0.0",
+          "source_id": "estg_000285",
+          "source_text": "If a wage-structuring provision within the meaning of Section 68(5) items 1 to 6 contains a special rule on the definition of the term “business trip,” that rule shall be applied. \na) The mileage allowance shall be taken into account at most at the rates applicable to federal employees. \nb) The daily allowance for domestic business trips may amount to up to ATS 240 per day.",
+          "unsupported_or_ambiguous": [
+            {
+              "field": "actor",
+              "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+            }
+          ],
+          "validation": {
+            "schema_valid": true,
+            "cross_field_valid": true,
+            "errors": []
+          }
+        },
+        "canonicalization_policy": "legacy",
+        "adapter_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "spans_adapted": 8,
+          "dropped_spans": [
+            "conditions[0]_text_not_in_source"
+          ],
+          "failed_reasons": []
+        },
+        "canonicalizer_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "policy": "legacy",
+          "cost_metric": "abs_start_plus_abs_end",
+          "clause_span_count": 2,
+          "field_span_count": 8,
+          "reanchored_count": 10,
+          "dropped_spans": [],
+          "dropped_clauses": [
+            0
+          ],
+          "dropped_edges": [],
+          "failed_reasons": [],
+          "resolution_events": [
+            {
+              "path": "clauses[0].clause_span",
+              "clause_index": 0,
+              "clause_id": "estg_000285_c01",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "If a wage-structuring provision within the meaning of Section 68(5) items 1 to 6 contains a special rule on the definition of the term \"business trip,\" that rule shall be applied.",
+              "normalized": null,
+              "original_start": 0,
+              "original_end": 146,
+              "candidate_occurrences": [],
+              "strategy": "not_applicable",
+              "chosen": null,
+              "distance": null,
+              "outcome": "unresolved",
+              "reason": "zero_occurrence",
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[1].clause_span",
+              "clause_index": 1,
+              "clause_id": "estg_000285_c02",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "a) The mileage allowance shall be taken into account at most at the rates applicable to federal employees.",
+              "normalized": null,
+              "original_start": 148,
+              "original_end": 253,
+              "candidate_occurrences": [
+                {
+                  "start": 181,
+                  "end": 287
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 181,
+                "end": 287
+              },
+              "distance": null,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[1].modality.evidence[0]",
+              "clause_index": 1,
+              "clause_id": "estg_000285_c02",
+              "field": "modality.evidence",
+              "span_index": 0,
+              "span_id": null,
+              "text": "shall",
+              "normalized": null,
+              "original_start": 169,
+              "original_end": 174,
+              "candidate_occurrences": [
+                {
+                  "start": 206,
+                  "end": 211
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 206,
+                "end": 211
+              },
+              "distance": 74,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[1].actors[0]",
+              "clause_index": 1,
+              "clause_id": "estg_000285_c02",
+              "field": "actors",
+              "span_index": 0,
+              "span_id": "a02",
+              "text": "The mileage allowance",
+              "normalized": "the mileage allowance",
+              "original_start": 151,
+              "original_end": 172,
+              "candidate_occurrences": [
+                {
+                  "start": 184,
+                  "end": 205
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 184,
+                "end": 205
+              },
+              "distance": 66,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[1].actions[0]",
+              "clause_index": 1,
+              "clause_id": "estg_000285_c02",
+              "field": "actions",
+              "span_index": 0,
+              "span_id": "p02",
+              "text": "be taken into account",
+              "normalized": "be taken into account",
+              "original_start": 175,
+              "original_end": 196,
+              "candidate_occurrences": [
+                {
+                  "start": 212,
+                  "end": 233
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 212,
+                "end": 233
+              },
+              "distance": 74,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[1].constraints[0]",
+              "clause_index": 1,
+              "clause_id": "estg_000285_c02",
+              "field": "constraints",
+              "span_index": 0,
+              "span_id": "c01",
+              "text": "at most at the rates applicable to federal employees",
+              "normalized": "at most at the rates applicable to federal employees",
+              "original_start": 197,
+              "original_end": 249,
+              "candidate_occurrences": [
+                {
+                  "start": 234,
+                  "end": 286
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 234,
+                "end": 286
+              },
+              "distance": 74,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[2].clause_span",
+              "clause_index": 2,
+              "clause_id": "estg_000285_c03",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "b) The daily allowance for domestic business trips may amount to up to ATS 240 per day.",
+              "normalized": null,
+              "original_start": 254,
+              "original_end": 342,
+              "candidate_occurrences": [
+                {
+                  "start": 289,
+                  "end": 376
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 289,
+                "end": 376
+              },
+              "distance": null,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[2].modality.evidence[0]",
+              "clause_index": 2,
+              "clause_id": "estg_000285_c03",
+              "field": "modality.evidence",
+              "span_index": 0,
+              "span_id": null,
+              "text": "may",
+              "normalized": null,
+              "original_start": 296,
+              "original_end": 299,
+              "candidate_occurrences": [
+                {
+                  "start": 340,
+                  "end": 343
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 340,
+                "end": 343
+              },
+              "distance": 88,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[2].actors[0]",
+              "clause_index": 2,
+              "clause_id": "estg_000285_c03",
+              "field": "actors",
+              "span_index": 0,
+              "span_id": "a03",
+              "text": "The daily allowance for domestic business trips",
+              "normalized": "the daily allowance for domestic business trips",
+              "original_start": 257,
+              "original_end": 304,
+              "candidate_occurrences": [
+                {
+                  "start": 292,
+                  "end": 339
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 292,
+                "end": 339
+              },
+              "distance": 70,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[2].actions[0]",
+              "clause_index": 2,
+              "clause_id": "estg_000285_c03",
+              "field": "actions",
+              "span_index": 0,
+              "span_id": "p03",
+              "text": "amount",
+              "normalized": "amount",
+              "original_start": 300,
+              "original_end": 306,
+              "candidate_occurrences": [
+                {
+                  "start": 344,
+                  "end": 350
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 344,
+                "end": 350
+              },
+              "distance": 88,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[2].constraints[0]",
+              "clause_index": 2,
+              "clause_id": "estg_000285_c03",
+              "field": "constraints",
+              "span_index": 0,
+              "span_id": "c02",
+              "text": "to up to ATS 240 per day",
+              "normalized": "to up to ats 240 per day",
+              "original_start": 307,
+              "original_end": 331,
+              "candidate_occurrences": [
+                {
+                  "start": 351,
+                  "end": 375
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 351,
+                "end": 375
+              },
+              "distance": 88,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            }
+          ],
+          "unchanged_spans": 0,
+          "unresolved_spans": 0,
+          "reanchored_unique_exact": 10,
+          "reanchored_repeated_exact": 0,
+          "repeated_occurrence_cases": 0,
+          "repeated_occurrence_recovered": 0,
+          "repeated_occurrence_unresolved": 0,
+          "tie_cases": 0,
+          "one_to_one_assignment_cases": 0,
+          "assignment_ambiguities": 0
+        },
+        "runtime_validation": {
+          "schema_valid": true,
+          "cross_field_valid": true,
+          "errors": []
+        },
+        "source_echo_recovery": {
+          "policy": "source_echo_quotes_whitespace_only@1",
+          "changed_fields": [
+            "source_text"
+          ],
+          "original_echo": "If a wage-structuring provision within the meaning of Section 68(5) items 1 to 6 contains a special rule on the definition of the term \"business trip,\" that rule shall be applied. \na) The mileage allowance shall be taken into account at most at the rates applicable to federal employees. \nb) The daily allowance for domestic business trips may amount to up to ATS 240 per day.",
+          "restored_echo": "If a wage-structuring provision within the meaning of Section 68(5) items 1 to 6 contains a special rule on the definition of the term “business trip,” that rule shall be applied. \na) The mileage allowance shall be taken into account at most at the rates applicable to federal employees. \nb) The daily allowance for domestic business trips may amount to up to ATS 240 per day.",
+          "extraction_fields_unchanged": true,
+          "original_content_sha256": "47f2eadcaea1caedf6087c6fd74583ad897662edec15c7c054f4803b2df414ac",
+          "recovered_payload_sha256": "45b3361db976f561d6e86ed62d6aac1543fd4e5167fa18b10b17b14b044c94f1",
+          "gold_used": false
+        }
+      },
+      "source_response_path": "outputs/development/stage2_multi_model_remaining_v1/kimi_rpm_remaining_20261007_v1/responses/kimi_estg_000285.json",
+      "source_response_sha256": "2d8bb1d3237df7b5bcbbab9e4feb65f061a5221f5b344721ba10a3e1e7708b90",
+      "nonthinking_check": {
+        "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+        "reasoning_content_present": false,
+        "reported_reasoning_tokens": 1,
+        "counter_exception_user_authorized": true,
+        "one_token_meaning_verified": false
+      },
+      "additional_api_calls": 0
+    },
+    {
+      "provider": "kimi",
+      "sample_id": "estg_000433",
+      "prediction": {
+        "provider": "kimi",
+        "sample_id": "estg_000433",
+        "request_id": "kimi:estg_000433",
+        "request_status": "ok",
+        "failure_stage": null,
+        "record": {
+          "clauses": [],
+          "method": {
+            "name": "direct_llm",
+            "schema_source": "stage2_prediction.schema.json@1.0.0"
+          },
+          "sample_id": "estg_000433",
+          "schema_version": "1.0.0",
+          "source_id": "estg_000433",
+          "source_text": "(2) If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee’s first wage tax card, it must be cancelled simultaneously with the issuance of a wage tax card for the spouse.",
+          "unsupported_or_ambiguous": [
+            {
+              "field": "actor",
+              "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+            }
+          ],
+          "validation": {
+            "schema_valid": true,
+            "cross_field_valid": true,
+            "errors": []
+          }
+        },
+        "canonicalization_policy": "legacy",
+        "adapter_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "spans_adapted": 3,
+          "dropped_spans": [
+            "conditions[0]_text_not_in_source"
+          ],
+          "failed_reasons": []
+        },
+        "canonicalizer_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "policy": "legacy",
+          "cost_metric": "abs_start_plus_abs_end",
+          "clause_span_count": 0,
+          "field_span_count": 0,
+          "reanchored_count": 0,
+          "dropped_spans": [],
+          "dropped_clauses": [
+            0
+          ],
+          "dropped_edges": [],
+          "failed_reasons": [],
+          "resolution_events": [
+            {
+              "path": "clauses[0].clause_span",
+              "clause_index": 0,
+              "clause_id": "estg_000433_c01",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee's first wage tax card, it must be cancelled simultaneously with the issuance of a wage tax card for the spouse.",
+              "normalized": null,
+              "original_start": 4,
+              "original_end": 154,
+              "candidate_occurrences": [],
+              "strategy": "not_applicable",
+              "chosen": null,
+              "distance": null,
+              "outcome": "unresolved",
+              "reason": "zero_occurrence",
+              "cost_metric": "abs_start_plus_abs_end"
+            }
+          ],
+          "unchanged_spans": 0,
+          "unresolved_spans": 0,
+          "reanchored_unique_exact": 0,
+          "reanchored_repeated_exact": 0,
+          "repeated_occurrence_cases": 0,
+          "repeated_occurrence_recovered": 0,
+          "repeated_occurrence_unresolved": 0,
+          "tie_cases": 0,
+          "one_to_one_assignment_cases": 0,
+          "assignment_ambiguities": 0
+        },
+        "runtime_validation": {
+          "schema_valid": true,
+          "cross_field_valid": true,
+          "errors": []
+        },
+        "source_echo_recovery": {
+          "policy": "source_echo_quotes_whitespace_only@1",
+          "changed_fields": [
+            "source_text"
+          ],
+          "original_echo": "(2) If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee's first wage tax card, it must be cancelled simultaneously with the issuance of a wage tax card for the spouse.",
+          "restored_echo": "(2) If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee’s first wage tax card, it must be cancelled simultaneously with the issuance of a wage tax card for the spouse.",
+          "extraction_fields_unchanged": true,
+          "original_content_sha256": "b8c6fee789ebdb20714b1ccdb12f4057bb209dc3ea2d4c1dd4eea217f24cc77b",
+          "recovered_payload_sha256": "3ab0f9c69e340b403a35d23d229bfed04002184445554df6b15b2a7f7435b2e2",
+          "gold_used": false
+        }
+      },
+      "source_response_path": "outputs/development/stage2_multi_model_remaining_v1/kimi_rpm_remaining_20261007_v1/responses/kimi_estg_000433.json",
+      "source_response_sha256": "16ec846c3041270edf627bd2d59ed9c243293e92d18c7431639036b4faef9375",
+      "nonthinking_check": {
+        "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+        "reasoning_content_present": false,
+        "reported_reasoning_tokens": 1,
+        "counter_exception_user_authorized": true,
+        "one_token_meaning_verified": false
+      },
+      "additional_api_calls": 0
+    },
+    {
+      "provider": "grok",
+      "sample_id": "estg_000060",
+      "prediction": {
+        "provider": "grok",
+        "sample_id": "estg_000060",
+        "request_id": "grok:estg_000060",
+        "request_status": "ok",
+        "failure_stage": null,
+        "record": {
+          "clauses": [],
+          "method": {
+            "name": "direct_llm",
+            "schema_source": "stage2_prediction.schema.json@1.0.0"
+          },
+          "sample_id": "estg_000060",
+          "schema_version": "1.0.0",
+          "source_id": "estg_000060",
+          "source_text": "The additions and deductions shall be taken into account in the profit of the first profit determination period after the change, and in the case of the sale or abandonment of the entire business, of a part-business or of a co-entrepreneur’s interest in the profit of the last profit determination period before the sale or abandonment. 2.",
+          "unsupported_or_ambiguous": [],
+          "validation": {
+            "schema_valid": true,
+            "cross_field_valid": true,
+            "errors": []
+          }
+        },
+        "canonicalization_policy": "legacy",
+        "adapter_audit": {
+          "attempted": true,
+          "status": "adapted",
+          "spans_adapted": 4,
+          "dropped_spans": [],
+          "failed_reasons": []
+        },
+        "canonicalizer_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "policy": "legacy",
+          "cost_metric": "abs_start_plus_abs_end",
+          "clause_span_count": 0,
+          "field_span_count": 0,
+          "reanchored_count": 0,
+          "dropped_spans": [],
+          "dropped_clauses": [
+            0
+          ],
+          "dropped_edges": [],
+          "failed_reasons": [],
+          "resolution_events": [
+            {
+              "path": "clauses[0].clause_span",
+              "clause_index": 0,
+              "clause_id": "estg_000060_c01",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "The additions and deductions shall be taken into account in the profit of the first profit determination period after the change, and in the case of the sale or abandonment of the entire business, of a part-business or of a co-entrepreneur's interest in the profit of the last profit determination period before the sale or abandonment.",
+              "normalized": null,
+              "original_start": 0,
+              "original_end": 273,
+              "candidate_occurrences": [],
+              "strategy": "not_applicable",
+              "chosen": null,
+              "distance": null,
+              "outcome": "unresolved",
+              "reason": "zero_occurrence",
+              "cost_metric": "abs_start_plus_abs_end"
+            }
+          ],
+          "unchanged_spans": 0,
+          "unresolved_spans": 0,
+          "reanchored_unique_exact": 0,
+          "reanchored_repeated_exact": 0,
+          "repeated_occurrence_cases": 0,
+          "repeated_occurrence_recovered": 0,
+          "repeated_occurrence_unresolved": 0,
+          "tie_cases": 0,
+          "one_to_one_assignment_cases": 0,
+          "assignment_ambiguities": 0
+        },
+        "runtime_validation": {
+          "schema_valid": true,
+          "cross_field_valid": true,
+          "errors": []
+        },
+        "source_echo_recovery": {
+          "policy": "source_echo_quotes_whitespace_only@1",
+          "changed_fields": [
+            "source_text"
+          ],
+          "original_echo": "The additions and deductions shall be taken into account in the profit of the first profit determination period after the change, and in the case of the sale or abandonment of the entire business, of a part-business or of a co-entrepreneur's interest in the profit of the last profit determination period before the sale or abandonment. 2.",
+          "restored_echo": "The additions and deductions shall be taken into account in the profit of the first profit determination period after the change, and in the case of the sale or abandonment of the entire business, of a part-business or of a co-entrepreneur’s interest in the profit of the last profit determination period before the sale or abandonment. 2.",
+          "extraction_fields_unchanged": true,
+          "original_content_sha256": "74450f064f404229e7c43e63df4e35618a2f759d77c6d8c575e5114e84f202a2",
+          "recovered_payload_sha256": "e92d827829bd63bc38e220fb38079e55ba86e838bba0172c0b180b4a6fd4c8af",
+          "gold_used": false
+        }
+      },
+      "source_response_path": "outputs/development/stage2_multi_model_v1/multi_model_all_20261007_v2_grok/responses/grok_estg_000060.json",
+      "source_response_sha256": "6e3f0eab268327c9aaeee1dbcc0aca36f078459222e02a249dd73a81f934b9df",
+      "nonthinking_check": {
+        "status": "no_reported_reasoning",
+        "reasoning_content_present": false,
+        "reported_reasoning_tokens": 0
+      },
+      "additional_api_calls": 0
+    },
+    {
+      "provider": "grok",
+      "sample_id": "estg_000399",
+      "prediction": {
+        "provider": "grok",
+        "sample_id": "estg_000399",
+        "request_id": "grok:estg_000399",
+        "request_status": "ok",
+        "failure_stage": null,
+        "record": {
+          "clauses": [],
+          "method": {
+            "name": "direct_llm",
+            "schema_source": "stage2_prediction.schema.json@1.0.0"
+          },
+          "sample_id": "estg_000399",
+          "schema_version": "1.0.0",
+          "source_id": "estg_000399",
+          "source_text": "(2) The taxpayer with limited tax liability shall submit a tax return for the domestic income of the preceding calendar year (assessment period) if  \n1. the tax office requests the taxpayer to do so, or  \n2. the domestic income consisted wholly or partly of income within the meaning of Section 2(3) numbers 1 to 3 and the profit had to be determined or has been determined on the basis of a comparison of business assets, or  \n3. the total domestic income assessable to income tax pursuant to Section 102 has exceeded ATS 15,000.",
+          "unsupported_or_ambiguous": [],
+          "validation": {
+            "schema_valid": true,
+            "cross_field_valid": true,
+            "errors": []
+          }
+        },
+        "canonicalization_policy": "legacy",
+        "adapter_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "spans_adapted": 2,
+          "dropped_spans": [
+            "conditions[0]_text_not_in_source",
+            "conditions[1]_text_not_in_source",
+            "conditions[2]_text_not_in_source"
+          ],
+          "failed_reasons": []
+        },
+        "canonicalizer_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "policy": "legacy",
+          "cost_metric": "abs_start_plus_abs_end",
+          "clause_span_count": 0,
+          "field_span_count": 0,
+          "reanchored_count": 0,
+          "dropped_spans": [],
+          "dropped_clauses": [
+            0
+          ],
+          "dropped_edges": [],
+          "failed_reasons": [],
+          "resolution_events": [
+            {
+              "path": "clauses[0].clause_span",
+              "clause_index": 0,
+              "clause_id": "estg_000399_c01",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "(2) The taxpayer with limited tax liability shall submit a tax return for the domestic income of the preceding calendar year (assessment period) if  1. the tax office requests the taxpayer to do so, or  2. the domestic income consisted wholly or partly of income within the meaning of Section 2(3) numbers 1 to 3 and the profit had to be determined or has been determined on the basis of a comparison of business assets, or  3. the total domestic income assessable to income tax pursuant to Section 102 has exceeded ATS 15,000.",
+              "normalized": null,
+              "original_start": 0,
+              "original_end": 406,
+              "candidate_occurrences": [],
+              "strategy": "not_applicable",
+              "chosen": null,
+              "distance": null,
+              "outcome": "unresolved",
+              "reason": "zero_occurrence",
+              "cost_metric": "abs_start_plus_abs_end"
+            }
+          ],
+          "unchanged_spans": 0,
+          "unresolved_spans": 0,
+          "reanchored_unique_exact": 0,
+          "reanchored_repeated_exact": 0,
+          "repeated_occurrence_cases": 0,
+          "repeated_occurrence_recovered": 0,
+          "repeated_occurrence_unresolved": 0,
+          "tie_cases": 0,
+          "one_to_one_assignment_cases": 0,
+          "assignment_ambiguities": 0
+        },
+        "runtime_validation": {
+          "schema_valid": true,
+          "cross_field_valid": true,
+          "errors": []
+        },
+        "source_echo_recovery": {
+          "policy": "source_echo_quotes_whitespace_only@1",
+          "changed_fields": [
+            "source_text"
+          ],
+          "original_echo": "(2) The taxpayer with limited tax liability shall submit a tax return for the domestic income of the preceding calendar year (assessment period) if  1. the tax office requests the taxpayer to do so, or  2. the domestic income consisted wholly or partly of income within the meaning of Section 2(3) numbers 1 to 3 and the profit had to be determined or has been determined on the basis of a comparison of business assets, or  3. the total domestic income assessable to income tax pursuant to Section 102 has exceeded ATS 15,000.",
+          "restored_echo": "(2) The taxpayer with limited tax liability shall submit a tax return for the domestic income of the preceding calendar year (assessment period) if  \n1. the tax office requests the taxpayer to do so, or  \n2. the domestic income consisted wholly or partly of income within the meaning of Section 2(3) numbers 1 to 3 and the profit had to be determined or has been determined on the basis of a comparison of business assets, or  \n3. the total domestic income assessable to income tax pursuant to Section 102 has exceeded ATS 15,000.",
+          "extraction_fields_unchanged": true,
+          "original_content_sha256": "6ce54be7fc8a4bfde37d3d86f75b0c08ce3378249c49c2969da1dc2ddb56bb1e",
+          "recovered_payload_sha256": "0a76af946c7ac32026c023eb6f2fe853bf25dd83b5e1b29eb14e021f6b7011c1",
+          "gold_used": false
+        }
+      },
+      "source_response_path": "outputs/development/stage2_multi_model_v1/multi_model_all_20261007_v2_grok/responses/grok_estg_000399.json",
+      "source_response_sha256": "2aebabca104007746dd619f644c8f3e3b4dad262d7aa1ea8466b03eac4154443",
+      "nonthinking_check": {
+        "status": "no_reported_reasoning",
+        "reasoning_content_present": false,
+        "reported_reasoning_tokens": 0
+      },
+      "additional_api_calls": 0
+    },
+    {
+      "provider": "glm",
+      "sample_id": "estg_000283",
+      "prediction": {
+        "provider": "glm",
+        "sample_id": "estg_000283",
+        "request_id": "glm:estg_000283",
+        "request_status": "ok",
+        "failure_stage": null,
+        "record": {
+          "clauses": [],
+          "method": {
+            "name": "direct_llm",
+            "schema_source": "stage2_prediction.schema.json@1.0.0"
+          },
+          "sample_id": "estg_000283",
+          "schema_version": "1.0.0",
+          "source_id": "estg_000283",
+          "source_text": "A business trip occurs when an employee\n\n— leaves their duty station (office, permanent establishment, factory premises, warehouse, etc.) on the employer’s orders to perform work duties, or\n— works so far away from their permanent place of residence (family home) that they cannot reasonably be expected to return to that permanent place of residence (family home) on a daily basis.",
+          "unsupported_or_ambiguous": [],
+          "validation": {
+            "schema_valid": true,
+            "cross_field_valid": true,
+            "errors": []
+          }
+        },
+        "canonicalization_policy": "legacy",
+        "adapter_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "spans_adapted": 0,
+          "dropped_spans": [
+            "conditions[0]_text_not_in_source"
+          ],
+          "failed_reasons": []
+        },
+        "canonicalizer_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "policy": "legacy",
+          "cost_metric": "abs_start_plus_abs_end",
+          "clause_span_count": 0,
+          "field_span_count": 0,
+          "reanchored_count": 0,
+          "dropped_spans": [],
+          "dropped_clauses": [
+            0
+          ],
+          "dropped_edges": [],
+          "failed_reasons": [],
+          "resolution_events": [
+            {
+              "path": "clauses[0].clause_span",
+              "clause_index": 0,
+              "clause_id": "estg_000283_c01",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "A business trip occurs when an employee\n\n— leaves their duty station (office, permanent establishment, factory premises, warehouse, etc.) on the employer's orders to perform work duties, or\n— works so far away from their permanent place of residence (family home) that they cannot reasonably be expected to return to that permanent place of residence (family home) on a daily basis.",
+              "normalized": null,
+              "original_start": 0,
+              "original_end": 402,
+              "candidate_occurrences": [],
+              "strategy": "not_applicable",
+              "chosen": null,
+              "distance": null,
+              "outcome": "unresolved",
+              "reason": "zero_occurrence",
+              "cost_metric": "abs_start_plus_abs_end"
+            }
+          ],
+          "unchanged_spans": 0,
+          "unresolved_spans": 0,
+          "reanchored_unique_exact": 0,
+          "reanchored_repeated_exact": 0,
+          "repeated_occurrence_cases": 0,
+          "repeated_occurrence_recovered": 0,
+          "repeated_occurrence_unresolved": 0,
+          "tie_cases": 0,
+          "one_to_one_assignment_cases": 0,
+          "assignment_ambiguities": 0
+        },
+        "runtime_validation": {
+          "schema_valid": true,
+          "cross_field_valid": true,
+          "errors": []
+        },
+        "source_echo_recovery": {
+          "policy": "source_echo_quotes_whitespace_only@1",
+          "changed_fields": [
+            "source_text"
+          ],
+          "original_echo": "A business trip occurs when an employee\n\n— leaves their duty station (office, permanent establishment, factory premises, warehouse, etc.) on the employer's orders to perform work duties, or\n— works so far away from their permanent place of residence (family home) that they cannot reasonably be expected to return to that permanent place of residence (family home) on a daily basis.",
+          "restored_echo": "A business trip occurs when an employee\n\n— leaves their duty station (office, permanent establishment, factory premises, warehouse, etc.) on the employer’s orders to perform work duties, or\n— works so far away from their permanent place of residence (family home) that they cannot reasonably be expected to return to that permanent place of residence (family home) on a daily basis.",
+          "extraction_fields_unchanged": true,
+          "original_content_sha256": "a1d9a1d499ab54c78ddac511cbda5d63d0813f44292e9ab80effc19faaff6957",
+          "recovered_payload_sha256": "0ec9f03f1d4a8734e10a45e663d7fde41a855a90b29316ab971e0fd6c8bcae43",
+          "gold_used": false
+        }
+      },
+      "source_response_path": "outputs/development/stage2_multi_model_remaining_v1/multi_model_remaining_20261007_v1/glm/responses/glm_estg_000283.json",
+      "source_response_sha256": "ffe0b010536882508d30a2f449e997ba711aee574e7632436fab929858cd8f67",
+      "nonthinking_check": {
+        "status": "no_reported_reasoning",
+        "reasoning_content_present": false,
+        "reported_reasoning_tokens": 0
+      },
+      "additional_api_calls": 0
+    },
+    {
+      "provider": "glm",
+      "sample_id": "estg_000433",
+      "prediction": {
+        "provider": "glm",
+        "sample_id": "estg_000433",
+        "request_id": "glm:estg_000433",
+        "request_status": "ok",
+        "failure_stage": null,
+        "record": {
+          "clauses": [],
+          "method": {
+            "name": "direct_llm",
+            "schema_source": "stage2_prediction.schema.json@1.0.0"
+          },
+          "sample_id": "estg_000433",
+          "schema_version": "1.0.0",
+          "source_id": "estg_000433",
+          "source_text": "(2) If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee’s first wage tax card, it must be cancelled simultaneously with the issuance of a wage tax card for the spouse.",
+          "unsupported_or_ambiguous": [],
+          "validation": {
+            "schema_valid": true,
+            "cross_field_valid": true,
+            "errors": []
+          }
+        },
+        "canonicalization_policy": "legacy",
+        "adapter_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "spans_adapted": 4,
+          "dropped_spans": [
+            "conditions[0]_text_not_in_source"
+          ],
+          "failed_reasons": []
+        },
+        "canonicalizer_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "policy": "legacy",
+          "cost_metric": "abs_start_plus_abs_end",
+          "clause_span_count": 0,
+          "field_span_count": 0,
+          "reanchored_count": 0,
+          "dropped_spans": [],
+          "dropped_clauses": [
+            0
+          ],
+          "dropped_edges": [],
+          "failed_reasons": [],
+          "resolution_events": [
+            {
+              "path": "clauses[0].clause_span",
+              "clause_index": 0,
+              "clause_id": "estg_000433_c01",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "(2) If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee's first wage tax card, it must be cancelled simultaneously with the issuance of a wage tax card for the spouse.",
+              "normalized": null,
+              "original_start": 0,
+              "original_end": 186,
+              "candidate_occurrences": [],
+              "strategy": "not_applicable",
+              "chosen": null,
+              "distance": null,
+              "outcome": "unresolved",
+              "reason": "zero_occurrence",
+              "cost_metric": "abs_start_plus_abs_end"
+            }
+          ],
+          "unchanged_spans": 0,
+          "unresolved_spans": 0,
+          "reanchored_unique_exact": 0,
+          "reanchored_repeated_exact": 0,
+          "repeated_occurrence_cases": 0,
+          "repeated_occurrence_recovered": 0,
+          "repeated_occurrence_unresolved": 0,
+          "tie_cases": 0,
+          "one_to_one_assignment_cases": 0,
+          "assignment_ambiguities": 0
+        },
+        "runtime_validation": {
+          "schema_valid": true,
+          "cross_field_valid": true,
+          "errors": []
+        },
+        "source_echo_recovery": {
+          "policy": "source_echo_quotes_whitespace_only@1",
+          "changed_fields": [
+            "source_text"
+          ],
+          "original_echo": "(2) If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee's first wage tax card, it must be cancelled simultaneously with the issuance of a wage tax card for the spouse.",
+          "restored_echo": "(2) If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee’s first wage tax card, it must be cancelled simultaneously with the issuance of a wage tax card for the spouse.",
+          "extraction_fields_unchanged": true,
+          "original_content_sha256": "11863dd0c586b664353c08fdce52c83a4d118738071725062c12663e99c84ea1",
+          "recovered_payload_sha256": "eff16b39abb61fd6e0eb453894b7ecc7ee94e1dbb9a600b94ce23d856620483a",
+          "gold_used": false
+        }
+      },
+      "source_response_path": "outputs/development/stage2_multi_model_remaining_v1/multi_model_remaining_20261007_v1/glm/responses/glm_estg_000433.json",
+      "source_response_sha256": "9272195599fee38f5fa0b3b35288b030931774c4815e7a094d910ac71fe74d7b",
+      "nonthinking_check": {
+        "status": "no_reported_reasoning",
+        "reasoning_content_present": false,
+        "reported_reasoning_tokens": 0
+      },
+      "additional_api_calls": 0
+    },
+    {
+      "provider": "minimax",
+      "sample_id": "estg_000111",
+      "prediction": {
+        "provider": "minimax",
+        "sample_id": "estg_000111",
+        "request_id": "minimax:estg_000111",
+        "request_status": "ok",
+        "failure_stage": null,
+        "record": {
+          "clauses": [
+            {
+              "actions": [],
+              "actor_action_map": [],
+              "actors": [],
+              "clause_id": "estg_000111_c01",
+              "clause_span": {
+                "end": 176,
+                "start": 4,
+                "text": "In the following cases, an investment allowance may be claimed neither as a reduction of profit nor through the designated use of an investment reserve (a tax-free amount):"
+              },
+              "conditions": [
+                {
+                  "text": "In the following cases",
+                  "start": 4,
+                  "end": 26,
+                  "normalized": "in the following cases",
+                  "id": "d01"
+                }
+              ],
+              "constraints": [],
+              "exceptions": [],
+              "modality": {
+                "evidence": [
+                  {
+                    "end": 55,
+                    "start": 52,
+                    "text": "may"
+                  },
+                  {
+                    "end": 74,
+                    "start": 67,
+                    "text": "neither"
+                  }
+                ],
+                "label": "prohibition"
+              },
+              "order_relations": []
+            },
+            {
+              "actions": [
+                {
+                  "text": "used for passenger transport",
+                  "start": 194,
+                  "end": 222,
+                  "normalized": "used for passenger transport",
+                  "id": "p03"
+                }
+              ],
+              "actor_action_map": [
+                {
+                  "action_id": "p03",
+                  "actor_id": null
+                }
+              ],
+              "actors": [],
+              "clause_id": "estg_000111_c02",
+              "clause_span": {
+                "end": 306,
+                "start": 181,
+                "text": "For aircraft used for passenger transport, except aircraft of air transport companies (Section 101 of the Aviation Act, BGBl."
+              },
+              "conditions": [],
+              "constraints": [
+                {
+                  "text": "Section 101 of the Aviation Act, BGBl.",
+                  "start": 268,
+                  "end": 306,
+                  "normalized": "section 101 of the aviation act, bgbl.",
+                  "id": "c01"
+                }
+              ],
+              "exceptions": [
+                {
+                  "text": "except aircraft of air transport companies",
+                  "start": 224,
+                  "end": 266,
+                  "normalized": "except aircraft of air transport companies",
+                  "id": "e01"
+                }
+              ],
+              "modality": {
+                "evidence": [],
+                "label": "prohibition"
+              },
+              "order_relations": []
+            }
+          ],
+          "method": {
+            "name": "direct_llm",
+            "schema_source": "stage2_prediction.schema.json@1.0.0"
+          },
+          "sample_id": "estg_000111",
+          "schema_version": "1.0.0",
+          "source_id": "estg_000111",
+          "source_text": "(5) In the following cases, an investment allowance may be claimed neither as a reduction of profit nor through the designated use of an investment reserve (a tax-free amount):  \n— For aircraft used for passenger transport, except aircraft of air transport companies (Section 101 of the Aviation Act, BGBl.",
+          "unsupported_or_ambiguous": [
+            {
+              "field": "actor",
+              "reason": "context_required"
+            }
+          ],
+          "validation": {
+            "schema_valid": true,
+            "cross_field_valid": true,
+            "errors": []
+          }
+        },
+        "canonicalization_policy": "legacy",
+        "adapter_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "spans_adapted": 4,
+          "dropped_spans": [
+            "actions[0]_text_not_in_source",
+            "actions[1]_text_not_in_source"
+          ],
+          "failed_reasons": []
+        },
+        "canonicalizer_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "policy": "legacy",
+          "cost_metric": "abs_start_plus_abs_end",
+          "clause_span_count": 2,
+          "field_span_count": 6,
+          "reanchored_count": 8,
+          "dropped_spans": [],
+          "dropped_clauses": [],
+          "dropped_edges": [
+            "clauses[0].actor_action_map[0]",
+            "clauses[0].actor_action_map[1]"
+          ],
+          "failed_reasons": [],
+          "resolution_events": [
+            {
+              "path": "clauses[0].clause_span",
+              "clause_index": 0,
+              "clause_id": "estg_000111_c01",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "In the following cases, an investment allowance may be claimed neither as a reduction of profit nor through the designated use of an investment reserve (a tax-free amount):",
+              "normalized": null,
+              "original_start": 4,
+              "original_end": 183,
+              "candidate_occurrences": [
+                {
+                  "start": 4,
+                  "end": 176
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 4,
+                "end": 176
+              },
+              "distance": null,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[0].modality.evidence[0]",
+              "clause_index": 0,
+              "clause_id": "estg_000111_c01",
+              "field": "modality.evidence",
+              "span_index": 0,
+              "span_id": null,
+              "text": "may",
+              "normalized": null,
+              "original_start": 42,
+              "original_end": 45,
+              "candidate_occurrences": [
+                {
+                  "start": 52,
+                  "end": 55
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 52,
+                "end": 55
+              },
+              "distance": 20,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[0].modality.evidence[1]",
+              "clause_index": 0,
+              "clause_id": "estg_000111_c01",
+              "field": "modality.evidence",
+              "span_index": 1,
+              "span_id": null,
+              "text": "neither",
+              "normalized": null,
+              "original_start": 66,
+              "original_end": 73,
+              "candidate_occurrences": [
+                {
+                  "start": 67,
+                  "end": 74
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 67,
+                "end": 74
+              },
+              "distance": 2,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[0].conditions[0]",
+              "clause_index": 0,
+              "clause_id": "estg_000111_c01",
+              "field": "conditions",
+              "span_index": 0,
+              "span_id": "d01",
+              "text": "In the following cases",
+              "normalized": "in the following cases",
+              "original_start": 4,
+              "original_end": 28,
+              "candidate_occurrences": [
+                {
+                  "start": 4,
+                  "end": 26
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 4,
+                "end": 26
+              },
+              "distance": 2,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[1].clause_span",
+              "clause_index": 1,
+              "clause_id": "estg_000111_c02",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "For aircraft used for passenger transport, except aircraft of air transport companies (Section 101 of the Aviation Act, BGBl.",
+              "normalized": null,
+              "original_start": 186,
+              "original_end": 304,
+              "candidate_occurrences": [
+                {
+                  "start": 181,
+                  "end": 306
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 181,
+                "end": 306
+              },
+              "distance": null,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[1].actions[0]",
+              "clause_index": 1,
+              "clause_id": "estg_000111_c02",
+              "field": "actions",
+              "span_index": 0,
+              "span_id": "p03",
+              "text": "used for passenger transport",
+              "normalized": "used for passenger transport",
+              "original_start": 200,
+              "original_end": 229,
+              "candidate_occurrences": [
+                {
+                  "start": 194,
+                  "end": 222
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 194,
+                "end": 222
+              },
+              "distance": 13,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[1].constraints[0]",
+              "clause_index": 1,
+              "clause_id": "estg_000111_c02",
+              "field": "constraints",
+              "span_index": 0,
+              "span_id": "c01",
+              "text": "Section 101 of the Aviation Act, BGBl.",
+              "normalized": "section 101 of the aviation act, bgbl.",
+              "original_start": 274,
+              "original_end": 304,
+              "candidate_occurrences": [
+                {
+                  "start": 268,
+                  "end": 306
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 268,
+                "end": 306
+              },
+              "distance": 8,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[1].exceptions[0]",
+              "clause_index": 1,
+              "clause_id": "estg_000111_c02",
+              "field": "exceptions",
+              "span_index": 0,
+              "span_id": "e01",
+              "text": "except aircraft of air transport companies",
+              "normalized": "except aircraft of air transport companies",
+              "original_start": 231,
+              "original_end": 273,
+              "candidate_occurrences": [
+                {
+                  "start": 224,
+                  "end": 266
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 224,
+                "end": 266
+              },
+              "distance": 14,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            }
+          ],
+          "unchanged_spans": 0,
+          "unresolved_spans": 0,
+          "reanchored_unique_exact": 8,
+          "reanchored_repeated_exact": 0,
+          "repeated_occurrence_cases": 0,
+          "repeated_occurrence_recovered": 0,
+          "repeated_occurrence_unresolved": 0,
+          "tie_cases": 0,
+          "one_to_one_assignment_cases": 0,
+          "assignment_ambiguities": 0
+        },
+        "runtime_validation": {
+          "schema_valid": true,
+          "cross_field_valid": true,
+          "errors": []
+        },
+        "source_echo_recovery": {
+          "policy": "source_echo_quotes_whitespace_only@1",
+          "changed_fields": [
+            "source_text"
+          ],
+          "original_echo": "(5) In the following cases, an investment allowance may be claimed neither as a reduction of profit nor through the designated use of an investment reserve (a tax-free amount): \n— For aircraft used for passenger transport, except aircraft of air transport companies (Section 101 of the Aviation Act, BGBl.",
+          "restored_echo": "(5) In the following cases, an investment allowance may be claimed neither as a reduction of profit nor through the designated use of an investment reserve (a tax-free amount):  \n— For aircraft used for passenger transport, except aircraft of air transport companies (Section 101 of the Aviation Act, BGBl.",
+          "extraction_fields_unchanged": true,
+          "original_content_sha256": "aad780a018de6c02c135c0fdc16c4bc95df1ee4d65e531f2d029e6e5d3995abf",
+          "recovered_payload_sha256": "ee370744ef8b8d1635a1e74034648287ee5e38e3b1b16a411ea305e2ff02f3a0",
+          "gold_used": false
+        }
+      },
+      "source_response_path": "outputs/development/stage2_multi_model_v1/multi_model_all_20261007_v2_minimax/responses/minimax_estg_000111.json",
+      "source_response_sha256": "ca2c405cd4e91c30fd6cd3b8e699e64510d38b6e22e164a1400c90631fb0a773",
+      "nonthinking_check": {
+        "status": "no_reported_reasoning",
+        "reasoning_content_present": false,
+        "reported_reasoning_tokens": null
+      },
+      "additional_api_calls": 0
+    },
+    {
+      "provider": "minimax",
+      "sample_id": "estg_000283",
+      "prediction": {
+        "provider": "minimax",
+        "sample_id": "estg_000283",
+        "request_id": "minimax:estg_000283",
+        "request_status": "ok",
+        "failure_stage": null,
+        "record": {
+          "clauses": [
+            {
+              "actions": [],
+              "actor_action_map": [],
+              "actors": [
+                {
+                  "text": "A business trip",
+                  "start": 0,
+                  "end": 15,
+                  "normalized": "a business trip",
+                  "id": "a01"
+                }
+              ],
+              "clause_id": "estg_000283_c01",
+              "clause_span": {
+                "end": 39,
+                "start": 0,
+                "text": "A business trip occurs when an employee"
+              },
+              "conditions": [],
+              "constraints": [],
+              "exceptions": [],
+              "modality": {
+                "evidence": [
+                  {
+                    "end": 22,
+                    "start": 16,
+                    "text": "occurs"
+                  }
+                ],
+                "label": "definition"
+              },
+              "order_relations": []
+            }
+          ],
+          "method": {
+            "name": "direct_llm",
+            "schema_source": "stage2_prediction.schema.json@1.0.0"
+          },
+          "sample_id": "estg_000283",
+          "schema_version": "1.0.0",
+          "source_id": "estg_000283",
+          "source_text": "A business trip occurs when an employee\n\n— leaves their duty station (office, permanent establishment, factory premises, warehouse, etc.) on the employer’s orders to perform work duties, or\n— works so far away from their permanent place of residence (family home) that they cannot reasonably be expected to return to that permanent place of residence (family home) on a daily basis.",
+          "unsupported_or_ambiguous": [
+            {
+              "field": "actor",
+              "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+            }
+          ],
+          "validation": {
+            "schema_valid": true,
+            "cross_field_valid": true,
+            "errors": []
+          }
+        },
+        "canonicalization_policy": "legacy",
+        "adapter_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "spans_adapted": 8,
+          "dropped_spans": [
+            "constraints[0]_text_not_in_source"
+          ],
+          "failed_reasons": []
+        },
+        "canonicalizer_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "policy": "legacy",
+          "cost_metric": "abs_start_plus_abs_end",
+          "clause_span_count": 1,
+          "field_span_count": 2,
+          "reanchored_count": 2,
+          "dropped_spans": [],
+          "dropped_clauses": [
+            1,
+            2
+          ],
+          "dropped_edges": [],
+          "failed_reasons": [],
+          "resolution_events": [
+            {
+              "path": "clauses[0].clause_span",
+              "clause_index": 0,
+              "clause_id": "estg_000283_c01",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "A business trip occurs when an employee",
+              "normalized": null,
+              "original_start": 0,
+              "original_end": 41,
+              "candidate_occurrences": [
+                {
+                  "start": 0,
+                  "end": 39
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 0,
+                "end": 39
+              },
+              "distance": null,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[0].modality.evidence[0]",
+              "clause_index": 0,
+              "clause_id": "estg_000283_c01",
+              "field": "modality.evidence",
+              "span_index": 0,
+              "span_id": null,
+              "text": "occurs",
+              "normalized": null,
+              "original_start": 18,
+              "original_end": 24,
+              "candidate_occurrences": [
+                {
+                  "start": 16,
+                  "end": 22
+                }
+              ],
+              "strategy": "unique_exact",
+              "chosen": {
+                "start": 16,
+                "end": 22
+              },
+              "distance": 4,
+              "outcome": "reanchored_unique_exact",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[0].actors[0]",
+              "clause_index": 0,
+              "clause_id": "estg_000283_c01",
+              "field": "actors",
+              "span_index": 0,
+              "span_id": "a01",
+              "text": "A business trip",
+              "normalized": "a business trip",
+              "original_start": 0,
+              "original_end": 15,
+              "candidate_occurrences": [
+                {
+                  "start": 0,
+                  "end": 15
+                }
+              ],
+              "strategy": "unchanged",
+              "chosen": {
+                "start": 0,
+                "end": 15
+              },
+              "distance": 0,
+              "outcome": "unchanged",
+              "reason": null,
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[1].clause_span",
+              "clause_index": 1,
+              "clause_id": "estg_000283_c02",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "when an employee leaves their duty station (office, permanent establishment, factory premises, warehouse, etc.) on the employer's orders to perform work duties",
+              "normalized": null,
+              "original_start": 34,
+              "original_end": 209,
+              "candidate_occurrences": [],
+              "strategy": "not_applicable",
+              "chosen": null,
+              "distance": null,
+              "outcome": "unresolved",
+              "reason": "zero_occurrence",
+              "cost_metric": "abs_start_plus_abs_end"
+            },
+            {
+              "path": "clauses[2].clause_span",
+              "clause_index": 2,
+              "clause_id": "estg_000283_c03",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "when an employee works so far away from their permanent place of residence (family home) that they cannot reasonably be expected to return to that permanent place of residence (family home) on a daily basis.",
+              "normalized": null,
+              "original_start": 34,
+              "original_end": 227,
+              "candidate_occurrences": [],
+              "strategy": "not_applicable",
+              "chosen": null,
+              "distance": null,
+              "outcome": "unresolved",
+              "reason": "zero_occurrence",
+              "cost_metric": "abs_start_plus_abs_end"
+            }
+          ],
+          "unchanged_spans": 1,
+          "unresolved_spans": 0,
+          "reanchored_unique_exact": 2,
+          "reanchored_repeated_exact": 0,
+          "repeated_occurrence_cases": 0,
+          "repeated_occurrence_recovered": 0,
+          "repeated_occurrence_unresolved": 0,
+          "tie_cases": 0,
+          "one_to_one_assignment_cases": 0,
+          "assignment_ambiguities": 0
+        },
+        "runtime_validation": {
+          "schema_valid": true,
+          "cross_field_valid": true,
+          "errors": []
+        },
+        "source_echo_recovery": {
+          "policy": "source_echo_quotes_whitespace_only@1",
+          "changed_fields": [
+            "source_text"
+          ],
+          "original_echo": "A business trip occurs when an employee\n\n— leaves their duty station (office, permanent establishment, factory premises, warehouse, etc.) on the employer's orders to perform work duties, or\n— works so far away from their permanent place of residence (family home) that they cannot reasonably be expected to return to that permanent place of residence (family home) on a daily basis.",
+          "restored_echo": "A business trip occurs when an employee\n\n— leaves their duty station (office, permanent establishment, factory premises, warehouse, etc.) on the employer’s orders to perform work duties, or\n— works so far away from their permanent place of residence (family home) that they cannot reasonably be expected to return to that permanent place of residence (family home) on a daily basis.",
+          "extraction_fields_unchanged": true,
+          "original_content_sha256": "a34c36427ab6df5ef9fb31ad6306a4da474b6c28b26301f0bb60264ab91e61b5",
+          "recovered_payload_sha256": "2c9d681ddc91185031ef0cbebac827336f656b85c8497420dd8d818d84f7034d",
+          "gold_used": false
+        }
+      },
+      "source_response_path": "outputs/development/stage2_multi_model_v1/multi_model_all_20261007_v2_minimax/responses/minimax_estg_000283.json",
+      "source_response_sha256": "88ff144c5da574da86930dd2c7da57a947bbb0c5c054ce1a06fed2ada94151d8",
+      "nonthinking_check": {
+        "status": "no_reported_reasoning",
+        "reasoning_content_present": false,
+        "reported_reasoning_tokens": 0
+      },
+      "additional_api_calls": 0
+    },
+    {
+      "provider": "minimax",
+      "sample_id": "estg_000433",
+      "prediction": {
+        "provider": "minimax",
+        "sample_id": "estg_000433",
+        "request_id": "minimax:estg_000433",
+        "request_status": "ok",
+        "failure_stage": null,
+        "record": {
+          "clauses": [],
+          "method": {
+            "name": "direct_llm",
+            "schema_source": "stage2_prediction.schema.json@1.0.0"
+          },
+          "sample_id": "estg_000433",
+          "schema_version": "1.0.0",
+          "source_id": "estg_000433",
+          "source_text": "(2) If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee’s first wage tax card, it must be cancelled simultaneously with the issuance of a wage tax card for the spouse.",
+          "unsupported_or_ambiguous": [
+            {
+              "field": "actor",
+              "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+            }
+          ],
+          "validation": {
+            "schema_valid": true,
+            "cross_field_valid": true,
+            "errors": []
+          }
+        },
+        "canonicalization_policy": "legacy",
+        "adapter_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "spans_adapted": 3,
+          "dropped_spans": [
+            "conditions[0]_text_not_in_source"
+          ],
+          "failed_reasons": []
+        },
+        "canonicalizer_audit": {
+          "attempted": true,
+          "status": "degraded",
+          "policy": "legacy",
+          "cost_metric": "abs_start_plus_abs_end",
+          "clause_span_count": 0,
+          "field_span_count": 0,
+          "reanchored_count": 0,
+          "dropped_spans": [],
+          "dropped_clauses": [
+            0
+          ],
+          "dropped_edges": [],
+          "failed_reasons": [],
+          "resolution_events": [
+            {
+              "path": "clauses[0].clause_span",
+              "clause_index": 0,
+              "clause_id": "estg_000433_c01",
+              "field": "clause_span",
+              "span_index": null,
+              "span_id": null,
+              "text": "If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee's first wage tax card, it must be cancelled simultaneously with the issuance of a wage tax card for the spouse.",
+              "normalized": null,
+              "original_start": 4,
+              "original_end": 193,
+              "candidate_occurrences": [],
+              "strategy": "not_applicable",
+              "chosen": null,
+              "distance": null,
+              "outcome": "unresolved",
+              "reason": "zero_occurrence",
+              "cost_metric": "abs_start_plus_abs_end"
+            }
+          ],
+          "unchanged_spans": 0,
+          "unresolved_spans": 0,
+          "reanchored_unique_exact": 0,
+          "reanchored_repeated_exact": 0,
+          "repeated_occurrence_cases": 0,
+          "repeated_occurrence_recovered": 0,
+          "repeated_occurrence_unresolved": 0,
+          "tie_cases": 0,
+          "one_to_one_assignment_cases": 0,
+          "assignment_ambiguities": 0
+        },
+        "runtime_validation": {
+          "schema_valid": true,
+          "cross_field_valid": true,
+          "errors": []
+        },
+        "source_echo_recovery": {
+          "policy": "source_echo_quotes_whitespace_only@1",
+          "changed_fields": [
+            "source_text"
+          ],
+          "original_echo": "(2) If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee's first wage tax card, it must be cancelled simultaneously with the issuance of a wage tax card for the spouse.",
+          "restored_echo": "(2) If the municipality has entered the sole-earner tax credit (Section 57(2)) on the employee’s first wage tax card, it must be cancelled simultaneously with the issuance of a wage tax card for the spouse.",
+          "extraction_fields_unchanged": true,
+          "original_content_sha256": "b0dbab53e782ac42bd9e1a81a8cbcf5a5fae213af3e5ae2e5142cfb313b048cf",
+          "recovered_payload_sha256": "bb58493074219c06309fdd11039dc882311103339a094de8b414fec0af661779",
+          "gold_used": false
+        }
+      },
+      "source_response_path": "outputs/development/stage2_multi_model_v1/multi_model_all_20261007_v2_minimax/responses/minimax_estg_000433.json",
+      "source_response_sha256": "ce6479fac4d194f56b3560aed196e0af7a5c0a6036e5169033582dd9dda276ef",
+      "nonthinking_check": {
+        "status": "no_reported_reasoning",
+        "reasoning_content_present": false,
+        "reported_reasoning_tokens": null
+      },
+      "additional_api_calls": 0
+    }
+  ],
+  "api_calls": 0
+}

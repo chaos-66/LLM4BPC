@@ -1,0 +1,273 @@
+{
+  "request_id": "kimi:estg_000111",
+  "raw_response_utf8": "{\"id\":\"chatcmpl-6ac61073cde1e70eedd632dc\",\"object\":\"chat.completion\",\"created\":1791365236,\"model\":\"kimi-k2.6\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"```json\\n{\\n  \\\"schema_version\\\": \\\"1.0.0\\\",\\n  \\\"sample_id\\\": \\\"estg_000111\\\",\\n  \\\"source_id\\\": \\\"estg_000111\\\",\\n  \\\"source_text\\\": \\\"(5) In the following cases, an investment allowance may be claimed neither as a reduction of profit nor through the designated use of an investment reserve (a tax-free amount):  \\\\n— For aircraft used for passenger transport, except aircraft of air transport companies (Section 101 of the Aviation Act, BGBl.\\\",\\n  \\\"clauses\\\": [\\n    {\\n      \\\"clause_id\\\": \\\"estg_000111_c01\\\",\\n      \\\"clause_span\\\": {\\\"text\\\": \\\"an investment allowance may be claimed neither as a reduction of profit nor through the designated use of an investment reserve (a tax-free amount)\\\", \\\"start\\\": 26, \\\"end\\\": 174},\\n      \\\"modality\\\": {\\\"label\\\": \\\"prohibition\\\", \\\"evidence\\\": [{\\\"text\\\": \\\"may\\\", \\\"start\\\": 50, \\\"end\\\": 53}, {\\\"text\\\": \\\"neither\\\", \\\"start\\\": 63, \\\"end\\\": 70}]},\\n      \\\"actors\\\": [],\\n      \\\"actions\\\": [\\n        {\\\"id\\\": \\\"p01\\\", \\\"text\\\": \\\"claimed\\\", \\\"start\\\": 54, \\\"end\\\": 61, \\\"normalized\\\": \\\"claim\\\"}\\n      ],\\n      \\\"conditions\\\": [{\\\"id\\\": \\\"d01\\\", \\\"text\\\": \\\"In the following cases\\\", \\\"start\\\": 4, \\\"end\\\": 26, \\\"normalized\\\": \\\"in the following cases\\\"}],\\n      \\\"constraints\\\": [\\n        {\\\"id\\\": \\\"c01\\\", \\\"text\\\": \\\"as a reduction of profit\\\", \\\"start\\\": 71, \\\"end\\\": 95, \\\"normalized\\\": \\\"as a reduction of profit\\\"},\\n        {\\\"id\\\": \\\"c02\\\", \\\"text\\\": \\\"through the designated use of an investment reserve (a tax-free amount)\\\", \\\"start\\\": 99, \\\"end\\\": 170, \\\"normalized\\\": \\\"through the designated use of an investment reserve (a tax-free amount)\\\"}\\n      ],\\n      \\\"exceptions\\\": [{\\\"id\\\": \\\"e01\\\", \\\"text\\\": \\\"except aircraft of air transport companies (Section 101 of the Aviation Act, BGBl.\\\", \\\"start\\\": 224, \\\"end\\\": 305, \\\"normalized\\\": \\\"except aircraft of air transport companies (section 101 of the aviation act, bgbl.\\\"}],\\n      \\\"actor_action_map\\\": [{\\\"actor_id\\\": null, \\\"action_id\\\": \\\"p01\\\"}],\\n      \\\"order_relations\\\": []\\n    }\\n  ],\\n  \\\"method\\\": {\\\"name\\\": \\\"direct_llm\\\", \\\"schema_source\\\": \\\"stage2_prediction.schema.json@1.0.0\\\"},\\n  \\\"validation\\\": {\\\"schema_valid\\\": true, \\\"cross_field_valid\\\": true, \\\"errors\\\": []},\\n  \\\"unsupported_or_ambiguous\\\": [\\n    {\\\"field\\\": \\\"condition\\\", \\\"reason\\\": \\\"semantic_scope_ambiguous_in_target\\\"}\\n  ]\\n}\\n```\",\"reasoning_content\":\"\"},\"finish_reason\":\"stop\"}],\"usage\":{\"prompt_tokens\":4238,\"completion_tokens\":607,\"total_tokens\":4845,\"cached_tokens\":1024,\"completion_tokens_details\":{\"reasoning_tokens\":1},\"prompt_tokens_details\":{\"cached_tokens\":1024}}}",
+  "usage": {
+    "prompt_tokens": 4238,
+    "completion_tokens": 607,
+    "total_tokens": 4845,
+    "reasoning_tokens": 1
+  },
+  "returned_model": "kimi-k2.6",
+  "nonthinking_check": {
+    "status": "request_disabled_empty_reasoning_user_accepted_counter1",
+    "reasoning_content_present": false,
+    "reported_reasoning_tokens": 1,
+    "counter_exception_user_authorized": true,
+    "one_token_meaning_verified": false
+  },
+  "error": null,
+  "prediction": {
+    "provider": "kimi",
+    "sample_id": "estg_000111",
+    "request_id": "kimi:estg_000111",
+    "request_status": "failed",
+    "failure_stage": "canonical_validation",
+    "record": {},
+    "canonicalization_policy": "legacy",
+    "adapter_audit": {
+      "attempted": true,
+      "status": "adapted",
+      "spans_adapted": 5,
+      "dropped_spans": [],
+      "failed_reasons": []
+    },
+    "canonicalizer_audit": {
+      "attempted": true,
+      "status": "degraded",
+      "policy": "legacy",
+      "cost_metric": "abs_start_plus_abs_end",
+      "clause_span_count": 1,
+      "field_span_count": 7,
+      "reanchored_count": 6,
+      "dropped_spans": [
+        "clauses[0].exceptions[0]"
+      ],
+      "dropped_clauses": [],
+      "dropped_edges": [],
+      "failed_reasons": [],
+      "resolution_events": [
+        {
+          "path": "clauses[0].clause_span",
+          "clause_index": 0,
+          "clause_id": "estg_000111_c01",
+          "field": "clause_span",
+          "span_index": null,
+          "span_id": null,
+          "text": "an investment allowance may be claimed neither as a reduction of profit nor through the designated use of an investment reserve (a tax-free amount)",
+          "normalized": null,
+          "original_start": 26,
+          "original_end": 174,
+          "candidate_occurrences": [
+            {
+              "start": 28,
+              "end": 175
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 28,
+            "end": 175
+          },
+          "distance": null,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000111_c01",
+          "field": "modality.evidence",
+          "span_index": 0,
+          "span_id": null,
+          "text": "may",
+          "normalized": null,
+          "original_start": 50,
+          "original_end": 53,
+          "candidate_occurrences": [
+            {
+              "start": 52,
+              "end": 55
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 52,
+            "end": 55
+          },
+          "distance": 4,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].modality.evidence[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000111_c01",
+          "field": "modality.evidence",
+          "span_index": 1,
+          "span_id": null,
+          "text": "neither",
+          "normalized": null,
+          "original_start": 63,
+          "original_end": 70,
+          "candidate_occurrences": [
+            {
+              "start": 67,
+              "end": 74
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 67,
+            "end": 74
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].actions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000111_c01",
+          "field": "actions",
+          "span_index": 0,
+          "span_id": "p01",
+          "text": "claimed",
+          "normalized": "claimed",
+          "original_start": 54,
+          "original_end": 61,
+          "candidate_occurrences": [
+            {
+              "start": 59,
+              "end": 66
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 59,
+            "end": 66
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].conditions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000111_c01",
+          "field": "conditions",
+          "span_index": 0,
+          "span_id": "d01",
+          "text": "In the following cases",
+          "normalized": "in the following cases",
+          "original_start": 4,
+          "original_end": 26,
+          "candidate_occurrences": [],
+          "strategy": "unchanged",
+          "chosen": {
+            "start": 4,
+            "end": 26
+          },
+          "distance": 0,
+          "outcome": "unchanged",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000111_c01",
+          "field": "constraints",
+          "span_index": 0,
+          "span_id": "c01",
+          "text": "as a reduction of profit",
+          "normalized": "as a reduction of profit",
+          "original_start": 71,
+          "original_end": 95,
+          "candidate_occurrences": [
+            {
+              "start": 75,
+              "end": 99
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 75,
+            "end": 99
+          },
+          "distance": 8,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].constraints[1]",
+          "clause_index": 0,
+          "clause_id": "estg_000111_c01",
+          "field": "constraints",
+          "span_index": 1,
+          "span_id": "c02",
+          "text": "through the designated use of an investment reserve (a tax-free amount)",
+          "normalized": "through the designated use of an investment reserve (a tax-free amount)",
+          "original_start": 99,
+          "original_end": 170,
+          "candidate_occurrences": [
+            {
+              "start": 104,
+              "end": 175
+            }
+          ],
+          "strategy": "unique_exact",
+          "chosen": {
+            "start": 104,
+            "end": 175
+          },
+          "distance": 10,
+          "outcome": "reanchored_unique_exact",
+          "reason": null,
+          "cost_metric": "abs_start_plus_abs_end"
+        },
+        {
+          "path": "clauses[0].exceptions[0]",
+          "clause_index": 0,
+          "clause_id": "estg_000111_c01",
+          "field": "exceptions",
+          "span_index": 0,
+          "span_id": "e01",
+          "text": "except aircraft of air transport companies (Section 101 of the Aviation Act, BGBl.",
+          "normalized": "except aircraft of air transport companies (section 101 of the aviation act, bgbl.",
+          "original_start": 224,
+          "original_end": 305,
+          "candidate_occurrences": [],
+          "strategy": "not_applicable",
+          "chosen": null,
+          "distance": null,
+          "outcome": "unresolved",
+          "reason": "zero_occurrence",
+          "cost_metric": "abs_start_plus_abs_end"
+        }
+      ],
+      "unchanged_spans": 1,
+      "unresolved_spans": 1,
+      "reanchored_unique_exact": 6,
+      "reanchored_repeated_exact": 0,
+      "repeated_occurrence_cases": 0,
+      "repeated_occurrence_recovered": 0,
+      "repeated_occurrence_unresolved": 0,
+      "tie_cases": 0,
+      "one_to_one_assignment_cases": 0,
+      "assignment_ambiguities": 0
+    },
+    "runtime_validation": {
+      "schema_valid": true,
+      "cross_field_valid": false,
+      "errors": [
+        "clauses[0].conditions[0] not inside clause_span"
+      ]
+    }
+  },
+  "echo_recovery_audit": null
+}

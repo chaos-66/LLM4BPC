@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
 **生成日期**：2026-10-07
-**收录文件**：4288 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**收录文件**：4349 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -1970,6 +1970,62 @@
 | `outputs/evidence/stage2_multi_model_remaining_v1/kimi_rpm_remaining_20261007_v1/run/responses/kimi_estg_000816.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/stage2_multi_model_remaining_v1/kimi_rpm_remaining_20261007_v1/run/responses/kimi_estg_000854.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/stage2_multi_model_remaining_v1/kimi_rpm_remaining_20261007_v1/run/responses/kimi_estg_000861.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/index.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/reports/stage2_model_output_recovery_20261007_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/reports/stage2_model_output_recovery_20261007_v1.md` | 活动 | 说明、规范或研究文档 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/reports/stage2_model_output_recovery_20261007_v1_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/execution_summary.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/glm/calls_ledger.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/glm/combined_predictions.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/glm/evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/glm/predictions.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/glm/provider_manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/glm/responses/glm_estg_000002.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/glm/responses/glm_estg_000164.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/glm/responses/glm_estg_000208.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/glm/responses/glm_estg_000222.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/glm/responses/glm_estg_000302.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/glm/responses/glm_estg_000716.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/grok/calls_ledger.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/grok/combined_predictions.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/grok/evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/grok/predictions.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/grok/provider_manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/grok/responses/grok_estg_000037.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/kimi/calls_ledger.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/kimi/combined_predictions.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/kimi/evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/kimi/predictions.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/kimi/provider_manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/kimi/responses/kimi_estg_000021.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/kimi/responses/kimi_estg_000077.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/kimi/responses/kimi_estg_000111.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/mimo/calls_ledger.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/mimo/combined_predictions.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/mimo/evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/mimo/predictions.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/mimo/provider_manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/mimo/responses/mimo_estg_000002.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/mimo/responses/mimo_estg_000414.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/minimax/calls_ledger.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/minimax/combined_predictions.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/minimax/evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/minimax/predictions.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/minimax/provider_manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/minimax/responses/minimax_estg_000068.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/minimax/responses/minimax_estg_000164.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/minimax/responses/minimax_estg_000366.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/minimax/responses/minimax_estg_000659.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/minimax/responses/minimax_estg_000786.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/offline_recoveries.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/plan.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/qwen/calls_ledger.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/qwen/combined_predictions.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/qwen/evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/qwen/predictions.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/qwen/provider_manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage2_multi_model_remaining_v1/model_output_recovery_20261007_v1/run/qwen/responses/qwen_estg_000414.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/stage2_multi_model_remaining_v1/multi_model_remaining_20261007_v1/index.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/stage2_multi_model_remaining_v1/multi_model_remaining_20261007_v1/reports/stage2_multi_model_remaining_20261007_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/stage2_multi_model_remaining_v1/multi_model_remaining_20261007_v1/reports/stage2_multi_model_remaining_20261007_v1.md` | 活动 | 说明、规范或研究文档 |
@@ -3235,7 +3291,11 @@
 | `outputs/reports/stage2_kimi_rpm_remaining_20261007_v1.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/stage2_kimi_rpm_remaining_20261007_v1_analysis.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/stage2_kimi_rpm_remaining_20261007_v1_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/stage2_model_output_recovery_20261007_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/stage2_model_output_recovery_20261007_v1.md` | 活动 | 说明、规范或研究文档 |
+| `outputs/reports/stage2_model_output_recovery_20261007_v1_analysis.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/stage2_model_output_recovery_20261007_v1_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/stage2_model_output_recovery_20261007_v1_remaining4_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/stage2_multi_model_all_20261007_v1_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/stage2_multi_model_all_20261007_v2.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/stage2_multi_model_all_20261007_v2.md` | 活动 | 说明、规范或研究文档 |
@@ -4354,6 +4414,7 @@
 | `tests/test_stage2_gold_definition_audit_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage2_kimi_rpm_remaining_artifacts_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage2_kimi_rpm_remaining_v1.py` | 活动 | Python 实现、脚本或测试 |
+| `tests/test_stage2_model_output_recovery_artifacts_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage2_model_output_recovery_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage2_multi_model_all_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage2_multi_model_remaining_artifacts_v1.py` | 活动 | Python 实现、脚本或测试 |
