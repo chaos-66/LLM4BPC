@@ -1,0 +1,129 @@
+{
+  "schema_version": "stage2_multi_model_full_plan@1.0.0",
+  "task_id": "S2-MODEL-SENSITIVITY-V1",
+  "run_id": "multi_model_all_20261007_v2",
+  "prepared_at_utc": "2026-10-07T04:42:36.127930+00:00",
+  "authorization": {
+    "schema_version": "stage2_multi_model_full_authorization@1.0.0",
+    "task_id": "S2-MODEL-SENSITIVITY-V1",
+    "run_id": "multi_model_all_20261007_v2",
+    "authorized": true,
+    "user_authorization": "全部跑出来看一下数据",
+    "approved_on": "2026-10-07",
+    "scope": "此前确认的六家非思考配置各跑同一冻结EStG-150一次；共900次上限、每个provider/sample一次、0重试。只在通过授权门禁后私有加载对应.env密钥，不显示或修改密钥；只发送英文法规输入与固定v6提示词，Gold仅在预测保存后离线评价。",
+    "providers": [
+      "qwen",
+      "mimo",
+      "kimi",
+      "grok",
+      "glm",
+      "minimax"
+    ],
+    "samples_per_provider": 150,
+    "max_calls": 900,
+    "retry": 0,
+    "thinking_requirement": "disabled",
+    "max_output_tokens_per_call": 4096,
+    "max_total_output_tokens": 3686400,
+    "max_workers": 6,
+    "max_workers_per_provider": 1,
+    "budget_basis": "执行者按已核对官方未命中缓存单价、请求UTF-8字节+4096输入预留、4096输出/条及10%余量设置费用保护上限；不是声称用户指定了这些金额。实际费用以账单为准，无折扣额外调用、无自动充值。",
+    "pricing_verified_on": "2026-10-07",
+    "budgets": {
+      "qwen": {
+        "currency": "CNY",
+        "input_per_million": 12,
+        "output_per_million": 36,
+        "max_cost": 67.25,
+        "pricing_source": "https://help.aliyun.com/zh/model-studio/qwen3-8-max"
+      },
+      "mimo": {
+        "currency": "CNY",
+        "input_per_million": 3,
+        "output_per_million": 6,
+        "max_cost": 14.79,
+        "pricing_source": "https://mimo.mi.com/docs/pricing"
+      },
+      "kimi": {
+        "currency": "CNY",
+        "input_per_million": 6.5,
+        "output_per_million": 27,
+        "max_cost": 41.5,
+        "pricing_source": "https://platform.kimi.com/docs/pricing/chat"
+      },
+      "grok": {
+        "currency": "USD",
+        "input_per_million": 1.25,
+        "output_per_million": 2.5,
+        "max_cost": 6.16,
+        "pricing_source": "https://docs.x.ai/developers/models/grok-4.3"
+      },
+      "glm": {
+        "currency": "CNY",
+        "input_per_million": 8,
+        "output_per_million": 28,
+        "max_cost": 47.53,
+        "pricing_source": "https://bigmodel.cn/pricing",
+        "pricing_evidence": "官方定价页加载的static.bigmodel.cn/wd-paas-front/js/app.71d74a7b.js中GLM-5.2行：输入8元、输出28元/百万tokens。"
+      },
+      "minimax": {
+        "currency": "CNY",
+        "input_per_million": 2.1,
+        "output_per_million": 8.4,
+        "max_cost": 13.19,
+        "pricing_source": "https://platform.minimax.cn/docs/guides/pricing-paygo",
+        "pricing_evidence": "标准服务、输入低于512k，官方永久五折2.10/8.40元每百万tokens；不使用priority。"
+      }
+    },
+    "github_raw_artifact_export_authorized": false,
+    "limitations": [
+      "固定150条的单次模型与平台配置比较，不证明独立泛化、统计显著性或稳定性。",
+      "所有模型关闭思考，各家采样约束不同，temperature并非严格相同。",
+      "历史DeepSeek/Sun只复用，不新增其调用，不替换固定论文表一或表二。",
+      "API运行授权与原始产物GitHub外发备份许可分别记录，后者仍待明确许可。"
+    ]
+  },
+  "source_bindings": {
+    "configs/authorization/stage2_multi_model_all_20261007_v1.json": "0be8aaffaedda1bc165da185e8cb8a9d3677d7f1f38d6106113980a2af567d68",
+    "scripts/run_stage2_multi_model_all_v1.py": "47db040ca2a68d86d4aebb616f49140c8f4c93e20a7fabfabaeb9e2680d3dadc",
+    "data/gold/stage2/estg150_formal_gold_v1.json": "c31a514a6b58b640ed020c380c0b7bed136dc9574b2c98c98dedec1ecdb57100",
+    "data/predictions/direct_llm_formal_arm_v1/predictions.json": "bbadb6834572e58fb8321204b3bc975c887d23d9ae60bd804bf91137bb46072b",
+    "data/predictions/b0_formal_arm_v1/predictions.json": "fa94991d246db9876b55d6a473644a4a1b93404bc35d3e314d3dba4768d9278d",
+    "outputs/reports/stage2_table1_paper_final_v1.json": "05a601d16034db6bc6981122651ba4549aa686be74da6a9e0b32d8dc076bd941",
+    "src/bpc_hybrid/sep_c3_modular_evaluation.py": "31363c2e0bad27ebbe2b9e1fa56b5aae3cbe2e1e5c12204627e173a8db8b5330",
+    "src/bpc_hybrid/formal_stage2_evaluation.py": "28be155401ff44479771c0c1901e170c3064e076b36f24cfc094f257ab87b3a0",
+    "src/bpc_hybrid/g04_coarse_view.py": "a8a867964036e77d5fa83f9f430b0ea7dced9fd3ba2a170131fb09183a49ae7d",
+    "src/bpc_hybrid/stage2_sun_literal_overlap.py": "a6df234611ef63ab9d47a3d5e886c3a711ccce8c6e5d8e164e42826bef978de7"
+  },
+  "providers": [
+    "qwen",
+    "mimo",
+    "kimi",
+    "grok",
+    "glm",
+    "minimax"
+  ],
+  "planned_calls": 900,
+  "samples_per_provider": 150,
+  "retry": 0,
+  "primary_metric": "coarse_five_field_micro.f1",
+  "metrics": null,
+  "provider_plans": {
+    "qwen": "daecf4497bebf228f4798df223c411a719057e07ad52d88c6fe4a2a01bf3c5b0",
+    "mimo": "ffe3b840e243b9c1345fe4632652ebca0b1e772c4dfbd719d99a73e2e7c5fc27",
+    "kimi": "d14b08083afb85e397aeac3b0b7adf7557d7a9a019acf2ee5d916a4d38b54285",
+    "grok": "89b072667e7cb009ec31421d18a263d1d54287a73a2d71f544a24cbfd2628c4f",
+    "glm": "35cea003f1c953c910bd7827afa82bb9f06158e1a94aa815d4eb87ea95bfe8b4",
+    "minimax": "83d97fa6966ee58019e153c21ea12eabe2887e3869201a4acbb8cd02e7014dba"
+  },
+  "provider_authorizations": {
+    "qwen": "a623e840b1c2459bfe15c5cd94445511f7c390545289cd519411b5d06a66a28f",
+    "mimo": "40d93b0d509640aa1c7456eaeca00a03af4ce3e4f78ad770564038a42e42066b",
+    "kimi": "f8eaa9a0c6262f005bb1440f01cfa759445655b0b591b4dc175519608763ec25",
+    "grok": "9ddda90db388a15f9174c455d9e95306a33bb1bac1bf2596efd41411563d4d3d",
+    "glm": "0f944ef9f25440230ce355c884f096c4c33e66108f67d77e2d559fba98c5a655",
+    "minimax": "9e513b8562e375d6900e9cb817fc87b97f718a18c96dbe962175641652173bba"
+  },
+  "sample_ids_sha256": "95b6ae7a206dec3b01985cdcdcbca09147f470b6988a209d7b5cd65bab413c6c",
+  "message_hashes_sha256": "7d8e17a1744b78239a63f9e716cfdeeb3b839f05b8b83e50efab83d564ad2d9f"
+}

@@ -445,6 +445,7 @@ def _load_ledger(path: Path, plan: dict) -> tuple[dict, dict, str]:
     if not path.exists():
         return starts, finishes, previous
     requests = {r["request_id"]: r for r in plan["requests"]}
+    plan_hash = digest(encode(plan))
     try:
         for line in path.read_text(encoding="utf-8").splitlines():
             event = json.loads(line)
@@ -453,7 +454,7 @@ def _load_ledger(path: Path, plan: dict) -> tuple[dict, dict, str]:
                 raise ValueError("chain")
             previous = observed
             rid = event["request_id"]
-            if rid not in requests or event.get("plan_sha256") != digest(encode(plan)):
+            if rid not in requests or event.get("plan_sha256") != plan_hash:
                 raise ValueError("identity")
             if event["event"] == "started" and rid not in starts:
                 if event.get("body_sha256") != requests[rid]["body_sha256"]:
@@ -518,6 +519,7 @@ def execute_plan(plan: dict, auth: dict, *, execute: bool = False,
                  allow_llm: bool = False, resume: bool = False, root: Path = ROOT,
                  sender: Callable = send_http, credential_loader: Callable = load_credentials) -> dict:
     verify_authorization(plan, auth, execute=execute, allow_llm=allow_llm, root=root)
+    plan_hash = digest(encode(plan))
     out = root / "outputs/development/stage2_multi_model_v1" / plan["run_id"]
     out.mkdir(parents=True, exist_ok=True)
     lock = out / ".run.lock"
@@ -564,7 +566,7 @@ def execute_plan(plan: dict, auth: dict, *, execute: bool = False,
             if spent[provider] + reserve > budget["max_cost"]:
                 raise ModelRunError("发送前费用预留超过授权上限。")
             base = {"request_id": rid, "provider": provider, "sample_id": request["sample_id"],
-                    "plan_sha256": digest(encode(plan)), "body_sha256": request["body_sha256"],
+                    "plan_sha256": plan_hash, "body_sha256": request["body_sha256"],
                     "authorization_sha256": auth_hash, "timestamp_utc": now(),
                     "reserved_cost": reserve, "currency": budget["currency"]}
             previous = _append_ledger(ledger, {**base, "event": "started"}, previous)
@@ -633,7 +635,7 @@ def execute_plan(plan: dict, auth: dict, *, execute: bool = False,
                     "claim_scope": "development_only", "real_api": True, "llm_calls": len(starts),
                     "planned_calls": plan["planned_calls"], "retry": 0, "metrics": None,
                     "thinking_requirement": "disabled",
-                    "gold_read_by_runner": False, "plan_sha256": digest(encode(plan)),
+                    "gold_read_by_runner": False, "plan_sha256": plan_hash,
                     "authorization_sha256": auth_hash, "profiles": plan["profiles"], "bindings": plan["bindings"],
                     "canonicalization_policy": POLICY_LEGACY, "ledger_head_sha256": previous,
                     "conservative_uncached_cost_by_provider": spent,

@@ -5935,3 +5935,31 @@
 - 仍存在 blocker：无
 - 备注：依据2026-10-07官方文档将Grok改为4.3/none、Kimi改为K2.6/disabled、GLM改为5.2/disabled；千问、MiMo、MiniMax保持显式关闭。增加离线强制关闭与返回思考证据停批检查；思考用量未报告保留null。只运行本入口具名模拟检查，未读取或修改实际.env，真实API=0，未改Gold、prompt、评价器或旧结果。现有分支四个思考实验提交的原始产物GitHub外发审批仍待许可，本批不绕过。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-07T04:39:50.517442+00:00 - S2-MODEL-SENSITIVITY-V1：准备已授权六家各150条非思考全量比较
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：否；正式实验就绪：是
+- 测试：ERROR: focused tests timed out after 180s; no wider tests started
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`9630b8c66de406aca5d022a09ff897ee576b0014`；相关未提交路径：19 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：用户要求全部跑出来看一下数据；冻结六家各150条共900次、0重试、每条4096输出，六家并行但每家顺序。原51项非思考runner验证代码未变、证据复用；本次只验证新编排的900上限/授权先于key与HTTP/全分母/保存后Gold/已完成续跑零发送/单平台思考异常不影响其他平台。CNY184.26+USD6.16为按官方单价和保守预留设置的保护上限，非实扣。准备阶段真实API0、实际.env未读未改；原始产物GitHub外发仍待许可。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-07T04:43:31.655087+00:00 - S2-MODEL-SENSITIVITY-V1：验证六家900次非思考运行预检及冻结计划哈希优化
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：58 passed in 44.97s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`9630b8c66de406aca5d022a09ff897ee576b0014`；相关未提交路径：24 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：首次7项编排测试180秒超时，未扩大为全量。诊断为账本每行重复编码约4MB不可变计划；本次每次执行/账本读取只计算一次整计划哈希，各请求哈希和历史链校验仍逐条执行。影响共用runner，因此仅复验既有51项和新增7项；模拟HTTP、禁止实际.env。原v1预检保留，未发请求；新v2绑定最终代码。国内CNY184.26+Grok USD6.16保护上限，900次0重试。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
