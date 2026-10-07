@@ -166,16 +166,23 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
   450 次/0 重试/USD14.77 确认，不绕过拦截或间接执行。审批证据及待确认范围见
   `outputs/reports/s2_prompt_simplification_comparison_20261006_v1_execution_blocker.json`。
 
-## 已准备：S2-MODEL-API-SETUP 六家模型入口（2026-10-05；零真实 API）
+## 已准备：S2-MODEL-API-SETUP 六家统一关闭思考（2026-10-07；零真实 API）
 
-- 用户追加型号已更新：Grok 4.7、MiniMax M3、Kimi K2.7 Code、Qwen 3.8 Max 0902
-  快照、GLM 5.3 Flash、MiMo v2.6 Pro。Kimi/GLM 按官方合同强制思考；MiniMax M3
-  关闭思考，输出/调用预算与 0 重试门禁不变。旧 v1 预检因配置更新不再适用。
+- 用户要求所有思考模式关闭，不能关闭则换同平台最新支持关闭的型号。按官方文档
+  替换 Grok 4.7→4.3（reasoning_effort=none）、Kimi K2.7 Code→K2.6、GLM 5.3 Flash→5.2；
+  后两者显式 thinking.type=disabled。Qwen 3.8 Max 0902、MiMo v2.6 Pro、MiniMax M3
+  保留且显式关闭思考。六项 key/端点、4096 输出、180 秒和 0 重试不变。
+- 目录/计划/manifest 固定 thinking_requirement=disabled；离线拒绝开启、省略开关或
+  low 等冲突设置。返回思考内容、前置 think 块或非零思考用量则保存失败并停批，
+  不剥掉思考后冒称关闭；缺少思考用量明细保留 null。所有旧预检因绑定变化不适用。
 - 用户单独明确覆盖旧禁读规则后，本次私有检查六项均已填写，未发现空白、占位符
   或重复冲突；未显示密钥值、未修改 `.env`、未调用模型。该例外仅为本次状态检查，
   不能据此宣称 key 有效、账户权限齐备或启动真实 API。
-- 本次型号更新已通过前后快速检查及 **33 passed** 具名离线测试（非全量），
-  离线 list 已显示用户指定的六个 ID；真实 API 调用仍为 0，未来须生成新预检。
+- 本批前后快速完整性检查通过，tests/test_multi_model_stage2.py **51 passed / 4.33 秒**
+  （非全量），覆盖六家关闭开关、开启/缺失/冲突拒绝、返回思考停批、授权与安全续跑。
+  离线 list 六家均显示 thinking=disabled；真实 API=0，实际 `.env` 未读未改。
+  未来须新预检及独立调用授权；账户权限未实测。当前分支此前原始产物 GitHub
+  外发许可仍待回复，本批 scoped 本地提交不能冒称已远端备份。
 - 初次准备时，千问、MiMo、Kimi、Grok、GLM、MiniMax 六个独立密钥项只追加到实际 `.env`，
   未读取或打印原有内容，文件被 Git 忽略。填写不会授权联网；未来只有本批计划、
   用户明确决定、调用/输出/核对单价/费用预算及 `--execute --allow-llm` 均通过才读 key。

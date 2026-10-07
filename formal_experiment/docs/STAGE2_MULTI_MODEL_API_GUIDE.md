@@ -80,7 +80,7 @@ python formal_experiment/scripts/stage2_multi_model.py run `
 这是客户端停止规则，最终费用仍以平台账单为准。
 
 模型实际返回 ID、usage、完成原因和输入 ID/原文必须能核对。网络错误、超时、
-空响应、截断、用量缺失/超额或型号不符会停止，保留该次费用预留并标记待核查，
+空响应、截断、用量缺失/超额、型号不符或返回思考内容/思考用量会停止，保留该次费用预留并标记待核查，
 不自动补调用。完整响应内 JSON/字段/坐标校验失败会保存失败记录，禁止伪装成
 正确抽取；结构合法也不等于语义正确。
 
@@ -89,7 +89,7 @@ python formal_experiment/scripts/stage2_multi_model.py run `
 - `authorization_snapshot.json`：本次授权快照。
 - `calls_ledger.jsonl`：发送前 fsync 的 started 事件和保存后的 finished 事件，
   含请求/授权/响应哈希、用量费用预留及链式哈希。
-- `responses/`：各请求的原始响应文本、usage、返回型号、转换检查和错误。
+- `responses/`：各请求的原始响应文本、usage、返回型号、关闭思考检查、转换检查和错误。
   保存前屏蔽所选 key；HTTP 错误同时屏蔽回显的 Bearer 凭据。
 - `predictions.json`：成功、失败及未尝试记录。
 - `manifest.json`：调用数、有效结构数量、保守费用、代码/输入/profile 绑定，
@@ -106,24 +106,30 @@ python formal_experiment/scripts/stage2_multi_model.py run `
 
 ## 当前默认型号及官方依据
 
-这些是 2026-10-05 用户指定后更新的可编辑默认配置，**还没有真实账户/API 验证**。
+这些是 2026-10-07 按用户“思考模式全部关闭，不能就换一个模型能关闭的最新模型”
+要求更新的默认配置。型号和关闭参数依据官方公开文档，**还没有真实账户/API 验证**。
 授权前重新核对可用型号、端点与单价。API key 应属于对应 API 平台和地域；
 Coding Plan key 不一定支持通用 Chat Completions。
 
 | 家族 | 默认型号 | 请求设置与官方依据 |
 |---|---|---|
-| 千问 | `qwen3.8-max-2026-09-02` | 关闭 thinking，temperature=0，top_p=1；[Chat Completions](https://www.alibabacloud.com/help/en/model-studio/qwen-api-via-openai-chat-completions) / [型号](https://www.alibabacloud.com/help/en/model-studio/qwen3-8-max) |
-| MiMo | `mimo-v2.6-pro` | 关闭 thinking，temperature=0，top_p=1；[API](https://mimo.mi.com/docs/en-US/api/chat/openai-api) / [超参](https://mimo.mi.com/docs/zh-CN/api/guidance/model-hyperparameters) |
-| Kimi | `kimi-k2.7-code` | 强制开启 thinking，按平台约束 temperature=1，top_p=0.95；[官方指南](https://platform.kimi.com/docs/guide/kimi-k2-7-code-quickstart) |
-| Grok | `grok-4.7` | reasoning_effort=low，省略采样参数；[官方型号页](https://docs.x.ai/developers/models/grok-4.7) |
-| GLM | `glm-5.3-flash` | 国内 BigModel 端点，强制开启 thinking，reasoning_effort=low，temperature=1，top_p=0.95；[官方型号页](https://docs.z.ai/guides/vlm/glm-5.3-flash) / [GLM-5.3 参数迁移](https://docs.z.ai/guides/llm/glm-5.3)；国内账户可用性仍未实测 |
-| MiniMax | `MiniMax-M3` | 国内 `api.minimax.cn` 端点，关闭 thinking，temperature=0，top_p=0.95；[国内兼容 API](https://platform.minimax.cn/docs/api-reference/text-openai-api) |
+| 千问 | `qwen3.8-max-2026-09-02`（保留） | `enable_thinking=false`，temperature=0，top_p=1；[Chat Completions](https://www.alibabacloud.com/help/en/model-studio/qwen-api-via-openai-chat-completions) / [型号](https://www.alibabacloud.com/help/en/model-studio/qwen3-8-max) |
+| MiMo | `mimo-v2.6-pro`（保留） | `thinking.type=disabled`，temperature=0，top_p=1；[API](https://mimo.mi.com/docs/en-US/api/chat/openai-api) / [超参](https://mimo.mi.com/docs/zh-CN/api/guidance/model-hyperparameters) |
+| Kimi | `kimi-k2.6`（替换 K2.7 Code） | `thinking.type=disabled`，平台固定非思考 temperature=0.6、top_p=0.95；[官方指南](https://platform.kimi.com/docs/guide/kimi-k2-6-quickstart) |
+| Grok | `grok-4.3`（替换 4.7） | `reasoning_effort=none`，省略采样参数；[官方型号页](https://docs.x.ai/developers/models/grok-4.3) |
+| GLM | `glm-5.2`（替换 5.3 Flash） | 国内 BigModel 端点，`thinking.type=disabled`，temperature=0.6，top_p=0.95，省略 reasoning_effort；[官方型号页](https://docs.z.ai/guides/llm/glm-5.2)；国内账户可用性仍未实测 |
+| MiniMax | `MiniMax-M3`（保留） | 国内 `api.minimax.cn` 端点，`thinking.type=disabled`，temperature=0，top_p=0.95；[国内兼容 API](https://platform.minimax.cn/docs/api-reference/text-openai-api) |
 
-用户的“Qwen 3.8”沿用已有 Max 0902 固定快照，不自行改成 Flash/Plus。用户的
-“Kimi 2.7”按官方通用 API 名称映射为 `kimi-k2.7-code`；它是 Code 版，不能关闭
-思考，不能宣称与非思考的 2.6 在推理配置上相同。GLM 5.3 Flash 也强制思考。
-输出上限仍是 4096；该上限和 180 秒超时尚未做真实连通性验证，强制思考模型
-如返回截断/超时会保存失败并停止，不扩大 token 额度或自动补调用。
+对原来不能关闭思考的三家，采用本次官方目录中最新有明确关闭支持的替代型号：
+Kimi K2.6、Grok 4.3、GLM 5.2。[Kimi K3](https://platform.kimi.com/docs/guide/kimi-k3-quickstart)
+和 [K2.7 Code](https://platform.kimi.com/docs/guide/kimi-k2-7-code-quickstart) 始终思考；
+[Grok 4.7](https://docs.x.ai/developers/models/grok-4.7)、[4.6](https://docs.x.ai/developers/models/grok-4.6)、
+[4.5](https://docs.x.ai/developers/models/grok-4.5) 没有 none 档；
+[GLM 5.3](https://docs.z.ai/guides/llm/glm-5.3) 与
+[5.3 Flash](https://docs.z.ai/guides/vlm/glm-5.3-flash) 不能关闭。low 仍是思考，不能代替关闭。
+原来已支持关闭的三家保留型号。输出上限仍为 4096、超时 180 秒、0 重试；
+截断/超时会保存失败并停止，不扩大额度或自动补调用。六项密钥变量名和端点不变，
+本次没有读取或修改实际 `.env`，无需因换型号重新填写 key。
 
 用户单独明确批准覆盖旧禁读规则后，本次仅私有检查了六项填写状态，六家均已
 填写，无空白/占位符/重复冲突；没有显示任何 key，没有调用模型，没有改 `.env`。
@@ -131,11 +137,15 @@ Coding Plan key 不一定支持通用 Chat Completions。
 不构成后续真实 API 授权。此前 v1 离线预检因配置变更已不适用于现在的请求；
 更新配置后的预检须使用新 run ID 并另获调用及费用授权。
 
-MiniMax 的完整前置 `<think>…</think>` 保存于原始响应，提取 JSON 时只去掉一个
-完整的前置块。所有家族使用同一 v6 原文、示例、用户模板和英文输入；共享原有
-adapter、显式 `legacy` 坐标策略与 canonical 校验。各家参数/思考约束不同，
-因此这只能比较登记好的**模型与推理配置组合**，不能声称全平台 temperature 或
-推理预算已严格相同。新入口亦不是对历史 v6/R3 传输的逐字节重放。
+目录、计划和 manifest 明确记录 `thinking_requirement=disabled`。离线预检拒绝
+缺失关闭开关、开启思考或 low 等冲突配置；list 显示六家 `thinking=disabled`。
+运行时若返回非空 `reasoning_content`、非零思考 token 数或前置 `<think>`，保存
+原始失败证据并停批、不重试；不再剥掉思考块后把它当成非思考输出。
+响应缺少思考 token 明细时，`reported_reasoning_tokens=null`，只表示未报告，
+不能冒称实测为 0。关闭能力依据官方参数合同，实际服务行为仍待获授权后的核查。
+所有家族使用同一 v6 原文、示例、用户模板和英文输入，共享原有 adapter、显式
+`legacy` 坐标策略与 canonical 校验；采样值按各家支持范围登记，不能声称全平台
+temperature 已严格相同。新入口亦不是对历史 v6/R3 传输的逐字节重放。
 
 已有 DeepSeek 正式臂、表一 0.8378/0.7631 与表二继续作为原来源结果。
 本工具仅为后续独立模型补充实验准备，不自动切换默认方法、修改提示词、运行

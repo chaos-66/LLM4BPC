@@ -34,7 +34,7 @@ def main(argv: list[str] | None = None) -> int:
             print(models.init_env())
         elif args.command in {None, "list"}:
             for name, profile in models.load_catalog()["profiles"].items():
-                print(f"{name:8} {profile['display_name']:8} {profile['model']}  {profile['api_key_env']}")
+                print(f"{name:8} {profile['display_name']:8} {profile['model']}  thinking=disabled  {profile['api_key_env']}")
             print("离线模式；密钥未读取，API 调用 0。")
         elif args.command == "plan":
             providers = list(models.load_catalog()["profiles"]) if args.providers == "all" else args.providers.split(",")

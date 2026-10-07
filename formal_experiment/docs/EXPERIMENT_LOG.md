@@ -5921,3 +5921,17 @@
 - 仍存在 blocker：无
 - 备注：完整150结果首次新产物检查3通过、1失败（6.03秒）；唯一失败为新续跑plan绑定的既有approval_review源文件当前LF而Git过滤检出CRLF。只补该精确路径text eol=lf并重新暂存，未改源文件原始字节、不重绑定plan/manifest、不改请求/响应/预测/Gold/F1、不新增API。失败experiment_run记录保留；只重跑失败的Git字节/manifest节点，已通过的账本/四臂F1/用量三个节点证据复用，不扩大或重复全量。GitHub具体原始产物备份许可仍待回复，不绕过push拦截。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-07T04:22:44.136175+00:00 - S2-MODEL-API-SETUP：六家统一关闭思考并替换不支持关闭的最新型号
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：51 passed in 4.33s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`a495c11c66be695414b30a6e47c469e1d307c95c`；相关未提交路径：20 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：未创建或覆盖（`not_created_or_overwritten`）
+- 仍存在 blocker：无
+- 备注：依据2026-10-07官方文档将Grok改为4.3/none、Kimi改为K2.6/disabled、GLM改为5.2/disabled；千问、MiMo、MiniMax保持显式关闭。增加离线强制关闭与返回思考证据停批检查；思考用量未报告保留null。只运行本入口具名模拟检查，未读取或修改实际.env，真实API=0，未改Gold、prompt、评价器或旧结果。现有分支四个思考实验提交的原始产物GitHub外发审批仍待许可，本批不绕过。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

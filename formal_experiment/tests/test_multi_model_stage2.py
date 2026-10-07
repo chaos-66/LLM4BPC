@@ -100,6 +100,7 @@ def test_same_input_and_prompt_with_provider_specific_parameters(capsule):
     plan = plan_for(capsule, names, 2)
     assert plan["planned_calls"] == 12 and plan["retry"] == 0
     assert plan["authorized"] is False and plan["metrics"] is None
+    assert plan["thinking_requirement"] == "disabled"
     for batch in (plan["requests"][:6], plan["requests"][6:]):
         assert [r["provider"] for r in batch] == names
         assert len({m.encode(r["body"]["messages"]) for r in batch}) == 1
@@ -108,19 +109,50 @@ def test_same_input_and_prompt_with_provider_specific_parameters(capsule):
             assert r["body_sha256"] == m.digest(m.encode(r["body"]))
     bodies = {r["provider"]: r["body"] for r in plan["requests"][:6]}
     assert bodies["qwen"]["enable_thinking"] is False
-    assert bodies["kimi"]["model"] == "kimi-k2.7-code"
-    assert bodies["kimi"]["temperature"] == 1 and bodies["kimi"]["top_p"] == 0.95
-    assert bodies["kimi"]["thinking"] == {"type": "enabled"}
+    assert bodies["kimi"]["model"] == "kimi-k2.6"
+    assert bodies["kimi"]["temperature"] == 0.6 and bodies["kimi"]["top_p"] == 0.95
+    assert bodies["kimi"]["thinking"] == {"type": "disabled"}
     assert bodies["mimo"]["max_completion_tokens"] == 4096
-    assert bodies["grok"]["reasoning_effort"] == "low"
+    assert bodies["grok"]["model"] == "grok-4.3"
+    assert bodies["grok"]["reasoning_effort"] == "none"
     assert "temperature" not in bodies["grok"]
     assert bodies["minimax"]["model"] == "MiniMax-M3"
     assert bodies["minimax"]["thinking"] == {"type": "disabled"}
     assert bodies["minimax"]["top_p"] == 0.95
-    assert bodies["glm"]["model"] == "glm-5.3-flash"
-    assert bodies["glm"]["thinking"] == {"type": "enabled"}
-    assert bodies["glm"]["reasoning_effort"] == "low"
+    assert bodies["glm"]["model"] == "glm-5.2"
+    assert bodies["glm"]["thinking"] == {"type": "disabled"}
+    assert "reasoning_effort" not in bodies["glm"]
     assert not any("gold" in p.lower() or Path(p).name == ".env" for p in plan["bindings"])
+
+
+@pytest.mark.parametrize("provider", ["qwen", "mimo", "kimi", "grok", "glm", "minimax"])
+@pytest.mark.parametrize("change", ["enabled", "omitted"])
+def test_offline_plan_rejects_enabled_or_implicit_thinking(capsule, provider, change):
+    path = capsule / "configs/models/stage2_multi_model_v1.json"
+    catalog = m.read_json(path)
+    parameters = catalog["profiles"][provider]["request_parameters"]
+    field = "enable_thinking" if provider == "qwen" else "reasoning_effort" if provider == "grok" else "thinking"
+    if change == "omitted":
+        parameters.pop(field)
+    else:
+        parameters[field] = True if provider == "qwen" else "low" if provider == "grok" else {"type": "enabled"}
+    m.write_json(path, catalog)
+    with pytest.raises(m.ModelRunError, match="思考"):
+        plan_for(capsule, [provider])
+
+
+def test_global_requirement_and_conflicting_reasoning_are_rejected(capsule):
+    path = capsule / "configs/models/stage2_multi_model_v1.json"
+    catalog = m.read_json(path)
+    catalog.pop("thinking_requirement")
+    m.write_json(path, catalog)
+    with pytest.raises(m.ModelRunError, match="思考"):
+        plan_for(capsule)
+    catalog["thinking_requirement"] = "disabled"
+    catalog["profiles"]["glm"]["request_parameters"]["reasoning_effort"] = "low"
+    m.write_json(path, catalog)
+    with pytest.raises(m.ModelRunError, match="low"):
+        plan_for(capsule, ["glm"])
 
 
 @pytest.mark.parametrize("change", ["false", "statement", "flag", "hash", "providers", "calls", "output", "price", "budget", "body", "binding"])
@@ -207,6 +239,7 @@ def test_success_preserves_raw_usage_identity_and_completed_resume_is_zero_send(
     assert sent == [r["request_id"] for r in plan["requests"]]
     assert result["llm_calls"] == result["valid_predictions"] == 2
     assert result["status"] == "succeeded" and result["metrics"] is None
+    assert result["thinking_requirement"] == "disabled"
     assert result["conservative_uncached_cost_by_provider"]["qwen"] == 0.0002
     out = capsule / "outputs/development/stage2_multi_model_v1/offline_test"
     for path in out.rglob("*.json*"):
@@ -219,7 +252,7 @@ def test_success_preserves_raw_usage_identity_and_completed_resume_is_zero_send(
         execute(capsule, plan, approve(plan), sender=lambda *a: pytest.fail("no send"))
 
 
-@pytest.mark.parametrize("kind", ["timeout", "model", "usage", "length"])
+@pytest.mark.parametrize("kind", ["timeout", "model", "usage", "length", "reasoning_content", "reasoning_tokens", "think_prefix"])
 def test_uncertain_call_stops_without_retry_or_resume(capsule, kind):
     plan = plan_for(capsule, samples=2)
     sent = []
@@ -230,11 +263,37 @@ def test_uncertain_call_stops_without_retry_or_resume(capsule, kind):
         if kind == "model": raw["model"] = "unauthorized-model"
         if kind == "usage": raw["usage"]["completion_tokens"] = 4097
         if kind == "length": raw["choices"][0]["finish_reason"] = "length"
+        if kind == "reasoning_content": raw["choices"][0]["message"]["reasoning_content"] = "unexpected reasoning"
+        if kind == "reasoning_tokens": raw["usage"]["completion_tokens_details"] = {"reasoning_tokens": 1}
+        if kind == "think_prefix": raw["choices"][0]["message"]["content"] = "<think>unexpected reasoning</think>\n" + raw["choices"][0]["message"]["content"]
         return m.encode(raw)
     result = execute(capsule, plan, approve(plan), sender=sender)
     assert result["status"] == "partial" and result["llm_calls"] == 1 and len(sent) == 1
+    if kind in {"reasoning_content", "reasoning_tokens", "think_prefix"}:
+        response = m.read_json(next((capsule / "outputs/development/stage2_multi_model_v1/offline_test/responses").glob("*.json")))
+        assert "思考" in response["error"] and response["prediction"]["record"] == {}
+        assert response["nonthinking_check"]["status"] == "not_verified"
     with pytest.raises(m.ModelRunError, match="人工核查"):
         execute(capsule, plan, approve(plan), resume=True, sender=lambda *a: pytest.fail("no retry"))
+
+
+@pytest.mark.parametrize("reported_tokens", [None, 0])
+def test_empty_reasoning_succeeds_and_missing_usage_detail_stays_unknown(capsule, reported_tokens):
+    plan = plan_for(capsule, list(m.load_catalog()["profiles"]))
+    def sender(profile, body, key, timeout):
+        request = next(r for r in plan["requests"] if m.encode(r["body"]) == body)
+        raw = json.loads(response_for(request, profile))
+        raw["choices"][0]["message"]["reasoning_content"] = ""
+        if reported_tokens is not None:
+            raw["usage"]["completion_tokens_details"] = {"reasoning_tokens": reported_tokens}
+        return m.encode(raw)
+    result = execute(capsule, plan, approve(plan), sender=sender)
+    assert result["status"] == "succeeded" and result["valid_predictions"] == 6
+    out = capsule / "outputs/development/stage2_multi_model_v1/offline_test/responses"
+    for path in out.glob("*.json"):
+        evidence = m.read_json(path)["nonthinking_check"]
+        assert evidence["status"] == "no_reported_reasoning"
+        assert evidence["reported_reasoning_tokens"] == reported_tokens
 
 
 def interrupt_between_calls(root, plan, monkeypatch):
@@ -281,10 +340,11 @@ def test_resume_checks_previous_artifacts_before_any_new_send(capsule, monkeypat
     assert accessed == []
 
 
-def test_input_binding_and_complete_think_prefix(capsule):
+def test_input_binding_and_think_prefix_is_not_silently_stripped(capsule):
     request = plan_for(capsule)["requests"][0]
     record = record_for(request)
-    assert m.canonical_prediction(request, "<think>reasoning</think>\n" + json.dumps(record))["request_status"] == "ok"
+    assert m.canonical_prediction(request, json.dumps(record))["request_status"] == "ok"
+    assert m.canonical_prediction(request, "<think>reasoning</think>\n" + json.dumps(record))["failure_stage"] == "json_parse"
     record["source_text"] += "changed"
     assert m.canonical_prediction(request, json.dumps(record))["failure_stage"] == "input_binding"
     assert m.canonical_prediction(request, "<think>unfinished")["failure_stage"] == "json_parse"
@@ -304,7 +364,8 @@ def test_http_error_redaction_and_no_redirect(monkeypatch):
 
 def test_cli_defaults_offline_and_run_flags_fail_before_file_reads(capsule, monkeypatch, capsys):
     assert cli.main([]) == 0
-    assert "API 调用 0" in capsys.readouterr().out
+    listed = capsys.readouterr().out
+    assert "API 调用 0" in listed and listed.count("thinking=disabled") == 6
     assert cli.main(["run", "--plan", "not-existing.json", "--authorization", "not-existing.json"]) == 2
     assert "不会读取密钥" in capsys.readouterr().err
     original = m.build_plan

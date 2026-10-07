@@ -88,6 +88,8 @@ def load_catalog(path: Path = CATALOG) -> dict:
         raise ModelRunError("模型目录合同不匹配。")
     if catalog.get("retry") != 0:
         raise ModelRunError("此入口固定不重试。")
+    if catalog.get("thinking_requirement") != "disabled":
+        raise ModelRunError("此入口必须明确要求全部关闭思考。")
     positive_int(catalog.get("max_output_tokens_per_call"), "单次输出上限")
     positive_number(catalog.get("timeout_seconds"), "超时")
     for name, profile in catalog["profiles"].items():
@@ -105,6 +107,20 @@ def load_catalog(path: Path = CATALOG) -> dict:
         if (not isinstance(profile.get("request_parameters"), dict)
                 or set(profile["request_parameters"]) - PARAMETERS):
             raise ModelRunError("请求参数包含不允许的字段。")
+        parameters = profile["request_parameters"]
+        if (profile.get("thinking_mode") != "disabled"
+                or ("thinking" in parameters and parameters["thinking"] != {"type": "disabled"})
+                or ("enable_thinking" in parameters and parameters["enable_thinking"] is not False)
+                or ("reasoning_effort" in parameters and parameters["reasoning_effort"] != "none")):
+            raise ModelRunError("模型配置必须关闭思考；low 或省略开关不能代替关闭。")
+        if name == "qwen":
+            disabled = parameters.get("enable_thinking") is False
+        elif name == "grok":
+            disabled = parameters.get("reasoning_effort") == "none"
+        else:
+            disabled = parameters.get("thinking") == {"type": "disabled"}
+        if not disabled:
+            raise ModelRunError("缺少该模型家族的显式关闭思考参数。")
         if (not isinstance(profile.get("accepted_returned_models"), list)
                 or not profile["accepted_returned_models"]
                 or any(not isinstance(m, str) or not m for m in profile["accepted_returned_models"])):
@@ -202,6 +218,7 @@ def build_plan(providers: list[str], limit: int, run_id: str, *,
                              "input_token_reservation": len(raw) + 4096})
     return {"schema_version": PLAN_SCHEMA, "task_id": TASK, "run_id": run_id,
             "claim_scope": "development_only", "authorized": False,
+            "thinking_requirement": "disabled",
             "providers": providers, "samples_per_provider": limit,
             "planned_calls": len(requests), "retry": 0,
             "max_output_tokens_per_call": catalog["max_output_tokens_per_call"],
@@ -360,19 +377,24 @@ def send_http(profile: dict, body: bytes, api_key: str, timeout: float) -> bytes
         raise ModelRunError(f"传输失败（{type(exc).__name__}；详细凭据信息不输出）。") from None
 
 
+def verify_nonthinking_response(decoded: dict) -> dict:
+    """Reject reported reasoning; absent token detail remains unknown, not zero."""
+    reasoning_tokens = decoded.get("usage", {}).get("reasoning_tokens")
+    if (decoded.get("reasoning_present")
+            or (reasoning_tokens is not None and (type(reasoning_tokens) is not int or reasoning_tokens != 0))
+            or decoded.get("content", "").lstrip().startswith("<think>")):
+        raise ModelRunError("响应出现思考内容或思考用量，与全部关闭思考的要求不符；停止且不重试。")
+    return {"status": "no_reported_reasoning", "reasoning_content_present": False,
+            "reported_reasoning_tokens": reasoning_tokens}
+
+
 def canonical_prediction(request: dict, content: str) -> dict:
     result = {"provider": request["provider"], "sample_id": request["sample_id"],
               "request_id": request["request_id"], "request_status": "failed",
               "failure_stage": None, "record": {}, "canonicalization_policy": POLICY_LEGACY}
     try:
-        # MiniMax can prepend a provider reasoning block. Keep it in raw data;
-        # strip only one COMPLETE leading block when extracting final JSON.
+        # Thinking prefixes are forbidden in this non-thinking-only runner.
         text = content.strip()
-        if text.startswith("<think>"):
-            pos = text.find("</think>")
-            if pos < 0:
-                raise ValueError("incomplete reasoning prefix")
-            text = text[pos + len("</think>"):].strip()
         if text.startswith("```json\n") and text.endswith("```"):
             text = text[8:-3].strip()
         payload = json.loads(text)
@@ -548,6 +570,7 @@ def execute_plan(plan: dict, auth: dict, *, execute: bool = False,
             previous = _append_ledger(ledger, {**base, "event": "started"}, previous)
             starts[rid] = base
             raw_text, error, usage, returned_model, prediction = "", None, {}, None, {}
+            nonthinking_check = {"status": "not_verified", "reported_reasoning_tokens": None}
             needs_attention = False
             try:
                 raw = sender(plan["profiles"][provider], body, credentials[provider], plan["timeout_seconds"])
@@ -565,6 +588,7 @@ def execute_plan(plan: dict, auth: dict, *, execute: bool = False,
                     raise ModelRunError("usage 缺失/不合法或超过预算；保留该次费用预留并停止。")
                 if decoded.get("status") != "ok_message_content" or decoded.get("finish_reason") != "stop":
                     raise ModelRunError("响应为空、不完整或非文本完成；停止且不重试。")
+                nonthinking_check = verify_nonthinking_response(decoded)
                 prediction = canonical_prediction(request, decoded["content"])
                 reserve = (prompt_tokens * budget["input_per_million"]
                            + completion_tokens * budget["output_per_million"]) / 1_000_000
@@ -577,6 +601,7 @@ def execute_plan(plan: dict, auth: dict, *, execute: bool = False,
             response_path = out / "responses" / f"{provider}_{request['sample_id']}.json"
             result = redact({"request_id": rid, "raw_response_utf8": raw_text,
                              "usage": usage, "returned_model": returned_model,
+                             "nonthinking_check": nonthinking_check,
                              "error": error, "prediction": prediction}, secrets)
             write_json(response_path, result, exclusive=True)
             finish = {**base, "event": "finished", "reserved_cost": reserve,
@@ -607,6 +632,7 @@ def execute_plan(plan: dict, auth: dict, *, execute: bool = False,
                     "run_id": plan["run_id"], "timestamp_utc": now(), "status": "succeeded" if complete else "partial",
                     "claim_scope": "development_only", "real_api": True, "llm_calls": len(starts),
                     "planned_calls": plan["planned_calls"], "retry": 0, "metrics": None,
+                    "thinking_requirement": "disabled",
                     "gold_read_by_runner": False, "plan_sha256": digest(encode(plan)),
                     "authorization_sha256": auth_hash, "profiles": plan["profiles"], "bindings": plan["bindings"],
                     "canonicalization_policy": POLICY_LEGACY, "ledger_head_sha256": previous,

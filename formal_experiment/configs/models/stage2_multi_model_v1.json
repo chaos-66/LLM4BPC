@@ -2,6 +2,8 @@
   "schema_version": "stage2_multi_model_catalog@1.0.0",
   "task_id": "S2-MODEL-API-SETUP",
   "claim_scope": "development_only",
+  "thinking_requirement": "disabled",
+  "selection_verified_on": "2026-10-07",
   "prompt_name": "direct_llm_sun_record_prompt_v6_d1r1_2026_08_05",
   "input_path": "data/input/estg150_formal_inference_input_v2.json",
   "max_output_tokens_per_call": 4096,
@@ -34,34 +36,34 @@
       "display_name": "Kimi",
       "api_key_env": "LLM4BPC_KIMI_API_KEY",
       "base_url": "https://api.moonshot.cn/v1",
-      "model": "kimi-k2.7-code",
-      "accepted_returned_models": ["kimi-k2.7-code"],
-      "request_parameters": {"temperature": 1, "top_p": 0.95, "thinking": {"type": "enabled"}},
+      "model": "kimi-k2.6",
+      "accepted_returned_models": ["kimi-k2.6"],
+      "request_parameters": {"temperature": 0.6, "top_p": 0.95, "thinking": {"type": "disabled"}},
       "output_limit_parameter": "max_tokens",
-      "thinking_mode": "required_provider_fixed_sampling",
-      "documentation": "https://platform.kimi.com/docs/guide/kimi-k2-7-code-quickstart"
+      "thinking_mode": "disabled",
+      "documentation": "https://platform.kimi.com/docs/guide/kimi-k2-6-quickstart"
     },
     "grok": {
       "display_name": "Grok",
       "api_key_env": "LLM4BPC_GROK_API_KEY",
       "base_url": "https://api.x.ai/v1",
-      "model": "grok-4.7",
-      "accepted_returned_models": ["grok-4.7"],
-      "request_parameters": {"reasoning_effort": "low"},
+      "model": "grok-4.3",
+      "accepted_returned_models": ["grok-4.3"],
+      "request_parameters": {"reasoning_effort": "none"},
       "output_limit_parameter": "max_tokens",
-      "thinking_mode": "reasoning_low_sampling_omitted",
-      "documentation": "https://docs.x.ai/developers/models/grok-4.7"
+      "thinking_mode": "disabled",
+      "documentation": "https://docs.x.ai/developers/models/grok-4.3"
     },
     "glm": {
       "display_name": "GLM",
       "api_key_env": "LLM4BPC_GLM_API_KEY",
       "base_url": "https://open.bigmodel.cn/api/paas/v4",
-      "model": "glm-5.3-flash",
-      "accepted_returned_models": ["glm-5.3-flash", "GLM-5.3-Flash"],
-      "request_parameters": {"temperature": 1, "top_p": 0.95, "thinking": {"type": "enabled"}, "reasoning_effort": "low"},
+      "model": "glm-5.2",
+      "accepted_returned_models": ["glm-5.2", "GLM-5.2"],
+      "request_parameters": {"temperature": 0.6, "top_p": 0.95, "thinking": {"type": "disabled"}},
       "output_limit_parameter": "max_tokens",
-      "thinking_mode": "required_reasoning_low_sampling_not_equated_to_deepseek",
-      "documentation": "https://docs.z.ai/guides/vlm/glm-5.3-flash"
+      "thinking_mode": "disabled",
+      "documentation": "https://docs.z.ai/guides/llm/glm-5.2"
     },
     "minimax": {
       "display_name": "MiniMax",
@@ -71,7 +73,7 @@
       "accepted_returned_models": ["MiniMax-M3"],
       "request_parameters": {"temperature": 0, "top_p": 0.95, "thinking": {"type": "disabled"}},
       "output_limit_parameter": "max_completion_tokens",
-      "thinking_mode": "disabled_m3",
+      "thinking_mode": "disabled",
       "documentation": "https://platform.minimax.cn/docs/api-reference/text-openai-api"
     }
   }

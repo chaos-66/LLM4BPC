@@ -1,6 +1,6 @@
 # LLM4BPC 完整实验主 Pipeline
 
-**文档版本**：3.7.49
+**文档版本**：3.7.50
 **状态**：ACTIVE — 全项目研究与任务分解的唯一主线
 **最后更新**：2026-10-07
 **方法学主干**：Sun et al. (2024)（三阶段方法主干）；Barrientos et al. (2026)（直接借鉴来源：LLM 结构化输出、验证、受控词汇、归一化与评估纪律）
@@ -10,6 +10,23 @@
 > 本文定义“要完成什么、先后依赖是什么、每一步怎样算完成”。
 > `docs/PROJECT_AUDIT.md` 只记录实时进度；不要再创建新的日期版
 > `STATUS_*`、`HANDOFF_*` 或平行路线文档。
+
+## 2026-10-07 修订 3.7.50：S2-MODEL-API-SETUP 六家统一关闭思考
+
+- 用户明确要求“思考模式全部关闭，不能就换一个模型能关闭的最新模型”。按当前
+  官方目录/参数合同，Grok 4.7 替换为 4.3 并显式 reasoning_effort=none，Kimi K2.7 Code
+  替换为 K2.6、GLM 5.3 Flash 替换为 5.2 并显式 thinking.type=disabled；Qwen Max 0902、
+  MiMo v2.6 Pro、MiniMax M3 保留且关闭。low 不能代替关闭；各家采样限制分别登记。
+- 配置/计划/manifest 固定 thinking_requirement=disabled；离线拒绝开启或省略关闭
+  开关，真实入口拒绝返回思考内容/前置 think 块/非零思考用量，保存失败并停止，0 重试。
+  未报告思考 tokens 保留 null，不把配置与模拟测试当账户/API 实测证明。
+- 保留六个 key 变量与端点，本次 `.env` 未读未改，真实 API=0，Gold/prompt/评价器/
+  原 DeepSeek 臂/固定表一表二未改。既有预检失效，六家真实运行仍需新计划与明确授权。
+- 本批 tests/test_multi_model_stage2.py **51 passed / 4.33 秒**，批次前后快速完整性通过；
+  六家离线 list 已核对全部 disabled。准备实现通过具名验证，非全量，真实模型敏感性
+  实验仍待授权，其他实验/历史结果保持。
+- 按根 AGENTS 做 scoped 本地 checkpoint；当前分支此前四个思考实验 checkpoint
+  尚因原始产物 GitHub 外发审批待许可而未 push，本批不绕过该既有阻塞或声称远端完成。
 
 ## 2026-10-07 修订 3.7.49：150次默认high结果验真，主F1下降，GitHub备份待许可
 
