@@ -1,0 +1,19 @@
+{
+  "schema_version": "stage2_kimi_rpm_remaining_authorization@1.0.0",
+  "task_id": "S2-MODEL-SENSITIVITY-V1",
+  "run_id": "kimi_rpm_remaining_20261007_v1",
+  "parent_run_id": "multi_model_remaining_20261007_v1",
+  "authorized": true,
+  "user_authorization": "接受，保留计数差异并继续 Kimi",
+  "kimi_counter_policy_authorization": "接受，保留计数差异并继续 Kimi",
+  "provider": "kimi",
+  "max_new_calls": 145,
+  "max_combined_calls": 900,
+  "retry": 0,
+  "max_output_tokens_per_call": 4096,
+  "max_new_output_tokens": 593920,
+  "min_start_interval_seconds": 21,
+  "parent_cooldown_seconds": 65,
+  "scope": "原900次授权内，Kimi已尝试5条（含原首条离线恢复、三条有效和一次RPM=3限流）；仅发送其余145个从未发送项，不重发429，不改变模型/提示词/关闭思考参数。新请求间隔至少21秒，原请求后等待至少65秒；0重试，原Kimi剩余费用保护不增。GLM/MiMo现有149条进程独立继续；不覆盖任何父证据。运行门禁通过后私有加载Kimi key，不显示或修改.env。",
+  "github_raw_artifact_export_authorized": false
+}

@@ -166,7 +166,16 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
   450 次/0 重试/USD14.77 确认，不绕过拦截或间接执行。审批证据及待确认范围见
   `outputs/reports/s2_prompt_simplification_comparison_20261006_v1_execution_blocker.json`。
 
-## 已授权续跑准备通过：S2-MODEL-SENSITIVITY-V1（2026-10-07）
+## 续跑中、Kimi节流准备通过：S2-MODEL-SENSITIVITY-V1（2026-10-07）
+
+- GLM/MiMo充值后149条正常继续；Kimi前三条新响应均通过约定，第四次HTTP429
+  明确账号max RPM:3，保留失败不重发，145项未发送。原首条仍离线恢复有效。
+- 新 `kimi_rpm_remaining_20261007_v1` 只跑剩余145项，21秒最小开始间隔、65秒父
+  冷却，原900总额和0重试不变；父源/账本/预测不改。三家合并验收仍待最终运行。
+- 6项新节流具名离线测试通过（79.23秒），快速完整性通过；未跑全量，未重复旧验证。
+- GitHub原始产物外发许可未答复，push阻塞，本地checkpoint不等于远端备份。
+
+## 已授权续跑准备历史：S2-MODEL-SENSITIVITY-V1（2026-10-07）
 
 - GLM/MiMo用户已充值；Kimi用户明确接受关闭请求、空思考正文且实际1 reasoning token
   的计数差异。仅Kimi此例外，超过1或出现思考正文仍停止；不解释为占位或归零。

@@ -5995,3 +5995,17 @@
 - 仍存在 blocker：无
 - 备注：用户已明确表示GLM/MiMo充值，并接受保留Kimi无思考正文且仅1 reasoning token计数差异继续运行。原453次产物/原严格失败/源文件均不修改；只149条每家共447从未尝试项，原900上限与费用保护不增加，0重试。Kimi首条已有正文离线验证为ok，不重发、不断言token为占位。仅验证新续跑授权/请求绑定/父证据不可变/例外限制/全分母/保存后Gold/已完成恢复零发送；不重跑原58模拟或全量。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-07T06:03:33.291608+00:00 - S2-MODEL-SENSITIVITY-V1：验证Kimi每分钟三次限流后的145个未发送项节流续跑
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：6 passed in 79.23s (0:01:19)
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`ee8070c9b3b245023d77cf78dcf5dce6f431c191`；相关未提交路径：17 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：Kimi三条新响应通过关闭思考与单token计数口径，第四次HTTP429明确max RPM=3；保留限流失败，不重发。仅原900次内剩余145未尝试ID，开始间隔至少21秒，原请求后65秒；费用剩余预算不增加。验证新节流、授权、源绑定和已完成恢复零调用，模拟无真实HTTP/密钥；GLM/MiMo既有进程独立继续。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

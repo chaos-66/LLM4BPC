@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
 **生成日期**：2026-10-07
-**收录文件**：3791 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**收录文件**：3796 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -58,6 +58,7 @@
 | `configs/authorization/s2_thinking_default_20261007_v2.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/authorization/s2_thinking_default_remaining_20261007_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/authorization/s2_thinking_single_high_provider_max_20261006_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `configs/authorization/stage2_kimi_rpm_remaining_20261007_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/authorization/stage2_multi_model_all_20261007_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/authorization/stage2_multi_model_remaining_20261007_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/authorization/stage3_d1_v4_r1_user_authorization_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
@@ -2751,6 +2752,7 @@
 | `outputs/reports/stage2_formal_three_method_comparison_v1_export_index.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/stage2_gold_definition_audit_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/stage2_gold_definition_audit_v1.md` | 活动 | 说明、规范或研究文档 |
+| `outputs/reports/stage2_kimi_rpm_remaining_20261007_v1_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/stage2_multi_model_all_20261007_v1_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/stage2_multi_model_all_20261007_v2.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/stage2_multi_model_all_20261007_v2.md` | 活动 | 说明、规范或研究文档 |
@@ -3309,6 +3311,7 @@
 | `scripts/run_stage1_label_semantics.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_stage1_p2_inference.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_stage1_structural.py` | 活动 | Python 实现、脚本或测试 |
+| `scripts/run_stage2_kimi_rpm_remaining_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_stage2_multi_model_all_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_stage2_multi_model_remaining_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_stage3_baselines.py` | 活动 | Python 实现、脚本或测试 |
@@ -3859,7 +3862,9 @@
 | `tests/test_stage1_human_adjudication.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage1_process_gold.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage2_gold_definition_audit_v1.py` | 活动 | Python 实现、脚本或测试 |
+| `tests/test_stage2_kimi_rpm_remaining_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage2_multi_model_all_v1.py` | 活动 | Python 实现、脚本或测试 |
+| `tests/test_stage2_multi_model_remaining_artifacts_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage2_multi_model_remaining_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage2_multi_model_run_artifacts_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage2_prediction_schema.py` | 活动 | Python 实现、脚本或测试 |
