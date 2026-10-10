@@ -5,7 +5,7 @@
 章节的连贯工作稿）
 **写作语言**：中文；技术术语保留规范英文
 **主张控制**：`CLAIM_EVIDENCE_MATRIX.md`
-**当前研究范围（2026-09-14 用户决定）**：后续比较使用 **Rules-Only / Direct-LLM**。
+**当前研究范围（2026-09-14 用户决定）**：后续比较使用 **Rules-Only / LLM-RE**。
 Rules+LLM-Repair（`sun_llm_fallback` / H1）已退出后续全部实验；下文保留的既有
 三方法表和修复组说明仅为历史研究记录，不作为当前贡献、待做对照或冻结前置条件。
 本文不再安排规则先行的 LLM 修复/fallback 实验。`B0`、`D1` 只作兼容机器 ID。
@@ -16,9 +16,9 @@ Rules+LLM-Repair（`sun_llm_fallback` / H1）已退出后续全部实验；下�
 面向自然语言合规需求的设计时业务流程检查：规则方法与大语言模型的分阶段比较
 
 **推荐英文题名**：
-Design-Time Business Process Checking for Natural-Language Compliance Requirements: A Stage-Wise Comparison of Rule-Based and Direct-LLM Approaches
+Design-Time Business Process Checking for Natural-Language Compliance Requirements: A Stage-Wise Comparison of Rule-Based and LLM-Based Approaches
 
-**理由**：用“自然语言合规需求（natural-language compliance requirements）”覆盖法律、监管、制度和业务规则；“设计时业务流程检查”固定 BPMN 流程模型检查场景；“分阶段比较”对应 Stage 1/2/3 与 Rules-Only、Direct-LLM 主线。题名不声称已经跨领域泛化。
+**理由**：用“自然语言合规需求（natural-language compliance requirements）”覆盖法律、监管、制度和业务规则；“设计时业务流程检查”固定 BPMN 流程模型检查场景；“分阶段比较”对应 Stage 1/2/3 与 Rules-Only、LLM-RE 主线。题名不声称已经跨领域泛化。
 
 **备选 1（中/英）**：
 从自然语言合规需求到流程模型：设计时合规检查的语义解析与分阶段方法比较
@@ -38,19 +38,19 @@ Sun et al. 提出的三阶段框架，设计一套可追溯的独立重建与扩
 BPMN 流程结构和标签语义，Stage 2 从自然语言合规需求中识别
 模态及 actor、action、condition、constraint、exception，Stage 3 进行规则—流程
 匹配和违规类型分类。研究将比较代表性非 LLM 方法、paper-faithful Sun 重建、
-Direct-LLM（直接 LLM），并在预先冻结的复杂
+LLM-RE（LLM-based Rule Extraction，基于大语言模型的规则抽取），并在预先冻结的复杂
 合规语料上检验不同方法随复杂度增加的退化边界。
 
 已落地的正式/DEV 结果（均为描述性）：Stage 1 固定 GDPR-7 复现（P2 语义
 micro-F1 0.8185 / accuracy 0.6928 / triple 0.4222，structure 1.0 仅共享解析，
-§7.1）；Stage 2 已发布正式比较中的 Rules-Only 与 Direct-LLM 结果（无整体胜者；
-Direct-LLM 对 action/condition/constraint/modality label 更优，Rules-Only 对
+§7.1）；Stage 2 已发布正式比较中的 Rules-Only 与 LLM-RE 结果（无整体胜者；
+LLM-RE 对 action/condition/constraint/modality label 更优，Rules-Only 对
 actor/exception 更优，§7.2）；Stage 3 在人工 33 条 panel 与新增 30 条
 合成受控错误 panel 上的四方法违规检测（missing_action 最易、incorrect_actor
 依赖参与者语义、out_of_order 最难，§7.4）。现有数据覆盖仅为 EStG-150 与
 GDPR-7/S2.11 相关面板；本文不据此声称跨领域、跨语言或企业部署泛化。
 
-[[TODO-RESULT:S2.12：适配两方法合同后回填 Rules-Only / Direct-LLM 复杂度分层结果；
+[[TODO-RESULT:S2.12：适配两方法合同后回填 Rules-Only / LLM-RE 复杂度分层结果；
 Direct 36 次尚未执行，Fallback 27 次已取消，不列为待完成项。]]
 [[TODO-RESULT:S3.7/S3.10：回填 Oracle 与端到端结果]]
 在上述事项完成前，本摘要对 Oracle/端到端不写性能提升、最佳方法或最终结论。
@@ -70,7 +70,7 @@ Sun et al. 的方法为这一问题提供了 Stage 1 流程解析、Stage 2 法�
 reconstruction。[[TODO-SOURCE:SUN2024:核对三阶段描述与方法资产页码]]
 
 大语言模型能够直接生成结构化语义表示，但它们也可能产生 schema 违规、遗漏字段、
-不稳定输出和额外调用成本。因此，本文不预设“LLM 必然更优”，而是把 Direct-LLM、
+不稳定输出和额外调用成本。因此，本文不预设“LLM 必然更优”，而是把 LLM-RE、
 不使用 LLM 的完整重建 baseline（Rules-Only）放在相同输入、Gold、输出合同和评价器
 下比较。复杂法律语料是否会放大不同方法之间的差异，同样作为待检验问题，而不是
 预先成立的结论。
@@ -81,11 +81,11 @@ reconstruction。[[TODO-SOURCE:SUN2024:核对三阶段描述与方法资产页�
 
 - RQ0：能否完整、可追溯地独立重建 Sun 的三阶段设计时合规检查框架？
 - RQ1：在固定 EStG-150 自然语言合规需求上，前人可比方法、Sun 方法级重建与
-  Direct-LLM 在 Stage 2 的模态分类与六要素抽取上如何比较？
+  LLM-RE 在 Stage 2 的模态分类与六要素抽取上如何比较？
 - RQ2：自然语言合规需求的文本复杂度增加时，各 Stage 2 方法如何退化，
   错误类型如何变化？
 - RQ3：在设计时流程模型与 Gold Rule/Process Records 下，多个 Stage 3 baseline
-  在匹配和违规类型分类上如何比较；Rules-Only 与 Direct-LLM 抽取误差如何影响固定检测器？
+  在匹配和违规类型分类上如何比较；Rules-Only 与 LLM-RE 抽取误差如何影响固定检测器？
 - RQ3a（2026-08-22 新增）：在人工裁决的 33 条 violation panel 之外，现有非 LLM
   Stage 3 方法（Winter、Sun、BM25、TF-IDF）在 30 条**合成受控错误**（三类各 10
   条）上分别表现如何？哪种错误类型最易/最难检测？（§7.4.2–7.4.7）
@@ -98,7 +98,7 @@ reconstruction。[[TODO-SOURCE:SUN2024:核对三阶段描述与方法资产页�
 多 baseline 比较（正式结果见 §7.2）；复杂法律语料上的复杂度分层与错误分析；Stage 1
 描述性复现（正式结果见 §7.1）与 Stage 3 违规检测（人工 33 条 panel + 30 条合成
 受控错误 panel，见 §7.4）；Stage 3 Oracle 与 end-to-end 分离评价；以及解释
-Stage 2、Stage 3 和二者交互贡献的受控消融。方法层面，本文把 Direct-LLM 的实现
+Stage 2、Stage 3 和二者交互贡献的受控消融。方法层面，本文把 LLM-RE 的实现
 拆分为 8 个可独立叙述与消融的模块，把 Rules-Only 拆分为 8 个模块，并逐模块与
 Barrientos et al. (2026) 的直接借鉴来源做对照（见 §4、§6.6）。
 
@@ -150,11 +150,11 @@ baseline` 都是本项目重建/扩展，不能写成 Winter 原论文原生能�
 |---|---:|---:|---:|
 | Winter et al. (2020) 原生 clause regions | 1.0000 | 0.8312 | 0.9078 |
 | Rules-Only | 0.9398 | 1.0000 | 0.9689 |
-| Direct-LLM | 0.9476 | 0.9740 | 0.9606 |
+| LLM-RE | 0.9476 | 0.9740 | 0.9606 |
 
 来源：`outputs/reports/sep_c2_stage2b_predecessor_baseline_v1.json` 与同名 `.md`
 （run status `completed_zero_api_predecessor_clause_region_run`；Winter 使用本地原型
-转写，Rules-Only 与 Direct-LLM 复用历史正式 arm 预测，未新增 API）。
+转写，Rules-Only 与 LLM-RE 复用历史正式 arm 预测，未新增 API）。
 
 **边界（原样保留）。** 共同任务为 `estg150_clause_region_detection_v1`，只评
 clause 区域交集，不是六要素抽取。Sun 作者稿 Table 12（Winter 0.58/0.89/0.70 vs
@@ -169,7 +169,7 @@ Sun 0.77/0.83/0.80）是私有 BPMN 违规任务，不可与本表直接比较�
 | Sun 作者稿比较臂（CF_KW/CF_RNN/CF_CNN 与六个 BERT） | 同句级四分类；规范句→label | 未把这些比较臂重建为独立四分类 arm；官方 modality 数据已有开发下限探索 | 若审稿要求，需在冻结 split 上重跑同一 evaluator，才能从 C3 升为 C1/C2 | 本地 BERT-TextCNN 对论文报告值为 C3（本地 acc 0.9249/macro-F1 0.8511；作者稿报告 F1 93.1），不能作同等条件结论 |
 | Winter et al. (2020) 原方法 | 四个 signal word 筛出 constraint sentence；无 modality 分类器 | 未作为独立 modality baseline 运行；wrapper 的 lexicon/句级筛选可提供透明下限 | 需把 signal words 映射到四类并显式处理 `may not` 的禁止义；否则只可作未校准下限 | 待运行；`TODO-SOURCE:WINTER2020` |
 | Barrientos et al. (2026) | change-impact schema 内的 3 类 modality；复杂语料 | D/E 1140-real-call 套件，共享三类投影与模块替换 | 只有 obligation/permission/prohibition 共享；definition 不可比；跨 schema C4 | 开发表：Barrientos 原生 macro-F1 0.890，本文 3 类投影 0.822；不能作整体优劣结论 |
-| 本文方法（Rules-Only / Direct-LLM / Rules+LLM-Repair） | Sun 四类 label 与 evidence；规范句→canonical record 的 modality 字段 | 三条冻结 formal arms，共享输入/Gold/evaluator | 同一 EStG-150 正式比较；label 单独成表 | label acc/macro-F1：Rules-Only 0.7400/0.7128、Direct-LLM 0.8333/0.7695、Repair 0.8200/0.8123；正式、描述性、无整体胜者 |
+| 本文方法（Rules-Only / LLM-RE / Rules+LLM-Repair） | Sun 四类 label 与 evidence；规范句→canonical record 的 modality 字段 | 三条冻结 formal arms，共享输入/Gold/evaluator | 同一 EStG-150 正式比较；label 单独成表 | label acc/macro-F1：Rules-Only 0.7400/0.7128、LLM-RE 0.8333/0.7695、Repair 0.8200/0.8123；正式、描述性、无整体胜者 |
 
 **表 2-2 六要素抽取（Stage 2B）比较注册**
 
@@ -192,7 +192,7 @@ Sun 0.77/0.83/0.80）是私有 BPMN 违规任务，不可与本表直接比较�
 | Sun Def 4–7 重建（S3.5） | matching + missing_action/incorrect_actor/out_of_order；规则与流程→分数/违规 | `src/bpc_hybrid/sun_stage3/`（τ/γ/θ=0.8 冻结） | 同一 GDPR-7 panel 与 33/30 条标签；正式 Oracle 尚未启动 | DEV：MAP 0.8175、violation macro-F1 0.333；阈值敏感性 v1；不得称 formal Oracle |
 | Sun 作者稿 Table 12 | 报告 Winter 与其方法的 P/R/F1 | 未在本项目同数据重跑 | 原数据/实现不可得，只能作 C3 文字比较 | 作者稿 Winter 0.58/0.89/0.70，Sun 0.77/0.83/0.80；最终版表号待核 |
 | BM25 / TF-IDF-SVD | 检索式 matching / 扩展后端 | 项目 development baselines | 只作同 panel 下限，不冒充前人论文原生方法 | DEV_ONLY；数值见 §7.4 与 C36 报告 |
-| Direct-LLM 二阶段→固定 Stage 3 | Stage 2 预测进入同一 Stage 3 的误差传播 | 尚无成对产物；可复用已冻结 Stage 2 predictions 与固定 Stage 3 | 无需新 API 的最小补证：把同一批 Stage 2 预测适配到同一 inference pack，先锁预测再评价 | 缺失；下一阶段零 API 最小任务 |
+| LLM-RE 二阶段→固定 Stage 3 | Stage 2 预测进入同一 Stage 3 的误差传播 | 尚无成对产物；可复用已冻结 Stage 2 predictions 与固定 Stage 3 | 无需新 API 的最小补证：把同一批 Stage 2 预测适配到同一 inference pack，先锁预测再评价 | 缺失；下一阶段零 API 最小任务 |
 | 正式 Oracle / end-to-end | 人工 Gold Rule Records 下的 Stage 3 与两阶段组合 | 未启动、未授权 | 依赖 S2.13、Gold Rule Records、S3.4–S3.6 promotion 与单独授权 | BLOCKED；不得用现有 DEV 表替代 |
 
 **完成、缺失与最小下一步。** 目前已完成的是：本文三种 Stage 2 方法的 formal C1
@@ -446,13 +446,13 @@ macro-F1 0.7128。字段级约束 P/R/F1 与 modality label 分表（modality
 evidence-span 在正式 Gold 中为普通字符串字段，结构性地 unavailable，不置零不
 纳入 aggregate）。
 
-### 4.2 Direct-LLM（直接 LLM，旧代号 D1）
+### 4.2 LLM-RE（基于大语言模型的规则抽取，旧代号 D1）
 
-**一句话**：纯 LLM 端到端生成同一六要素 Rule Record，不读取 Rules-Only 预测、
+**一句话**：LLM-RE（LLM-based Rule Extraction）通过提示词引导大语言模型生成同一六要素 Rule Record，不读取 Rules-Only 预测、
 不读取 Gold；核心是可验证的六要素证据契约 + 锁定配方（prompt hash、model、
 sampling、transport、budget）。机器 ID `direct_llm`。
 
-Direct-LLM 拆为 8 个模块：
+LLM-RE 拆为 8 个模块：
 
 1. **六要素 schema 与证据契约**。
    - 解决的问题：LLM 输出必须可验证——每个 evidence 都是 source 的 verbatim
@@ -552,16 +552,16 @@ Direct-LLM 拆为 8 个模块：
      Barrientos 论文是 36 条 requirements × 5 次完整运行报 self-consistency，
      我们已 temp0 + hash 三方锁定，同协议 5 次稳定性重跑已执行（AB-9，见 `paper/ABLATION_MATRIX.md` v3）。
 
-**总体结果（formal，2026-08-11 三方法正式比较，粗 Gold 主口径）**：Direct-LLM
+**总体结果（formal，2026-08-11 三方法正式比较，粗 Gold 主口径）**：LLM-RE
 五字段 F1——actor 0.7579、action 0.9437、condition 0.8380、constraint 0.7427、
 exception 0.7619，粗五字段 mean F1 0.8088；modality label accuracy 0.8333 /
-macro-F1 0.7695。字段级结论：Direct-LLM 在 action/condition/constraint 与
+macro-F1 0.7695。字段级结论：LLM-RE 在 action/condition/constraint 与
 modality label accuracy 领先；actor 字段落后 Rules-Only。禁止显著性推断，仅描述
 性字段级比较。
 
 #### 4.2.1 从模块组合探索到 actor/constraint 定向修补（SEP-C3 设计过程）
 
-v6 正式比较之后，SEP-C3 先按 E（语义示例）、S（详细语义规则）、J（JSON/结构纪律）拆分 Direct-LLM prompt，并用 common + E/S/J 组合检验模块化候选。2026-09-15 的真实四臂批次（111/011/101/110，各 150 条，共 600 calls）显示完整模块化新版相对 v6 明显退步，actor precision 下降，因此 `modular_v1` 未成为正式默认。该结果说明继续叠加模块不是当前最小问题；观察到的错误更集中在 actor 过度抽取和 constraint 的召回、作用范围与短语边界，而不是缺少更多总则。缺失的 000/001/010/100 四格随后在 2026-09-17 增量批执行（commit `18f5cf9`），八格每臂 150 条、failed=0、无重复发送；但前四格与增量四格不是同批交错，且每格只有一次运行，因此只能确认八格均已执行，不能据此作稳定的主效应或交互结论。
+v6 正式比较之后，SEP-C3 先按 E（语义示例）、S（详细语义规则）、J（JSON/结构纪律）拆分 LLM-RE prompt，并用 common + E/S/J 组合检验模块化候选。2026-09-15 的真实四臂批次（111/011/101/110，各 150 条，共 600 calls）显示完整模块化新版相对 v6 明显退步，actor precision 下降，因此 `modular_v1` 未成为正式默认。该结果说明继续叠加模块不是当前最小问题；观察到的错误更集中在 actor 过度抽取和 constraint 的召回、作用范围与短语边界，而不是缺少更多总则。缺失的 000/001/010/100 四格随后在 2026-09-17 增量批执行（commit `18f5cf9`），八格每臂 150 条、failed=0、无重复发送；但前四格与增量四格不是同批交错，且每格只有一次运行，因此只能确认八格均已执行，不能据此作稳定的主效应或交互结论。
 
 随后 SEP-C3 进入 targeted refinement，采用 common + E 作为 A，并只测试两个窄修补：
 
@@ -599,7 +599,7 @@ $T$ 是模型实际抽取的文本；对于本项目英文抽取，它指抽取�
 
 | 对象或版本 | 定位策略与用途 | 可以归属的证据 |
 |---|---|---|
-| 表 1 的既有 v6/R3 正式预测 | 历史唯一精确定位；冻结后不因代码默认值改变而重处理 | 只绑定表 1 来源，Direct-LLM Overall F1 0.8378 |
+| 表 1 的既有 v6/R3 正式预测 | 历史唯一精确定位；冻结后不因代码默认值改变而重处理 | 只绑定表 1 来源，LLM-RE Overall F1 0.8378 |
 | D-full-0813 后处理消融 | 对固定原始响应离线重放，显式指定 `legacy` | 开发性消融，完整链报告 F1 0.7719 |
 | D-full-0813 坐标修复对照 | 同一响应比较 `legacy` 与 `repair_v1` | 回顾性开发证据，不能替换表 1 |
 | 当前坐标模块默认值 | `DEFAULT_POLICY = repair_v1`；历史重放入口可显式选择 `legacy` | 是代码当前行为，不是全部历史预测的处理身份 |
@@ -610,7 +610,7 @@ Prompt 的版本与后处理策略是两个独立配置，不能由“都用 v6 
 
 ##### 4.2.2.2 JSON 解析与结构适配：简单整理部分
 
-通用 Direct-LLM 入口先去除外层 Markdown 代码围栏，再执行 `json.loads`。
+通用 LLM-RE 入口先去除外层 Markdown 代码围栏，再执行 `json.loads`。
 不可解析的 JSON 或非对象型顶层结果作为解析失败，不以猜测补成另一条答案。
 对于缺失的来源 ID、原文、schema 版本、方法信息及不确定项列表，入口使用固定
 默认值补齐。该入口使用 `setdefault`：只补缺失键，不覆盖模型已提供的值。
@@ -845,7 +845,7 @@ actor 4、action 5、constraint 7、modality evidence 17；actor FN 从 4 降到
 
 **本节依据（源码核对与既有报告；本次仅补全文字）**：
 
-- [通用 Direct-LLM 入口](../scripts/run_direct_llm.py)：解析、默认元数据、实际调用顺序与拒收。
+- [通用 LLM-RE 入口](../scripts/run_direct_llm.py)：解析、默认元数据、实际调用顺序与拒收。
 - [结构适配器](../src/bpc_hybrid/d1_schema_adapter.py)：五字段展开、类型转换、ID 和 normalized。
 - [坐标模块](../src/bpc_hybrid/d1_span_canonicalizer.py)：legacy、repair_v1、全部最优方案与计算上限。
 - [canonical validator](../src/bpc_hybrid/stage2_canonical.py) 与 [schema](../configs/schemas/stage2_prediction.schema.json)：结构后端和跨字段检查。
@@ -989,10 +989,10 @@ actor。若另有两个保留元素共用同一 ID，最终校验也不会自行
 
 **正式对照结果（2026-08-11 三方法正式比较，粗 Gold 主口径）**：Rules+LLM-Repair
 五字段 F1——actor 0.4296、action 0.8945、condition 0.7774、constraint 0.6200、
-exception 0.8800，粗五字段 mean F1 0.7203（vs Rules-Only 0.797、Direct-LLM
+exception 0.8800，粗五字段 mean F1 0.7203（vs Rules-Only 0.797、LLM-RE
 0.8088）；modality label accuracy 0.82 / macro-F1 0.8123。正式结论（描述性）
 confirm 该对照方法在 actor 字段 net-negative（actor F1 0.4296 vs Rules-Only
-0.8203 / Direct-LLM 0.7579），与 2026-08-08 停止优化决策一致。
+0.8203 / LLM-RE 0.7579），与 2026-08-08 停止优化决策一致。
 
 **development 全量 150 负结果（commit 74614e3，2026-08-08，粗 Gold 主口径）**：
 - 主口径 F1 0.7621 vs Rules-Only 0.7986（−0.0365 净负）；细 Gold F1 0.6875 vs
@@ -1019,7 +1019,7 @@ confirm 该对照方法在 actor 字段 net-negative（actor F1 0.4296 vs Rules-
 用单一 F1 宣称“综合上我的方法更好”。（取值依据见 `docs/research/
 BARRIENTOS_BORROWING_AUDIT_2026-07-12.md` 与 `docs/EVAL_3DIM_SPEC.md`。）
 
-| 维度 | Barrientos et al. (2026) | 本文（Rules-Only / Direct-LLM） | 可比较性 |
+| 维度 | Barrientos et al. (2026) | 本文（Rules-Only / LLM-RE） | 可比较性 |
 |---|---|---|---|
 | 任务目标 | regulatory requirement **change-impact** analysis | Sun-compatible 六要素抽取（Stage 2）+ 后续 Stage 3 匹配 | 任务不同 → C4 跨任务 |
 | schema | RC4PC：`id + precondition + norms + temporal_validity` | `modality/actor/action/condition/constraint/exception + evidence spans + maps` | schema 不同，不能照搬 |
@@ -1045,7 +1045,7 @@ BARRIENTOS_BORROWING_AUDIT_2026-07-12.md` 与 `docs/EVAL_3DIM_SPEC.md`。）
 - 哪些差异来自任务定义：schema、modality 类别数、evidence span、评估单元——
   这些是任务/表示差异，不构成方法优劣。
 - 哪些结论已有数据：温度 0、严格 JSON schema、确定性验证/归一化、traceability、
-  成本/失败率纪律——本文 Direct-LLM 已实现并有运行证据。
+  成本/失败率纪律——本文 LLM-RE 已实现并有运行证据。
 - 哪些已实测、哪些仍待消融：**2026-08-22 Barrientos 离线消融套件已把其中
   AB-2/AB-3/AB-5/AB-8 的前置证据做实（见 §6.6 与 `paper/ABLATION_MATRIX.md`）**；
   2026-08-29/30 真实 LLM/后处理批次已执行：D/E 套件（1140 real calls，2026-08-29）、
@@ -1128,7 +1128,7 @@ byte-identical）。规则绑定（variant → process → rule_id）与输入 a
   输出 change-impact/RC4PC 表示；共同可比的只有三类 modality 投影、模块替换和
   schema 合法性/稳定性纪律，不能把跨 schema F1 排成总榜。
 - **对本文三方法的差异集中在 Stage 2 抽取与下游接口选择。** Rules-Only 使用显式
-  marker/句法规则，Direct-LLM 使用 Gold-blind 结构化生成，Rules+LLM-Repair 只在
+  marker/句法规则，LLM-RE 使用 Gold-blind 结构化生成，Rules+LLM-Repair 只在
   预注册触发条件下修字段；三者共享同一输入、输出合同、normalization、Gold 与
   evaluator。Stage 2 的字段级差异不应直接换算成 Stage 3 或端到端提升，后者必须
   走固定 Stage 3 的成对比较。
@@ -1163,7 +1163,7 @@ G0.5 已冻结（`configs/g05_complexity_frozen_v1.json`）。第三方原文 lo
 
 ### 6.1 Stage 2 baseline（0.5 行改为两行）
 
-最低覆盖：简单规则下限、一个强监督学习 baseline、完整 Rules-Only 与 Direct-LLM；
+最低覆盖：简单规则下限、一个强监督学习 baseline、完整 Rules-Only 与 LLM-RE；
 各基线按 §2.3 的共同任务确定比较范围。
 Rules+LLM-Repair 不再列入最低覆盖或待运行臂。模态分类（4 类 label 另表）与六要素抽取（span
 P/R/F1 主表，modality evidence-span 单独/辅助）分别报告，不能用只做分类的方法
@@ -1172,7 +1172,7 @@ P/R/F1 主表，modality evidence-span 单独/辅助）分别报告，不能用�
 ### 6.2 Stage 3 baseline
 
 最低覆盖：词法/检索下限、Winter、完整 Sun、一个现代 embedding/graph baseline
-（TF-IDF/SVD）；后续衔接比较让 Rules-Only 与独立 Direct-LLM 抽取进入同一固定
+（TF-IDF/SVD）；后续衔接比较让 Rules-Only 与独立 LLM-RE 抽取进入同一固定
 Stage 3，不再加入规则＋LLM 修复/fallback 实验。实测（2026-08-22）：
 Winter wrapper（`winter_stage3_development_v1` 配方）、Sun Stage 3 重建
 （`sun_stage3_development_v1`，Def 4–7）、BM25（`bm25_stage3_development_v3`）、
@@ -1231,7 +1231,7 @@ Barrientos 优势 / 综合结论 / 可比较性限制”的结构化结论；(2)
 `outputs/development/b0_module_removal_ablation_v1/`、
 `outputs/reports/barrientos_ablation_comparison_v1.json`）：
 
-- **实验 A（Direct-LLM 校验链，锁定 D1-R3 响应）**：Full 0.7756 / Schema-only
+- **实验 A（LLM-RE 校验链，锁定 D1-R3 响应）**：Full 0.7756 / Schema-only
   0.7733 / Raw-approx 0.7733（fine Gold literal-overlap v2）；canonicalizer 重锚
   966 spans、改变/恢复 149/150 样本、dropped spans 42 / edges 18；Full vs
   Schema-only Δoverall F1 +0.0024、Δaction F1 +0.0095。结论：**校验+确定性后处理
@@ -1299,7 +1299,7 @@ AB-4（dual-view adapter）/AB-10（style-equivalent）仍待实现/待授权。
 #### 6.6.4 E/S/J 模块全组合提示词消融（描述性；前后两半非同批）
 
 > **⚠️ 表 2 的最终版本在 §6.6.4.1（2026-09-21，PAPER-FINAL-REPAIR）。** 本节及以下的
-> modular 家族消融**不是**表 2：表 1 的正式 Direct-LLM 行用的是 monolithic v6 prompt
+> modular 家族消融**不是**表 2：表 1 的正式 LLM-RE 行用的是 monolithic v6 prompt
 > （sha `3aa64877…`），而 modular 家族是另一个更小的 prompt 体系，且 9/17–20 的运行
 > 把 S 与 J 关掉了（`s_included=false`、`j_included=false`）。两者不是同一个系统，
 > 因此 modular 结论**不能**用来支撑或反驳表 1 的方法。本节保留为描述性研究记录。
@@ -1333,7 +1333,7 @@ AB-4（dual-view adapter）/AB-10（style-equivalent）仍待实现/待授权。
 
 #### 6.6.4.1 表 2（最终）：v6 prompt 单因素消融，与表 1 同 prompt 家族同口径
 
-**为什么用这一套。** 表 1 的正式 Direct-LLM 行由 monolithic v6 prompt
+**为什么用这一套。** 表 1 的正式 LLM-RE 行由 monolithic v6 prompt
 （`prompts/sun_compat/direct_llm_sun_record_prompt_v6_d1r1_2026_08_05.md`，
 sha `3aa64877…`）产出。该 prompt 的严格单因素消融**已经执行**（450 次真实调用，
 DeepSeek-V4-Pro-0813，temperature=0、retry=0，failed=0）。历史报告
@@ -1439,7 +1439,7 @@ Stage 2 正式两方法主表及来源绑定见 §7.2；modality label 与五字
 
 ### 7.2 Stage 2 正式两方法主比较（最终采用值于 2026-09-26 固定）
 
-**最终论文采用值：Direct-LLM Overall F1 = 0.8378，Sun 方法本地重建
+**最终论文采用值：LLM-RE Overall F1 = 0.8378，Sun 方法本地重建
 Rules-Only = 0.7631，绝对差 +7.47 个百分点。** 采用既有
 `outputs/reports/stage2_table1_paper_final_v1.json` 的五字段 pooled 口径，绑定
 原 `direct_llm_formal_arm_v1`（v6/R3）与 `b0_formal_arm_v1`；用户已决定此表
@@ -1457,7 +1457,7 @@ Rules-Only = 0.7631，绝对差 +7.47 个百分点。** 采用既有
 | 方法 | actor | action | condition | constraint | exception | **五字段 pooled F1（合同口径 Overall）** | 五字段 mean F1（次口径） | Modality label acc / macro-F1 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | Sun 方法本地重建（Rules-Only，B0） | 0.8203 | 0.8927 | 0.7738 | 0.6182 | 0.8800 | 0.7631 | 0.7970 | 0.7400 / 0.7128 |
-| Direct-LLM（旧代号 D1） | 0.7579 | 0.9437 | 0.8380 | 0.7427 | 0.7619 | **0.8378** | 0.8088 | 0.8333 / 0.7695 |
+| LLM-RE（旧代号 D1） | 0.7579 | 0.9437 | 0.8380 | 0.7427 | 0.7619 | **0.8378** | 0.8088 | 0.8333 / 0.7695 |
 
 **Overall 口径（2026-09-21 修正，PAPER-FINAL-REPAIR）。** G0.4 合同规定正式主报告为
 「粗粒度五个 span-bearing 字段 + 单独的四类 modality label 指标」，且 modality
@@ -1466,14 +1466,14 @@ evidence span「不可用、绝不置零、绝不聚合」。修正前 `evaluate
 （已发布 Gold 的 modality 是纯字符串，evidence 为空），既违约又混入近常数项。
 现以 `pooled_five_span_fields`（仅 actor/action/condition/constraint/exception 的
 micro pooled P/R/F1）为**唯一合同口径 Overall**：Rules-Only **0.7631**（P 0.6984 /
-R 0.8410）vs Direct-LLM **0.8378**（P 0.8695 / R 0.8083），**Δ +7.47 pp**。
+R 0.8410）vs LLM-RE **0.8378**（P 0.8695 / R 0.8083），**Δ +7.47 pp**。
 旧的六字段 aggregate 降为显式 `NON_CANONICAL` provenance 字段，不得再作 Overall。
 
 **表注必须写清**：Overall 只聚合五个 span 字段；modality 是四类 **label** macro-F1，
 单列且绝不并入 Overall。
 
 **必须同时承认的两点**：① pooled F1 下 **Rules-Only 的 recall（0.8410）高于
-Direct-LLM（0.8083）**，且 Ours 并非全面领先——actor（−6.24 pp）与 exception
+LLM-RE（0.8083）**，且 Ours 并非全面领先——actor（−6.24 pp）与 exception
 （−11.81 pp）仍低于 Rules-Only；② 五字段 **mean** 口径下 Δ 仅 **+1.18 pp**，远小于
 pooled 的 +7.47 pp。两个口径由同一批预测算出，只因聚合方式不同而不同，因此
 **必须同时报告 pooled（主）与 mean（次）**，只报 pooled 会被质疑为口径挑选。
@@ -1486,11 +1486,11 @@ pooled 的 +7.47 pp。两个口径由同一批预测算出，只因聚合方式�
 **定义敏感**并给区间，不得只报单个大数。比较对象必须写明是
 **本项目 Sun-style rules 臂在本项目更宽的 Gold 定义上评分**，不是 Sun 自己报告的数字。
 
-字段级结论（描述性，禁止显著性推断）：Direct-LLM 在 action（+0.051）、condition
+字段级结论（描述性，禁止显著性推断）：LLM-RE 在 action（+0.051）、condition
 （+0.064）、constraint（+0.125）与 modality label accuracy（0.8333 vs 0.7400）
 领先 Rules-Only；Rules-Only 在 actor（+0.062）与 exception（+0.118）领先
-Direct-LLM。历史 Rules+LLM-Repair 因 actor 过度抽取而 net-negative（actor F1 0.4296，
-vs Rules-Only 0.8203 / Direct-LLM 0.7579），保留为历史研究记录。
+LLM-RE。历史 Rules+LLM-Repair 因 actor 过度抽取而 net-negative（actor F1 0.4296，
+vs Rules-Only 0.8203 / LLM-RE 0.7579），保留为历史研究记录。
 **本表支持固定数据上总体 F1 更高的描述性结论，不支持全面或普遍优越的声明。**
 
 ### 7.3 复杂度分层与错误类型（S2.12，零 API arm）
@@ -1500,11 +1500,11 @@ API/0 network、cost=$0）：overall modality accuracy / macro-F1 = 0.638889 /
 0.535461；五字段 span P/R/F1 = 0.862319 / 0.802721 / 0.831453；L1=31、L2=5、
 L3=0（无样本，不报性能）。这是**单一 zero-API arm**，不是两方法比较。Rules+LLM-Repair 已按用户
 2026-09-14 决定退出后续实验，其 F-1/F-2/F-3 共 27 次取消且不挪用；不会再有该臂的
-复杂语料评价。当前两方法合同只等待 Direct-LLM 的 36 次（D-CAL=1、D-REST=35）真实
+复杂语料评价。当前两方法合同只等待 LLM-RE 的 36 次（D-CAL=1、D-REST=35）真实
 预测、评价和与 Rules-Only 的同口径比较；Direct 未运行前 S2.12/S2.13 明确未完成。
 合同与命令绑定见 `outputs/reports/s2_12_two_method_contract_v1.json`。
 
-[[TODO-RESULT:S2.12：Direct-LLM 真实 36 次完成后，回填 Rules-Only vs Direct-LLM
+[[TODO-RESULT:S2.12：LLM-RE 真实 36 次完成后，回填 Rules-Only vs LLM-RE
 复杂语料同口径比较与 S2.12 完成记录；不得等待或重跑已取消的修复组]]
 
 ### 7.4 Stage 3 违规检测：配对合规 benchmark（主）与原 33 条 panel（已废止）
@@ -1603,7 +1603,7 @@ missing_action 8 对、incorrect_actor 5 对；out_of_order 10 对全部
 | Ours（自动 grounding） | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | N/A | N/A | N/A | 1.0000 | 1.0000 | 1.0000 | 13/13 | 0 |
 | Oracle / Grounded 上界（声明绑定，非 Ours） | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | N/A | N/A | N/A | 1.0000 | 1.0000 | 1.0000 | 13/13 | 0 |
 
-**Ours 组件与隔离**：Ours 先从 Direct-LLM Rule Record + control Process Record
+**Ours 组件与隔离**：Ours 先从 LLM-RE Rule Record + control Process Record
 生成 automatic grounding predictions，持久化后才允许 evaluator 读取 Binding
 Reference。Grounding 单独评估：action any-action top1 accuracy = 0.5000，
 candidate-set recall = 1.0000，
@@ -1617,7 +1617,7 @@ Ours detector 使用候选集合的 missing/lane differential；它不读取 ben
 1. **差距是 grounding 效应，不是前人算法弱。** Sun/Winter 行是在同一 eligible
    item subset 上重算的相似度 grounding 结果；不得写成"前人方法差"。
 2. **Oracle / Grounded 上界不是 Ours。** 它消费 supplied human binding；
-   Ours 行才走 Direct-LLM Rule Record → automatic grounding → detector。
+   Ours 行才走 LLM-RE Rule Record → automatic grounding → detector。
 3. **out_of_order 目前不可声称正式结论。** 在最终人工批准 order 语义之前，
    它只能是 N/A；不得把 process-only mutation 写成 formal rule order。
    全量三类 formal claim 仍需人工确认 19 个 unresolved pair
@@ -1652,7 +1652,7 @@ evaluation.json（Winter 3.9s、Sun 15.0s、BM25 6.0s、TF-IDF/SVD 12.7s）；
 
 Sun 原三类公式保留。执行者检查已恢复规则与动作、流程对象与动作的关联；时间数值矛盾仅使用映射通过且明确绑定同一动作的上限证据；五分类混淆矩阵增设无法判断列，修复漏计 FN 与误判合规 FP 的问题。见修复报告，历史结果仅留作溯源。
 
-参考确定性抽取（非人工 Gold、非 Direct-LLM）：
+参考确定性抽取（非人工 Gold、非 LLM-RE）：
 
 | 方法 | 禁止动作 / 条件 / 约束 / 例外 F1 | Macro-F1 | Exact | 错误类型数 | 目标类型不可观察数 |
 |---|---:|---:|---:|---:|---:|
@@ -1872,7 +1872,7 @@ phrase Gold 不可得；德文法规与英文公共 marker 之间需要显式语
    - 如何披露：`B0_R2_METHOD_CROSSWALK.md` 11 元素逐项记录实现/测试/披露。
    - 为何不需要继续：这属于已披露的复现边界，不是可“修复”的缺陷。
 
-### 8.2 Direct-LLM（直接 LLM）的局限性
+### 8.2 LLM-RE 的局限性
 
 1. **constraint recall 较弱（最弱字段）**。
    - 定量证据：基线 R=0.288（99 个 constraint 内容进 action span、91 个完全
@@ -1907,7 +1907,7 @@ phrase Gold 不可得；德文法规与英文公共 marker 之间需要显式语
    - 文本例子：表述 `"the body shall ensure…"` 中抽取无 Gold 交叠的泛指主语作为
      actor。
    - 错误原因：LLM 把非 actor 主语也列为 actor；多词/泛指实体边界判断不稳。
-   - 方法边界：actor 字段是 Direct-LLM 相对弱项（P 侧）；R 侧召回尚可
+   - 方法边界：actor 字段是 LLM-RE 相对弱项（P 侧）；R 侧召回尚可
      （coarse 0.8780）。
    - 可能优化方向：actor 定义更严格（只取最小名词短语、禁止泛指主语）；few-shot
      增加反例。
@@ -1915,7 +1915,7 @@ phrase Gold 不可得；德文法规与英文公共 marker 之间需要显式语
 
 4. **高精度、较保守、召回偏低（整体模式）**。
    - 定量证据：细 Gold F1 0.7756（P 0.8793 / R 0.6938）vs Rules-Only 0.7186
-     （P 0.6845 / R 0.7564）——Direct-LLM 精度更高、召回更低；“宁可漏抽不误抽”
+     （P 0.6845 / R 0.7564）——LLM-RE 精度更高、召回更低；“宁可漏抽不误抽”
      在低资源字段（exception/constraint）牺牲召回。
    - 错误原因：prompt 的 “不确定就省略/入 unsupported” 保守指令 + 低资源字段
      few-shot 不足。
@@ -1997,7 +1997,7 @@ Rules-Only 0.7986（−0.0365）、actor P 0.7077→0.2754。结论引用
 正式或 DEV 标注的结果：(1) Stage 1 在固定 GDPR-7 上完成描述性复现（P2
 语义 micro-F1 0.8185、accuracy 0.6928、triple 0.4222；structure 1.0 仅
 共享解析；P0 0/P1 0.5956 提供下限与规则基准）；(2) Stage 2 正式三方法
-比较显示无整体胜者——Direct-LLM 在 action/condition/constraint/modality
+比较显示无整体胜者——LLM-RE 在 action/condition/constraint/modality
 label 领先，Rules-Only 在 actor/exception 领先，Rules+LLM-Repair 因 actor
 过度抽取成为净负对照（§7.2）；(3) Stage 3 在人工 33 条 panel 与新增 30 条
 合成受控错误 panel 上量化了四类非 LLM 方法：missing_action 最易检测，
