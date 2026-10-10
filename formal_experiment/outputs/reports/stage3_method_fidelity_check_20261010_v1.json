@@ -1,0 +1,2985 @@
+{
+  "schema_version": "stage3_method_fidelity_read_only_check@1.0.0",
+  "date_local": "2026-10-10",
+  "check_id": "S3-METHOD-FIDELITY-CHECK-V1",
+  "code_or_config_modified": false,
+  "reference_labels_or_scope_modified": false,
+  "experiment_inference_runs": 0,
+  "llm_api_calls": 0,
+  "full_tests_run": false,
+  "references_code_executed": false,
+  "source_worktree_head": "981e09c3090f44a0da388a7363db124d9ca78815",
+  "current_workspace_head_before_report": "263b1ca3f3a3f4a330f9fc0d9e25003b86d97ffe",
+  "paper_source_limitations": {
+    "Sun": "Local PDF is an earlier author manuscript; final publisher full text and author Stage-2 code/weights/complete markers unavailable here. Final publisher abstract and figure availability checked separately.",
+    "Winter": "Primary author PDF retrieved read-only at https://eprints.cs.univie.ac.at/6508/1/compliance_assessment_paper_ER2020.pdf; original prototype compared as text only."
+  },
+  "metrics_original_scope": {
+    "sun": {
+      "overall": {
+        "TP": 37,
+        "FP": 60,
+        "FN": 32,
+        "TN": 31,
+        "unknown_positive": 26,
+        "unknown_negative": 41,
+        "scored_cells": 201,
+        "f1": 0.4457831325301205
+      },
+      "per_type": {
+        "missing_action": {
+          "TP": 23,
+          "FP": 45,
+          "FN": 10,
+          "TN": 26,
+          "unknown_positive": 4,
+          "unknown_negative": 9,
+          "scored_cells": 113,
+          "f1": 0.45544554455445546
+        },
+        "incorrect_actor": {
+          "TP": 13,
+          "FP": 15,
+          "FN": 20,
+          "TN": 4,
+          "unknown_positive": 20,
+          "unknown_negative": 28,
+          "scored_cells": 80,
+          "f1": 0.4262295081967213
+        },
+        "out_of_order": {
+          "TP": 1,
+          "FP": 0,
+          "FN": 2,
+          "TN": 1,
+          "unknown_positive": 2,
+          "unknown_negative": 4,
+          "scored_cells": 8,
+          "f1": 0.5
+        }
+      }
+    },
+    "ours": {
+      "overall": {
+        "TP": 47,
+        "FP": 60,
+        "FN": 22,
+        "TN": 58,
+        "unknown_positive": 8,
+        "unknown_negative": 14,
+        "scored_cells": 201,
+        "f1": 0.5340909090909091
+      },
+      "per_type": {
+        "missing_action": {
+          "TP": 19,
+          "FP": 25,
+          "FN": 14,
+          "TN": 55,
+          "unknown_positive": 0,
+          "unknown_negative": 0,
+          "scored_cells": 113,
+          "f1": 0.4935064935064935
+        },
+        "incorrect_actor": {
+          "TP": 27,
+          "FP": 35,
+          "FN": 6,
+          "TN": 2,
+          "unknown_positive": 6,
+          "unknown_negative": 10,
+          "scored_cells": 80,
+          "f1": 0.5684210526315789
+        },
+        "out_of_order": {
+          "TP": 1,
+          "FP": 0,
+          "FN": 2,
+          "TN": 1,
+          "unknown_positive": 2,
+          "unknown_negative": 4,
+          "scored_cells": 8,
+          "f1": 0.5
+        }
+      }
+    },
+    "winter": {
+      "overall": {
+        "TP": 38,
+        "FP": 44,
+        "FN": 31,
+        "TN": 83,
+        "unknown_positive": 3,
+        "unknown_negative": 5,
+        "scored_cells": 201,
+        "f1": 0.5033112582781457
+      },
+      "per_type": {
+        "missing_action": {
+          "TP": 14,
+          "FP": 33,
+          "FN": 19,
+          "TN": 47,
+          "unknown_positive": 0,
+          "unknown_negative": 0,
+          "scored_cells": 113,
+          "f1": 0.35
+        },
+        "incorrect_actor": {
+          "TP": 24,
+          "FP": 11,
+          "FN": 9,
+          "TN": 36,
+          "unknown_positive": 0,
+          "unknown_negative": 0,
+          "scored_cells": 80,
+          "f1": 0.7058823529411765
+        },
+        "out_of_order": {
+          "TP": 0,
+          "FP": 0,
+          "FN": 3,
+          "TN": 0,
+          "unknown_positive": 3,
+          "unknown_negative": 5,
+          "scored_cells": 8,
+          "f1": 0.0
+        }
+      }
+    }
+  },
+  "positive_actor_unknown_reasons": {
+    "sun": {
+      "empty_rule_actor_denominator": 11,
+      "incomplete_rule_actor_action_map": 1,
+      "action_mapping_below_gamma": 8
+    },
+    "ours": {
+      "action_mapping_below_gamma": 3,
+      "empty_rule_actor_denominator": 3
+    }
+  },
+  "actor_filter_probes": [
+    {
+      "phrase": "the controller",
+      "head": "controller",
+      "head_in_lexicon": true,
+      "accepted": true
+    },
+    {
+      "phrase": "The data subject",
+      "head": "subject",
+      "head_in_lexicon": false,
+      "accepted": false
+    },
+    {
+      "phrase": "certification bodies",
+      "head": "bodies",
+      "head_in_lexicon": false,
+      "accepted": false
+    },
+    {
+      "phrase": "certification body",
+      "head": "body",
+      "head_in_lexicon": true,
+      "accepted": true
+    }
+  ],
+  "actor_marker_surfaces": [
+    "association",
+    "associations",
+    "authorities",
+    "authority",
+    "bank",
+    "beneficiary",
+    "board",
+    "body",
+    "child",
+    "company",
+    "controller",
+    "court",
+    "developer",
+    "developers",
+    "driver",
+    "employee",
+    "employees",
+    "employer",
+    "employers",
+    "expert",
+    "farmer",
+    "farmers",
+    "forester",
+    "foresters",
+    "fund",
+    "funds",
+    "inspector",
+    "insured",
+    "judge",
+    "minister",
+    "office",
+    "officer",
+    "operator",
+    "owner",
+    "owners",
+    "person",
+    "persons",
+    "physician",
+    "processor",
+    "prosecutor",
+    "recipient",
+    "shareholder",
+    "shareholders",
+    "society",
+    "spouse",
+    "successor",
+    "taxpayer",
+    "taxpayers",
+    "trader",
+    "traders"
+  ],
+  "winter_bpmn_node_audit": [
+    {
+      "case_id": "case_0164a880bf44",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "4b35e531680106b588c4c3d04e7e56e1a30035f2d288e72ed742fd952741c91c"
+    },
+    {
+      "case_id": "case_026d89f057e8",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "cc8e925127b5e207074c8ea1983bfd217507428e5ec91f2541124f71b16cac87"
+    },
+    {
+      "case_id": "case_0697d9b84b86",
+      "process_names": [
+        "Processor"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "be95794fb6c7b1fac90c43fbbb360164b3894d204175cead95ab36d136283e57"
+    },
+    {
+      "case_id": "case_0ca6ea35f87e",
+      "process_names": [
+        "Controller and Processor"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "720f506c644be7775393fdf100260244400d0a2825720fedc2f7921101a6f1c1"
+    },
+    {
+      "case_id": "case_0f67bfdd277b",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "e7ed6e0962bdd2167380613047183d3a2686feb2f6a384c4f2a20f35e33b1e03"
+    },
+    {
+      "case_id": "case_11233dd30223",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "ab9ab48f6db404820b58048f7df1377a23984e99544e6181ca2e90c9a0ab459c"
+    },
+    {
+      "case_id": "case_156f3d39867e",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "6d01023aa3227c3db75600841468204054b03b9244fdc0994292596317c92350"
+    },
+    {
+      "case_id": "case_18d0d72c49e8",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "7b9c405eff8ffdb77ec9b6de916cd19a9d338a67a0ca7028627bf6546862281f"
+    },
+    {
+      "case_id": "case_19b2d6f1bfb0",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "3401c438c580cf6a4aaa84a058596d3978f1fd4b3461e5798445dea929699be0"
+    },
+    {
+      "case_id": "case_1a2d6abc026a",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "bfbf173ef644a605067de64222c1281f9b3dfeec2281b436eeee6e89ffb73b62"
+    },
+    {
+      "case_id": "case_1d6ccfc9b95c",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "047bd5829ac5943be7e483a24b7ac669dbeab1c4eff36c56013b8d62d79b4c5c"
+    },
+    {
+      "case_id": "case_1e5363aa87b5",
+      "process_names": [
+        "Supervisory authority"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "a9ca9c9734f3e0b31e54b8be928a40ddd444550f5f830e0179d3f333f28853bd"
+    },
+    {
+      "case_id": "case_1f817e0b0d37",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "1e600695e4861db54cdc2f86e82151c6ef54e76618454b1fd3df78dc61d98e4d"
+    },
+    {
+      "case_id": "case_1fafed22bfdd",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "a8ff2d1da7ba58f62af09b7b5ea6fdf37ef2cc6591c0519f0e987264853dd9e0"
+    },
+    {
+      "case_id": "case_1fd8d9be0c9d",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "6387865dd656d295ab06b9ce686b408d2ef1df144111321c13161a3500a5b164"
+    },
+    {
+      "case_id": "case_203f2134c0ec",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "a376ecd63809769e9396b1834643f3a63318481148031baeef91e7e49f540041"
+    },
+    {
+      "case_id": "case_220918995d29",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "46f08ab78a6ca3ef3058f090643b8cc72b56da178390bb0d2bccafced72ce232"
+    },
+    {
+      "case_id": "case_221218bba2d3",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "22146373e2b38a21e2dcde8e4fa76d53ee941ad27b17e4e51d250e9b0941b1d7"
+    },
+    {
+      "case_id": "case_250418025567",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "2cc762fbde31fa076a5aa78e84c996f67ea01ccbd5475a73c9df86d3f859fc94"
+    },
+    {
+      "case_id": "case_25d20a4b486f",
+      "process_names": [
+        "Supervisory Authority"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "18a7f188e22a99b2d85cbd835769081da95506e85b7cb44039a2386dd5f6faba"
+    },
+    {
+      "case_id": "case_26761c804689",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "d80fd098f3940c0b24db23e54b11610620b34df1eb37e8876710794b802c30c0"
+    },
+    {
+      "case_id": "case_27553ad672b2",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "27cdf1add6280b8366d6d6a18576c209232ff799789ab7733f1b369d3a91c2e4"
+    },
+    {
+      "case_id": "case_27a05191cde1",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "dfcef9023fed4ddcc9035bb15c4f985ad3c1ca0947a50b2d07f3f99f0510d5c3"
+    },
+    {
+      "case_id": "case_293adf4880a6",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "aaf188d4ac974f68d484a424b306d4bb2f9d9ada17ad84c783da6130eb842cdc"
+    },
+    {
+      "case_id": "case_2a918b013dbb",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "886820f53a8642295909d10826495077609ef0fc1509adc66234a72f8d387ebf"
+    },
+    {
+      "case_id": "case_2e0630dc5be5",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "86cd53d043ccf9ebda42038aa78b072441b91c5a516fd11f2b12e80354a5a015"
+    },
+    {
+      "case_id": "case_2fbe69c72793",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "a2cb7125775be5d201a29159c98b4183c85bf177dfbf695bd923326ddfe5a372"
+    },
+    {
+      "case_id": "case_35ae84dddc65",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "3e79dc2e22499da051fb62e34bd5bd49038457279577376da3594767dd6675fc"
+    },
+    {
+      "case_id": "case_36a5f51046f7",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "b8a24bb9036a577be44e2682ad95126ce8cabe0b163ab11d5a9bd0d465e6fcf5"
+    },
+    {
+      "case_id": "case_3af5fd62647b",
+      "process_names": [
+        "Certification body"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "4c60bb4ee1315009b32c02292399b4165466cfe3ed50656cc2a56eeaa077b78d"
+    },
+    {
+      "case_id": "case_3b01b9c36d0f",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "30a8c87a10709e3d69ab006c228ba6d49b9f2b1b2ed3757114ba6fed4445fa81"
+    },
+    {
+      "case_id": "case_3db096abecec",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "9b645ad4f6f32f5462702c04d3ede867bd20902104a751fee6b42a40e25eb3f4"
+    },
+    {
+      "case_id": "case_436340192865",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "94e2bbc0687317efb9f763cc44fda0f824924f418befd551795baf78dece9a5b"
+    },
+    {
+      "case_id": "case_44ded3550ee5",
+      "process_names": [
+        "Supervisory authority"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "0deb5c58a4f38aa89bfad1ef094eedf6adda654ff86937affacc6066a80f0d98"
+    },
+    {
+      "case_id": "case_47ac07c5ced4",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "468a3201701cac03177be94b1e5950c9ef3cb45d1978bd7c05389c30d8fde283"
+    },
+    {
+      "case_id": "case_4aec33c00dc8",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "41e44a04d5285ddfb5ef340dcd6235b8d1d537409cc54de4d4ca405ede836117"
+    },
+    {
+      "case_id": "case_4c59fee89687",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "861e1ef06804eaec13ae2fe9c7065d8c4967189ca044588d01ec498215487daf"
+    },
+    {
+      "case_id": "case_50f498770ae9",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "3ee815902b061c6b2e3d2721af646895b218331078f468879b498da87c71498f"
+    },
+    {
+      "case_id": "case_5751d20f4ed7",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "b36249d332e7bc1637e69b2bf6ee884e7a961c90ff686f157c23b5f5688f94a4"
+    },
+    {
+      "case_id": "case_591221684b9f",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "779f6b60201630bf22f961c9bb8d6c93db2780e7ae3fdd85b9745a0f0bcebffd"
+    },
+    {
+      "case_id": "case_5b249b3a462b",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "f9554adfb01e5876565bfacea7ba9d54c2a4c467df60d97747a50b604c9aded6"
+    },
+    {
+      "case_id": "case_5b5cc6e83173",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "c7720f4e1af4cb216ad4bce18f8f5dee017454f3ce0d12f3ff5649903fdfc4f6"
+    },
+    {
+      "case_id": "case_5bcf29af32f6",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "29778a762d6a25774e5b7018cdf7a6cfa7a5677333f7e6b528917add119e667f"
+    },
+    {
+      "case_id": "case_6209f221b20b",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "c7ae887b8fc0d04c07a8928d57c051f641f8fd4ac59a7a15cd7a809d1858d068"
+    },
+    {
+      "case_id": "case_648835a58615",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "34d244d90b6d03c9442f619389823ebfaa3990ea694db2143e3b606ce3e6a00c"
+    },
+    {
+      "case_id": "case_64985e535fd0",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "974ea064defb35e7c9a31e4543bd930afb5dfdb393f763e8de9c24deab81dfcc"
+    },
+    {
+      "case_id": "case_64e83d36bba3",
+      "process_names": [
+        "Supervisory authority"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "aef5d0956678a643c4eb493e8107dfab74b0cbb922884a3d3114d36ffcd949a7"
+    },
+    {
+      "case_id": "case_65628736fcec",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "4712ff3dfac5b268be9af07c9d494bb03d941fd39d78958ea6c0f61e73bc7137"
+    },
+    {
+      "case_id": "case_661cbff65102",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "e7224982985cf5ff7672f9f50cac7084684de9f4e259faa40f1115afaef37662"
+    },
+    {
+      "case_id": "case_66774ccb1348",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "c488c939093f0bfaa375a6a1ab5b483fc45b7a5e5e0ee3728b4d4d08197d7be5"
+    },
+    {
+      "case_id": "case_6711c5a0dad8",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "8523a67f62d7635427c48fc41579b91449abfcee9dbfcd783e17170314aa015c"
+    },
+    {
+      "case_id": "case_6cb0e57227f2",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "dd52f5f64a5dd11f8683434cbdcbfa968ba41fa1cfd014b681dea1ed04ee3756"
+    },
+    {
+      "case_id": "case_6d3b90db76ed",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "6349aa8910934bc7ee1bf4f59b7daabeb6505735f0d1b1577e63c3953b303bd1"
+    },
+    {
+      "case_id": "case_6f4087fc924f",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "47c04d1ac9fb5b02f005dff87659e09fe8a2bcc08e4188091eff1d73e01987d4"
+    },
+    {
+      "case_id": "case_6fda0f20b097",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "fa9c27ce875e42840396bdb754e07a1f5cf99e8e1784312baad1b3f6626b02cf"
+    },
+    {
+      "case_id": "case_706168fa759f",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "7d6fc91482fd75da06645b6320506f2108d8a0ffe638ec7d0688fba418290934"
+    },
+    {
+      "case_id": "case_72073c61be4c",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "c499ceee6bec2b470a33af9e81e3b194951699b830fb4db42bbe9aa3dd58b33c"
+    },
+    {
+      "case_id": "case_7396f1ecbaf2",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "681c02ca20e216a407450eeeaaa1b52f016945a1d452703d7cf47081e20ba6d0"
+    },
+    {
+      "case_id": "case_7c047344bd97",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "a541bb5c6a693c18dbcd1a2e2274a310b43ac88fda715165ccbf2560fd29d754"
+    },
+    {
+      "case_id": "case_7dcc88ac3cf1",
+      "process_names": [
+        "Supervisory authority"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "ac5b3498a8c4124602b9be5b25985215a597d61576b6cbfe3b003ca312afe02e"
+    },
+    {
+      "case_id": "case_806f7830225a",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "64e6495bdbfea886d2661954d9e012d7b5b7d23cc67b7da1d33c3aba3d0bc78f"
+    },
+    {
+      "case_id": "case_81af7889b5bb",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "190964817296d482b5330b1ef13713044734ca11f5c59bc2a88a6456d39ccb07"
+    },
+    {
+      "case_id": "case_83e2662c1457",
+      "process_names": [
+        "Certification body"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "55944583a70eb583aa1cb020877315cb811f52d4aaa693e6e0e81132a84e6b38"
+    },
+    {
+      "case_id": "case_8447fd35edc7",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "15e5e3141bf9ff39230fa04e710d57fd9c855f85720cc353e28241d34488ad1f"
+    },
+    {
+      "case_id": "case_8480429a9517",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "ef566d00e88f3ac9001deb4c8e096cf03d91776305b0acb143da89e2f8f160d3"
+    },
+    {
+      "case_id": "case_88a2fd3f66cf",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "51a7f0f47aa9b609fe8ca4d39f7d64af1e985263910016352cf58484d451902a"
+    },
+    {
+      "case_id": "case_89f6d9e7047b",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "08ad056664bdf0c60a4964dc10320deb8fadc9b3b75658a815468f6a3d39553f"
+    },
+    {
+      "case_id": "case_8c729ed572f4",
+      "process_names": [
+        "Supervisory Authority"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "1da64941187cd054f9041f46a31efe859fd15a7b64d97504fca5e340b29e89ce"
+    },
+    {
+      "case_id": "case_8d21f4b6fb98",
+      "process_names": [
+        "Controller and Processor"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "c4cb8d05741a9f5d4e685351cb817e4e9899609c3159c5661dab1b3db05781bd"
+    },
+    {
+      "case_id": "case_9742238625a1",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "4ec07c303b3da1801faf7fcda22a2ff26e9ab6202dd46e1f541d3f4f0ff7280e"
+    },
+    {
+      "case_id": "case_99b7bc6f1fc6",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "52899bc434126ed43be48f433ca47a5d84f84294905a10d94fbae3558a0d3490"
+    },
+    {
+      "case_id": "case_9c6fcd32f03c",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "5d6d2d67b56d465da5c0fad47275a966511d3d34c3e1e329d70ba74dedbf4e34"
+    },
+    {
+      "case_id": "case_a0f75080210f",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "e7b1a1ca37e11b36351811eb43a46d8f4eb0e882bcc01eda2e3902ae4157a179"
+    },
+    {
+      "case_id": "case_a1712c670943",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "cb161b76a92b245b56fe20ddf756b1078bb851fdf463179f5e2255698731d7f4"
+    },
+    {
+      "case_id": "case_a2f445c641d1",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "c8431bb06e70501ebadef82f48a71071da63b072017072aeac1ffa58eee70830"
+    },
+    {
+      "case_id": "case_a9fd75331508",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "d9e500cf77058470a0077a78525a613cdd03c87c26e765b1a0262fe54a188b4d"
+    },
+    {
+      "case_id": "case_aae318ffa9f8",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "e99f48d5ddea9dba8f31954f224655dcf978a25d81bcbacaf5b62da0749d805d"
+    },
+    {
+      "case_id": "case_b15419d68b21",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "abc90b9c50d29302fe5a006808594bb17c8934a1a72f37877862725e6228d99f"
+    },
+    {
+      "case_id": "case_b5a60700383d",
+      "process_names": [
+        "Controller and Processor"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "cb5f00035b01b1d583bcd569c70bca340442bef6176ae8f2eea270a81915ff57"
+    },
+    {
+      "case_id": "case_b6bda7bca9ff",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "4b54b904c1ceac897af770e98c1e90615c26a6223c9eb00233647a126f0d8fb7"
+    },
+    {
+      "case_id": "case_b72abd1e6b8b",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "ae260f2f588015d0385ab958d483453826e4f6cb2eb161b8d270b04b62e3bbb9"
+    },
+    {
+      "case_id": "case_b91fc088d4c5",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "c22854fcbb83d7936897800f0d3cacd780e369702eaedc4733a58d08782db42d"
+    },
+    {
+      "case_id": "case_ba895d210eaf",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "bb591f26794e26266ef18c88a365479bde26d00d27bc94301289b470565975e7"
+    },
+    {
+      "case_id": "case_bb81d68dc7f5",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "9d9c96bb5b942ad5b156f1244b0c4b9f6961d63bef1e4dcba99977019710fcb7"
+    },
+    {
+      "case_id": "case_c20eeebe67dd",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "734692fae94f47ea6d83cb2e4ae20e58b4a753ae6cc98a12c82f948dffc4292a"
+    },
+    {
+      "case_id": "case_c2c28cb239bc",
+      "process_names": [
+        "Board"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "3afd993ac09c573b489f58f9efaa00dbde2ba9f3641060c33c882e16e90dbacd"
+    },
+    {
+      "case_id": "case_c5b585c4439f",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "c8813996c077f3c4dbb30ed65800832ada186a7fda4979d96a27b92f7c5061aa"
+    },
+    {
+      "case_id": "case_c962e006a37d",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "5e7656934ee2683bbca03bc36bc42e80ea2cf21e4da0cbfdedef16e09cb9f381"
+    },
+    {
+      "case_id": "case_cecd14adb006",
+      "process_names": [
+        "Processor"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "4181251d069d4157dc8b1a8c2dd7d30702f344b14bd6223e0f4ba25fe2c1b66e"
+    },
+    {
+      "case_id": "case_d1ab41696c03",
+      "process_names": [
+        "Certification body"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "511e787565671e09ff8587553313e0eb13c26e67d20909fc1b91581a087b0d1e"
+    },
+    {
+      "case_id": "case_d2f6fee80f4e",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "6c785c2b3d28dcee1109f3ddc5a15fe3ede5400e8bb0ab9857b5230300eda731"
+    },
+    {
+      "case_id": "case_d391f7745e2d",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "5d8f46ff2be13f6afc8c8cee71aeb5f81719d9c482461b120b1e2171b92e0f95"
+    },
+    {
+      "case_id": "case_d46c4dbbf7b8",
+      "process_names": [
+        "Supervisory Authority"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "695546a7b9fae296a6153cc28ac38c44e6f5329e0aa9433ba6720d28f72dd403"
+    },
+    {
+      "case_id": "case_d7a85c641eb0",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "956a5b8592a6fa53bda1858049ef79ab1e6ba2d80bf6d2c5ff1330de89a21e18"
+    },
+    {
+      "case_id": "case_d8029187c213",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "4bc4be2aec2679cd919f015863170212c6a194ba481a9bd813f6c1469645dcd6"
+    },
+    {
+      "case_id": "case_d824876f7bf8",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "abd193fe13fd48820d718ce4d2df65f62beb0727e1a1a2fc3423a8086342ff47"
+    },
+    {
+      "case_id": "case_dbe5d0716353",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "8b7489b1547ca1a55644d96eb178ccaec50e2f8844f80c132e952250ada9e4ae"
+    },
+    {
+      "case_id": "case_de1137fcd3ae",
+      "process_names": [
+        "Processor"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "e5aa414c0fb8e40510b80c4622d64b911a04d311f0190766c632f7794d9eb6ac"
+    },
+    {
+      "case_id": "case_e1847c1c4ceb",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "b8a618601b89c403c79b496b83d9713ea0baa787e94c71c697c93416a1a5e002"
+    },
+    {
+      "case_id": "case_e29a5ec0bbbc",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "3895f84b2bda59239887a0c52669c1605f413e77c3a87f93df0544bb652bcee6"
+    },
+    {
+      "case_id": "case_e382dcb7708b",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "8d330680fd972cb0225ac2b514259156de5db0c073f01fc10608f72a5f4a0d4d"
+    },
+    {
+      "case_id": "case_e44cf42b30f7",
+      "process_names": [
+        "Processor"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "15c88ee30541c9e33a89f605b436f5efcd969be8fce35518e3b6f7c2caa85b80"
+    },
+    {
+      "case_id": "case_e85d2791c743",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "7f532184a7da5108efe21cb7973b00e22af6fee04721705dc92019988ad6512a"
+    },
+    {
+      "case_id": "case_ec2a9cc66fae",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "2304613a15f051af540078365de82da51e183099203133310bfcd1ac767350c2"
+    },
+    {
+      "case_id": "case_f2558cf5f53d",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "e7b04031a48c6975c31e7bb89e3214a4c2b7377624ef9f2f375bd733cac6ce04"
+    },
+    {
+      "case_id": "case_f2e0ecd3abf8",
+      "process_names": [
+        "Processor"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "15c29383cef6fb36ad3bfd7e18ace1f0643d981c1de7925c1dad6478fcf4624c"
+    },
+    {
+      "case_id": "case_f6dc7b084b03",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "43a87227ad69a973360d0ebc43765feedb43d540fa1568d23885539e4151519a"
+    },
+    {
+      "case_id": "case_f7bb207445df",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "8a72118f8f583cd42afd805a65b00ea760a39c4540c86e00bfd54bc393dd4fb3"
+    },
+    {
+      "case_id": "case_f81de319913d",
+      "process_names": [
+        "Controller and Processor"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "b771d378af029a759f515172cc94bb224f17b974e0c313dcc36c1e9c6c39c8d8"
+    },
+    {
+      "case_id": "case_f88b4ccdc713",
+      "process_names": [
+        "Data subject"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "40da22024bc4b135e225e9b4946fb787af3233d7aa9d2f0407d6c181fc326ef0"
+    },
+    {
+      "case_id": "case_fb1fd0822200",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "25c24792d6696149782f5f64c26ece2270662d418ac5979ad58f79ce50046ad5"
+    },
+    {
+      "case_id": "case_fe8ab9bca28a",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "adfc279e6b1ce6111938a26cc57949ce287bf35571e668a571e78af3a4b54357"
+    },
+    {
+      "case_id": "case_ff937cc4c24e",
+      "process_names": [
+        "Controller"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "c7c0c965f35bfe781b8b8789ef2959db285638354ef579539f572b80c3e40a09"
+    },
+    {
+      "case_id": "case_devsupp_s4t3_baseline",
+      "process_names": [
+        "Processor"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "58285c7963a198a263198c487204e32c1b55bdceac7dc22aac64ea0ea8aa7b9d"
+    },
+    {
+      "case_id": "case_devsupp_s4t3_out_of_order",
+      "process_names": [
+        "Processor"
+      ],
+      "duplicate_participant": false,
+      "unnamed_nodes": [
+        {
+          "tag": "endEvent",
+          "id": "End"
+        }
+      ],
+      "sha256": "0de5b843cd59d14ce12050f22dd37f6c0fa031b0269d87400616e8bcac055b50"
+    }
+  ],
+  "winter_parallel_list_mapping_probe": {
+    "returned_node_id": "End",
+    "returned_label_tokens": [
+      "inform"
+    ],
+    "expected_node_id_for_label": "Activity_1",
+    "models_with_unnamed_End": 115,
+    "duplicate_participant_cases": 0,
+    "prototype_shares_bug": true,
+    "overall_ranking_causality": "Not established; main-scope Winter order cells are all unknown. Obligation/resource costs use label text and process resource rather than this node id."
+  },
+  "case_examples": [
+    {
+      "case_id": "case_19b2d6f1bfb0",
+      "requirement_id": "R5-D-08",
+      "reference_states": {
+        "incorrect_actor": "satisfied",
+        "missing_action": "satisfied",
+        "out_of_order": "not_scored"
+      },
+      "sun_extraction": [
+        {
+          "modality": "obligation",
+          "actors": [],
+          "actions": [
+            "have the right to obtain from the controller confirmation as to whether or not"
+          ],
+          "conditions": [
+            "whether or not personal data concerning him or her are being processed, and, where that is the case, access to the personal data and the following information"
+          ],
+          "constraints": [
+            "the purposes of the processing"
+          ]
+        }
+      ],
+      "ours_extraction": [
+        {
+          "modality": "obligation",
+          "actors": [
+            "The data subject"
+          ],
+          "actions": [
+            "obtain from the controller confirmation as to whether or not personal data concerning him or her are being processed",
+            "access to the personal data and the following information the purposes of the processing"
+          ],
+          "conditions": [
+            "where that is the case"
+          ],
+          "constraints": []
+        }
+      ],
+      "sun_signals": {
+        "incorrect_actor": {
+          "denominator": 0,
+          "evidence": {
+            "details": [],
+            "unmapped_rule_actors": []
+          },
+          "observable": false,
+          "raw_score": null,
+          "reason": "empty_rule_actor_denominator",
+          "status": "unknown"
+        },
+        "missing_action": {
+          "denominator": 1,
+          "evidence": {
+            "details": [
+              {
+                "best_model_action": "The data subject has a right of access and confirmation.",
+                "missing": true,
+                "rule_action": "have the right to obtain from the controller confirmation as to whether or not",
+                "similarity": 0.4923
+              }
+            ]
+          },
+          "observable": true,
+          "raw_score": 1.0,
+          "reason": null,
+          "status": "violated"
+        },
+        "out_of_order": {
+          "denominator": 0,
+          "evidence": {
+            "details": []
+          },
+          "observable": false,
+          "raw_score": 0.0,
+          "reason": "no_rule_order_endpoints",
+          "status": "unknown"
+        }
+      },
+      "ours_signals": {
+        "incorrect_actor": {
+          "denominator": 1,
+          "evidence": {
+            "details": [
+              {
+                "exists_low_similarity": true,
+                "min_process_actor_similarity": 0.1917,
+                "rule_actor": "The data subject",
+                "violated": true
+              }
+            ],
+            "matched_process_action_ids": [
+              "Activity_1",
+              "Start"
+            ],
+            "process_actor_candidates": [
+              "Controller",
+              "confirmation and access to the personal data"
+            ]
+          },
+          "observable": true,
+          "raw_score": 1.0,
+          "reason": null,
+          "status": "violated"
+        },
+        "missing_action": {
+          "denominator": 2,
+          "evidence": {
+            "details": [
+              {
+                "best_model_action": "Provide confirmation and access to the personal data",
+                "missing": false,
+                "rule_action": "obtain from the controller confirmation as to whether or not personal data concerning him or her are being processed",
+                "similarity": 0.7142
+              },
+              {
+                "best_model_action": "Provide confirmation and access to the personal data",
+                "missing": false,
+                "rule_action": "access to the personal data and the following information the purposes of the processing",
+                "similarity": 0.6949
+              }
+            ]
+          },
+          "observable": true,
+          "raw_score": 0.0,
+          "reason": null,
+          "status": "satisfied"
+        },
+        "out_of_order": {
+          "denominator": 0,
+          "evidence": {
+            "details": []
+          },
+          "observable": false,
+          "raw_score": 0.0,
+          "reason": "no_rule_order_endpoints",
+          "status": "unknown"
+        }
+      },
+      "winter_signals": {
+        "incorrect_actor": {
+          "denominator": 4,
+          "evidence": {
+            "mapping": [
+              {
+                "model_obligation_lemmatized": "provide confirmation access to personal datum",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "the datum subject shall have right to obtain from controller confirmation access to personal datum follow information purpose of processing where that be case",
+                "similarity": 0.7523178458213806
+              },
+              {
+                "model_obligation_lemmatized": "the data subject have a right of access confirmation",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "as",
+                "similarity": 0.07013662904500961
+              },
+              {
+                "model_obligation_lemmatized": "provide confirmation access to personal datum",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "to whether not personal datum be be process",
+                "similarity": 0.38647884130477905
+              },
+              {
+                "model_obligation_lemmatized": "the data subject have a right of access confirmation",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "concern he she",
+                "similarity": 0.20970018208026886
+              }
+            ],
+            "resource_set": [
+              "board",
+              "certification body",
+              "controller",
+              "controller and processor",
+              "data subject",
+              "processor",
+              "supervisory authority"
+            ]
+          },
+          "observable": true,
+          "raw_score": 0.0,
+          "reason": null,
+          "status": "satisfied"
+        },
+        "missing_action": {
+          "denominator": 4,
+          "evidence": {
+            "mapping": [
+              {
+                "model_obligation_lemmatized": "provide confirmation access to personal datum",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "the datum subject shall have right to obtain from controller confirmation access to personal datum follow information purpose of processing where that be case",
+                "similarity": 0.7523178458213806
+              },
+              {
+                "model_obligation_lemmatized": "the data subject have a right of access confirmation",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "as",
+                "similarity": 0.07013662904500961
+              },
+              {
+                "model_obligation_lemmatized": "provide confirmation access to personal datum",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "to whether not personal datum be be process",
+                "similarity": 0.38647884130477905
+              },
+              {
+                "model_obligation_lemmatized": "the data subject have a right of access confirmation",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "concern he she",
+                "similarity": 0.20970018208026886
+              }
+            ],
+            "model_obligation_count": 5,
+            "obligation_count": 4
+          },
+          "observable": true,
+          "raw_score": 0.75,
+          "reason": null,
+          "status": "violated"
+        },
+        "out_of_order": {
+          "denominator": 0,
+          "evidence": {
+            "flow_count": 0,
+            "mapping": [
+              {
+                "model_obligation_lemmatized": "provide confirmation access to personal datum",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "the datum subject shall have right to obtain from controller confirmation access to personal datum follow information purpose of processing where that be case",
+                "similarity": 0.7523178458213806
+              },
+              {
+                "model_obligation_lemmatized": "the data subject have a right of access confirmation",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "as",
+                "similarity": 0.07013662904500961
+              },
+              {
+                "model_obligation_lemmatized": "provide confirmation access to personal datum",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "to whether not personal datum be be process",
+                "similarity": 0.38647884130477905
+              },
+              {
+                "model_obligation_lemmatized": "the data subject have a right of access confirmation",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "concern he she",
+                "similarity": 0.20970018208026886
+              }
+            ]
+          },
+          "observable": false,
+          "raw_score": null,
+          "reason": "no_rule_side_flow_relations",
+          "status": "unknown"
+        }
+      }
+    },
+    {
+      "case_id": "case_9c6fcd32f03c",
+      "requirement_id": "R5-D-01",
+      "reference_states": {
+        "incorrect_actor": "satisfied",
+        "missing_action": "satisfied",
+        "out_of_order": "satisfied"
+      },
+      "sun_extraction": [
+        {
+          "modality": "obligation",
+          "actors": [
+            "the controller",
+            "the controller"
+          ],
+          "actions": [
+            "intends to further process the personal data for a purpose other than that for",
+            "provide"
+          ],
+          "conditions": [
+            "Where the controller intends to further process the personal data for a purpose other than that for which the personal data were collected",
+            "prior to that further processing with information on that other purpose and with any relevant further information"
+          ],
+          "constraints": [
+            "the personal data for a purpose other than that for which the personal data were collected",
+            "prior to that further processing with information on that other purpose and with any relevant further information",
+            "to in paragraph 2"
+          ]
+        }
+      ],
+      "ours_extraction": [
+        {
+          "modality": "obligation",
+          "actors": [],
+          "actions": [
+            "provide the data subject prior to that further processing with information on that other purpose",
+            "with any relevant further information as referred to in paragraph 2"
+          ],
+          "conditions": [
+            "Where the controller intends to further process the personal data for a purpose other than that for which the personal data were collected"
+          ],
+          "constraints": [
+            "prior to that further processing",
+            "as referred to in paragraph 2"
+          ]
+        }
+      ],
+      "sun_signals": {
+        "incorrect_actor": {
+          "denominator": 1,
+          "evidence": {
+            "details": [
+              {
+                "exists_low_similarity": false,
+                "min_process_actor_similarity": 1.0,
+                "rule_actor": "the controller",
+                "violated": false
+              }
+            ],
+            "matched_process_action_ids": [
+              "Start"
+            ],
+            "process_actor_candidates": [
+              "Controller"
+            ]
+          },
+          "observable": true,
+          "raw_score": 0.0,
+          "reason": null,
+          "status": "satisfied"
+        },
+        "missing_action": {
+          "denominator": 2,
+          "evidence": {
+            "details": [
+              {
+                "best_model_action": "Further processing of directly collected personal data requires prior notice.",
+                "missing": false,
+                "rule_action": "intends to further process the personal data for a purpose other than that for",
+                "similarity": 0.6887
+              },
+              {
+                "best_model_action": "Provide information on the other purpose prior to further processing",
+                "missing": true,
+                "rule_action": "provide",
+                "similarity": 0.2764
+              }
+            ]
+          },
+          "observable": true,
+          "raw_score": 0.5,
+          "reason": null,
+          "status": "violated"
+        },
+        "out_of_order": {
+          "denominator": 0,
+          "evidence": {
+            "details": [
+              {
+                "constraint": [
+                  "provide",
+                  "intends to further process the personal data for a purpose other than that for"
+                ],
+                "mapped": false,
+                "reason": "endpoint similarity below gamma"
+              }
+            ]
+          },
+          "observable": false,
+          "raw_score": 0.0,
+          "reason": "no_rule_order_endpoints",
+          "status": "unknown"
+        }
+      },
+      "ours_signals": {
+        "incorrect_actor": {
+          "denominator": 0,
+          "evidence": {
+            "details": [],
+            "unmapped_rule_actors": []
+          },
+          "observable": false,
+          "raw_score": null,
+          "reason": "empty_rule_actor_denominator",
+          "status": "unknown"
+        },
+        "missing_action": {
+          "denominator": 2,
+          "evidence": {
+            "details": [
+              {
+                "best_model_action": "Provide information on the other purpose prior to further processing",
+                "missing": false,
+                "rule_action": "provide the data subject prior to that further processing with information on that other purpose",
+                "similarity": 0.6
+              },
+              {
+                "best_model_action": "Carry out further processing for the other purpose",
+                "missing": true,
+                "rule_action": "with any relevant further information as referred to in paragraph 2",
+                "similarity": 0.308
+              }
+            ]
+          },
+          "observable": true,
+          "raw_score": 0.5,
+          "reason": null,
+          "status": "violated"
+        },
+        "out_of_order": {
+          "denominator": 0,
+          "evidence": {
+            "details": []
+          },
+          "observable": false,
+          "raw_score": 0.0,
+          "reason": "no_rule_order_endpoints",
+          "status": "unknown"
+        }
+      },
+      "winter_signals": {
+        "incorrect_actor": {
+          "denominator": 3,
+          "evidence": {
+            "mapping": [
+              {
+                "model_obligation_lemmatized": "provide information on other purpose prior to further processing",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "where controller intend to far process personal datum controller shall provide datum subject prior to that further processing with information on that other purpose with any relevant further information as refer to paragraph",
+                "similarity": 0.7947459816932678
+              },
+              {
+                "model_obligation_lemmatized": "provide information on other purpose prior to further processing",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "for a purpose other",
+                "similarity": 0.4879469871520996
+              },
+              {
+                "model_obligation_lemmatized": "provide information on other purpose prior to further processing",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "than that for which personal datum be collect",
+                "similarity": 0.28941917419433594
+              }
+            ],
+            "resource_set": [
+              "board",
+              "certification body",
+              "controller",
+              "controller and processor",
+              "data subject",
+              "processor",
+              "supervisory authority"
+            ]
+          },
+          "observable": true,
+          "raw_score": 0.0,
+          "reason": null,
+          "status": "satisfied"
+        },
+        "missing_action": {
+          "denominator": 3,
+          "evidence": {
+            "mapping": [
+              {
+                "model_obligation_lemmatized": "provide information on other purpose prior to further processing",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "where controller intend to far process personal datum controller shall provide datum subject prior to that further processing with information on that other purpose with any relevant further information as refer to paragraph",
+                "similarity": 0.7947459816932678
+              },
+              {
+                "model_obligation_lemmatized": "provide information on other purpose prior to further processing",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "for a purpose other",
+                "similarity": 0.4879469871520996
+              },
+              {
+                "model_obligation_lemmatized": "provide information on other purpose prior to further processing",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "than that for which personal datum be collect",
+                "similarity": 0.28941917419433594
+              }
+            ],
+            "model_obligation_count": 5,
+            "obligation_count": 3
+          },
+          "observable": true,
+          "raw_score": 0.3333333333333333,
+          "reason": null,
+          "status": "violated"
+        },
+        "out_of_order": {
+          "denominator": 0,
+          "evidence": {
+            "flow_count": 0,
+            "mapping": [
+              {
+                "model_obligation_lemmatized": "provide information on other purpose prior to further processing",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "where controller intend to far process personal datum controller shall provide datum subject prior to that further processing with information on that other purpose with any relevant further information as refer to paragraph",
+                "similarity": 0.7947459816932678
+              },
+              {
+                "model_obligation_lemmatized": "provide information on other purpose prior to further processing",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "for a purpose other",
+                "similarity": 0.4879469871520996
+              },
+              {
+                "model_obligation_lemmatized": "provide information on other purpose prior to further processing",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "than that for which personal datum be collect",
+                "similarity": 0.28941917419433594
+              }
+            ]
+          },
+          "observable": false,
+          "raw_score": null,
+          "reason": "no_rule_side_flow_relations",
+          "status": "unknown"
+        }
+      }
+    },
+    {
+      "case_id": "case_a1712c670943",
+      "requirement_id": "R5-D-03",
+      "reference_states": {
+        "incorrect_actor": "satisfied",
+        "missing_action": "satisfied",
+        "out_of_order": "satisfied"
+      },
+      "sun_extraction": [
+        {
+          "modality": "obligation",
+          "actors": [
+            "the controller"
+          ],
+          "actions": [
+            "be informed by the controller before the restriction of processing is lifted."
+          ],
+          "conditions": [
+            "who has obtained restriction of processing pursuant to paragraph 1 shall be informed by the"
+          ],
+          "constraints": [
+            "of processing pursuant to paragraph 1",
+            "before the restriction of processing is lifted"
+          ]
+        }
+      ],
+      "ours_extraction": [
+        {
+          "modality": "obligation",
+          "actors": [
+            "the controller"
+          ],
+          "actions": [
+            "be informed"
+          ],
+          "conditions": [],
+          "constraints": [
+            "before the restriction of processing is lifted"
+          ]
+        }
+      ],
+      "sun_signals": {
+        "incorrect_actor": {
+          "denominator": 1,
+          "evidence": {
+            "details": [
+              {
+                "exists_low_similarity": true,
+                "min_process_actor_similarity": 0.2046,
+                "rule_actor": "the controller",
+                "violated": true
+              }
+            ],
+            "matched_process_action_ids": [
+              "Activity_1",
+              "Activity_2",
+              "Start"
+            ],
+            "process_actor_candidates": [
+              "Controller",
+              "the data",
+              "the restriction of processing"
+            ]
+          },
+          "observable": true,
+          "raw_score": 1.0,
+          "reason": null,
+          "status": "violated"
+        },
+        "missing_action": {
+          "denominator": 1,
+          "evidence": {
+            "details": [
+              {
+                "best_model_action": "The controller must inform the data subject before lifting a processing restriction.",
+                "missing": false,
+                "rule_action": "be informed by the controller before the restriction of processing is lifted.",
+                "similarity": 0.7865
+              }
+            ]
+          },
+          "observable": true,
+          "raw_score": 0.0,
+          "reason": null,
+          "status": "satisfied"
+        },
+        "out_of_order": {
+          "denominator": 0,
+          "evidence": {
+            "details": []
+          },
+          "observable": false,
+          "raw_score": 0.0,
+          "reason": "no_rule_order_endpoints",
+          "status": "unknown"
+        }
+      },
+      "ours_signals": {
+        "incorrect_actor": {
+          "denominator": 0,
+          "evidence": {
+            "details": [],
+            "unmapped_rule_actors": []
+          },
+          "observable": false,
+          "raw_score": null,
+          "reason": "action_mapping_below_gamma",
+          "status": "unknown"
+        },
+        "missing_action": {
+          "denominator": 1,
+          "evidence": {
+            "details": [
+              {
+                "best_model_action": "Inform the data subject that the restriction will be lifted",
+                "missing": true,
+                "rule_action": "be informed",
+                "similarity": 0.2335
+              }
+            ]
+          },
+          "observable": true,
+          "raw_score": 1.0,
+          "reason": null,
+          "status": "violated"
+        },
+        "out_of_order": {
+          "denominator": 0,
+          "evidence": {
+            "details": []
+          },
+          "observable": false,
+          "raw_score": 0.0,
+          "reason": "no_rule_order_endpoints",
+          "status": "unknown"
+        }
+      },
+      "winter_signals": {
+        "incorrect_actor": {
+          "denominator": 2,
+          "evidence": {
+            "mapping": [
+              {
+                "model_obligation_lemmatized": "inform data subject that restriction will be lift",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "a data subject who have obtain restriction shall be inform by controller before restriction of processing be lift",
+                "similarity": 0.7791363000869751
+              },
+              {
+                "model_obligation_lemmatized": "lift restriction of processing",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "of process pursuant to paragraph",
+                "similarity": 0.4567084312438965
+              }
+            ],
+            "resource_set": [
+              "board",
+              "certification body",
+              "controller",
+              "controller and processor",
+              "data subject",
+              "processor",
+              "supervisory authority"
+            ]
+          },
+          "observable": true,
+          "raw_score": 0.0,
+          "reason": null,
+          "status": "satisfied"
+        },
+        "missing_action": {
+          "denominator": 2,
+          "evidence": {
+            "mapping": [
+              {
+                "model_obligation_lemmatized": "inform data subject that restriction will be lift",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "a data subject who have obtain restriction shall be inform by controller before restriction of processing be lift",
+                "similarity": 0.7791363000869751
+              },
+              {
+                "model_obligation_lemmatized": "lift restriction of processing",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "of process pursuant to paragraph",
+                "similarity": 0.4567084312438965
+              }
+            ],
+            "model_obligation_count": 5,
+            "obligation_count": 2
+          },
+          "observable": true,
+          "raw_score": 0.0,
+          "reason": null,
+          "status": "satisfied"
+        },
+        "out_of_order": {
+          "denominator": 0,
+          "evidence": {
+            "flow_count": 0,
+            "mapping": [
+              {
+                "model_obligation_lemmatized": "inform data subject that restriction will be lift",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "a data subject who have obtain restriction shall be inform by controller before restriction of processing be lift",
+                "similarity": 0.7791363000869751
+              },
+              {
+                "model_obligation_lemmatized": "lift restriction of processing",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "of process pursuant to paragraph",
+                "similarity": 0.4567084312438965
+              }
+            ]
+          },
+          "observable": false,
+          "raw_score": null,
+          "reason": "no_rule_side_flow_relations",
+          "status": "unknown"
+        }
+      }
+    },
+    {
+      "case_id": "case_f7bb207445df",
+      "requirement_id": "R5-D-02",
+      "reference_states": {
+        "incorrect_actor": "satisfied",
+        "missing_action": "satisfied",
+        "out_of_order": "satisfied"
+      },
+      "sun_extraction": [
+        {
+          "modality": "obligation",
+          "actors": [
+            "the controller",
+            "the controller"
+          ],
+          "actions": [
+            "intends to further process the personal data for a purpose other than that for",
+            "provide"
+          ],
+          "conditions": [
+            "Where the controller intends to further process the personal data for a purpose other than that for which the personal data were obtained",
+            "prior to that further processing with information on that other purpose and with any relevant further information"
+          ],
+          "constraints": [
+            "the personal data for a purpose other than that for which the personal data were obtained",
+            "prior to that further processing with information on that other purpose and with any relevant further information",
+            "to in paragraph 2"
+          ]
+        }
+      ],
+      "ours_extraction": [
+        {
+          "modality": "obligation",
+          "actors": [],
+          "actions": [
+            "provide the data subject prior to that further processing with information on that other purpose and with any relevant further information as referred to in paragraph 2"
+          ],
+          "conditions": [
+            "Where the controller intends to further process the personal data for a purpose other than that for which the personal data were obtained"
+          ],
+          "constraints": [
+            "prior to that further processing",
+            "as referred to in paragraph 2"
+          ]
+        }
+      ],
+      "sun_signals": {
+        "incorrect_actor": {
+          "denominator": 1,
+          "evidence": {
+            "details": [
+              {
+                "exists_low_similarity": false,
+                "min_process_actor_similarity": 1.0,
+                "rule_actor": "the controller",
+                "violated": false
+              }
+            ],
+            "matched_process_action_ids": [
+              "Start"
+            ],
+            "process_actor_candidates": [
+              "Controller"
+            ]
+          },
+          "observable": true,
+          "raw_score": 0.0,
+          "reason": null,
+          "status": "satisfied"
+        },
+        "missing_action": {
+          "denominator": 2,
+          "evidence": {
+            "details": [
+              {
+                "best_model_action": "Further processing of indirectly obtained personal data requires prior notice.",
+                "missing": false,
+                "rule_action": "intends to further process the personal data for a purpose other than that for",
+                "similarity": 0.6805
+              },
+              {
+                "best_model_action": "Provide information on the other purpose prior to further processing",
+                "missing": true,
+                "rule_action": "provide",
+                "similarity": 0.2764
+              }
+            ]
+          },
+          "observable": true,
+          "raw_score": 0.5,
+          "reason": null,
+          "status": "violated"
+        },
+        "out_of_order": {
+          "denominator": 0,
+          "evidence": {
+            "details": [
+              {
+                "constraint": [
+                  "provide",
+                  "intends to further process the personal data for a purpose other than that for"
+                ],
+                "mapped": false,
+                "reason": "endpoint similarity below gamma"
+              }
+            ]
+          },
+          "observable": false,
+          "raw_score": 0.0,
+          "reason": "no_rule_order_endpoints",
+          "status": "unknown"
+        }
+      },
+      "ours_signals": {
+        "incorrect_actor": {
+          "denominator": 0,
+          "evidence": {
+            "details": [],
+            "unmapped_rule_actors": []
+          },
+          "observable": false,
+          "raw_score": null,
+          "reason": "empty_rule_actor_denominator",
+          "status": "unknown"
+        },
+        "missing_action": {
+          "denominator": 1,
+          "evidence": {
+            "details": [
+              {
+                "best_model_action": "Provide information on the other purpose prior to further processing",
+                "missing": false,
+                "rule_action": "provide the data subject prior to that further processing with information on that other purpose and with any relevant further information as referred to in paragraph 2",
+                "similarity": 0.6321
+              }
+            ]
+          },
+          "observable": true,
+          "raw_score": 0.0,
+          "reason": null,
+          "status": "satisfied"
+        },
+        "out_of_order": {
+          "denominator": 0,
+          "evidence": {
+            "details": []
+          },
+          "observable": false,
+          "raw_score": 0.0,
+          "reason": "no_rule_order_endpoints",
+          "status": "unknown"
+        }
+      },
+      "winter_signals": {
+        "incorrect_actor": {
+          "denominator": 3,
+          "evidence": {
+            "mapping": [
+              {
+                "model_obligation_lemmatized": "provide information on other purpose prior to further processing",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "where controller intend to far process personal datum controller shall provide datum subject prior to that further processing with information on that other purpose with any relevant further information as refer to paragraph",
+                "similarity": 0.7947459816932678
+              },
+              {
+                "model_obligation_lemmatized": "provide information on other purpose prior to further processing",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "for a purpose other",
+                "similarity": 0.4879469871520996
+              },
+              {
+                "model_obligation_lemmatized": "provide information on other purpose prior to further processing",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "than that for which personal datum be obtain",
+                "similarity": 0.28677621483802795
+              }
+            ],
+            "resource_set": [
+              "board",
+              "certification body",
+              "controller",
+              "controller and processor",
+              "data subject",
+              "processor",
+              "supervisory authority"
+            ]
+          },
+          "observable": true,
+          "raw_score": 0.0,
+          "reason": null,
+          "status": "satisfied"
+        },
+        "missing_action": {
+          "denominator": 3,
+          "evidence": {
+            "mapping": [
+              {
+                "model_obligation_lemmatized": "provide information on other purpose prior to further processing",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "where controller intend to far process personal datum controller shall provide datum subject prior to that further processing with information on that other purpose with any relevant further information as refer to paragraph",
+                "similarity": 0.7947459816932678
+              },
+              {
+                "model_obligation_lemmatized": "provide information on other purpose prior to further processing",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "for a purpose other",
+                "similarity": 0.4879469871520996
+              },
+              {
+                "model_obligation_lemmatized": "provide information on other purpose prior to further processing",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "than that for which personal datum be obtain",
+                "similarity": 0.28677621483802795
+              }
+            ],
+            "model_obligation_count": 5,
+            "obligation_count": 3
+          },
+          "observable": true,
+          "raw_score": 0.3333333333333333,
+          "reason": null,
+          "status": "violated"
+        },
+        "out_of_order": {
+          "denominator": 0,
+          "evidence": {
+            "flow_count": 0,
+            "mapping": [
+              {
+                "model_obligation_lemmatized": "provide information on other purpose prior to further processing",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "where controller intend to far process personal datum controller shall provide datum subject prior to that further processing with information on that other purpose with any relevant further information as refer to paragraph",
+                "similarity": 0.7947459816932678
+              },
+              {
+                "model_obligation_lemmatized": "provide information on other purpose prior to further processing",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "for a purpose other",
+                "similarity": 0.4879469871520996
+              },
+              {
+                "model_obligation_lemmatized": "provide information on other purpose prior to further processing",
+                "model_resource": "Controller",
+                "paragraph_obligation_lemmatized": "than that for which personal datum be obtain",
+                "similarity": 0.28677621483802795
+              }
+            ]
+          },
+          "observable": false,
+          "raw_score": null,
+          "reason": "no_rule_side_flow_relations",
+          "status": "unknown"
+        }
+      }
+    }
+  ],
+  "source_bindings": [
+    {
+      "path": "D:/Paper/experiment/LLM4BPC/formal_experiment/outputs/reports/stage3_comparison_check_20261010_v1.json",
+      "raw_sha256": "9607d2d51b1db136778b97e1911c1cc14840b1f156ac6aa3c69b28af6c4d50ff"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC/formal_experiment/outputs/evidence/stage3_comparison_check_20261010_v1/sun_ours_selected_dev_signals_v1.json",
+      "raw_sha256": "c5b251d4abd22e90adacd5eca4ccde4be1f3617105fa18270ce970eaa1161371"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC/formal_experiment/data/development/stage3_winter_paper_rerun_20261010_v1/evaluation_reference.json",
+      "raw_sha256": "457613fb1ae1322c29a537be7deada8d19292b9542c4ce0c860d4ab75279a097"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC/formal_experiment/outputs/evidence/stage3_winter_paper_rerun_20261010_v1/predictions.json",
+      "raw_sha256": "7fc1474cc40338fb94aefe341e770e8b24f6ee6c6eddc06bc057e769a148097e"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC-s3-ext-pc-v1/formal_experiment/data/predictions/stage3_table3_r5_sun_rule_only_v1/predictions.json",
+      "raw_sha256": "555d2616569d19cf7a159149d586c8faf337645272a838acc123fdaaf415b912"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC-s3-ext-pc-v1/formal_experiment/data/predictions/stage3_table3_r5_ours_stage2_formal_v1/predictions.json",
+      "raw_sha256": "bd8323810ae4eef4da1591476de1a4f4f9350edc59010bafea56e7c38ab14ee9"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC-s3-ext-pc-v1/formal_experiment/src/bpc_hybrid/b0_v10/actor_action.py",
+      "raw_sha256": "1b75bd16498e3e4d5df13bcb29875103ba5320a49ebbd099d1665c427b1f55d9"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC-s3-ext-pc-v1/formal_experiment/resources/lexicon/actor_markers_en_v2.json",
+      "raw_sha256": "43e404d2a69c091e6b07ee2a474ab4f8bb3021403fc481ca2500952a6a6d8378"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC/formal_experiment/src/bpc_hybrid/winter_stage3/winter_pair.py",
+      "raw_sha256": "30848eb83e5bac85af4ffdf870149db3a6845b75fba1e497e8bd7d8548322a73"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC/references/papers/Sun_2024_Design_time_BPC.pdf",
+      "raw_sha256": "08a26b7d4e6716eb2e07fce4f2a96420562a9eab6ecb12d8fb8ee351b297fcb2"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC-s3-ext-pc-v1/formal_experiment/scripts/run_stage3_table3_r5_sun_stage2_v1.py",
+      "raw_sha256": "095881d94098f5d2b370e1343416c4405eb6bccd103fddf082da2a325a4c1636"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC-s3-ext-pc-v1/formal_experiment/src/bpc_hybrid/estg150_b0_development_v10.py",
+      "raw_sha256": "e00aadc80a2caf75fb24a6b2b31c436f753afbfd7fcac17f3a8ee6919217df43"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC-s3-ext-pc-v1/formal_experiment/src/bpc_hybrid/b0_v10/modality.py",
+      "raw_sha256": "5553256bdc219236ef69ea674098c3280d81ff6b95e2e1ae434e52cc632d1db4"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC-s3-ext-pc-v1/formal_experiment/src/bpc_hybrid/sun_stage3/sun_model.py",
+      "raw_sha256": "e88298a2125f317d3fb57c323d3942b283d342b41e334d92d610db8fccb9772c"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC-s3-ext-pc-v1/formal_experiment/src/bpc_hybrid/sun_stage3/sun_scorer.py",
+      "raw_sha256": "53ce2036930de628905bcba5b29261a4e0b243fa33d6b2455b03d4cf5b4579ce"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC-s3-ext-pc-v1/formal_experiment/src/bpc_hybrid/stage3_v2/checker_v2.py",
+      "raw_sha256": "f7bde5d29467cef859660af88a8e60e2cdfe328785d25bedf385cec370732bbd"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC-s3-ext-pc-v1/formal_experiment/src/bpc_hybrid/stage3_v2/rule_record_converter_v2.py",
+      "raw_sha256": "a03568d89ccc83fe138bb00479516508d51ca07791f5f8ab0ac3af90a555c57b"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC-s3-ext-pc-v1/formal_experiment/configs/models/estg150_b0_enhanced_s27_v10a.json",
+      "raw_sha256": "9d1c7e97f1ddbec0efac384a1cd1bd9b35df4756089be457a31142b209f90e81"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC/formal_experiment/src/bpc_hybrid/winter_stage3/winter_clause.py",
+      "raw_sha256": "186806e00729aca70eb52338139cba4e10b09c40ef0db097d8ad238db1fdac56"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC/formal_experiment/src/bpc_hybrid/winter_stage3/winter_model.py",
+      "raw_sha256": "b249367afd707961e7961f2ccdf4685ad8e2fc5f42ef9d9c158d60879fd8035b"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC/formal_experiment/src/bpc_hybrid/winter_stage3/winter_similarity.py",
+      "raw_sha256": "97632047435166b809f64b0abda6564de00a324702ad0cade32aaa51443c0ddc"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC/formal_experiment/outputs/evidence/stage3_winter_paper_rerun_20261010_v1/run_manifest.json",
+      "raw_sha256": "7151f686b35f37a170bf38ebaff012dda15f2fd3f5fcd3bf55c37030b2821188"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC/references/winter_2020_model_check/model_check/lib/classes/Pair.py",
+      "raw_sha256": "6659761c1c8a1d66f568f5a04e1d271852675a4a8ba204b615d6b66716a592f0"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC/references/winter_2020_model_check/model_check/lib/classes/Flow.py",
+      "raw_sha256": "ae2282d0dd65ac6f3a27eb6a5b118c6dd87e32c41fe28fb237091d8248b26c34"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC/references/winter_2020_model_check/model_check/lib/classes/Process.py",
+      "raw_sha256": "348cea14f045269968d3306c89731d9b27c4630780e468aa5026fc0fe93bf779"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC/references/winter_2020_model_check/model_check/lib/classes/BPMN.py",
+      "raw_sha256": "adbf94784f5812dac44bef581718b7aff25c8157568281baaa5b6a0e7ada2b99"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC/references/winter_2020_model_check/model_check/lib/classes/Clause.py",
+      "raw_sha256": "3e7ad9eaa9ab8998c695bd2a0a42309bd7ccd2f830d41cbd9b57ed281b8fd29e"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC/references/winter_2020_model_check/model_check/lib/classes/Paragraph.py",
+      "raw_sha256": "88f62852c3cb9362e78290913efb005c2a753718175111f6c0d945d18c16c0b2"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC/references/winter_2020_model_check/model_check/lib/main.py",
+      "raw_sha256": "affc889ec005bb5e0f73f67df3c2dcdb519f1869f15aabc730b96b9cc0112350"
+    },
+    {
+      "path": "D:/Paper/experiment/LLM4BPC/references/winter_2020_model_check/model_check/requirements.txt",
+      "raw_sha256": "d6fe1e016ad0b6ffd9b1f11774c5685eff79f93480a29723a4f8479057ff59dc"
+    }
+  ],
+  "metric_conclusion": "Counts replay exactly, but replay does not certify fidelity or untouched full inference regeneration. Sun has material extraction deviations; Winter follows prototype core with multiple changes and inherited indexing/flow issues. Existing ranking is only a comparison of local variants."
+}
