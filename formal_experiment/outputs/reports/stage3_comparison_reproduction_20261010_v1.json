@@ -1,0 +1,142 @@
+{
+  "conclusion": "Both scope variants reproduce exactly from committed evidence. Expanded scope removes two documented extraction-dependent exclusions; full source-semantic scope review remains pending.",
+  "date_local": "2026-10-10",
+  "execution": "Fresh Python process; source data and evaluator loaded exclusively from Git commit blobs; no temporary worktree or absolute artifact paths used.",
+  "full_tests_run": false,
+  "model_inference_runs": 0,
+  "real_llm_api_calls": 0,
+  "reference_modified": false,
+  "results": {
+    "expanded_207": {
+      "ours": {
+        "FN": 24,
+        "FP": 60,
+        "TN": 58,
+        "TP": 47,
+        "entire_saved_evaluation_equal": true,
+        "f1": 0.5280898876404494,
+        "independent_counts_equal": true,
+        "negative_support": 136,
+        "positive_support": 71,
+        "precision": 0.4392523364485981,
+        "recall": 0.6619718309859155,
+        "scored_cells": 207,
+        "unknown_negative": 18,
+        "unknown_positive": 10
+      },
+      "sun": {
+        "FN": 34,
+        "FP": 60,
+        "TN": 31,
+        "TP": 37,
+        "entire_saved_evaluation_equal": true,
+        "f1": 0.44047619047619047,
+        "independent_counts_equal": true,
+        "negative_support": 136,
+        "positive_support": 71,
+        "precision": 0.38144329896907214,
+        "recall": 0.5211267605633803,
+        "scored_cells": 207,
+        "unknown_negative": 45,
+        "unknown_positive": 28
+      },
+      "winter": {
+        "FN": 32,
+        "FP": 44,
+        "TN": 85,
+        "TP": 39,
+        "entire_saved_evaluation_equal": true,
+        "f1": 0.5064935064935066,
+        "independent_counts_equal": true,
+        "negative_support": 136,
+        "positive_support": 71,
+        "precision": 0.46987951807228917,
+        "recall": 0.5492957746478874,
+        "scored_cells": 207,
+        "unknown_negative": 7,
+        "unknown_positive": 4
+      }
+    },
+    "original_201": {
+      "ours": {
+        "FN": 22,
+        "FP": 60,
+        "TN": 58,
+        "TP": 47,
+        "entire_saved_evaluation_equal": true,
+        "f1": 0.5340909090909091,
+        "independent_counts_equal": true,
+        "negative_support": 132,
+        "positive_support": 69,
+        "precision": 0.4392523364485981,
+        "recall": 0.6811594202898551,
+        "scored_cells": 201,
+        "unknown_negative": 14,
+        "unknown_positive": 8
+      },
+      "sun": {
+        "FN": 32,
+        "FP": 60,
+        "TN": 31,
+        "TP": 37,
+        "entire_saved_evaluation_equal": true,
+        "f1": 0.4457831325301205,
+        "independent_counts_equal": true,
+        "negative_support": 132,
+        "positive_support": 69,
+        "precision": 0.38144329896907214,
+        "recall": 0.5362318840579711,
+        "scored_cells": 201,
+        "unknown_negative": 41,
+        "unknown_positive": 26
+      },
+      "winter": {
+        "FN": 31,
+        "FP": 44,
+        "TN": 83,
+        "TP": 38,
+        "entire_saved_evaluation_equal": true,
+        "f1": 0.5033112582781457,
+        "independent_counts_equal": true,
+        "negative_support": 132,
+        "positive_support": 69,
+        "precision": 0.4634146341463415,
+        "recall": 0.5507246376811594,
+        "scored_cells": 201,
+        "unknown_negative": 5,
+        "unknown_positive": 3
+      }
+    }
+  },
+  "schema_version": "stage3_comparison_reproduction@1.0.0",
+  "scope_added_rules": [
+    "R5-S7-T1",
+    "R5-S8-T1"
+  ],
+  "source_file_count": 5,
+  "source_files": {
+    "evaluator": {
+      "path": "formal_experiment/scripts/stage3_winter_paper_metrics_v1.py",
+      "sha256": "4f35784a3f896240a1eed55414ca8417fbe5c81c05525acd82cc60d8212902c7"
+    },
+    "previous_check": {
+      "path": "formal_experiment/outputs/reports/stage3_comparison_check_20261010_v1.json",
+      "sha256": "9607d2d51b1db136778b97e1911c1cc14840b1f156ac6aa3c69b28af6c4d50ff"
+    },
+    "reference": {
+      "path": "formal_experiment/data/development/stage3_winter_paper_rerun_20261010_v1/evaluation_reference.json",
+      "sha256": "457613fb1ae1322c29a537be7deada8d19292b9542c4ce0c860d4ab75279a097"
+    },
+    "sun_ours": {
+      "path": "formal_experiment/outputs/evidence/stage3_comparison_check_20261010_v1/sun_ours_selected_dev_signals_v1.json",
+      "sha256": "c5b251d4abd22e90adacd5eca4ccde4be1f3617105fa18270ce970eaa1161371"
+    },
+    "winter": {
+      "path": "formal_experiment/outputs/evidence/stage3_winter_paper_rerun_20261010_v1/predictions.json",
+      "sha256": "7fc1474cc40338fb94aefe341e770e8b24f6ee6c6eddc06bc057e769a148097e"
+    }
+  },
+  "source_git_commit": "57e1e5c07a0cb0d0ba6e697b036a33fd86640298",
+  "task_id": "S3-COMPARISON-CHECK-V1-REPRODUCTION",
+  "validated_boundary": "Frozen-prediction evaluator replay and independent count recomputation. New Stage 1/2/3 inference and provider-level output repeatability were not tested."
+}
