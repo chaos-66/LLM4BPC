@@ -18,8 +18,10 @@ assessment baseline compared by Sun.
 Sun is the main methodological backbone.
 
 Barrientos 2026 is a **direct engineering-method reference** for LLM structured
-output, validation, controlled vocabularies, normalization, traceability, and
-evaluation discipline. It is not the project's task/schema backbone and must
+output, schema validation, controlled vocabularies, traceability, and
+evaluation discipline. Its discussion of normalization is an improvement
+motivation, not evidence that it implements this project's post-processing.
+It is not the project's task/schema backbone and must
 not replace Sun's rule-record representation, Sun's Stage 2 extraction targets,
 or Sun's Stage 3 checking goal.
 
@@ -39,11 +41,32 @@ Allowed Barrientos-inspired ideas:
 - Strict JSON schema.
 - Controlled vocabulary for allowed labels.
 - Validation of every LLM output against the schema.
-- Deterministic post-processing after validation.
-- Normalization to reduce inconsistent representations.
+- Motivation to reduce inconsistent representations; the paper's evaluation
+  in Section 6.2 reports that its outputs required no additional normalization
+  or manual post-processing.
 - Traceability of what the LLM added or repaired.
 - Future optional ideas for compliance deviation explanations and
   over-compliance analysis.
+
+### Concrete post-processing belongs to this project
+
+The canonical validator, relay-format adapter, exact-text coordinate repair,
+repeated-occurrence assignment, local filtering, and dangling-reference cleanup
+are project implementations for the Sun-compatible rule-record interface.
+Do not attribute that complete pipeline or the name "Canonical Validation" to
+Barrientos. Sections 5 and 6.2 of the original paper distinguish implemented
+JSON-schema validation from normalization discussed as a further need.
+
+For each project step, explain the observed error or predefined format rule,
+the resulting interface problem, why the operation was chosen, its evidence,
+and its limits. D1-R1 nested-output diagnostics motivated format adaptation;
+earlier project coordinate forensics motivated unique exact-text repair; later
+retrospective error attribution motivated repeated-occurrence recovery.
+Schema and cross-field checks are predefined integrity requirements and must
+not be presented as if every check arose from a separately measured error.
+The later development repair does not explain or replace the frozen Table 1
+results. The motivation and evidence mapping is in `paper/THESIS_DRAFT.md`
+Section 4.2.2; historical runs and their results remain unchanged.
 
 ## Exact Schema Mapping
 
@@ -78,9 +101,10 @@ The only allowed adaptation is explicit rather than implicit:
 | exception | no first-class equivalent | add an explicit exception field |
 
 Consequently, the thesis must not state that Barrientos already provides a
-method for extracting Sun's six elements. It provides prompt, schema,
-normalization, and stability methodology that can be adapted to a Sun-compatible
-output.
+method for extracting Sun's six elements. It provides prompting, schema
+validation, and stability methodology that can be adapted to a Sun-compatible
+output, plus a motivation for further normalization. Concrete normalization
+and coordinate-repair operations must be attributed to this project's code.
 
 ## What We Do Not Borrow
 
