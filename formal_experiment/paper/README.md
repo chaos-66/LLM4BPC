@@ -5,22 +5,40 @@
 
 ## 方法命名（2026-10-10）
 
-论文主稿中的原 Direct-LLM 统一改称 **LLM-based Rule Extraction（LLM-RE，
-基于大语言模型的规则抽取）**；正文与表格使用 LLM-RE，英文题名使用 LLM-Based。
+活动论文文档中的原 Direct-LLM 统一改称 **LLM-based Semantic Extraction（LLM-SE，
+基于大语言模型的合规语义抽取）**；正文与表格使用 LLM-SE，英文题名使用 LLM-Based。
 原来的 Direct 用于区分独立 LLM 抽取与规则先行的 LLM 修复；后者已退出后续
-实验，因此不再需要用该前缀区分。新名称描述 Stage 2 的规则抽取任务，
+实验，因此不再需要用该前缀区分。此前暂用的 LLM-RE / LLM-based Rule Extraction
+调整为 LLM-SE，以准确描述 Stage 2 的六类语义要素抽取任务。它与原方法相同，
 不把名称调整当作新方法或新的贡献。
 
+### 统一术语与阶段边界
+
+| 层次 | 统一表述 | 在本文中的含义 |
+|---|---|---|
+| 输入 | Natural-language Compliance Requirements（自然语言合规需求） | 法律、监管、制度或业务规则中的规范性文本 |
+| Stage 1 任务/输出 | Process Model Parsing and Label Semantic Extraction / Process Record | 解析 BPMN 结构，并提取活动标签等流程语义 |
+| Stage 2 任务 | Regulatory Semantic Extraction（合规语义抽取） | 识别 modality、actor、action、condition、constraint、exception 六类语义要素及原文证据 |
+| Stage 2 输出 | Rule Record（结构化规则记录） | 将抽取要素与关系组织成下游可消费的记录；不等同于可执行的逻辑规范 |
+| Stage 2 方法 | Rules-Only / LLM-SE | 前者继承 Sun 的情态分类与句法模板抽取，后者用 LLM 生成同一语义表示；rule-based 指抽取机制 |
+| Stage 3 任务/输出 | Rule–Process Matching and Violation Checking / Violation Report | 对照规则记录与流程记录，进行匹配和违规判断 |
+
+Semantic Extraction 与 Rule Extraction 都可用于相关研究，但本文选前者作为
+Stage 2 的统一任务名称，不把两者交替当作同一模块的标题。Sun 的语义信息抽取
+表述及本地作者稿的细粒度定义见主稿 §3.2。modality 已计入六要素，避免写成
+“modality 与六要素”；概念上的六要素与正式主表五个 span 字段的评价口径分开。
+
 代码 ID `direct_llm`、旧代号 D1、配置中的兼容标签及历史报告、预测、manifest
-保留原样；历史来源中的 Direct-LLM 与论文中的 LLM-RE 指同一方法。各项结果
-继续绑定其原模型、prompt 和运行版本；本次仅修改主稿、写作入口和主张矩阵的
-文字，不改变实验设计、评价口径或任何数值。
+保留原样；历史来源中的 Direct-LLM、此前暂用的 LLM-RE 与论文中的 LLM-SE 指同一
+方法。各项结果继续绑定其原模型、prompt 和运行版本；本次只统一活动论文文档
+的展示名称和术语定义，不改变实验设计、评价口径或任何数值。日期固定的旧汇报
+和历史产物继续保留原名，引用它们时使用此映射。
 
 ## 第二阶段主表最终采用值（2026-09-26 用户决定）
 
 论文 Table 1 固定采用既有
 [`stage2_table1_paper_final_v1.json`](../outputs/reports/stage2_table1_paper_final_v1.json)：
-**LLM-RE Overall F1 = 0.8378；Sun 方法本地重建 Rules-Only = 0.7631；
+**LLM-SE Overall F1 = 0.8378；Sun 方法本地重建 Rules-Only = 0.7631；
 绝对差 +7.47 个百分点**。数据为同一 EStG-150、同一 Gold、粗粒度句子视图；
 Overall 仅汇总 actor/action/condition/constraint/exception 五个 span 字段，
 modality 四类 label 指标单列。五字段 mean F1 0.8088/0.7970 保留为次口径。
@@ -81,9 +99,9 @@ Brisbane 会议；EasyChair 公开登录页已核实当届新稿入口开放。�
 | 六要素与结构化表示 | 字段定义、易混淆边界、原文证据、actor-action 关系与阶段输入输出 | §3.2–§3.4、§4.2 | 六要素定义与实例表；一条规则的完整结构化实例 | 现有方法正文与运行所用 schema；示意例标明用途，不充当实验结果 |
 | Stage 1 流程解析 | BPMN 结构、标签语义如何转换成 Process Record；实现范围与局限 | §3.1、§6.3、§7.1 | 输入输出示例；结构与语义指标表 | §7.1 对应的正式报告与 manifest；结构、语义和案例观察分清 |
 | Rules-Only 重建 | 情态分类、规则与标记词抽取、字段处理和相对 Sun 的重建边界 | §4.1、§6.1 | 方法组成、规则示例和实际模型配置表 | 运行所用配置、公开方法来源和重建证据；不因 Sun 有多种 BERT 表就新增全套训练 |
-| LLM-RE 设计与实现 | 字段说明、示例、输出要求、原文证据校验、确定性后处理及各自用途 | §4.2、§4.4–§4.5 | 提示词组成与用途表；输出处理示例；实际调用配置表 | 已运行版本的 prompt/config/manifest；写明实现，不由模块存在推断有效性 |
+| LLM-SE 设计与实现 | 字段说明、示例、输出要求、原文证据校验、确定性后处理及各自用途 | §4.2、§4.4–§4.5 | 提示词组成与用途表；输出处理示例；实际调用配置表 | 已运行版本的 prompt/config/manifest；写明实现，不由模块存在推断有效性 |
 | 数据准备与人工裁决 | 来源、样本数量、语言、字段分布、标注流程与不同数据集用途 | §5、§6 | 数据集统计表；Gold 字段分布表；标注流程图 | 冻结数据及发布记录；注明 LLM-assisted, human-adjudicated，不复制受限第三方原文 |
-| Stage 2 比较 | 同输入与同口径下的 Rules-Only/LLM-RE 表现；可兼容的前人共同子任务 | §6.1、§6.5、§7.2 | 情态分类表；六要素 P/R/F1 与样本数表；前人适配子任务另表 | C23、C44、C47 及其来源；正式结果、开发适配结果、前人论文报告值分开 |
+| Stage 2 比较 | 同输入与同口径下的 Rules-Only/LLM-SE 表现；可兼容的前人共同子任务 | §6.1、§6.5、§7.2 | 情态 label 指标表；五字段 span P/R/F1 与样本数表；前人适配子任务另表 | C23、C44、C47 及其来源；正式结果、开发适配结果、前人论文报告值分开 |
 | 设计分析与错误诊断 | 已做的消融/设计对照；字段混淆、漏抽、复杂度或阈值变化的影响 | §6.6、§7.3、§8 | 已有消融结果表；错误类型与案例表；适用的参数/复杂度图 | ABLATION_MATRIX 与对应报告；未运行的组合和复杂集结果保留 TODO，不从历史单因素结果拼出新实验 |
 | Stage 3 与阶段衔接 | 规则如何匹配流程、如何判断违规、哪些上游错误影响下游 | §3.3、§6.2、§7.4–§7.5 | 匹配结果表；违规分类表；Oracle 与端到端分别成表 | 对应报告和 manifest；DEV_ONLY 面板标明范围，尚缺正式结果的表继续留空 |
 | 应用案例与局限 | 一条输入如何得到抽取、匹配与检查结果；成功与失败原因 | §3.5、§8 | SIM 贯穿案例图；原文—输出—检查—解释对照表 | C39、C43 与现有案例来源；展示案例不等于证明总体性能 |

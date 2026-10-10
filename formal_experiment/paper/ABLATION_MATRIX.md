@@ -3,7 +3,7 @@
 > **2026-09-14 用户取消规则＋LLM全部后续实验**：Rules+LLM-Repair / H1 /
 > `sun_llm_fallback` 的消融、复跑、优化和新增评价全部取消。下方已完成 H1 结果仅
 > 为历史记录；未执行的 H1 项统一按取消处理，不能再列为“待授权/待补跑”。规则先行
-> 的 LLM 修复/fallback 不作为替代任务重新派发。Direct-LLM 的 E/S/J 八组合与
+> 的 LLM 修复/fallback 不作为替代任务重新派发。LLM-SE 的 E/S/J 八组合与
 > 原始响应后处理分析继续属于 SEP-C3，尚无新调用授权。
 
 > **2026-09-06 撤回说明（覆盖下列 2026-09-05 段）：原生 FULL/NO-PATTERNS 两提示
@@ -26,7 +26,7 @@
 
 **版本**：v5（2026-09-19）；v4/v3 历史段保留。
 本轮 SEP-C3 增加 targeted refinement A/B/C/D 收口与 v2 taxonomy 校正；未改变既有 AB 数字、prompt、runner、Gold 或正式默认配置。
-**状态**：Barrientos A/B/C 离线套件、D/E 1140-call 固定计划、Direct-LLM 后处理
+**状态**：Barrientos A/B/C 离线套件、D/E 1140-call 固定计划、LLM-SE 后处理
 三模块离线单因素与三个 Prompt 单因素 450-call 批次均已运行。Prompt 批次失败0，
 实际成本 $3.3650。结论按正、负与字段权衡如实报告。
 **依据**：`MASTER_PIPELINE.md` §8.8.4 消融矩阵；`docs/research/
@@ -34,8 +34,10 @@ BARRIENTOS_BORROWING_AUDIT_2026-07-12.md`；`docs/EVAL_3DIM_SPEC.md`；
 `outputs/development/barrientos_ablation_suite_v1/`；
 `outputs/development/b0_module_removal_ablation_v1/`；
 `outputs/reports/barrientos_ablation_comparison_v1.json`。
-**命名**：Rules-Only（旧代号 B0）、Direct-LLM（旧代号 D1）、Rules+LLM-Repair
-（旧代号 H1）。机器 ID 仅为兼容保留。
+**命名**：Rules-Only（旧代号 B0）、LLM-SE（LLM-based Semantic Extraction，旧代号
+D1；历史名称 Direct-LLM、此前暂用 LLM-RE）、Rules+LLM-Repair（旧代号 H1）。
+语义抽取是任务，Rule Record 是输出，规则模板是基线机制；术语定义见
+[主稿 §3.2](THESIS_DRAFT.md)。机器 ID 与原始报告标签仅为兼容和来源追溯保留。
 **纪律**：跨 schema/跨任务比较（AB-3/AB-4 等）不得用单一 F1 宣称综合优劣，只能
 报告各自口径内结果与定性适配结论；涉及真实 LLM 的消融逐批用户授权。
 
@@ -185,7 +187,7 @@ BARRIENTOS_BORROWING_AUDIT_2026-07-12.md`；`docs/EVAL_3DIM_SPEC.md`；
 
 ## SEP-C3 targeted refinement A/B/C/D 设计取舍与收口（2026-09-19，零 API，已有 600-call 证据）
 
-**状态**：targeted refinement 探索已收口；A/B/C/D 的 600-call 结果是**一次运行的开发/探索证据**，不是新的正式性能结论。B 仅为本轮研究参照，正式默认 Direct-LLM prompt 未替换；SEP-C3-MODULAR-ESJ-002 的 E/S/J 000-111 八格已由前批+增量批各执行一次（commit 18f5cf9；每臂 150、failed=0、无重复发送），但非同批、每格一次，不能作稳定主效应/交互；已有原始响应后处理归因仅本地分支 9b50729 覆盖旧 v6 与 modular 111，其余 arms 未覆盖且 adapter/canonicalizer/validator 子步骤贡献不可独立分离；重复运行不确定性仍未完成。本节不新增 API，不修改 prompt、runner、正式默认配置或模型参数。
+**状态**：targeted refinement 探索已收口；A/B/C/D 的 600-call 结果是**一次运行的开发/探索证据**，不是新的正式性能结论。B 仅为本轮研究参照，正式默认 LLM-SE prompt 未替换；SEP-C3-MODULAR-ESJ-002 的 E/S/J 000-111 八格已由前批+增量批各执行一次（commit 18f5cf9；每臂 150、failed=0、无重复发送），但非同批、每格一次，不能作稳定主效应/交互；已有原始响应后处理归因仅本地分支 9b50729 覆盖旧 v6 与 modular 111，其余 arms 未覆盖且 adapter/canonicalizer/validator 子步骤贡献不可独立分离；重复运行不确定性仍未完成。本节不新增 API，不修改 prompt、runner、正式默认配置或模型参数。
 
 ### 四臂定义与设计取舍
 
@@ -204,7 +206,7 @@ BARRIENTOS_BORROWING_AUDIT_2026-07-12.md`；`docs/EVAL_3DIM_SPEC.md`；
 
 | 版本 | 版本/路径 | 当前用途 | 已验证事项 | 未验证/边界 |
 |---|---|---|---|---|
-| 正式默认 v6 | `prompts/sun_compat/direct_llm_sun_record_prompt_v6_d1r1_2026_08_05.md`，文件 SHA-256 `3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895`；`configs/models/estg150_d1_active_registry_v1.json` 和 `scripts/run_direct_llm.py` 指向该版本 | 正式默认 Direct-LLM 路径和既有正式/开发证据来源 | 磁盘、活跃 registry、runner 常量三方一致；既有正式三方法比较使用该路径 | 本批未替换、未重跑、未改参数 |
+| 正式默认 v6 | `prompts/sun_compat/direct_llm_sun_record_prompt_v6_d1r1_2026_08_05.md`，文件 SHA-256 `3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895`；`configs/models/estg150_d1_active_registry_v1.json` 和 `scripts/run_direct_llm.py` 指向该版本 | 正式默认 LLM-SE 路径和既有正式/开发证据来源 | 磁盘、活跃 registry、runner 常量三方一致；既有正式三方法比较使用该路径 | 本批未替换、未重跑、未改参数 |
 | 研究参照 B | `prompts/sun_compat/modular_refinement_v1/generated/direct_llm_refinement_B_v1.md`，文件 `c468c631b6e454522994d6839f6a4021a259daedea7f3a2852b7b4343cd22849`，composition `207b54cc2f1123c7511451d7ead478654e550d438fe19d1031a13149b41917f1`；R_A 源 `R_A_actor_minimality.md` 哈希 `0d1a0b13...` | 本轮设计取舍的研究参照；论文设计/结果段 | 600-call 单次运行、same-batch schedule、同模型/输入/Gold/evaluator；B 的 prompt 文件与 manifest hash 一致 | 不是正式默认；正式替换未完成；没有重复运行和跨模型稳定性证据 |
 | 旧 R_C | `prompts/sun_compat/modular_refinement_v1/R_C_constraint_recall.md`，源哈希 `cfcbbc45e278ab3ad4fad8784c5a6bcc551c0b51a2e1833ac2c4e56d0571fcae`；生成 C/D 两臂 | 保留为已实测修补模块和混合结果来源 | constraint recall 提升；FP/actor/其他字段副作用均已记录 | 不纳入 B 研究参照；不是默认；不能只写 recall 收益 |
 | 未执行 v2 | 五臂 `BASE + RC1 + T + G + TG` 计划；原计划 750 calls | 已判定 NO-GO，未执行 | 已完成离线调用价值审查和完整 recovery 语义复核 | 无新 suite、无新 prompt、无预算挪用；不得写成已运行 |
@@ -233,7 +235,7 @@ D 的五字段 mean F1=0.7858，高于 B 的 0.7806；因此不能写"B 总分�
 
 ## Barrientos 消融套件 v2（2026-08-22，零 API）——离线完成 + D/E wired
 
-### 实验 A：Direct-LLM 校验链（离线近似敏感性分析；锁定 D1-R3 响应，fine Gold literal-overlap v2）
+### 实验 A：LLM-SE 校验链（离线近似敏感性分析；锁定 D1-R3 响应，fine Gold literal-overlap v2）
 
 | 条件 | overall F1 | action F1 | 合法输出率 | span 越界 | unanchored | broken edges | 说明 |
 |---|---:|---:|---:|---:|---:|---:|---|
@@ -318,10 +320,10 @@ D 的五字段 mean F1=0.7858，高于 B 的 0.7806；因此不能写"B 总分�
 
 ## AB-7 口径表（已有历史证据，development 归因，2026-08-07 用户决策 + formal 横向）
 
-| 口径 | Rules-Only P/R/F1 | Direct-LLM P/R/F1 | 谁领先（描述性） | 依据 |
+| 口径 | Rules-Only P/R/F1 | LLM-SE P/R/F1 | 谁领先（描述性） | 依据 |
 |---|---|---|---|---|
-| 细 Gold（1055 spans，对照口径） | 0.6845 / 0.7564 / **0.7186** | 0.8793 / 0.6938 / **0.7756** | Direct-LLM F1 +0.057 | B0-R3/D1-R3 同口径；formal comparison 细字段诊断沿用 |
-| 粗 Gold（609 spans，Sun 句子级主口径） | 0.7309 / 0.8801 / **0.7986** | 0.9012 / 0.8456 / **0.8726** | Direct-LLM F1 +0.074 | 2026-08-07 归因；formal 三方法对照沿用粗五字段 |
+| 细 Gold（1055 spans，对照口径） | 0.6845 / 0.7564 / **0.7186** | 0.8793 / 0.6938 / **0.7756** | LLM-SE F1 +0.057 | B0-R3/D1-R3 同口径；formal comparison 细字段诊断沿用 |
+| 粗 Gold（609 spans，Sun 句子级主口径） | 0.7309 / 0.8801 / **0.7986** | 0.9012 / 0.8456 / **0.8726** | LLM-SE F1 +0.074 | 2026-08-07 归因；formal 三方法对照沿用粗五字段 |
 | Sun-marker 收敛（constraint/condition） | constraint R 1.0 (13/13)、condition R 0.989 (91/92) | — | P 侧不可解读（单边收敛） | `s27_b0_coarse_gold_cc_v1` / `s27_coarse_gold_marker_converged_v1` |
 
 结论：我们的 Gold 有 302 个 constraint，仅 13 个（4%）符合 Sun Table-4 marker
