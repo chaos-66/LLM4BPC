@@ -1,0 +1,3007 @@
+{
+  "legacy_development_report": {
+    "action_scope_audit": {
+      "action_scope_proposal": "NONE",
+      "extra_action_false_positive_count": 69,
+      "implementation_allowed": false
+    },
+    "calibration": {
+      "backend_best_points": {},
+      "grid": {
+        "gamma": [
+          0.4,
+          0.45,
+          0.5,
+          0.55,
+          0.6,
+          0.65,
+          0.7,
+          0.75,
+          0.8
+        ],
+        "theta": [
+          0.4,
+          0.45,
+          0.5,
+          0.55,
+          0.6,
+          0.65,
+          0.7,
+          0.75,
+          0.8
+        ]
+      },
+      "grid_result_rows": 243,
+      "objective": "mean_of_sun_and_ours_development_macro_f1",
+      "tie_breakers": [
+        "higher_combined_dev_objective",
+        "higher_min_method_macro_f1",
+        "lower_mean_unknown_rate",
+        "higher_mean_overall_precision",
+        "larger_gamma_plus_theta"
+      ]
+    },
+    "dev_result": {
+      "macro_f1_ours": 0.5206425153793575,
+      "macro_f1_sun": 0.46055835091705893,
+      "micro_f1_ours": 0.5340909090909091,
+      "micro_f1_sun": 0.4457831325301205,
+      "ours": {
+        "false_negative_examples": [
+          {
+            "case_id": "case_203f2134c0ec",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "action_mapping_below_gamma",
+            "requirement_id": "R5-S5-T3",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_220918995d29",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 0.0,
+            "reason": null,
+            "requirement_id": "R5-S3-T2",
+            "status": "satisfied"
+          },
+          {
+            "case_id": "case_2a918b013dbb",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 0.0,
+            "reason": null,
+            "requirement_id": "R5-D-02",
+            "status": "satisfied"
+          },
+          {
+            "case_id": "case_36a5f51046f7",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 0.0,
+            "reason": null,
+            "requirement_id": "R5-S6-T4",
+            "status": "satisfied"
+          },
+          {
+            "case_id": "case_3b01b9c36d0f",
+            "check_type": "out_of_order",
+            "denominator": 0,
+            "raw_score": 0.0,
+            "reason": "no_rule_order_endpoints",
+            "requirement_id": "R5-D-01",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_50f498770ae9",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "action_mapping_below_gamma",
+            "requirement_id": "R5-D-03",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_648835a58615",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "empty_rule_actor_denominator",
+            "requirement_id": "R5-D-02",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_64985e535fd0",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 0.0,
+            "reason": null,
+            "requirement_id": "R5-S1-T2",
+            "status": "satisfied"
+          },
+          {
+            "case_id": "case_6cb0e57227f2",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "action_mapping_below_gamma",
+            "requirement_id": "R5-S6-T3",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_706168fa759f",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 0.0,
+            "reason": null,
+            "requirement_id": "R5-S3-T1",
+            "status": "satisfied"
+          },
+          {
+            "case_id": "case_7396f1ecbaf2",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 0.0,
+            "reason": null,
+            "requirement_id": "R5-D-09",
+            "status": "satisfied"
+          },
+          {
+            "case_id": "case_7c047344bd97",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 0.0,
+            "reason": null,
+            "requirement_id": "R5-S2-T2",
+            "status": "satisfied"
+          },
+          {
+            "case_id": "case_806f7830225a",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 0.0,
+            "reason": null,
+            "requirement_id": "R5-S1-T3",
+            "status": "satisfied"
+          },
+          {
+            "case_id": "case_9742238625a1",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 0.0,
+            "reason": null,
+            "requirement_id": "R5-S1-T1",
+            "status": "satisfied"
+          },
+          {
+            "case_id": "case_a9fd75331508",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "empty_rule_actor_denominator",
+            "requirement_id": "R5-D-01",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_b91fc088d4c5",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 0.0,
+            "reason": null,
+            "requirement_id": "R5-S1-T4",
+            "status": "satisfied"
+          },
+          {
+            "case_id": "case_c5b585c4439f",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 0.0,
+            "reason": null,
+            "requirement_id": "R5-D-12",
+            "status": "satisfied"
+          },
+          {
+            "case_id": "case_dbe5d0716353",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "empty_rule_actor_denominator",
+            "requirement_id": "R5-D-07",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_e382dcb7708b",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 0.0,
+            "reason": null,
+            "requirement_id": "R5-D-06",
+            "status": "satisfied"
+          },
+          {
+            "case_id": "case_f81de319913d",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 0.0,
+            "reason": null,
+            "requirement_id": "R5-S6-T2",
+            "status": "satisfied"
+          },
+          {
+            "case_id": "case_fb1fd0822200",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 0.0,
+            "reason": null,
+            "requirement_id": "R5-S5-T2",
+            "status": "satisfied"
+          },
+          {
+            "case_id": "case_ff937cc4c24e",
+            "check_type": "out_of_order",
+            "denominator": 0,
+            "raw_score": 0.0,
+            "reason": "no_rule_order_endpoints",
+            "requirement_id": "R5-D-02",
+            "status": "unknown"
+          }
+        ],
+        "false_positive_examples": [
+          {
+            "case_id": "case_0ca6ea35f87e",
+            "check_type": "incorrect_actor",
+            "denominator": 2,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S6-T2"
+          },
+          {
+            "case_id": "case_0f67bfdd277b",
+            "check_type": "missing_action",
+            "denominator": 2,
+            "raw_score": 0.5,
+            "reason": null,
+            "requirement_id": "R5-S4-T3"
+          },
+          {
+            "case_id": "case_11233dd30223",
+            "check_type": "missing_action",
+            "denominator": 2,
+            "raw_score": 0.5,
+            "reason": null,
+            "requirement_id": "R5-S4-T2"
+          },
+          {
+            "case_id": "case_11233dd30223",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S4-T2"
+          },
+          {
+            "case_id": "case_19b2d6f1bfb0",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-D-08"
+          },
+          {
+            "case_id": "case_1a2d6abc026a",
+            "check_type": "missing_action",
+            "denominator": 2,
+            "raw_score": 0.5,
+            "reason": null,
+            "requirement_id": "R5-S5-T4"
+          },
+          {
+            "case_id": "case_1e5363aa87b5",
+            "check_type": "incorrect_actor",
+            "denominator": 2,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S7-T1"
+          },
+          {
+            "case_id": "case_1f817e0b0d37",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S6-T4"
+          },
+          {
+            "case_id": "case_1fafed22bfdd",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-D-07"
+          },
+          {
+            "case_id": "case_1fd8d9be0c9d",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-D-12"
+          },
+          {
+            "case_id": "case_203f2134c0ec",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S5-T3"
+          },
+          {
+            "case_id": "case_250418025567",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S1-T3"
+          },
+          {
+            "case_id": "case_26761c804689",
+            "check_type": "incorrect_actor",
+            "denominator": 2,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-D-10"
+          },
+          {
+            "case_id": "case_27553ad672b2",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-D-12"
+          },
+          {
+            "case_id": "case_2e0630dc5be5",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S1-T4"
+          },
+          {
+            "case_id": "case_3af5fd62647b",
+            "check_type": "missing_action",
+            "denominator": 2,
+            "raw_score": 0.5,
+            "reason": null,
+            "requirement_id": "R5-S8-T1"
+          },
+          {
+            "case_id": "case_3b01b9c36d0f",
+            "check_type": "missing_action",
+            "denominator": 2,
+            "raw_score": 0.5,
+            "reason": null,
+            "requirement_id": "R5-D-01"
+          },
+          {
+            "case_id": "case_3db096abecec",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S1-T2"
+          },
+          {
+            "case_id": "case_436340192865",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-D-11"
+          },
+          {
+            "case_id": "case_44ded3550ee5",
+            "check_type": "missing_action",
+            "denominator": 2,
+            "raw_score": 0.5,
+            "reason": null,
+            "requirement_id": "R5-S8-T1"
+          },
+          {
+            "case_id": "case_50f498770ae9",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-D-03"
+          },
+          {
+            "case_id": "case_5751d20f4ed7",
+            "check_type": "missing_action",
+            "denominator": 5,
+            "raw_score": 0.6,
+            "reason": null,
+            "requirement_id": "R5-S4-T1"
+          },
+          {
+            "case_id": "case_5bcf29af32f6",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S5-T2"
+          },
+          {
+            "case_id": "case_6209f221b20b",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S1-T4"
+          },
+          {
+            "case_id": "case_65628736fcec",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-D-06"
+          },
+          {
+            "case_id": "case_66774ccb1348",
+            "check_type": "missing_action",
+            "denominator": 2,
+            "raw_score": 0.5,
+            "reason": null,
+            "requirement_id": "R5-S4-T2"
+          },
+          {
+            "case_id": "case_6cb0e57227f2",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S6-T3"
+          },
+          {
+            "case_id": "case_6d3b90db76ed",
+            "check_type": "missing_action",
+            "denominator": 5,
+            "raw_score": 0.6,
+            "reason": null,
+            "requirement_id": "R5-S4-T1"
+          },
+          {
+            "case_id": "case_6d3b90db76ed",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S4-T1"
+          },
+          {
+            "case_id": "case_72073c61be4c",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-D-09"
+          },
+          {
+            "case_id": "case_7dcc88ac3cf1",
+            "check_type": "incorrect_actor",
+            "denominator": 2,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S7-T1"
+          },
+          {
+            "case_id": "case_83e2662c1457",
+            "check_type": "missing_action",
+            "denominator": 2,
+            "raw_score": 0.5,
+            "reason": null,
+            "requirement_id": "R5-S8-T1"
+          },
+          {
+            "case_id": "case_8447fd35edc7",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S3-T2"
+          },
+          {
+            "case_id": "case_88a2fd3f66cf",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S4-T4"
+          },
+          {
+            "case_id": "case_8c729ed572f4",
+            "check_type": "missing_action",
+            "denominator": 2,
+            "raw_score": 0.5,
+            "reason": null,
+            "requirement_id": "R5-S5-T4"
+          },
+          {
+            "case_id": "case_8c729ed572f4",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S5-T4"
+          },
+          {
+            "case_id": "case_8d21f4b6fb98",
+            "check_type": "incorrect_actor",
+            "denominator": 2,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S6-T1"
+          },
+          {
+            "case_id": "case_99b7bc6f1fc6",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S2-T2"
+          },
+          {
+            "case_id": "case_9c6fcd32f03c",
+            "check_type": "missing_action",
+            "denominator": 2,
+            "raw_score": 0.5,
+            "reason": null,
+            "requirement_id": "R5-D-01"
+          },
+          {
+            "case_id": "case_a0f75080210f",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S5-T1"
+          },
+          {
+            "case_id": "case_a1712c670943",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-D-03"
+          },
+          {
+            "case_id": "case_a2f445c641d1",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-D-04"
+          },
+          {
+            "case_id": "case_a9fd75331508",
+            "check_type": "missing_action",
+            "denominator": 2,
+            "raw_score": 0.5,
+            "reason": null,
+            "requirement_id": "R5-D-01"
+          },
+          {
+            "case_id": "case_b15419d68b21",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-D-05"
+          },
+          {
+            "case_id": "case_ba895d210eaf",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S3-T2"
+          },
+          {
+            "case_id": "case_c20eeebe67dd",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S3-T1"
+          },
+          {
+            "case_id": "case_c962e006a37d",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S5-T3"
+          },
+          {
+            "case_id": "case_cecd14adb006",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S6-T3"
+          },
+          {
+            "case_id": "case_d391f7745e2d",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S3-T1"
+          },
+          {
+            "case_id": "case_d46c4dbbf7b8",
+            "check_type": "missing_action",
+            "denominator": 2,
+            "raw_score": 0.5,
+            "reason": null,
+            "requirement_id": "R5-S5-T4"
+          }
+        ],
+        "macro_f1": 0.5206425153793575,
+        "method": "ours",
+        "micro_f1": 0.5340909090909091,
+        "overall": {
+          "FN": 22,
+          "FP": 60,
+          "TN": 58,
+          "TP": 47,
+          "coverage": 0.8905472636815921,
+          "f1": 0.5340909090909091,
+          "negative_support": 132,
+          "not_applicable": 39,
+          "not_scored": 105,
+          "positive_support": 69,
+          "precision": 0.4392523364485981,
+          "recall": 0.6811594202898551,
+          "scored_cells": 201,
+          "unknown_negative": 14,
+          "unknown_positive": 8,
+          "unknown_rate": 0.10945273631840796
+        },
+        "per_type": {
+          "incorrect_actor": {
+            "FN": 6,
+            "FP": 35,
+            "TN": 2,
+            "TP": 27,
+            "coverage": 0.8,
+            "f1": 0.5684210526315789,
+            "negative_support": 47,
+            "not_applicable": 35,
+            "not_scored": 0,
+            "positive_support": 33,
+            "precision": 0.43548387096774194,
+            "recall": 0.8181818181818182,
+            "scored_cells": 80,
+            "unknown_negative": 10,
+            "unknown_positive": 6,
+            "unknown_rate": 0.2
+          },
+          "missing_action": {
+            "FN": 14,
+            "FP": 25,
+            "TN": 55,
+            "TP": 19,
+            "coverage": 1.0,
+            "f1": 0.49350649350649356,
+            "negative_support": 80,
+            "not_applicable": 2,
+            "not_scored": 0,
+            "positive_support": 33,
+            "precision": 0.4318181818181818,
+            "recall": 0.5757575757575758,
+            "scored_cells": 113,
+            "unknown_negative": 0,
+            "unknown_positive": 0,
+            "unknown_rate": 0.0
+          },
+          "out_of_order": {
+            "FN": 2,
+            "FP": 0,
+            "TN": 1,
+            "TP": 1,
+            "coverage": 0.25,
+            "f1": 0.5,
+            "negative_support": 5,
+            "not_applicable": 2,
+            "not_scored": 105,
+            "positive_support": 3,
+            "precision": 1.0,
+            "recall": 0.3333333333333333,
+            "scored_cells": 8,
+            "unknown_negative": 4,
+            "unknown_positive": 2,
+            "unknown_rate": 0.75
+          }
+        },
+        "unknown_reason_counts": {
+          "incorrect_actor:action_mapping_below_gamma": 8,
+          "incorrect_actor:empty_rule_actor_denominator": 8,
+          "out_of_order:no_rule_order_endpoints": 6
+        }
+      },
+      "sun": {
+        "false_negative_examples": [
+          {
+            "case_id": "case_0164a880bf44",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "empty_rule_actor_denominator",
+            "requirement_id": "R5-D-08",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_026d89f057e8",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "empty_rule_actor_denominator",
+            "requirement_id": "R5-D-11",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_0697d9b84b86",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 0.0,
+            "reason": null,
+            "requirement_id": "R5-S6-T3",
+            "status": "satisfied"
+          },
+          {
+            "case_id": "case_156f3d39867e",
+            "check_type": "missing_action",
+            "denominator": 0,
+            "raw_score": 0.0,
+            "reason": "no_rule_actions",
+            "requirement_id": "R5-S4-T2",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_1a2d6abc026a",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "incomplete_rule_actor_action_map",
+            "requirement_id": "R5-S5-T4",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_203f2134c0ec",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "action_mapping_below_gamma",
+            "requirement_id": "R5-S5-T3",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_221218bba2d3",
+            "check_type": "missing_action",
+            "denominator": 2,
+            "raw_score": 0.0,
+            "reason": null,
+            "requirement_id": "R5-S4-T1",
+            "status": "satisfied"
+          },
+          {
+            "case_id": "case_27a05191cde1",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "action_mapping_below_gamma",
+            "requirement_id": "R5-S1-T3",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_293adf4880a6",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "action_mapping_below_gamma",
+            "requirement_id": "R5-S3-T1",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_36a5f51046f7",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 0.0,
+            "reason": null,
+            "requirement_id": "R5-S6-T4",
+            "status": "satisfied"
+          },
+          {
+            "case_id": "case_3b01b9c36d0f",
+            "check_type": "out_of_order",
+            "denominator": 0,
+            "raw_score": 0.0,
+            "reason": "no_rule_order_endpoints",
+            "requirement_id": "R5-D-01",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_44ded3550ee5",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "empty_rule_actor_denominator",
+            "requirement_id": "R5-S8-T1",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_47ac07c5ced4",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "action_mapping_below_gamma",
+            "requirement_id": "R5-S2-T2",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_4aec33c00dc8",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "action_mapping_below_gamma",
+            "requirement_id": "R5-D-04",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_4c59fee89687",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "empty_rule_actor_denominator",
+            "requirement_id": "R5-S1-T1",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_5b249b3a462b",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "empty_rule_actor_denominator",
+            "requirement_id": "R5-S6-T1",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_5b5cc6e83173",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "action_mapping_below_gamma",
+            "requirement_id": "R5-S6-T2",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_64985e535fd0",
+            "check_type": "missing_action",
+            "denominator": 0,
+            "raw_score": 0.0,
+            "reason": "no_rule_actions",
+            "requirement_id": "R5-S1-T2",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_66774ccb1348",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "empty_rule_actor_denominator",
+            "requirement_id": "R5-S4-T2",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_6fda0f20b097",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 0.0,
+            "reason": null,
+            "requirement_id": "R5-D-03",
+            "status": "satisfied"
+          },
+          {
+            "case_id": "case_8480429a9517",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "action_mapping_below_gamma",
+            "requirement_id": "R5-S1-T4",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_b72abd1e6b8b",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "empty_rule_actor_denominator",
+            "requirement_id": "R5-S1-T2",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_c2c28cb239bc",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "empty_rule_actor_denominator",
+            "requirement_id": "R5-S7-T1",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_c5b585c4439f",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 0.0,
+            "reason": null,
+            "requirement_id": "R5-D-12",
+            "status": "satisfied"
+          },
+          {
+            "case_id": "case_d1ab41696c03",
+            "check_type": "missing_action",
+            "denominator": 0,
+            "raw_score": 0.0,
+            "reason": "no_rule_actions",
+            "requirement_id": "R5-S8-T1",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_d2f6fee80f4e",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "empty_rule_actor_denominator",
+            "requirement_id": "R5-D-09",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_d824876f7bf8",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "empty_rule_actor_denominator",
+            "requirement_id": "R5-D-10",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_dbe5d0716353",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "empty_rule_actor_denominator",
+            "requirement_id": "R5-D-07",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_e382dcb7708b",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 0.0,
+            "reason": null,
+            "requirement_id": "R5-D-06",
+            "status": "satisfied"
+          },
+          {
+            "case_id": "case_f2558cf5f53d",
+            "check_type": "missing_action",
+            "denominator": 0,
+            "raw_score": 0.0,
+            "reason": "no_rule_actions",
+            "requirement_id": "R5-D-11",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_f88b4ccdc713",
+            "check_type": "incorrect_actor",
+            "denominator": 0,
+            "raw_score": null,
+            "reason": "action_mapping_below_gamma",
+            "requirement_id": "R5-S3-T2",
+            "status": "unknown"
+          },
+          {
+            "case_id": "case_ff937cc4c24e",
+            "check_type": "out_of_order",
+            "denominator": 0,
+            "raw_score": 0.0,
+            "reason": "no_rule_order_endpoints",
+            "requirement_id": "R5-D-02",
+            "status": "unknown"
+          }
+        ],
+        "false_positive_examples": [
+          {
+            "case_id": "case_0164a880bf44",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-D-08"
+          },
+          {
+            "case_id": "case_0ca6ea35f87e",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S6-T2"
+          },
+          {
+            "case_id": "case_0f67bfdd277b",
+            "check_type": "missing_action",
+            "denominator": 2,
+            "raw_score": 0.5,
+            "reason": null,
+            "requirement_id": "R5-S4-T3"
+          },
+          {
+            "case_id": "case_19b2d6f1bfb0",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-D-08"
+          },
+          {
+            "case_id": "case_1a2d6abc026a",
+            "check_type": "missing_action",
+            "denominator": 2,
+            "raw_score": 0.5,
+            "reason": null,
+            "requirement_id": "R5-S5-T4"
+          },
+          {
+            "case_id": "case_1e5363aa87b5",
+            "check_type": "missing_action",
+            "denominator": 3,
+            "raw_score": 0.3333333333333333,
+            "reason": null,
+            "requirement_id": "R5-S7-T1"
+          },
+          {
+            "case_id": "case_1f817e0b0d37",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S6-T4"
+          },
+          {
+            "case_id": "case_1fafed22bfdd",
+            "check_type": "missing_action",
+            "denominator": 2,
+            "raw_score": 0.5,
+            "reason": null,
+            "requirement_id": "R5-D-07"
+          },
+          {
+            "case_id": "case_1fd8d9be0c9d",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-D-12"
+          },
+          {
+            "case_id": "case_203f2134c0ec",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S5-T3"
+          },
+          {
+            "case_id": "case_250418025567",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S1-T3"
+          },
+          {
+            "case_id": "case_26761c804689",
+            "check_type": "missing_action",
+            "denominator": 2,
+            "raw_score": 0.5,
+            "reason": null,
+            "requirement_id": "R5-D-10"
+          },
+          {
+            "case_id": "case_27553ad672b2",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-D-12"
+          },
+          {
+            "case_id": "case_27a05191cde1",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S1-T3"
+          },
+          {
+            "case_id": "case_293adf4880a6",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S3-T1"
+          },
+          {
+            "case_id": "case_2e0630dc5be5",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S1-T4"
+          },
+          {
+            "case_id": "case_3b01b9c36d0f",
+            "check_type": "missing_action",
+            "denominator": 2,
+            "raw_score": 0.5,
+            "reason": null,
+            "requirement_id": "R5-D-01"
+          },
+          {
+            "case_id": "case_47ac07c5ced4",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S2-T2"
+          },
+          {
+            "case_id": "case_4aec33c00dc8",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-D-04"
+          },
+          {
+            "case_id": "case_4c59fee89687",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S1-T1"
+          },
+          {
+            "case_id": "case_5b5cc6e83173",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S6-T2"
+          },
+          {
+            "case_id": "case_5bcf29af32f6",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S5-T2"
+          },
+          {
+            "case_id": "case_6209f221b20b",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S1-T4"
+          },
+          {
+            "case_id": "case_648835a58615",
+            "check_type": "missing_action",
+            "denominator": 2,
+            "raw_score": 0.5,
+            "reason": null,
+            "requirement_id": "R5-D-02"
+          },
+          {
+            "case_id": "case_65628736fcec",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-D-06"
+          },
+          {
+            "case_id": "case_6d3b90db76ed",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S4-T1"
+          },
+          {
+            "case_id": "case_72073c61be4c",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-D-09"
+          },
+          {
+            "case_id": "case_7dcc88ac3cf1",
+            "check_type": "missing_action",
+            "denominator": 3,
+            "raw_score": 0.3333333333333333,
+            "reason": null,
+            "requirement_id": "R5-S7-T1"
+          },
+          {
+            "case_id": "case_8447fd35edc7",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S3-T2"
+          },
+          {
+            "case_id": "case_8480429a9517",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S1-T4"
+          },
+          {
+            "case_id": "case_88a2fd3f66cf",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S4-T4"
+          },
+          {
+            "case_id": "case_8c729ed572f4",
+            "check_type": "missing_action",
+            "denominator": 2,
+            "raw_score": 0.5,
+            "reason": null,
+            "requirement_id": "R5-S5-T4"
+          },
+          {
+            "case_id": "case_99b7bc6f1fc6",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S2-T2"
+          },
+          {
+            "case_id": "case_9c6fcd32f03c",
+            "check_type": "missing_action",
+            "denominator": 2,
+            "raw_score": 0.5,
+            "reason": null,
+            "requirement_id": "R5-D-01"
+          },
+          {
+            "case_id": "case_a0f75080210f",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S5-T1"
+          },
+          {
+            "case_id": "case_a1712c670943",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-D-03"
+          },
+          {
+            "case_id": "case_a2f445c641d1",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-D-04"
+          },
+          {
+            "case_id": "case_a9fd75331508",
+            "check_type": "missing_action",
+            "denominator": 2,
+            "raw_score": 0.5,
+            "reason": null,
+            "requirement_id": "R5-D-01"
+          },
+          {
+            "case_id": "case_b15419d68b21",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-D-05"
+          },
+          {
+            "case_id": "case_ba895d210eaf",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S3-T2"
+          },
+          {
+            "case_id": "case_c20eeebe67dd",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S3-T1"
+          },
+          {
+            "case_id": "case_c2c28cb239bc",
+            "check_type": "missing_action",
+            "denominator": 3,
+            "raw_score": 0.3333333333333333,
+            "reason": null,
+            "requirement_id": "R5-S7-T1"
+          },
+          {
+            "case_id": "case_c962e006a37d",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S5-T3"
+          },
+          {
+            "case_id": "case_cecd14adb006",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S6-T3"
+          },
+          {
+            "case_id": "case_d2f6fee80f4e",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-D-09"
+          },
+          {
+            "case_id": "case_d391f7745e2d",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S3-T1"
+          },
+          {
+            "case_id": "case_d46c4dbbf7b8",
+            "check_type": "missing_action",
+            "denominator": 2,
+            "raw_score": 0.5,
+            "reason": null,
+            "requirement_id": "R5-S5-T4"
+          },
+          {
+            "case_id": "case_d7a85c641eb0",
+            "check_type": "missing_action",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-S1-T3"
+          },
+          {
+            "case_id": "case_d8029187c213",
+            "check_type": "incorrect_actor",
+            "denominator": 1,
+            "raw_score": 1.0,
+            "reason": null,
+            "requirement_id": "R5-D-05"
+          },
+          {
+            "case_id": "case_d824876f7bf8",
+            "check_type": "missing_action",
+            "denominator": 2,
+            "raw_score": 0.5,
+            "reason": null,
+            "requirement_id": "R5-D-10"
+          }
+        ],
+        "macro_f1": 0.46055835091705893,
+        "method": "sun",
+        "micro_f1": 0.4457831325301205,
+        "overall": {
+          "FN": 32,
+          "FP": 60,
+          "TN": 31,
+          "TP": 37,
+          "coverage": 0.6666666666666666,
+          "f1": 0.4457831325301205,
+          "negative_support": 132,
+          "not_applicable": 39,
+          "not_scored": 105,
+          "positive_support": 69,
+          "precision": 0.38144329896907214,
+          "recall": 0.5362318840579711,
+          "scored_cells": 201,
+          "unknown_negative": 41,
+          "unknown_positive": 26,
+          "unknown_rate": 0.3333333333333333
+        },
+        "per_type": {
+          "incorrect_actor": {
+            "FN": 20,
+            "FP": 15,
+            "TN": 4,
+            "TP": 13,
+            "coverage": 0.4,
+            "f1": 0.4262295081967213,
+            "negative_support": 47,
+            "not_applicable": 35,
+            "not_scored": 0,
+            "positive_support": 33,
+            "precision": 0.4642857142857143,
+            "recall": 0.3939393939393939,
+            "scored_cells": 80,
+            "unknown_negative": 28,
+            "unknown_positive": 20,
+            "unknown_rate": 0.6
+          },
+          "missing_action": {
+            "FN": 10,
+            "FP": 45,
+            "TN": 26,
+            "TP": 23,
+            "coverage": 0.8849557522123894,
+            "f1": 0.4554455445544555,
+            "negative_support": 80,
+            "not_applicable": 2,
+            "not_scored": 0,
+            "positive_support": 33,
+            "precision": 0.3382352941176471,
+            "recall": 0.696969696969697,
+            "scored_cells": 113,
+            "unknown_negative": 9,
+            "unknown_positive": 4,
+            "unknown_rate": 0.11504424778761062
+          },
+          "out_of_order": {
+            "FN": 2,
+            "FP": 0,
+            "TN": 1,
+            "TP": 1,
+            "coverage": 0.25,
+            "f1": 0.5,
+            "negative_support": 5,
+            "not_applicable": 2,
+            "not_scored": 105,
+            "positive_support": 3,
+            "precision": 1.0,
+            "recall": 0.3333333333333333,
+            "scored_cells": 8,
+            "unknown_negative": 4,
+            "unknown_positive": 2,
+            "unknown_rate": 0.75
+          }
+        },
+        "unknown_reason_counts": {
+          "incorrect_actor:action_mapping_below_gamma": 21,
+          "incorrect_actor:empty_rule_actor_denominator": 24,
+          "incorrect_actor:incomplete_rule_actor_action_map": 3,
+          "missing_action:no_rule_actions": 13,
+          "out_of_order:no_rule_order_endpoints": 6
+        }
+      }
+    },
+    "development_case_count": 113,
+    "integrity": {
+      "benchmark_manifest_sha256": "50d92bf5bc45374d1355a20e3d987c2f1c2df2b2bb3beb338eea295390d3f2ce",
+      "benchmark_modified": false,
+      "development_manifest_sha256": "8e156128e688f58a97546f9ae0b42d29f74c64196bc4f402c9f32c4c6db9c782",
+      "gold_modified": false,
+      "gold_packet_sha256": "1e6de56fb3a934646816fe361873966acae1b0022e80c65f9eadf45d591c5884",
+      "historical_v1_result_modified": false,
+      "historical_v1_result_sha256": "162ade2a23286e15460055c78ed1310d485eaf78d6a18b837a4dd8469f167313",
+      "network_calls": 0,
+      "order_scope_manifest_sha256": "cc0a93daabef04915b938544722b0d3b529838bf1e9818db546388ceb24659f7",
+      "ours_stage2_prediction_modified": false,
+      "ours_stage2_predictions_sha256": "2204f25e69fb5cd9dc2ff4cf82573d0b50df12fbd1ff1be47fa04494065cec0b",
+      "real_api_calls": 0,
+      "sun_stage2_prediction_modified": false,
+      "sun_stage2_predictions_sha256": "21c6ed296368175a1e719374616821e96bd0de007749ea14228514ee07f2918b"
+    },
+    "inventory": [
+      {
+        "available": true,
+        "download_required": false,
+        "env_model": "en_core_web_md",
+        "kind": "spacy",
+        "mode": "md_vector_cosine",
+        "short_name": "spacy_en_core_web_md"
+      },
+      {
+        "available": true,
+        "download_required": false,
+        "env_model": "en_core_web_sm",
+        "kind": "spacy",
+        "mode": "sm_text_similarity",
+        "short_name": "spacy_en_core_web_sm"
+      },
+      {
+        "available": true,
+        "download_required": false,
+        "estimated_download_size_mb": 420,
+        "kind": "sentence_transformers",
+        "local_snapshot": "D:\\Paper\\experiment\\bpc-hybrid\\.tmp\\hf_cache\\hub\\models--sentence-transformers--all-mpnet-base-v2\\snapshots\\e8c3b32edf5434bc2275fc9bab85f82640a19130",
+        "model_name": "sentence-transformers/all-mpnet-base-v2",
+        "package_available": true,
+        "short_name": "sentence_transformers_all_mpnet_base_v2"
+      },
+      {
+        "available": false,
+        "download_required": true,
+        "estimated_download_size_mb": 90,
+        "kind": "sentence_transformers",
+        "local_snapshot": null,
+        "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+        "package_available": true,
+        "short_name": "sentence_transformers_all_minilm_l6_v2"
+      }
+    ],
+    "old_vs_new_semantic_mapping": {
+      "sentence_transformers_all_mpnet_base_v2": {
+        "ours": {
+          "action_mapping_success_above_gamma": 108,
+          "action_mapping_success_rate": 0.675,
+          "action_mapping_total_rule_actions": 160,
+          "actor_observability_rate": 0.7478260869565218,
+          "actor_observable_cells": 86,
+          "actor_scored_cells": 115,
+          "missing_false_positive_categories": {
+            "mandatory_action_detected_but_extra_rule_action_below_gamma": 15,
+            "mandatory_primary_action_not_detected_below_gamma": 10
+          },
+          "missing_false_positive_cells": 25,
+          "missing_observable_cells": 115
+        },
+        "sun": {
+          "action_mapping_success_above_gamma": 68,
+          "action_mapping_success_rate": 0.5,
+          "action_mapping_total_rule_actions": 136,
+          "actor_observability_rate": 0.3739130434782609,
+          "actor_observable_cells": 43,
+          "actor_scored_cells": 115,
+          "missing_false_positive_categories": {
+            "mandatory_action_detected_but_extra_rule_action_below_gamma": 18,
+            "mandatory_primary_action_not_detected_below_gamma": 27
+          },
+          "missing_false_positive_cells": 45,
+          "missing_observable_cells": 102
+        }
+      },
+      "spacy_en_core_web_md": {
+        "ours": {
+          "action_mapping_success_above_gamma": 128,
+          "action_mapping_success_rate": 0.8,
+          "action_mapping_total_rule_actions": 160,
+          "actor_observability_rate": 0.8,
+          "actor_observable_cells": 92,
+          "actor_scored_cells": 115,
+          "missing_false_positive_categories": {
+            "mandatory_action_detected_but_extra_rule_action_below_gamma": 4,
+            "mandatory_primary_action_not_detected_below_gamma": 8
+          },
+          "missing_false_positive_cells": 12,
+          "missing_observable_cells": 115
+        },
+        "sun": {
+          "action_mapping_success_above_gamma": 119,
+          "action_mapping_success_rate": 0.875,
+          "action_mapping_total_rule_actions": 136,
+          "actor_observability_rate": 0.6347826086956522,
+          "actor_observable_cells": 73,
+          "actor_scored_cells": 115,
+          "missing_false_positive_categories": {
+            "mandatory_action_detected_but_extra_rule_action_below_gamma": 10,
+            "mandatory_primary_action_not_detected_below_gamma": 2
+          },
+          "missing_false_positive_cells": 12,
+          "missing_observable_cells": 102
+        }
+      },
+      "spacy_en_core_web_sm": {
+        "ours": {
+          "action_mapping_success_above_gamma": 136,
+          "action_mapping_success_rate": 0.85,
+          "action_mapping_total_rule_actions": 160,
+          "actor_observability_rate": 0.8695652173913043,
+          "actor_observable_cells": 100,
+          "actor_scored_cells": 115,
+          "missing_false_positive_categories": {
+            "mandatory_action_detected_but_extra_rule_action_below_gamma": 7,
+            "mandatory_primary_action_not_detected_below_gamma": 5
+          },
+          "missing_false_positive_cells": 12,
+          "missing_observable_cells": 115
+        },
+        "sun": {
+          "action_mapping_success_above_gamma": 114,
+          "action_mapping_success_rate": 0.8382352941176471,
+          "action_mapping_total_rule_actions": 136,
+          "actor_observability_rate": 0.6608695652173913,
+          "actor_observable_cells": 76,
+          "actor_scored_cells": 115,
+          "missing_false_positive_categories": {
+            "mandatory_action_detected_but_extra_rule_action_below_gamma": 15
+          },
+          "missing_false_positive_cells": 15,
+          "missing_observable_cells": 102
+        }
+      }
+    },
+    "order_type_a_rows": [
+      {
+        "case_id": "case_3b01b9c36d0f",
+        "citation": "GDPR Article 13(3)",
+        "gold_out_of_order": "violated",
+        "methods": {
+          "ours": {
+            "converted_order_relations": [],
+            "edge_generated": false,
+            "edges": [],
+            "projection_status": "no_edge",
+            "signal_denominator": 0,
+            "signal_observable": false,
+            "signal_raw_score": 0.0,
+            "signal_reason": "no_rule_order_endpoints",
+            "signal_status": "unknown"
+          },
+          "sun": {
+            "converted_order_relations": [
+              [
+                "provide",
+                "intends to further process the personal data for a purpose other than that for"
+              ]
+            ],
+            "edge_generated": true,
+            "edges": [
+              {
+                "after_best_similarity": 0.6886797547340393,
+                "after_text": "intends to further process the personal data for a purpose other than that for",
+                "before_best_similarity": 0.2764366865158081,
+                "before_text": "provide"
+              }
+            ],
+            "projection_status": "projected",
+            "signal_denominator": 0,
+            "signal_observable": false,
+            "signal_raw_score": 0.0,
+            "signal_reason": "no_rule_order_endpoints",
+            "signal_status": "unknown"
+          }
+        },
+        "requirement_id": "R5-D-01",
+        "source_relation": "provide information prior to further processing"
+      },
+      {
+        "case_id": "case_9c6fcd32f03c",
+        "citation": "GDPR Article 13(3)",
+        "gold_out_of_order": "satisfied",
+        "methods": {
+          "ours": {
+            "converted_order_relations": [],
+            "edge_generated": false,
+            "edges": [],
+            "projection_status": "no_edge",
+            "signal_denominator": 0,
+            "signal_observable": false,
+            "signal_raw_score": 0.0,
+            "signal_reason": "no_rule_order_endpoints",
+            "signal_status": "unknown"
+          },
+          "sun": {
+            "converted_order_relations": [
+              [
+                "provide",
+                "intends to further process the personal data for a purpose other than that for"
+              ]
+            ],
+            "edge_generated": true,
+            "edges": [
+              {
+                "after_best_similarity": 0.6886797547340393,
+                "after_text": "intends to further process the personal data for a purpose other than that for",
+                "before_best_similarity": 0.2764366865158081,
+                "before_text": "provide"
+              }
+            ],
+            "projection_status": "projected",
+            "signal_denominator": 0,
+            "signal_observable": false,
+            "signal_raw_score": 0.0,
+            "signal_reason": "no_rule_order_endpoints",
+            "signal_status": "unknown"
+          }
+        },
+        "requirement_id": "R5-D-01",
+        "source_relation": "provide information prior to further processing"
+      },
+      {
+        "case_id": "case_devsupp_s4t3_baseline",
+        "citation": "GDPR Article 28(3)(a)",
+        "gold_out_of_order": "satisfied",
+        "methods": {
+          "ours": {
+            "converted_order_relations": [
+              [
+                "inform the controller of that legal requirement",
+                "processes the personal data"
+              ]
+            ],
+            "edge_generated": true,
+            "edges": [
+              {
+                "after_best_similarity": 0.7578017115592957,
+                "after_text": "processes the personal data",
+                "before_best_similarity": 0.9706850647926331,
+                "before_text": "inform the controller of that legal requirement"
+              }
+            ],
+            "projection_status": "projected",
+            "signal_denominator": 1,
+            "signal_observable": true,
+            "signal_raw_score": 0.0,
+            "signal_reason": null,
+            "signal_status": "satisfied"
+          },
+          "sun": {
+            "converted_order_relations": [
+              [
+                "inform the controller of that legal requirement before processing, unless that",
+                "processes the personal data only on documented instructions from the controller,"
+              ]
+            ],
+            "edge_generated": true,
+            "edges": [
+              {
+                "after_best_similarity": 0.8850597143173218,
+                "after_text": "processes the personal data only on documented instructions from the controller,",
+                "before_best_similarity": 0.8985399007797241,
+                "before_text": "inform the controller of that legal requirement before processing, unless that"
+              }
+            ],
+            "projection_status": "projected",
+            "signal_denominator": 1,
+            "signal_observable": true,
+            "signal_raw_score": 0.0,
+            "signal_reason": null,
+            "signal_status": "satisfied"
+          }
+        },
+        "requirement_id": "R5-S4-T3",
+        "source_relation": "inform controller before processing"
+      },
+      {
+        "case_id": "case_devsupp_s4t3_out_of_order",
+        "citation": "GDPR Article 28(3)(a)",
+        "gold_out_of_order": "violated",
+        "methods": {
+          "ours": {
+            "converted_order_relations": [
+              [
+                "inform the controller of that legal requirement",
+                "processes the personal data"
+              ]
+            ],
+            "edge_generated": true,
+            "edges": [
+              {
+                "after_best_similarity": 0.7578017115592957,
+                "after_text": "processes the personal data",
+                "before_best_similarity": 0.9706850647926331,
+                "before_text": "inform the controller of that legal requirement"
+              }
+            ],
+            "projection_status": "projected",
+            "signal_denominator": 1,
+            "signal_observable": true,
+            "signal_raw_score": 1.0,
+            "signal_reason": null,
+            "signal_status": "violated"
+          },
+          "sun": {
+            "converted_order_relations": [
+              [
+                "inform the controller of that legal requirement before processing, unless that",
+                "processes the personal data only on documented instructions from the controller,"
+              ]
+            ],
+            "edge_generated": true,
+            "edges": [
+              {
+                "after_best_similarity": 0.8850597143173218,
+                "after_text": "processes the personal data only on documented instructions from the controller,",
+                "before_best_similarity": 0.8985399007797241,
+                "before_text": "inform the controller of that legal requirement before processing, unless that"
+              }
+            ],
+            "projection_status": "projected",
+            "signal_denominator": 1,
+            "signal_observable": true,
+            "signal_raw_score": 1.0,
+            "signal_reason": null,
+            "signal_status": "violated"
+          }
+        },
+        "requirement_id": "R5-S4-T3",
+        "source_relation": "inform controller before processing"
+      },
+      {
+        "case_id": "case_f7bb207445df",
+        "citation": "GDPR Article 14(4)",
+        "gold_out_of_order": "satisfied",
+        "methods": {
+          "ours": {
+            "converted_order_relations": [],
+            "edge_generated": false,
+            "edges": [],
+            "projection_status": "no_edge",
+            "signal_denominator": 0,
+            "signal_observable": false,
+            "signal_raw_score": 0.0,
+            "signal_reason": "no_rule_order_endpoints",
+            "signal_status": "unknown"
+          },
+          "sun": {
+            "converted_order_relations": [
+              [
+                "provide",
+                "intends to further process the personal data for a purpose other than that for"
+              ]
+            ],
+            "edge_generated": true,
+            "edges": [
+              {
+                "after_best_similarity": 0.6804907321929932,
+                "after_text": "intends to further process the personal data for a purpose other than that for",
+                "before_best_similarity": 0.2764366865158081,
+                "before_text": "provide"
+              }
+            ],
+            "projection_status": "projected",
+            "signal_denominator": 0,
+            "signal_observable": false,
+            "signal_raw_score": 0.0,
+            "signal_reason": "no_rule_order_endpoints",
+            "signal_status": "unknown"
+          }
+        },
+        "requirement_id": "R5-D-02",
+        "source_relation": "provide information prior to further processing"
+      },
+      {
+        "case_id": "case_ff937cc4c24e",
+        "citation": "GDPR Article 14(4)",
+        "gold_out_of_order": "violated",
+        "methods": {
+          "ours": {
+            "converted_order_relations": [],
+            "edge_generated": false,
+            "edges": [],
+            "projection_status": "no_edge",
+            "signal_denominator": 0,
+            "signal_observable": false,
+            "signal_raw_score": 0.0,
+            "signal_reason": "no_rule_order_endpoints",
+            "signal_status": "unknown"
+          },
+          "sun": {
+            "converted_order_relations": [
+              [
+                "provide",
+                "intends to further process the personal data for a purpose other than that for"
+              ]
+            ],
+            "edge_generated": true,
+            "edges": [
+              {
+                "after_best_similarity": 0.6804907321929932,
+                "after_text": "intends to further process the personal data for a purpose other than that for",
+                "before_best_similarity": 0.2764366865158081,
+                "before_text": "provide"
+              }
+            ],
+            "projection_status": "projected",
+            "signal_denominator": 0,
+            "signal_observable": false,
+            "signal_raw_score": 0.0,
+            "signal_reason": "no_rule_order_endpoints",
+            "signal_status": "unknown"
+          }
+        },
+        "requirement_id": "R5-D-02",
+        "source_relation": "provide information prior to further processing"
+      }
+    ],
+    "order_type_b_preserved": [
+      "R5-D-12",
+      "R5-S1-T3",
+      "R5-S1-T4",
+      "R5-S3-T1",
+      "R5-S3-T2",
+      "R5-S6-T3"
+    ],
+    "order_type_c_unsupported_not_scored": [
+      "R5-S5-T4"
+    ],
+    "runtime": {
+      "elapsed_seconds": 116.141,
+      "matcher_stats": {
+        "cache_hits": 5287,
+        "cache_misses": 422,
+        "cache_size": 422
+      },
+      "python": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]",
+      "selected_backend_identity": {
+        "backend_identity_sha256": "d4f960420ae7d45e910e85d91006b6289bc649383796cdf93ceed55cae27c4d3",
+        "kind": "sentence_transformers",
+        "mode": "sentence_embedding_cosine",
+        "model_name": "D:\\Paper\\experiment\\bpc-hybrid\\.tmp\\hf_cache\\hub\\models--sentence-transformers--all-mpnet-base-v2\\snapshots\\e8c3b32edf5434bc2275fc9bab85f82640a19130",
+        "model_path": "D:\\Paper\\experiment\\bpc-hybrid\\.tmp\\hf_cache\\hub\\models--sentence-transformers--all-mpnet-base-v2\\snapshots\\e8c3b32edf5434bc2275fc9bab85f82640a19130",
+        "short_name": "sentence_transformers_all_mpnet_base_v2",
+        "vector_dim": 768
+      },
+      "spacy": "3.8.13"
+    },
+    "schema_version": "stage3_v2_development_report@1.0.0",
+    "selected": {
+      "backend": "sentence_transformers_all_mpnet_base_v2",
+      "gamma": 0.55,
+      "objective": 0.4906004331482082,
+      "preferred_backend_download_required": false,
+      "preferred_sentence_embedding_backend": "sentence-transformers/all-mpnet-base-v2",
+      "tau": 0.8,
+      "theta": 0.45,
+      "tie_break_key": [
+        0.4906004331482082,
+        0.46055835091705893,
+        -0.22139303482587064,
+        0.4103478177088351,
+        1.0
+      ]
+    },
+    "stage3_v1_status": "PRESERVED_HISTORICAL_FROZEN_RUN",
+    "status": "DEVELOPMENT_COMPLETE_BACKEND_AND_ORDER_FROZEN",
+    "test_quarantine": {
+      "legacy_test_replay_performed": false,
+      "legacy_test_seen": false,
+      "legacy_test_used_for_calibration": false
+    },
+    "winter_mainline_status": "ARCHIVED_EXTERNAL_BASELINE"
+  },
+  "report_a_git": {
+    "branch": "paper-final-repair",
+    "checkpoint_commits": [
+      {
+        "hash": "1ded5d6",
+        "message": "S3-FINAL: downgrade all seen cases to development pool and freeze order eligibility"
+      },
+      {
+        "hash": "7b1f81b",
+        "message": "S3-FINAL: add local MPNet lookup and shared RuleRecord U_r adapter"
+      },
+      {
+        "hash": "a88caf9",
+        "message": "S3-FINAL: run MPNet convergence and prepare API authorization gate"
+      }
+    ],
+    "ending_code_head_before_handoff_ledger": "a88caf9",
+    "force_push_allowed": false,
+    "head_at_report_generation": "5b2e1ffaf7189992a5f7c779aa41dffcb8a6787c",
+    "note": "The post-report checkpoint commit hash is recorded in the handoff, not predicted inside this report.",
+    "starting_head": "5b2e1ffaf7189992a5f7c779aa41dffcb8a6787c",
+    "status_short": [
+      "M src/bpc_hybrid/stage3_v2/rule_record_converter_v2.py",
+      " M src/bpc_hybrid/stage3_v2/semantic_matcher_v2.py",
+      "?? data/development/stage3_final_development_pool_v1.json",
+      "?? data/development/stage3_final_order_supplement_v1/",
+      "?? outputs/reports/stage3_final_convergence_report_v1.json",
+      "?? outputs/reports/stage3_final_convergence_report_v1.md",
+      "?? outputs/reports/stage3_final_convergence_run_v1.log",
+      "?? outputs/reports/stage3_final_order_adapter_freeze_v1.json",
+      "?? outputs/reports/stage3_final_order_eligibility_v1.json",
+      "?? outputs/reports/stage3_final_semantic_backend_freeze_v1.json",
+      "?? scripts/build_stage3_final_convergence_summary_v1.py",
+      "?? scripts/build_stage3_final_development_pool_v1.py",
+      "?? scripts/run_stage3_final_convergence_v1.py",
+      "?? src/bpc_hybrid/stage3_v2/rule_order_adapter_v3.py"
+    ]
+  },
+  "report_b_root_causes": {
+    "open_root_cause_count": 2,
+    "rows": [
+      {
+        "dev_effect": "MPNet was selected against the current R1 SM backend by the pre-registered method-neutral objective.",
+        "evidence": "Existing R1 diagnostic reported Ours action mapping 61/93 with SM versus 82/93 with MD; the final run exposes the same action-mapping gap.",
+        "gold_independent": true,
+        "id": "RC-SEM-01",
+        "implemented": true,
+        "ours_affected": true,
+        "proposed_fix": "Promote a shared, local, Gold-blind MPNet backend using the model's declared mean-token pooling and L2 normalization.",
+        "root_cause": "The small spaCy model has no static word vectors and only weak context tensors; shared action matching lacked a sentence-level semantic encoder.",
+        "status": "FIXED_AND_FROZEN",
+        "sun_affected": true,
+        "symptom": "Frozen R1 spaCy SM semantic backend under-mapped action predicates and left a large missing-action bottleneck."
+      },
+      {
+        "dev_effect": "Not changed; kept frozen to avoid an unlicensed second refinement.",
+        "evidence": "The final selected run still has low missing-action precision for both methods; no obligation-scope revision was needed to remove the interface failure.",
+        "gold_independent": true,
+        "id": "RC-MISS-01",
+        "implemented": false,
+        "ours_affected": true,
+        "proposed_fix": "If a future authorized run shows the same systematic fragment pattern, apply at most one shared ObligationScopedActionProjection revision.",
+        "root_cause": "Stage-2 action spans sometimes contain subordinate fragments (e.g. prepositional continuations) and non-core clause actions; the denominator is not obligation-scoped.",
+        "status": "DEFERRED_SINGLE_ALLOWED_REVISION",
+        "sun_affected": true,
+        "symptom": "Missing-action precision remains low because extra/fragment Stage-2 actions are scored as mandatory obligations."
+      },
+      {
+        "dev_effect": "Actor method frozen as required.",
+        "evidence": "Selected run coverage and unknown rates are reported separately; actor formula was not changed.",
+        "gold_independent": true,
+        "id": "RC-ACTOR-01",
+        "implemented": false,
+        "ours_affected": true,
+        "proposed_fix": "No formula change. Preserve Definition 6 and report coverage.",
+        "root_cause": "Definition 6 is intentionally action-bound; Stage-2 actor-action maps are incomplete for some records, so the cell is legitimately unknown rather than guessed.",
+        "status": "FROZEN_NO_CHANGE",
+        "sun_affected": true,
+        "symptom": "Actor coverage and unknown rate remain uneven, especially for Sun."
+      },
+      {
+        "dev_effect": "Order F1 moved from interface-missing zero to 0.5 for both methods on the capability-aligned development scope.",
+        "evidence": "Frozen Sun/Ours order_relations were empty; new SharedRuleOrderAdapterV3 generated non-empty edges for R5-D-01/R5-D-02 Sun and for the R5-S4-T3 supplement for both methods.",
+        "gold_independent": true,
+        "id": "RC-ORDER-01",
+        "implemented": true,
+        "ours_affected": true,
+        "proposed_fix": "Implement one documented, Gold-blind, method-neutral SharedRuleOrderAdapterV3 using temporal markers, general syntax, existing Stage-2 actions, and the shared matcher.",
+        "root_cause": "Sun's paper requires U_r subset A_r x A_r but does not publish an automatic extraction algorithm; the project had no shared U_r adapter.",
+        "status": "FIXED_AND_FROZEN",
+        "sun_affected": true,
+        "symptom": "Sun/Ours frozen Stage-2 records had empty order_relations, so Definition 7 always had denominator zero."
+      },
+      {
+        "dev_effect": "Unknown order cells are reported instead of setting F1 to zero through spurious edges.",
+        "evidence": "Adapter audits show no unique existing action pair for those requirements; they are retained in the eligibility report as outside/diagnostic rather than deleted.",
+        "gold_independent": true,
+        "id": "RC-ORDER-02",
+        "implemented": true,
+        "ours_affected": true,
+        "proposed_fix": "Capability-aligned order eligibility; keep them as diagnostics. Do not invent nominal-to-action endpoints.",
+        "root_cause": "Frozen Stage-2 A_r does not contain the second endpoint (e.g. approving, informing, lifted) for R5-S7-T1/R5-S8-T1 and some nominalized cases.",
+        "status": "DOCUMENTED_FROZEN",
+        "sun_affected": true,
+        "symptom": "Several source temporal relations have a nominalized or absent second action and cannot satisfy U_r subset A_r x A_r."
+      },
+      {
+        "dev_effect": "Ours order recall remains limited on existing cases; supplement gives an observable order signal.",
+        "evidence": "Final order rows show Sun edges for D-01/D-02 but Ours denominator zero; this is the intended method comparison, not an adapter bug.",
+        "gold_independent": true,
+        "id": "RC-COV-01",
+        "implemented": false,
+        "ours_affected": true,
+        "proposed_fix": "Do not post-hoc repair Ours. A future authorized Stage-2 run may cover it; the final unseen run must not tune on this development result.",
+        "root_cause": "Ours extracts the `provide ... prior to further processing` predicate as one action and does not separately extract `process`; this is a Stage-2 representation coverage gap.",
+        "status": "REPRESENTATION_LIMITATION_FROZEN",
+        "sun_affected": false,
+        "symptom": "Ours has no order edge for R5-D-01/R5-D-02 because its Stage-2 A_r lacks a process endpoint."
+      }
+    ],
+    "schema_version": "stage3_final_convergence_root_causes@1.0.0",
+    "status": "ROOT_CAUSE_LEDGER_FROZEN_AFTER_SINGLE_CONVERGENCE_RUN"
+  },
+  "report_c_mpnet": {
+    "backend": "sentence_transformers_all_mpnet_base_v2",
+    "backend_comparison": {
+      "sentence_transformers_all_mpnet_base_v2": {
+        "gamma": 0.55,
+        "objective": 0.4906004331482082,
+        "ours_incorrect_actor": 0.5684210526315789,
+        "ours_macro_f1": 0.5206425153793575,
+        "ours_missing_action": 0.49350649350649356,
+        "ours_out_of_order": 0.5,
+        "ours_overall_f1": 0.5340909090909091,
+        "sun_incorrect_actor": 0.4262295081967213,
+        "sun_macro_f1": 0.46055835091705893,
+        "sun_missing_action": 0.4554455445544555,
+        "sun_out_of_order": 0.5,
+        "sun_overall_f1": 0.4457831325301205,
+        "theta": 0.45
+      },
+      "spacy_en_core_web_md": {
+        "gamma": 0.8,
+        "objective": 0.4682828282828283,
+        "ours_incorrect_actor": 0.64,
+        "ours_macro_f1": 0.5012121212121212,
+        "ours_missing_action": 0.36363636363636365,
+        "ours_out_of_order": 0.5,
+        "ours_overall_f1": 0.5223880597014926,
+        "sun_incorrect_actor": 0.6060606060606061,
+        "sun_macro_f1": 0.4353535353535354,
+        "sun_missing_action": 0.19999999999999998,
+        "sun_out_of_order": 0.5,
+        "sun_overall_f1": 0.4333333333333333,
+        "theta": 0.4
+      },
+      "spacy_en_core_web_sm": {
+        "gamma": 0.5,
+        "objective": 0.45483606691013434,
+        "ours_incorrect_actor": 0.6829268292682927,
+        "ours_macro_f1": 0.4394069823051172,
+        "ours_missing_action": 0.23529411764705885,
+        "ours_out_of_order": 0.4,
+        "ours_overall_f1": 0.5072463768115942,
+        "sun_incorrect_actor": 0.65625,
+        "sun_macro_f1": 0.4702651515151515,
+        "sun_missing_action": 0.2545454545454546,
+        "sun_out_of_order": 0.5,
+        "sun_overall_f1": 0.4715447154471545,
+        "theta": 0.4
+      }
+    },
+    "downloaded_models_during_run": [],
+    "environment_versions": {
+      "numpy": "2.5.0",
+      "sentence-transformers": null,
+      "spacy": "3.8.13",
+      "torch": "2.12.1",
+      "transformers": "5.12.1"
+    },
+    "kind": "sentence_transformers",
+    "model_info": {
+      "available": true,
+      "core_files": [
+        "config.json",
+        "config_sentence_transformers.json",
+        "modules.json",
+        "sentence_bert_config.json",
+        "tokenizer.json",
+        "tokenizer_config.json",
+        "special_tokens_map.json",
+        "vocab.txt",
+        "1_Pooling\\config.json",
+        "model.safetensors"
+      ],
+      "core_inference_size_mib": 418.35,
+      "model_path": "D:\\Paper\\experiment\\bpc-hybrid\\.tmp\\hf_cache\\hub\\models--sentence-transformers--all-mpnet-base-v2\\snapshots\\e8c3b32edf5434bc2275fc9bab85f82640a19130",
+      "modules": [
+        {
+          "idx": 0,
+          "name": "0",
+          "path": "",
+          "type": "sentence_transformers.models.Transformer"
+        },
+        {
+          "idx": 1,
+          "name": "1",
+          "path": "1_Pooling",
+          "type": "sentence_transformers.models.Pooling"
+        },
+        {
+          "idx": 2,
+          "name": "2",
+          "path": "2_Normalize",
+          "type": "sentence_transformers.models.Normalize"
+        }
+      ],
+      "pooling_config": {
+        "pooling_mode_cls_token": false,
+        "pooling_mode_max_tokens": false,
+        "pooling_mode_mean_sqrt_len_tokens": false,
+        "pooling_mode_mean_tokens": true,
+        "word_embedding_dimension": 768
+      },
+      "revision": "e8c3b32edf5434bc2275fc9bab85f82640a19130",
+      "weight_file": "model.safetensors"
+    },
+    "model_path": "D:\\Paper\\experiment\\bpc-hybrid\\.tmp\\hf_cache\\hub\\models--sentence-transformers--all-mpnet-base-v2\\snapshots\\e8c3b32edf5434bc2275fc9bab85f82640a19130",
+    "network_calls": 0,
+    "pooling": "sentence-transformers declared mean-token pooling (1_Pooling/config.json) + L2 normalize",
+    "selected_gamma": 0.55,
+    "selected_theta": 0.45,
+    "similarity": "cosine after L2 normalization, clamped to [0,1]"
+  },
+  "report_d_order_eligibility": {
+    "bpmn_used_for_eligibility": false,
+    "diagnostic_requirements": [
+      "R5-D-03",
+      "R5-D-04",
+      "R5-D-05",
+      "R5-D-12",
+      "R5-S1-T3",
+      "R5-S1-T4",
+      "R5-S3-T1",
+      "R5-S3-T2",
+      "R5-S5-T4",
+      "R5-S6-T3",
+      "R5-S7-T1",
+      "R5-S8-T1"
+    ],
+    "gold_used_for_eligibility": false,
+    "main_requirements": [
+      "R5-D-01",
+      "R5-D-02",
+      "R5-S4-T3"
+    ],
+    "main_type": "TYPE_A_explicit_action_precedence",
+    "marker_set": [
+      "before",
+      "after",
+      "prior to",
+      "following",
+      "subsequent to",
+      "in advance of"
+    ],
+    "method_predictions_used_for_eligibility": false,
+    "pool_manifest_sha256": "13ec21ba20e57a51ddc71e260b289ad58f166112f7359465e12aa5a2adb25830",
+    "requirements": {
+      "R5-D-01": {
+        "citation": "GDPR Article 13(3)",
+        "deleted": false,
+        "endpoint_a": "provide information",
+        "endpoint_b": "further process personal data",
+        "main_metric": true,
+        "order_evidence": "provide information prior to further processing",
+        "order_type": "TYPE_A_explicit_action_precedence",
+        "reason": "Explicit action-action precedence; Sun A_r contains a process endpoint; Ours may be unbound and therefore legitimately unknown.",
+        "requirement_id": "R5-D-01",
+        "source_family_id": "gdpr_art13",
+        "source_text_sha256": "3d437c14818da102a6a199178f4cdc5e4cf770a6a05f81cd110683a2ee795bfa"
+      },
+      "R5-D-02": {
+        "citation": "GDPR Article 14(4)",
+        "deleted": false,
+        "endpoint_a": "provide information",
+        "endpoint_b": "further process personal data",
+        "main_metric": true,
+        "order_evidence": "provide information prior to further processing",
+        "order_type": "TYPE_A_explicit_action_precedence",
+        "reason": "Explicit action-action precedence; same interface logic as R5-D-01.",
+        "requirement_id": "R5-D-02",
+        "source_family_id": "gdpr_art14",
+        "source_text_sha256": "12bd5997087b344a6e88c6eb06253caeb4b06015f06194097cdbef2c7419c3b5"
+      },
+      "R5-D-03": {
+        "citation": "GDPR Article 18(3)",
+        "deleted": false,
+        "endpoint_a": "be informed",
+        "endpoint_b": "restriction of processing is lifted",
+        "main_metric": false,
+        "order_evidence": "be informed before the restriction of processing is lifted",
+        "order_type": "TEMPORAL_CONSTRAINT_OUTSIDE_MAIN_DEF7_SCOPE",
+        "reason": "The second endpoint is a passive state/event, not a reliably extractable Stage-2 action in either method.",
+        "requirement_id": "R5-D-03",
+        "source_family_id": "gdpr_art18",
+        "source_text_sha256": "09fc6a3288f022c371a1db3a6df1ffa00f31c4a5cc216fda78d6aa084745176f"
+      },
+      "R5-D-04": {
+        "citation": "GDPR Article 35(1), first sentence",
+        "deleted": false,
+        "endpoint_a": "carry out an assessment",
+        "endpoint_b": "the processing",
+        "main_metric": false,
+        "order_evidence": "carry out DPIA prior to the processing",
+        "order_type": "TEMPORAL_CONSTRAINT_OUTSIDE_MAIN_DEF7_SCOPE",
+        "reason": "Nominalised processing endpoint is not present as a distinct action in either method's A_r; retained as outside-scope diagnostic.",
+        "requirement_id": "R5-D-04",
+        "source_family_id": "gdpr_art35",
+        "source_text_sha256": "598b6a255dbb9761396e380ad3bd8d214fbe596368fb1aef8a29bbc04f2e337e"
+      },
+      "R5-D-05": {
+        "citation": "GDPR Article 36(1)",
+        "deleted": false,
+        "endpoint_a": "consult supervisory authority",
+        "endpoint_b": "processing",
+        "main_metric": false,
+        "order_evidence": "consult supervisory authority prior to processing",
+        "order_type": "TEMPORAL_CONSTRAINT_OUTSIDE_MAIN_DEF7_SCOPE",
+        "reason": "Nominalised processing endpoint is not present as a distinct action in either method's A_r; retained as outside-scope diagnostic.",
+        "requirement_id": "R5-D-05",
+        "source_family_id": "gdpr_art36",
+        "source_text_sha256": "e172a9fcd184e4571d10061a5128e3522a6ac0298d71957ddfcdbf9c83e1fa52"
+      },
+      "R5-D-06": {
+        "citation": "GDPR Article 7(1)",
+        "deleted": false,
+        "endpoint_a": null,
+        "endpoint_b": null,
+        "main_metric": false,
+        "order_evidence": null,
+        "order_type": null,
+        "reason": "No explicit action-action temporal relation in the source requirement.",
+        "requirement_id": "R5-D-06",
+        "source_family_id": "gdpr_art7",
+        "source_text_sha256": "e00763881eb6ffcb71cd7f3dfda726448d24731fa06d9b217e2dce6dd00bce87"
+      },
+      "R5-D-07": {
+        "citation": "GDPR Article 7(4)",
+        "deleted": false,
+        "endpoint_a": null,
+        "endpoint_b": null,
+        "main_metric": false,
+        "order_evidence": null,
+        "order_type": null,
+        "reason": "No explicit action-action temporal relation in the source requirement.",
+        "requirement_id": "R5-D-07",
+        "source_family_id": "gdpr_art7",
+        "source_text_sha256": "7a5c82e05e06aed5e174c23dbbcea4a8e7b9916f0cae5695f6f5f43daad20619"
+      },
+      "R5-D-08": {
+        "citation": "GDPR Article 15(1)",
+        "deleted": false,
+        "endpoint_a": null,
+        "endpoint_b": null,
+        "main_metric": false,
+        "order_evidence": null,
+        "order_type": null,
+        "reason": "No explicit action-action temporal relation in the source requirement.",
+        "requirement_id": "R5-D-08",
+        "source_family_id": "gdpr_art15",
+        "source_text_sha256": "4d55a1fb6743e546ba673fe377a388638f99a50ac240d482a0d2c394ce3256ac"
+      },
+      "R5-D-09": {
+        "citation": "GDPR Article 16",
+        "deleted": false,
+        "endpoint_a": null,
+        "endpoint_b": null,
+        "main_metric": false,
+        "order_evidence": null,
+        "order_type": null,
+        "reason": "No explicit action-action temporal relation in the source requirement.",
+        "requirement_id": "R5-D-09",
+        "source_family_id": "gdpr_art16",
+        "source_text_sha256": "1ae6c72eb70eb6b75ce1c88d6d50adbfd098ce38eab56c892f31d07b353adbe1"
+      },
+      "R5-D-10": {
+        "citation": "GDPR Article 17(1)",
+        "deleted": false,
+        "endpoint_a": null,
+        "endpoint_b": null,
+        "main_metric": false,
+        "order_evidence": null,
+        "order_type": null,
+        "reason": "No explicit action-action temporal relation in the source requirement.",
+        "requirement_id": "R5-D-10",
+        "source_family_id": "gdpr_art17",
+        "source_text_sha256": "ffce4b993017dcb956e232f8d9afc93daa5f6ab08ecd4c72f06b4427796f8be2"
+      },
+      "R5-D-11": {
+        "citation": "GDPR Article 20(1)",
+        "deleted": false,
+        "endpoint_a": null,
+        "endpoint_b": null,
+        "main_metric": false,
+        "order_evidence": null,
+        "order_type": null,
+        "reason": "No explicit action-action temporal relation in the source requirement.",
+        "requirement_id": "R5-D-11",
+        "source_family_id": "gdpr_art20",
+        "source_text_sha256": "5b63ec29d24bd77cbe3cc19136ae1b0c30f5378d28a25aebc101260d2e0023ca"
+      },
+      "R5-D-12": {
+        "citation": "GDPR Article 33(1)",
+        "deleted": false,
+        "endpoint_a": "become aware of breach",
+        "endpoint_b": "notify breach",
+        "main_metric": false,
+        "order_evidence": "notify after becoming aware of a breach",
+        "order_type": "TYPE_B_trigger_precedence",
+        "reason": "Event-trigger precedence; no deadline arithmetic scored.",
+        "requirement_id": "R5-D-12",
+        "source_family_id": "gdpr_art33",
+        "source_text_sha256": "d3327ce470720a494bfb05a72841a073e0c7bac1673f11545833dcce72ef0a65"
+      },
+      "R5-S1-T1": {
+        "citation": "GDPR Article 13(1)",
+        "deleted": false,
+        "endpoint_a": null,
+        "endpoint_b": null,
+        "main_metric": false,
+        "order_evidence": null,
+        "order_type": null,
+        "reason": "No explicit action-action temporal relation in the source requirement.",
+        "requirement_id": "R5-S1-T1",
+        "source_family_id": "gdpr_art13",
+        "source_text_sha256": "16a2a3b5ceb63999f1758de7f91a407c52e36eeef8d0627516e41bbb43aa5c1d"
+      },
+      "R5-S1-T2": {
+        "citation": "GDPR Article 13(2)",
+        "deleted": false,
+        "endpoint_a": null,
+        "endpoint_b": null,
+        "main_metric": false,
+        "order_evidence": null,
+        "order_type": null,
+        "reason": "No explicit action-action temporal relation in the source requirement.",
+        "requirement_id": "R5-S1-T2",
+        "source_family_id": "gdpr_art13",
+        "source_text_sha256": "c857f4424b6e5e8532d1241d4fb6745148aa56069518c1d9fe9dfc853a454491"
+      },
+      "R5-S1-T3": {
+        "citation": "GDPR Article 14(1)",
+        "deleted": false,
+        "endpoint_a": "obtain personal data",
+        "endpoint_b": "provide information",
+        "main_metric": false,
+        "order_evidence": "provide information after obtaining personal data",
+        "order_type": "TYPE_B_trigger_precedence",
+        "reason": "Event-trigger precedence; one-month deadline not evaluated.",
+        "requirement_id": "R5-S1-T3",
+        "source_family_id": "gdpr_art14",
+        "source_text_sha256": "a0f592432d9fa34faeb2b819ff30f830c3e9dcc41fc8bc82faab58d5ab3cfd2f"
+      },
+      "R5-S1-T4": {
+        "citation": "GDPR Article 14(2)",
+        "deleted": false,
+        "endpoint_a": "obtain personal data",
+        "endpoint_b": "provide information",
+        "main_metric": false,
+        "order_evidence": "provide information after obtaining personal data",
+        "order_type": "TYPE_B_trigger_precedence",
+        "reason": "Event-trigger precedence; one-month deadline not evaluated.",
+        "requirement_id": "R5-S1-T4",
+        "source_family_id": "gdpr_art14",
+        "source_text_sha256": "483e0d76cf9b0f5e8794e62857fa6f7711052376ba77ad04bae320cb0652ec9e"
+      },
+      "R5-S2-T2": {
+        "citation": "GDPR Article 8(2)",
+        "deleted": false,
+        "endpoint_a": null,
+        "endpoint_b": null,
+        "main_metric": false,
+        "order_evidence": null,
+        "order_type": null,
+        "reason": "No explicit action-action temporal relation in the source requirement.",
+        "requirement_id": "R5-S2-T2",
+        "source_family_id": "gdpr_art8",
+        "source_text_sha256": "4a572b9fde1b8fd97666c3cb5925d2edd2527b4969b67ab65fb7fcf84124e267"
+      },
+      "R5-S3-T1": {
+        "citation": "GDPR Article 12(3)",
+        "deleted": false,
+        "endpoint_a": "receive request",
+        "endpoint_b": "provide information",
+        "main_metric": false,
+        "order_evidence": "provide response after receipt of request",
+        "order_type": "TYPE_B_trigger_precedence",
+        "reason": "Event-trigger precedence; one-month deadline not evaluated.",
+        "requirement_id": "R5-S3-T1",
+        "source_family_id": "gdpr_art12",
+        "source_text_sha256": "34af79e05cce4587e3d3008b2471632e4282bcf238912cfa07a55cfa985ed9cb"
+      },
+      "R5-S3-T2": {
+        "citation": "GDPR Article 12(4)",
+        "deleted": false,
+        "endpoint_a": "receive request",
+        "endpoint_b": "inform data subject",
+        "main_metric": false,
+        "order_evidence": "inform after receipt of request",
+        "order_type": "TYPE_B_trigger_precedence",
+        "reason": "Event-trigger precedence; one-month deadline not evaluated.",
+        "requirement_id": "R5-S3-T2",
+        "source_family_id": "gdpr_art12",
+        "source_text_sha256": "3fbc125c7c2de3c37ca8c4c4a6535c848ac412bd01598ff38d9e19058fa6eaeb"
+      },
+      "R5-S4-T1": {
+        "citation": "GDPR Article 24(1)",
+        "deleted": false,
+        "endpoint_a": null,
+        "endpoint_b": null,
+        "main_metric": false,
+        "order_evidence": null,
+        "order_type": null,
+        "reason": "No explicit action-action temporal relation in the source requirement.",
+        "requirement_id": "R5-S4-T1",
+        "source_family_id": "gdpr_art24",
+        "source_text_sha256": "4ab0b5c456120cbbc85a045342d7eb9d850db264e4e747af4f882b8fa7513c9d"
+      },
+      "R5-S4-T2": {
+        "citation": "GDPR Article 25(1)",
+        "deleted": false,
+        "endpoint_a": null,
+        "endpoint_b": null,
+        "main_metric": false,
+        "order_evidence": null,
+        "order_type": null,
+        "reason": "No explicit action-action temporal relation in the source requirement.",
+        "requirement_id": "R5-S4-T2",
+        "source_family_id": "gdpr_art25",
+        "source_text_sha256": "e6fa8bd9e008b448d4904925e75fb86d9aa6ebecc87394c917f6967d2d03979f"
+      },
+      "R5-S4-T3": {
+        "citation": "GDPR Article 28(3)(a)",
+        "deleted": false,
+        "endpoint_a": "inform controller of the legal requirement",
+        "endpoint_b": "process personal data",
+        "main_metric": true,
+        "order_evidence": "inform controller before processing",
+        "order_type": "TYPE_A_explicit_action_precedence",
+        "reason": "Both actions are present in Sun and Ours Stage-2 A_r; development-only order supplement supplies the missing out_of_order control.",
+        "requirement_id": "R5-S4-T3",
+        "source_family_id": "gdpr_art28",
+        "source_text_sha256": "21f3c3086326373c00a525d53178744bd185a1f6babe5e24dfef0753e4d07a10"
+      },
+      "R5-S4-T4": {
+        "citation": "GDPR Article 19",
+        "deleted": false,
+        "endpoint_a": null,
+        "endpoint_b": null,
+        "main_metric": false,
+        "order_evidence": null,
+        "order_type": null,
+        "reason": "No explicit action-action temporal relation in the source requirement.",
+        "requirement_id": "R5-S4-T4",
+        "source_family_id": "gdpr_art19",
+        "source_text_sha256": "6d16dedab3b12954ac7972d1c6b18ce394ccd00428c3cf7f49d9832e0c2098fc"
+      },
+      "R5-S5-T1": {
+        "citation": "GDPR Article 35(2)",
+        "deleted": false,
+        "endpoint_a": null,
+        "endpoint_b": null,
+        "main_metric": false,
+        "order_evidence": null,
+        "order_type": null,
+        "reason": "No explicit action-action temporal relation in the source requirement.",
+        "requirement_id": "R5-S5-T1",
+        "source_family_id": "gdpr_art35",
+        "source_text_sha256": "d65f391cfe4f4159883a211594774f386c105d08deac35b43f2e0b777fddc47b"
+      },
+      "R5-S5-T2": {
+        "citation": "GDPR Article 35(9)",
+        "deleted": false,
+        "endpoint_a": null,
+        "endpoint_b": null,
+        "main_metric": false,
+        "order_evidence": null,
+        "order_type": null,
+        "reason": "No explicit action-action temporal relation in the source requirement.",
+        "requirement_id": "R5-S5-T2",
+        "source_family_id": "gdpr_art35",
+        "source_text_sha256": "dfbc48c5f0729dc31ce006f0a8b8d958ba1df825b086851435c703e2e67a86ea"
+      },
+      "R5-S5-T3": {
+        "citation": "GDPR Article 35(11)",
+        "deleted": false,
+        "endpoint_a": null,
+        "endpoint_b": null,
+        "main_metric": false,
+        "order_evidence": null,
+        "order_type": null,
+        "reason": "No explicit action-action temporal relation in the source requirement.",
+        "requirement_id": "R5-S5-T3",
+        "source_family_id": "gdpr_art35",
+        "source_text_sha256": "cf1e4c40ef5083d35242f540be5c68b5565145d1ea970540d76a684c3657850c"
+      },
+      "R5-S5-T4": {
+        "citation": "GDPR Article 36(2)",
+        "deleted": false,
+        "endpoint_a": "receive request",
+        "endpoint_b": "provide written advice",
+        "main_metric": false,
+        "order_evidence": "provide written advice within eight weeks of receipt of request",
+        "order_type": "TYPE_C_deadline_arithmetic_only",
+        "reason": "Deadline arithmetic only; outside action-action Definition 7 scope.",
+        "requirement_id": "R5-S5-T4",
+        "source_family_id": "gdpr_art36",
+        "source_text_sha256": "f6cd10751a3b054e2e95ecb7ac92d2c77e2e4edbf4b634bdb3489a9eb4e310a9"
+      },
+      "R5-S6-T1": {
+        "citation": "GDPR Article 32(1)",
+        "deleted": false,
+        "endpoint_a": null,
+        "endpoint_b": null,
+        "main_metric": false,
+        "order_evidence": null,
+        "order_type": null,
+        "reason": "No explicit action-action temporal relation in the source requirement.",
+        "requirement_id": "R5-S6-T1",
+        "source_family_id": "gdpr_art32",
+        "source_text_sha256": "7a611aab8130f0bacc05b99d03ba542cfc0c00f0af5966bc95e448c4dbfee0fd"
+      },
+      "R5-S6-T2": {
+        "citation": "GDPR Article 32(4)",
+        "deleted": false,
+        "endpoint_a": null,
+        "endpoint_b": null,
+        "main_metric": false,
+        "order_evidence": null,
+        "order_type": null,
+        "reason": "No explicit action-action temporal relation in the source requirement.",
+        "requirement_id": "R5-S6-T2",
+        "source_family_id": "gdpr_art32",
+        "source_text_sha256": "b4eb199a1981e55f124df9ce2620678f7d2bdec0c7fef3550f101091ed55b2be"
+      },
+      "R5-S6-T3": {
+        "citation": "GDPR Article 33(2)",
+        "deleted": false,
+        "endpoint_a": "become aware of breach",
+        "endpoint_b": "notify controller",
+        "main_metric": false,
+        "order_evidence": "notify controller after becoming aware of a breach",
+        "order_type": "TYPE_B_trigger_precedence",
+        "reason": "Event-trigger precedence; deadline not evaluated.",
+        "requirement_id": "R5-S6-T3",
+        "source_family_id": "gdpr_art33",
+        "source_text_sha256": "cdafa0c9267f2078a7fc65bf8093c7f6a7f5717ae244b55f5088fff98daaa7f2"
+      },
+      "R5-S6-T4": {
+        "citation": "GDPR Article 34(1)",
+        "deleted": false,
+        "endpoint_a": null,
+        "endpoint_b": null,
+        "main_metric": false,
+        "order_evidence": null,
+        "order_type": null,
+        "reason": "No explicit action-action temporal relation in the source requirement.",
+        "requirement_id": "R5-S6-T4",
+        "source_family_id": "gdpr_art34",
+        "source_text_sha256": "15fe84681e44264818adbcb9f11162c02d9696a581f77b0e8dff56b3eb09e5a5"
+      },
+      "R5-S7-T1": {
+        "citation": "GDPR Article 40(7)",
+        "deleted": false,
+        "endpoint_a": "submit draft code",
+        "endpoint_b": "approve draft code",
+        "main_metric": false,
+        "order_evidence": "submit draft code before approving it",
+        "order_type": "ACTION_ACTION_SOURCE_EXPLICIT_BUT_ENDPOINT_UNBOUND",
+        "reason": "Source relation is action-action, but neither frozen Stage-2 A_r contains both endpoints; retained in diagnostics, not main F1.",
+        "requirement_id": "R5-S7-T1",
+        "source_family_id": "gdpr_art40",
+        "source_text_sha256": "91d1a82e534e9695c90d73d905e741f0e191d9251cb4532f7ab7cd66a5f8f0c6"
+      },
+      "R5-S8-T1": {
+        "citation": "GDPR Article 43(1)",
+        "deleted": false,
+        "endpoint_a": "inform supervisory authority",
+        "endpoint_b": "issue or renew certification",
+        "main_metric": false,
+        "order_evidence": "issue or renew certification after informing the supervisory authority",
+        "order_type": "ACTION_ACTION_SOURCE_EXPLICIT_BUT_ENDPOINT_UNBOUND",
+        "reason": "Source relation is action-action, but the informing endpoint is absent from both frozen Stage-2 A_r records; retained in diagnostics, not main F1.",
+        "requirement_id": "R5-S8-T1",
+        "source_family_id": "gdpr_art43",
+        "source_text_sha256": "367392f6e377363ce4164c015f075d716c2a1e23e71386161eeba4042f535e30"
+      }
+    },
+    "schema_version": "stage3_final_order_eligibility@1.0.0",
+    "status": "SOURCE_ONLY_ORDER_ELIGIBILITY_FROZEN_FOR_DEVELOPMENT"
+  },
+  "report_e_order_adapter": {
+    "adapter": "SharedRuleOrderAdapterV3",
+    "ambiguous_or_failed_families": [
+      {
+        "method": "ours",
+        "reason": "no_rule_order_endpoints",
+        "requirement_id": "R5-D-01"
+      },
+      {
+        "method": "ours",
+        "reason": "no_rule_order_endpoints",
+        "requirement_id": "R5-D-01"
+      },
+      {
+        "method": "ours",
+        "reason": "no_rule_order_endpoints",
+        "requirement_id": "R5-D-02"
+      },
+      {
+        "method": "ours",
+        "reason": "no_rule_order_endpoints",
+        "requirement_id": "R5-D-02"
+      }
+    ],
+    "generated_pairs": {
+      "ours": [
+        "R5-S4-T3"
+      ],
+      "sun": [
+        "R5-D-01",
+        "R5-S4-T3",
+        "R5-D-02"
+      ]
+    },
+    "gold_used": false,
+    "implementation_sha256": "fe68740c77f7ab00967a7758f403ca35c8648e9686c283680ad903e3ae05dee3",
+    "method_shared": true,
+    "nominal_to_action_invention": false,
+    "schema_version": "stage3_final_order_adapter_freeze@1.0.0",
+    "u_r_generation_rate": {
+      "ours": {
+        "generated_main_requirements": 1,
+        "main_requirements": 3,
+        "rate": 0.3333333333333333
+      },
+      "sun": {
+        "generated_main_requirements": 3,
+        "main_requirements": 3,
+        "rate": 1.0
+      }
+    }
+  },
+  "report_f_development_result": {
+    "all_existing_cases_seen": true,
+    "breakdown": {
+      "ours": {
+        "incorrect_actor": {
+          "FN": 6,
+          "FP": 35,
+          "TN": 2,
+          "TP": 27,
+          "coverage": 0.8,
+          "f1": 0.5684210526315789,
+          "negative_support": 47,
+          "not_applicable": 35,
+          "not_scored": 0,
+          "positive_support": 33,
+          "precision": 0.43548387096774194,
+          "recall": 0.8181818181818182,
+          "scored_cells": 80,
+          "unknown_negative": 10,
+          "unknown_positive": 6,
+          "unknown_rate": 0.2
+        },
+        "missing_action": {
+          "FN": 14,
+          "FP": 25,
+          "TN": 55,
+          "TP": 19,
+          "coverage": 1.0,
+          "f1": 0.49350649350649356,
+          "negative_support": 80,
+          "not_applicable": 2,
+          "not_scored": 0,
+          "positive_support": 33,
+          "precision": 0.4318181818181818,
+          "recall": 0.5757575757575758,
+          "scored_cells": 113,
+          "unknown_negative": 0,
+          "unknown_positive": 0,
+          "unknown_rate": 0.0
+        },
+        "out_of_order": {
+          "FN": 2,
+          "FP": 0,
+          "TN": 1,
+          "TP": 1,
+          "coverage": 0.25,
+          "f1": 0.5,
+          "negative_support": 5,
+          "not_applicable": 2,
+          "not_scored": 105,
+          "positive_support": 3,
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "scored_cells": 8,
+          "unknown_negative": 4,
+          "unknown_positive": 2,
+          "unknown_rate": 0.75
+        }
+      },
+      "sun": {
+        "incorrect_actor": {
+          "FN": 20,
+          "FP": 15,
+          "TN": 4,
+          "TP": 13,
+          "coverage": 0.4,
+          "f1": 0.4262295081967213,
+          "negative_support": 47,
+          "not_applicable": 35,
+          "not_scored": 0,
+          "positive_support": 33,
+          "precision": 0.4642857142857143,
+          "recall": 0.3939393939393939,
+          "scored_cells": 80,
+          "unknown_negative": 28,
+          "unknown_positive": 20,
+          "unknown_rate": 0.6
+        },
+        "missing_action": {
+          "FN": 10,
+          "FP": 45,
+          "TN": 26,
+          "TP": 23,
+          "coverage": 0.8849557522123894,
+          "f1": 0.4554455445544555,
+          "negative_support": 80,
+          "not_applicable": 2,
+          "not_scored": 0,
+          "positive_support": 33,
+          "precision": 0.3382352941176471,
+          "recall": 0.696969696969697,
+          "scored_cells": 113,
+          "unknown_negative": 9,
+          "unknown_positive": 4,
+          "unknown_rate": 0.11504424778761062
+        },
+        "out_of_order": {
+          "FN": 2,
+          "FP": 0,
+          "TN": 1,
+          "TP": 1,
+          "coverage": 0.25,
+          "f1": 0.5,
+          "negative_support": 5,
+          "not_applicable": 2,
+          "not_scored": 105,
+          "positive_support": 3,
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "scored_cells": 8,
+          "unknown_negative": 4,
+          "unknown_positive": 2,
+          "unknown_rate": 0.75
+        }
+      }
+    },
+    "coverage": {
+      "ours": 0.8905472636815921,
+      "sun": 0.6666666666666666
+    },
+    "definition": "pooled TP/FP/FN over all scored development cells for the frozen selected backend",
+    "final_test_eligible": false,
+    "main_table": {
+      "ours": {
+        "FN": 22,
+        "FP": 60,
+        "TN": 58,
+        "TP": 47,
+        "coverage": 0.8905472636815921,
+        "f1": 0.5340909090909091,
+        "negative_support": 132,
+        "not_applicable": 39,
+        "not_scored": 105,
+        "positive_support": 69,
+        "precision": 0.4392523364485981,
+        "recall": 0.6811594202898551,
+        "scored_cells": 201,
+        "unknown_negative": 14,
+        "unknown_positive": 8,
+        "unknown_rate": 0.10945273631840796
+      },
+      "sun": {
+        "FN": 32,
+        "FP": 60,
+        "TN": 31,
+        "TP": 37,
+        "coverage": 0.6666666666666666,
+        "f1": 0.4457831325301205,
+        "negative_support": 132,
+        "not_applicable": 39,
+        "not_scored": 105,
+        "positive_support": 69,
+        "precision": 0.38144329896907214,
+        "recall": 0.5362318840579711,
+        "scored_cells": 201,
+        "unknown_negative": 41,
+        "unknown_positive": 26,
+        "unknown_rate": 0.3333333333333333
+      }
+    },
+    "unknown_rate": {
+      "ours": 0.10945273631840796,
+      "sun": 0.3333333333333333
+    }
+  },
+  "report_g_improvement_attribution": {
+    "action_scope_revision": {
+      "attributed_delta": null,
+      "implemented": false
+    },
+    "all_seen_development_pool": true,
+    "comparable_backend_comparison": {
+      "ours": {
+        "sm_to_mpnet_actor_f1_delta": -0.1145057766367138,
+        "sm_to_mpnet_macro_f1_delta": 0.08123553307424025,
+        "sm_to_mpnet_missing_f1_delta": 0.2582123758594347,
+        "sm_to_mpnet_order_f1_delta": 0.09999999999999998,
+        "sm_to_mpnet_overall_micro_f1_delta": 0.026844532279314826
+      },
+      "sun": {
+        "sm_to_mpnet_actor_f1_delta": -0.23002049180327871,
+        "sm_to_mpnet_macro_f1_delta": -0.009706800598092591,
+        "sm_to_mpnet_missing_f1_delta": 0.20090009000900094,
+        "sm_to_mpnet_order_f1_delta": 0.0,
+        "sm_to_mpnet_overall_micro_f1_delta": -0.02576158291703401
+      }
+    },
+    "order_representation": {
+      "components": [
+        "RC-ORDER-01 shared RuleRecord U_r adapter made order_relations non-empty where endpoints exist",
+        "RC-ORDER-02 capability-aligned eligibility moved endpoint-unbound requirements out of the main F1 and retained them as diagnostics",
+        "DEVELOPMENT-ONLY supplement supplied the missing R5-S4-T3 out_of_order control for an already-extracted action pair"
+      ],
+      "isolation_note": "The order change is a bundle of adapter + eligibility + supplement; it is not claimed as a single algorithmic F1 delta.",
+      "new_selected_order_f1": 0.5,
+      "old_frozen_r1_order_f1_on_previous_scope": 0.0
+    },
+    "schema_version": "stage3_final_improvement_attribution@1.0.0"
+  },
+  "report_h_remaining_limitations": [
+    "Final unseen benchmark/Gold packet is not constructed; only five source-only candidate requirements remain.",
+    "No Ours Stage-2 predictions exist for the unseen candidate requirements; explicit API authorization is required.",
+    "Ours Stage-2 A_r lacks a distinct process endpoint for R5-D-01/R5-D-02, so order recall is limited there.",
+    "R5-S7-T1/R5-S8-T1 are source action-action relations but their second endpoints are absent from both frozen Stage-2 A_r records.",
+    "Actor unknown remains material for Sun due to Definition 6 action-bound coverage; Definition 6 was intentionally not changed.",
+    "Missing-action precision remains limited by extra/fragment Stage-2 actions; no second action-scope revision was applied."
+  ],
+  "report_i_freeze_status": {
+    "ACTOR_METHOD_FROZEN": true,
+    "GAMMA_FINAL_FROZEN": true,
+    "MISSING_ACTION_METHOD_FROZEN": true,
+    "ORDER_ELIGIBILITY_FROZEN": true,
+    "ORDER_U_R_ADAPTER_FROZEN": true,
+    "SEMANTIC_BACKEND_FINAL_FROZEN": true,
+    "STAGE3_METHOD_FROZEN": true,
+    "THETA_FINAL_FROZEN": true
+  },
+  "report_j_final_table3_readiness": {
+    "API_AUTHORIZATION_PACKET_READY": true,
+    "FINAL_TABLE3_READY": false,
+    "FINAL_UNSEEN_BENCHMARK_PREPARED": false,
+    "api_packet": {
+      "API_AUTHORIZATION_PACKET_READY": true,
+      "FINAL_UNSEEN_BENCHMARK_PREPARED": false,
+      "STAGE3_METHOD_FROZEN": true,
+      "candidate_count": 5,
+      "candidate_unseen_requirement_ids": [
+        "R5-S2-T1",
+        "R5-S2-T3",
+        "R5-S2-T4",
+        "R5-S3-T3",
+        "R5-S3-T4"
+      ],
+      "do_not_execute_without_explicit_authorization": true,
+      "exact_blocker": "There is no authorized unseen Stage-2/Gold packet for a 12-16 requirement source-family-separated GDPR holdout. The five remaining benchmark-v2 candidate requirements are source-only candidates and have no BPMN mutation packet or Ours prediction.",
+      "frozen_predictions_exist_for_candidates": false,
+      "ours_api_calls_estimate_if_12_to_16": "12-16 Stage-2 requests plus retries bounded by the approved protocol",
+      "ours_api_calls_estimate_if_candidates_only": 5,
+      "recommended_final_requirement_count": "12-16",
+      "required_user_decisions": [
+        "Approve the unseen source-family split and the exact 12-16 GDPR requirements for the final holdout.",
+        "Approve construction/freeze of the final BPMN baselines, mutations, and prediction-blind Gold packet before any new Ours prediction.",
+        "Approve the Ours Stage2 model, prompt hash, exact call count, max tokens, and worst-case cost cap for those final requirements."
+      ],
+      "schema_version": "stage3_final_api_authorization_packet@1.0.0",
+      "status": "API_AUTHORIZATION_REQUIRED",
+      "sun_api_calls_required": 0
+    },
+    "exact_blocker": "There is no authorized unseen Stage-2/Gold packet for a 12-16 requirement source-family-separated GDPR holdout. The five remaining benchmark-v2 candidate requirements are source-only candidates and have no BPMN mutation packet or Ours prediction.",
+    "exact_next_action": "User must approve the final unseen source split, Gold/BPMN freeze, and bounded Ours Stage-2 API calls."
+  },
+  "schema_version": "stage3_final_convergence_report@2.0.0",
+  "status": "STAGE3_METHOD_FROZEN_FINAL_UNSEEN_BENCHMARK_BLOCKED_PENDING_USER_AUTHORIZATION",
+  "winter_mainline_status": "ARCHIVED_EXTERNAL_BASELINE"
+}

@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
-**生成日期**：2026-10-07
-**收录文件**：4383 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**生成日期**：2026-10-10
+**收录文件**：4520 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -214,6 +214,7 @@
 | `configs/stage3_table3_v4_execution_r1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/stage3_table3_v4_execution_r2.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/stage3_table3_v4_execution_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `configs/stage3_winter_paper_rerun_20261010_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/sun_corenlp_runtime.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/sun_stage3_development_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/tfidf_svd_stage3_development_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
@@ -948,6 +949,130 @@
 | `data/development/stage3_table3_r5_benchmark_v2/semantic_challenges.json` | 开发/溯源 | 机器可读配置、数据、事件或产物 |
 | `data/development/stage3_table3_r5_benchmark_v2/source_requirements.json` | 开发/溯源 | 机器可读配置、数据、事件或产物 |
 | `data/development/stage3_table3_r5_benchmark_v2/split_manifest.json` | 开发/溯源 | 机器可读配置、数据、事件或产物 |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_0164a880bf44.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_026d89f057e8.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_0697d9b84b86.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_0ca6ea35f87e.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_0f67bfdd277b.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_11233dd30223.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_156f3d39867e.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_18d0d72c49e8.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_19b2d6f1bfb0.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_1a2d6abc026a.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_1d6ccfc9b95c.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_1e5363aa87b5.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_1f817e0b0d37.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_1fafed22bfdd.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_1fd8d9be0c9d.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_203f2134c0ec.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_220918995d29.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_221218bba2d3.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_250418025567.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_25d20a4b486f.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_26761c804689.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_27553ad672b2.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_27a05191cde1.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_293adf4880a6.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_2a918b013dbb.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_2e0630dc5be5.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_2fbe69c72793.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_35ae84dddc65.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_36a5f51046f7.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_3af5fd62647b.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_3b01b9c36d0f.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_3db096abecec.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_436340192865.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_44ded3550ee5.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_47ac07c5ced4.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_4aec33c00dc8.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_4c59fee89687.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_50f498770ae9.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_5751d20f4ed7.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_591221684b9f.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_5b249b3a462b.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_5b5cc6e83173.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_5bcf29af32f6.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_6209f221b20b.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_648835a58615.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_64985e535fd0.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_64e83d36bba3.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_65628736fcec.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_661cbff65102.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_66774ccb1348.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_6711c5a0dad8.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_6cb0e57227f2.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_6d3b90db76ed.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_6f4087fc924f.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_6fda0f20b097.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_706168fa759f.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_72073c61be4c.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_7396f1ecbaf2.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_7c047344bd97.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_7dcc88ac3cf1.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_806f7830225a.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_81af7889b5bb.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_83e2662c1457.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_8447fd35edc7.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_8480429a9517.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_88a2fd3f66cf.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_89f6d9e7047b.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_8c729ed572f4.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_8d21f4b6fb98.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_9742238625a1.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_99b7bc6f1fc6.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_9c6fcd32f03c.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_a0f75080210f.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_a1712c670943.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_a2f445c641d1.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_a9fd75331508.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_aae318ffa9f8.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_b15419d68b21.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_b5a60700383d.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_b6bda7bca9ff.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_b72abd1e6b8b.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_b91fc088d4c5.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_ba895d210eaf.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_bb81d68dc7f5.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_c20eeebe67dd.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_c2c28cb239bc.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_c5b585c4439f.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_c962e006a37d.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_cecd14adb006.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_d1ab41696c03.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_d2f6fee80f4e.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_d391f7745e2d.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_d46c4dbbf7b8.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_d7a85c641eb0.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_d8029187c213.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_d824876f7bf8.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_dbe5d0716353.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_de1137fcd3ae.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_devsupp_s4t3_baseline.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_devsupp_s4t3_out_of_order.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_e1847c1c4ceb.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_e29a5ec0bbbc.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_e382dcb7708b.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_e44cf42b30f7.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_e85d2791c743.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_ec2a9cc66fae.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_f2558cf5f53d.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_f2e0ecd3abf8.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_f6dc7b084b03.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_f7bb207445df.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_f81de319913d.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_f88b4ccdc713.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_fb1fd0822200.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_fe8ab9bca28a.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/bpmn/case_ff937cc4c24e.bpmn` | 开发/溯源 | 流程模型或测试 fixture |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/canonical_table3.json` | 开发/溯源 | 机器可读配置、数据、事件或产物 |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/convergence_report.json` | 开发/溯源 | 机器可读配置、数据、事件或产物 |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/evaluation_reference.json` | 开发/溯源 | 机器可读配置、数据、事件或产物 |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/historical_winter_manifest.json` | 开发/溯源 | 机器可读配置、数据、事件或产物 |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/historical_winter_signals.json` | 开发/溯源 | 机器可读配置、数据、事件或产物 |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/inference_view.json` | 开发/溯源 | 机器可读配置、数据、事件或产物 |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/order_eligibility.json` | 开发/溯源 | 机器可读配置、数据、事件或产物 |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/provenance.json` | 开发/溯源 | 机器可读配置、数据、事件或产物 |
+| `data/development/stage3_winter_paper_rerun_20261010_v1/regulation_sources.json` | 开发/溯源 | 机器可读配置、数据、事件或产物 |
 | `data/development/sun_modality/raw/.gitignore` | 开发/溯源 | 项目文件 |
 | `data/development/sun_modality/source_manifest.json` | 开发/溯源 | 机器可读配置、数据、事件或产物 |
 | `data/gold/.gitkeep` | 正式区（受门禁） | 保留当前空目录 |
@@ -2873,6 +2998,10 @@
 | `outputs/evidence/stage2_multi_model_sensitivity_v1/multi_model_all_20261007_v2/qwen/responses/qwen_estg_000861.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/stage2_multi_model_sensitivity_v1/multi_model_all_20261007_v2/reports/stage2_multi_model_all_20261007_v2.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/stage2_multi_model_sensitivity_v1/multi_model_all_20261007_v2/reports/stage2_multi_model_all_20261007_v2.md` | 活动 | 说明、规范或研究文档 |
+| `outputs/evidence/stage3_winter_paper_rerun_20261010_v1/execution_manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage3_winter_paper_rerun_20261010_v1/global_role_candidates.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage3_winter_paper_rerun_20261010_v1/predictions.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage3_winter_paper_rerun_20261010_v1/run_manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/.gitkeep` | 目录占位 | 保留当前空目录 |
 | `outputs/reports/b0_d1_experiment_closure_brief.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/b0_d1_formal_readiness_v2.json` | 活动 | 机器可读配置、数据、事件或产物 |
@@ -3442,6 +3571,10 @@
 | `outputs/reports/stage3_temporal_scope_candidates_r2.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/stage3_temporal_scope_candidates_r2.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/stage3_top1_vs_detection_explanation_v1.md` | 活动 | 说明、规范或研究文档 |
+| `outputs/reports/stage3_winter_paper_rerun_20261010_v1.csv` | 活动 | 项目文件 |
+| `outputs/reports/stage3_winter_paper_rerun_20261010_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/stage3_winter_paper_rerun_20261010_v1.md` | 活动 | 说明、规范或研究文档 |
+| `outputs/reports/stage3_winter_paper_rerun_20261010_v1.tex` | 活动 | 项目文件 |
 | `outputs/reports/sun_llm_fallback_formal_arm_v1.manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/sun_llm_fallback_formal_arm_v1_capsule_manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/sun_llm_fallback_formal_arm_v1_export_index.json` | 活动 | 机器可读配置、数据、事件或产物 |
@@ -3914,6 +4047,8 @@
 | `scripts/run_stage3_table3_v4.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_stage3_table3_v4_r1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_stage3_table3_v4_r2.py` | 活动 | Python 实现、脚本或测试 |
+| `scripts/run_stage3_winter_cpu_v1.py` | 活动 | Python 实现、脚本或测试 |
+| `scripts/run_stage3_winter_paper_rerun_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_sun_llm_fallback.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_sun_rule_only.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_sun_stage3_development.py` | 活动 | Python 实现、脚本或测试 |
@@ -3936,6 +4071,7 @@
 | `scripts/stage1_review_tool.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/stage2_multi_model.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/stage3_run_common.py` | 活动 | Python 实现、脚本或测试 |
+| `scripts/stage3_winter_paper_metrics_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/status.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/sun_selection_criteria_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/sun_stage3_sensitivity.py` | 活动 | Python 实现、脚本或测试 |
@@ -4475,6 +4611,7 @@
 | `tests/test_stage3_table3_v4_evaluator.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage3_table3_v4_r1_evaluator.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage3_table3_v4_r2_diagnostics.py` | 活动 | Python 实现、脚本或测试 |
+| `tests/test_stage3_winter_paper_rerun_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_sun_compat.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_sun_modality_gate.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_sun_modality_ingestion.py` | 活动 | Python 实现、脚本或测试 |

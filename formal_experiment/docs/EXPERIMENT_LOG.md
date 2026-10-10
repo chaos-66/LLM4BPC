@@ -6179,3 +6179,21 @@
 - 仍存在 blocker：无
 - 备注：明确授权4次/CNY0.99/输出16384，0自动重试，Kimi>=21秒及空思考正文/1token已接受计数例外保留；实际新增估算CNY0.2420574，新增22次合计CNY1.0398593+USD0.00791125，实扣未核对。仅4失败请求追加实际合同错误提醒，不发Gold或修改标签，结构反馈条件与首轮/15+18分列。完整六家150预测保存后才Gold共享pooled评价，modality独立，固定表不替换。仅5具名真实产物复核，准备5匹配证据复用、非全量；GitHub原始产物外发许可未确认，push仍自动审批阻塞。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-10T09:39:50.858562+00:00 - S3-WINTER-PAPER-RERUN-V1：论文同口径原生Winter完整重跑与三方法比较
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=stage3_winter_paper_rerun_20261010_v1；阶段=stage3；方法=winter_2020_native_full_pipeline；状态=成功（`succeeded`）
+- 实际运行命令：`python formal_experiment/scripts/run_stage3_winter_cpu_v1.py`
+- manifest：outputs/evidence/stage3_winter_paper_rerun_20261010_v1/execution_manifest.json
+- 结果摘要：115案例×33要求全部3795对/11385信号；同一201评分单元Winter P/R/F1=0.4634/0.5507/0.5033，LLM-RE0.5341>Winter0.5033>Sun0.4458；历史11187信号零差异
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：否；正式实验就绪：否
+- 测试：5 passed, 2 warnings in 1.97s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`fc9d48c2d1b132e27fa5ac2184b3a79bf0fe23cb`；相关未提交路径：151 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：用户2026-10-10明确要求重跑Winter。截图来源为s3-ext-pc-v1工作树固定开发表；Sun/Ours原数复用且不重跑，当前分支新建快照。原生spaCy/γ0.4/δ0.8不改，禁用不需要的可选torch走Thinc/NumPy CPU；无系统策略修改。构造开发参考不是正式Gold/未见测试；旧metadata113基础案例加2顺序补充实际115。仅具名5项相关测试，非全量。批次开始完整性已失败stage1_claim_correction_invalid，既有用户Stage1审核文件/sep_c3报告保留；不修复无关文件、不宣称正式验收。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

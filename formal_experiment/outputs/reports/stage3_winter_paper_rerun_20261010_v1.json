@@ -1,0 +1,800 @@
+{
+  "expected_ranking_supported": false,
+  "formal_release_ready": false,
+  "historical_comparison": {
+    "difference_count": 0,
+    "differences": [],
+    "manifest_status": "completed",
+    "signals_compared": 11187
+  },
+  "limitations": [
+    "Same constructed development benchmark as the frozen paper table; not unseen test or formal Oracle.",
+    "Sun/Ours numbers are reused from the hash-bound canonical source, not freshly rerun.",
+    "Sun/Ours reuse MPNet calibrated development results; Winter retains its independent native spaCy backend and fixed gamma/delta.",
+    "Applicable-pair checking; complete rule-selection/end-to-end performance is not claimed.",
+    "Order denominator has only 8 cells. Unknown positives remain FN; unknown negatives are not TN."
+  ],
+  "main_table": {
+    "LLM-RE": {
+      "display_name": "Ours",
+      "f1": 0.5340909090909091,
+      "precision": 0.4392523364485981,
+      "recall": 0.6811594202898551,
+      "support": {
+        "FN": 22,
+        "FP": 60,
+        "TN": 58,
+        "TP": 47,
+        "negative_support": 132,
+        "positive_support": 69,
+        "scored_cells": 201
+      }
+    },
+    "Sun-style Rules-Only": {
+      "display_name": "Sun et al.",
+      "f1": 0.4457831325301205,
+      "precision": 0.38144329896907214,
+      "recall": 0.5362318840579711,
+      "support": {
+        "FN": 32,
+        "FP": 60,
+        "TN": 31,
+        "TP": 37,
+        "negative_support": 132,
+        "positive_support": 69,
+        "scored_cells": 201
+      }
+    },
+    "Winter baseline": {
+      "FN": 31,
+      "FP": 44,
+      "TN": 83,
+      "TP": 38,
+      "coverage": 0.9601990049751243,
+      "f1": 0.5033112582781457,
+      "negative_support": 132,
+      "not_applicable": 39,
+      "not_scored": 105,
+      "positive_support": 69,
+      "precision": 0.4634146341463415,
+      "recall": 0.5507246376811594,
+      "scored_cells": 201,
+      "unknown_negative": 5,
+      "unknown_positive": 3,
+      "unknown_rate": 0.03980099502487562
+    }
+  },
+  "network_calls": 0,
+  "real_llm_api_calls": 0,
+  "run_id": "stage3_winter_paper_rerun_20261010_v1",
+  "run_manifest_sha256": "7151f686b35f37a170bf38ebaff012dda15f2fd3f5fcd3bf55c37030b2821188",
+  "scope": {
+    "base_cases": 113,
+    "negative_support": 132,
+    "order_supplement_cases": 2,
+    "positive_support": 69,
+    "requirements": 33,
+    "scored_cells": 201,
+    "total_cases": 115
+  },
+  "source_provenance_sha256": "570c3acd4b72b6e92842ba167d538294ad647ea4ae4bf773f414195c766faa46",
+  "status": "completed_development_comparison",
+  "validation_boundary": "Focused checks only. Existing Stage 1 correction integrity failure is unrelated and remains unmodified.",
+  "winter_metrics": {
+    "false_negative_examples": [
+      {
+        "case_id": "case_0697d9b84b86",
+        "check_type": "missing_action",
+        "denominator": 2,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-S6-T3",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_0f67bfdd277b",
+        "check_type": "incorrect_actor",
+        "denominator": 3,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-S4-T3",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_156f3d39867e",
+        "check_type": "missing_action",
+        "denominator": 8,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-S4-T2",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_1a2d6abc026a",
+        "check_type": "incorrect_actor",
+        "denominator": 4,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-S5-T4",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_221218bba2d3",
+        "check_type": "missing_action",
+        "denominator": 4,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-S4-T1",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_27a05191cde1",
+        "check_type": "incorrect_actor",
+        "denominator": 2,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-S1-T3",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_36a5f51046f7",
+        "check_type": "missing_action",
+        "denominator": 1,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-S6-T4",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_3b01b9c36d0f",
+        "check_type": "out_of_order",
+        "denominator": 0,
+        "raw_score": null,
+        "reason": "no_rule_side_flow_relations",
+        "requirement_id": "R5-D-01",
+        "status": "unknown"
+      },
+      {
+        "case_id": "case_44ded3550ee5",
+        "check_type": "incorrect_actor",
+        "denominator": 4,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-S8-T1",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_4c59fee89687",
+        "check_type": "incorrect_actor",
+        "denominator": 4,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-S1-T1",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_50f498770ae9",
+        "check_type": "incorrect_actor",
+        "denominator": 2,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-D-03",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_64985e535fd0",
+        "check_type": "missing_action",
+        "denominator": 5,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-S1-T2",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_6711c5a0dad8",
+        "check_type": "missing_action",
+        "denominator": 3,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-D-07",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_6cb0e57227f2",
+        "check_type": "incorrect_actor",
+        "denominator": 2,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-S6-T3",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_6f4087fc924f",
+        "check_type": "missing_action",
+        "denominator": 2,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-S5-T1",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_6fda0f20b097",
+        "check_type": "missing_action",
+        "denominator": 2,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-D-03",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_706168fa759f",
+        "check_type": "missing_action",
+        "denominator": 2,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-S3-T1",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_7396f1ecbaf2",
+        "check_type": "missing_action",
+        "denominator": 3,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-D-09",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_806f7830225a",
+        "check_type": "missing_action",
+        "denominator": 2,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-S1-T3",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_89f6d9e7047b",
+        "check_type": "incorrect_actor",
+        "denominator": 1,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-D-06",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_b5a60700383d",
+        "check_type": "missing_action",
+        "denominator": 3,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-S6-T1",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_d1ab41696c03",
+        "check_type": "missing_action",
+        "denominator": 4,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-S8-T1",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_dbe5d0716353",
+        "check_type": "incorrect_actor",
+        "denominator": 3,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-D-07",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_de1137fcd3ae",
+        "check_type": "missing_action",
+        "denominator": 3,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-S4-T3",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_devsupp_s4t3_out_of_order",
+        "check_type": "out_of_order",
+        "denominator": 0,
+        "raw_score": null,
+        "reason": "no_rule_side_flow_relations",
+        "requirement_id": "R5-S4-T3",
+        "status": "unknown"
+      },
+      {
+        "case_id": "case_e29a5ec0bbbc",
+        "check_type": "missing_action",
+        "denominator": 4,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-S4-T4",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_e382dcb7708b",
+        "check_type": "missing_action",
+        "denominator": 1,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-D-06",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_e85d2791c743",
+        "check_type": "missing_action",
+        "denominator": 2,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-S5-T3",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_f81de319913d",
+        "check_type": "missing_action",
+        "denominator": 3,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-S6-T2",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_fb1fd0822200",
+        "check_type": "missing_action",
+        "denominator": 1,
+        "raw_score": 0.0,
+        "reason": null,
+        "requirement_id": "R5-S5-T2",
+        "status": "satisfied"
+      },
+      {
+        "case_id": "case_ff937cc4c24e",
+        "check_type": "out_of_order",
+        "denominator": 0,
+        "raw_score": null,
+        "reason": "no_rule_side_flow_relations",
+        "requirement_id": "R5-D-02",
+        "status": "unknown"
+      }
+    ],
+    "false_positive_examples": [
+      {
+        "case_id": "case_0164a880bf44",
+        "check_type": "missing_action",
+        "denominator": 4,
+        "raw_score": 0.75,
+        "reason": null,
+        "requirement_id": "R5-D-08"
+      },
+      {
+        "case_id": "case_0ca6ea35f87e",
+        "check_type": "incorrect_actor",
+        "denominator": 3,
+        "raw_score": 0.6666666666666666,
+        "reason": null,
+        "requirement_id": "R5-S6-T2"
+      },
+      {
+        "case_id": "case_19b2d6f1bfb0",
+        "check_type": "missing_action",
+        "denominator": 4,
+        "raw_score": 0.75,
+        "reason": null,
+        "requirement_id": "R5-D-08"
+      },
+      {
+        "case_id": "case_1a2d6abc026a",
+        "check_type": "missing_action",
+        "denominator": 4,
+        "raw_score": 0.25,
+        "reason": null,
+        "requirement_id": "R5-S5-T4"
+      },
+      {
+        "case_id": "case_1e5363aa87b5",
+        "check_type": "missing_action",
+        "denominator": 7,
+        "raw_score": 0.14285714285714285,
+        "reason": null,
+        "requirement_id": "R5-S7-T1"
+      },
+      {
+        "case_id": "case_1fd8d9be0c9d",
+        "check_type": "missing_action",
+        "denominator": 3,
+        "raw_score": 0.3333333333333333,
+        "reason": null,
+        "requirement_id": "R5-D-12"
+      },
+      {
+        "case_id": "case_1fd8d9be0c9d",
+        "check_type": "incorrect_actor",
+        "denominator": 3,
+        "raw_score": 0.3333333333333333,
+        "reason": null,
+        "requirement_id": "R5-D-12"
+      },
+      {
+        "case_id": "case_27553ad672b2",
+        "check_type": "missing_action",
+        "denominator": 3,
+        "raw_score": 0.3333333333333333,
+        "reason": null,
+        "requirement_id": "R5-D-12"
+      },
+      {
+        "case_id": "case_27553ad672b2",
+        "check_type": "incorrect_actor",
+        "denominator": 3,
+        "raw_score": 0.3333333333333333,
+        "reason": null,
+        "requirement_id": "R5-D-12"
+      },
+      {
+        "case_id": "case_2e0630dc5be5",
+        "check_type": "missing_action",
+        "denominator": 4,
+        "raw_score": 0.25,
+        "reason": null,
+        "requirement_id": "R5-S1-T4"
+      },
+      {
+        "case_id": "case_2e0630dc5be5",
+        "check_type": "incorrect_actor",
+        "denominator": 4,
+        "raw_score": 0.25,
+        "reason": null,
+        "requirement_id": "R5-S1-T4"
+      },
+      {
+        "case_id": "case_2fbe69c72793",
+        "check_type": "missing_action",
+        "denominator": 3,
+        "raw_score": 0.3333333333333333,
+        "reason": null,
+        "requirement_id": "R5-D-12"
+      },
+      {
+        "case_id": "case_35ae84dddc65",
+        "check_type": "missing_action",
+        "denominator": 4,
+        "raw_score": 0.25,
+        "reason": null,
+        "requirement_id": "R5-D-05"
+      },
+      {
+        "case_id": "case_3af5fd62647b",
+        "check_type": "incorrect_actor",
+        "denominator": 4,
+        "raw_score": 0.25,
+        "reason": null,
+        "requirement_id": "R5-S8-T1"
+      },
+      {
+        "case_id": "case_3b01b9c36d0f",
+        "check_type": "missing_action",
+        "denominator": 3,
+        "raw_score": 0.3333333333333333,
+        "reason": null,
+        "requirement_id": "R5-D-01"
+      },
+      {
+        "case_id": "case_47ac07c5ced4",
+        "check_type": "missing_action",
+        "denominator": 3,
+        "raw_score": 0.3333333333333333,
+        "reason": null,
+        "requirement_id": "R5-S2-T2"
+      },
+      {
+        "case_id": "case_4aec33c00dc8",
+        "check_type": "missing_action",
+        "denominator": 4,
+        "raw_score": 0.25,
+        "reason": null,
+        "requirement_id": "R5-D-04"
+      },
+      {
+        "case_id": "case_4c59fee89687",
+        "check_type": "missing_action",
+        "denominator": 4,
+        "raw_score": 0.25,
+        "reason": null,
+        "requirement_id": "R5-S1-T1"
+      },
+      {
+        "case_id": "case_6209f221b20b",
+        "check_type": "missing_action",
+        "denominator": 4,
+        "raw_score": 0.25,
+        "reason": null,
+        "requirement_id": "R5-S1-T4"
+      },
+      {
+        "case_id": "case_6209f221b20b",
+        "check_type": "incorrect_actor",
+        "denominator": 4,
+        "raw_score": 0.25,
+        "reason": null,
+        "requirement_id": "R5-S1-T4"
+      },
+      {
+        "case_id": "case_648835a58615",
+        "check_type": "missing_action",
+        "denominator": 3,
+        "raw_score": 0.3333333333333333,
+        "reason": null,
+        "requirement_id": "R5-D-02"
+      },
+      {
+        "case_id": "case_7dcc88ac3cf1",
+        "check_type": "missing_action",
+        "denominator": 7,
+        "raw_score": 0.14285714285714285,
+        "reason": null,
+        "requirement_id": "R5-S7-T1"
+      },
+      {
+        "case_id": "case_83e2662c1457",
+        "check_type": "incorrect_actor",
+        "denominator": 4,
+        "raw_score": 0.25,
+        "reason": null,
+        "requirement_id": "R5-S8-T1"
+      },
+      {
+        "case_id": "case_8447fd35edc7",
+        "check_type": "missing_action",
+        "denominator": 9,
+        "raw_score": 0.2222222222222222,
+        "reason": null,
+        "requirement_id": "R5-S3-T2"
+      },
+      {
+        "case_id": "case_8447fd35edc7",
+        "check_type": "incorrect_actor",
+        "denominator": 9,
+        "raw_score": 0.1111111111111111,
+        "reason": null,
+        "requirement_id": "R5-S3-T2"
+      },
+      {
+        "case_id": "case_8480429a9517",
+        "check_type": "missing_action",
+        "denominator": 4,
+        "raw_score": 0.25,
+        "reason": null,
+        "requirement_id": "R5-S1-T4"
+      },
+      {
+        "case_id": "case_8c729ed572f4",
+        "check_type": "missing_action",
+        "denominator": 4,
+        "raw_score": 0.25,
+        "reason": null,
+        "requirement_id": "R5-S5-T4"
+      },
+      {
+        "case_id": "case_8d21f4b6fb98",
+        "check_type": "incorrect_actor",
+        "denominator": 3,
+        "raw_score": 0.3333333333333333,
+        "reason": null,
+        "requirement_id": "R5-S6-T1"
+      },
+      {
+        "case_id": "case_99b7bc6f1fc6",
+        "check_type": "missing_action",
+        "denominator": 3,
+        "raw_score": 0.3333333333333333,
+        "reason": null,
+        "requirement_id": "R5-S2-T2"
+      },
+      {
+        "case_id": "case_9c6fcd32f03c",
+        "check_type": "missing_action",
+        "denominator": 3,
+        "raw_score": 0.3333333333333333,
+        "reason": null,
+        "requirement_id": "R5-D-01"
+      },
+      {
+        "case_id": "case_a2f445c641d1",
+        "check_type": "missing_action",
+        "denominator": 4,
+        "raw_score": 0.25,
+        "reason": null,
+        "requirement_id": "R5-D-04"
+      },
+      {
+        "case_id": "case_a9fd75331508",
+        "check_type": "missing_action",
+        "denominator": 3,
+        "raw_score": 0.3333333333333333,
+        "reason": null,
+        "requirement_id": "R5-D-01"
+      },
+      {
+        "case_id": "case_b15419d68b21",
+        "check_type": "missing_action",
+        "denominator": 4,
+        "raw_score": 0.25,
+        "reason": null,
+        "requirement_id": "R5-D-05"
+      },
+      {
+        "case_id": "case_ba895d210eaf",
+        "check_type": "missing_action",
+        "denominator": 9,
+        "raw_score": 0.2222222222222222,
+        "reason": null,
+        "requirement_id": "R5-S3-T2"
+      },
+      {
+        "case_id": "case_ba895d210eaf",
+        "check_type": "incorrect_actor",
+        "denominator": 9,
+        "raw_score": 0.1111111111111111,
+        "reason": null,
+        "requirement_id": "R5-S3-T2"
+      },
+      {
+        "case_id": "case_c2c28cb239bc",
+        "check_type": "missing_action",
+        "denominator": 7,
+        "raw_score": 0.14285714285714285,
+        "reason": null,
+        "requirement_id": "R5-S7-T1"
+      },
+      {
+        "case_id": "case_d46c4dbbf7b8",
+        "check_type": "missing_action",
+        "denominator": 4,
+        "raw_score": 0.25,
+        "reason": null,
+        "requirement_id": "R5-S5-T4"
+      },
+      {
+        "case_id": "case_d8029187c213",
+        "check_type": "missing_action",
+        "denominator": 4,
+        "raw_score": 0.25,
+        "reason": null,
+        "requirement_id": "R5-D-05"
+      },
+      {
+        "case_id": "case_ec2a9cc66fae",
+        "check_type": "missing_action",
+        "denominator": 4,
+        "raw_score": 0.25,
+        "reason": null,
+        "requirement_id": "R5-D-04"
+      },
+      {
+        "case_id": "case_f2e0ecd3abf8",
+        "check_type": "incorrect_actor",
+        "denominator": 3,
+        "raw_score": 0.3333333333333333,
+        "reason": null,
+        "requirement_id": "R5-S4-T3"
+      },
+      {
+        "case_id": "case_f7bb207445df",
+        "check_type": "missing_action",
+        "denominator": 3,
+        "raw_score": 0.3333333333333333,
+        "reason": null,
+        "requirement_id": "R5-D-02"
+      },
+      {
+        "case_id": "case_f88b4ccdc713",
+        "check_type": "missing_action",
+        "denominator": 9,
+        "raw_score": 0.2222222222222222,
+        "reason": null,
+        "requirement_id": "R5-S3-T2"
+      },
+      {
+        "case_id": "case_fe8ab9bca28a",
+        "check_type": "missing_action",
+        "denominator": 4,
+        "raw_score": 0.25,
+        "reason": null,
+        "requirement_id": "R5-S1-T1"
+      },
+      {
+        "case_id": "case_ff937cc4c24e",
+        "check_type": "missing_action",
+        "denominator": 3,
+        "raw_score": 0.3333333333333333,
+        "reason": null,
+        "requirement_id": "R5-D-02"
+      }
+    ],
+    "macro_f1": 0.3519607843137254,
+    "method": "winter",
+    "micro_f1": 0.5033112582781457,
+    "overall": {
+      "FN": 31,
+      "FP": 44,
+      "TN": 83,
+      "TP": 38,
+      "coverage": 0.9601990049751243,
+      "f1": 0.5033112582781457,
+      "negative_support": 132,
+      "not_applicable": 39,
+      "not_scored": 105,
+      "positive_support": 69,
+      "precision": 0.4634146341463415,
+      "recall": 0.5507246376811594,
+      "scored_cells": 201,
+      "unknown_negative": 5,
+      "unknown_positive": 3,
+      "unknown_rate": 0.03980099502487562
+    },
+    "per_type": {
+      "incorrect_actor": {
+        "FN": 9,
+        "FP": 11,
+        "TN": 36,
+        "TP": 24,
+        "coverage": 1.0,
+        "f1": 0.7058823529411764,
+        "negative_support": 47,
+        "not_applicable": 35,
+        "not_scored": 0,
+        "positive_support": 33,
+        "precision": 0.6857142857142857,
+        "recall": 0.7272727272727273,
+        "scored_cells": 80,
+        "unknown_negative": 0,
+        "unknown_positive": 0,
+        "unknown_rate": 0.0
+      },
+      "missing_action": {
+        "FN": 19,
+        "FP": 33,
+        "TN": 47,
+        "TP": 14,
+        "coverage": 1.0,
+        "f1": 0.35,
+        "negative_support": 80,
+        "not_applicable": 2,
+        "not_scored": 0,
+        "positive_support": 33,
+        "precision": 0.2978723404255319,
+        "recall": 0.42424242424242425,
+        "scored_cells": 113,
+        "unknown_negative": 0,
+        "unknown_positive": 0,
+        "unknown_rate": 0.0
+      },
+      "out_of_order": {
+        "FN": 3,
+        "FP": 0,
+        "TN": 0,
+        "TP": 0,
+        "coverage": 0.0,
+        "f1": 0.0,
+        "negative_support": 5,
+        "not_applicable": 2,
+        "not_scored": 105,
+        "positive_support": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "scored_cells": 8,
+        "unknown_negative": 5,
+        "unknown_positive": 3,
+        "unknown_rate": 1.0
+      }
+    },
+    "unknown_reason_counts": {
+      "out_of_order:no_rule_side_flow_relations": 8
+    }
+  }
+}

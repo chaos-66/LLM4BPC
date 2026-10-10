@@ -1,0 +1,192 @@
+{
+  "schema_version": "stage3_table3_provisional_final@1.0.0",
+  "status": "PROVISIONAL_FINAL_PAPER_FACING_RESULT",
+  "table3_provisional_freeze": true,
+  "stage3_development_paused": true,
+  "stage3_pause_reason": "paper_and_presentation_priority",
+  "winter_mainline_status": "ARCHIVED_EXTERNAL_BASELINE",
+  "generated_at_utc": "2026-09-26T09:02:39.237478+00:00",
+  "source_result_artifact": "formal_experiment/outputs/reports/stage3_final_convergence_report_v1.json",
+  "source_result_sha256": "f3263dca9d76869dc8cbad27bc9ee331baeb72ee5d103685d4cd93e75d6e0dab",
+  "source_result_sha256_algorithm": "SHA-256",
+  "source_result_status": "STAGE3_METHOD_FROZEN_FINAL_UNSEEN_BENCHMARK_BLOCKED_PENDING_USER_AUTHORIZATION",
+  "source_result_schema_version": "stage3_final_convergence_report@2.0.0",
+  "source_result_final_test_eligible": false,
+  "git_commit": "aef4aa2f78353731c26064ca905893d925932042",
+  "git_commit_role": "source_tree_head_at_canonical_freeze_generation",
+  "methods": {
+    "Sun": {
+      "display_name": "Sun et al.",
+      "precision": 0.38144329896907214,
+      "recall": 0.5362318840579711,
+      "f1": 0.4457831325301205,
+      "support": {
+        "TP": 37,
+        "FP": 60,
+        "FN": 32,
+        "TN": 31,
+        "positive_support": 69,
+        "negative_support": 132,
+        "scored_cells": 201
+      }
+    },
+    "Ours": {
+      "display_name": "Ours",
+      "precision": 0.4392523364485981,
+      "recall": 0.6811594202898551,
+      "f1": 0.5340909090909091,
+      "support": {
+        "TP": 47,
+        "FP": 60,
+        "FN": 22,
+        "TN": 58,
+        "positive_support": 69,
+        "negative_support": 132,
+        "scored_cells": 201
+      }
+    }
+  },
+  "evaluation_scope": {
+    "name": "current evaluation benchmark",
+    "definition": "pooled TP/FP/FN over all scored development cells for the frozen selected backend",
+    "all_existing_cases_seen": true,
+    "development_case_count": 113,
+    "scored_cells_per_method": 201,
+    "final_test_eligible": false,
+    "final_unseen_evaluation_completed": false,
+    "current_result_is_unseen_test": false,
+    "allowed_descriptions": [
+      "evaluation benchmark",
+      "development benchmark",
+      "controlled downstream evaluation",
+      "experimental benchmark",
+      "current evaluation set"
+    ],
+    "prohibited_descriptions": [
+      "unseen test",
+      "held-out final test",
+      "blind final evaluation"
+    ],
+    "recommendation": "We evaluate downstream compliance checking on the constructed GDPR-based benchmark."
+  },
+  "metrics": {
+    "primary": "overall pooled P/R/F1",
+    "source_path": "report_f_development_result.main_table",
+    "table": {
+      "Sun": {
+        "precision": 0.38144329896907214,
+        "recall": 0.5362318840579711,
+        "f1": 0.4457831325301205
+      },
+      "Ours": {
+        "precision": 0.4392523364485981,
+        "recall": 0.6811594202898551,
+        "f1": 0.5340909090909091
+      }
+    }
+  },
+  "per_type_metrics": {
+    "Sun": {
+      "missing_f1": 0.4554455445544555,
+      "actor_f1": 0.4262295081967213,
+      "order_f1": 0.5,
+      "macro_f1": 0.46055835091705893
+    },
+    "Ours": {
+      "missing_f1": 0.49350649350649356,
+      "actor_f1": 0.5684210526315789,
+      "order_f1": 0.5,
+      "macro_f1": 0.5206425153793575
+    },
+    "type_definition": {
+      "missing_f1": "missing-action cases",
+      "actor_f1": "incorrect-actor cases",
+      "order_f1": "out-of-order cases",
+      "macro_f1": "macro-F1 over the evaluated type groups"
+    }
+  },
+  "improvement": {
+    "baseline": "Sun",
+    "method": "Ours",
+    "precision_delta": 0.05780903747952598,
+    "recall_delta": 0.14492753623188404,
+    "f1_absolute_delta": 0.08830777656078859,
+    "f1_percentage_point_gain": 8.830777656078858,
+    "f1_relative_improvement_percent": 19.809582309582304,
+    "macro_f1_delta": 0.06008416446229853,
+    "macro_f1_percentage_point_gain": 6.008416446229853,
+    "conclusion": "Under the shared downstream compliance checker, Ours achieves higher Precision, Recall, and F1 than the Sun baseline on the current evaluation benchmark.",
+    "secondary_conclusion": "Ours improves overall F1 by approximately 8.83 percentage points over Sun."
+  },
+  "limitations": [
+    "The current results are obtained on the constructed evaluation benchmark used during method development.",
+    "Final unseen benchmark/Gold packet is not constructed; only source-only candidate requirements remain.",
+    "No Ours Stage-2 predictions exist for unseen candidate requirements; explicit API authorization is required.",
+    "Ours Stage-2 A_r lacks a distinct process endpoint for R5-D-01/R5-D-02, so order recall is limited there.",
+    "R5-S7-T1/R5-S8-T1 are source action-action relations but their second endpoints are absent from both frozen Stage-2 A_r records.",
+    "Actor unknown remains material for Sun due to Definition 6 action-bound coverage; Definition 6 was intentionally not changed.",
+    "Missing-action precision remains limited by extra/fragment Stage-2 actions; no second action-scope revision was applied.",
+    "No formal significance test was performed; no p-value, confidence interval, or significance star is claimed."
+  ],
+  "replacement_policy": {
+    "current_result": "paper-facing provisional final",
+    "replacement_eligibility": "Replacement eligibility depends on methodological strength, not whether the new F1 is numerically higher.",
+    "future_superseding_requirements": [
+      "Stage3 method frozen before evaluation",
+      "new source-family unseen holdout",
+      "Gold frozen before predictions",
+      "Sun/Ours same shared Stage3",
+      "no post-test tuning",
+      "complete reproducibility artifacts"
+    ],
+    "if_final_unseen_evaluation_not_completed": "If the user/advisor accepts the current evaluation design, this provisional Table 3 may become the submission Table 3; the data values themselves must not change.",
+    "numerical_comparison_clause": "If a legitimate unseen final evaluation yields Sun F1 = 0.60 and Ours F1 = 0.58, it must not be hidden in favor of this result; the current result may continue to be reported as a development benchmark result."
+  },
+  "integrity": {
+    "real_api_calls": 0,
+    "network_experiment_calls": 0,
+    "new_experiments_run": 0,
+    "new_gold_created": false,
+    "new_bpmn_created": false,
+    "new_threshold_sweep": false,
+    "new_semantic_backend": false,
+    "new_mpnet_run": false,
+    "new_stage2_extraction": false,
+    "new_order_refinement": false,
+    "new_holdout": false,
+    "post_result_tuning": false,
+    "source_artifacts_sha256": {
+      "stage3_final_convergence_report_v1_json": "f3263dca9d76869dc8cbad27bc9ee331baeb72ee5d103685d4cd93e75d6e0dab",
+      "stage3_final_convergence_root_causes_v1_json": "14127ab07fb1bef2febc85ed86db955c59bce5c37ecad27e557b4a70d13da3fa",
+      "stage3_final_improvement_attribution_v1_json": "4d6f8dfe4693f06f3d81e42af1721b702c28ef8cae9a115523144f06f8c691d6",
+      "stage3_final_semantic_backend_freeze_v1_json": "4c4c0d219f9eac55741a1b8e37f6c1ace740930772d14e57566c497a9e113162",
+      "stage3_final_order_adapter_freeze_v1_json": "c5ad26f325a3799f0f4c1a371697b3861dd399f2b045a49202cd663f7aa2b45c",
+      "stage3_final_order_eligibility_v1_json": "cc0a93daabef04915b938544722b0d3b529838bf1e9818db546388ceb24659f7"
+    },
+    "all_existing_cases_seen": true,
+    "current_result_is_unseen_test": false,
+    "final_unseen_evaluation_completed": false,
+    "winter_mainline_status": "ARCHIVED_EXTERNAL_BASELINE"
+  },
+  "paper_facing": {
+    "recommended_caption": "Performance comparison on downstream compliance checking.",
+    "caption_candidates": [
+      "Performance comparison on downstream compliance checking.",
+      "Overall performance of downstream compliance checking.",
+      "Downstream compliance-checking performance on the current benchmark."
+    ],
+    "prohibited_caption_fragments": [
+      "Final unseen test performance"
+    ],
+    "results_paragraph": "Table X reports the downstream compliance-checking performance of Sun and our method under the same checking pipeline. Our method achieves a precision of 0.4393, recall of 0.6812, and F1-score of 0.5341, compared with 0.3814, 0.5362, and 0.4458 for Sun, respectively. This corresponds to an absolute F1 improvement of 0.0883.",
+    "breakdown_sentence": "The improvement is mainly associated with better performance on missing-action and incorrect-actor cases, while the two methods obtain the same F1 on the evaluated out-of-order cases.",
+    "caveat": "The current results are obtained on the constructed evaluation benchmark used during method development. A separately frozen unseen evaluation may replace this result if completed before submission.",
+    "allowed_conclusion": "Under the shared downstream compliance checker, Ours achieves higher Precision, Recall, and F1 than the Sun baseline on the current evaluation benchmark.",
+    "prohibited_claims": [
+      "state-of-the-art",
+      "significantly better",
+      "statistically significant",
+      "superior to all previous methods"
+    ]
+  }
+}

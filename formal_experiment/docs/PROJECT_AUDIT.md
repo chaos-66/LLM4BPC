@@ -1,6 +1,6 @@
 # 项目实时状态（兼容文件名 PROJECT_AUDIT.md）
 
-**更新时间**：2026-10-07
+**更新时间**：2026-10-10
 **唯一活动目录**：`formal_experiment/`  
 **完整路线**：`docs/MASTER_PIPELINE.md`  
 **机器事实源**：`python formal_experiment/scripts/audit_project.py`（自动完整性检查）  
@@ -8,6 +8,30 @@
 
 本文是唯一实时状态页，只记录“现在做到哪里、下一步做什么”。研究目标、完整
 Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见主 Pipeline。
+
+## S3-WINTER-PAPER-RERUN-V1：论文同口径重放完成，项目完整性仍有独立阻塞（2026-10-10）
+
+- 用户要求确认截图来源并从头重跑 Winter；预期排序仅是研究假设，不作为调参或验收条件。
+- 截图来源已在活动工作树 `D:/Paper/experiment/LLM4BPC-s3-ext-pc-v1` 找到：
+  `outputs/reports/stage3_table3_provisional_final_v1.json`。原 Sun/LLM-RE 数字和源工作树均未改。
+- 在当前分支独立保存输入快照 `data/development/stage3_winter_paper_rerun_20261010_v1/`：
+  113 个基础案例 + 2 个原顺序补充案例，共 115；33 条法规要求。原表元数据的 113
+  是基础池数量，来源收敛报告计数包含补充案例；同口径每方法 201 单元（69 正、132 负）。
+- 原生 Winter 从头执行全部 115×33=3795 对、11385 个信号，无复用旧预测、无异常。
+  保留 spaCy `en_core_web_sm`、gamma=0.4、delta=0.8、corrected reachability、全局角色词表。
+  本机可选 torch DLL 启动错误经进程内 CPU 入口解决；使用原 Thinc/NumPy 小模型，
+  不加载被阻止的 DLL，不改系统策略/软件包，不改算法或阈值；文档缓存与非缓存原生成分数一致。
+- 同口径 P/R/F1：Sun **0.3814/0.5362/0.4458**；LLM-RE **0.4393/0.6812/0.5341**；
+  Winter **0.4634/0.5507/0.5033**。实际 F1 排序 LLM-RE > Winter > Sun；不支持预期中的 Sun > Winter。
+  原生 Winter 与此前可核验 11187 个信号比较差异 0，旧 manifest 声明 completed；
+  不据此推断用户另一次中断运行。历史结果、Gold、Stage 1 用户修改和 sep_c3 报告均保留。
+- 完整新证据：`outputs/evidence/stage3_winter_paper_rerun_20261010_v1/`，含独立 CPU
+  execution manifest；三方法表：`outputs/reports/stage3_winter_paper_rerun_20261010_v1.{json,md,csv,tex}`。
+- 5 项具名相关测试通过（1.97 秒），experiment_run 已记录；未运行全量。批次前后快速完整性
+  均有既存 `stage1_claim_correction_invalid`，相关用户文件未修改，不宣称项目完整性或正式发布通过。
+- 边界：同一个已用于开发的构造 GDPR benchmark；Sun/Ours 复用固定 MPNet 结果，Winter
+  是独立原生 spaCy 基线。不是独立未见测试、完整规则选择端到端评价、正式 Oracle 或自动发布 Gold。
+  本次真实 LLM/API/网络调用均为 0；仅补 Winter 对照，不重跑或优化 Sun/LLM-RE。
 
 ## 默认max_tokens完整150次已验证，GitHub备份受阻：S2-THINKING-SENSITIVITY-V1（2026-10-07）
 
