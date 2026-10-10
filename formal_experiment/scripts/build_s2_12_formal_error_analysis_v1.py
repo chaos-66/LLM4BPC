@@ -30,7 +30,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 ARMS = {
     "sun_rule_only": ("b0_formal_arm_v1", "Rules-Only"),
-    "direct_llm": ("direct_llm_formal_arm_v1", "Direct-LLM"),
+    "direct_llm": ("direct_llm_formal_arm_v1", "LLM-SE"),
     "sun_llm_fallback": ("sun_llm_fallback_formal_arm_v1", "Rules+LLM-Repair"),
 }
 FIELDS = ("actor", "action", "condition", "constraint", "exception")
@@ -135,7 +135,7 @@ def build_analysis() -> dict[str, Any]:
         "weakest_field_per_method": weakest,
         "observations": [
             "constraint is the weakest field for Rules-Only (lowest recall) and among the weakest for the other methods",
-            "Direct-LLM has the highest recall on action/condition/constraint; Rules-Only has the highest recall on actor (approx missed counts derived from recall)",
+            "LLM-SE has the highest recall on action/condition/constraint; Rules-Only has the highest recall on actor (approx missed counts derived from recall)",
             "Rules+LLM-Repair consistently underperforms its own Rules-Only base on actor (net-negative), matching the 2026-08-08 stop-optimizing decision",
             "all three methods share the modality evidence-span limitation (structural, from the published Gold)",
             "misclassified vs missed trade-off differs per method per field (see complementarity)",

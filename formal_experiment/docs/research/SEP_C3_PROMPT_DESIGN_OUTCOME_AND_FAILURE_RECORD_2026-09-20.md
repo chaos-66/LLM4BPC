@@ -112,7 +112,7 @@ original_execution_binding 内部）：
 | R5 | R_DEF（definition 语义） | definition F1 0.4615 → **0.7200**（CI 不含 0）；modality macro-F1 +0.109 | micro F1 −0.0084；action/condition/constraint F1 全为负；非 definition 误判率 0.52% → 4.69% | **DO NOT PROMOTE**，回 A |
 
 **登记结论：六个候选（E、S、J、R_A、R_C、R_DEF）没有任何一个达到"整体优于现有
-默认配方"的验收标准；默认 Direct-LLM prompt 仍为
+默认配方"的验收标准；默认 LLM-SE prompt 仍为
 `prompts/sun_compat/direct_llm_sun_record_prompt_v6_d1r1_2026_08_05.md`。**
 
 ---
@@ -164,7 +164,7 @@ original_execution_binding 内部）：
 
 ### 瓶颈 4：评价口径把边界与粒度差异计为错误，且校验链没有中间态
 
-- **边界敏感性**：Direct-LLM 的 constraint 粗口径 F1 = 0.7427，细粒度口径
+- **边界敏感性**：LLM-SE 的 constraint 粗口径 F1 = 0.7427，细粒度口径
   F1 = 0.5481；差值来自 span 切分粒度，而非语义错误。
 - **Gold 局部不一致（已登记的不可学习噪声）**：
   - cue `to the extent` 在 Gold 中 gold-condition 14 条 / gold-constraint 2 条；
@@ -283,7 +283,7 @@ original_execution_binding 内部）：
 
 ## 7. 中文摘要（供论文讨论章直接引用）
 
-> 本文对 Direct-LLM 抽取提示词做了组件级受控消融：把提示词拆为语义示例（E）、
+> 本文对 LLM-SE 抽取提示词做了组件级受控消融：把提示词拆为语义示例（E）、
 > 显式语义规则（S）与输出组织纪律（J）三个可独立开关的模块，在固定 EStG-150
 > 输入、冻结 Gold 与同一评价器下执行全部八个组合（每格 150 条）。结果显示完整
 > 配置并未优于若干更简配置，且新增语义规则在已有示例时会带来净负收益。成对误差

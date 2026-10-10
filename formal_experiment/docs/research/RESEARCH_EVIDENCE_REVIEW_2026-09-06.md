@@ -60,11 +60,11 @@ Sun 的 Stage 2 是传统 NLP 流水线（BERT-TextCNN 情态分类 + CoreNLP/Tr
 |---|---|---|
 | Rules-Only（`sun_rule_only`，旧代号 B0） | 非 LLM 的 Sun Stage 2 方法级独立重建（重建口径经用户授权，不是作者原代码） | 基线 |
 | Rules+LLM-Repair（`sun_llm_fallback`，旧代号 H1） | 规则为主、只在预注册 trigger 下让 LLM 修字段 | 对照臂（负结果，不再优化） |
-| Direct-LLM（`direct_llm`，旧代号 D1） | LLM 直接端到端生成同一六要素 Rule Record | 主方法 |
+| LLM-SE（`direct_llm`，旧代号 D1） | LLM 直接端到端生成同一六要素 Rule Record | 主方法 |
 
 **位置声明（2026-09-06 用户澄清后固定）**：Sun 是整体改进对象与三阶段主干；Barrientos
 et al. (2026) 只是 **Stage 2 的方法借鉴来源**——本项目借鉴其“LLM 结构化输出 + 校验 +
-受控词汇/受控 schema + 归一化与评价纪律”的思路（例如 Direct-LLM 的 strict JSON 输出
+受控词汇/受控 schema + 归一化与评价纪律”的思路（例如 LLM-SE 的 strict JSON 输出
 契约、verbatim span 回指校验、确定性后处理链、预算与可复现纪律），**但没有照抄其
 prompt、输出结构或整个系统**（其 change-impact 表示、precondition/norm/44 模式与我们
 的 Sun 六要素 schema 不同，属于 C4 跨任务，不能直接换算）。研究定位不是“必须整体优于
@@ -119,7 +119,7 @@ Stage 3（development 完成；formal Oracle/端到端被门禁锁定）。
 |---|---|---|
 | 三阶段框架、中间合同（Process/Rule/Violation）、Stage 2 六要素定义、句子级粗/细双口径评价 | **沿用 Sun**（方法级独立重建；B0 是重建的基线） | Stage 1 的 P2 也按 Sun/Leopold 风格重建；全部不得称 exact reproduction |
 | Stage 1 流程模型解析方法 | **沿用 Sun 的思路**，不是本研究创新点 | 实现中的重建/适配差异（如 Tsurgeon 为 fail-closed 诚实非实现、词典规模与分词机制）如实披露 |
-| Direct-LLM 的“LLM 结构化输出 + 校验 + 受控词汇/schema + 归一化纪律”设计思路 | **借鉴 Barrientos**（只借鉴思路与纪律，不照抄其 prompt/输出结构/系统） | 我们仍输出 Sun 六要素；modality 4 类（Barrientos 3 类，无 definition）；normalized view 受控但原文 span 回指；Barrientos 原生表示仅用于受控 adapter 对照 |
+| LLM-SE 的“LLM 结构化输出 + 校验 + 受控词汇/schema + 归一化纪律”设计思路 | **借鉴 Barrientos**（只借鉴思路与纪律，不照抄其 prompt/输出结构/系统） | 我们仍输出 Sun 六要素；modality 4 类（Barrientos 3 类，无 definition）；normalized view 受控但原文 span 回指；Barrientos 原生表示仅用于受控 adapter 对照 |
 | Rules-Only 之外的两个 Stage 2 对照/主方法（D1/H1） | **本项目实现** | 共享同一输入/Gold/evaluator；H1 已降级为负结果对照 |
 | Stage 3 违规检测扩展四类错误 | **本项目扩展**（Winter/Sun 原论文未定义；一律称 Winter-style/Sun-style extension） | 受控合成面板 + 配对评价，dev-only |
 | 坐标重锚、canonical validator、预算/授权合同、事件日志、fail-closed 门禁 | **本项目工程** | 属可复现/安全机制，**不是核心创新消融对象**（见 §3.3 说明） |
@@ -149,10 +149,10 @@ action 间的顺序（错误→out_of_order）。扩展四类分别消费：proh
 
 ⚠️ 纪律提醒：测试通过数 ≠ 实验样本数；计划 ≠ 结果；`development` ≠ `formal`。
 
-### 3.1 主对比：Sun 式规则抽取 vs 我的 LLM 抽取（研究问题 1 的核心）
+### 3.1 主对比：Sun 式语义抽取 vs 我的 LLM 抽取（研究问题 1 的核心）
 
 **回答的问题**：在相同数据（EStG-150 正式输入 v2）、相同输出要求（六要素 span）、相同
-评价方式（同一粗/细 Gold、同一 evaluator）下，Sun 式规则抽取与 LLM 抽取分别有什么优势
+评价方式（同一粗/细 Gold、同一 evaluator）下，Sun 式语义抽取与 LLM 抽取分别有什么优势
 和不足。
 
 **证据**：`outputs/reports/stage2_formal_three_method_comparison_v1.{json,md}` +
@@ -162,19 +162,19 @@ action 间的顺序（错误→out_of_order）。扩展四类分别消费：proh
 
 **结果（句子级粗 Gold 逐字段 F1，正式）**：
 
-| 字段 | Rules-Only | Direct-LLM | Rules+LLM-Repair | 谁领先（描述性） |
+| 字段 | Rules-Only | LLM-SE | Rules+LLM-Repair | 谁领先（描述性） |
 |---|---:|---:|---:|---|
 | actor | 0.820 | 0.758 | 0.430 | Rules-Only |
-| action | 0.893 | 0.944 | 0.895 | Direct-LLM |
-| condition | 0.774 | 0.838 | 0.777 | Direct-LLM |
-| constraint | 0.618 | 0.743 | 0.620 | Direct-LLM |
+| action | 0.893 | 0.944 | 0.895 | LLM-SE |
+| condition | 0.774 | 0.838 | 0.777 | LLM-SE |
+| constraint | 0.618 | 0.743 | 0.620 | LLM-SE |
 | exception | 0.880 | 0.762 | 0.880 | Rules-Only（与 H1 平） |
-| modality 标签 accuracy | 0.740 | 0.833 | 0.820 | Direct-LLM |
-| modality label macro-F1 | 0.713 | 0.769 | 0.812 | Rules+LLM-Repair（macro-F1 最高但 span 净负；Direct-LLM 在 label accuracy 领先） |
-| 五字段算术平均 F1（描述性） | 0.797 | 0.809 | 0.720 | Direct-LLM |
+| modality 标签 accuracy | 0.740 | 0.833 | 0.820 | LLM-SE |
+| modality label macro-F1 | 0.713 | 0.769 | 0.812 | Rules+LLM-Repair（macro-F1 最高但 span 净负；LLM-SE 在 label accuracy 领先） |
+| 五字段算术平均 F1（描述性） | 0.797 | 0.809 | 0.720 | LLM-SE |
 
 **可以支持的说法**（正式报告结论，字段级、无显著性推断）：
-- Direct-LLM 在 action/condition/constraint 三个字段与 modality 标签准确率上领先；
+- LLM-SE 在 action/condition/constraint 三个字段与 modality 标签准确率上领先；
   Rules-Only 在 actor、exception 上领先（召回高：actor R 0.976 vs 0.878；exception R 1.0）；
 - 两方法错误模式互补：规则法以**字段归属错误**为主（constraint 内容进了 action/condition，
   或 constraint↔condition 混淆），LLM 以**保守漏抽**为主（P 高 R 低，尤其低资源字段）；
@@ -186,7 +186,7 @@ action 间的顺序（错误→out_of_order）。扩展四类分别消费：proh
   里只有 13 个（4%）符合 Sun 公开 marker 的定义（Sun 自身也只有 35 个）；用 Sun-marker
   收敛口径后 B0 constraint R=1.0 (13/13)、condition R=0.989 (91/92)。**低分不等于
   “抽不到”，部分是标签定义范围宽 8–23 倍的口径问题**（归因证据，dev 口径，C19）。
-- Direct-LLM 的 exception R 仅 0.727（10/11 gold），actor 泛化误抽在历史 run 里有
+- LLM-SE 的 exception R 仅 0.727（10/11 gold），actor 泛化误抽在历史 run 里有
   P=0.594 的记录；constraint 始终是其最弱字段（R 0.288→0.417 的历史修复轨迹见 D1-R1）。
 - 把“句子级粗 Gold”的数值（如早期归因 0.7986/0.8726）与“正式比较”逐字段数值混用会
   造成数字不一致：两者来自不同 Gold 快照/登记口径。**论文统一引用正式比较报告**
@@ -264,7 +264,7 @@ action 间的顺序（错误→out_of_order）。扩展四类分别消费：proh
 
 ### 3.5 优先核查项：Stage 2 → Stage 3 衔接（成对比较）现状
 
-**要回答的问题**：Stage 2 的替换（Rules-Only vs Direct-LLM 抽取）是否影响最终违规检测，
+**要回答的问题**：Stage 2 的替换（Rules-Only vs LLM-SE 抽取）是否影响最终违规检测，
 而不只是改变抽取分数。
 
 **核验过程与结论**：
@@ -292,7 +292,7 @@ action 间的顺序（错误→out_of_order）。扩展四类分别消费：proh
 |---|---|---|---|
 | 1 | GDPR 条款句子级 Gold-blind Stage 2 输入合同（9 段条款需先确定性分句，类似 EStG-150 输入 v2 结构：source locator + 文本 hash + approved 句子文本） | 不存在；分句结果只隐式存在于 S3.9-EXT 面板的 rule bindings（sentence_idx/sentence_text） | 离线工程可做（零 API），需先定分句器与输入 schema |
 | 2 | Rules-Only 在该输入上的预测 | 未运行（可零 API 跑，但要披露其 classifier 为德语合同、英文条款是 pass-through 的描述性限制，同 S2.12 零 API 臂的披露口径） | 离线可做 |
-| 3 | Direct-LLM / Rules+LLM-Repair 在该输入上的预测 | 未运行；需要**新的 API 授权与预算**（本提示不构成授权）；prompt 需按复杂语料口径复核 | 需用户授权 |
+| 3 | LLM-SE / Rules+LLM-Repair 在该输入上的预测 | 未运行；需要**新的 API 授权与预算**（本提示不构成授权）；prompt 需按复杂语料口径复核 | 需用户授权 |
 | 4 | 9 段条款的六要素 Gold Rule Records（人工裁决） | 不存在 | 用户 |
 | 5 | 消费“预测 Rule Record”的固定 Stage 3 检测器适配与评价合同（把 E00/E10/E01/E11 落到可运行 runner） | 设计在路线图（§9.4/§10.2），无 runner | 离线工程（在用户对 §3.5-1/2 认可后） |
 | 6 | 与 33 条 violation decision Gold（原三类）对齐的评价口径；新四类合成面板上同样做 S2 输入替换 | 33 条 Gold 存在；评价口径未定义 | 与 #5 一起 |
@@ -359,13 +359,13 @@ EStG-150 的抽取结果冒充该评测，也**不能**把确定性抽取当作 
 ### 4.1 逐项回答
 
 **① 当前实验已经证明了什么（可写进论文的正式结论）**
-1. 在 EStG-150/150 条、同一 Gold 与 evaluator 下，Direct-LLM 与 Rules-Only（Sun 方法级
+1. 在 EStG-150/150 条、同一 Gold 与 evaluator 下，LLM-SE 与 Rules-Only（Sun 方法级
    重建）**字段级互补**（D1：action/condition/constraint/标签；B0：actor/exception/
    高召回）；没有“一种方法全面胜出”的正式声明——这是 2026-08-11 正式比较与正式结论包
    支持的（描述性、无显著性推断）。
 2. 无证据约束的 Rules+LLM-Repair 是**净负对照**（全量 150 运行 F1 0.7621 vs 0.7986，
    actor P 崩塌）——支持“修复必须被证据约束”的论证。
-3. Direct-LLM 的六个语义合成示例有**小幅总体正贡献**（Δ−0.0069，actor Δ−0.1317）；
+3. LLM-SE 的六个语义合成示例有**小幅总体正贡献**（Δ−0.0069，actor Δ−0.1317）；
    详细语义规则与显式 JSON 纪律在当前模型/数据上**无总体正增益**（Δ+0.0040/+0.0071），
    但存在字段级正作用（action、exception）——因此**如实写“未测得增益”，不写“无用”**。
 4. 坐标重锚器是后处理链的**功能必需件**（去掉 → 149/150 无效、F1 归零）；adapter/
@@ -423,7 +423,7 @@ AB-6 零事故、AB-7 口径敏感性、AB-8 规则模块批次、AB-9 稳定性
 
 ### 4.2 论文应如何准确表述贡献与局限（措辞清单）
 
-- 定位句：三阶段主干与改进对象 = Sun；Barrientos = Stage 2 LLM 方案（Direct-LLM）的
+- 定位句：三阶段主干与改进对象 = Sun；Barrientos = Stage 2 LLM 方案（LLM-SE）的
   “结构化输出+校验+受控词汇+评价纪律”借鉴来源；**不写“整体优于 Barrientos”**；
 - Rules-Only = Sun Stage 2 的 *method-level independent reconstruction*（非 exact、
   非作者原代码；Tsurgeon 诚实非实现、词典/分词适配披露）；EStG-150 = 项目独立重建

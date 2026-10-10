@@ -168,12 +168,12 @@
 - temperature=0。论文正文未把固定 seed 写成该设计的必要组成，因而“seed=42”只能
   是本项目自己的可复现性选择，不能归因给 Barrientos。
 
-**借鉴到我们的 Direct-LLM**：
+**借鉴到我们的 LLM-SE**：
 - 对同一冻结输入做 5 次独立运行（temperature=0；是否固定 seed 由本项目合同另定）；
 - 同时报告 Barrientos-style self-consistency 与本项目 field/span agreement，二者分列；
 - 报告"5 次跑里 X% 的字段结果一致"
 
-**当前状态（2026-08-20）**：Direct-LLM 的执行注册表已锁定 temperature=0、
+**当前状态（2026-08-20）**：LLM-SE 的执行注册表已锁定 temperature=0、
 top_p=1 与 seed 策略；这些是运行合同，不要求重复写入 prompt。尚缺的是 AB-9 的
 5 次独立正式重跑与 self-consistency / field-span agreement 报告。
 
@@ -334,7 +334,7 @@ Output: {
 > **Barrientos 是 3 类 modality + change-impact schema**（不能直接借鉴）；
 > **可借鉴的是专家评估协议（3 维度 + style-equivalent）和工程纪律（controlled vocabulary + 温度 0 + 5-run 稳定性测试）**；论文自动方法主表仍是 Step-specific P/R/F1、schema validity 与 self-consistency。
 >
-> Direct-LLM 已采用 Sun 4 类 modality、锁定 sampling/seed 策略并配置合成 few-shot；
+> LLM-SE 已采用 Sun 4 类 modality、锁定 sampling/seed 策略并配置合成 few-shot；
 > compliance pattern dual-view 与 5-run stability 仍是待消融项，不能写成已完成贡献。
 > Stage 2 评估可以引入 style-equivalent alignment 概念（**CCFC 创新点**）。
 

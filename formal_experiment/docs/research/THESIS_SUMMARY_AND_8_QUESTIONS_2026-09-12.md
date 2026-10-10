@@ -13,7 +13,7 @@
 三阶段框架（Sun et al. 2024）的方法级独立重建已完成并可审计：Stage 1 在固定
 GDPR-7 上完成描述性复现并冻结（`data/gold/stage1/process_records/
 stage1_process_gold_v1.json`，2026-08-13）；Stage 2 完成正式三方法比较
-（Rules-Only / Direct-LLM / Rules+LLM-Repair，`outputs/reports/
+（Rules-Only / LLM-SE / Rules+LLM-Repair，`outputs/reports/
 stage2_formal_three_method_comparison_v1.json`，2026-08-11）；Stage 3 完成四方法
 非 LLM 对照、33 条人工 panel、30+40 条合成受控错误面板、阈值敏感性、以及四类违规
 的扩展实验。四个完整性门禁当前均为 true（`docs/PROJECT_AUDIT.md` L591–605），但
@@ -123,7 +123,7 @@ Winter 没有，Sleimi / Michel / Barrientos 都没有被 Sun 当作方法对比
 | 建议对比 | 前人来源 | 为什么成立 | 现有资产 |
 |---|---|---|---|
 | A. 义务动作集合匹配（obligation-set matching） | **Winter** | Winter 确实从规范文本产出一个"义务动作集合"（signalwords 筛句 + spaCy 从句切分），可与 Rule Record 的 action 集合在同一 150 条 / 同一 Gold 上比较 | 已有 `src/bpc_hybrid/winter_stage3/`（含 `winter_clause.py` L142–153、`winter_pair.py`）；`configs/winter_stage3_development_v1.json`；只需把 clause 侧指向 EStG-150 英文 |
-| B. modality 分类：signal-word 下限 | **Winter**（4 词） vs **BERT-TextCNN**（本重建） vs **Direct-LLM** | 4 个 signalword 直接给出一个诚实的 modality 下限；`may` 同时覆盖 permission 与 "may not"=prohibition，这个失败模式本身就是可报告结论 | 4 词表已在仓库；EStG-150 Gold 有 modality 标签 |
+| B. modality 分类：signal-word 下限 | **Winter**（4 词） vs **BERT-TextCNN**（本重建） vs **LLM-SE** | 4 个 signalword 直接给出一个诚实的 modality 下限；`may` 同时覆盖 permission 与 "may not"=prohibition，这个失败模式本身就是可报告结论 | 4 词表已在仓库；EStG-150 Gold 有 modality 标签 |
 | C. 六要素抽取：marker/Tregex 谱系 | **Sun**（已在）+ **Sleimi et al.** + **Michel et al. 2022** | 只有这条谱系做过 phrase-level 法律语义抽取；Michel 2022 正是 EStG 语料的原始出处 | `docs/research/SUN_REFERENCE_SNOWBALL_AND_MARKER_AUDIT.md` L100–114（Sleimi 2018 在 150 条陈述上 1,177 短语 / 1,202 标注）；`references/papers/Michel_2022_Decision_rules.pdf` |
 
 **注意 S2.7 仍是 `blocked`**：`MASTER_PIPELINE.md` L864 把"实现一个代表性非 LLM
@@ -151,9 +151,9 @@ Rule Record，其条款处理是 4 个 signal words 的义务句筛选与 13 个
 
 1. **零 API、约 1 人日**：把 `winter_stage3` 的 clause 侧接到 EStG-150 英文输入，
    产出 Winter 义务动作集合，在同一粗/细 Gold 上算 action 字段的 P/R/F1，与
-   Rules-Only（0.8927 粗 action F1）和 Direct-LLM（0.9437）并列成一行。
+   Rules-Only（0.8927 粗 action F1）和 LLM-SE（0.9437）并列成一行。
 2. **零 API、约 0.5 人日**：用 4 个 signalword 做 modality 预测，报 4 类 label
-   accuracy / macro-F1，与 Rules-Only（0.7400 / 0.7128）、Direct-LLM（0.8333 /
+   accuracy / macro-F1，与 Rules-Only（0.7400 / 0.7128）、LLM-SE（0.8333 /
    0.7695）并列。**注意**：需先声明 `may not` 的处理规则（否则该下限不公平）。
 3. **写作、0 计算**：在 §2.3 补 Sleimi / Michel / Leopold / Agostinelli 的关系段
    （当前是 `[[TODO-SOURCE:...]]`，`paper/THESIS_DRAFT.md` L97、L101、L105）。
@@ -278,7 +278,7 @@ LLM 能做的是**补第一段和第二段**，而不是直接判违规：
    （谓词 + 参数 + 类型：时限/阈值/存在性/授权），这一项是可验证的；
 2. **语义等价比对**：把 BPMN 侧 `conditionExpression`、timer、data object、
    boundary event 归一化到同一谓词空间，让 LLM 判**蕴含**而非相似度阈值；
-   Direct-LLM 在 action（0.9437 vs 0.8927）和 constraint（0.7427 vs 0.6182 粗）
+   LLM-SE 在 action（0.9437 vs 0.8927）和 constraint（0.7427 vs 0.6182 粗）
    上已经证明它在同类比对上有优势（`paper/THESIS_DRAFT.md` §7.2 L687–697）；
 3. **"不可观测"判断本身应当成为可学习决策**：当前是固定规则 + 事后 reason。
    本项目已经试过四值判定（satisfied/violated/unknown/not_applicable，分离
@@ -429,7 +429,7 @@ article{5..50}.txt`），经人工裁决成
 | 方法 | actor | action | condition | constraint | exception | mean | label acc / macro-F1 |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | Rules-Only | **0.8203** | 0.8927 | 0.7738 | 0.6182 | **0.8800** | 0.797 | 0.7400 / 0.7128 |
-| Direct-LLM | 0.7579 | **0.9437** | **0.8380** | **0.7427** | 0.7619 | **0.8088** | **0.8333** / 0.7695 |
+| LLM-SE | 0.7579 | **0.9437** | **0.8380** | **0.7427** | 0.7619 | **0.8088** | **0.8333** / 0.7695 |
 | Rules+LLM-Repair（对照） | 0.4296 | 0.8945 | 0.7774 | 0.6200 | 0.8800 | 0.7203 | 0.8200 / **0.8123** |
 
 **结论必须写成"无整体胜者"**（字段级互有胜负，禁止显著性推断）。
@@ -880,7 +880,7 @@ S2.11 的语料来自 **Barrientos et al. (2026)**，其对象是 regulatory
 
 - 构件名：`Process Record` / `Rule Record` / `Violation Report`
   （`MASTER_PIPELINE.md` §5「统一中间合同」）；
-- 方法名：**Rules-Only / Direct-LLM / Rules+LLM-Repair**
+- 方法名：**Rules-Only / LLM-SE / Rules+LLM-Repair**
   （`paper/THESIS_DRAFT.md` L8–10；`configs/methods.json`）；
 - 任务名：`design-time compliance checking`；
 - 禁止表述：不得称 "exact Sun"/"Sun original"，只能称

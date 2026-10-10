@@ -7,7 +7,7 @@ Zero-API, read-only over frozen artifacts.  Reads ONLY:
   ``data/gold/stage2/estg150_formal_gold_v1.json``
 - the two frozen formal arms' prediction envelopes
   ``data/predictions/b0_formal_arm_v1/predictions.json``      (Sun rules-only)
-  ``data/predictions/direct_llm_formal_arm_v1/predictions.json`` (Direct-LLM)
+  ``data/predictions/direct_llm_formal_arm_v1/predictions.json`` (LLM-SE)
 
 and the frozen evaluator (``formal_stage2_evaluation`` +
 ``stage2_sun_literal_overlap`` + the G0.4 coarse transform).
@@ -67,7 +67,7 @@ ARMS = (
     },
     {
         "method_id": "direct_llm",
-        "display_name": "Ours (Direct-LLM)",
+        "display_name": "Ours (LLM-SE)",
         "arm": "direct_llm_formal_arm_v1",
     },
 )
@@ -128,7 +128,7 @@ def collect() -> dict[str, Any]:
             "pooled_metric_id": coarse["pooled_metric_id"],
         }
 
-    # ---- deltas in percentage points (Direct-LLM minus rules-only) ----
+    # ---- deltas in percentage points (LLM-SE minus rules-only) ----
     base_id, ours_id = ARMS[0]["method_id"], ARMS[1]["method_id"]
     base, ours = arms[base_id], arms[ours_id]
     field_deltas = {

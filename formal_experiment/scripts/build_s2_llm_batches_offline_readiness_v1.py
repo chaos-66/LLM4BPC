@@ -13,7 +13,7 @@ It performs REAL, fail-closed checks (no simulation of success):
    hash-stable;
 2. the offline credential precheck (``check_api_env_ready_v1.py``) is run and
    its verdict is recorded verbatim;
-3. the GDPR Direct-LLM executor's payload-locked FAKE transport runs the full
+3. the GDPR LLM-SE executor's payload-locked FAKE transport runs the full
    74-call rehearsal in a scratch directory (74/74 complete, 0 calls billed);
 4. the executor refuses a real run without its contract file;
 5. the promoter refuses the fake capsule (so a rehearsal can never be promoted
@@ -260,10 +260,10 @@ def build_report() -> dict:
             "real_calls_remaining": 137,
             "blocked_on": "process-environment credentials" if not precheck["ready"] else None,
             "claim_boundary": (
-                "No S2.12 / GDPR real-LLM result exists yet; the Direct-LLM GDPR arm "
+                "No S2.12 / GDPR real-LLM result exists yet; the LLM-SE GDPR arm "
                 "capsule data/predictions/gdpr7_direct_llm_v1 does not exist, so the "
                 "downstream LLM-vs-rules Stage-3 comparison cannot be run on real "
-                "Direct-LLM predictions."),
+                "LLM-SE predictions."),
         },
         "zero_api": {"new_llm_api_calls": 0},
     }

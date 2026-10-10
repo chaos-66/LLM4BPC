@@ -1,0 +1,31 @@
+{
+  "schema_version": "paper_method_display_names@1.0.0",
+  "scope": "Current paper and presentation display names; frozen experiment source metadata is retained byte-for-byte.",
+  "stage2_task": {
+    "name_en": "Semantic Extraction",
+    "name_zh": "合规语义抽取",
+    "output_record": "Rule Record"
+  },
+  "methods": {
+    "sun_rule_only": {
+      "label": "Rules-Only",
+      "role": "non-LLM baseline"
+    },
+    "direct_llm": {
+      "label": "LLM-SE",
+      "name_en": "LLM-based Semantic Extraction",
+      "name_zh": "基于大语言模型的合规语义抽取",
+      "legacy_labels": ["Direct-LLM", "LLM-RE"],
+      "legacy_id": "D1"
+    },
+    "sun_llm_fallback": {
+      "label": "Rules+LLM-Repair",
+      "scope": "cancelled method retained only for historical provenance"
+    }
+  },
+  "invariants": [
+    "Display names do not change method IDs, paths, model/prompt bindings, frozen prediction files, scores or experiment authorization.",
+    "configs/methods.json is a frozen implementation-hash source and retains its historical labels.",
+    "Original publication titles and append-only experiment events retain their source wording."
+  ]
+}

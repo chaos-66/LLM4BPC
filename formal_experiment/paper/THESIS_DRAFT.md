@@ -250,11 +250,10 @@ modality、actor、action、condition、constraint、exception 六类语义要�
 Stage 2B 指短语级语义要素抽取；这是任务和评价层次的划分，LLM 方法可在一次
 结构化输出中同时给出这些字段。
 
-这里的 Semantic Extraction 描述抽取内容，Rule Record 描述输出表示，
-rule-based 描述基线使用句法模板进行短语抽取的机制。Rule Extraction 在其他
-研究中也可指规则内容抽取，但本文不用它与 Semantic Extraction 交替命名同一
-任务，以免把语义要素记录与完整形式化规则生成混为一谈。本文 Stage 2 不直接
-生成可执行的逻辑规范；后续规则—流程匹配和违规判断属于 Stage 3。
+这里的 Semantic Extraction 描述抽取任务，Rule Record 描述输出表示，
+rule-based 描述基线使用句法模板进行短语抽取的机制。全文用 Semantic Extraction
+统一命名 Stage 2；语义要素记录与完整形式化规则生成分别说明。本文 Stage 2
+保留原文证据并生成结构化记录，后续规则—流程匹配和违规判断属于 Stage 3。
 
 这一命名与 Sun 的语义表示层次相符：本地作者稿 §4.2.1 为 Modality
 Classification，§4.2.2 为 Phrase-level: Semantic Classification，后者抽取六类
@@ -410,7 +409,7 @@ Rules-Only 拆为 8 个模块：
    - 输入/输出/不变量：输入 = 原句；输出 = Stanford CoreNLP 4.5.10
      （tokenize/ssplit/pos/lemma/parse/depparse）结构；不变量 = 版本锁定、
      jar 身份记入 manifest。
-   - 去掉该模块会失败：所有结构驱动的规则抽取（Tregex/actor 归属）无解析输入。
+   - 去掉该模块会失败：所有结构驱动的语义抽取（Tregex/actor 归属）无解析输入。
    - 如何验证：`test_s25_corenlp_contract.py`。
    - 与 Barrientos 对照：Barrientos 不依赖本地 DSL 解析栈（LLM 直接输出）；
      我们为 Sun Stage 2 方法级重建保留 CoreNLP。
@@ -2103,7 +2102,7 @@ Rules-Only 0.7986（−0.0365）、actor P 0.7077→0.2754。结论引用
   Winter/BM25 的 actor=0 与该语义缺失直接对应。
 - Stage 1 的组合三元组准确率（P2 0.4222）与标签质量决定了 Stage 3 的
   rule-action 映射：Sun 在合成 missing_action 上 8/10 为
-  action_mapping_below_gamma，本质是 Stage 1/规则抽取的词面对齐不足向
+  action_mapping_below_gamma，本质是 Stage 1/语义抽取的词面对齐不足向
   Stage 3 的传播。
 - 结论：Stage 3 违规检测的瓶颈不只在于匹配/顺序算法，还在于 Stage 1 语义
   标签（actor、组合三元组）的质量；改进 Stage 3 需先补 Stage 1 的参与者

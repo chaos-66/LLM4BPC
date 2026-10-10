@@ -21,7 +21,7 @@ Sun、Winter、Ours。这些是待检验的预期，不能成为修改数据或�
 用户本轮的“接受”已批准：
 
 1. Sun/Ours 共用时间约束到顺序边的独立重建补充，具体算法锁定在第 4 节。
-2. 对预检的五条新输入进行一次独立 Direct-LLM 抽取：总请求上限 **5**，重试 **0**，
+2. 对预检的五条新输入进行一次独立 LLM-SE 抽取：总请求上限 **5**，重试 **0**，
    总输出上限 **20,480 tokens**，保守总预算上限 **8.02 USD**。额度仅用于该抽取。
 3. Codex 负责想法，DeepSeek 按严格 prompt 执行；用户手动转交本任务卡。
 
@@ -203,7 +203,7 @@ P=TP/(TP+FP)，R=TP/(TP+FN)，F1=2TP/(2TP+FP+FN)；无报警 P=null，有正例�
 - 按项目制度记录、checkpoint/push。投影与评价代码必须在第一次 D1 和首次真实
   表三成绩前冻结。机械代码缺陷修复另外版本留痕。
 
-### B — 受控执行五次 Direct-LLM，已授权
+### B — 受控执行五次 LLM-SE，已授权
 
 - 新 runner 建议 `scripts/run_stage3_d1_v4.py`，复用
   `prepare_stage3_execution_v4.request_bodies()` 的五个精确 payload，核对 preflight

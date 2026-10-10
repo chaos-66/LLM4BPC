@@ -49,7 +49,7 @@
   生成规则、语言/扩展边界、版本化文件与 hash；
 - `../src/bpc_hybrid/sun_style/public_marker_lexicon.py` — S2.3 离线确定性生成、加载与
   fail-closed 机器门禁实现。
-- `research/D1_ACTOR_EXPLORATORY_BRANCH_2026-09.md` — Direct-LLM Actor 字段
+- `research/D1_ACTOR_EXPLORATORY_BRANCH_2026-09.md` — LLM-SE Actor 字段
   development-only 探索性支线归档；不是正式 Stage 2 主结果。
 
 ## 目录与逐文件导航

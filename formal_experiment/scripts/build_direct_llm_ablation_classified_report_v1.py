@@ -373,7 +373,7 @@ def build_report(
         "bottom_line": {
             "what_is_already_clear": [
                 "Few-shot examples are necessary for adherence to the current "
-                "strict Direct-LLM output interface; their independent semantic "
+                "strict LLM-SE output interface; their independent semantic "
                 "contribution is not isolated by this arm.",
                 "The full six-field method is substantially better fitted to "
                 "the project's six-field, BPMN-facing interface than either "
@@ -383,7 +383,7 @@ def build_report(
                 "modality target and works well in its own native schema.",
             ],
             "what_is_not_yet_clear": (
-                "The independent contribution of the remaining Direct-LLM "
+                "The independent contribution of the remaining LLM-SE "
                 "modules cannot be attributed until the listed one-factor "
                 "removals are run."),
             "global_winner_claim_allowed": False,
@@ -407,7 +407,7 @@ def to_markdown(report: dict[str, Any]) -> str:
     acc = report["run_accounting"]
 
     lines = [
-        "# Direct-LLM / Barrientos 已有实验结果分类整理 v1",
+        "# LLM-SE / Barrientos 已有实验结果分类整理 v1",
         "",
         "> 本报告只重组已经完成的 1140 次调用结果；本次新增 API 调用为 0，"
         "未读取 Gold，也未重新评分。",

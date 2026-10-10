@@ -1,4 +1,4 @@
-# Direct-LLM targeted refinement prompt v1
+# LLM-SE targeted refinement prompt v1
 
 This directory owns the SEP-C3 failure-driven targeted-refinement prompt family.
 It does not replace the frozen `modular_v1` E/S/J family or the historical v6

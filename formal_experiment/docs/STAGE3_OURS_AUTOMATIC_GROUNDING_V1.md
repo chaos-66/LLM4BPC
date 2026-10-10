@@ -12,7 +12,7 @@
 
 `Ours` means the gold-blind chain:
 
-1. Direct-LLM Rule Record (plus the frozen Stage-2 sentence spans needed to
+1. LLM-SE Rule Record (plus the frozen Stage-2 sentence spans needed to
    recover the record's character offsets);
 2. the benchmark's gold-blind inference view
    (`stage3_paired_benchmark_inference_view_v1.json`);
@@ -30,7 +30,7 @@ predictions have been persisted.
 
 For each benchmark pair, the runner:
 
-- extracts actions, actors and any order relations from the Direct-LLM Rule
+- extracts actions, actors and any order relations from the LLM-SE Rule
   Record;
 - uses the pair's control BPMN as the reference Process Record;
 - ranks BPMN activities against every rule action with

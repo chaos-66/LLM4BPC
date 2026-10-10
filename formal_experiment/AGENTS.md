@@ -2,6 +2,18 @@
 
 This directory is the only active experiment surface.
 
+## Current method display name (2026-10-10)
+
+用户要求将活动论文、汇报稿、任务文档和报告中的方法名称统一为
+**LLM-based Semantic Extraction（LLM-SE，基于大语言模型的合规语义抽取）**。
+Stage 2 任务统一称 Semantic Extraction；Rule Record 是输出，rule-based 是
+基线的抽取机制。历史标签 Direct-LLM / LLM-RE 与该方法相同；兼容 ID
+`direct_llm`、D1、文件路径、冻结预测/manifest 和不可改写的旧实验事件保持原样。
+当前展示名称以 `configs/paper_method_display_names_v1.json` 为准；后续论文报告
+生成器使用 LLM-SE。`configs/methods.json` 是正式 benchmark 的冻结哈希来源，
+其历史标签按原字节保留。不能因改名改变数值、版本绑定、
+实验门禁或将旧结果移植到另一模型/prompt。活动汇报副本见 `paper/README.md`。
+
 ## User project-name migration authorization (2026-09-29)
 
 用户要求把旧项目命名全部统一为 LLM4BPC，并明确选择“连历史记录和归档也改，
@@ -16,7 +28,7 @@ This directory is the only active experiment surface.
 
 用户要求再次核对并固定第二阶段论文主表，后续不再改变。唯一数值来源为
 `outputs/reports/stage2_table1_paper_final_v1.json`：EStG-150、coarse sentence view、
-五字段 `pooled_five_span_fields` Overall F1，Direct-LLM **0.8378**，Sun 方法本地
+五字段 `pooled_five_span_fields` Overall F1，LLM-SE **0.8378**，Sun 方法本地
 重建 Rules-Only **0.7631**，差 **+7.47 个百分点**。保留四位小数；两位舍入是
 0.84/0.76，不能截断成 0.83/0.76。modality label 单列，不并入 Overall。
 固定来源臂 `direct_llm_formal_arm_v1`（原 v6/R3 快照）与 `b0_formal_arm_v1`；
@@ -36,7 +48,7 @@ R1 冲突条款优先。允许按该卡修正新 wrapper/评价器/请求传输�
 角色词表合同、建立双方共用的限定句法投影 v2；旧数据/阈值/结果不改，输出另版本。
 该卡不增加调用额度或自动放行正式表三；未运行方法的主指标记 null，不冒称性能 0。
 用户已接受 Sun/Ours 共用的时间约束→顺序边重建补充，以及预检固定的五条新
-Direct-LLM 抽取：最多 5 次、0 重试、总输出 20,480 tokens、总上限 8.02 USD。
+LLM-SE 抽取：最多 5 次、0 重试、总输出 20,480 tokens、总上限 8.02 USD。
 旧 preflight 的 authorized=false 是历史快照，不覆盖本轮授权；执行时另建绑定
 该预检和本轮决定的授权/账本，不改历史，也不重复索取这五次许可。
 其他新调用、旧实验重跑、Rules+LLM 和全量测试不在授权内。研究预期不是验收分数：
@@ -78,10 +90,10 @@ Preserve existing code, predictions, manifests, authorization records, and
 results as historical provenance; their presence or old ready/authorized
 statuses does not authorize further hybrid experiments.
 
-The active Stage 2 comparison is Rules-Only versus Direct-LLM. Independent
-Direct-LLM extraction evaluated through the same fixed Stage 3 detector stays
+The active Stage 2 comparison is Rules-Only versus LLM-SE. Independent
+LLM-SE extraction evaluated through the same fixed Stage 3 detector stays
 in scope. The previously proposed 137-call execution is superseded: the
-remaining planned Direct-LLM calls are S2.12 36 plus GDPR 74 = 110; the removed
+remaining planned LLM-SE calls are S2.12 36 plus GDPR 74 = 110; the removed
 27 calls must not be reassigned. This cancellation is not API authorization.
 Do not require a cancelled hybrid arm to satisfy a future milestone; before
 executing/finalizing the reduced comparison, align its machine contract and

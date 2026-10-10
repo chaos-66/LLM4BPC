@@ -194,7 +194,7 @@ def main() -> int:
             lines += [
                 "### Action binding (unresolved)",
                 "",
-                "Relevant Direct-LLM Rule Record action candidates:",
+                "Relevant LLM-SE Rule Record action candidates:",
                 "",
                 *_fmt_action_list(flat_actions),
                 "",
@@ -222,7 +222,7 @@ def main() -> int:
             lines += [
                 "### Actor / lane binding (unresolved)",
                 "",
-                "Relevant Direct-LLM Rule Record actor candidates:",
+                "Relevant LLM-SE Rule Record actor candidates:",
                 "",
             ]
             for item in flat_actors:

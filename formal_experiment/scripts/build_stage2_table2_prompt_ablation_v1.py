@@ -309,7 +309,7 @@ def main() -> int:
                             "direct_llm_sun_record_prompt_v6_d1r1_2026_08_05.md"),
             "base_prompt_sha256": ARMS[0]["prompt_sha256"],
             "note": ("all four arms are derived from the SAME monolithic v6 "
-                     "prompt that produced the frozen Direct-LLM formal arm "
+                     "prompt that produced the frozen LLM-SE formal arm "
                      "reported in Table 1"),
         },
         "evaluation_contract": {

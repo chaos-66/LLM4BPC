@@ -53,7 +53,7 @@ actor/object 的限定则是新增表达；这些风险在逐项表单列，尚�
 来源，不能宣称所有未版本化 raw responses/predictions 都已远程备份。
 
 本候选没有新预测，指标为 `null`，调用数为 0。历史正负结果保持原值，固定表一
-Direct-LLM 0.8378 / Rules-Only 0.7631 不转移到候选。默认 prompt 选择不变。
+LLM-SE 0.8378 / Rules-Only 0.7631 不转移到候选。默认 prompt 选择不变。
 
 ## 显式装载与运行边界
 

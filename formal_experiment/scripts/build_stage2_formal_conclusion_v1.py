@@ -4,7 +4,7 @@
 Paper-safe conclusions built ONLY from the authorized G0.4 evaluation
 contract and the verified formal artifacts:
 
-- formal names: Rules-Only (sun_rule_only), Direct-LLM (direct_llm),
+- formal names: Rules-Only (sun_rule_only), LLM-SE (direct_llm),
   Rules+LLM-Repair (sun_llm_fallback, comparison-only); legacy codes are
   used only for Pipeline/task ID cross-reference;
 - main report: sentence-level coarse FIVE span-bearing fields;
@@ -84,18 +84,18 @@ def build_conclusion() -> dict[str, Any]:
         return labels[mid].get("accuracy")
 
     conclusions: list[dict[str, Any]] = []
-    # Direct-LLM leads action / condition / constraint + modality label acc
+    # LLM-SE leads action / condition / constraint + modality label acc
     for field in ("action", "condition", "constraint"):
         winner = max(methods, key=lambda m: f1(m, field) or 0)
         conclusions.append({
-            "claim": f"Direct-LLM leads on {field} (coarse five-field F1)",
+            "claim": f"LLM-SE leads on {field} (coarse five-field F1)",
             "value": {m: round(f1(m, field), 4) for m in methods},
             "supported": winner == "direct_llm",
             "reference": "stage2_formal_three_method_comparison_v1.json#methods.*.main_view_coarse_five_fields",
         })
     acc_winner = max(methods, key=lambda m: label_acc(m) or 0)
     conclusions.append({
-        "claim": "Direct-LLM leads on modality four-class label accuracy",
+        "claim": "LLM-SE leads on modality four-class label accuracy",
         "value": {m: round(label_acc(m), 4) for m in methods},
         "supported": acc_winner == "direct_llm",
         "reference": "stage2_formal_three_method_comparison_v1.json#methods.*.modality_labels.accuracy",
@@ -125,7 +125,7 @@ def build_conclusion() -> dict[str, Any]:
         "project_date": "2026-08-11",
         "formal_names": {
             "sun_rule_only": "Rules-Only",
-            "direct_llm": "Direct-LLM",
+            "direct_llm": "LLM-SE",
             "sun_llm_fallback": "Rules+LLM-Repair (comparison-only)",
         },
         "legacy_codes_are_pipeline_ids_only": True,

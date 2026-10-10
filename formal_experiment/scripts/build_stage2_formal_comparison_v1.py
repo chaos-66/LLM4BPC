@@ -13,7 +13,7 @@ user-authorized evaluation contract (G0.4, 2026-08-11):
 - the historical six-field coarse aggregate is development provenance and
   is NOT mixed in
 
-Per method: Rules-Only (sun_rule_only), Direct-LLM (direct_llm),
+Per method: Rules-Only (sun_rule_only), LLM-SE (direct_llm),
 Rules+LLM-Repair (sun_llm_fallback, comparison-only). Includes per-field
 P/R/F1, modality-label metrics, cross-method deltas, historical call cost
 and new calls=0, known limitations, the H1 net-negative stop-optimizing
@@ -54,7 +54,7 @@ ARMS = {
     },
     "direct_llm": {
         "arm_tag": "direct_llm_formal_arm_v1",
-        "label": "Direct-LLM",
+        "label": "LLM-SE",
         "role": "replacement_method",
         "manifest": "outputs/reports/direct_llm_formal_arm_v1.manifest.json",
     },
@@ -178,7 +178,7 @@ def build_report() -> dict[str, Any]:
                 "with the 2026-08-08 decision; no further optimization is "
                 "intended"),
             "d1_strength": (
-                "Direct-LLM leads on action/condition/constraint coarse F1 "
+                "LLM-SE leads on action/condition/constraint coarse F1 "
                 "with the highest modality-label accuracy; its actor "
                 "extraction trails Rules-Only"),
             "b0_strength": (

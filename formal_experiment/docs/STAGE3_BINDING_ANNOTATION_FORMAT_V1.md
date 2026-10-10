@@ -2,7 +2,7 @@
 
 The supplied-binding **oracle diagnostic** consumes three inputs:
 
-1. **Direct-LLM Rule Record**:
+1. **LLM-SE Rule Record**:
    `data/predictions/gdpr7_direct_llm_v1/predictions.json`
 2. **Binding Gold** (human-filled): an explicitly supplied `--binding-gold` path.
 3. **BPMN**: control/variant paths already embedded in each binding item.

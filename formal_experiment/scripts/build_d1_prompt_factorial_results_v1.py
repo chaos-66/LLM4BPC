@@ -170,7 +170,7 @@ def build(*, overwrite: bool = False) -> dict[str, Any]:
         json.dumps(report, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8", newline="\n")
     lines = [
-        "# Direct-LLM 提示模块单因素消融",
+        "# LLM-SE 提示模块单因素消融",
         "",
         "同一模型版本、同一 150 条输入、同一 Gold、同一 evaluator；所有差值均相对完整方法。",
         "",

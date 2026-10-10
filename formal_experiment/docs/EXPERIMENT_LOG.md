@@ -6197,3 +6197,31 @@
 - 仍存在 blocker：无
 - 备注：用户2026-10-10明确要求重跑Winter。截图来源为s3-ext-pc-v1工作树固定开发表；Sun/Ours原数复用且不重跑，当前分支新建快照。原生spaCy/γ0.4/δ0.8不改，禁用不需要的可选torch走Thinc/NumPy CPU；无系统策略修改。构造开发参考不是正式Gold/未见测试；旧metadata113基础案例加2顺序补充实际115。仅具名5项相关测试，非全量。批次开始完整性已失败stage1_claim_correction_invalid，既有用户Stage1审核文件/sep_c3报告保留；不修复无关文件、不宣称正式验收。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-10T13:28:48.573047+00:00 - PW3/PW5: unify Semantic Extraction across active docs, method display labels and report generators
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：否；正式实验就绪：否
+- 测试：7 passed in 0.34s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`58c9bf5e8fcf83addb329186b8a8573da6ec4d6a`；相关未提交路径：56 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：Display-name migration only: LLM-based Semantic Extraction (LLM-SE). Verified report-generator AST differs only by display strings. IDs, prompts, prediction files, frozen reports/manifests, Gold, metric values and experiment statuses unchanged. Two PowerPoint copies preserve source package content except method text; only named focused checks, not full suite.
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-10T13:42:05.441581+00:00 - PW3/PW5: complete Semantic Extraction display migration while retaining frozen methods hash
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：1 passed in 0.20s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`58c9bf5e8fcf83addb329186b8a8573da6ec4d6a`；相关未提交路径：64 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：Resolved the display-only methods_config hash mismatch by restoring configs/methods.json byte-for-byte and adding separate paper_method_display_names_v1.json. Earlier seven focused checks passed; after this metadata correction verify the preserved formal comparison again. Active docs/report strings use LLM-SE; IDs, prompts, prediction/Gold/frozen report bytes and numeric metrics unchanged. PPT copies add editable Semantic Extraction labels and correct three existing chart-title cell references without changing workbook bytes or values. No experiment/API or full tests.
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

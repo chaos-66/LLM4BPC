@@ -949,7 +949,7 @@ def _gold_review_candidates(
                     case["predicted_actor"]),
                 "note": (
                     "Post-hoc method-difference observation only; not used to "
-                    "modify Direct-LLM."
+                    "modify LLM-SE."
                 ),
             },
         })
@@ -1011,10 +1011,10 @@ def _rules_only_mechanism_comparison(
             "accepted as actor heads."
         ),
         "direct_llm_fn_capture_answer": (
-            "The three Direct-LLM FNs are condition-embedded subject/agent "
+            "The three LLM-SE FNs are condition-embedded subject/agent "
             "mentions. Rules-Only's clause-wide nsubj/nsubj:pass candidate scan "
             "(C4 in B0_ERROR_ANALYSIS) should naturally see these dependency "
-            "subjects even when the actor text is projected into Direct-LLM's "
+            "subjects even when the actor text is projected into LLM-SE's "
             "condition field."
         ),
         "post_hoc_examples_only_no_direct_llm_modification": post_hoc,
@@ -1216,7 +1216,7 @@ def run_audit() -> dict[str, Any]:
             "FN/FP taxonomy uses character-span rules plus surface heuristics; every case carries classification_basis and confidence.",
             "Non-role grammatical subject and ontology-disagreement categories are heuristic and may need human review.",
             "Gold is read-only and was not changed; suspicious Gold is reported only as gold_review_candidate.",
-            "Rules-Only behavior is shown only as post-hoc method-difference evidence and was not used to edit Direct-LLM predictions or rules.",
+            "Rules-Only behavior is shown only as post-hoc method-difference evidence and was not used to edit LLM-SE predictions or rules.",
             "Factorial actor delta uses the existing frozen factorial canonical predictions, which were generated under the pre-promotion legacy policy; it is a within-factorial comparison only.",
         ],
         "safety": {

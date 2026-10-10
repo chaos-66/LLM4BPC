@@ -23,16 +23,27 @@
 | Stage 2 方法 | Rules-Only / LLM-SE | 前者继承 Sun 的情态分类与句法模板抽取，后者用 LLM 生成同一语义表示；rule-based 指抽取机制 |
 | Stage 3 任务/输出 | Rule–Process Matching and Violation Checking / Violation Report | 对照规则记录与流程记录，进行匹配和违规判断 |
 
-Semantic Extraction 与 Rule Extraction 都可用于相关研究，但本文选前者作为
-Stage 2 的统一任务名称，不把两者交替当作同一模块的标题。Sun 的语义信息抽取
+Semantic Extraction 是 Stage 2 的统一任务名称。标题、正文、表格、汇报稿和
+后续生成报告均使用该名称及方法简称 LLM-SE。Sun 的语义信息抽取
 表述及本地作者稿的细粒度定义见主稿 §3.2。modality 已计入六要素，避免写成
 “modality 与六要素”；概念上的六要素与正式主表五个 span 字段的评价口径分开。
 
-代码 ID `direct_llm`、旧代号 D1、配置中的兼容标签及历史报告、预测、manifest
+代码 ID `direct_llm`、旧代号 D1 及冻结的历史报告、预测、manifest
 保留原样；历史来源中的 Direct-LLM、此前暂用的 LLM-RE 与论文中的 LLM-SE 指同一
-方法。各项结果继续绑定其原模型、prompt 和运行版本；本次只统一活动论文文档
-的展示名称和术语定义，不改变实验设计、评价口径或任何数值。日期固定的旧汇报
-和历史产物继续保留原名，引用它们时使用此映射。
+方法。各项结果继续绑定其原模型、prompt 和运行版本；活动文档、导师汇报稿、
+[展示名称配置](../configs/paper_method_display_names_v1.json)和报告生成器统一使用 LLM-SE / Semantic Extraction，
+不改变实验设计、评价口径或任何数值。冻结产物与不可改写的实验事件引用原名时，
+使用此映射；原论文题名、程序 ID 和来源路径按原文保留。
+
+`configs/methods.json` 参与正式 benchmark 的实现哈希绑定，按冻结来源保留原始
+标签；当前展示名称由上面的独立配置给出，不重写正式发布 manifest 或旧验证记录。
+
+当前汇报使用已统一名称的 PPT 副本：
+[修订汇报稿](presentations/LLM4BPC_Semantic_Extraction_Revised.pptx) 与
+[Stage 3 汇报稿](presentations/LLM4BPC_Semantic_Extraction_Stage3.pptx)。原 PPT
+作为来源保留；新副本更新方法名称，并为图示添加可编辑的新标题/模块标签；
+修订稿另修正图表系列标题的单元格引用，
+图表数值、嵌入工作簿、原有版式及页面数量不变。
 
 ## 第二阶段主表最终采用值（2026-09-26 用户决定）
 

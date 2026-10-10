@@ -2,7 +2,7 @@
 """Stage 2 Gold definition audit (PAPER-FINAL-REPAIR, zero API, read-only).
 
 Purpose: the paper's Table 1 compares a Sun-style rules baseline against the
-Direct-LLM method on the project's own EStG-150 Gold.  This project's
+LLM-SE method on the project's own EStG-150 Gold.  This project's
 ``constraint`` definition is known to be much BROADER than the marker-based
 definition Sun et al. (2024) use.  That raises a fairness question about
 Table 1 itself, which this audit measures rather than assumes.
@@ -60,7 +60,7 @@ from bpc_hybrid.stage2_sun_literal_overlap import (  # noqa: E402
 FORMAL_GOLD = ROOT / "data" / "gold" / "stage2" / "estg150_formal_gold_v1.json"
 ARMS = (
     ("sun_rule_only", "Sun et al. (rules-only)", "b0_formal_arm_v1"),
-    ("direct_llm", "Ours (Direct-LLM)", "direct_llm_formal_arm_v1"),
+    ("direct_llm", "Ours (LLM-SE)", "direct_llm_formal_arm_v1"),
 )
 SPAN_FIELDS = ("actor", "action", "condition", "constraint", "exception")
 PLURAL = {"actor": "actors", "action": "actions", "condition": "conditions",
@@ -314,12 +314,12 @@ def collect() -> dict[str, Any]:
             "matched_view_deltas_pp": matched_deltas,
             "direct_llm_advantage_survives_matched_view": survives,
             "conclusion": (
-                "the Direct-LLM advantage over the rules baseline is NOT an "
+                "the LLM-SE advantage over the rules baseline is NOT an "
                 "artifact of the broader constraint definition: it stays "
                 "positive in every matched view, while the constraint-field "
                 "advantage shrinks as the definition is narrowed"
                 if survives else
-                "the Direct-LLM advantage REVERSES under a matched "
+                "the LLM-SE advantage REVERSES under a matched "
                 "definition; Table 1 must not be reported as a like-for-like "
                 "comparison"),
             "new_llm_calls": 0,
@@ -425,7 +425,7 @@ def render(report: dict[str, Any]) -> str:
     lines.append("")
     lines.append("### How to report this in the paper")
     lines.append("")
-    lines.append("The **overall** conclusion is robust: the Direct-LLM "
+    lines.append("The **overall** conclusion is robust: the LLM-SE "
                  "advantage stays positive in every view "
                  f"({', '.join(f'{d:+.2f} pp' for d in report['fairness']['matched_view_deltas_pp'])} "
                  "under the matched views).")

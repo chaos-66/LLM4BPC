@@ -1,4 +1,4 @@
-# Direct-LLM Actor Exploratory Branch Study
+# LLM-SE Actor Exploratory Branch Study
 
 Status: CLOSED  
 Evidence level: DEVELOPMENT / EXPLORATORY  
@@ -17,12 +17,12 @@ producing this note.
 
 The branch was created only to understand:
 
-- Direct-LLM Actor field error sources;
+- LLM-SE Actor field error sources;
 - post-processing effects on Actor spans;
 - Prompt sensitivity of Actor output behavior.
 
 The branch is a development-only exploratory branch study. It is not the final
-experimental result, does not replace the formal Direct-LLM method, is not a
+experimental result, does not replace the formal LLM-SE method, is not a
 paper mainline method, and is not used to update formal Stage 2 main results.
 
 ## 2. Scope
@@ -83,7 +83,7 @@ Recorded interpretation:
 Core recorded conclusion:
 
 > Span grounding caused a small technical information loss, but it is not the
-> main explanation for the Direct-LLM Actor performance gap.
+> main explanation for the LLM-SE Actor performance gap.
 
 `repair_v1` was later promoted to the default canonicalizer in the repository
 state. The engineering repair may remain, but the Actor-F1 analysis around it
@@ -130,7 +130,7 @@ Recorded FP structure:
 
 Recorded core observation:
 
-> The current Direct-LLM Actor Precision problem is mainly
+> The current LLM-SE Actor Precision problem is mainly
 > grammatical-subject over-extraction, and part of it is related to the
 > unresolved pronoun actor policy.
 
@@ -277,7 +277,7 @@ No further optimization is recorded.
 ## 7. Research Boundaries
 
 - Formal Stage 2 main results were not replaced.
-- Direct-LLM still uses its original locked results.
+- LLM-SE still uses its original locked results.
 - The formal Prompt was not replaced.
 - Formal predictions were not replaced.
 - The formal Stage 2 comparison was not replaced.
@@ -287,13 +287,13 @@ No further optimization is recorded.
 - No new overall-method conclusion is recorded.
 - The following statements are not supported and are not recorded as
   conclusions: R is the final best Prompt; P is better than R; the Actor problem
-  is solved; Direct-LLM now beats Rules-Only on Actor.
+  is solved; LLM-SE now beats Rules-Only on Actor.
 
 ## 8. Relationship to Formal Stage 2 Results
 
 Recorded relation only:
 
-> This branch helps understand Direct-LLM Actor error sources and Prompt
+> This branch helps understand LLM-SE Actor error sources and Prompt
 > sensitivity.
 
 These experiments are retained as development-only exploratory evidence and

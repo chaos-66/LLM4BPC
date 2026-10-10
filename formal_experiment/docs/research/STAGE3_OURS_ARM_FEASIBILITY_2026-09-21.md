@@ -64,7 +64,7 @@ isolate algorithm quality or prove that a new grounding method is superior.
 ## 4. The project's own formal pipeline already records this blocker
 
 `outputs/reports/gdpr_3type_linkage_v1_direct_llm.md` (the real, promoted
-Direct-LLM Stage 2 arm, 74 records), states verbatim:
+LLM-SE Stage 2 arm, 74 records), states verbatim:
 
 - "order relations absent in capsule for rules: all nine ... (Definition-7
   input unavailable by contract; **never fabricated**)"
@@ -73,7 +73,7 @@ Direct-LLM Stage 2 arm, 74 records), states verbatim:
 - `out_of_order` precision/recall/F1 = 0.0000
 
 This is not a hypothesis about the new benchmark. It is what the **actual
-Direct-LLM Stage 2 output** did on the original three-type evaluation: eight of
+LLM-SE Stage 2 output** did on the original three-type evaluation: eight of
 eleven incorrect-actor items were unobservable because the rule action could
 not be mapped to a process action above gamma, and every item had no order
 relation to check.
@@ -88,7 +88,7 @@ Automatic prediction and reference annotation have different owners:
   answers. Accepted nulls must not be silently converted into positive matches.
 - A supplied-binding checker uses human mappings and declared activity/order
   IDs. It is an oracle diagnostic, not an end-to-end Ours arm. Merely consuming
-  a Direct-LLM file for ID diagnostics does not change that classification.
+  a LLM-SE file for ID diagnostics does not change that classification.
 
 The earlier claim that only human annotation remained was too strong.
 Automatic matching already exists in `sun_stage3/sun_scorer.py` and
@@ -107,7 +107,7 @@ mechanism was tested directly
 | `out_of_order` pairs whose **control** is forward-ordered only | **10/10** |
 | `out_of_order` pairs whose **variant** is the inversion | **10/10** |
 | order relations available from the **Gold** Rule Records | **0** (0 of 92 clauses) |
-| order relations available from the **real Direct-LLM capsule** | **0** (0 of 78 clauses) |
+| order relations available from the **real LLM-SE capsule** | **0** (0 of 78 clauses) |
 
 The control/variant inversion establishes a **process-structure difference**.
 It does not establish that a regulation requires that order. Missing rule-side

@@ -3,7 +3,7 @@
 
 v9 recorded the Gold-Rule-Record and Oracle-isolation state while S2.12 still
 contained the cancelled Rules+LLM-Repair arm and two API arms.  The current
-scope has only Rules-Only and Direct-LLM, and the existing successor
+scope has only Rules-Only and LLM-SE, and the existing successor
 ``s2_12_two_method_contract_v1`` is the authority for whether the two-method
 S2.12 evidence chain is complete.  v10 binds that contract and derives S2.12 /
 S2.13 state from it; it never requires, reads, or waits for the cancelled
@@ -354,7 +354,7 @@ def _render_md(report: Mapping[str, Any]) -> bytes:
         "# S2.13 -> S3.7 Transition Readiness v10",
         "",
         "- S2.11: **verified / frozen**, 36/36 adjudicated; formal Gold published.",
-        f"- S2.12: **{s2['status']}**; active methods Rules-Only / Direct-LLM; "
+        f"- S2.12: **{s2['status']}**; active methods Rules-Only / LLM-SE; "
         "`sun_llm_fallback` is cancelled and not an experimental condition.",
         f"- S2.13: **{report['s2_13']['status']}**; not auto-marked complete.",
         "- S3.4-S3.6: **development-only**.",
@@ -367,7 +367,7 @@ def _render_md(report: Mapping[str, Any]) -> bytes:
         "",
         f"- comparison complete: **{s2['comparison_complete']}**",
         f"- Rules-Only evidence: {s2['completion_evidence']['sun_rule_only']}",
-        f"- Direct-LLM evidence: {s2['completion_evidence']['direct_llm']}",
+        f"- LLM-SE evidence: {s2['completion_evidence']['direct_llm']}",
         f"- remaining calls: {s2['remaining_calls']}",
         f"- S2.13 blockers: {report['s2_13']['blockers']}",
         "",

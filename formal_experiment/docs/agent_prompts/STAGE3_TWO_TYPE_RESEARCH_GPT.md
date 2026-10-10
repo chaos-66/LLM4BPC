@@ -38,7 +38,7 @@ docs/MASTER_PIPELINE.md、docs/PROJECT_AUDIT.md、docs/AI_CHANGE_PROTOCOL.md、d
 这不是前两类的独立测试成绩，也不是人类正式 Gold；不能只看违规侧检出率。
 历史开发数据已被观察和修补，不得改名为新的独立测试集。
 
-表一已固定：原 v6/R3 Direct-LLM 0.8378、Sun 方法本地重建 Rules-Only 0.7631，
+表一已固定：原 v6/R3 LLM-SE 0.8378、Sun 方法本地重建 Rules-Only 0.7631，
 EStG-150 五字段 pooled F1。不得因本次扩展替换 prompt、调参、改表一或挪用该数值。
 表三是否完成只查当前状态，不能把旧四类开发结果与现有三类主表拼成正式五类成绩。
 
@@ -85,7 +85,7 @@ EStG-150 五字段 pooled F1。不得因本次扩展替换 prompt、调参、改
   不将同一模板的改名视为独立测试。AI 构造或判定明确标注，不伪称人工审核 Gold。
 - 将人工/AI 构造规则输入的机制测试，与使用原始真实抽取结果的衔接诊断分表。
   不将理想规则输入上的效果归因给 LLM；缺少可复用真实预测的项目保持缺失。
-- 若对比 Rules-Only 与 Direct-LLM，保持同流程、同适配、同检测器和阈值；若研究检测器
+- 若对比 Rules-Only 与 LLM-SE，保持同流程、同适配、同检测器和阈值；若研究检测器
   改进，固定同一规则输入作前后对照。不要同时变多个因素后把收益归给一个因素。
 - Sun/Winter 原生不支持的新增类型标 unsupported，不当成性能零；历史扩展实现按
   Sun-style/Winter-style extension 命名。是否需要新基线由研究问题决定，不自动多跑方法。
