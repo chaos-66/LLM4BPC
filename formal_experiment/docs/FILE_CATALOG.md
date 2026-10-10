@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
 **生成日期**：2026-10-10
-**收录文件**：4520 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**收录文件**：4525 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -3688,6 +3688,8 @@
 | `prompts/sun_compat/modular_v1/user_envelope.md` | 活动 | 说明、规范或研究文档 |
 | `prompts/sun_compat/rule_first_llm_fallback_masked_prompt.md` | 活动 | 说明、规范或研究文档 |
 | `prompts/sun_compat/rule_first_llm_fallback_prompt.md` | 活动 | 说明、规范或研究文档 |
+| `prompts/sun_compat/plain_v1/direct_llm_plain_record_prompt_v1.md` | 活动 | 说明、规范或研究文档 |
+| `prompts/sun_compat/plain_v1/README.md` | 活动 | 所在目录的入口说明 |
 | `prompts/sun_compat/simplification_v1/.gitattributes` | 活动 | 项目文件 |
 | `prompts/sun_compat/simplification_v1/COMPARISON_EXPLAINED_ZH.md` | 活动 | 说明、规范或研究文档 |
 | `prompts/sun_compat/simplification_v1/direct_llm_json_light_v1.md` | 活动 | 说明、规范或研究文档 |
@@ -3802,6 +3804,7 @@
 | `scripts/build_gold_review_pack.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/build_h1_trigger_diagnostics.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/build_modular_prompt_v1.py` | 活动 | Python 实现、脚本或测试 |
+| `scripts/build_plain_prompt_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/build_public_marker_lexicon.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/build_s1_1_s1_4_matrix_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/build_s1_5_review_surface_authorization_v1.py` | 活动 | Python 实现、脚本或测试 |
@@ -4200,6 +4203,7 @@
 | `src/bpc_hybrid/modular_refinement_prompt.py` | 活动 | Python 实现、脚本或测试 |
 | `src/bpc_hybrid/multi_model_stage2.py` | 活动 | Python 实现、脚本或测试 |
 | `src/bpc_hybrid/normalization.py` | 活动 | Python 实现、脚本或测试 |
+| `src/bpc_hybrid/plain_prompt.py` | 活动 | Python 实现、脚本或测试 |
 | `src/bpc_hybrid/prompt_loader.py` | 活动 | Python 实现、脚本或测试 |
 | `src/bpc_hybrid/s2_11_barrientos_adapter.py` | 活动 | Python 实现、脚本或测试 |
 | `src/bpc_hybrid/s2_11_canonical_v2.py` | 活动 | Python 实现、脚本或测试 |
@@ -4454,6 +4458,7 @@
 | `tests/test_prepare_stage3_execution_v4.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_project_name_migration.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_project_structure.py` | 活动 | Python 实现、脚本或测试 |
+| `tests/test_plain_prompt_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_prompt_contract.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_public_marker_lexicon.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_publish_formal_gold.py` | 活动 | Python 实现、脚本或测试 |

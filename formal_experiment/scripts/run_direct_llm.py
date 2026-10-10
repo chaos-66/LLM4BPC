@@ -1,12 +1,10 @@
-"""Guarded direct-LLM control runner for the frozen formal input.
+"""Guarded direct-LLM extraction with a plain model-facing prompt.
 
-Wave 1.1 §3 update: the prompt is loaded from
-``prompts/sun_compat/direct_llm_sun_record_prompt.md`` (v3) via
-``bpc_hybrid.prompt_loader``; the parser consumes the canonical
-Stage 2 prediction record; the prompt SHA-256 is recorded in the
-manifest; the runner refuses to write to formal artifact directories
-when the route / methods are blocked; ``--development`` is required
-for any write outside development paths.
+The default plain prompt produces semantic content only. The runner attaches
+record identity and internal metadata, then applies the existing adapters and
+validator. Plain-prompt outputs are development-only until separately evaluated.
+Historical prompts remain selectable for reproducing their recorded recipes;
+their text and processing are preserved. Prompt hashes belong in the manifest.
 
 Real API calls require explicit user authorization and ``--allow-llm``.
 No real call is made here.
@@ -28,6 +26,7 @@ if str(SRC) not in sys.path:
 from bpc_hybrid.llm_client import LLMClientError, LLMRequest, RealAPITransport
 from bpc_hybrid.llm_config import LLMConfig
 from bpc_hybrid.prompt_loader import build_manifest_entry, load_prompt
+from bpc_hybrid.plain_prompt import PLAIN_PROMPT_NAME, prepare_plain_prediction
 from bpc_hybrid.stage2_canonical import validate_canonical
 
 # Status reads — these are read-only, not LLM calls
@@ -40,7 +39,8 @@ from formal_experiment.paths import (
     DEVELOPMENT_DIR,
 )
 
-PROMPTName = "direct_llm_sun_record_prompt"
+PROMPTName = PLAIN_PROMPT_NAME
+PROMPT_LEGACY = "direct_llm_sun_record_prompt"
 PROMPT_V3_SNAPSHOT = "direct_llm_sun_record_prompt_v3_2026_07_12"
 PROMPT_V5_FROZEN = "direct_llm_sun_record_prompt_v5_2026_07_29_frozen"
 PROMPT_V6_D1R1 = "direct_llm_sun_record_prompt_v6_d1r1_2026_08_05"
@@ -51,6 +51,7 @@ SIMPLIFICATION_PROMPT_NAMES = (
 )
 ALLOWED_PROMPT_NAMES = (
     PROMPTName,
+    PROMPT_LEGACY,
     PROMPT_V3_SNAPSHOT,
     PROMPT_V5_FROZEN,
     PROMPT_V6_D1R1,
@@ -128,8 +129,10 @@ def _few_shot_block(prompt: object) -> str:
     raw = getattr(prompt, "raw_text", "")
     start = raw.find("## Examples")
     end = raw.find("## Notes", start)
-    if start == -1 or end == -1:
+    if start == -1:
         return ""
+    if end == -1:
+        end = len(raw)
     return raw[start:end].strip()
 
 
@@ -189,6 +192,17 @@ def main() -> int:
         "took ~162 s).",
     )
     args = parser.parse_args()
+
+    if args.prompt_name == PLAIN_PROMPT_NAME:
+        plain_root = ROOT / "outputs/development/s2_prompt_cleanup_v1"
+        if not args.development or any(
+            not _is_under(path, plain_root) for path in (args.output, args.manifest)
+        ):
+            print(
+                "Refusing to run: plain prompt requires --development and new "
+                "output/manifest paths under outputs/development/s2_prompt_cleanup_v1."
+            )
+            return 2
 
     # New prompt candidates stay opt-in and cannot write into frozen capsules.
     if args.prompt_name in SIMPLIFICATION_PROMPT_NAMES:
@@ -326,6 +340,15 @@ def main() -> int:
         if not isinstance(payload, dict):
             llm_errors.append({"sample_id": sample_id, "error": "payload not a dict"})
             continue
+
+        if args.prompt_name == PLAIN_PROMPT_NAME:
+            try:
+                payload = prepare_plain_prediction(
+                    payload, sample_id=sample_id, source_text=source_text
+                )
+            except ValueError as exc:
+                llm_errors.append({"sample_id": sample_id, "error": f"invalid plain output: {exc}"})
+                continue
 
         # Inject source_id if the LLM omitted it
         payload.setdefault("source_id", sample_id)

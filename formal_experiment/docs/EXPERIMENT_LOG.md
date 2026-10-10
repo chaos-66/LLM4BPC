@@ -6212,6 +6212,20 @@
 - 备注：Display-name migration only: LLM-based Semantic Extraction (LLM-SE). Verified report-generator AST differs only by display strings. IDs, prompts, prediction files, frozen reports/manifests, Gold, metric values and experiment statuses unchanged. Two PowerPoint copies preserve source package content except method text; only named focused checks, not full suite.
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
 
+## 2026-10-10T13:35:10.603793+00:00 - SEP-C3-PROMPT-CLEANUP-V1：删除模型提示词内部管理标识并对齐程序接口
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：否；正式实验就绪：否
+- 测试：78 passed in 0.96s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`58c9bf5e8fcf83addb329186b8a8573da6ec4d6a`；相关未提交路径：64 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：用户明确要求清理提示词；新默认仅开发输出，模型只负责语义分句和普通英文歧义理由，程序补身份/版本/方法并映射旧状态，校验器实际核验。六个原示例语义/坐标保留，历史v6及正式结果不改。仅具名相关检查，非全量，API=0，新版性能未测。普通进程无法新建临时目录，使用相同限定命令通过目录权限。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
 ## 2026-10-10T13:42:05.441581+00:00 - PW3/PW5: complete Semantic Extraction display migration while retaining frozen methods hash
 
 - 事件类型：变更（`change`）

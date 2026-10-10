@@ -102,29 +102,29 @@ def test_unknown_prompt_name_is_rejected_by_cli() -> None:
     assert "invalid choice" in completed.stderr
 
 
-def test_model_pin_mismatch_fails_closed_before_calls(tmp_path: Path) -> None:
-    # Request a model that can never match the resolved provider model; the
-    # fail-closed pin must abort before any LLM call (outputs point to
-    # non-formal paths so the formal-write gate cannot shadow it).
-    completed = subprocess.run(
-        [
-            sys.executable,
-            "-m",
-            "scripts.run_direct_llm",
-            "--model",
-            "definitely-not-the-resolved-model",
-            "--allow-llm",
-            "--output",
-            str(tmp_path / "out.jsonl"),
-            "--manifest",
-            str(tmp_path / "manifest.json"),
-        ],
-        cwd=ROOT,
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-        errors="replace",
-        timeout=60,
+def test_model_pin_mismatch_fails_closed_before_calls(tmp_path, monkeypatch, capsys) -> None:
+    from types import SimpleNamespace
+    from scripts import run_direct_llm as runner
+
+    # Test the pin behind the new default's development guard, using a fake
+    # configuration so this offline test never opens .env or constructs an API.
+    monkeypatch.setattr(runner, "ROOT", tmp_path)
+    monkeypatch.setattr(
+        runner.LLMConfig, "from_env",
+        staticmethod(lambda **kwargs: SimpleNamespace(model="offline-model")),
     )
-    assert completed.returncode == 2
-    assert "resolved model" in completed.stdout and "fail-closed model pin" in completed.stdout
+
+    def forbidden(*args, **kwargs):
+        pytest.fail("Model mismatch must stop before transport construction")
+
+    monkeypatch.setattr(runner, "RealAPITransport", forbidden)
+    root = tmp_path / "outputs/development/s2_prompt_cleanup_v1/new"
+    monkeypatch.setattr(sys, "argv", [
+        "run_direct_llm.py", "--development", "--allow-llm",
+        "--model", "definitely-not-the-resolved-model",
+        "--output", str(root / "out.jsonl"),
+        "--manifest", str(root / "manifest.json"),
+    ])
+    assert runner.main() == 2
+    output = capsys.readouterr().out
+    assert "resolved model" in output and "fail-closed model pin" in output

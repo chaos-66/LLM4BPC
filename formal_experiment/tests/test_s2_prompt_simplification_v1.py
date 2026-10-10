@@ -124,12 +124,14 @@ def test_valid_candidate_still_requires_real_call_authorization(name, runner, mo
     assert not output.exists() and not manifest.exists()
 
 
-def test_runner_keeps_original_default_and_old_allowlist(runner):
+def test_runner_keeps_original_prompt_selectable_with_plain_default(runner):
     baseline_runner = next(row["content_utf8"] for row in SNAPSHOT["artifacts"]
                            if row["source_path"] == "scripts/run_direct_llm.py")
     original_default = next(ast.literal_eval(node.value) for node in ast.parse(baseline_runner).body
                             if isinstance(node, ast.Assign)
                             and any(isinstance(t, ast.Name) and t.id == "PROMPTName" for t in node.targets))
-    assert runner.PROMPTName == original_default
+    # The 2026-10-10 cleanup changes the future default, not historical recipes.
+    assert runner.PROMPTName == runner.PLAIN_PROMPT_NAME
+    assert original_default in runner.ALLOWED_PROMPT_NAMES
     assert runner.PROMPT_V6_D1R1 in runner.ALLOWED_PROMPT_NAMES
     assert set(NAMES).issubset(runner.ALLOWED_PROMPT_NAMES)
