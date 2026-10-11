@@ -56,8 +56,8 @@ B_{r,m,\gamma}=\{(a_r,a_m)\in D_{r,m}
 R_{r,m,\gamma}
 &=\bigl\{g\in P_r
   \mid\exists(a_r,a_m)\in D_{r,m},\\
-&\qquad f_r(g)=a_r\land\\
-&\qquad sim(a_r,a_m)>\gamma\bigr\}.
+&\qquad f_r(g)=a_r\land
+  sim(a_r,a_m)>\gamma\bigr\}.
 \end{aligned}
 \label{eq:actor_rule_candidates}
 \end{equation}
@@ -76,13 +76,12 @@ C_{r,m,\gamma}
 Let \(I_{r,m,\gamma,\vartheta}\) name the actor set in Sun's original numerator. The existential condition is retained without an extremum rewriting.
 
 \begin{equation}
-I_{r,m,\gamma,\vartheta}=\left\{
-  \begin{gathered}
-  r\in R_{r,m,\gamma}
+\begin{aligned}
+I_{r,m,\gamma,\vartheta}
+&=\bigl\{r\in R_{r,m,\gamma}
   \mid\exists r'\in C_{r,m,\gamma},\\
-  sim(r,r')<\vartheta
-  \end{gathered}
-  \right\}.
+&\quad sim(r,r')<\vartheta\bigr\}.
+\end{aligned}
 \label{eq:actor_mismatch_set}
 \end{equation}
 
@@ -98,10 +97,10 @@ I_{r,m,\gamma,\vartheta}=\left\{
 \begin{aligned}
 U_{r,m,\gamma}
 &=\bigl\{(u_r,u'_r)\in U_r\mid\\
-&\quad\exists\bigl\{(u_r,u_m)\in D_{r,m},\\
-&\qquad (u'_r,u'_m)\in D_{r,m}\bigr\},\\
-&\quad sim(u_r,u_m)>\gamma\land\\
-&\quad sim(u'_r,u'_m)>\gamma\bigr\}.
+&\quad\exists\bigl\{(u_r,u_m)\in D_{r,m},
+  (u'_r,u'_m)\in D_{r,m}\bigr\},\\
+&\quad sim(u_r,u_m)>\gamma
+  \land sim(u'_r,u'_m)>\gamma\bigr\}.
 \end{aligned}
 \label{eq:order_evaluable}
 \end{equation}
@@ -109,15 +108,14 @@ U_{r,m,\gamma}
 Let \(S_{r,m,\gamma}\) name the satisfied-constraint set in the numerator of Sun's original order-violation formula. Both endpoint mappings and both flow-relation conditions are retained.
 
 \begin{equation}
-S_{r,m,\gamma}=\left\{
-  \begin{aligned}
-  &(u_r,u'_r)\in U_{r,m,\gamma}\mid\\
-  &\quad\exists\bigl\{(u_r,u_m)\in D_{r,m},\\
-  &\qquad (u'_r,u'_m)\in D_{r,m}\bigr\},\\
-  &\quad(u_m,u'_m)\in F_m\land\\
-  &\quad(u'_m,u_m)\notin F_m
-  \end{aligned}
-  \right\}.
+\begin{aligned}
+S_{r,m,\gamma}
+&=\bigl\{(u_r,u'_r)\in U_{r,m,\gamma}\mid\\
+&\quad\exists\bigl\{(u_r,u_m)\in D_{r,m},
+  (u'_r,u'_m)\in D_{r,m}\bigr\},\\
+&\quad(u_m,u'_m)\in F_m
+  \land(u'_m,u_m)\notin F_m\bigr\}.
+\end{aligned}
 \label{eq:order_satisfied}
 \end{equation}
 
