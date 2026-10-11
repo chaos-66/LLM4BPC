@@ -175,57 +175,41 @@ Stage~3 combines the Process Record and Rule Record for rule--process matching a
     \label{fig:stage2}
 \end{figure*}
 
-\textbf{Rule--Process Matching.} The sets \(D_{r,m}\) and \(O_{r,m}\) contain the highest-similarity action and actor/business-object mapping pairs, respectively. Sun's matching score is reproduced below with line breaks only.
+\textbf{Rule--Process Matching.} The sets \(D_{r,m}\) and \(O_{r,m}\) contain the highest-similarity action and actor/business-object mapping pairs, respectively. To present Sun's matching formula compactly, \(m_A\) and \(m_O\) name its two original ratios. The score is displayed as \(\mathcal{F}\).
 
 \begin{equation}
-\begin{gathered}
-F(r,m,\tau)=\\[2pt]
-\max\left(
-\begin{gathered}
-\frac{
+\begin{aligned}
+m_A(r,m,\tau)
+&=\frac{
   \displaystyle\sum_{(a_r,a_m)\in D_{r,m}}
   sim(a_r,a_m)>\tau
-}{|D_{r,m}|},\\[4pt]
-\frac{
+}{|D_{r,m}|},\\[2pt]
+m_O(r,m,\tau)
+&=\frac{
   \displaystyle\sum_{(o_r,o_m)\in O_{r,m}}
   sim(o_r,o_m)>\tau
-}{|O_{r,m}|}
-\end{gathered}
-\right).
-\end{gathered}
+}{|O_{r,m}|},\\[2pt]
+\mathcal{F}(r,m,\tau)
+&=\max\{m_A(r,m,\tau),m_O(r,m,\tau)\}.
+\end{aligned}
 \label{eq:matching}
 \end{equation}
 
-\textbf{Missing-Action Violation.} The score counts mapped action pairs with similarity below \(\gamma\), divided by the number of rule actions.
+\textbf{Missing-Action Violation.} Let \(B_{r,m,\gamma}\) name the action-pair set in the numerator of Sun's original formula. Its condition and the denominator are retained.
 
 \begin{equation}
-\begin{gathered}
-\mathit{action\_violation}(r,m,\gamma)=\\[2pt]
-\frac{
-  \bigl|\{(a_r,a_m)\in D_{r,m}
-  \mid sim(a_r,a_m)<\gamma\}\bigr|
-}{|A_r|}.
-\end{gathered}
+B_{r,m,\gamma}=\{(a_r,a_m)\in D_{r,m}
+  \mid sim(a_r,a_m)<\gamma\}.
+\label{eq:missing_set}
+\end{equation}
+
+\begin{equation}
+\mathit{action\_violation}(r,m,\gamma)
+=\frac{|B_{r,m,\gamma}|}{|A_r|}.
 \label{eq:missing}
 \end{equation}
 
-\textbf{Incorrect-Actor Violation.} The original existential condition and the definitions of \(R_{r,m,\gamma}\) and \(C_{r,m,\gamma}\) are retained.
-
-\begin{equation}
-\begin{gathered}
-\mathit{actor\_violation}(r,m,\gamma,\vartheta)=\\[2pt]
-\frac{
-  \left|\left\{
-  \begin{gathered}
-  r\in R_{r,m,\gamma}
-  \mid\exists r'\in C_{r,m,\gamma},\\
-  sim(r,r')<\vartheta
-  \end{gathered}
-  \right\}\right|
-}{|R_{r,m,\gamma}|}.
-\end{gathered}
-\label{eq:actor}
-\end{equation}
+\textbf{Incorrect-Actor Violation.} The original rule-side and process-side candidate sets are reproduced first.
 
 \begin{equation}
 \begin{aligned}
@@ -249,26 +233,26 @@ C_{r,m,\gamma}
 \label{eq:actor_process_candidates}
 \end{equation}
 
-\textbf{Out-of-Order Violation.} The original formula and the definition of \(U_{r,m,\gamma}\) are retained, including both endpoint mappings and both directions of the flow relation.
+Let \(I_{r,m,\gamma,\vartheta}\) name the actor set in Sun's original numerator. The existential condition is retained without an extremum rewriting.
 
 \begin{equation}
-\begin{gathered}
-\mathit{order\_violation}(r,m,\gamma)=\\[2pt]
-\frac{
-  |U_{r,m,\gamma}|-
-  \left|\left\{
-  \begin{aligned}
-  &(u_r,u'_r)\in U_{r,m,\gamma}\mid\\
-  &\quad\exists\bigl\{(u_r,u_m)\in D_{r,m},\\
-  &\qquad (u'_r,u'_m)\in D_{r,m}\bigr\},\\
-  &\quad(u_m,u'_m)\in F_m\land\\
-  &\quad(u'_m,u_m)\notin F_m
-  \end{aligned}
-  \right\}\right|
-}{|U_{r,m,\gamma}|}.
-\end{gathered}
-\label{eq:order}
+I_{r,m,\gamma,\vartheta}=\left\{
+  \begin{gathered}
+  r\in R_{r,m,\gamma}
+  \mid\exists r'\in C_{r,m,\gamma},\\
+  sim(r,r')<\vartheta
+  \end{gathered}
+  \right\}.
+\label{eq:actor_mismatch_set}
 \end{equation}
+
+\begin{equation}
+\mathit{actor\_violation}(r,m,\gamma,\vartheta)
+=\frac{|I_{r,m,\gamma,\vartheta}|}{|R_{r,m,\gamma}|}.
+\label{eq:actor}
+\end{equation}
+
+\textbf{Out-of-Order Violation.} The original evaluable sequential-constraint set is reproduced below.
 
 \begin{equation}
 \begin{aligned}
@@ -280,6 +264,27 @@ U_{r,m,\gamma}
 &\quad sim(u'_r,u'_m)>\gamma\bigr\}.
 \end{aligned}
 \label{eq:order_evaluable}
+\end{equation}
+
+Let \(S_{r,m,\gamma}\) name the satisfied-constraint set in the numerator of Sun's original order-violation formula. Both endpoint mappings and both flow-relation conditions are retained.
+
+\begin{equation}
+S_{r,m,\gamma}=\left\{
+  \begin{aligned}
+  &(u_r,u'_r)\in U_{r,m,\gamma}\mid\\
+  &\quad\exists\bigl\{(u_r,u_m)\in D_{r,m},\\
+  &\qquad (u'_r,u'_m)\in D_{r,m}\bigr\},\\
+  &\quad(u_m,u'_m)\in F_m\land\\
+  &\quad(u'_m,u_m)\notin F_m
+  \end{aligned}
+  \right\}.
+\label{eq:order_satisfied}
+\end{equation}
+
+\begin{equation}
+\mathit{order\_violation}(r,m,\gamma)
+=\frac{|U_{r,m,\gamma}|-|S_{r,m,\gamma}|}{|U_{r,m,\gamma}|}.
+\label{eq:order}
 \end{equation}
 
 The ratios above apply when their denominators are nonzero. In our reconstruction, an empty matching set contributes a matching ratio of \(0\); a missing-action case with no rule action, an actor case with unavailable actor--action associations or candidates, and an ordering case with no evaluable relation produce no violation decision. An unmatched required action is treated as missing. These empty-input and unavailable-input policies are implementation conventions stated separately from Sun's formulas.
