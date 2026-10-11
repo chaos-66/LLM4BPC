@@ -6257,3 +6257,17 @@
 - 仍存在 blocker：无
 - 备注：用户明确要求只计算γ、θ效果。原201评分单元/参考/MPNet/33条抽取/115BPMN保持；使用原检查器代码快照，当前生产代码和固定表不改。基准原始信号完整相等，所有18组独立计数核验；仅6项具名相关验证，非全量。原始信号保存后绘图缺matplotlib，改用已安装Pillow和--finalize-saved，未重复推理。保留开发暴露和原顺序范围问题，不宣称参数交互、全局最优或正式发布。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-11T08:10:02.578763+00:00 - SEP-C3-SYSTEM-PROMPT-V1：固定规则和六个示例统一放入System，User只发送法律原文
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：55 passed in 1.04s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`4b49d774e3ae943e0cfca697be5d828a6064e60e`；相关未提交路径：18 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：未创建或覆盖（`not_created_or_overwritten`）
+- 仍存在 blocker：无
+- 备注：用户2026-10-11明确要求合并固定Base/G/J/E到System。清理版仅迁移固定返回要求和六个示例，User模板仅source_text；规则、示例输出和坐标不变。构建一致性与scoped diff检查通过。仅3个具名相关测试，fake transport验证实际消息；历史v6和固定预检请求保持。无真实模型/API/全量测试，未改Gold或历史结果。文件目录check因既存目录漂移未通过，本批未新增文件、不覆盖无关目录条目。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

@@ -118,20 +118,11 @@ Field classification and span boundaries:
     fields: a constraint inside a condition (for example "within two years"
     inside "if ... within two years") is reported in BOTH arrays. Never merge
     condition or constraint content into the action span.
-```
-
-## User Prompt Template
-
-```text
-Target text:
-{source_text}
 
 Return the extracted clauses and any unresolved issues as one JSON object.
 These six synthetic examples demonstrate the extraction rules, character
 positions, and JSON structure. Their sentences illustrate the task; they are
 not additional evidence for the target text.
-
-{few_shot_block}
 ```
 
 ## Examples
@@ -569,4 +560,10 @@ Output:
   ],
   "unsupported_or_ambiguous": []
 }
+```
+
+## User Prompt Template
+
+```text
+{source_text}
 ```

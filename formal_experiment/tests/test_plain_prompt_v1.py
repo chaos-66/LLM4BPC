@@ -47,9 +47,15 @@ def test_actual_rendered_messages_have_no_internal_identifiers(runner):
     examples = runner._few_shot_block(prompt)
     source = 'The controller must report {risk}.\nUnless consent is withdrawn: ü.'
     user = prompt.user_prompt_template.format(source_text=source, few_shot_block=examples)
-    sent = prompt.system_prompt + "\n" + user
-    assert "Target text:\n" + source in user
-    assert "Example 6" in examples and "six synthetic examples" in user
+    system = prompt.system_prompt + "\n\n" + examples
+    sent = system + "\n" + user
+    assert user == source
+    assert prompt.user_prompt_template == "{source_text}"
+    assert "Example 6" in examples and "six synthetic examples" in system
+    assert "User Prompt Template" not in examples and "{source_text}" not in examples
+    assert "Return the extracted clauses" in system
+    for number in range(1, 7):
+        assert system.count(f"Example {number} ") == 1
     assert not re.search(r"[0-9a-f]{32,}|@[0-9]|synthetic_[a-z_]+\d+", sent)
     for marker in (
         "SHA", "stage2_extraction_contract", "stage2_prediction.schema",
@@ -189,8 +195,12 @@ def test_runner_processes_plain_response_through_existing_validation(runner, mon
     ])
     assert runner.main() == 0
     assert len(requests) == 1
-    assert requests[0].system_prompt == prompt.system_prompt
-    assert "Example 6" in requests[0].user_prompt
+    assert requests[0].user_prompt == source_text
+    assert requests[0].system_prompt.startswith(prompt.system_prompt + "\n\n")
+    for example in prompt.few_shot_examples:
+        assert requests[0].system_prompt.count(example["description"]) == 1
+        assert example["raw"] in requests[0].system_prompt
+    assert "User Prompt Template" not in requests[0].system_prompt
     assert "stage2_prediction.schema" not in requests[0].user_prompt
     record = json.loads(output.read_text(encoding="utf-8"))
     assert record["source_text"] == source_text and record["sample_id"] == "example"

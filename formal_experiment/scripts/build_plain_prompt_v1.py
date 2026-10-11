@@ -92,13 +92,14 @@ def render() -> str:
     )
     system = system.replace("fixed enums", "choices above")
     system = system.replace("Field-typing precision (D1-R1):", "Field classification and span boundaries:")
-    user = (
-        "Target text:\n{source_text}\n\n"
+    system += (
+        "\n\n"
         "Return the extracted clauses and any unresolved issues as one JSON object.\n"
         "These six synthetic examples demonstrate the extraction rules, character\n"
         "positions, and JSON structure. Their sentences illustrate the task; they are\n"
-        "not additional evidence for the target text.\n\n{few_shot_block}"
+        "not additional evidence for the target text."
     )
+    user = "{source_text}"
     examples = base[base.index("## Examples"):base.index("## Notes")]
     blocks = re.findall(r"(Example \d+[^\n]*\nInput:[^\n]*\nOutput:\n)```json\n(.*?)\n```", examples, re.S)
     if len(blocks) != 6:
@@ -129,8 +130,8 @@ def render() -> str:
         parts.append(heading + "```json\n" + json.dumps(cleaned, ensure_ascii=False, indent=2) + "\n```")
     text = (
         "# Regulatory text extraction\n\n## System Prompt\n\n```text\n"
-        + system + "\n```\n\n## User Prompt Template\n\n```text\n"
-        + user + "\n```\n\n## Examples\n\n" + "\n\n".join(parts) + "\n"
+        + system + "\n```\n\n## Examples\n\n" + "\n\n".join(parts)
+        + "\n\n## User Prompt Template\n\n```text\n" + user + "\n```\n"
     )
     if re.search(r"[0-9a-f]{64}|@[0-9]|D1-R1|schema_version|schema_source|schema_valid|cross_field_valid|synthetic_", text):
         raise ValueError("internal metadata remains in the plain prompt")

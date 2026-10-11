@@ -125,14 +125,17 @@ def _few_shot_block(prompt: object) -> str:
     Uses the raw ``## Examples`` section of the prompt file (the exact
     rendering that reproduced the July s28_s29 canonical output), so the
     examples reach the model verbatim with their verified offsets.
+    The plain prompt places its User template after the examples; that
+    template is not part of the example block sent in the System message.
     """
     raw = getattr(prompt, "raw_text", "")
     start = raw.find("## Examples")
-    end = raw.find("## Notes", start)
     if start == -1:
         return ""
-    if end == -1:
-        end = len(raw)
+    following_sections = (
+        raw.find(heading, start) for heading in ("## Notes", "## User Prompt Template")
+    )
+    end = min((position for position in following_sections if position != -1), default=len(raw))
     return raw[start:end].strip()
 
 
@@ -297,6 +300,9 @@ def main() -> int:
     builder = OpenAICompatibleRequestBuilder(config)
     sent_sampling = builder.sent_sampling_params()
     few_shot_block = _few_shot_block(prompt)
+    system_prompt = prompt.system_prompt
+    if args.prompt_name == PLAIN_PROMPT_NAME:
+        system_prompt += "\n\n" + few_shot_block
     for row in rows:
         sample_id = row["sample_id"]
         source_text = row["text"]
@@ -309,7 +315,7 @@ def main() -> int:
         request = LLMRequest(
             source_id=sample_id,
             source_text=source_text,
-            system_prompt=prompt.system_prompt,
+            system_prompt=system_prompt,
             user_prompt=user_prompt,
         )
         try:
