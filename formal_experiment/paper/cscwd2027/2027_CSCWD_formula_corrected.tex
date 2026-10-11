@@ -1,0 +1,392 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote.
+% If that is unneeded, please comment it out.
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{booktabs}
+\newcommand{\ieeeemph}[1]{\textbf{#1}}
+
+% 添加算法注释
+\usepackage{verbatim}
+
+% 文献显示在一个中括号中
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{marvosym}
+\usepackage{bm}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{stfloats}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+
+\newtheorem{owndefinition}{Definition}
+
+\def\sm{\smallskip}
+
+\ifCLASSINFOpdf
+
+\else
+\fi
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\begin{document}
+
+\title{Design-Time Business Process Compliance Checking with Large Language Models}
+
+\author{
+\IEEEauthorblockN{
+Yingchao Huo\textsuperscript{},
+Xiaoqing Chen\textsuperscript{},
+Jiahao Ma\textsuperscript{},
+Guosheng Kang\textsuperscript{\Letter},
+Wen Li\textsuperscript{},
+Jiayan Xiang\textsuperscript{}
+}
+\IEEEauthorblockA{
+\textsuperscript{1}Hunan Provincial Key Lab. for Services Computing and Novel Software Technology, HNUST, Xiangtan, Hunan, China\\
+\textsuperscript{2}School of Computer Science and Engineering, Hunan University of Science and Technology, Xiangtan, China\\
+Email: \{huoyingchao666, xiaoqingchen696, jiahaoma2627, guoshengkang, wenli0023cs, jiayanxiang02\}@gmail.com
+}
+}
+
+\maketitle
+
+
+% =========================================================
+% ABSTRACT
+% =========================================================
+
+\begin{abstract}
+Design-time business process compliance (BPC) checking aims to identify potential violations before process execution. Existing approaches often rely on manually designed linguistic rules and syntactic patterns to transform natural-language compliance requirements into machine-processable representations. This paper investigates large language model (LLM)-based semantic extraction for design-time BPC checking. Natural-language compliance requirements are transformed into structured Rule Records containing modality, actor, action, condition, constraint, and exception information. We compare Direct-LLM with a reconstructed Rules-Only approach under a common semantic representation and evaluation setting. We further analyze the effects of prompt configurations and examine how the resulting Rule Records influence downstream compliance checking.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Business Process Compliance, Design-Time Compliance Checking,
+Large Language Models, Compliance Requirement Parsing,
+Violation Detection
+\end{IEEEkeywords}
+
+
+% =========================================================
+% I. INTRODUCTION
+% =========================================================
+
+\section{Introduction}
+\label{sec:1}
+
+Business process compliance (BPC) aims to ensure that business processes conform to applicable laws, regulations, standards, and organizational policies~\cite{hashmi2018we}. Design-time BPC checking identifies potential violations before process execution, but a major challenge is the semantic gap between natural-language compliance requirements and formal process models. Many existing approaches rely on compliance constraints that have already been formalized, making the transformation of regulatory text into machine-processable representations an important and often labor-intensive step~\cite{hashmi2018we,zasada2023evaluation}.
+
+To reduce this effort, Winter et al.~\cite{winter2020assessing} investigated compliance assessment directly from regulatory documents. Sun et al.~\cite{sun2024design} further proposed a design-time BPC framework that extracts fine-grained regulatory semantics, including modality, actor, action, condition, constraint, and exception, and matches them with process-model information for violation detection. Their semantic extraction combines syntactic analysis and manually designed linguistic rules. While explicit and interpretable, such extraction depends on predefined patterns and linguistic resources.
+
+Recent work has explored Large Language Models (LLMs) for legal requirement modeling, structured regulatory-rule extraction, and BPC-related analysis~\cite{de2024towards,barrientos2026impact,barrientos2026taming,guliani2026dejure}. Although some of these studies adopt BPC-relevant semantics or extract fine-grained regulatory information, their primary objectives differ from directly comparing LLM-based and rule-based extraction of individual compliance requirements within a common design-time BPC setting. It therefore remains useful to examine how Direct-LLM extraction behaves under the same target representation and evaluation setting as a reconstructed non-LLM baseline, and how the resulting Rule Records affect downstream BPMN compliance checking.
+
+In this paper, we investigate Direct-LLM semantic extraction within this design-time BPC setting. Natural-language compliance requirements are transformed into structured Rule Records, while BPMN process models are converted into structured process information for downstream matching and violation analysis. We compare Direct-LLM with an independent Rules-Only reconstruction under common inputs, semantic representations, reference annotations, and evaluation procedures. We further analyze the effects of different prompt configurations and examine how the resulting Rule Records influence downstream compliance checking.
+
+The main contributions of this work are:
+\begin{itemize}
+    \item We apply Direct-LLM extraction to an existing fine-grained BPC semantic representation and generate structured Rule Records for downstream compliance checking.
+
+    \item We conduct a controlled comparison between Rules-Only and Direct-LLM extraction, analyze their strengths and limitations at the semantic-element level, and examine the effects of different prompt configurations.
+
+    \item We connect the extracted Rule Records with downstream compliance checking and evaluate their effects on the three original violation types: missing action, incorrect actor, and out-of-order execution.
+\end{itemize}
+
+The remainder of this paper is organized as follows. Section~II reviews related work. Section~III presents the problem formulation and framework. Section~IV describes the methodology. Section~V reports the experiments and results, and Section~VI concludes the paper.
+
+% =========================================================
+% II. RELATED WORK
+% =========================================================
+
+\section{Related Work}
+\label{sec:2}
+
+Design-time business process compliance checking has been studied using logic-based, pattern-based, and other formal compliance representations~\cite{hashmi2018we,zasada2023evaluation}. These approaches provide precise and machine-processable constraints, but regulatory requirements generally need to be formalized before automated checking can be performed. To reduce this manual effort, Winter et al.~\cite{winter2020assessing} investigated compliance assessment directly from regulatory documents. Sun et al.~\cite{sun2024design} further proposed a design-time BPC approach that extracts fine-grained semantic information from regulatory text and combines it with process-model information for violation detection.
+
+Recent work has explored large language models (LLMs) for legal and regulatory modeling. De Kinderen and Winter~\cite{de2024towards} studied prompt-based generation of legal requirement models. Barrientos et al.~\cite{barrientos2026impact,barrientos2026taming} investigated regulatory-change detection and its relevance or impact on business process compliance, including BPC-relevant semantics related to the representation of Sun et al.~\cite{sun2024design}. Guliani et al.~\cite{guliani2026dejure} proposed De Jure, an LLM-based pipeline for fine-grained structured extraction of regulatory rules with iterative evaluation and repair. These studies demonstrate the potential of LLMs for regulatory analysis, but their primary objectives differ from directly extracting individual compliance requirements under a shared Sun-style BPC representation and comparing the resulting Rule Records in the same design-time BPMN compliance-checking pipeline. In contrast, this work conducts a controlled comparison between a reconstructed non-LLM extractor and Direct-LLM under the same target representation and evaluator, and further examines their downstream compliance-checking outcomes.
+
+% =========================================================
+% III. PROBLEM FORMULATION AND FRAMEWORK
+% =========================================================
+
+\section{Problem Formulation and Framework}
+\label{sec:3}
+
+\subsection{Problem Formulation}
+\label{sec:3.1}
+
+Following the design-time BPC setting of Sun et al.~\cite{sun2024design}, we consider a BPMN process model \(P\) and a natural-language compliance requirement \(q\). The process model is transformed into a Process Record \(\mathcal{P}\), which contains process elements, participants or actors, control-flow relations, and label semantics. The compliance requirement is transformed into a Rule Record \(\mathcal{R}\), which contains modality, actor, action, condition, constraint, exception, and supporting evidence. Design-time compliance checking then uses \((\mathcal{P}, \mathcal{R})\) for rule--process matching and violation analysis.
+
+\subsection{Overall Framework}
+\label{sec:3.2}
+
+\begin{figure*}[!b]
+    \centering
+    \includegraphics[width=0.90\textwidth,keepaspectratio]{fig1.png}
+    \caption{Overall framework for design-time business process compliance checking.}
+    \label{fig:framework}
+\end{figure*}
+
+As illustrated in Fig.~\ref{fig:framework}, the proposed framework consists of three stages: Process Model Parsing, Compliance Requirement Parsing, and Compliance Checking. Stage~1 parses the BPMN process model and organizes the extracted process elements, participants, control-flow relations, and label semantics into a structured Process Record. Independently, Stage~2 uses Direct-LLM semantic extraction to transform the natural-language compliance requirement into a structured Rule Record containing fine-grained compliance semantics. Stage~3 combines the Process Record and Rule Record for rule--process matching and detects missing-action, incorrect-actor, and out-of-order violations. The detailed Direct-LLM procedure in Stage~2 is presented in Section~\ref{sec:4.2}.
+
+% =========================================================
+% IV. METHODOLOGY
+% =========================================================
+
+\section{Methodology}
+\label{sec:4}
+
+\subsection{Process Model Parsing}
+\label{sec:4.1}
+
+Following Sun et al.~\cite{sun2024design}, Stage~1 uses a deterministic BPMN parser to extract process elements, participant information, sequence flows, and textual labels. Sequence flows are further used to derive control-flow edges, transitive reachability, and activity-order relations. Actor, action, and business-object semantics are obtained from process labels using a fixed linguistic analysis procedure following the process-label analysis strategy of Sun et al. The extracted information is organized into a structured Process Record containing activities, participants, control-flow relations, and label semantics for downstream compliance checking.
+
+\subsection{Compliance Requirement Parsing}
+\label{sec:4.2}
+
+Stage~2 transforms each natural-language compliance requirement into a structured Rule Record. Following the semantic representation of Sun et al.~\cite{sun2024design}, each record is organized into clauses containing modality, actor, action, condition, constraint, and exception information. Span-bearing elements are represented by source-anchored evidence spans with stable identifiers and normalized values for downstream matching. Character offsets use zero-based start and exclusive end positions, and the recorded evidence text must correspond exactly to the associated source span. Actor--action associations reference the identifiers of extracted actors and actions, while ordering relations reference the identifiers of their before/after action endpoints.
+
+\textbf{Prompt Design.} As shown in Fig.~\ref{fig:stage2}, the prompt consists of a shared base layer and three configurable components. The shared base layer defines the extraction task, target Rule Record schema, source and evidence representation, span and identifier requirements, and the basic structural output interface. It is retained throughout all prompt configurations. On top of this base layer, \(E\) provides synthetic worked examples, \(S\) provides detailed semantic interpretation guidance, and \(J\) provides additional JSON and output-discipline instructions. Only \(E\), \(S\), and \(J\) are varied in the factorial experiment, while the shared base layer remains fixed.
+
+\textbf{Direct-LLM Semantic Extraction.} Given the requirement and prompt, Direct-LLM directly generates structured semantic elements, supporting evidence, and relations without using predictions from the rule-based baseline or reference annotations. The generated information is organized into a candidate Rule Record under a unified JSON representation. This design allows semantic extraction to be performed within a single LLM call while preserving the fine-grained representation required by downstream compliance checking.
+
+\textbf{Output Validation and Normalization.} The generated candidate record is processed by a deterministic validation and normalization procedure before being used in Stage~3. The procedure checks schema conformance, exact correspondence between evidence text and source offsets, containment of element spans within their clauses, uniqueness of element identifiers, and referential consistency of actor--action and ordering relations. If an evidence span is misaligned, it is re-anchored only when the reported text has a unique exact occurrence in the corresponding source clause; otherwise, the unrecoverable element is removed. Normalized values are retained for downstream semantic matching, while the original evidence text and source offsets remain unchanged. This procedure repairs structural and alignment errors without introducing new semantic interpretations.
+
+\subsection{Compliance Checking}
+\label{sec:4.3}
+
+Stage~3 combines the Process Record and Rule Record for rule--process matching and violation detection. Following Sun et al.~\cite{sun2024design}, we retain the three original violation types: missing action, incorrect actor, and out-of-order execution. Let \(A_r\), \(P_r\), and \(U_r\) denote the actions, actors, and sequential constraints in rule \(r\), respectively. For process model \(p\), \(A_p\), \(E_p\), and \(R_p\) denote its activities, events, and actors. The operators \(\operatorname{action}(\cdot)\) and \(\operatorname{bs\!\_\!obj}(\cdot)\) extract action and business-object semantics from process labels. The functions \(f_r\) and \(f_p\) associate rule actors and process-side actors or business objects with their corresponding actions. The relation \(F_p\) represents directed control-flow reachability. Let \(\operatorname{sim}(x_r,x_p)\) denote semantic similarity. Thresholds \(\tau\), \(\gamma\), and \(\theta\) are used for rule--process matching, action comparison, and actor comparison, respectively.
+
+\begin{figure*}[!b]
+    \centering
+    \includegraphics[width=0.98\textwidth,keepaspectratio]{fig2.png}
+    \caption{Detailed workflow of Stage~2.}
+    \label{fig:stage2}
+\end{figure*}
+
+\textbf{Rule--Process Matching.} Each rule action is paired with its most similar process-side action in \(\operatorname{action}(A_p\cup E_p)\), forming \(D_{r,p}\). Each rule actor is paired with its most similar process-side business object or actor in \(\operatorname{bs\!\_\!obj}(A_p\cup E_p)\cup R_p\), forming \(O_{r,p}\). Following Sun's matching definition, we separate the two ratios and the final score only for presentation:
+\begin{equation}
+\begin{aligned}
+m_A(r,p;\tau)
+  &=\frac{\displaystyle\sum_{(a_r,a_p)\in D_{r,p}}
+       \bigl(\operatorname{sim}(a_r,a_p)>\tau\bigr)}{|D_{r,p}|},\\
+m_P(r,p;\tau)
+  &=\frac{\displaystyle\sum_{(o_r,o_p)\in O_{r,p}}
+       \bigl(\operatorname{sim}(o_r,o_p)>\tau\bigr)}{|O_{r,p}|},\\
+M(r,p;\tau)
+  &=\max\{m_A(r,p;\tau),m_P(r,p;\tau)\}.
+\end{aligned}
+\label{eq:matching}
+\end{equation}
+Each threshold comparison in a summation contributes \(1\) when true and \(0\) otherwise. The denominators are the sizes of the mapping sets, as in Sun's definition.
+
+\textbf{Missing-Action Violation.} A mapped rule--process action pair contributes to the missing-action score when its similarity is below \(\gamma\):
+\begin{equation}
+\begin{gathered}
+V_{\mathrm{act}}(r,p;\gamma)=\\
+\frac{\bigl|\{(a_r,a_p)\in D_{r,p}\mid
+          \operatorname{sim}(a_r,a_p)<\gamma\}\bigr|}{|A_r|}.
+\end{gathered}
+\label{eq:missing}
+\end{equation}
+This score uses the action pairs in \(D_{r,p}\) directly.
+
+\textbf{Incorrect-Actor Violation.} Sun's definition first identifies rule actors whose associated actions have a sufficiently similar process counterpart, and then identifies the corresponding process-side actor or business-object candidates:
+\begin{equation}
+\begin{aligned}
+R_{r,p,\gamma}
+  &=\bigl\{g\in P_r\mid
+       \exists(a_r,a_p)\in D_{r,p},\\
+  &\qquad f_r(g)=a_r\ \land\\
+  &\qquad \operatorname{sim}(a_r,a_p)>\gamma\bigr\},\\[2pt]
+C_{r,p,\gamma}
+  &=\bigl\{u_p\in\operatorname{bs\!\_\!obj}(A_p\cup E_p)
+                   \cup R_p\mid\\
+  &\qquad\exists g\in R_{r,p,\gamma},\\
+  &\qquad\operatorname{sim}\bigl(f_r(g),f_p(u_p)\bigr)
+                  >\gamma\bigr\}.
+\end{aligned}
+\label{eq:actor_candidates}
+\end{equation}
+The incorrect-actor score retains the existential condition in Sun's original definition:
+\begin{equation}
+\begin{gathered}
+V_{\mathrm{actor}}(r,p;\gamma,\theta)=\\
+\frac{\left|\left\{
+  \begin{gathered}
+  u_r\in R_{r,p,\gamma}\mid
+       \exists u_p\in C_{r,p,\gamma},\\
+  \operatorname{sim}(u_r,u_p)<\theta
+  \end{gathered}
+  \right\}\right|}{|R_{r,p,\gamma}|}.
+\end{gathered}
+\label{eq:actor}
+\end{equation}
+Thus, the numerator counts rule actors for which there exists a candidate with similarity below \(\theta\).
+
+\textbf{Out-of-Order Violation.} Sun's definition checks sequential constraints whose two endpoints both have sufficiently similar action mappings:
+\begin{equation}
+\begin{aligned}
+U_{r,p,\gamma}
+  &=\bigl\{(u_r,u'_r)\in U_r\mid\\
+  &\quad\exists\bigl\{(u_r,u_p)\in D_{r,p},\\
+  &\qquad\qquad(u'_r,u'_p)\in D_{r,p}\bigr\},\\
+  &\quad\operatorname{sim}(u_r,u_p)>\gamma\ \land\\
+  &\quad\operatorname{sim}(u'_r,u'_p)>\gamma\bigr\}.
+\end{aligned}
+\label{eq:order_evaluable}
+\end{equation}
+For readability, \(S_{r,p,\gamma}\) names the satisfied-constraint set that appears inside the numerator of Sun's original order-violation formula:
+\begin{equation}
+\begin{aligned}
+S_{r,p,\gamma}
+  &=\bigl\{(u_r,u'_r)\in U_{r,p,\gamma}\mid\\
+  &\quad\exists\bigl\{(u_r,u_p)\in D_{r,p},\\
+  &\qquad\qquad(u'_r,u'_p)\in D_{r,p}\bigr\},\\
+  &\quad(u_p,u'_p)\in F_p\ \land\\
+  &\quad(u'_p,u_p)\notin F_p\bigr\},\\[2pt]
+V_{\mathrm{ord}}(r,p;\gamma)
+  &=\frac{|U_{r,p,\gamma}|-|S_{r,p,\gamma}|}
+          {|U_{r,p,\gamma}|}.
+\end{aligned}
+\label{eq:order}
+\end{equation}
+The endpoint mappings, both strict \(>\gamma\) comparisons, forward reachability, and absence of reverse reachability are retained explicitly.
+
+The ratios above apply when their denominators are nonzero. In our reconstruction, an empty matching set contributes a matching ratio of \(0\); a missing-action case with no rule action, an actor case with unavailable actor--action associations or candidates, and an ordering case with no evaluable relation produce no violation decision. An unmatched required action is treated as missing. These empty-input and unavailable-input policies are implementation conventions stated separately from Sun's formulas.
+
+% =========================================================
+% V. EXPERIMENTS AND RESULTS
+% =========================================================
+
+\section{Experiments and Results}
+\label{sec:5}
+
+We evaluate the proposed approach from three perspectives. First, we compare Rules-Only and Direct-LLM for fine-grained semantic extraction. Second, we analyze how different prompt components affect Direct-LLM through a full factorial experiment. Finally, we examine whether the extracted Rule Records lead to different downstream compliance-checking performance.
+
+\subsection{Experimental Setup}
+\label{sec:5.1}
+
+\textbf{Stage 2 evaluation.} We use an independently reconstructed EStG-150 benchmark containing 150 compliance requirements. Its reference annotations form an LLM-assisted, human-adjudicated Gold standard constructed for this study rather than the original unpublished annotations of Sun et al.~\cite{sun2024design}. Rules-Only and Direct-LLM are evaluated against the same frozen Gold and evaluator. For actor, action, condition, constraint, and exception, a prediction matches a Gold span when their character intervals have a non-empty overlap; Overall Micro-F1 pools TP, FP, and FN over these five fields. Modality is evaluated separately by four-class Macro-F1 and is excluded from the overall score.
+
+\textbf{Rules-Only baseline.} Rules-Only is an independent reconstruction of the Stage~2 approach described by Sun et al.~\cite{sun2024design}, based on syntactic analysis and manually designed linguistic rules. It is treated as a reconstructed baseline rather than the original implementation. Both methods use the same frozen inputs, Gold annotations, target representation, and evaluator.
+
+\textbf{Direct-LLM and prompt configurations.} All Direct-LLM experiments use DeepSeek-V4-Pro-0813 with temperature \(0\), top-\(p\) \(1.0\), and a maximum output length of 4096 tokens. Table~\ref{tab:semantic_results} and Table~\ref{tab:prompt_analysis} are separate frozen runs; the provider exposes no supported random seed, so all differences are interpreted descriptively without statistical-significance claims. The shared prompt base remains fixed, while \(E\), \(S\), and \(J\) denote semantic examples, semantic guidance, and additional output discipline. Configuration 111 is the intact frozen full prompt, the other configurations are controlled factorial variants, and 000 retains the shared base rather than representing an unprompted LLM.
+
+\textbf{Stage 3 evaluation.} Stage~3 uses a separately constructed GDPR-based benchmark because downstream checking requires paired compliance requirements and BPMN models. Nine GDPR rule texts are segmented into 74 sentences and paired with 115 case records, yielding 201 applicable case--type cells per method: 113 missing-action, 80 incorrect-actor, and 8 out-of-order cells. These cells are fixed independently of method outputs; an unevaluable prediction remains in the evaluation, counting as FN for a violated reference and as unknown rather than TN for a satisfied reference. Overall precision, recall, and F1 in Table~\ref{tab:downstream_results} pool TP, FP, and FN over these cells. After development-stage calibration using a shared objective across both methods, Sentence-BERT \texttt{all-mpnet-base-v2} was selected with \(\tau=0.8\), \(\gamma=0.55\), and \(\theta=0.45\). Because the same benchmark was used during development and calibration, the results are descriptive rather than an independently held-out test.
+
+\subsection{Semantic Parsing Results}
+\label{sec:5.2}
+
+\begin{table}[t]
+\centering
+\caption{Semantic extraction performance of Rules-Only and Direct-LLM.}
+\label{tab:semantic_results}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Element} & \textbf{Rules-Only} & \textbf{Direct-LLM} \\
+\midrule
+Modality (Macro-F1) & 0.713 & \textbf{0.769} \\
+Actor                & \textbf{0.820} & 0.758 \\
+Action               & 0.893 & \textbf{0.944} \\
+Condition            & 0.774 & \textbf{0.838} \\
+Constraint           & 0.618 & \textbf{0.743} \\
+Exception            & \textbf{0.880} & 0.762 \\
+\midrule
+Overall (Micro-F1)$^{*}$ & 0.763 & \textbf{0.838} \\
+\bottomrule
+\end{tabular}
+
+\vspace{1mm}
+\footnotesize{$^{*}$Pooled over actor, action, condition, constraint, and exception; modality is excluded.}
+\end{table}
+
+Table~\ref{tab:semantic_results} shows that the two approaches have different field-level strengths. Direct-LLM achieves higher F1 for action, condition, and constraint, and higher modality macro-F1, whereas Rules-Only performs better for actor and exception. The largest Direct-LLM gain occurs for constraint extraction, increasing from 0.618 to 0.743. Overall pooled F1 over the five span-bearing fields increases from 0.763 to 0.838, an absolute improvement of approximately 7.5 percentage points.
+
+The results therefore do not indicate uniform superiority across all semantic elements. Rules-Only remains stronger for actor and exception extraction, while Direct-LLM performs better on most of the remaining semantic fields. These field-level results characterize the extraction behavior of the two methods on EStG-150; the downstream experiment in Section~\ref{sec:5.4} is evaluated separately on the GDPR-based benchmark.
+
+\subsection{Prompt Factorial Analysis}
+\label{sec:5.3}
+
+\begin{table}[t]
+\centering
+\caption{Factorial analysis of Direct-LLM prompt components.}
+\label{tab:prompt_analysis}
+\begin{tabular}{ccc cc}
+\toprule
+\textbf{E} & \textbf{S} & \textbf{J} & \textbf{F1} & \(\boldsymbol{\Delta}\)\textbf{F1 vs. 111} \\
+\midrule
+0 & 0 & 0 & 0.7380 & -0.0844 \\
+0 & 0 & 1 & 0.7261 & -0.0963 \\
+0 & 1 & 0 & 0.8107 & -0.0117 \\
+0 & 1 & 1 & 0.8142 & -0.0082 \\
+1 & 0 & 0 & \textbf{0.8354} & \textbf{+0.0130} \\
+1 & 0 & 1 & 0.8299 & +0.0075 \\
+1 & 1 & 0 & 0.8268 & +0.0044 \\
+1 & 1 & 1 & 0.8224 & 0.0000 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:prompt_analysis} shows a non-additive interaction among the prompt components. Enabling \(E\) improves F1 in all four matched comparisons, making semantic examples the most consistently beneficial component. In contrast, \(S\) provides substantial gains when examples are absent but slightly decreases F1 when \(E\) is already present, suggesting partial overlap between examples and detailed semantic guidance. The effect of \(J\) is comparatively small and inconsistent. This does not imply that structured output requirements are unnecessary, because the shared schema and basic output constraints remain active in every configuration.
+
+Configuration 100 achieves the highest observed F1 of 0.8354, whereas the intact full-prompt configuration 111 obtains 0.8224. Thus, increasing prompt detail does not monotonically improve extraction performance. Because the full prompt was frozen before the factorial experiment, configuration 100 is treated as an ablation observation rather than a post-hoc replacement of the main method.
+
+\subsection{Downstream Compliance Checking}
+\label{sec:5.4}
+
+\begin{table}[t]
+\centering
+\caption{Performance comparison of downstream compliance checking.}
+\label{tab:downstream_results}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Method} & \textbf{Precision} & \textbf{Recall} & \textbf{F1} \\
+\midrule
+Sun-style Rules-Only & 0.3814 & 0.5362 & 0.4458 \\
+Direct-LLM & \textbf{0.4393} & \textbf{0.6812} & \textbf{0.5341} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Rules-Only and Direct-LLM are applied to the same GDPR compliance texts, and their resulting Rule Records are processed by the same frozen Stage~3 pipeline. Table~\ref{tab:downstream_results} reports pooled performance over the 201 applicable evaluation cells. Direct-LLM achieves an overall F1 of 0.5341 compared with 0.4458 for Rules-Only, an absolute gain of 8.83 percentage points. Recall increases from 0.5362 to 0.6812 and precision from 0.3814 to 0.4393. At the violation-type level, missing-action F1 increases from 0.4554 to 0.4935 and incorrect-actor F1 from 0.4262 to 0.5684, while both methods obtain 0.5000 for out-of-order checking.
+
+These downstream scores should not be directly compared with the Stage~2 extraction scores because the two experiments use different benchmarks, tasks, and evaluation units. Downstream checking additionally requires the extracted compliance semantics to be aligned with BPMN activity labels and process-control information. A post-hoc analysis of the frozen missing-action results identifies 50 of 70 false-positive method--case cells (71.4\%) as mapping-related and 20 (28.6\%) as broadly scope-related. Only 11 of the latter satisfy the stricter criterion for safely removable scope errors. Since this analysis concerns missing-action false positives only, it should not be interpreted as a decomposition of all Stage~3 errors. The results nevertheless identify rule--process semantic alignment as a major remaining limitation.
+
+\section{Conclusion}
+\label{sec:6}
+
+This paper investigates Direct-LLM semantic extraction within a three-stage design-time BPC framework. Rules-Only and Direct-LLM produce the same structured Rule Record representation, enabling controlled comparison in Stage~2 and downstream evaluation under the same Stage~3 pipeline. On EStG-150, Direct-LLM performs better for modality, action, condition, and constraint, while Rules-Only remains stronger for actor and exception; Overall Micro-F1 over the five span-bearing fields increases from 0.763 to 0.838. The factorial analysis further shows that semantic examples provide the most consistent prompt benefit, while detailed semantic guidance and additional output discipline exhibit non-additive effects.
+
+On the separate GDPR-based development benchmark, Direct-LLM Rule Records yield a downstream F1 of 0.5341 compared with 0.4458 for Rules-Only under the same checking pipeline. These results should not be interpreted as a direct field-level transfer of the EStG-150 results. The downstream analysis identifies rule--process semantic alignment, particularly the alignment between extracted compliance actions and BPMN activity labels, as an important remaining challenge. Future work will therefore focus on improving this alignment and evaluating the approach on independently held-out benchmarks.
+
+% =========================================================
+% ACKNOWLEDGMENT
+% =========================================================
+
+\section*{Acknowledgment}
+
+This work is partially supported by the Hunan Provincial Natural Science
+Foundation of China under Grant No: 2026JJ50519.
+\textit{Guosheng Kang} is the corresponding author.
+
+
+% =========================================================
+% REFERENCES
+% =========================================================
+
+\bibliographystyle{IEEEtran}
+\bibliography{reference}
+
+\end{document}

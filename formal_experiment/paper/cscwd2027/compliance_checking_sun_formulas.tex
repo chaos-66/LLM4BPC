@@ -1,0 +1,109 @@
+% Replacement for Section IV.C of the user-supplied CSCWD manuscript.
+% Source: Sun_2024_Design_time_BPC.pdf, Section 4.3,
+% Definitions 4--7, printed pages 13--14 (local author manuscript).
+% Only notation and line layout are adapted. No min/max rewriting of
+% the missing-action or incorrect-actor definitions is introduced.
+% The source's model symbol m and actor threshold vartheta are p and theta here.
+
+\subsection{Compliance Checking}
+\label{sec:4.3}
+
+Stage~3 combines the Process Record and Rule Record for rule--process matching and violation detection. Following Sun et al.~\cite{sun2024design}, we retain the three original violation types: missing action, incorrect actor, and out-of-order execution. Let \(A_r\), \(P_r\), and \(U_r\) denote the actions, actors, and sequential constraints in rule \(r\), respectively. For process model \(p\), \(A_p\), \(E_p\), and \(R_p\) denote its activities, events, and actors. The operators \(\operatorname{action}(\cdot)\) and \(\operatorname{bs\!\_\!obj}(\cdot)\) extract action and business-object semantics from process labels. The functions \(f_r\) and \(f_p\) associate rule actors and process-side actors or business objects with their corresponding actions. The relation \(F_p\) represents directed control-flow reachability. Let \(\operatorname{sim}(x_r,x_p)\) denote semantic similarity. Thresholds \(\tau\), \(\gamma\), and \(\theta\) are used for rule--process matching, action comparison, and actor comparison, respectively.
+
+\begin{figure*}[!b]
+    \centering
+    \includegraphics[width=0.98\textwidth,keepaspectratio]{fig2.png}
+    \caption{Detailed workflow of Stage~2.}
+    \label{fig:stage2}
+\end{figure*}
+
+\textbf{Rule--Process Matching.} Each rule action is paired with its most similar process-side action in \(\operatorname{action}(A_p\cup E_p)\), forming \(D_{r,p}\). Each rule actor is paired with its most similar process-side business object or actor in \(\operatorname{bs\!\_\!obj}(A_p\cup E_p)\cup R_p\), forming \(O_{r,p}\). Following Sun's matching definition, we separate the two ratios and the final score only for presentation:
+\begin{equation}
+\begin{aligned}
+m_A(r,p;\tau)
+  &=\frac{\displaystyle\sum_{(a_r,a_p)\in D_{r,p}}
+       \bigl(\operatorname{sim}(a_r,a_p)>\tau\bigr)}{|D_{r,p}|},\\
+m_P(r,p;\tau)
+  &=\frac{\displaystyle\sum_{(o_r,o_p)\in O_{r,p}}
+       \bigl(\operatorname{sim}(o_r,o_p)>\tau\bigr)}{|O_{r,p}|},\\
+M(r,p;\tau)
+  &=\max\{m_A(r,p;\tau),m_P(r,p;\tau)\}.
+\end{aligned}
+\label{eq:matching}
+\end{equation}
+Each threshold comparison in a summation contributes \(1\) when true and \(0\) otherwise. The denominators are the sizes of the mapping sets, as in Sun's definition.
+
+\textbf{Missing-Action Violation.} A mapped rule--process action pair contributes to the missing-action score when its similarity is below \(\gamma\):
+\begin{equation}
+\begin{gathered}
+V_{\mathrm{act}}(r,p;\gamma)=\\
+\frac{\bigl|\{(a_r,a_p)\in D_{r,p}\mid
+          \operatorname{sim}(a_r,a_p)<\gamma\}\bigr|}{|A_r|}.
+\end{gathered}
+\label{eq:missing}
+\end{equation}
+This score uses the action pairs in \(D_{r,p}\) directly.
+
+\textbf{Incorrect-Actor Violation.} Sun's definition first identifies rule actors whose associated actions have a sufficiently similar process counterpart, and then identifies the corresponding process-side actor or business-object candidates:
+\begin{equation}
+\begin{aligned}
+R_{r,p,\gamma}
+  &=\bigl\{g\in P_r\mid
+       \exists(a_r,a_p)\in D_{r,p},\\
+  &\qquad f_r(g)=a_r\ \land\\
+  &\qquad \operatorname{sim}(a_r,a_p)>\gamma\bigr\},\\[2pt]
+C_{r,p,\gamma}
+  &=\bigl\{u_p\in\operatorname{bs\!\_\!obj}(A_p\cup E_p)
+                   \cup R_p\mid\\
+  &\qquad\exists g\in R_{r,p,\gamma},\\
+  &\qquad\operatorname{sim}\bigl(f_r(g),f_p(u_p)\bigr)
+                  >\gamma\bigr\}.
+\end{aligned}
+\label{eq:actor_candidates}
+\end{equation}
+The incorrect-actor score retains the existential condition in Sun's original definition:
+\begin{equation}
+\begin{gathered}
+V_{\mathrm{actor}}(r,p;\gamma,\theta)=\\
+\frac{\left|\left\{
+  \begin{gathered}
+  u_r\in R_{r,p,\gamma}\mid
+       \exists u_p\in C_{r,p,\gamma},\\
+  \operatorname{sim}(u_r,u_p)<\theta
+  \end{gathered}
+  \right\}\right|}{|R_{r,p,\gamma}|}.
+\end{gathered}
+\label{eq:actor}
+\end{equation}
+Thus, the numerator counts rule actors for which there exists a candidate with similarity below \(\theta\).
+
+\textbf{Out-of-Order Violation.} Sun's definition checks sequential constraints whose two endpoints both have sufficiently similar action mappings:
+\begin{equation}
+\begin{aligned}
+U_{r,p,\gamma}
+  &=\bigl\{(u_r,u'_r)\in U_r\mid\\
+  &\quad\exists\bigl\{(u_r,u_p)\in D_{r,p},\\
+  &\qquad\qquad(u'_r,u'_p)\in D_{r,p}\bigr\},\\
+  &\quad\operatorname{sim}(u_r,u_p)>\gamma\ \land\\
+  &\quad\operatorname{sim}(u'_r,u'_p)>\gamma\bigr\}.
+\end{aligned}
+\label{eq:order_evaluable}
+\end{equation}
+For readability, \(S_{r,p,\gamma}\) names the satisfied-constraint set that appears inside the numerator of Sun's original order-violation formula:
+\begin{equation}
+\begin{aligned}
+S_{r,p,\gamma}
+  &=\bigl\{(u_r,u'_r)\in U_{r,p,\gamma}\mid\\
+  &\quad\exists\bigl\{(u_r,u_p)\in D_{r,p},\\
+  &\qquad\qquad(u'_r,u'_p)\in D_{r,p}\bigr\},\\
+  &\quad(u_p,u'_p)\in F_p\ \land\\
+  &\quad(u'_p,u_p)\notin F_p\bigr\},\\[2pt]
+V_{\mathrm{ord}}(r,p;\gamma)
+  &=\frac{|U_{r,p,\gamma}|-|S_{r,p,\gamma}|}
+          {|U_{r,p,\gamma}|}.
+\end{aligned}
+\label{eq:order}
+\end{equation}
+The endpoint mappings, both strict \(>\gamma\) comparisons, forward reachability, and absence of reverse reachability are retained explicitly.
+
+The ratios above apply when their denominators are nonzero. In our reconstruction, an empty matching set contributes a matching ratio of \(0\); a missing-action case with no rule action, an actor case with unavailable actor--action associations or candidates, and an ordering case with no evaluable relation produce no violation decision. An unmatched required action is treated as missing. These empty-input and unavailable-input policies are implementation conventions stated separately from Sun's formulas.
