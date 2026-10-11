@@ -1,0 +1,39 @@
+% Replacement for Output Validation and Normalization in Stage 2.
+% Describes the historical unique-exact policy associated with Table I.
+% Requires amsmath; optional pseudocode requires algorithm + algorithmic.
+
+\textbf{Deterministic Postprocessing.}
+The candidate JSON record is processed without further LLM calls, reference annotations, or baseline predictions. We distinguish structural adaptation, evidence alignment, and final validation. The procedure below describes the historical unique-exact alignment policy used for the frozen main comparison; later alignment variants must be reported separately.
+
+First, the adapter converts flat or nested field spans into a common representation, converts supported integer-valued coordinate strings, and assigns deterministic identifiers when they are missing. For the five span-bearing fields, it computes \texttt{normalized} by case folding and collapsing whitespace in the evidence text. The evidence text itself is preserved. Unusable field elements are removed locally, whereas an invalid record-level structure causes rejection.
+
+Second, evidence coordinates are checked against the extraction input string \(T\), using zero-based Unicode character indices and exclusive end positions. A span with text \(u\) and coordinates \([s,e)\) is already grounded when \(0\leq s<e\leq |T|\) and \(T[s:e]=u\). Otherwise, the algorithm searches for exact occurrences of \(u\) within a permitted window \(W=[a,b)\):
+\begin{equation}
+\mathcal{O}(u,T,W)=\{s:a\leq s<s+|u|\leq b,\ T[s:s+|u|]=u\}.
+\end{equation}
+Only a unique occurrence permits coordinate correction. Zero or multiple occurrences leave the span unresolved. An already correct span is retained even if its text occurs elsewhere. Clause spans are aligned against the complete input first; field spans and modality evidence are then aligned within the retained clause. Unresolved clauses or field spans are removed. Relations whose required endpoints have been removed are also deleted, without inventing replacement relations.
+
+Finally, structural and cross-field validation checks required fields and types, legal modality labels, exact evidence correspondence, clause containment, identifier uniqueness, and relation references. Remaining violations cause record rejection. Clause containment is checked here even for spans whose original coordinates matched the input. Ordering-relation evidence is checked by this final validator rather than repaired by the coordinate-alignment step. These checks establish structural usability and evidence traceability; they do not establish that a correctly located phrase has the correct semantic role.
+
+For illustration, in \texttt{The clerk must approve.}, \texttt{approve} occupies \([15,22)\). A prediction reporting \([16,23)\) is corrected to \([15,22)\), because the text occurs exactly once. The source and evidence strings remain unchanged, while the erroneous coordinates change. This synthetic example explains the mechanism and is not an experimental observation.
+
+% Optional: include when space permits; final containment is outside this helper.
+\begin{algorithm}[t]
+\caption{Historical unique-exact evidence alignment}
+\label{alg:legacy-grounding}
+\begin{algorithmic}[1]
+\REQUIRE Span \(p=(u,s,e)\), input \(T\), search window \(W\)
+\IF{\(p\) is malformed, \(u\) is empty, or offsets are not integers}
+    \RETURN unresolved
+\ENDIF
+\IF{\(0\leq s<e\leq |T|\) and \(T[s:e]=u\)}
+    \RETURN \(p\)
+\ENDIF
+\STATE Find all exact starts \(O=\mathcal{O}(u,T,W)\)
+\IF{\(|O|=1\)}
+    \STATE Set \(s\) to the unique start and \(e=s+|u|\)
+    \RETURN \((u,s,e)\)
+\ENDIF
+\RETURN unresolved
+\end{algorithmic}
+\end{algorithm}

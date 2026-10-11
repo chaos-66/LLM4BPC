@@ -1,0 +1,52 @@
+% These are SEPARATE replacements/insertions, not one continuous section.
+% INSERTION 1: add beside the embedding model in the Stage 3 setup.
+% These two distinct citations bring the total to 18.
+Semantic similarity is computed using the
+\texttt{sentence-transformers/all-mpnet-base-v2} checkpoint, an MPNet-based
+sentence embedding model in the Sentence-BERT framework~\cite{reimers2019sentence,song2020mpnet}.
+The exact checkpoint is documented in its model card.\footnote{\url{https://huggingface.co/sentence-transformers/all-mpnet-base-v2}}
+
+% REPLACEMENT 2: Stage 2 metric. Preserves the frozen evaluation procedure.
+Stage~2 uses the frozen coarse sentence-level overlap view. Within each sample
+and semantic field, an extracted span is counted as matched if it overlaps at
+least one reference region; a reference region is counted as matched if it
+overlaps at least one extracted span. These are separate counts, rather than
+a one-to-one matching. Pooling over actor, action, condition, constraint, and
+exception, precision and recall are
+\begin{equation}
+P=\frac{N_{\mathrm{matched\ predictions}}}{N_{\mathrm{predictions}}},\qquad
+R=\frac{N_{\mathrm{matched\ references}}}{N_{\mathrm{references}}},
+\end{equation}
+and pooled F1 is \(2PR/(P+R)\). Modality is evaluated separately using
+four-class Macro-F1 and is excluded from this pooled span score.
+Non-empty overlap measures partial evidence recovery; it does not establish
+exact boundaries or complete semantic correctness.
+
+% REPLACEMENT 3: main-table versus prompt-ablation identity.
+% Verify per-run settings separately; do not infer an unrecorded release.
+Table~I uses the frozen v6/R3 extraction snapshot registered as
+\texttt{deepseek-v4-pro}, whereas Table~II evaluates the separate modular
+E/S/J prompt family. The full modular configuration~111 is therefore not the
+same prompt snapshot as the Table~I extractor. The eight configurations were
+each evaluated once across two execution batches; their differences are
+descriptive and do not establish stability across repeated runs. The basic
+task and schema requirements remain present in configuration~000.
+
+% REPLACEMENT 4: non-LLM baseline.
+Rules-Only is our independent reconstruction of the approach of
+Sun et al.~\cite{sun2024design}. It combines a BERT-TextCNN modality classifier
+with syntactic analysis and manually specified extraction rules. Thus,
+Rules-Only denotes the non-generative-LLM baseline and does not imply that
+every component is an untrained rule system. Its scores are results of this
+local reconstruction, not scores reported in Sun et al.'s original paper.
+
+% REPLACEMENT 5: compact limitations paragraph after the results.
+The findings have several limits. The extraction benchmark contains 150
+requirements with reconstructed reference annotations, and the overlap metric
+does not require exact span boundaries. The prompt configurations have one
+observed run each. The downstream GDPR benchmark was also used during
+development and threshold calibration, so its scores do not estimate
+performance on an independently held-out test set. Finally, higher extraction
+scores do not remove errors in aligning rule semantics with BPMN labels, and
+the three evaluated violation types do not demonstrate complete checking of
+every semantic element in the Rule Record.
