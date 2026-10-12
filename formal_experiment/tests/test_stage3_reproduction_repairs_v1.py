@@ -8,7 +8,7 @@ import subprocess
 import pytest
 
 from bpc_hybrid.stage3_reproduction_repairs_v1 import (
-    accept_role, align_winter_model, rebuild_clause, source_segments, span_text,
+    accept_role, align_winter_model, mask_tokens, rebuild_clause, source_segments, span_text,
 )
 
 
@@ -32,6 +32,14 @@ def test_surgery_segments_keep_object_after_removed_constraint():
     assert all("before" not in s["text"] for s in segments)
     with pytest.raises(ValueError,match="drift"):
         span_text({"segments":[{"start":0,"end":7,"text":"invent"}]},text)
+
+
+def test_frozen_canonical_clause_scope_masks_modal_and_constraint():
+    text='controller shall inform before processing'
+    tokens=tokens_for(text,text.split(),poses=['NN','MD','VB','IN','NN'])
+    clause={'clause_span':{'start':0,'end':len(text)},
+            'constraints':[{'start':text.index('before'),'end':len(text)}]}
+    assert mask_tokens({'tokens':tokens},clause)==[1,3,4]
 
 
 @pytest.mark.parametrize("phrase,lemmas,head,accepted",[

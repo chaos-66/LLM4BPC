@@ -58,7 +58,8 @@ def accept_role(tokens, indexes, head, surfaces):
 
 
 def mask_tokens(sentence, clause):
-    start, end = clause["span"]["start"], clause["span"]["end"]
+    span = clause.get("clause_span") or clause.get("span")
+    start, end = span["start"], span["end"]
     scopes = [s for field in ("conditions", "constraints", "exceptions")
               for s in clause.get(field, [])]
     masks = []

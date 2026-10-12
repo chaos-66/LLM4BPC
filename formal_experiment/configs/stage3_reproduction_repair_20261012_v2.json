@@ -1,0 +1,53 @@
+{
+  "run_id": "stage3_reproduction_repair_20261012_v2",
+  "task_id": "S3-BASELINE-REPAIR-V1",
+  "scope": "development_repair_study_same_population",
+  "user_authorization": "2026-10-12 用户要求复现 Winter/Sun 并在同批数据运行 Part 3；不再询问。",
+  "case_count": 115,
+  "rule_count": 33,
+  "primary_scored_cells": 201,
+  "secondary_scope": "207 cells; two previously confirmed explicit order requirements",
+  "sun_ours_thresholds": {
+    "tau": 0.8,
+    "gamma": 0.55,
+    "theta": 0.45
+  },
+  "winter_thresholds": {
+    "gamma": 0.4,
+    "delta": 0.8
+  },
+  "llm_api_calls_cap": 0,
+  "network_calls_cap": 0,
+  "method_design_frozen_before_new_scores": true,
+  "expected_ranking_is_acceptance_gate": false,
+  "parameter_search_allowed": false,
+  "reference_changes_allowed": false,
+  "sun_repairs": [
+    "actual Tsurgeon scope-token removal",
+    "post-surgery Tregex VP/NP candidates",
+    "lossless source segments without length cap",
+    "role lemma and full role phrase matching",
+    "fresh constituent-bound prefix scopes; no cross-main-clause regex fallback",
+    "preserve parser-attached with complement after a temporal target"
+  ],
+  "winter_repairs": [
+    "paired filtering of empty labels and nodes; preserve graph IDs"
+  ],
+  "remaining_sun_limitations": [
+    "modality and segmentation reused from local v10a; classifier-first correct-language reconstruction unresolved",
+    "author final weights and complete extraction rules unavailable",
+    "maximal nonnested VPs and temporal with-complement disambiguation are disclosed reconstruction choices",
+    "process label decomposition is unchanged and remains a separate prospective repair"
+  ],
+  "remaining_winter_limitations": [
+    "native spaCy 3.8.13 / model 3.8.0 instead of prototype 2.3.0",
+    "previously disclosed reachability/Flow lemma repairs retained"
+  ],
+  "complete_paper_reproduction_certified": false,
+  "supersedes_unscored_partial_run": "stage3_reproduction_repair_20261012_v1",
+  "backend": "same cached all-mpnet-base-v2; direct Transformers, declared mean pooling/L2, parity-check 50 saved rounded similarities",
+  "reuse_completed_phases": [
+    "v1 fresh CoreNLP33",
+    "v1 complete Winter3795"
+  ]
+}

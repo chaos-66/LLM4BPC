@@ -6313,3 +6313,21 @@
 - 仍存在 blocker：无
 - 备注：本轮仅局部修复与具名相关验证；实际Tsurgeon/原文分段/角色词形/Winter节点标签对齐。115案例33要求及阈值固定，新评分未开始，不认证完整论文复现；不改旧结果、Part2固定表、Gold，不跑全量。首次启动因sandbox拒绝临时目录且未开始测试，使用明确工作区写权限继续。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-12T06:07:45.227676+00:00 - S3-BASELINE-REPAIR-V1：保留首轮失败证据并固定预评分 v2 范围修复与同模型运行方式
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=stage3_reproduction_repair_20261012_v1；阶段=stage3；方法=sun_rule_only,winter_native；状态=失败（`failed`）
+- 实际运行命令：`run_stage3_reproduction_repair_v1.py prepare/parse/winter/sun`
+- manifest：outputs/evidence/stage3_reproduction_repair_20261012_v1/manifest.json
+- 结果摘要：33条解析及3795对Winter完成；Sun依赖失败且预评分发现旧scope跨主句；未产生新指标
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：12 passed in 1.55s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`d78a9126436e3e86c05c44aeed310f7048b8fd54`；相关未提交路径：61 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：只做两个具名测试文件，不运行全量；v2另存且先核对50对旧MPNet相似度；不调参、不改参考、无新API。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
