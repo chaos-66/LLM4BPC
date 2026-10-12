@@ -6377,3 +6377,21 @@
 - 仍存在 blocker：无
 - 备注：50对旧MPNet相似度通过舍入误差核对；LLM-SE全部345信号与旧实验完全一致；115案例33法规3795Winter配对齐全；分类/VP/标签分解差异披露。只做2个评价器/总体覆盖节点，不运行全量。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-12T06:32:41.681557+00:00 - S3-BASELINE-REPAIR-V1：实际重新抽取与重新推理，检验同批局部修复数据可复现
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=stage3_reproduction_repair_20261012_v2_actual_replay_v1；阶段=stage3；方法=sun_rule_only,direct_llm,winter_native；状态=成功（`succeeded`）
+- 实际运行命令：`mpnet_venv/python -X utf8 replay_stage3_repair_v2.py --attempt-id actual_replay_v1`
+- manifest：outputs/reports/stage3_reproduction_repair_20261012_v2_actual_replay_v1.json
+- 结果摘要：真实Sun重新抽取及690类型信号重算，真实Winter3795配对重算；逐对象一致性由相关集成检查断言，不认证完整论文复现
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：否；正式实验就绪：是
+- 测试：1 failed in 24.65s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`b7f24a29e66454db7e7ab4a9f242b51360cf657a`；相关未提交路径：27 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：只运行一个针对性的离线实际重算检查，预计一分钟内；LLM抽取和CoreNLP解析复用已存输入，Sun句法删除/抽取、BPMN解析、MPNet和两个检查器重新运行；不改阈值、数据或参考。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
