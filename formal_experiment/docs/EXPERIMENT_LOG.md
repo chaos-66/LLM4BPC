@@ -6345,3 +6345,17 @@
 - 仍存在 blocker：无
 - 备注：准备阶段 Git status 的 GBK 解码失败；已生成快照不改字节、不重绑旧代码；恢复器先核对全部哈希并拒绝覆盖，后续命令统一 -X utf8。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-12T06:19:41.052579+00:00 - S3-BASELINE-REPAIR-V1：修正冻结源码快照资源定位，保留原schema哈希门禁
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：2 passed in 0.11s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`406e1bf1404b90f38092793e2a83c002f269aa7e`；相关未提交路径：55 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：v2已通过50对同MPNet相似度和LLM转换一致性；源码移动后相对schema路径错误。只设置资源根路径，复用已完成抽取，两个测试验证正常加载和拒绝错误哈希；原schema/参数/参考不改。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
