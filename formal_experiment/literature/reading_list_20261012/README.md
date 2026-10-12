@@ -1,6 +1,6 @@
 # BPC 与 LLM 参考文献阅读顺序
 
-**截至 2026-10-12：清单共 18 篇，已取得并核验 15 篇 PDF；05、06、17 暂缺全文。**
+**截至 2026-10-12：清单共 18 篇，已取得并核验 16 篇 PDF；05、06 暂缺全文。**
 
 目录：`D:\Paper\experiment\LLM4BPC\references\papers\BPC_LLM_Related_Work`。按文件名升序即可依重要性从上往下阅读；缺失编号用“获取说明.md”保留位置。
 
@@ -32,7 +32,7 @@
 | 14 | Evaluation of Compliance Rule Languages for Modelling Regulatory Compliance Requirements (2023) | **背景与表示：按需查阅**。关注合规语言的表达能力、规范性语义和复杂度比较；用于解释结构化抽取与可执行形式化规则的区别。 | [期刊正式版（CC BY），附文章封面](<D:/Paper/experiment/LLM4BPC/references/papers/BPC_LLM_Related_Work/14_Zasada_2023_Evaluation_of_compliance_rule_languages.pdf>) |
 | 15 | Formalizing and applying compliance patterns for business process compliance (2016) | **经典方法：模式化合规规则**。阅读合规模式和 CRL 的形式化基础；用于说明人工或模板式规范化的背景，与本项目语义抽取作概念比较。 | [作者接受稿，机构库附封面](<D:/Paper/experiment/LLM4BPC/references/papers/BPC_LLM_Related_Work/15_Elgammal_2016_Formalizing_and_applying_compliance_patterns.pdf>) |
 | 16 | Semantic Business Process Regulatory Compliance Checking Using LegalRuleML (2016) | **经典方法：法律语义表示**。看 LegalRuleML 如何表示规范并支持合规推理；它有助于理解语义表达要求，阅读它不意味着本项目实现了 LegalRuleML 推理。 | [HAL 存档作者稿，附封面](<D:/Paper/experiment/LLM4BPC/references/papers/BPC_LLM_Related_Work/16_Governatori_2016_Semantic_BPC_checking_using_LegalRuleML.pdf>) |
-| 17 | Efficient Compliance Checking Using BPMN-Q and Temporal Logic (2008) | **低优先级：历史路线**。2008 年的经典工作：把规则表示为 BPMN-Q 查询和时序逻辑，配合流程约简、Petri 网和模型检查验证活动及执行顺序。对 LLM-SE 的直接借鉴有限，可只读摘要与方法总览；全文暂缺。 | [暂缺 PDF，见获取说明](<D:/Paper/experiment/LLM4BPC/references/papers/BPC_LLM_Related_Work/17_Awad_2008_Efficient_compliance_checking_using_BPMN-Q_and_temporal_logic_获取说明.md>) |
+| 17 | Efficient Compliance Checking Using BPMN-Q and Temporal Logic (2008) | **低优先级：历史路线**。2008 年的经典工作：把规则表示为 BPMN-Q 查询和时序逻辑，配合流程约简、Petri 网和模型检查验证活动及执行顺序。对 LLM-SE 的直接借鉴有限，可只读摘要与方法总览。 | [会议论文正式版（用户提供）](<D:/Paper/experiment/LLM4BPC/references/papers/BPC_LLM_Related_Work/17_Awad_2008_Efficient_compliance_checking_using_BPMN-Q_and_temporal_logic.pdf>) |
 | 18 | Context is Key for Cybersecurity: Leveraging External Knowledge for Process Model Explanation via LLMs (2026) | **扩展阅读：外部知识与安全领域**。关注流程模型与外部安全知识的结合、上下文提示及解释评价；属于领域扩展，当前写作时间有限时可以最后读。 | [期刊正式版（开放获取）](<D:/Paper/experiment/LLM4BPC/references/papers/BPC_LLM_Related_Work/18_Koelbel_2026_Context_is_key_for_cybersecurity_process_explanation.pdf>) |
 
 ## 版本与引用注意事项
@@ -41,7 +41,7 @@
 - Sun 当前保存的是原有作者稿；不把它描述为出版商正式版。De Jure 为 arXiv v1 预印本，不据此声称已通过同行评审。
 - Elgammal 的用户 BibTeX 写作 “appling”；机构库题名用 “applying”，稿件正文亦可见 “Formalising”。本指南采用机构库题名，原始 BibTeX 按字节保存。
 - 2008 年 Awad 的方法是 BPMN-Q 查询、时序逻辑和模型检查，用于检查流程活动及执行顺序；对当前 LLM-SE 的直接方法借鉴有限，建议只读摘要、框架图及与本文相关的段落。[出版商摘要](https://link.springer.com/chapter/10.1007/978-3-540-85758-7_24)。
-- 本指南的排序和借鉴建议是针对本项目的阅读判断，未取得全文的 05、06、17 只依据公开摘要/元数据，不伪称完成全文审阅。
+- 本指南的排序和借鉴建议是针对本项目的阅读判断，未取得全文的 05、06 只依据公开摘要/元数据，不伪称完成全文审阅。
 
 ## 尚未取得的全文
 
@@ -49,7 +49,6 @@
 |---|---|---|
 | 05 | 出版商订阅章节；DOI PDF 地址返回摘要 HTML；未查到可下载公开作者稿。 | [出版商 / DOI](https://link.springer.com/chapter/10.1007/978-981-96-6963-9_32) |
 | 06 | 出版商标为非开放获取；PDF 下载 HTTP 403；RWTH / Fraunhofer 记录未提供公开全文。 | [出版商 / DOI](https://www.sciencedirect.com/science/article/pii/S0167923626000163) |
-| 17 | 出版商订阅章节；CiteSeer 旧链接归档后 HTTP 404；ResearchGate 作者公开共享 PDF 在当前网络返回 HTTP 403。 | [出版商 / DOI](https://link.springer.com/chapter/10.1007/978-3-540-85758-7_24) |
 
 已按 DOI、精确题名、作者与机构库查找；Google Scholar 的精确题名补查在当前网络返回 HTTP 429（异常流量限制）。这表示本轮无法继续访问 Scholar，并不能证明它没有收录可下载的其他版本。没有购买论文或使用机构登录；未取得的文件保留明确缺口。
 
@@ -58,6 +57,7 @@
 - 用户在本聊天明确要求：找到所贴清单的 PDF，存入 references/papers/ck，给 ck 改一个合适的名称，并按重要性排序。这是本次目录更名、加入文献和创建阅读索引的授权。
 - 已检查原 ck 目录为空，随后在 references/papers 内更名为 BPC_LLM_Related_Work。原有其他文献保持原字节；Sun、Michel、Barrientos 三份现有 PDF 复制后核对 SHA-256 与来源一致。
 - 新增 PDF 与获取说明只用于个人文献阅读；不从 references 导入或运行实验代码。文献管理操作不改变 MASTER_PIPELINE、实验状态、Gold、模型配置或已有结果。
-- 核验 15 个文件的 PDF 文件头、全部页面解析和文本、首页题名、作者对应及页面数，渲染首尾页；另生成首页检查拼图。SHA-256、下载源、版本与缺失项见 collection_manifest.json。
+- 首批核验 15 个文件的 PDF 文件头、全部页面解析和文本、首页题名、作者对应及页面数，渲染首尾页；另生成首页检查拼图。SHA-256、下载源、版本与缺失项见 collection_manifest.json。
 - 本次属文献/文档整理，仅做文件与内容核验，不运行 audit_project.py、pytest 或任何真实 LLM/API 批次。
 - 根 .gitignore 排除了 references/ 和 *.pdf；PDF 仅在本机保存。formal_experiment/literature/reading_list_20261012 的指南、来源 BibTeX 与 manifest 作 scoped Git checkpoint，不上传论文全文。
+- 用户随后提供 Awad（2008）的本地 PDF，本轮核对题名、三位作者、BPM 2008 / LNCS 5240 和印刷页码 326–341；16 页均可解析并提取文本，首尾页可渲染。按原编号 17 复制入目录，SHA-256 与 Downloads 中原文件一致，保留原文件；此前网络获取失败记录保留为历史。现为 16/18 篇，仅 05、06 缺失。
