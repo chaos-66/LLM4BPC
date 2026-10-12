@@ -1,7 +1,7 @@
-# Sun Stage 2 + LLM 实验设计与创新点
+# Sun Part 2 + LLM 实验设计与创新点
 
 **日期**：2026-07-12  
-**研究目标**：只改变 Sun Stage 2；Stage 3 在三组实验中冻结一致。
+**研究目标**：只改变 Sun Part 2；Part 3 在三组实验中冻结一致。
 
 > **历史设计标注（2026-08-08）**：Rules+LLM-Repair（H1）已按
 > `MASTER_PIPELINE.md` §8.8.1 降级为对照方法，不再实施本文件中的 H1 trigger、
@@ -10,13 +10,13 @@
 
 ## 1. 必须比较的三组方法
 
-| 组 | 输入 | Stage 2 | 输出 | 研究问题 |
+| 组 | 输入 | Part 2 | 输出 | 研究问题 |
 |---|---|---|---|---|
 | B0 | 同一法规句子 | Sun final-paper-faithful reconstruction | Sun 六要素 spans + rule record | 公开资产能否重建 Sun 方法 |
 | H1 | 同一法规句子 | B0，只有预注册失败条件触发 LLM 修复 | 同一 Sun schema，保留规则/LLM provenance | 选择性 LLM 是否优于全规则并降低调用成本 |
-| D1 | 同一法规句子 | 纯 LLM，不读取 B0 预测 | 同一 Sun schema | LLM 能否直接替代整个 Stage 2 |
+| D1 | 同一法规句子 | 纯 LLM，不读取 B0 预测 | 同一 Sun schema | LLM 能否直接替代整个 Part 2 |
 
-B0、H1、D1 使用相同 split、相同六字段定义、相同 span evaluator、相同 Stage 3
+B0、H1、D1 使用相同 split、相同六字段定义、相同 span evaluator、相同 Part 3
 adapter 和阈值。D1 不能先看 B0 结果；H1 的 trigger 不能读取 Gold。
 
 ## 2. Barrientos 到 Sun 的准确借鉴关系
@@ -50,10 +50,10 @@ Barrientos/RC4PC **不是**直接提取 Sun 的六个 span。其实际结构是�
 
 创新不应写成笼统的“在 Sun 后面加一个 LLM”。推荐的完整表述是：
 
-> 构建一个 public-lexicon-grounded Sun Stage 2，并以推理时可观察的不确定性作为
+> 构建一个 public-lexicon-grounded Sun Part 2，并以推理时可观察的不确定性作为
 > 门控，仅让 LLM 修复失败字段；LLM 同时输出 Sun 六要素证据 spans 与
 > Barrientos-style 规范化 compliance pattern，两个视图经确定性一致性检查后才
-> 进入 Stage 3。
+> 进入 Part 3。
 
 它包含四个可分别验证的贡献：
 
@@ -65,7 +65,7 @@ Barrientos/RC4PC **不是**直接提取 Sun 的六个 span。其实际结构是�
 3. **表示贡献**：一个输出同时包含 source-faithful span view 和 downstream
    normalized pattern view，解决纯 LLM 容易语义正确但表示不一致的问题。
 4. **评价贡献**：同时报告 span 正确性、稳定性、覆盖率、风险-覆盖曲线、调用成本
-   和 Stage 3 错误传播，而不是只比较最终 compliance accuracy。
+   和 Part 3 错误传播，而不是只比较最终 compliance accuracy。
 
 ## 4. H1 的预注册 trigger
 
@@ -78,7 +78,7 @@ Barrientos/RC4PC **不是**直接提取 Sun 的六个 span。其实际结构是�
 - 同一 span 被赋给互斥字段；
 - condition/exception marker 命中但找不到完整作用域；
 - actor 候选多于一个且 dependency 关系不能消歧；
-- rule record 无法通过固定 Stage 3 adapter。
+- rule record 无法通过固定 Part 3 adapter。
 
 不得使用“该样本在 Gold 上错了”“该类别测试集表现差”或 test distribution 来触发
 LLM。阈值只在 development split 确定并冻结。
@@ -163,8 +163,8 @@ PET（actor/activity/condition）、MGTC（action/SRL）、AI Act obligations re
 - stability：5 次运行的 field/span agreement；
 - selective prediction：risk-coverage curve、触发率、被修复/被破坏比例；
 - efficiency：每句 token、延迟、估算费用；
-- Stage 3：相同冻结输入下的 matching AP/MAP 和 violation P/R/F1；
-- error propagation：Stage 2 各字段错误对 Stage 3 的条件错误率。
+- Part 3：相同冻结输入下的 matching AP/MAP 和 violation P/R/F1；
+- error propagation：Part 2 各字段错误对 Part 3 的条件错误率。
 
 缺失/invalid/API-error 必须计入 coverage，不能从分母删除。真实 LLM 调用前必须
 获得用户明确授权。
@@ -189,16 +189,16 @@ PET（actor/activity/condition）、MGTC（action/SRL）、AI Act obligations re
 3. D1 direct LLM；
 4. 同一小型、独立冻结 Gold；
 5. 一次 lexicon 消融和一次 dual-view 消融；
-6. 六要素 span F1 + stability + coverage/cost + 冻结 Stage 3 结果；
+6. 六要素 span F1 + stability + coverage/cost + 冻结 Part 3 结果；
 7. 完整报告 Sun 原资产缺失和语言不一致。
 
 这套设计既保留“方法尽量和 Sun 一样”，又让 LLM 的贡献具体可检验；即使最终拿
 不到 Sun 原 marker 和 150 句 Gold，也不会把不可复现部分伪装成 exact baseline。
 
-## 10. Stage 3 端到端验证
+## 10. Part 3 端到端验证
 
-不修改 Stage 3 不等于不评价 Stage 3。B0、H1、D1 必须进入相同冻结的 Sun Stage
-3，以回答 Stage 2 的 P/R 提升是否改善 AP/MAP、missing-action、incorrect-actor
+不修改 Part 3 不等于不评价 Part 3。B0、H1、D1 必须进入相同冻结的 Sun Stage
+3，以回答 Part 2 的 P/R 提升是否改善 AP/MAP、missing-action、incorrect-actor
 和 out-of-order P/R/F1。
 
 Sun 作者稿 Table 12 将其 violation checking 与 Winter 比较，报告 Winter

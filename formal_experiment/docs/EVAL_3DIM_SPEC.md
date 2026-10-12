@@ -1,8 +1,8 @@
-# Stage 2 Evaluation Spec (Wave 1.1 v2)
+# Part 2 Evaluation Spec (Wave 1.1 v2)
 
 > **版本**：v2 (2026-07-12)
 > **依据**：Barrientos artifact 的专家标注协议（不是论文自动方法主表）+ `docs/research/BARRIENTOS_BORROWING_AUDIT_2026-07-12.md` §3.1 的 2026-08-20 来源分层纠正 + Wave 1.1 §5 修正
-> **目的**：定义 Stage 2 输出的评估指标体系，包括主指标、3 维度的准确拆分、和语义等价性测试方式
+> **目的**：定义 Part 2 输出的评估指标体系，包括主指标、3 维度的准确拆分、和语义等价性测试方式
 > **范围**：仅 spec；**不**实现 `three_dim_eval.py`（Wave 2 才开始）
 > **配套**：`docs/STYLE_EQUIVALENT_SPEC.md`（评估体系内的 normalization-aware matching 部分）
 > **Wave**：Wave 1.1 spec 阶段
@@ -29,7 +29,7 @@
 
 ## 2. 主指标（必须保留）
 
-这些是 Stage 2 的核心指标，**与 Sun 论文保持一致**，便于审稿人对照。
+这些是 Part 2 的核心指标，**与 Sun 论文保持一致**，便于审稿人对照。
 
 ### 2.1 Modality 4 类分类
 
@@ -188,7 +188,7 @@ clause_id uniqueness 是 **validation invariant**，不是准确率：
 
 - **clause/entity 对齐算法**：选择 Hybrid（先 ID 后 span）作为默认
 - **缺失类 macro-F1**：F1=0 还是不计入？目前定为 F1=0 + 报告 N/A
-- **stage 3 是否需要单独 1 张表**：B0/H1/D1 三组分别送入同一冻结 Stage 3，看下游增量。这是另一个 spec（`docs/ROUTE_LOCK.md` 提到）— 跟本 spec 分开
+- **Part 3 是否需要单独 1 张表**：B0/H1/D1 三组分别送入同一冻结 Part 3，看下游增量。这是另一个 spec（`docs/ROUTE_LOCK.md` 提到）— 跟本 spec 分开
 
 ---
 

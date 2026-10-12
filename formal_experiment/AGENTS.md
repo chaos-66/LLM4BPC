@@ -2,11 +2,26 @@
 
 This directory is the only active experiment surface.
 
+## Current framework terminology (2026-10-12)
+
+用户要求将当前项目旧的阶段编号展示名称统一改为 **Part 1/2/3**。
+Part 1（流程模型解析与标签语义抽取）和 Part 2（合规语义抽取）是独立并行的
+上游部分，分别生成 Process Record 和 Rule Record，共同供 Part 3（规则—流程
+匹配与违规检查）使用。编号只标识组成部分，不表示 Part 1 → Part 2 的执行顺序。
+本节优先于活动文档中旧的“阶段”称呼；项目实施优先级与模块数据依赖分开说明。
+
+论文、汇报稿、活动任务说明与未来报告使用 Part。统一展示映射见
+`configs/paper_method_display_names_v1.json` 的 `parts` 和 `part_dependencies`。
+既有 `stage*` 路径、模块/CLI/schema/合同键、S1/S2/S3 任务 ID、冻结源码、Gold、
+prompt、预测、结果/manifest、追加式旧事件和原始附件是兼容/来源标识，保留原字节；
+引用它们时用当前 Part 名称解释对应关系。归档与文献原文不因展示改名重写。
+本次命名不改变算法、指标、实验状态、授权或任何门禁，也不授权实验重跑。
+
 ## Current method display name (2026-10-10)
 
 用户要求将活动论文、汇报稿、任务文档和报告中的方法名称统一为
 **LLM-based Semantic Extraction（LLM-SE，基于大语言模型的合规语义抽取）**。
-Stage 2 任务统一称 Semantic Extraction；Rule Record 是输出，rule-based 是
+Part 2 任务统一称 Semantic Extraction；Rule Record 是输出，rule-based 是
 基线的抽取机制。历史标签 Direct-LLM / LLM-RE 与该方法相同；兼容 ID
 `direct_llm`、D1、文件路径、冻结预测/manifest 和不可改写的旧实验事件保持原样。
 当前展示名称以 `configs/paper_method_display_names_v1.json` 为准；后续论文报告
@@ -24,9 +39,9 @@ Stage 2 任务统一称 Semantic Extraction；Rule Record 是输出，rule-based
 这不授权读取或修改 `.env`、真实 API、实验重跑、Gold 内容修改或全量测试。
 当前阶段与完成状态见 PROJECT_AUDIT；目录改名只改路径，不替换各 worktree 分支。
 
-## User final paper decision: Stage 2 Table 1 (2026-09-26)
+## User final paper decision: Part 2 Table 1 (2026-09-26)
 
-用户要求再次核对并固定第二阶段论文主表，后续不再改变。唯一数值来源为
+用户要求再次核对并固定Part 2论文主表，后续不再改变。唯一数值来源为
 `outputs/reports/stage2_table1_paper_final_v1.json`：EStG-150、coarse sentence view、
 五字段 `pooled_five_span_fields` Overall F1，LLM-SE **0.8378**，Sun 方法本地
 重建 Rules-Only **0.7631**，差 **+7.47 个百分点**。保留四位小数；两位舍入是
@@ -34,7 +49,7 @@ Stage 2 任务统一称 Semantic Extraction；Rule Record 是输出，rule-based
 固定来源臂 `direct_llm_formal_arm_v1`（原 v6/R3 快照）与 `b0_formal_arm_v1`；
 不再为本表调参、改变评价口径、重跑或用后续消融/actor refinement/100 候选替换。
 0.7631 不是 Sun 原论文报告值；不能把 0.8378 移植到另一 prompt/模型版本。
-固定的是本表的已验证结果与来源，不把 Stage 3 或其他未完成任务标为完成。
+固定的是本表的已验证结果与来源，不把 Part 3 或其他未完成任务标为完成。
 若以后发现客观证据错误，须如实报告并等待用户明确的新决定，不静默改数或隐瞒。
 详细来源、计数和写作范围见 `paper/CLAIM_EVIDENCE_MATRIX.md` C54。
 
@@ -85,13 +100,13 @@ The user's latest instruction is: “规则+LLM直接不要了，不在进行规
 Do not run, resume, rerun, optimize, ablate, or newly evaluate Rules+LLM-Repair
 (`sun_llm_fallback`, legacy H1), including the pending S2.12 F-1/F-2/F-3 stages
 (27 calls). Do not dispatch other rule-first LLM repair/fallback experiments,
-including Stage 3 hybrid fallback, under a different task name.
+including Part 3 hybrid fallback, under a different task name.
 Preserve existing code, predictions, manifests, authorization records, and
 results as historical provenance; their presence or old ready/authorized
 statuses does not authorize further hybrid experiments.
 
-The active Stage 2 comparison is Rules-Only versus LLM-SE. Independent
-LLM-SE extraction evaluated through the same fixed Stage 3 detector stays
+The active Part 2 comparison is Rules-Only versus LLM-SE. Independent
+LLM-SE extraction evaluated through the same fixed Part 3 detector stays
 in scope. The previously proposed 137-call execution is superseded: the
 remaining planned LLM-SE calls are S2.12 36 plus GDPR 74 = 110; the removed
 27 calls must not be reassigned. This cancellation is not API authorization.
@@ -116,7 +131,7 @@ This instruction overrides older three-method dispatch templates and budgets.
 
 用户明确要求 AI 直接根据候选解决剩余判断，不将机械整理或可判断的候选再次推回人工。
 可生成有证据、明确署名 AI 的补充判定；原人工决定保持不变，不伪称新增判断获得人工
-逐项批准，不自动发布正式 Gold。当前 Stage 3 补充判定已完成，结果见
+逐项批准，不自动发布正式 Gold。当前 Part 3 补充判定已完成，结果见
 `data/development/stage3_synth/stage3_binding_resolved_reference_v1.json`，
 不得因保留 null、无对应或 process-only 就重新创建待用户审核的同批任务。
 本轮查阅归档候选是用户明确指定的追溯；默认归档排除规则继续生效。
@@ -154,8 +169,8 @@ formal manifest must remain explicit TODOs.
 
 Before editing human-review data, also read `docs/HUMAN_GOLD_GUIDE.md`.
 
-Sun et al. (2024) supplies the complete three-stage methodological backbone.
-Winter et al. (2020) supplies a Stage 3 comparison baseline. Barrientos et al.
+Sun et al. (2024) supplies the complete three-part methodological backbone.
+Winter et al. (2020) supplies a Part 3 comparison baseline. Barrientos et al.
 (2026) is a candidate source for complex legal data and LLM structured-output,
 validation, controlled-vocabulary, and normalization ideas; its labels must not
 be treated as Sun-compatible without an explicit adapter and provenance check.
@@ -297,7 +312,7 @@ cross-check are all in place. The user can begin editing
 `data/development/human_review/estg_150_human_correction_v1.json`
 NOW. **Gate 2 is true only after 150/150 adjudicated; it is a
 necessary but NOT sufficient condition for gate 3.** Even if gate 2
-becomes true, gate 3 still requires route / data / stage3 /
+becomes true, gate 3 still requires route / data / Part 3 /
 freeze_policy to each be individually re-locked AND the
 formal_gold_publication_gate.status to be an exact match against
 the contract's `allowed_publication_statuses` whitelist
@@ -316,8 +331,8 @@ Route was reopened on 2026-07-13 after discovery of final-version method
 differences and the official Sun dataset supplement, and re-locked on
 2026-08-06 (user-authorized governance; `route.status=locked`). The
 150-record EStG-150 v2 human_correction file is the active editing surface
-and is NOT a development pack. Gates 3/4 additionally require the stage2
-dataset, stage3 and freeze/publication policy locks, which are all re-locked
+and is NOT a development pack. Gates 3/4 additionally require the Part 2
+dataset, Part 3 and freeze/publication policy locks, which are all re-locked
 as of 2026-08-10.
 
 ### EStG-150 membership is permanently locked (2026-07-13)
@@ -334,7 +349,7 @@ This 150 is:
 - **NOT** an exact reproduction of any external dataset.
 - The project's `independently_reconstructed_estg_150_v1`
   benchmark, published as `LLM-assisted, human-adjudicated Gold`
-  on 2026-08-10 (Stage 2 / Stage 3 Gold artifacts under
+  on 2026-08-10 (Part 2 / Part 3 Gold artifacts under
   `data/gold/`, executable Gold-blind input v2 under
   `data/input/`, publication manifests under `outputs/reports/`).
 
@@ -366,9 +381,9 @@ Only a human may change review states to `approved`, `reviewed`, or
 human decisions, but may not infer them.
 
 The three final methods must share frozen input IDs, locked human Gold, output
-schema, normalization, evaluator, and Stage 3 configuration:
+schema, normalization, evaluator, and Part 3 configuration:
 
-- `sun_rule_only` (legacy ID for the complete non-LLM Sun Stage 2 baseline,
+- `sun_rule_only` (legacy ID for the complete non-LLM Sun Part 2 baseline,
   not the current heuristic runner)
 - `sun_llm_fallback`
 - `direct_llm`

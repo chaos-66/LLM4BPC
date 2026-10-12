@@ -160,7 +160,7 @@ native parser 无法规侧 flow 时保留 unknown 和原因。
 每方法每 BPMN 输出全部五规则的三类信号，共 **20×5×3×3=900** 个信号。
 固定 violated/satisfied/unknown 三态；失败 record/零分母为 unknown。原始证据、
 分母、相似度、actor-action map、端点映射和可达性均落盘。raw_score=0 但分母=0
-不得解释为合规。无法产生信号时保存失败条目，不删行；Stage2 失败的整条 rule
+不得解释为合规。无法产生信号时保存失败条目，不删行；Part 2 失败的整条 rule
 仍须出现在矩阵并标注失败。
 
 先单独推理、保存预测/manifest、结束进程并 checkpoint，然后独立 evaluator
@@ -199,7 +199,7 @@ P=TP/(TP+FP)，R=TP/(TP+FN)，F1=2TP/(2TP+FP+FN)；无报警 P=null，有正例�
   matching_score 低仍检查；三态/固定分母/错类型 FP；矩阵完整。改变参考/目标
   标记不能改变预测，使用此类 metamorphic fixture，不写逐行镜像测试。
 - 现有 `test_prepare_stage3_execution_v4.py`、`test_stage3_reconstruction_v4.py`
-  可选实际相关节点复验输入/解析器；不自动跑全部 Stage3 历史测试。
+  可选实际相关节点复验输入/解析器；不自动跑全部 Part 3 历史测试。
 - 按项目制度记录、checkpoint/push。投影与评价代码必须在第一次 D1 和首次真实
   表三成绩前冻结。机械代码缺陷修复另外版本留痕。
 
@@ -241,7 +241,7 @@ P=TP/(TP+FP)，R=TP/(TP+FN)，F1=2TP/(2TP+FP+FN)；无报警 P=null，有正例�
   真实运行结束另记 experiment_run/manifest 并 checkpoint/push。未全成功可继续
   离线生成显式失败的诊断矩阵，但不能宣布完整抽取验收成功。
 
-### C — 三方法完整矩阵，只跑本地 Stage 3
+### C — 三方法完整矩阵，只跑本地 Part 3
 
 - Sun 用已有 B0 五条真实预测，Ours 用 B 的真实 D1，Winter 用原文。不重跑 B0，
   不用人工参考替换预测，不从表一/二挑更高分 arm。

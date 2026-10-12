@@ -8,7 +8,7 @@
 
 > **2026-09-06 撤回说明（覆盖下列 2026-09-05 段）：原生 FULL/NO-PATTERNS 两提示
 > 360 次（36×2×5）执行方案已被用户撤回（用户澄清：这是对其意图的误解，不得执行；
-> Barrientos 是 Stage 2 的**方法借鉴来源**，Sun 才是整体改进对象，项目不承担“必须
+> Barrientos 是 Part 2 的**方法借鉴来源**，Sun 才是整体改进对象，项目不承担“必须
 > 整体优于 Barrientos”、也不把原样复现其原生提示作为正式对照）。入口脚本/独立合同/
 > 预检报告保留为历史证据（checkpoint `2c5181e`），状态=withdrawn；真实 API=0 不变，
 > 任何执行需用户另行明确授权。下列 2026-09-05 段仅为历史记录。本文其余已实测行
@@ -93,7 +93,7 @@ D1；历史名称 Direct-LLM、此前暂用 LLM-RE）、Rules+LLM-Repair（旧�
   各调用一次，共 16 个 arm-repeat 观测；全 2^3 模型含 8 个参数，残差自由度 8。
 - **固定样本**：`data/input/estg150_formal_inference_input_v2.json`，150 条，
   SHA256 `52a73aa1109970b6c4fbc17214b0828ed0dd64b330001e884cdc803b1ce81dc2`。
-- **Gold/evaluator**：Stage 2 正式冻结 Gold/evaluator 口径不变；evaluator
+- **Gold/evaluator**：Part 2 正式冻结 Gold/evaluator 口径不变；evaluator
   `sun_literal_overlap_evaluation@2.0.0`，配置 SHA256
   `352113b568c6075c8b01dafa5fdf2e5ab4a1454bb10933cd2f9c27f5c008cc3f`；真 Gold
   以冻结 commit `56d2b03` 的 Layer E + membership 构建，等价正式发布件
@@ -113,7 +113,7 @@ D1；历史名称 Direct-LLM、此前暂用 LLM-RE）、Rules+LLM-Repair（旧�
 - **主指标**：每次 arm/repeat 的 `overall.f1`（Sun literal-overlap 六字段
   statement-level 口径）。**次指标**：六个字段的 P/R/F1、无效/失败计数、
   合法输出率；modality 分类 label 不在本 factorial 主表中（该 evaluator
-  只看 evidence span），仍按 Stage 2 单独表报告。
+  只看 evidence span），仍按 Part 2 单独表报告。
 - **失败定义与计数**：网络/API error、空响应、非 JSON、schema/cross-field
   invalid、identity 不符、无法进入 canonical six-field record，均计失败并保留在
   150 条分母中；evaluator 对 invalid attempt 按空抽取处理。逐 arm/repeat 报

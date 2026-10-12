@@ -1,7 +1,7 @@
 # 用户实验决策锁定（2026-07-12）
 
 本文件记录用户已明确接受的复现边界和后续实验原则，供所有后续 Agent 在设计、
-实现、审核和报告时遵循。它只锁定研究路线，不表示数据、Gold、方法或 Stage 3 已
+实现、审核和报告时遵循。它只锁定研究路线，不表示数据、Gold、方法或 Part 3 已
 达到正式运行门禁。
 
 > **2026-07-12 14:25 用户当面更新**：导师要求立刻开始 B0 paper-faithful 重建
@@ -40,7 +40,7 @@ exception 的抽取是否正确，并形成正式 Gold。
 - 在正式数据、英文译文、span schema 和多分句规则锁定前，不启动正式审核；
 - 人工审核结果冻结后，三种方法共享同一份 Gold。
 
-### D3：按论文独立重写 Sun Stage 2
+### D3：按论文独立重写 Sun Part 2
 
 不再以取得 Sun 完整源码为前置条件。允许根据最终论文和关键方法引用独立实现：
 
@@ -49,7 +49,7 @@ exception 的抽取是否正确，并形成正式 Gold。
 3. Tregex/Tsurgeon + reconstructed marker lexicon；
 4. 按 Sun 规定的顺序抽取六要素并构造 rule record。
 
-数据可以与 Sun 原始 phrase 数据不同，但方法、顺序、输入输出语义和 Stage 3 接口
+数据可以与 Sun 原始 phrase 数据不同，但方法、顺序、输入输出语义和 Part 3 接口
 必须一致。报告名称为 `paper-faithful independent reconstruction`，禁止写成
 `exact reproduction` 或 `Sun original code`。
 
@@ -63,7 +63,7 @@ split 和 checkpoint hash；不得暗示权重与 Sun 作者相同。
 
 ### D5：德文 EStG 翻译为英文
 
-工作语言锁定为英文：保留德文原文，通过固定翻译流程生成英文文本，Stage 2 的
+工作语言锁定为英文：保留德文原文，通过固定翻译流程生成英文文本，Part 2 的
 六要素抽取和人工审核以英文译文为主，并允许审核者查看德文原文。
 
 要求：
@@ -72,12 +72,12 @@ split 和 checkpoint hash；不得暗示权重与 Sun 作者相同。
 - 正式审核前由用户确认译文，尤其是 modal、negation、condition、exception 和
   actor/action 边界；
 - Gold span 基于冻结的英文译文字符偏移；译文修改后必须使旧 span 失效并重新审；
-- 三种 Stage 2 方法读取完全相同的冻结英文译文；
+- 三种 Part 2 方法读取完全相同的冻结英文译文；
 - 翻译是公开报告的数据适配步骤，不得说 Sun 原论文明确采用了同一翻译流程。
 
-## 2. Stage 3 在 Sun 中到底比较了什么
+## 2. Part 3 在 Sun 中到底比较了什么
 
-当前可读 Sun 作者稿的 Stage 3 包含两类评价：
+当前可读 Sun 作者稿的 Part 3 包含两类评价：
 
 1. **Matching 评价**：在 12 个智能电表 process models 上报告不同阈值下每个模型
    的 AP 和整体 MAP；在 4 个 GDPR BPMN 上再次报告 AP/MAP。这主要验证 Sun 自己
@@ -97,21 +97,21 @@ Sun 的解释是：Winter 对更多 clause 进行检查，因此 recall 较高�
 Tables 9--12。该文件来自较早作者稿；最终发表版可获得后仍需核对表号和数字是否
 发生变化。
 
-## 3. 本研究的 Stage 3 是否必须比较
+## 3. 本研究的 Part 3 是否必须比较
 
 ### 必须做的比较
 
-本研究必须让三种 Stage 2 输出进入**同一个冻结的 Sun Stage 3**，然后比较：
+本研究必须让三种 Part 2 输出进入**同一个冻结的 Sun Part 3**，然后比较：
 
-- B0：Sun Stage 2 独立重建；
-- H1：同一 Sun Stage 2 + LLM fallback；
-- D1：纯 LLM 替换 Stage 2。
+- B0：Sun Part 2 独立重建；
+- H1：同一 Sun Part 2 + LLM fallback；
+- D1：纯 LLM 替换 Part 2。
 
-原因是研究目标不仅是“六要素 P/R 更高”，而是验证更好的 Stage 2 是否真的改善
-最终合规检查。只报告 Stage 2 指标不能证明下游价值。
+原因是研究目标不仅是“六要素 P/R 更高”，而是验证更好的 Part 2 是否真的改善
+最终合规检查。只报告 Part 2 指标不能证明下游价值。
 
-Stage 3 必须冻结以下内容：BPMN 集合、法规输入、matching 算法、相似度模型、
-threshold、三类 violation 规则、Gold 和 evaluator。三组之间只允许 Stage 2 输出
+Part 3 必须冻结以下内容：BPMN 集合、法规输入、matching 算法、相似度模型、
+threshold、三类 violation 规则、Gold 和 evaluator。三组之间只允许 Part 2 输出
 不同。
 
 ### 与 Sun 论文数字的关系
@@ -120,7 +120,7 @@ threshold、三类 violation 规则、Gold 和 evaluator。三组之间只允许
 0.77/0.83/0.80 做胜负比较**。这些数字只能作为文献参考，因为 dataset、翻译、
 marker、Gold 和 BPMN subset 不同。
 
-本研究的主要因果比较是：在本研究同一数据和同一 Stage 3 中，H1/D1 相对于 B0
+本研究的主要因果比较是：在本研究同一数据和同一 Part 3 中，H1/D1 相对于 B0
 提升多少。建议报告绝对值和增量，例如：
 
 `Delta downstream F1 = F1(H1 or D1) - F1(B0)`。
@@ -133,22 +133,22 @@ Winter baseline 是推荐的次要比较，不是证明 LLM 创新的最低必�
   W0，有助于复现 Sun 的论文叙事：Winter -> Sun -> Sun+LLM/Direct LLM；
 - 若 Winter 与新数据、翻译或 Gold 无法公平对齐，则只引用 Sun 的文献结果，不把
   0.58/0.89/0.70 混入本研究主结果表；
-- 不能把导师包/Winter 代码称为 Sun Stage 2。
+- 不能把导师包/Winter 代码称为 Sun Part 2。
 
-因此最低必做是 B0/H1/D1 的端到端 Stage 3 对比；W0 是增强型外部 baseline。
+因此最低必做是 B0/H1/D1 的端到端 Part 3 对比；W0 是增强型外部 baseline。
 
-## 4. 如何证明 Stage 2 的提高传递到了 Stage 3
+## 4. 如何证明 Part 2 的提高传递到了 Part 3
 
 正式结果至少分三张表：
 
-1. Stage 2：四类 modality 和六要素 exact/overlap span P/R/F1；
-2. Stage 3：matching AP/MAP、三类 violation 的 P/R/F1；
-3. 传播分析：逐字段统计 Stage 2 错误是否造成 Stage 3 FP/FN。
+1. Part 2：四类 modality 和六要素 exact/overlap span P/R/F1；
+2. Part 3：matching AP/MAP、三类 violation 的 P/R/F1；
+3. 传播分析：逐字段统计 Part 2 错误是否造成 Part 3 FP/FN。
 
 通俗解释：如果 actor 提取更准，应主要改善 incorrect-actor；action 漏检减少，应
 主要改善 missing-action；action 顺序/condition scope 更准，应主要改善
-out-of-order 或规则匹配。若 Stage 2 F1 上升而 Stage 3 不变，也必须如实报告，说明
-提高发生在对下游无影响的字段/样本，或 Stage 3 threshold/匹配算法成为瓶颈。
+out-of-order 或规则匹配。若 Part 2 F1 上升而 Part 3 不变，也必须如实报告，说明
+提高发生在对下游无影响的字段/样本，或 Part 3 threshold/匹配算法成为瓶颈。
 
 ## 5. 当前已授权与未授权的动作（2026-07-12 14:25 + 17:15 更新）
 
@@ -186,13 +186,13 @@ out-of-order 或规则匹配。若 Stage 2 F1 上升而 Stage 3 不变，也必�
   并行路线（17:15 用户决定）
 - 静默修改 `estg_150_canonical_review_v1.json` 的 v1 数据；若需 v2，
   必须建立新文件 + 新 membership_payload_sha256（17:15 用户决定）
-- 启动 Wave 2 Stage 2 评估器（`three_dim_eval.py` /
+- 启动 Wave 2 Part 2 评估器（`three_dim_eval.py` /
   `style_equivalence`）直到 B0 / H1 / D1 实际实现 + 数据审核完成
 
 ### 本节更新不表示
 
 - 路线 v2 已重锁（仍 reopened）
-- Stage 3 BPMN subset、threshold 和 violation Gold 已冻结
+- Part 3 BPMN subset、threshold 和 violation Gold 已冻结
 - 150 句人工 Gold 已完成（canonical review 仍 150/150 needs_review）
 - 任何最终指标可发表
 - EStG-150 v1 是 Sun 论文原始 150（称为
@@ -200,7 +200,7 @@ out-of-order 或规则匹配。若 Stage 2 F1 上升而 Stage 3 不变，也必�
 
 ### 解除方式
 
-后续若路线 v2 完全重锁、Stage 3 配置冻结、官方 modality 数据正式引入并通过 audit，
+后续若路线 v2 完全重锁、Part 3 配置冻结、官方 modality 数据正式引入并通过 audit，
 可取消本节"未授权"列表。届时新一份 `USER_DECISION_LOCK` 取代本文件。
 
 ---

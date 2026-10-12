@@ -12,7 +12,7 @@
 
 ## 3. Methods
 
-- `sun_rule_only`：遗留 ID；正式含义是完整 final-version Sun Stage 2
+- `sun_rule_only`：遗留 ID；正式含义是完整 final-version Sun Part 2
   （BERT-TextCNN + CoreNLP/Tregex/Tsurgeon），无 LLM。
 - `sun_llm_fallback`：先运行同一完整 baseline，仅按预注册 trigger 调 LLM。
 - `direct_llm`：每个输入一次 direct structured extraction，不运行规则。
@@ -32,13 +32,13 @@
 - Sun rule tuple 与六字段一致。
 - LLM provenance/call/error metadata 完整。
 
-## 5. Stage 2 Evaluation
+## 5. Part 2 Evaluation
 
 统一 evaluator 计算每 concept 的 extracted、matched/TP、misclassified/FP、missed/FN、P/R/F1，同时给出 micro/macro。不得在看到结果后修改 partial-match threshold。
 
-## 6. Stage 3 Evaluation
+## 6. Part 3 Evaluation
 
-固定同一 BPMN parser、similarity engine、gamma/delta threshold 和 Gold。三组 Stage 2 records 分别运行 matching 与 checking，输出 AP/MAP 和三类 violation P/R/F1。
+固定同一 BPMN parser、similarity engine、gamma/delta threshold 和 Gold。三组 Part 2 records 分别运行 matching 与 checking，输出 AP/MAP 和三类 violation P/R/F1。
 
 ## 7. Audit Sequence
 
@@ -56,4 +56,4 @@ Git commit 与测试摘要。
 
 ## 8. Reporting Boundary
 
-报告必须区分 exact Sun、paper-faithful reconstruction、direct LLM control 和 Barrientos-inspired engineering。Stage 2 指标与 Stage 3 AP/MAP/violation 指标分表报告；所有 failed/skipped/API-error/schema-invalid 样本计入覆盖说明。
+报告必须区分 exact Sun、paper-faithful reconstruction、direct LLM control 和 Barrientos-inspired engineering。Part 2 指标与 Part 3 AP/MAP/violation 指标分表报告；所有 failed/skipped/API-error/schema-invalid 样本计入覆盖说明。

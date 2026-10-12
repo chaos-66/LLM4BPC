@@ -1,4 +1,4 @@
-# 第二阶段多模型密钥配置与授权调用
+# Part 2多模型密钥配置与授权调用
 
 入口：`scripts/stage2_multi_model.py`。只用 Python 标准库，支持千问、MiMo、Kimi、
 Grok、GLM、MiniMax；模型配置在 `configs/models/stage2_multi_model_v1.json`。
@@ -50,7 +50,7 @@ python formal_experiment/scripts/stage2_multi_model.py plan --providers all --sa
   时间、计划 SHA、各家核实单价和费用上限均待填写。
 
 旧 run ID 不能覆盖。改型号、端点、参数、代码、输入或 prompt 后，重新生成计划并
-取得新授权；不得重用以前 Stage 2/3 的调用额度。
+取得新授权；不得重用以前 Part 2/3 的调用额度。
 
 ## 3. 用户明确批准后才运行
 

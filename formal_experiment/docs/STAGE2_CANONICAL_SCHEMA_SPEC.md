@@ -1,6 +1,6 @@
-# Stage 2 Canonical Prediction Schema Spec
+# Part 2 Canonical Prediction Schema Spec
 
-> **目的**：统一 Stage 2 输出契约（D1 / H1 / B0 全部共用）。
+> **目的**：统一 Part 2 输出契约（D1 / H1 / B0 全部共用）。
 > **版本**：v1.0.0（2026-07-12）
 > **JSON Schema**：`configs/schemas/stage2_prediction.schema.json`
 > **Python validator**：`src/bpc_hybrid/stage2_canonical.py`
@@ -10,7 +10,7 @@
 
 ## 1. 为什么需要这个 schema
 
-在 Wave 1 之前，至少有 4 套互不兼容的 Stage 2 输出表示：
+在 Wave 1 之前，至少有 4 套互不兼容的 Part 2 输出表示：
 
 | 表示 | 文件 | 特点 |
 |---|---|---|
@@ -23,7 +23,7 @@
 - B0 跑出来的记录无法直接跟 LLM 记录对齐
 - LLM 输出的"action 1"、"action 2"在 Gold 端是同一个 actor 引用，ID 互不认识
 - prompt 里的 few-shot 例子没字符 offset，跑出来就破 schema
-- Stage 3 拿不到细粒度证据，只能用 lemmatized string 匹配
+- Part 3 拿不到细粒度证据，只能用 lemmatized string 匹配
 
 **canonical schema 的目标**：一个、所有方法共用、机器能严格校验、人类能一眼读懂。
 
@@ -132,9 +132,9 @@ canonical schema 有 4 类 span：
 **理由**：
 - v1 human_gold_review schema 强制 `actions: minItems: 1`——但这是**标注**契约，对预测太严
 - Sun 论文证据尚不足以明确：definition 是否必须有一个 placeholder action
-- Stage 3 adapter 收到空 actions 时，应跳过 missing-action 检查（这是 Stage 3 自己的事）
+- Part 3 adapter 收到空 actions 时，应跳过 missing-action 检查（这是 Part 3 自己的事）
 
-**Unresolved blocker**：等待 Sun 最终版全文 + Stage 3 配置冻结后再决。当前**保守允许空**。
+**Unresolved blocker**：等待 Sun 最终版全文 + Part 3 配置冻结后再决。当前**保守允许空**。
 
 ### 6.2 5/6-digit sample_id 冲突
 
@@ -186,7 +186,7 @@ JSON Schema 表达不了的，Python validator 强制：
 
 | 项 | v1 human_gold_review 1.0.0 | canonical stage2_prediction 1.0.0 |
 |---|---|---|
-| 用途 | 人工 Gold 审核包 | Stage 2 预测输出 |
+| 用途 | 人工 Gold 审核包 | Part 2 预测输出 |
 | 顶层字段 | `text_review`, `annotation_review`, `do_not_auto_score` | `method`, `validation` |
 | Review 状态机 | ✅ 内嵌 | ❌ 没有（review 走独立 schema） |
 | 字符 offset | ✅ | ✅ |
@@ -266,7 +266,7 @@ JSON Schema 表达不了的，Python validator 强制：
 - v2 human review pack 何时冻结
 - v1 vs v2 sample_id 集何时合并
 - definition 的 action 规则（见 §6.1）
-- Stage 3 adapter 如何处理空 actions 的 clause
+- Part 3 adapter 如何处理空 actions 的 clause
 
 这些**不是** canonical schema 本体的 blocker，是项目级未决议题。
 

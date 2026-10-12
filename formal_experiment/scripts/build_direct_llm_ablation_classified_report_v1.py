@@ -503,7 +503,7 @@ def to_markdown(report: dict[str, Any]) -> str:
         "接口适配优势；actor、"
         "action、exception、definition 等不能在 Barrientos schema 中直接表达，"
         "所以不能把两边 native F1 强行排成总榜。",
-        "本批没有运行 Stage 3，因此不能据此声称已经提高 BPMN 违规检测准确率。",
+        "本批没有运行 Part 3，因此不能据此声称已经提高 BPMN 违规检测准确率。",
         "",
         "## 五、1140 次调用是怎样分配的",
         "",
@@ -539,7 +539,7 @@ def to_markdown(report: dict[str, Any]) -> str:
         "- 也必须说：Barrientos 在共享三类 modality 上更好，在自己的 schema 中"
         "也稳定有效。",
         "- 还不能说：本文每个模块都已经分别证明有效，或本文在所有任务上全面"
-        "优于 Barrientos；本批也没有评价 Stage 3 违规检测效果。",
+        "优于 Barrientos；本批也没有评价 Part 3 违规检测效果。",
         "",
         "**当前判断：1140 次结果不是白跑，但只有其中 Full vs 去 few-shot 是现成的"
         "核心一因素消融；其余应分别归入压力测试、模块替换和外部对照。**",

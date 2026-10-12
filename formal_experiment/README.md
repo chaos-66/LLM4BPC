@@ -1,8 +1,13 @@
 # Formal Experiment
 
-这是 `LLM4BPC` 唯一的活动实验目录。项目完整目标是重建并改进 Sun 的
-Stage 1/2/3：先完成 Stage 2 多 baseline 与复杂法律语料比较，再补齐 Stage 1，
-最后完成 Stage 3 多 baseline、错误类型分类和端到端消融。
+这是 `LLM4BPC` 唯一的活动实验目录。项目完整目标是重建并改进 Sun 方法的
+三个组成部分：Part 1 解析 BPMN 并生成 Process Record；Part 2 从合规需求生成
+Rule Record；Part 3 使用两种记录完成匹配与违规检查。Part 1 与 Part 2 是独立
+并行的上游部分，编号不表示先后执行顺序。具体实施优先级见主 Pipeline。
+
+当前展示名称统一使用 Part 1/2/3。既有 `stage*` 路径、模块、CLI、schema、
+合同键和 S1/S2/S3 任务 ID 作为兼容标识保留；冻结结果、manifest、日志与原始
+附件保留来源字节。统一名称和依赖映射见 `configs/paper_method_display_names_v1.json`。
 
 ## 项目名称与路径
 
@@ -21,7 +26,7 @@ Agent 和人类都按以下顺序进入：
 
 1. `docs/MASTER_PIPELINE.md`：唯一完整路线、任务树、依赖和完成定义；
 2. `docs/PROJECT_AUDIT.md`：唯一实时状态与当前任务；
-3. `docs/AGENT_RUNBOOK.md`：分阶段派工规则和可复制 Prompt；
+3. `docs/AGENT_RUNBOOK.md`：按任务依赖派工规则和可复制 Prompt；
 4. `docs/DIRECTORY_GUIDE.md`：每个目录的职责和文件去向；
 5. `docs/EXPERIMENT_LOG.md`：中文实验日志和最新已验证变更；
 6. `AGENTS.md`：强制操作边界；
@@ -44,7 +49,7 @@ Agent 和人类都按以下顺序进入：
 - 现有 `sun_rule_only` 是 development heuristic，不是完整 Sun baseline；
 - S2.3 `public_marker_lexicon_en_v1` 已离线 verified，但仍是 development-only，
   未激活 extractor、训练或评价；
-- B0、H1、正式 D1、Stage 1 和 Stage 3 均未完成；
+- B0、H1、正式 D1、Part 1 和 Part 3 均未完成；
 - 未经用户明确授权，不运行真实 LLM/API；
 - 没有 formal Gold，也没有可用于最终论文结论的正式结果。
 

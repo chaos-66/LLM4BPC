@@ -1,4 +1,4 @@
-# Agent 分阶段执行手册与 Prompt 库
+# Agent 按任务依赖执行手册与 Prompt 库
 
 本文是静态派工手册：规定怎样把主 Pipeline 的任务交给 Agent、怎样验收、什么时候
 必须停止。实时状态和当前派工只写在 `PROJECT_AUDIT.md`，本文不建立第二份状态页，
@@ -60,7 +60,7 @@ S2.1-A 来源/许可/原始文件证据
   → S2.3 → S2.4 → S2.5 → S2.6（完整 B0）
   → S2.7/S2.9 → S2.10
   → G0.5/S2.11 → S2.12 → S2.13
-  → Stage 1 + S3.1-S3.3 数据治理 → Stage 3 formal Oracle → 端到端消融
+  → Part 1 + S3.1-S3.3 数据治理 → Part 3 formal Oracle → 端到端消融
 
 论文轨道（与实验并行）
 PW0 骨架/主张账本
@@ -181,7 +181,7 @@ paper/THESIS_DRAFT.md、paper/CLAIM_EVIDENCE_MATRIX.md、MASTER_PIPELINE §§2�
 PROJECT_AUDIT 和 docs/research/。内部研究审计只能作为证据导航；正式文献主张必须
 回到本地可核验的原论文。无法核验页码或表号时写 TODO-SOURCE，禁止猜测。
 
-引言必须覆盖：design-time BPC 问题；Stage 1/2/3 关系；Sun 方法的作用和不可得
+引言必须覆盖：design-time BPC 问题；Part 1/2/3 关系；Sun 方法的作用和不可得
 资产；比较传统方法、paper-faithful Sun 重建、Direct LLM 和 selective Hybrid 的
 动机；复杂法律语料是待检验问题而不是既定优势；RQ0–RQ4。
 
@@ -207,7 +207,7 @@ DoD：引言形成可读初稿；每个结果性句子都是待检验时态或�
 PROJECT_AUDIT、paper/CLAIM_EVIDENCE_MATRIX.md 和待审章节。逐句检查 planned method
 是否被写成 completed、development 是否被写成 formal、是否声称 exact/original
 Sun、是否把 LLM-assisted Gold 写成纯人工、是否把 C2/C3/C4 写成 C1、是否提前
-声称 LLM 优势、是否混淆 Stage 2/3。按严重度输出“原句—证据问题—安全替换句—
+声称 LLM 优势、是否混淆 Part 2/3。按严重度输出“原句—证据问题—安全替换句—
 所需 TODO/解锁任务”。不得自行补数字、页码或来源。
 ```
 
@@ -249,15 +249,15 @@ Sun、是否把 LLM-assisted Gold 写成纯人工、是否把 C2/C3/C4 写成 C1
 
 - 依赖：C verified。
 - 写入：contract 的 modality 子状态、`audit.py`、相关测试、唯一实时状态页。
-- 边界：顶层 Stage 2 数据路线仍保持 reopened；S2.2 仍由人工决定；不得解锁 B0、
-  formal Gold、Stage 3 或 final-ready。
+- 边界：顶层 Part 2 数据路线仍保持 reopened；S2.2 仍由人工决定；不得解锁 B0、
+  formal Gold、Part 3 或 final-ready。
 - DoD：机器检查验证 manifest/hash/row/label/split/license；S2.1 标 verified；全测和
   中文日志事件完成。
 - 当前状态：**verified**。可移植 manifest、独立 gate、负测试、合同与实时状态已收口；
-  `sun_modality_development_data_verified=true`，但 human freeze、formal Gold、Stage 3
+  `sun_modality_development_data_verified=true`，但 human freeze、formal Gold、Part 3
   和 final experiment 门禁仍关闭。后续不得把本节作为进入 S2.3/S2.4 的隐式授权。
 
-## 6. Stage 2 方法任务卡
+## 6. Part 2 方法任务卡
 
 每次只派发一个任务卡，工作 Agent 必须把第 3 节通用前缀一起复制进 Prompt。
 
@@ -275,7 +275,7 @@ Sun、是否把 LLM-assisted Gold 写成纯人工、是否把 C2/C3/C4 写成 C1
 | G0.5 | 复杂度合同 | 结果前冻结文本/BPMN复杂度字段和 bins | 不得看复杂集 test 结果 |
 | S2.11 | 复杂语料冻结 | 来源/许可/hash/标签映射/人工协议 | G0.5 verified |
 | S2.12 | 复杂度与错误分析 | 退化曲线、预注册错误类型、覆盖/失败数 | S2.10/S2.11 verified |
-| S2.13 | Stage 2 冻结 | 数据/Gold/方法/指标/成本/manifests | S2.1–S2.12 全部通过 |
+| S2.13 | Part 2 冻结 | 数据/Gold/方法/指标/成本/manifests | S2.1–S2.12 全部通过 |
 
 补充边界：S2.9 的锁定不等于授权真实 LLM；所有新的真实运行必须另有用户明确授权、
 模型和硬调用预算。S2.8 已停止优化，不能据此派发新 H1 调用。S2.10/S2.12 的论文数字只能来自 `experiment_run` 事件和
@@ -287,25 +287,25 @@ public seed 共 64 个，development 扩展 count=0；source/manifest/combined p
 hash 已由机器门禁锁定。Wiktionary actor dump 未在本轮伪造或补取，旧 heuristic
 词表未被当成 S2.3 产物。后续任务不得静默覆盖 v1 或用 test/Gold/结果补词。
 
-## 7. Stage 1、Stage 3 与端到端 Prompt 卡
+## 7. Part 1、Part 3 与端到端 Prompt 卡
 
-### Stage 1：S1.1—S1.7
+### Part 1：S1.1—S1.7
 
 ```text
-只执行协调 Agent 指定的一个 S1.x。Stage 1 只有在 Stage 2 core 达到主 Pipeline
+只执行协调 Agent 指定的一个 S1.x。Part 1 只有在 Part 2 core 达到主 Pipeline
 门禁后开始。按 S1.1 schema → S1.2 结构解析 → S1.3 标签语义/S1.4 控制流 →
 S1.5 人工 Gold → S1.6 baseline 评价 → S1.7 冻结串行推进。不得用历史资产冒充
 冻结组件，不得在 S1.5 中自动产生人工 Gold。每个方法共享 Process Record schema、
 fixtures、normalization 和 evaluator。
 ```
 
-### Stage 3：S3.1—S3.11
+### Part 3：S3.1—S3.11
 
 ```text
 只执行协调 Agent 指定的一个 S3.x。S3.1-S3.3 的 BPMN 身份、matching/violation Gold
-治理可在 Stage 2 收口前受控推进；明确标注 development 的 wrapper/baseline 准备也可
+治理可在 Part 2 收口前受控推进；明确标注 development 的 wrapper/baseline 准备也可
 并行。S3.4 正式完成仍需 S1.7/S2.13，S3.7 正式 Oracle 主表还需 formal Gold publication；
-S3.8+ 必须等正式 Oracle、机器合同更新和相应授权。Oracle Stage 3 先于 LLM/Hybrid，
+S3.8+ 必须等正式 Oracle、机器合同更新和相应授权。Oracle Part 3 先于 LLM/Hybrid，
 Oracle 与 end-to-end 必须分表；matching 与 violation classification 也必须分开。
 不得把 fixture scaffold 称完整复现，不得把 all-seven extension 写成 Sun 原4。
 ```
@@ -319,9 +319,9 @@ docs/research/S3_REAL_CASE_E2E_TASK_SPEC_2026-09-11.md（v5 及 §10 已决事�
 固定设计：
 - 主案例 = references/barrientos_2026 的 Sun 派生 SIM 流程 × 5 条 v2 非空规则
   （r8/r9/r10/r11/r13）；r12 作背景单列；r9/v1 与 r12/v2 空文本不进入检测。
-- 公共 Stage 1 记录一份，三组消费；协作图需经声明的扁平化适配（泳道即参与者名）。
+- 公共 Part 1 记录一份，三组消费；协作图需经声明的扁平化适配（泳道即参与者名）。
 - A=非 LLM 确定性抽取 + 冻结 Sun 式三类；B=既有真实 LLM 预测（repeat-01）+ 与 A 相同三类；
-  C=与 B 同一 Stage 2 与三类结果 + 四类扩展。
+  C=与 B 同一 Part 2 与三类结果 + 四类扩展。
 - 角色绑定与顺序关系推导政策必须在打分前写入 plan 并全组统一；参考判断与检测能力解耦。
 命令：
   python scripts/run_sim_case_c1_v1.py --check|--overwrite
@@ -335,8 +335,8 @@ docs/research/S3_REAL_CASE_E2E_TASK_SPEC_2026-09-11.md（v5 及 §10 已决事�
 ### 端到端归因：E00/E10/E01/E11
 
 ```text
-只在 Stage 2 和 Stage 3 均冻结后执行。固定输入、Gold、Process/Rule Record schema、
-normalization 和 evaluator，运行 E00、E10、E01、E11，分别回答 Stage 2、Stage 3
+只在 Part 2 和 Part 3 均冻结后执行。固定输入、Gold、Process/Rule Record schema、
+normalization 和 evaluator，运行 E00、E10、E01、E11，分别回答 Part 2、Part 3
 和交互贡献。不得只报告最佳组合；失败、invalid、成本和覆盖率必须进入 manifest。
 ```
 
@@ -347,12 +347,12 @@ normalization 和 evaluator，运行 E00、E10、E01、E11，分别回答 Stage 
 | PW0 | 目录、骨架、主张账本、TODO 和空表 | 本轮建立；不得含结果数字 |
 | PW1 | 引言、背景、RQ0–RQ4 | 使用待检验时态 |
 | PW2 | Sun/Winter/Sleimi/Michel/Barrientos 相关工作 | 原论文核验；无证据写 TODO-SOURCE |
-| PW3 | 三阶段总体架构与 B0/H1/D1 设计稿 | 未完成组件写 TODO-STATUS |
+| PW3 | 三部分总体架构与 B0/H1/D1 设计稿 | 未完成组件写 TODO-STATUS |
 | PW4 | 数据来源、五层 Gold 和人工协议 | S2.1/S2.2 后定向回填统计 |
 | PW5 | baseline、指标、统计与复现设计 | 对应合同锁定后回填参数 |
 | PW6 | 结果表/图空模板 | 只能是 TEMPLATE，不填数字 |
-| PW7 | Stage 2 正式结果 | S2.10/S2.12/S2.13 + manifest |
-| PW8 | Stage 1/3/端到端结果 | S1.7、S3.7–S3.10、P8 |
+| PW7 | Part 2 正式结果 | S2.10/S2.12/S2.13 + manifest |
+| PW8 | Part 1/3/端到端结果 | S1.7、S3.7–S3.10、P8 |
 | PW9 | 讨论、局限、结论、摘要和终稿 | 主张账本全有正式证据 |
 
 论文回填规则：每次正式实验只做一次定向回填；核对 `experiment_run` 与 manifest；

@@ -5,9 +5,9 @@
 | 文件 | 唯一职责 |
 |---|---|
 | `AGENTS.md` | Agent 强制入口与安全边界 |
-| `docs/MASTER_PIPELINE.md` | 唯一完整三阶段路线与 WBS |
+| `docs/MASTER_PIPELINE.md` | 唯一完整三部分路线与 WBS |
 | `docs/PROJECT_AUDIT.md` | 唯一实时状态、blocker 和下一任务 |
-| `docs/AGENT_RUNBOOK.md` | Agent 分阶段派工、并发边界和可复制 Prompt |
+| `docs/AGENT_RUNBOOK.md` | Agent 按任务依赖派工、并发边界和可复制 Prompt |
 | `docs/DIRECTORY_GUIDE.md` | 人和 Agent 共用的中文目录职责地图 |
 | `docs/FILE_CATALOG.md` | 自动生成的逐文件目录 |
 | `docs/INDEX.md` | 文档分类地图 |
@@ -48,7 +48,7 @@ paper/                        论文工作稿；不作为实验事实源
 ```
 
 EStG-150 的 Layer E 是当前唯一可由用户编辑的审核面。正式 Gold 只能是
-LLM-assisted、human-adjudicated Gold，且必须通过路线、数据、Stage 3 与发布门禁。
+LLM-assisted、human-adjudicated Gold，且必须通过路线、数据、Part 3 与发布门禁。
 
 ## 清理与冻结规则
 

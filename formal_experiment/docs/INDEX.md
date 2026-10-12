@@ -5,15 +5,15 @@
 
 ## Agent 必读
 
-1. `MASTER_PIPELINE.md` — 三阶段目标、流程图、任务树、依赖和完成标准；
+1. `MASTER_PIPELINE.md` — 三部分目标、流程图、任务树、依赖和完成标准；
 2. `PROJECT_AUDIT.md` — 当前实时状态、当前焦点和 blocker；
-3. `AGENT_RUNBOOK.md` — 分阶段派工规则、当前任务 Prompt 模板；
+3. `AGENT_RUNBOOK.md` — 按任务依赖派工规则、当前任务 Prompt 模板；
 4. `DIRECTORY_GUIDE.md` — 每个目录和文件类别的职责；
 5. `EXPERIMENT_LOG.md` — 中文人类可读实验日志；
 6. `AI_CHANGE_PROTOCOL.md` — 实验日志、自动检查和记录要求；
 7. `ROUTE_LOCK.md` — 当前 EStG-150、Gold 和门禁不变量；
 8. `../configs/experiment_contract.json` — 当前阶段机器合同；
-9. `../configs/methods.json` — 当前 Stage 2 方法注册表。
+9. `../configs/methods.json` — 当前 Part 2 方法注册表。
 
 编辑人工审核数据前还必须读 `HUMAN_GOLD_GUIDE.md`。
 
@@ -25,7 +25,7 @@
 
 ## 活动设计规范
 
-- `B0_RECONSTRUCTION_DESIGN.md` — Sun Stage 2 独立重建；
+- `B0_RECONSTRUCTION_DESIGN.md` — Sun Part 2 独立重建；
 - `STAGE2_CANONICAL_SCHEMA_SPEC.md` — Rule Record 合同；
 - `STAGE2_LLM_INNOVATION_DESIGN.md` — H1/D1 设计；
 - `EVAL_3DIM_SPEC.md`、`STYLE_EQUIVALENT_SPEC.md` — 语义与结构评价；
@@ -50,7 +50,7 @@
 - `../src/bpc_hybrid/sun_style/public_marker_lexicon.py` — S2.3 离线确定性生成、加载与
   fail-closed 机器门禁实现。
 - `research/D1_ACTOR_EXPLORATORY_BRANCH_2026-09.md` — LLM-SE Actor 字段
-  development-only 探索性支线归档；不是正式 Stage 2 主结果。
+  development-only 探索性支线归档；不是正式 Part 2 主结果。
 
 ## 目录与逐文件导航
 

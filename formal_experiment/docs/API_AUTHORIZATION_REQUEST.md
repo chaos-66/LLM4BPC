@@ -274,7 +274,7 @@ input tokens 只能从真实响应 usage 获得**。本地 Legal-BERT WordPiece 
 
 ## 10. 本申请之外的阻塞
 
-- S2.13 freeze 与 Stage 3 / 9 个 GDPR Gold Rule Records / S3.7 Oracle 授权均为
+- S2.13 freeze 与 Part 3 / 9 个 GDPR Gold Rule Records / S3.7 Oracle 授权均为
   独立事项，不随本申请自动解锁。
 - 未获授权前：0 calls、cost=null、不读取 `.env`；runner 默认 fake transport；
   API 状态保持 `API BLOCKED / ZERO CALLS`。
@@ -291,7 +291,7 @@ input tokens 只能从真实响应 usage 获得**。本地 Legal-BERT WordPiece 
 | 批次 | 内容 | 输入 | 调用数 | 模型 / prompt / retry | cap（引用报告） |
 |---|---|---|---|---|---|
 | **A（unchanged，S2.12 复杂语料）** | `direct_llm` 36 次 + `sun_llm_fallback` 27 次 = **63 次**；计划与 caps **不变** | `data/input/s2_12_complex_corpus_formal_input_v1.json`（sha256 `892d4284…`，36 records） | 63 | `deepseek-v4-pro`；direct 用 v6 prompt（sha `3aa64877…`）、fallback 用 `rule_first_llm_fallback_prompt`（sha `00fe0299…`）；retry=0 | 与既有请求完全一致（见 §2–§3 与 `outputs/reports/s2_12_execution_readiness_v4.json` + `outputs/reports/s2_12_api_preflight_v1.json`）：请求体 ≤17,493 B/次、总计 ≤749,805 B；global input ≤**63,000,000**、output ≤**258,048**（单次 ≤4,096）、USD ≤**84.18（peak）** / ≤**42.09（off-peak-only）**；官方价格运行前必须重新核验 |
-| **B（new，GDPR 衔接 LLM-SE 臂）** | GDPR Stage-2→Stage-3 衔接的 `direct_llm` 臂：每句 1 次 = **74 次**；**不含** `sun_llm_fallback`（GDPR 衔接只需 direct_llm vs rules_only 配对）；本批**不覆盖**任何其它语料 | `data/input/gdpr7_stage2_input_v1.json`（sha256 `558b8013…`；9 条 GDPR 规则文本、**74 句**、Gold-blind；每句输入 = 该句 `approved_text_en`） | 74 | `deepseek-v4-pro`（发布别名 DeepSeek-V4-Pro-0813）；锁定的 D1 配方：prompt v6（sha `3aa64877…`）、temperature 0、top_p 1、max_tokens 4096、stream=false、thinking disabled、response_format=None；retry=0；**off-peak only**（每次调用前检查北京时间 peak 09:00–12:00 / 14:00–18:00） | 由 `outputs/reports/gdpr7_direct_llm_preflight_v1.json` 渲染并锁定（74 个请求体，逐条 body SHA/字节数/句子 hash 绑定，无原句提交）：请求体 ≤18,459 B/次、总计 1,297,742 B；Legal-BERT proxy 共 367,333 tokens（**规划代理，非计费**；官方 tokenizer 本地不可用，真实 billing input 只能来自响应 usage）；global input cap（保守公式 74×1M context）≤**74,000,000**、output ≤**303,104**（74×4,096）、USD ≤**2.61**（官方 2026-08-19/20 peak 价 input cache-miss $1.32/M、output $3.96/M 按 planning 上界 734,666 tokens + 20% margin 计算；off-peak 折半价下 ≤**1.31**）；官方价格运行前必须重新核验 |
+| **B（new，GDPR 衔接 LLM-SE 臂）** | GDPR Part 2→Part 3 衔接的 `direct_llm` 臂：每句 1 次 = **74 次**；**不含** `sun_llm_fallback`（GDPR 衔接只需 direct_llm vs rules_only 配对）；本批**不覆盖**任何其它语料 | `data/input/gdpr7_stage2_input_v1.json`（sha256 `558b8013…`；9 条 GDPR 规则文本、**74 句**、Gold-blind；每句输入 = 该句 `approved_text_en`） | 74 | `deepseek-v4-pro`（发布别名 DeepSeek-V4-Pro-0813）；锁定的 D1 配方：prompt v6（sha `3aa64877…`）、temperature 0、top_p 1、max_tokens 4096、stream=false、thinking disabled、response_format=None；retry=0；**off-peak only**（每次调用前检查北京时间 peak 09:00–12:00 / 14:00–18:00） | 由 `outputs/reports/gdpr7_direct_llm_preflight_v1.json` 渲染并锁定（74 个请求体，逐条 body SHA/字节数/句子 hash 绑定，无原句提交）：请求体 ≤18,459 B/次、总计 1,297,742 B；Legal-BERT proxy 共 367,333 tokens（**规划代理，非计费**；官方 tokenizer 本地不可用，真实 billing input 只能来自响应 usage）；global input cap（保守公式 74×1M context）≤**74,000,000**、output ≤**303,104**（74×4,096）、USD ≤**2.61**（官方 2026-08-19/20 peak 价 input cache-miss $1.32/M、output $3.96/M 按 planning 上界 734,666 tokens + 20% margin 计算；off-peak 折半价下 ≤**1.31**）；官方价格运行前必须重新核验 |
 
 **合计**：63 + 74 = **137 次调用**；每批各自独立 cap（见上表），**不合并成单一总 USD
 cap**（若需单一保守加总上界 ≈ US$84.18 + US$2.61 ≈ **US$86.79**，仅供预算参考）。
@@ -332,7 +332,7 @@ recommended_usd_cap   = ceil((planning_input_bound×1.32 + 303,104×3.96)/1e6 ×
 > `sun_llm_fallback` 27 次，严格使用 `s2_12_api_preflight_v1.json` 锁定的 63 个
 > 请求体（单次 ≤17,493 B、总计 ≤749,805 B），global input ≤63,000,000、
 > output ≤258,048（单次 ≤4,096）、USD ≤84.18（仅 off-peak 运行则 ≤42.09）；
-> **Batch B（GDPR Stage-2→Stage-3 衔接 LLM-SE 臂）**：对
+> **Batch B（GDPR Part 2→Part 3 衔接 LLM-SE 臂）**：对
 > `gdpr7_stage2_input_v1.json` 的 74 个 `approved_text_en` 句子每句 1 次调用，
 > 仅 `direct_llm`（不含 `sun_llm_fallback`），严格使用
 > `gdpr7_direct_llm_preflight_v1.json` 锁定的 74 个请求体，global input
@@ -351,7 +351,7 @@ English mirror:
 > **Batch A (S2.12 complex corpus, unchanged)**: 36 `direct_llm` + 27
 > `sun_llm_fallback` calls strictly using the 63 locked request bodies of
 > `s2_12_api_preflight_v1.json`, global input ≤63,000,000, output ≤258,048,
-> USD ≤84.18 (≤42.09 if off-peak-only); **Batch B (GDPR Stage-2→Stage-3
+> USD ≤84.18 (≤42.09 if off-peak-only); **Batch B (GDPR Part 2→Part 3
 > linkage LLM-SE arm)**: 74 calls, one per `approved_text_en` sentence of
 > `gdpr7_stage2_input_v1.json` (direct_llm only; no sun_llm_fallback),
 > strictly using the 74 locked request bodies of
@@ -378,7 +378,7 @@ English mirror:
 
 | 文件 | 作用 |
 |---|---|
-| `scripts/run_gdpr7_direct_llm_v1.py` | GDPR Stage-2 LLM-SE 74-call 真实 executor（fake/real 双 transport、per-call payload lock、caps、off-peak、append-only hash-chained ledger + resume、raw JSONL、canonical 预测 capsule） |
+| `scripts/run_gdpr7_direct_llm_v1.py` | GDPR Part 2 LLM-SE 74-call 真实 executor（fake/real 双 transport、per-call payload lock、caps、off-peak、append-only hash-chained ledger + resume、raw JSONL、canonical 预测 capsule） |
 | `configs/ablations/gdpr7_direct_llm_execution_contract_v1.json` | 执行契约：bound commit `6263f08`、74-call 固定计划（preflight report 行、按 sample_id 顺序）、model/sampling/transport pins、hash set（input/preflight/registry/prompt/executor）、caps、authorization=null + 授权句模板（scope `gdpr7_direct_llm_v1:74`） |
 | `tests/test_gdpr7_direct_llm_executor_v1.py` | 离线 fake-transport 全 74 请求验证（8 场景 a–h，零网络） |
 
@@ -443,7 +443,7 @@ caps 与代码内硬上限一致、hash_set 与契约逐条一致（含契约文
 可复制的授权句模板（须用户亲自逐字发出并据此生成授权事件文件；scope 固定为
 `gdpr7_direct_llm_v1:74`）：
 
-> 我授权在 GDPR Stage-2→Stage-3 衔接的 LLM-SE 臂上（scope
+> 我授权在 GDPR Part 2→Part 3 衔接的 LLM-SE 臂上（scope
 > `gdpr7_direct_llm_v1:74`）对 `gdpr7_stage2_input_v1.json` 的 74 个
 > `approved_text_en` 句子每句调用 1 次 `deepseek-v4-pro` 真实 API（DeepSeek-V4-Pro-0813），
 > 共 74 次、retry=0、off-peak only（北京时间 09:00–12:00 / 14:00–18:00 之外，
@@ -455,7 +455,7 @@ caps 与代码内硬上限一致、hash_set 与契约逐条一致（含契约文
 
 English mirror:
 
-> I authorize running the GDPR Stage-2->Stage-3 linkage LLM-SE arm (scope
+> I authorize running the GDPR Part 2->Part 3 linkage LLM-SE arm (scope
 > `gdpr7_direct_llm_v1:74`): 74 real `deepseek-v4-pro` API calls (published
 > alias DeepSeek-V4-Pro-0813), one per `approved_text_en` sentence of
 > `gdpr7_stage2_input_v1.json`, retry=0, off-peak only (outside Beijing
@@ -680,7 +680,7 @@ invalid、identity mismatch、无法进入 canonical six-field record；失败�
 因子解释；不做未预注册 p 值声明。
 
 **授权草案句（用户亲自逐字发出后才创建授权事件）**：
-`我明确授权执行 SEP-C1-B 完整 E/S/J 2^3 Prompt 消融实验：2400 calls，模型 deepseek-v4-pro（DeepSeek-V4-Pro-0813），temperature=0、top_p=1、max_tokens=4096、retry=0；固定 EStG-150 v2 输入与冻结 Stage 2 Gold/evaluator；USD 硬上限 67.36（peak）、off-peak 229.63 元；仅在北京时间闲时执行，超过任一上限立即停止，不自动续跑。`
+`我明确授权执行 SEP-C1-B 完整 E/S/J 2^3 Prompt 消融实验：2400 calls，模型 deepseek-v4-pro（DeepSeek-V4-Pro-0813），temperature=0、top_p=1、max_tokens=4096、retry=0；固定 EStG-150 v2 输入与冻结 Part 2 Gold/evaluator；USD 硬上限 67.36（peak）、off-peak 229.63 元；仅在北京时间闲时执行，超过任一上限立即停止，不自动续跑。`
 
 **下一实现批次（仍未执行）**：新增缺失四臂；生成八臂 manifest/prompt hashes；
 扩展 runner 到 8x2 并接入授权、账本、off-peak、失败停止门；重新渲染 token 预算并

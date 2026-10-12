@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
-**生成日期**：2026-10-10
-**收录文件**：4525 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**生成日期**：2026-10-12
+**收录文件**：4582 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -104,6 +104,7 @@
 | `configs/models/sun_b0_s26_candidate_B_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/models/sun_bert_textcnn_s24.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/multi_model_api_keys.env.example` | 活动 | 不含密钥的配置示例 |
+| `configs/paper_method_display_names_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/paper_winddown_api_authorization_basis_2026_09_07.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/paper_winddown_api_authorization_sentence_2026_09_07.txt` | 活动 | 文本清单或依赖说明 |
 | `configs/paths.json` | 活动 | 机器可读配置、数据、事件或产物 |
@@ -1167,7 +1168,7 @@
 | `docs/agent_prompts/STAGE3_TABLE3_V4.md` | 活动 | 说明、规范或研究文档 |
 | `docs/agent_prompts/STAGE3_TABLE3_V4_R1.md` | 活动 | 说明、规范或研究文档 |
 | `docs/agent_prompts/STAGE3_TWO_TYPE_RESEARCH_GPT.md` | 活动 | 说明、规范或研究文档 |
-| `docs/AGENT_RUNBOOK.md` | 活动 | Agent 分阶段派工规则与可复制 Prompt |
+| `docs/AGENT_RUNBOOK.md` | 活动 | Agent 按任务依赖派工规则与可复制 Prompt |
 | `docs/AI_CHANGE_PROTOCOL.md` | 活动 | 实验日志与自动检查协议 |
 | `docs/ANNOTATION_PROTOCOL.md` | 活动 | 说明、规范或研究文档 |
 | `docs/API_AUTHORIZATION_REQUEST.md` | 活动 | 说明、规范或研究文档 |
@@ -1187,7 +1188,7 @@
 | `docs/HUMAN_PROCESS_GOLD_GUIDE.md` | 活动 | 说明、规范或研究文档 |
 | `docs/INDEX.md` | 活动 | 说明、规范或研究文档 |
 | `docs/LLM_BUDGET_PROPOSAL_2026-07-12.md` | 活动 | 说明、规范或研究文档 |
-| `docs/MASTER_PIPELINE.md` | 活动 | 唯一完整三阶段路线与任务树 |
+| `docs/MASTER_PIPELINE.md` | 活动 | 唯一完整三个部分路线与任务树 |
 | `docs/PROJECT_AUDIT.md` | 活动 | 唯一实时项目状态（兼容文件名） |
 | `docs/REAL_WORLD_ISSUE_REGISTER.md` | 活动 | 说明、规范或研究文档 |
 | `docs/REPRODUCTION_PROTOCOL.md` | 活动 | 说明、规范或研究文档 |
@@ -2998,6 +2999,33 @@
 | `outputs/evidence/stage2_multi_model_sensitivity_v1/multi_model_all_20261007_v2/qwen/responses/qwen_estg_000861.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/stage2_multi_model_sensitivity_v1/multi_model_all_20261007_v2/reports/stage2_multi_model_all_20261007_v2.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/stage2_multi_model_sensitivity_v1/multi_model_all_20261007_v2/reports/stage2_multi_model_all_20261007_v2.md` | 活动 | 说明、规范或研究文档 |
+| `outputs/evidence/stage3_comparison_check_20261010_v1/sun_ours_selected_dev_signals_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/converted_records.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/git_bytes_verification.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/inference_runner_before_plot_recovery.py` | 活动 | Python 实现、脚本或测试 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/known_applicability.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/preparation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/signals_gamma_0.35_theta_0.45.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/signals_gamma_0.45_theta_0.45.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/signals_gamma_0.55_theta_0.25.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/signals_gamma_0.55_theta_0.35.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/signals_gamma_0.55_theta_0.45.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/signals_gamma_0.55_theta_0.55.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/signals_gamma_0.55_theta_0.65.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/signals_gamma_0.65_theta_0.45.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/signals_gamma_0.75_theta_0.45.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/source_snapshot/bpc_hybrid/role_surface.py` | 活动 | Python 实现、脚本或测试 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/source_snapshot/bpc_hybrid/stage3_v2/__init__.py` | 活动 | Python 实现、脚本或测试 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/source_snapshot/bpc_hybrid/stage3_v2/action_order_projection_v2.py` | 活动 | Python 实现、脚本或测试 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/source_snapshot/bpc_hybrid/stage3_v2/checker_v2.py` | 活动 | Python 实现、脚本或测试 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/source_snapshot/bpc_hybrid/stage3_v2/rule_order_adapter_v3.py` | 活动 | Python 实现、脚本或测试 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/source_snapshot/bpc_hybrid/stage3_v2/rule_record_converter_v2.py` | 活动 | Python 实现、脚本或测试 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/source_snapshot/bpc_hybrid/stage3_v2/semantic_matcher_v2.py` | 活动 | Python 实现、脚本或测试 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/source_snapshot/bpc_hybrid/sun_stage3/__init__.py` | 活动 | Python 实现、脚本或测试 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/source_snapshot/bpc_hybrid/sun_stage3/sun_model.py` | 活动 | Python 实现、脚本或测试 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/source_snapshot/bpc_hybrid/sun_stage3/sun_rule_extraction.py` | 活动 | Python 实现、脚本或测试 |
+| `outputs/evidence/stage3_gamma_theta_sensitivity_20261010_v1/source_snapshot/bpc_hybrid/sun_stage3/sun_scorer.py` | 活动 | Python 实现、脚本或测试 |
 | `outputs/evidence/stage3_winter_paper_rerun_20261010_v1/execution_manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/stage3_winter_paper_rerun_20261010_v1/global_role_candidates.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/stage3_winter_paper_rerun_20261010_v1/predictions.json` | 活动 | 机器可读配置、数据、事件或产物 |
@@ -3481,15 +3509,26 @@
 | `outputs/reports/stage3_binding_reference_assessment_v1.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/stage3_binding_reference_validation_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/stage3_binding_repair_summary_v1.md` | 活动 | 说明、规范或研究文档 |
+| `outputs/reports/stage3_comparison_check_20261010_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/stage3_comparison_check_20261010_v1.md` | 活动 | 说明、规范或研究文档 |
+| `outputs/reports/stage3_comparison_reproduction_20261010_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/stage3_comparison_reproduction_20261010_v1.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/stage3_d1_preflight_v4.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/stage3_d1_preflight_v4.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/stage3_d1_v4_execution_blocked_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/stage3_d1_v4_r1_live_contract_check.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/stage3_d1_v4_r1_raw_responses_safe.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/stage3_gamma_theta_sensitivity_20261010_v1.csv` | 活动 | 项目文件 |
+| `outputs/reports/stage3_gamma_theta_sensitivity_20261010_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/stage3_gamma_theta_sensitivity_20261010_v1.md` | 活动 | 说明、规范或研究文档 |
+| `outputs/reports/stage3_gamma_theta_sensitivity_20261010_v1.png` | 活动 | 项目文件 |
+| `outputs/reports/stage3_gamma_theta_sensitivity_20261010_v1.svg` | 活动 | 历史可视化或报告 |
 | `outputs/reports/stage3_grounded_checker_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/stage3_grounded_checker_v1.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/stage3_grounding_intervention_test_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/stage3_grounding_intervention_test_v1.md` | 活动 | 说明、规范或研究文档 |
+| `outputs/reports/stage3_method_fidelity_check_20261010_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/stage3_method_fidelity_check_20261010_v1.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/stage3_ours_leakage_causality_audit_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/stage3_ours_leakage_causality_audit_v1.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/stage3_ours_v1_evaluation.json` | 活动 | 机器可读配置、数据、事件或产物 |
@@ -3602,10 +3641,26 @@
 |---|---|---|
 | `paper/ABLATION_MATRIX.md` | 活动 | 说明、规范或研究文档 |
 | `paper/CLAIM_EVIDENCE_MATRIX.md` | 活动 | 科学主张、证据状态和解锁条件 |
+| `paper/cscwd2027/2027_CSCWD_formula_corrected.tex` | 活动 | 项目文件 |
+| `paper/cscwd2027/compliance_checking_sun_formulas.tex` | 活动 | 项目文件 |
+| `paper/cscwd2027/FORMULA_CORRECTION_NOTES.md` | 活动 | 说明、规范或研究文档 |
+| `paper/cscwd2027/revision_20261011/.gitignore` | 活动 | 项目文件 |
+| `paper/cscwd2027/revision_20261011/introduction.tex` | 活动 | 项目文件 |
+| `paper/cscwd2027/revision_20261011/method_and_evaluation_notes.tex` | 活动 | 项目文件 |
+| `paper/cscwd2027/revision_20261011/part2_postprocessing.tex` | 活动 | 项目文件 |
+| `paper/cscwd2027/revision_20261011/README.md` | 活动 | 所在目录的入口说明 |
+| `paper/cscwd2027/revision_20261011/references_18.bib` | 活动 | 项目文件 |
+| `paper/cscwd2027/revision_20261011/REVIEW_AND_USE.md` | 活动 | 说明、规范或研究文档 |
+| `paper/cscwd2027/revision_20261011/source_2027_CSCWD_16.md` | 活动 | 说明、规范或研究文档 |
+| `paper/cscwd2027/revision_20261011/source_2027_CSCWD_16.pdf` | 活动 | 项目文件 |
+| `paper/cscwd2027/revision_20261011/WEB_GPT_PROMPT.md` | 活动 | 说明、规范或研究文档 |
+| `paper/cscwd2027/revision_20261011/WEB_GPT_READING_PACK.md` | 活动 | 说明、规范或研究文档 |
 | `paper/CSCWD_POSITIONING.md` | 活动 | 说明、规范或研究文档 |
 | `paper/MENTOR_REPORT_CONTENT_2026-09.md` | 活动 | 说明、规范或研究文档 |
 | `paper/presentations/bpc_hybrid_revised_20260912.pptx` | 活动 | 项目文件 |
 | `paper/presentations/bpc_hybrid_Stage3_completed.pptx` | 活动 | 项目文件 |
+| `paper/presentations/LLM4BPC_Semantic_Extraction_Part3.pptx` | 活动 | 项目文件 |
+| `paper/presentations/LLM4BPC_Semantic_Extraction_Revised.pptx` | 活动 | 项目文件 |
 | `paper/README.md` | 活动 | 所在目录的入口说明 |
 | `paper/SIM_CASE_SECTION_v1.md` | 活动 | 说明、规范或研究文档 |
 | `paper/THESIS_DRAFT.md` | 活动 | 中文论文连续工作稿与结果占位 |
@@ -3686,10 +3741,10 @@
 | `prompts/sun_compat/modular_v1/README.md` | 活动 | 所在目录的入口说明 |
 | `prompts/sun_compat/modular_v1/semantic_rules_S.md` | 活动 | 说明、规范或研究文档 |
 | `prompts/sun_compat/modular_v1/user_envelope.md` | 活动 | 说明、规范或研究文档 |
-| `prompts/sun_compat/rule_first_llm_fallback_masked_prompt.md` | 活动 | 说明、规范或研究文档 |
-| `prompts/sun_compat/rule_first_llm_fallback_prompt.md` | 活动 | 说明、规范或研究文档 |
 | `prompts/sun_compat/plain_v1/direct_llm_plain_record_prompt_v1.md` | 活动 | 说明、规范或研究文档 |
 | `prompts/sun_compat/plain_v1/README.md` | 活动 | 所在目录的入口说明 |
+| `prompts/sun_compat/rule_first_llm_fallback_masked_prompt.md` | 活动 | 说明、规范或研究文档 |
+| `prompts/sun_compat/rule_first_llm_fallback_prompt.md` | 活动 | 说明、规范或研究文档 |
 | `prompts/sun_compat/simplification_v1/.gitattributes` | 活动 | 项目文件 |
 | `prompts/sun_compat/simplification_v1/COMPARISON_EXPLAINED_ZH.md` | 活动 | 说明、规范或研究文档 |
 | `prompts/sun_compat/simplification_v1/direct_llm_json_light_v1.md` | 活动 | 说明、规范或研究文档 |
@@ -4038,6 +4093,7 @@
 | `scripts/run_stage3_d1_v4_r1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_stage3_fixture_harness.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_stage3_full_repair_v1.py` | 活动 | Python 实现、脚本或测试 |
+| `scripts/run_stage3_gamma_theta_sensitivity_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_stage3_grounded_checker_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_stage3_ours_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_stage3_predecessors_paired_v1.py` | 活动 | Python 实现、脚本或测试 |
@@ -4455,10 +4511,10 @@
 | `tests/test_modular_prompt_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_multi_model_stage2.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_normalization.py` | 活动 | Python 实现、脚本或测试 |
+| `tests/test_plain_prompt_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_prepare_stage3_execution_v4.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_project_name_migration.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_project_structure.py` | 活动 | Python 实现、脚本或测试 |
-| `tests/test_plain_prompt_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_prompt_contract.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_public_marker_lexicon.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_publish_formal_gold.py` | 活动 | Python 实现、脚本或测试 |
@@ -4602,6 +4658,7 @@
 | `tests/test_stage3_binding_oracle_scope.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage3_binding_resolved_reference.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage3_contract_repair.py` | 活动 | Python 实现、脚本或测试 |
+| `tests/test_stage3_gamma_theta_sensitivity_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage3_gold_review_tool.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage3_no_gate_checker_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_stage3_paired_benchmark_v1.py` | 活动 | Python 实现、脚本或测试 |

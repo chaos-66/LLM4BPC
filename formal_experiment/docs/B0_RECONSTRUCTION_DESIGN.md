@@ -1,4 +1,4 @@
-# B0 Paper-Faithful Reconstruction Design (Sun Stage 2 Baseline)
+# B0 Paper-Faithful Reconstruction Design (Sun Part 2 Baseline)
 
 **日期**：2026-07-12
 **状态**：method design 已被用户授权（2026-07-12 14:25 当面解锁，见
@@ -14,7 +14,7 @@
 ## 1. 一句话目标
 
 按 Sun et al. (2024) **最终发表版**论文（DOI `10.1007/s11227-023-05626-0`）的方法
-结构，**独立重写** Stage 2 法规文档解析，使其产出与 Sun 论文同结构、同接口、
+结构，**独立重写** Part 2 法规文档解析，使其产出与 Sun 论文同结构、同接口、
 同评估标准，但**不依赖** Sun 作者未公开的代码、marker、模型权重、phrase Gold。
 正式名称为 `paper-faithful independent reconstruction`。
 
@@ -26,7 +26,7 @@
 |---|---|
 | 句子级 4 类 modality 分类（BERT-TextCNN） | Sun 原始训练 checkpoint |
 | 短语级 6 要素抽取（CoreNLP + Tregex/Tsurgeon + 公开 marker） | 任何 `references/sun_program/` 的代码复用 |
-| 与 Stage 3 适配的 rule record 输出 | Stage 3 任何改动 |
+| 与 Part 3 适配的 rule record 输出 | Part 3 任何改动 |
 | 在公开/官方数据上自训 + 自标评测 | 与 Sun 绝对值（0.77/0.83/0.80）争胜 |
 
 ---
@@ -38,7 +38,7 @@
             │
             ▼
 ┌────────────────────────────────────────────┐
-│ Stage 2 句子级：BERT-TextCNN                │
+│ Part 2 句子级：BERT-TextCNN                │
 │ ─ 输入：单句 + 上下文                      │
 │ ─ 输出：4 类 modality（obligation /         │
 │   prohibition / permission / definition）   │
@@ -49,7 +49,7 @@
                  │
                  ▼
 ┌────────────────────────────────────────────┐
-│ Stage 2 短语级：六要素抽取                  │
+│ Part 2 短语级：六要素抽取                  │
 │ ─ 工具：Stanford CoreNLP                   │
 │ ─ 规则：Tregex/Tsurgeon + 公开 marker      │
 │ ─ 顺序（Sun 强约束）：                      │
@@ -64,12 +64,12 @@
                  │
                  ▼
 ┌────────────────────────────────────────────┐
-│ Stage 2 输出：rule record                   │
+│ Part 2 输出：rule record                   │
 │ ─ 格式：见 `configs/schemas/                │
 │   stage2_prediction.schema.json@1.0.0`     │
 │ ─ 字段：sample_id, modality, six_spans,    │
 │   rule_record, evidence_span (原文)         │
-│ ─ 接口：与 Stage 3 adapter 严格对齐         │
+│ ─ 接口：与 Part 3 adapter 严格对齐         │
 └────────────────────────────────────────────┘
 ```
 
@@ -181,7 +181,7 @@ development 扩展表为空；完整来源与 hash 见
 | 短语级 | 6 要素 token-overlap P/R/F1 | 边界容错 |
 | 整体 | 5 次跑 stability（field agreement） | 稳定性 |
 | 整体 | coverage + invalid rate + API fail | 数据健康度 |
-| 跨阶段 | Stage 3 AP/MAP + violation P/R/F1 | 下游影响 |
+| 跨阶段 | Part 3 AP/MAP + violation P/R/F1 | 下游影响 |
 
 **缺失/无效/API 失败必须计入 coverage，不从分母删除**。
 
@@ -211,7 +211,7 @@ development 扩展表为空；完整来源与 hash 见
 | W1 | 写句子级 data loader + BERT-TextCNN 训练脚本 | 模型训出 dev F1 | 部分 `sun_stage2_baseline_not_paper_faithful` |
 | W2 | 写 CoreNLP wrapper + Tregex/Tsurgeon 模式库 | 句子级 + 短语级独立跑通 | 完整 `sun_stage2_baseline_not_paper_faithful` |
 | W3 | 实现六要素抽取（按 Sun 顺序） | 单元测试过 | 方法学一致 |
-| W4 | rule record 输出 + Stage 3 adapter 联调 | 端到端 1 句 | 端到端通 |
+| W4 | rule record 输出 + Part 3 adapter 联调 | 端到端 1 句 | 端到端通 |
 | W5 | 在 150 句 + GDPR-50 上跑全量 + 评估 | 36 组消融完整 | 可比 H1/D1 增量 |
 | W6 | failure case study + 文档 + 论文初稿 | paper ready | 全部 blocker 解除 |
 
@@ -234,13 +234,13 @@ development 扩展表为空；完整来源与 hash 见
 ## 12. 与"不允许声称"边界
 
 **允许的称呼**：
-- `paper-faithful independent reconstruction of the final published Sun Stage 2`
+- `paper-faithful independent reconstruction of the final published Sun Part 2`
 - `B0 baseline (paper-faithful reconstruction, no Sun code or weights)`
 - `BERT-TextCNN retrained from scratch on official EStG modality data`
 
 **禁止的称呼**：
 - `we reproduce Sun et al. (2024)`（除非有 Sun 原始代码/权重）
-- `Sun's original Stage 2 baseline`（Sun 没公开新 Stage 2）
+- `Sun's original Part 2 baseline`（Sun 没公开新 Part 2）
 - `we matched Sun's reported 0.77/0.83/0.80`（数据不同，不能直接比）
 - 导师包 = Sun 完整源码
 

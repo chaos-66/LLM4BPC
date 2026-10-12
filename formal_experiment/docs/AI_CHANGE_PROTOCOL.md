@@ -104,7 +104,7 @@ evaluator、指标或正式实验产物的修改。PPT/报告文字使用已有�
 ```powershell
 python formal_experiment/scripts/record_change.py `
   --event-type experiment_run `
-  --purpose "Stage 2 B0 development run" `
+  --purpose "Part 2 B0 development run" `
   --test-target "tests/test_<相关模块>.py" `
   --run-id "s2-b0-seed13" `
   --stage "stage2" `
@@ -189,5 +189,5 @@ python formal_experiment/scripts/audit_project.py --require-final-ready
 ```
 
 最终还要人工确认三组方法共享 frozen IDs、Gold、schema、normalization、evaluator
-和 Stage 3 配置。Stage 2 与 Stage 3 指标必须分开报告。这一步才接近论文语境下的
+和 Part 3 配置。Part 2 与 Part 3 指标必须分开报告。这一步才接近论文语境下的
 正式复核；日常开发不使用“正式审计”表述。

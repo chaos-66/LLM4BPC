@@ -1,11 +1,11 @@
 # Human Process Gold Guide (S1.5) / 人工 Process Gold 核对指南（S1.5）
 
-This guide tells the USER what to verify for the Stage 1 human Process Gold.
+This guide tells the USER what to verify for the Part 1 human Process Gold.
 It complements the (gate-locked) `docs/STAGE1_HUMAN_GOLD_GUIDE.md` protocol
 with a concise bilingual review walkthrough. Nothing here replaces human
 decisions: the agent only prepares and validates.
 
-本指南告诉用户 Stage 1 人工 Process Gold 需要核对什么。它是
+本指南告诉用户 Part 1 人工 Process Gold 需要核对什么。它是
 `docs/STAGE1_HUMAN_GOLD_GUIDE.md`（门禁锁定协议）的简明双语补充。一切决定只能由用户做出。
 
 ## What you are reviewing / 你要核对什么

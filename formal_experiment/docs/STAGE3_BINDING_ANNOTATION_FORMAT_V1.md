@@ -1,4 +1,4 @@
-﻿# Stage 3 Binding Gold annotation format (v1)
+﻿# Part 3 Binding Gold annotation format (v1)
 
 The supplied-binding **oracle diagnostic** consumes three inputs:
 

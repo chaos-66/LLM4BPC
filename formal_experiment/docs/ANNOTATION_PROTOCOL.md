@@ -3,7 +3,7 @@
 **状态：v2 Layer E 输入门已就绪，用户可以立即继续人工审核；当前仍为 0/150
 adjudicated，因此不得冻结或发布正式 Gold。唯一活动编辑面是
 `data/development/human_review/estg_150_human_correction_v1.json`。路线、数据、
-Stage 3 和正式 Gold 发布白名单仍未共同重锁。**
+Part 3 和正式 Gold 发布白名单仍未共同重锁。**
 
 ## Unit
 

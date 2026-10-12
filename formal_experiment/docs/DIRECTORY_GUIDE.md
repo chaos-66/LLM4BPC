@@ -6,7 +6,7 @@
 
 ## 1. 进入项目的固定顺序
 
-1. `MASTER_PIPELINE.md`：完整三阶段路线和任务树；
+1. `MASTER_PIPELINE.md`：完整三部分路线和任务树；
 2. `PROJECT_AUDIT.md`：现在做到哪里、下一项是什么；
 3. 本文：目录和文件职责；
 4. `EXPERIMENT_LOG.md`：最近做过什么；
@@ -62,7 +62,7 @@
 | `data/development/estg/` | EStG-150 德文源、候选翻译、旧自动标注和成员 hash | 开发/溯源；成员不可重抽 |
 | `data/development/human_review/` | 五层审核工作流；Layer E 是唯一用户编辑面 | 活动审核区 |
 | `data/development/gdpr50/` | GDPR 50 条开发候选和旧 Gold | 开发数据，不是正式 Gold |
-| `data/development/gold_review/` | Sun Stage 2 Gold 审核候选/模板 | 开发审核材料 |
+| `data/development/gold_review/` | Sun Part 2 Gold 审核候选/模板 | 开发审核材料 |
 | `data/development/metadata/` | 旧开发 runner 的 manifest | 开发溯源 |
 | `data/development/predictions/` | 旧开发预测 | 不进正式表格 |
 | `data/input/` | 未来冻结并由所有方法共享的输入 | 当前保持空壳 |
@@ -71,7 +71,7 @@
 | `data/results/` | 未来正式指标和明细 | 默认禁止覆盖 |
 
 完成的审核批次仅保留一份最终人工结果作为项目记录，不再进入待审核队列。
-本批 Stage 3 结果为 `data/development/stage3_synth/stage3_binding_human_decisions_v1.json`；
+本批 Part 3 结果为 `data/development/stage3_synth/stage3_binding_human_decisions_v1.json`；
 审核过程、工具及备份已压缩封存。后续批次使用独立 ID 与路径，默认不搜索归档。
 
 被替代的熟悉用审核副本和 R15.0 历史输出已经迁入 `_retired/data/`；它们不能
@@ -88,7 +88,7 @@
 | 导航 | `INDEX.md`、`DIRECTORY_GUIDE.md`、`FILE_CATALOG.md` | 文档地图、目录职责、逐文件清单 |
 | 日志 | `EXPERIMENT_LOG.md`、`EXPERIMENT_EVENTS.jsonl` | 中文人类日志 + 原始机器事件 |
 | 治理 | `AI_CHANGE_PROTOCOL.md`、`ROUTE_LOCK.md`、`REPRODUCTION_PROTOCOL.md` | 修改、门禁、复现规则 |
-| Stage 2 | `B0_RECONSTRUCTION_DESIGN.md`、`STAGE2_*`、`EVAL_3DIM_SPEC.md` 等 | baseline、schema、LLM 和评价设计 |
+| Part 2 | `B0_RECONSTRUCTION_DESIGN.md`、`STAGE2_*`、`EVAL_3DIM_SPEC.md` 等 | baseline、schema、LLM 和评价设计 |
 | Gold | `HUMAN_GOLD_*`、`ANNOTATION_PROTOCOL.md`、`ESTG150_DATA_MAP.md` | 审核规则和数据映射 |
 | 研究证据 | `research/` | Sun、Winter、Barrientos 的来源核查；不是任务入口 |
 | Agent 派工 | `AGENT_RUNBOOK.md`、`agent_prompts/` | 手册及其较长的静态可复制 Prompt；不建平行状态/交接页，实时派工仍在 `PROJECT_AUDIT.md` |
@@ -103,15 +103,15 @@
 | 完整性与日志 | `audit_project.py`、`record_change.py`、`status.py` | 快速检查、全测凭证、追加事件 |
 | 目录维护 | `generate_file_catalog.py` | 重建中文逐文件目录，不读取 `.env` |
 | 人工 Gold | `build_*review*`、`validate_*review*`、`estg150_review_tool.py` | 构建、审核、验证五层数据 |
-| Stage 2 | `check_sun_baseline.py`、`run_sun_rule_only.py`、`run_sun_llm_fallback.py`、`run_direct_llm.py` | baseline 和 LLM 方法入口 |
-| Stage 3 | `audit_stage2_to_stage3.py`、`run_stage3_fixture_harness.py` | 适配与离线 fixture 验证 |
+| Part 2 | `check_sun_baseline.py`、`run_sun_rule_only.py`、`run_sun_llm_fallback.py`、`run_direct_llm.py` | baseline 和 LLM 方法入口 |
+| Part 3 | `audit_stage2_to_stage3.py`、`run_stage3_fixture_harness.py` | 适配与离线 fixture 验证 |
 | Layer D | `run_llm_zh_aid.py`、`validate_layer_d_v2.py`、`promote_layer_d_v2.py` | 中文辅助层；真实调用必须先获授权 |
 
 `_retired/scripts/` 中的脚本只服务于已退役文件，不属于活动命令集合。
 
 ## 6. 代码与测试
 
-- `src/bpc_hybrid/`：Stage 1/2/3 业务实现、Sun 风格规则、LLM 接口、评价和 schema。
+- `src/bpc_hybrid/`：Part 1/2/3 业务实现、Sun 风格规则、LLM 接口、评价和 schema。
 - `src/formal_experiment/`：项目路径、合同状态、完整性检查和 EStG-150 审核服务。
 - `paper/`：论文连续工作稿和主张证据矩阵；不能反向定义实验状态。
 - `tests/fixtures/`：离线 BPMN、Sun-compatible、few-shot 等固定样例。
@@ -132,7 +132,7 @@
 - 不确定去向时先查本文和 `MANIFEST.md`，不要新建平行 status、handoff、pipeline、
   history 或 changes 目录。
 
-## Stage 3 R1 artifacts (2026-09-24)
+## Part 3 R1 artifacts (2026-09-24)
 
 - `configs/stage3_table3_v4_execution_r1.json` freezes the R1 matrix contract.
 - `src/bpc_hybrid/sun_stage3/temporal_projection_v2.py` and `src/bpc_hybrid/winter_stage3/global_roles.py` implement R1-B.

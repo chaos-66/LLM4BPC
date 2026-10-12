@@ -2,17 +2,17 @@
 > paired CONTROL BPMN as reference and a structural control-vs-current detector;
 > it is not the Table 3 v2 Ours arm. Its F1=1.0 is retracted. The repaired
 > controlled comparison uses `run_stage3_table3_v2.py`, current BPMN only, and
-> the same frozen Sun Stage-3 scorer for Sun and Ours. See
+> the same frozen Sun Part 3 scorer for Sun and Ours. See
 > `outputs/reports/stage3_table3_v2_rootcause_notes.md` and
 > `docs/MASTER_PIPELINE.md` Section "Table 3 v2 controlled repair".
 
-﻿# Stage 3 Ours automatic grounding and detector v1
+﻿# Part 3 Ours automatic grounding and detector v1
 
 ## Boundary
 
 `Ours` means the gold-blind chain:
 
-1. LLM-SE Rule Record (plus the frozen Stage-2 sentence spans needed to
+1. LLM-SE Rule Record (plus the frozen Part 2 sentence spans needed to
    recover the record's character offsets);
 2. the benchmark's gold-blind inference view
    (`stage3_paired_benchmark_inference_view_v1.json`);

@@ -1,8 +1,8 @@
 # EStG-150 唯一数据集 + LLM-assisted 人工 Gold 工作流路线锁
 
-> **文档边界（2026-07-14）**：全项目 Stage 1/2/3 目标、基线矩阵、任务分解与
+> **文档边界（2026-07-14）**：全项目 Part 1/2/3 目标、基线矩阵、任务分解与
 > 里程碑以 `MASTER_PIPELINE.md` 为唯一主线。本文只锁定 EStG-150、人工 Gold
-> 和当前执行门禁；它不授权真实 LLM/API，也不代替 Stage 3 扩展的后续合同重锁。
+> 和当前执行门禁；它不授权真实 LLM/API，也不代替 Part 3 扩展的后续合同重锁。
 
 > 状态：2026-07-13 11:30 路线 v2 工作流"启动门禁"与"冻结门禁"分离。
 > 启动门禁（`human_review_input_ready`）在 0/150 时即可为 true——意味
@@ -13,7 +13,7 @@
 >
 > 2026-07-12 21:30 v1 工作流退役为 workflow draft；v2 工作流上线
 > 作为 active editing surface。完整路线锁在 v2 下生效，但 route v2 仍
-> 开放等待最终发表版 Sun Stage 2 实现。
+> 开放等待最终发表版 Sun Part 2 实现。
 >
 > **2026-08-06 route v2 重新锁定（用户授权治理决策）**：最终版方法对齐已按
 > 方法级独立复现口径完成（B0-R2 verified + `docs/B0_R2_METHOD_CROSSWALK.md`
@@ -21,7 +21,7 @@
 > （2026-08-04 用户授权）+ official Sun supplement 57 文件 hash 匹配 + mentor
 > provenance）；`experiment_contract.json` `route.status=locked`、
 > `stage2_dataset.status=locked_for_human_review`（phrase Gold freeze 150/150
-> 达成，2026-08-06 恢复用户裁决）。formal Gold 发布仍差 stage3 锁定 +
+> 达成，2026-08-06 恢复用户裁决）。formal Gold 发布仍差 Part 3 锁定 +
 > publication gate 白名单匹配。
 
 ## 1. 数据集单源（不可变）
@@ -66,13 +66,13 @@ SHA-256 记录在同一个文件 `selected_membership.membership_payload_sha256`
 - 中文和英文回译**不进入**：
   - 英文 span 决定
   - 正式 Gold offset
-  - Stage 2 / Stage 3 evaluator
+  - Part 2 / Part 3 evaluator
   - 自动批准
 - 未来若要填充，需用户单独授权 + `--max-calls N` 预算 + audit event 留痕
 
 ## 4. 与 route v2 的关系
 
-- 路线 v2（`docs/ROUTE_LOCK.md`）锁的是 B0/H1/D1 三组方法 + Stage 3
+- 路线 v2（`docs/ROUTE_LOCK.md`）锁的是 B0/H1/D1 三组方法 + Part 3
   + 输出 schema + evaluator
 - 人工 Gold 来源（route v2 之前写"由用户审核"，现在改为"LLM-assisted,
   human-adjudicated"）是 route v2 的子约束，不影响其它

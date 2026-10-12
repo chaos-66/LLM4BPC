@@ -4,7 +4,7 @@
 
 ## 1. 方法接线与主评价单位
 
-主评价单位固定为 5 条 v2 规则：r8/v2、r9/v2、r10/v2、r11/v2、r13/v2；r12 仅作背景，不计入分母。A 组是项目锁定非 LLM 基线 B0 v10a（`sun_rule_only_b0_v10a`）加冻结 Sun 式三类检测；B 组复用已有真实 LLM Stage 2 预测 `OURS-FULL/repeat-01`，经 `project_external_sentence` 投影后使用与 A 相同的三类检测；C 组逐行复用 B 的 Stage 2 和三类结果，追加 REPAIR-V2 C 四类扩展。公共 Stage 1 记录只解析一次，由 A/B/C 共用；角色绑定仍为 Data Controller=Phone company、Data Subject=Customer。
+主评价单位固定为 5 条 v2 规则：r8/v2、r9/v2、r10/v2、r11/v2、r13/v2；r12 仅作背景，不计入分母。A 组是项目锁定非 LLM 基线 B0 v10a（`sun_rule_only_b0_v10a`）加冻结 Sun 式三类检测；B 组复用已有真实 LLM Part 2 预测 `OURS-FULL/repeat-01`，经 `project_external_sentence` 投影后使用与 A 相同的三类检测；C 组逐行复用 B 的 Part 2 和三类结果，追加 REPAIR-V2 C 四类扩展。公共 Part 1 记录只解析一次，由 A/B/C 共用；角色绑定仍为 Data Controller=Phone company、Data Subject=Customer。
 ## 2. P1 修正：抽取失败、适配选择和不适用
 
 A 组 r9、r13 的 B0 原始抽取动作数为 0。旧实现把 missing_action 分母为 0 直接写成 `not_applicable`；本轮在案例评价层把这两项改为 `undetermined`，原因记录为 `empty_rule_action_rule_element_not_extracted`，同时保留底层 `machine_status=not_applicable`、`score=0.0`、`denominator=0`。因此 A 组逐检查计数为 3 violation / 12 undetermined / 0 not_applicable；机器状态计数单独保留 2 个 not_applicable。字段为空本身不再作为规则语义上不适用的证据。
@@ -13,7 +13,7 @@ A 组 r9、r13 的 B0 原始抽取动作数为 0。旧实现把 missing_action �
 ## 3. P2 修正：机器报警、参考问题与有效修复对照
 
 机器报警全部保留；是否对应参考问题单独判断，不以类型相同且 status=violation 为准。r8 的 condition/constraint 报警缺少 30 天时间条件、终止行为和流程级作用域证据，因此记为机器报警存在但参考问题对应未证实；r9 的 missing_action 有抽取动作、模型清单缺失和远低于 gamma 的最优匹配证据，判为有证据对应；r10 的 incorrect_actor 有动作绑定证据，规则动作最优映射到 `Activate SIM card`（具体动作 ID 见 capsule），归属为 Customer，与规则要求的 Phone company 不一致，判为有证据对应；全部匹配候选逐项列出，Send SIM card 归属 Phone company，不被写成 Customer；r11 的 positive alarm 是 missing_action，但流程事实显示 `Ask for consent` 活动存在，参考问题是顺序错误，故不对应；r13 的 actor/prohibited 报警不涉及 Debt>50 门槛语义，条件/约束视角为 undetermined，故不对应。
-修复件有效性独立于检测器判断。r8 主修复改为进程级事件子流程 `startEvent(isInterrupting=true, timerEventDefinition P30D)` 到 `endEvent(terminateEventDefinition)`，覆盖计时起点、计时范围、超时触发和终止范围；但冻结 Stage 1 将事件子流程解析为 opaque activity，计时器和终止定义没有进入结构化 Process Record，因此该件不计入有效修复分母，只报告 BPMN 语义有效而检测链表示受限。旧 Send SIM card 任务级计时器保留为 `legacy_partial_control`，明确为部分/无效对照。r9、r10、r11 修复语义有效且进入检测链，计入有效分母。r13 的 `Debt <= 50` 标签语义有效：超过 50 被排除，等于 50 不触发本禁止；但 B 侧规则记录没有抽取 condition，条件检测不可执行，因此该件也不计入有效分母，归因为规则侧抽取缺口。最终有效修复对照为 3 件（r9、r10、r11），r8、r13 分别因表示限制和规则元素缺口排除。
+修复件有效性独立于检测器判断。r8 主修复改为进程级事件子流程 `startEvent(isInterrupting=true, timerEventDefinition P30D)` 到 `endEvent(terminateEventDefinition)`，覆盖计时起点、计时范围、超时触发和终止范围；但冻结 Part 1 将事件子流程解析为 opaque activity，计时器和终止定义没有进入结构化 Process Record，因此该件不计入有效修复分母，只报告 BPMN 语义有效而检测链表示受限。旧 Send SIM card 任务级计时器保留为 `legacy_partial_control`，明确为部分/无效对照。r9、r10、r11 修复语义有效且进入检测链，计入有效分母。r13 的 `Debt <= 50` 标签语义有效：超过 50 被排除，等于 50 不触发本禁止；但 B 侧规则记录没有抽取 condition，条件检测不可执行，因此该件也不计入有效分母，归因为规则侧抽取缺口。最终有效修复对照为 3 件（r9、r10、r11），r8、r13 分别因表示限制和规则元素缺口排除。
 ## 4. 结果摘要
 
 逐检查计数：A 组 15 项，violation=3、satisfied=0、undetermined=12、not_applicable=0；B 组 15 项，violation=5、satisfied=2、undetermined=8、not_applicable=0；C 组 35 项，violation=10、satisfied=2、undetermined=23、not_applicable=0。机器状态计数保留 A 组 2 个 not_applicable；C 构成为 15 条 B 三类复用行加 20 条四类扩展行，B/C 原三类逐项对象完全一致。
@@ -32,16 +32,16 @@ A 组 r9、r13 的 B0 原始抽取动作数为 0。旧实现把 missing_action �
 - run: `sim_case_c1_run_v1`；口径：**development_case_study_not_formal_gold**（非正式 Gold，非作者原始实验复现，非企业验证）。
 - 主评价单位：r8/v2, r9/v2, r10/v2, r11/v2, r13/v2（5 条 v2 规则）；背景条目：r12。
 - 阈值：tau=0.8, gamma=0.8, theta=0.8, gamma_ext=0.5, label_fallback=0.4。
-- 公共 Stage 1 记录：324091aa007882ab…；扁平化 XML 29a31cfc0fa520a7…；lanes=['Phone company', 'Another phone company', 'Customer']。
+- 公共 Part 1 记录：324091aa007882ab…；扁平化 XML 29a31cfc0fa520a7…；lanes=['Phone company', 'Another phone company', 'Customer']。
 - 角色绑定（打分前声明）：{"Data Controller": "Phone company", "Data Subject": "Customer"}。
 
 ## 1. 组件对应
 
-| 组 | Stage 2 | Stage 3 三类 | Stage 3 四类 |
+| 组 | Part 2 | Part 3 三类 | Part 3 四类 |
 |---|---|---|---|
 | A | 项目锁定非 LLM 基线 B0 v10a (`sun_rule_only_b0_v10a`) | 冻结 Sun 式 Def5–7 | 未运行 |
 | B | 已有真实 LLM 预测 `OURS-FULL/repeat-01`，经 `project_external_sentence` | 与 A 同一代码和阈值 | 未运行 |
-| C | 与 B 同一 Stage 2 行和适配记录 | 逐行复用 B | REPAIR-V2 C 实现：`RepairedExtendedScorerV2` + `aggregate_with_comparison_gate` |
+| C | 与 B 同一 Part 2 行和适配记录 | 逐行复用 B | REPAIR-V2 C 实现：`RepairedExtendedScorerV2` + `aggregate_with_comparison_gate` |
 
 ## 2. 五条规则的逐项实际输出
 
@@ -138,7 +138,7 @@ A 组 r9、r13 的 B0 原始抽取动作数为 0。旧实现把 missing_action �
 
 ## 5. 修复对照：有效、部分/无效与可评价性
 
-> `effective_repair_control=true` 要求：修复语义独立成立、修复信息确实进入检测链、对应规则元素可用、修复后检查可执行。r8 的过程级事件子流程在冻结 Stage 1 中为 opaque activity，计时/终止作用域不能进入结构化检测链；旧任务级修复保留为部分/无效对照。
+> `effective_repair_control=true` 要求：修复语义独立成立、修复信息确实进入检测链、对应规则元素可用、修复后检查可执行。r8 的过程级事件子流程在冻结 Part 1 中为 opaque activity，计时/终止作用域不能进入结构化检测链；旧任务级修复保留为部分/无效对照。
 
 | 修复 | 规则 | 视角 | 修复语义有效 | 进入检测链 | 有效分母 | 排除原因 | C_original | C_repaired | 问题移除 |
 |---|---|---|---|---|---|---|---|---|---|

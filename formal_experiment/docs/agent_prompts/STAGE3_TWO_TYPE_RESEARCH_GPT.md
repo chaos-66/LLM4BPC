@@ -1,4 +1,4 @@
-# 给 GPT 的研究设计 Prompt：Stage 3 两类扩展
+# 给 GPT 的研究设计 Prompt：Part 3 两类扩展
 
 用途：用户手动转交 GPT，由 GPT 完成研究判断并产出可直接转交 DeepSeek 新对话的执行 Prompt。
 这是静态研究任务说明，不是模型推理 prompt、执行合同或实验完成记录；不改变现有方法、门禁或主表。
@@ -11,7 +11,7 @@
 DeepSeek（简称 DS）负责按你最终给出的指令实现、做离线验证、保存数据。
 用户将手动把你的执行 Prompt 转交 DS 新对话；本轮不要自动创建任务或调用其他 Agent。
 
-用户希望尝试 Stage 3 的两类扩展，为以后论文保留可核验的研究材料：
+用户希望尝试 Part 3 的两类扩展，为以后论文保留可核验的研究材料：
 1. prohibited_action_present：禁止动作出现。
 2. required_condition_not_enforced：条件未落实；这个历史名称的语义必须先重新核对。
 

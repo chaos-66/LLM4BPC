@@ -1,13 +1,13 @@
 % These are SEPARATE replacements/insertions, not one continuous section.
-% INSERTION 1: add beside the embedding model in the Stage 3 setup.
+% INSERTION 1: add beside the embedding model in the Part 3 setup.
 % These two distinct citations bring the total to 18.
 Semantic similarity is computed using the
 \texttt{sentence-transformers/all-mpnet-base-v2} checkpoint, an MPNet-based
 sentence embedding model in the Sentence-BERT framework~\cite{reimers2019sentence,song2020mpnet}.
 The exact checkpoint is documented in its model card.\footnote{\url{https://huggingface.co/sentence-transformers/all-mpnet-base-v2}}
 
-% REPLACEMENT 2: Stage 2 metric. Preserves the frozen evaluation procedure.
-Stage~2 uses the frozen coarse sentence-level overlap view. Within each sample
+% REPLACEMENT 2: Part 2 metric. Preserves the frozen evaluation procedure.
+Part~2 uses the frozen coarse sentence-level overlap view. Within each sample
 and semantic field, an extracted span is counted as matched if it overlaps at
 least one reference region; a reference region is counted as matched if it
 overlaps at least one extracted span. These are separate counts, rather than

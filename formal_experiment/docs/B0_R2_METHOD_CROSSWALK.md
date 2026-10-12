@@ -17,7 +17,7 @@
 | 7 | 评价口径（六字段 span 抽取） | `sun_literal_overlap_evaluation@2.0.0`：statement 级、同字段任意非空字符交叠、无 clause alignment、无一对一 | `src/bpc_hybrid/stage2_sun_literal_overlap.py`、`configs/evaluation/sun_table8_literal_overlap_v2.json`；`tests/test_stage2_sun_literal_overlap.py` | §8.6 主口径；strict exact/token/clause-aligned 仅诊断 |
 | 8 | 模态四分类 label | 独立面板：marker 路由 + clause/record 分类器路由 + DE/EN 对齐验证（`_cross_validates`，B0-R1-ALIGN） | `b0_v10/modality.py`、`definition_resolver.py`、`alignment.py`；`tests/test_b0_r1_align_cue_validation.py` | 四分类 label 另表报告（§8.6 要求）；分类器为本地重建资产 |
 | 9 | 词典/marker 方法 | `public_marker_lexicon_en_v2`（5 类 161 激活项），构造模式 pinned_public_seed（9 个公开来源） | `resources/lexicon/*_en_v2.json` + manifest + sources manifest；`tests/test_sun_modality_gate.py` 等 | 词典为公开重建、dev-only；规模差异仅披露（S2.3） |
-| 10 | 句子/clause 分割 | `plan_clause_units_v4` + `split_german_units` + DE/EN 对齐（本项目为 Sun Stage 2 流程的补充机制） | `b0_v10/segmentation.py`、`estg150_b0_development_v3.py`；`tests/test_b0_r1_a_span_boundaries.py` | 披露为独立重建机制（Sun 论文未公布分句细节） |
+| 10 | 句子/clause 分割 | `plan_clause_units_v4` + `split_german_units` + DE/EN 对齐（本项目为 Sun Part 2 流程的补充机制） | `b0_v10/segmentation.py`、`estg150_b0_development_v3.py`；`tests/test_b0_r1_a_span_boundaries.py` | 披露为独立重建机制（Sun 论文未公布分句细节） |
 | 11 | actor/action 归属 | 依赖子树 + 词典中心词门控 + action 头/nsubj/obl-by-to 候选（B0-R1-ACTION/ACTOR） | `b0_v10/actor_action.py`；`tests/test_b0_r1_action_span_scope.py`、`test_b0_r1_actor*` | 披露为重建机制（Sun 未公布 actor/action 细节） |
 
 ## 2. 结论与门禁

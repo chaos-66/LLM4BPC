@@ -192,7 +192,7 @@ def render_markdown(report: dict[str, Any]) -> str:
     base_id, ours_id = ARMS[0]["method_id"], ARMS[1]["method_id"]
     base, ours = report["arms"][base_id], report["arms"][ours_id]
     lines: list[str] = []
-    lines.append("# Table 1 — Stage 2 regulatory information extraction "
+    lines.append("# Table 1 — Part 2 regulatory information extraction "
                  "(EStG-150, coarse sentence view)")
     lines.append("")
     lines.append("Report id: `stage2_table1_paper_final_v1` · zero new LLM calls "

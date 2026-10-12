@@ -1,13 +1,31 @@
 # 项目实时状态（兼容文件名 PROJECT_AUDIT.md）
 
-**更新时间**：2026-10-11
+**更新时间**：2026-10-12
 **唯一活动目录**：`formal_experiment/`  
 **完整路线**：`docs/MASTER_PIPELINE.md`  
 **机器事实源**：`python formal_experiment/scripts/audit_project.py`（自动完整性检查）  
 **执行制度**：实验日志为主、自动检查为辅、正式复核只在阶段冻结/最终运行/投稿前
 
 本文是唯一实时状态页，只记录“现在做到哪里、下一步做什么”。研究目标、完整
-Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见主 Pipeline。
+Part 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见主 Pipeline。
+
+## PW3/PW5 Part 命名迁移与限定验证完成（2026-10-12）
+
+- 用户决定：当前项目展示使用 Part 1/2/3；Part 1 与 Part 2 并行，分别生成
+  Process Record / Rule Record，共同输入 Part 3。编号不表示串行执行顺序。
+- 活动入口、任务规范、论文工作稿与阅读包、当前两份汇报稿和未来报告展示同步。
+  名称与数据依赖配置见 `configs/paper_method_display_names_v1.json`。
+- `stage*` 技术路径/字段/CLI/schema、S1/S2/S3 任务 ID 和冻结来源保持兼容；
+  原始附件、Gold、prompt、预测、指标、manifest、旧事件与无关用户修改不改。
+- 验证：批次开始快速完整性通过；首次相关检查 7 passed / 1 failed，失败来自
+  既存方法展示与冻结报告的差异。限定投影后仅重跑该节点，1 passed（0.11 秒）；
+  已通过的 7 项不重复运行。批次结束快速完整性通过，无 blocker；旧失败事件保留。
+- 已核对展示代码 AST、Part 依赖/兼容键、文档数值/公式/原稿来源、阅读包副本、
+  文件目录和引用；两份 PPT 的 ZIP/XML、未改条目及几何检查通过。环境无 PPT
+  渲染运行时/TeX 编译器，未完成视觉/编译版面验收，不把静态检查称作渲染通过。
+- 锁定协议 `docs/STAGE1_HUMAN_GOLD_GUIDE.md` 保持原字节（SHA-256 `37b9eb04…`）；
+  当前人工流程指南使用 Part。新变更记录两条，Git 交付以本批提交及上游推送结果为准。
+  本项不改变实验完成状态或放行正式门禁，无新实验/API/全量测试。
 
 ## SEP-C3-SYSTEM-PROMPT-V1：消息组织修改完成，55 项相关检查通过（2026-10-11）
 
@@ -38,7 +56,7 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
   9 份原始信号、转换记录、代码快照和 manifest 在同 run ID evidence 目录。
   全部评价由已存信号再次复算；后处理缺 matplotlib，使用现有 Pillow，未重复推理。
 - 这是沿用旧范围的开发敏感性分析；原顺序范围独立性问题继续披露，未评价参数交互，
-  不自动选择新默认值、不宣称独立泛化或正式 Stage 3 完成。只做相关验证，不跑全量。
+  不自动选择新默认值、不宣称独立泛化或正式 Part 3 完成。只做相关验证，不跑全量。
 - 6 项具名相关检查通过（0.20 秒），批次前后快速完整性通过，experiment_run 已记录。
   当前参数效应任务已完成；Git 检查点的提交与远端结果以本次交付为准。
 
@@ -96,7 +114,7 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
 - 同口径 P/R/F1：Sun **0.3814/0.5362/0.4458**；LLM-SE **0.4393/0.6812/0.5341**；
   Winter **0.4634/0.5507/0.5033**。实际 F1 排序 LLM-SE > Winter > Sun；不支持预期中的 Sun > Winter。
   原生 Winter 与此前可核验 11187 个信号比较差异 0，旧 manifest 声明 completed；
-  不据此推断用户另一次中断运行。历史结果、Gold、Stage 1 用户修改和 sep_c3 报告均保留。
+  不据此推断用户另一次中断运行。历史结果、Gold、Part 1 用户修改和 sep_c3 报告均保留。
 - 完整新证据：`outputs/evidence/stage3_winter_paper_rerun_20261010_v1/`，含独立 CPU
   execution manifest；三方法表：`outputs/reports/stage3_winter_paper_rerun_20261010_v1.{json,md,csv,tex}`。
 - 5 项具名相关测试通过（1.97 秒），experiment_run 已记录；未运行全量。批次前后快速完整性
@@ -135,7 +153,7 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
   最终本地hash在本次交付报告明确，不冒称远端备份，不绕过自动审批。
 - 本轮结果为固定150条、一次历史跨批敏感性对照，当前alias与历史0813仍可能有服务变化，
   生成额度不同、thinking的temperature不生效；本次主F1未改善，不推断一般思考模式效果。
-  不扩大到low/多重复/独立未见测试、Rules+LLM、Stage3或全量套件。
+  不扩大到low/多重复/独立未见测试、Rules+LLM、Part 3或全量套件。
 
 ## 已完成的单例 high 诊断（2026-10-06）
 
@@ -469,7 +487,7 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
   通过，具名离线检查 **19 passed**（非全量）；16 个原文件/用户修改的启动时哈希
   均未变化。已登记变更事件，不宣称性能验证。后续实测须新预检、调用预算与明确
   授权，不复用旧额度。新候选/证据目录仅针对自身固定 LF 检出，保证哈希可复核。
-- 本子任务是 SEP-C3 下的离线候选准备，不改变原 Stage 3/命名迁移未完成状态。
+- 本子任务是 SEP-C3 下的离线候选准备，不改变原 Part 3/命名迁移未完成状态。
 - 2026-10-05 补充用户要求的逐项依据：`simplification_v1/RATIONALE.md` 对照 J 的
   合同引用、规则 1–5/24，以及 B 的规则 9–19/25–27，逐项记录动机、原文/代码/
   既有结果依据、保留内容和信息损失。明确 A 字段清单隐式化及 B 触发词减少、
@@ -481,7 +499,7 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
 - 用户追加范围包括当前代码与配置、历史记录、冻结 manifest、归档和参考目录；
   原始证据须另存副本。此决定覆盖下方第一轮“保留旧导入/目录名”的范围选择，
   不增加 API、实验重跑、Gold 改写或全量测试授权。
-- `LLM4BPC-RENAME-WORKTREES` 已完成：4 个 Codex worktree 目录和外部 Stage 3
+- `LLM4BPC-RENAME-WORKTREES` 已完成：4 个 Codex worktree 目录和外部 Part 3
   worktree 目录已统一新名称，对应 Git 管理目录同步；HEAD、索引和未提交内容不变。
 - 已精确迁移 Codex 本地数据库中 204 行相关路径字段及 UI 工作路径，未修改聊天
   正文。原始路径记录、UI 状态和数据库改动前字段保存在
@@ -510,9 +528,9 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
 - 本项仅维护项目名称、路径和工程入口，不改变研究任务完成状态或表一固定数值；
   无真实 LLM/API、Gold 修改、实验重跑或全量测试。已有用户修改保持独立。
 
-## 已完成：Stage 2 论文主表数值复核与最终采用（2026-09-26）
+## 已完成：Part 2 论文主表数值复核与最终采用（2026-09-26）
 
-- 用户决定：第二阶段 Table 1 固定采用 LLM-SE **0.8378** 与 Sun 方法本地
+- 用户决定：Part 2 Table 1 固定采用 LLM-SE **0.8378** 与 Sun 方法本地
   重建 Rules-Only **0.7631**，Overall F1 差 **+7.47 个百分点**，后续不再替换。
 - 唯一数值源：`outputs/reports/stage2_table1_paper_final_v1.json`，来源提交
   `87b5280e7d6be3718270290a1b380180c432b289`。同一 EStG-150、459 个粗 Gold span；
@@ -524,13 +542,13 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
   后续消融、actor refinement 或 100 单模块候选不替换本表，不再为此表调参、
   重跑或改变口径。0.7631 是本地基线评测值，不是 Sun 原论文报告值。
 - 完成本轮纯文档固定；未修改代码、配置、Gold、预测、评价报告或 manifest，
-  无新实验/API/代码测试。验证范围不等于新增全量测试或 Stage 3 正式放行。
+  无新实验/API/代码测试。验证范围不等于新增全量测试或 Part 3 正式放行。
   写作证据入口为 `paper/CLAIM_EVIDENCE_MATRIX.md` C54、论文 §7.2。
 
 ## 当前优先级：S3-TABLE3-R5.1 定向纠错与 benchmark v2（2026-09-25）
 
 - 状态：DATA_READY_FOR_FROZEN_SCOPE / METHODS_NOT_READY / API_AUTHORIZATION_PENDING / FORMAL_RELEASE_NOT_APPROVED。不是正式 Gold，不宣称表三成绩。
-- 边界：真实 LLM/API 调用 0，未读 .env，未跑新增测试集 Stage2/Stage3 主矩阵，未做参数搜索；Sun/Ours/Winter 公式、相似度后端与阈值未改；旧预测/原始回答/旧 Gold/R1—R4 结果未改；R5 v1 数据/配置/报告保留。
+- 边界：真实 LLM/API 调用 0，未读 .env，未跑新增测试集 Part 2/Stage3 主矩阵，未做参数搜索；Sun/Ours/Winter 公式、相似度后端与阈值未改；旧预测/原始回答/旧 Gold/R1—R4 结果未改；R5 v1 数据/配置/报告保留。
 - A：为 36 条要求生成逐条处置表 data/development/stage3_table3_r5_benchmark_v2/requirement_disposition.json。has_variants 全有或全无改为逐类型资格。
 - 定位项：A1 S1-T1/T2 同时性不再当顺序；A2 S6-T1 风险适当性不是顺序；A3 S6-T4 撤销评估到告知 order；A4 S2-T3/T4（及同一规则下 S2-T1）permission 移出核心评分；A5 S3-T3/T4 删除虚构 Stop/Cease 并移出核心；A6 S4-T3 摘录收窄到 28(3)(a) 句并记录 char span 与 processed source 标注。
 - B：source_family_id 按 Article 建族，family_id 不再等于 requirement_id；Art 13/14/35/36/33 跨集合问题消除；R1—R4 五条与已暴露条款族留 development；无 family 跨 split。修正后：36 条要求、31 条核心、5 条候选；105 核心案例；dev/test = 22/14；21 个来源族。
@@ -544,7 +562,7 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
 
 - 状态：M1、M2 均已完成预先冻结的一轮完整诊断矩阵与独立评价；M0 只读取已保存 R2 结果，不重跑。全部标记 development/retrospective，不是独立测试验证。
 
-- 接线修复：新增 R3 P2 adapter，Sun/Ours 共享同一份模型侧 sidecar；活动使用冻结 P2，命名事件使用同一冻结标签逻辑的 R3 扩展并单独注明。原 Stage3 直接读取完整 activity/event label 的调用链作为历史保留，不被改写。
+- 接线修复：新增 R3 P2 adapter，Sun/Ours 共享同一份模型侧 sidecar；活动使用冻结 P2，命名事件使用同一冻结标签逻辑的 R3 扩展并单独注明。原 Part 3 直接读取完整 activity/event label 的调用链作为历史保留，不被改写。
 
 - 事件投影：新增 `temporal_projection_v4_r3`。article18p3 的 `before` 端点由 R2 的 `the restriction of processing` 修复为 `the restriction of processing is lifted`，保留谓词 `lifted`；v1/v2/v3 及 R2 输出未改。
 
@@ -575,7 +593,7 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
 
 ## 历史优先级：表二解释与正式实验文件备份（2026-09-24）
 
-- 用户最新要求先弄清 000、每条法规独立请求和模块必要性，再统一 Stage2 方法身份。
+- 用户最新要求先弄清 000、每条法规独立请求和模块必要性，再统一 Part 2 方法身份。
   只做实验与数据，不写论文；单模块方案仍在考虑，未将 100 替换为正式 Ours。
 - 只读核查：000 实际保留任务、原文约束、分句/关系规则及 JSON 模板；J=0 仍有
   格式信息，S=0 仍有基础语义规则。不能把它们解释为完全无 prompt/格式/语义指导。
@@ -593,10 +611,10 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
   运行实验、改 Gold 或调用 API。
 - 不提交本地旧 `sep_c3_modular_ablation_v1` 被替换成 20 次且指标为空的报告，
   也不提交未审核的 v1/v2 构建脚本、PPT、备份和临时文件；均保留用户本地状态。
-- Stage3 仍按下一节 R1 待纠错，Ours 五条新输入的预测仍缺失，表三未验收。
-  既有五次授权保留；若最终 Stage2 prompt 改变，先对齐方法/请求绑定，不挪用旧授权。
+- Part 3 仍按下一节 R1 待纠错，Ours 五条新输入的预测仍缺失，表三未验收。
+  既有五次授权保留；若最终 Part 2 prompt 改变，先对齐方法/请求绑定，不挪用旧授权。
 
-## 历史 Stage3 状态：S3-TABLE3-V4-R1，Codex 复核后退回纠错（2026-09-24）
+## 历史 Part 3 状态：S3-TABLE3-V4-R1，Codex 复核后退回纠错（2026-09-24）
 
 - 复核对象 2f9dd9f 已推送；保留其诊断证据，**表三未验收**。本轮 Codex 只读
   检查源代码/既有产物、重算 coverage 算术、核对请求序列化及来源，未改实验代码、
@@ -657,7 +675,7 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
   保存的是抽取结果，不是 Table 3。双方共用的时间约束转换已获用户接受，实施规范
   见当前任务卡；原算法和已有预测不改，不用人工动作替换预测。
 - BPMN 表示补齐：原生 Winter 读取 process.name，Sun 读取 participant；在首次
-  Stage 3 评分前同步两者的执行者名称。来源、参考、成员及 B0 预测不变；此修复
+  Part 3 评分前同步两者的执行者名称。来源、参考、成员及 B0 预测不变；此修复
   只解决双方能否看到实际执行者，不声称合规检测因此正确。
 - 本批第一次解析器联调发现 Winter 对 `bpmn:` 前缀读成空流程；已将新模型序列化
   为官方原始 BPMN 的默认命名空间。未修改解析算法，失败测试留痕后做针对性复验。
@@ -673,7 +691,7 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
 ## S3-ASSET-RECOVERY：官方继承资产核对与 Table 3 重新构造（2026-09-23）
 
 - 用户提供纠偏总结，并选择优先补齐三类：补充有明确顺序依据的条文与基准流程；
-  新增 LLM 调用先准备精确输入/预算再授权。Stage 1/3 共用，Stage 2 为主要变量。
+  新增 LLM 调用先准备精确输入/预算再授权。Part 1/3 共用，Part 2 为主要变量。
 - 资产审计已完成：本地两个继承副本 57/57 一致，活动 BPMN 7/7 与来源相同；
   57 文件为 7 BPMN + 46 法规 + 4 配置/词表，没有已补充的合规模型、变体或答案。
   官方 ZIP 本轮未重新下载；历史官方身份与本轮本地字节核对分开说明。
@@ -685,7 +703,7 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
 - 下一项是新 benchmark 的来源、适用范围、独立 reference、合规基准与单错误
   变体构造；仍未产生最终表三。详见 `outputs/reports/sun_stage3_official_asset_audit_v1.md`。
 
-## Stage 3 Table 3 v3：历史全规则库诊断（性能身份已由上节撤销）
+## Part 3 Table 3 v3：历史全规则库诊断（性能身份已由上节撤销）
 
 - Implemented `stage3_sun_style_checker` (Definition 4 full Rule Base matching; Def. 5–7 only on associated rules) and blinded v3 inference view/case map (`stage3_sun_style_inference_view_v3.json`, `stage3_sun_style_case_map_v3.json`).
 - Ran full pipelines for Winter, Sun, and Ours over the shared 9-rule GDPR Rule Base; predictions were persisted before the separate evaluator read labels.
@@ -772,7 +790,7 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
   实际发现，不把“C 类”解释为无需贡献或保证录用。保留 9 月 30 日导师完整初稿目标。
 - `paper/CSCWD_POSITIONING.md` 保存文献对照、可引用范围和风险分析；主张矩阵
   C48/C49 与写作入口已接入。它是写作笔记，不是平行状态页/任务路线。
-- 重点边界：Stage 1 target-aware；Stage 2 字段权衡为描述性；Oracle 隔离已有开发
+- 重点边界：Part 1 target-aware；Part 2 字段权衡为描述性；Oracle 隔离已有开发
   结果、正式主表仍待依赖；四类面板是目标字段受控评价；四臂消融失败不冒充八组合。
 - 核验复用已有报告，未重新运行实验/API/评价器/代码测试；原有脏工作树中的实验修改
   不纳入本批。下一步沿现有 SEP-C1/PW 写作与 SEP-C2/SEP-C4 实质依赖推进。
@@ -806,9 +824,9 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
 
 - **取消** Rules+LLM-Repair / `sun_llm_fallback` / H1 的所有后续实验，包括 S2.12
   F-1/F-2/F-3 的 27 次调用、复跑、优化、消融及新增下游评价；不派发其他规则＋LLM
-  修复/fallback 实验，包括此前待授权的 Stage 3 混合 fallback。
+  修复/fallback 实验，包括此前待授权的 Part 3 混合 fallback。
 - **保留当前主线**：Rules-Only 对 LLM-SE、必要前人比较、Direct 的 E/S/J
-  消融及其固定 Stage 3 衔接。历史混合结果只作溯源，不删除、不重评、不冒充当前方法。
+  消融及其固定 Part 3 衔接。历史混合结果只作溯源，不删除、不重评、不冒充当前方法。
 - **调用范围**：S2.12 Direct 36 + GDPR Direct 74 = 110 次计划；旧 137 次方案及
   发送确认请求已失效，27 次修复预算不挪用。本指令不构成真实调用授权，发送/费用仍为 0。
 - **SEP-C2 两方法执行/评价/冻结合同已适配完成（2026-09-14，零 API）**：
@@ -832,9 +850,9 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
 - 本批为实验代码、机器合同、具名测试与文档更新；未运行实验 API，未改 Gold 或历史
   预测/授权文件；停用规则仍见 `formal_experiment/AGENTS.md`。
 
-## 0.2 SEP-C2 Stage 2B Winter 前人基线首轮实跑（2026-09-15，零 API）
+## 0.2 SEP-C2 Part 2B Winter 前人基线首轮实跑（2026-09-15，零 API）
 
-- 已核实 `references/合规性检查模型代码/model_check` 是 Winter prototype（112 个非缓存文件与 Winter 副本一致），不是 Sun Stage 2；未找到更直接兼容的 Sun 抽取实现。
+- 已核实 `references/合规性检查模型代码/model_check` 是 Winter prototype（112 个非缓存文件与 Winter 副本一致），不是 Sun Part 2；未找到更直接兼容的 Sun 抽取实现。
 - 已在 EStG-150（150 条）与正式 Gold（231 个 clause_span）上固定并运行 `estg150_clause_region_detection_v1`；共同任务只评 clause region，不把义务从句冒充 action span。
 - 实跑：Winter 1.0000/0.8312/0.9078；历史 Rules-Only 0.9398/1.0000/0.9689；历史 LLM-SE 0.9476/0.9740/0.9606；新增 LLM/API=0。
 - 真实失败例：Winter `estg_000071` 无 signal word 零预测漏 3 区域；LLM-SE `estg_000112` 零 clause 漏 1 区域。
@@ -849,7 +867,7 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
 - 新增 S2.13 后继入口 v10 及 schema/outputs：S2.12 状态从两方法合同派生，S2.13 只等待两方法证据，不再等待 `sun_llm_fallback`；v9 及更早胶囊 byte-exact。
 - 具名测试覆盖缺证据拒绝、完整证据通过、取消组不参与和 v10 合同状态；builder replay 与 v10 verifier 通过；未跑全量测试。
 - **Direct-36 零调用就绪核验（2026-09-19）**：`outputs/reports/s2_12_direct36_readiness_review_v1.md`。Rules-Only 36 条完整可验；Direct 无可复用 raw/partial/失败/in_doubt 记录；输入/prompt/model/Gold/evaluator 绑定一致；但 successor 两方法授权缺失、总输入 token 与 USD 硬上限未给、外部发送审批和当前价格复核未过；旧 137/D-CAL/D-REST 授权绑定旧 runner+已取消 fallback，不能复用。总体 **BLOCKED**（仅就绪判断，本轮零调用）。
-- 下一步：继续 SEP-C2 Stage 2B 前人基线首轮实跑，不以准备报告代替结果。
+- 下一步：继续 SEP-C2 Part 2B 前人基线首轮实跑，不以准备报告代替结果。
 
 ## 0. SEP-C2 取消前断点（2026-09-14，历史 137 次范围）
 
@@ -883,7 +901,7 @@ Stage 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见�
 - C36 v2 的 6 个产物、4 个实现文件、8 个冻结输入及两个依赖的登记哈希核对通过。
   7 项相关测试沿用 DS 已记录证据；其快速完整性检查在另一工作区执行的限制保留，
   不宣称此次重新完成全量或同状态整体验证。本轮未运行实验/API/测试。
-- SEP-C1-A 正文收尾：target-paired 限定为四类扩展合成开发面板；补充 Stage 3
+- SEP-C1-A 正文收尾：target-paired 限定为四类扩展合成开发面板；补充 Part 3
   语义定位扩展所用同源局部 XML 证据；r10 A 组有一条有效配对，实际中断原因为
   `action_mapping_below_gamma`（0.690984），已纠正“抽取失败或未配对”的归因；
   r8 的 `xml_counts` 明确来自 capsule 的原始 BPMN 诊断，非 Process Record 字段。
@@ -904,7 +922,7 @@ asset check；无新实验、无真实 API、无可执行 prompt/检查器/Gold 
 **本轮完成什么**
 - 前人比较范围：`paper/THESIS_DRAFT.md` §2.3、§4.6、§6.5；三层比较注册、Sun
   本地作者稿/最终版 DOI 边界、Winter 原方法/wrapper/四类扩展命名边界，并明确
-  Stage 2 外部抽取对照仍未完成。
+  Part 2 外部抽取对照仍未完成。
 - 通用题名：`THESIS_DRAFT.md` 题目节固定推荐中英文题名与两个备选；摘要/RQ 统一
   自然语言合规需求术语；现有数据覆盖仅 EStG-150 与 GDPR-7/S2.11。
 - 完整组合与预算：`paper/ABLATION_MATRIX.md` SEP-C1-B 节和
@@ -931,13 +949,13 @@ asset check；无新实验、无真实 API、无可执行 prompt/检查器/Gold 
 无新实验、无真实 API）。
 
 **本轮完成什么**
-- `paper/THESIS_DRAFT.md` 新增 §3.4 三阶段输入/输出契约：Stage 1 Process Record、
-  Stage 2 Rule Record、Stage 3 Violation Report 的输入、输出记录、不变量和已知
+- `paper/THESIS_DRAFT.md` 新增 §3.4 三部分输入/输出契约：Part 1 Process Record、
+  Part 2 Rule Record、Part 3 Violation Report 的输入、输出记录、不变量和已知
   失败模式；明确 Gold-blind、unknown 不等于合规、expected label 只用于评价分组。
 - 新增 §3.5 贯穿案例（development-only）：SIM 卡入网 r10 成功链（动作映射到
   `Activate SIM card`，owner `Customer`，required actor `the phone company`，
   `incorrect_actor=violation`，case 评价 `found_with_reference_evidence`）与
-  r8 失败链（Stage 1 无 timer/terminate/event_subprocess 结构化字段；Stage 3
+  r8 失败链（Part 1 无 timer/terminate/event_subprocess 结构化字段；Part 3
   报警为 `machine_alarm_but_reference_correspondence_unverified`；修复件
   `semantics_entered_detection_chain=false`）。
 - 本节绑定同一 case capsule
@@ -1008,7 +1026,7 @@ panel；冻结预测只读复用；无真实 API）。
 - 真实 v5 fallback 仍无覆盖 v5 scope/hash 的授权，真实 API=0。
 
 **下一步**：C36 target-paired 验收护栏、依赖绑定与交付收尾完成；继续
-SEP-C1-A，把三阶段 I/O 与 SIM r10 成功链 / r8 失败链写入现有论文，并核对
+SEP-C1-A，把三部分 I/O 与 SIM r10 成功链 / r8 失败链写入现有论文，并核对
 原始记录与主张矩阵。
 
 ## 0. 历史验收：S3-C36-TARGET-PAIRED v1（2026-09-14，零真实 API；已被 v2 取代）
@@ -1059,18 +1077,18 @@ per-type F1（prohibited/condition/constraint/exception）：C36
   若要求完全独立的字段级持久证据，最小补跑是：在同一 40 个 control 检查上，
   用已保存的 `control_scores` 和同一 frozen rule 写出 per-type 布尔值/状态；
   不需要重新推理，也不需要新 API。
-- C36 manifest 未列出 Stage 1 structural contract 输入；本比较不需要重新解析，
+- C36 manifest 未列出 Part 1 structural contract 输入；本比较不需要重新解析，
   因为被比较的是已冻结的 per-check 预测字段，且 panel/BPMN/rule inference pack
   身份已匹配。
 - 未运行全量测试；仅运行本任务具名测试。
 
 **下一步**：本 S3-C36-TARGET-PAIRED 已完成；可继续 S3-V5 真实 fallback 授权
-流程（仍在等待覆盖 v5 scope/hash 的明确授权），或按 SEP-C1 继续三阶段 I/O
+流程（仍在等待覆盖 v5 scope/hash 的明确授权），或按 SEP-C1 继续三部分 I/O
 与成功/失败案例写作。
 
 ## 0. 当前验收：S3-V5-RUNNER-INTEGRATION（2026-09-14，零真实 API）
 
-**状态：VERIFIED_OFFLINE_INTEGRATION；Stage 3 整体尚未完成。**
+**状态：VERIFIED_OFFLINE_INTEGRATION；Part 3 整体尚未完成。**
 
 - 已将主工作区从 `45513f3` 快进到 DS 的远端 `51040ca`，保留原有本地修改；
   DS v3/v4/v5 的 34 个登记产物哈希全部匹配。
@@ -1080,7 +1098,7 @@ per-type F1（prohibited/condition/constraint/exception）：C36
   独立并绑定输入身份；22 个候选对象实际只有 18 份唯一请求，相同正文共享响应、
   保留各自对象 ID 且只计费一次；发送开始后中断不重发，usage 未知不宣称完成。
 - 五个相关测试文件 **42 passed in 0.87s**，快速完整性检查通过；没有执行全量测试。
-  机器字段 `final_experiment_ready=True` 是已有门禁结果，不代表 Stage 3 Oracle 或真实 fallback 已完成。
+  机器字段 `final_experiment_ready=True` 是已有门禁结果，不代表 Part 3 Oracle 或真实 fallback 已完成。
 - 最终离线恢复：**0 新发送、18 历史响应、22 个响应对象被消费、80 条预测**；21 项
   检查发生变化，mock Macro-F1 0.7773、配对 28/40、unknown 0.2375 **仅属假响应接线证据**。
   DS v5 的实际开发效果仍是 F1 **0.6737**、配对 **21/40**、unknown **0.3375**。
@@ -1094,7 +1112,7 @@ per-type F1（prohibited/condition/constraint/exception）：C36
 **Next suggested action: S3-C36-TARGET-PAIRED compatibility audit is complete.**
 能否支持同口径评价；可以只读重评分才生成表，否则提交字段级缺口与最小补跑清单。
 不得从旧单标签指标反推四类检查，不为了填表改 Gold、改分母或把 unknown 算作合规。
-真实 v5 fallback 另待范围授权；等待时可继续 SEP-C1-A 的三阶段 I/O 和成功/失败案例写作。
+真实 v5 fallback 另待范围授权；等待时可继续 SEP-C1-A 的三部分 I/O 和成功/失败案例写作。
 后续较早记录为历史状态，冲突时以本节及下方当前派工表为准。
 
 ## 0. Latest v5 LLM preflight: s3_semantic_grounding_llm_v2 (2026-09-13, zero API)
@@ -1414,7 +1432,7 @@ python formal_experiment/scripts/audit_project.py
 | SEP-C0 计划修订 | 用户已明确推进原则 | verified（文档范围） | 主 Pipeline、状态和手册改为按依赖推进、尽早完成、逐项诊断修复；撤销中间日历安排。本批未执行实验，Git 备份结果在交接中报告。 |
 | S3-V5-RUNNER-INTEGRATION | DS v5 冻结结果与请求包已有 | verified（离线） | 接通 80 条预测及评价，22 对象共享 18 份响应，恢复新增发送 0，42 项相关测试通过；真实调用仍为 0。 |
 | S3-C36-TARGET-PAIRED | 冻结 C36 与 v5 预测已有 | verified（v2 门禁，已推送） | 验收护栏与依赖绑定通过；见 outputs/reports/s3_c36_target_paired_v2.*；SEP-C1-A/B 已完成，下一项 SEP-C2。 |
-| SEP-C1 写作与比较口径 | 已有方法和案例可整理 | verified：SEP-C1-A+B | SEP-C1-A 已完成：论文 §3.4/§3.5 写入三阶段 I/O 与 SIM r10 成功链/r8 失败链，C42/C43 入主张矩阵；无新实验/API。SEP-C1-B 已完成：前人比较范围、通用题名、八组合消融与预算准备（C44-C46）；该 SEP-C1-B 同批双重复设计的八组合真实结果仍待运行；另 SEP-C3 modular_v1 八格已各执行一次但非同批、无重复，不能混写。 |
+| SEP-C1 写作与比较口径 | 已有方法和案例可整理 | verified：SEP-C1-A+B | SEP-C1-A 已完成：论文 §3.4/§3.5 写入三部分 I/O 与 SIM r10 成功链/r8 失败链，C42/C43 入主张矩阵；无新实验/API。SEP-C1-B 已完成：前人比较范围、通用题名、八组合消融与预算准备（C44-C46）；该 SEP-C1-B 同批双重复设计的八组合真实结果仍待运行；另 SEP-C3 modular_v1 八格已各执行一次但非同批、无重复，不能混写。 |
 | SEP-C2 必要对照与剩余 Direct 批次 | 两方法合同已适配；运行仍需实际证据与适用权限 | 修复组取消；Direct 结果待执行 | v10 衔接报告中 Rules-Only 36 条已验证，Direct 缺完整预测/评价；保留 Direct 36 + GDPR 74 = 110 次既有计划。执行任务按真实账本和现有授权检查，本轮不重验凭据或外部发送状态；不恢复修复组。 |
 | SEP-C3 prompt 组合与后处理归因 | 诊断已有；新运行仍需适用授权 | targeted refinement 已收口；八格已执行一次但非同批/无重复；后处理归因仅旧 v6+111 局部；重复运行未完成 | 2026-09-19 完成 A/B/C/D 一次 600-call 开发运行；modular_v1 000-111 已由前批+增量批各执行一次（commit 18f5cf9，1200 completed samples；批次混杂，不能作稳定主效应/交互）；后处理归因仅本地分支 9b50729 覆盖旧 v6+111，其余 arms 未覆盖且 adapter/canonicalizer/validator 子步骤贡献不可独立分离；B 仅研究参照，正式默认仍为 v6；旧 R_C 保留混合结果；五臂 v2 未执行；详见文首、sep_c3_constraint_refinement_v2_semantic_review 与 sep_c3_postprocessing_attribution_v1。 |
 | SEP-C4 下游与四类边界 | 案例/开发诊断已有证据；正式运行需上游门禁 | 诊断可推进 / 正式运行 blocked | 正式 Oracle/端到端仍依赖实质门禁；案例与范围诊断及时写入正文，新问题进入对应修复项，不等待日历截点。 |
@@ -1428,7 +1446,7 @@ python formal_experiment/scripts/audit_project.py
 
 **开始下一项时必须保留的事实**：
 
-- Stage 1 已冻结；既有 Stage 2 三方法结果保留为历史来源；Rules+LLM-Repair 已退出
+- Part 1 已冻结；既有 Part 2 三方法结果保留为历史来源；Rules+LLM-Repair 已退出
   后续全部实验。当前两方法比较尚需补齐，不等于 S2.13 或 S3.7 已完成。
 - 已存文档记录 2026-09-07 授权 S2.12 63 + GDPR 74 次，后续离线准备记录的阻塞为进程环境凭据。
   本次没有调用执行器或检查凭据，**不把历史 ZERO CALLS / 缺凭据当作今天已重新验证的状态**；
@@ -1746,7 +1764,7 @@ incorrect_actor 1.0000（8/0/0/8）、out_of_order 1.0000（10/0/0/10）**。
 （`syn_incorrect_actor_03/04` 注入的 lane 名称等于既有 pool `Data Controller`，所有权标签集
 未变，不构成可靠正例；两项样本保留、原因记录、未删除未补写）。检查实例 56、逐项预测 112 行。
 两个检查器 `sun_2024_frozen` 与 `evidence_checks_v1` 使用完全相同的局部合成要求、原图/变体、
-Stage 1 解析、NLP、tau/gamma/theta=0.8 与评价口径。真实结果：macro-F1 **0.7874 vs 0.7579**、
+Part 1 解析、NLP、tau/gamma/theta=0.8 与评价口径。真实结果：macro-F1 **0.7874 vs 0.7579**、
 成对成功 **16/28 vs 17/28**、总 unknown **0 vs 19**（全部为近重复标签引起的中止）；
 incorrect_actor 上 Sun 对照误报 7/8（成对 1/8），EvidenceChecks 对照误报 0（成对 6/8）；
 out_of_order 上 Sun 成对 10/10，EvidenceChecks 6/10（4 对中止）。
@@ -1776,7 +1794,7 @@ lane/pool 检查，不将业务对象当执行者。冻结 Sun 实现、阈值�
 
 1. **正式 Gold Rule Records 已发布**：用户确认的 74 句 / 92 条规范经机械无损转换
    为 `data/gold/stage3/gdpr7_gold_rule_records_v1.json`（独立 verifier 32 项通过，
-   15 项聚焦测试；多情态句不再取首项压平）；配套 Stage-3 胶囊
+   15 项聚焦测试；多情态句不再取首项压平）；配套 Part 3 胶囊
    `data/predictions/gdpr7_human_rule_record_v1/`。复核命令：
    `python formal_experiment/scripts/verify_gdpr7_gold_rule_records_v1.py`。
 2. **人工规则已接入检查器**：`gdpr_capsule_converter@1.3.0` 允许第三个 schema；
@@ -1792,7 +1810,7 @@ lane/pool 检查，不将业务对象当执行者。冻结 Sun 实现、阈值�
    授权/合同/预检资产齐备、GDPR 74 次假传输 74/74 且零计费、三类拒绝路径全部
    fail-closed。**唯一阻塞 = 进程环境凭据缺失**（预检 5 项 FAIL，含 API key absent）。
 5. **下游配对比较已跑**（`outputs/reports/s3_downstream_paired_v1.{json,md}`）：
-   同一冻结 Stage 3 下 rules_only 与 human_rules 均为 macro 0.3333 / exact 0.3333 /
+   同一冻结 Part 3 下 rules_only 与 human_rules 均为 macro 0.3333 / exact 0.3333 /
    detected 11（Δ=0）；direct_llm 臂 blocked（胶囊不存在，不插值）。四类合成面板对
    人工规则臂有偏差（绑定 dev 抽取 + first-valid-span 投影），已在报告显式披露。
 
@@ -1865,10 +1883,10 @@ identity 与 blank 一致；v1 文件 byte-exact 保留）新增 rule_items（�
 actor_action_map（隐含 1:1 + 显式跨项边）、order_relations（句内动作先后）；导出
 `export_canonical_records_v2` 生成 Rules-Only 同形坐标-only canonical 行（telemetry 非静默）；
 工具/校验/导入/冻结 schema 分派升级（v1 仍可校验、只读提示升级）；53 项合成测试全绿
-（含多执行者×多动作、一执行者多动作、先 A 后 B、无执行者/无顺序、镜像一致性、Stage-3
+（含多执行者×多动作、一执行者多动作、先 A 后 B、无执行者/无顺序、镜像一致性、Part 3
 first-valid-span 消费）。**唯一正式编辑入口=`scripts/gdpr7_review_tool_v1.py`（默认 v2）**；
 真实裁决 0/74。
-(4) **Task D LLM-SE 接入 Stage 3**：`gdpr_capsule_converter.py` 双 schema 自动探测
+(4) **Task D LLM-SE 接入 Part 3**：`gdpr_capsule_converter.py` 双 schema 自动探测
 （sun_rule_only/direct_llm 同形行）+ 显式 pin；`run_gdpr_3type_linkage_v1.py` 增 direct_llm
 来源（74/74 ok 门控、`--allow-missing-arm`、`--arm all`、changes_vs_reference + 机器 reason
 七枚举 `gdpr_change_classifier.py`）；四类扩展链路确认 direct_llm 消费 + 机器 reason；
@@ -1902,7 +1920,7 @@ CALLS/READY（真实调用 0，等待进程环境凭据）；S2.13 blocked only 
 已可用（真实裁决 0/74）；S3.7 未动。真实运行命令：`docs/API_AUTHORIZATION_REQUEST.md` §13.3。
 本段之前的 2026-09-07（3.6.38）及更早段落为历史结论，保留。
 
-**2026-09-07 Stage 3 根因修复与同输入复算（零 API）**：已修复 Sun Def6 的规则/流程 actor-action 关联、数值时限的动作绑定与适用范围、五分类漏计 abstention/误判合规。原三类 33 条两侧判定不变（reference 0.3889/0.3636；Rules-Only 0.3333/0.3333）。四类 reference macro 更新为 0.4738/0.2381/0.1429/0.3750；Rules-Only 保持 0.3313/0.1875/0/0.3321。既有阈值网格已复算，主聚合不变。当前证据 `outputs/reports/s3_formula_repair_v2.{json,md}` 与 `outputs/evidence/s3_formula_repair_v2/manifest.json`；论文 §7.4.4 与汇报第 9–11 页使用此版本。历史 2026-09-06 的四类参考数字及五分类 P/R/F1 不再作为当前结果。137 次真实 API、人工 Rule Record Gold、正式 Oracle 状态仍未完成。
+**2026-09-07 Part 3 根因修复与同输入复算（零 API）**：已修复 Sun Def6 的规则/流程 actor-action 关联、数值时限的动作绑定与适用范围、五分类漏计 abstention/误判合规。原三类 33 条两侧判定不变（reference 0.3889/0.3636；Rules-Only 0.3333/0.3333）。四类 reference macro 更新为 0.4738/0.2381/0.1429/0.3750；Rules-Only 保持 0.3313/0.1875/0/0.3321。既有阈值网格已复算，主聚合不变。当前证据 `outputs/reports/s3_formula_repair_v2.{json,md}` 与 `outputs/evidence/s3_formula_repair_v2/manifest.json`；论文 §7.4.4 与汇报第 9–11 页使用此版本。历史 2026-09-06 的四类参考数字及五分类 P/R/F1 不再作为当前结果。137 次真实 API、人工 Rule Record Gold、正式 Oracle 状态仍未完成。
 
 **2026-09-06c 汇报前收尾（零 LLM/API；统一评价已离线运行，旧结果保留）**：
 (1) **统一五分类评价修复并重算**：合规/违规两侧同一确定性决策（不读 expected/gold；
@@ -1928,11 +1946,11 @@ CONTENT_2026-09.md`）已统一口径；MASTER 3.6.37。**仍需用户事项仅�
 完成状态如实保留。
 
 **2026-09-06b 论文收尾执行进展（全部零 LLM/API/网络；规则与授权边界未变）**：
-(1) **GDPR Stage2→Stage3 成对衔接实验（Rules-Only 臂）已运行并产出真实结果**
+(1) **GDPR Part 2→Part 3 成对衔接实验（Rules-Only 臂）已运行并产出真实结果**
 （dev/受控合成口径）：句子级 Gold-blind 输入 9 条款/74 句
 （`data/input/gdpr7_stage2_input_v1.json`，分句与 S3.9-EXT 锁定绑定 40/40 一致）；
 Rules-Only 真实零 API 预测 74/74（`data/predictions/gdpr7_sun_rule_only_v1/`）；
-同一固定 Stage-3 四类型检测器消费外部预测（`scripts/run_gdpr_s2_s3_linkage_v1.py`，
+同一固定 Part 3 四类型检测器消费外部预测（`scripts/run_gdpr_s2_s3_linkage_v1.py`，
 失败不回填）：variant macro winter 0.5208/sun 0.1875/bm25 0/tfidf 0.351，对照 FP
 0.45/0.05/0/0.375；与参考确定性抽取逐样本变化 7/6/6/4（例：article22 s1 被 B0 判
 obligation 使 2 个禁止变体不可观察；tfidf 一例由不可观察变为新检出）。分析与案例：
@@ -1951,7 +1969,7 @@ obligation 使 2 个禁止变体不可观察；tfidf 一例由不可观察变为
 **2026-09-06 撤回说明与研究定位澄清（研究定位以此为准）**：用户澄清此前“直接使用
 Barrientos 原始 FULL/NO-PATTERNS 两份提示、在本项目冻结 36 条输入上运行 360 次
 （36×2×5）”的方案是对其意图的误解，**已经撤回、不得执行**。研究定位维持：Sun et al.
-(2024) 是整体改进对象与三阶段方法主干；Barrientos et al. (2026) 仅作为 **Stage 2 的
+(2024) 是整体改进对象与三部分方法主干；Barrientos et al. (2026) 仅作为 **Part 2 的
 方法借鉴来源**（LLM 结构化输出、验证、受控词汇、归一化与评估纪律）；本项目**不承担
 “必须整体优于 Barrientos”**，也不把原样运行其原生提示作为正式对照。下列 2026-09-05
 段及其入口脚本/独立合同/预检报告/22 项 focused tests（checkpoint `2c5181e`）保留为
@@ -1971,19 +1989,19 @@ FULL/NO-PATTERNS 新入口与合同离线准备：36×2×5=360次，USD cap 9.70
 无历史基线复用；重点评价名单外模式与命名/可用性，不套用六字段F1。22项focused
 测试通过（含360次假响应链、未授权拒绝、账本校验）；**真实API=0，尚待该独立
 预算授权，未产生新性能结果**。PDF/XML代码已定位，仍需成对上游输入、可读PDF
-模型/文件上传预算及独立Stage 3门禁；未启动。源核对与命令见
+模型/文件上传预算及独立Part 3门禁；未启动。源核对与命令见
 `outputs/reports/barrientos_paper_ablation_preflight_v1.md`。已有消融及正式结果未改。
 
-项目目标是完整重建并改进 Sun 的三阶段流程，而不是只做一个 Stage 2 小实验：
+项目目标是完整重建并改进 Sun 的三部分流程，而不是只做一个 Part 2 小实验：
 
-1. 完成 Stage 1 流程模型结构与标签语义解析；
-2. 在 Stage 2 完成 Sun、传统方法、直接 LLM 和 Hybrid 的同条件比较；
+1. 完成 Part 1 流程模型结构与标签语义解析；
+2. 在 Part 2 完成 Sun、传统方法、直接 LLM 和 Hybrid 的同条件比较；
 3. 用主数据和更复杂法律语料验证复杂度退化与 LLM 优势边界；
-4. 在 Stage 3 完成多 baseline 的规则—流程匹配、违规检测和错误类型分类；
-5. 分开报告 Oracle Stage 3 与端到端误差传播，并做 Stage 2/3 交叉消融。
+4. 在 Part 3 完成多 baseline 的规则—流程匹配、违规检测和错误类型分类；
+5. 分开报告 Oracle Part 3 与端到端误差传播，并做 Part 2/3 交叉消融。
 
-实施顺序锁定为：**先完成 Stage 2，再补齐 Stage 1，最后复现并扩展 Stage 3**。
-当前机器合同仍是 Stage 2 优先、Stage 3 固定的阶段性合同；启动 Stage 3 改进前
+实施顺序锁定为：**先完成 Part 2，再补齐 Part 1，最后复现并扩展 Part 3**。
+当前机器合同仍是 Part 2 优先、Part 3 固定的阶段性合同；启动 Part 3 改进前
 必须另行修改并审计合同。
 
 用户于 2026-08-01 确认：B0（Rules-Only）采用 `method-level independent
@@ -2036,7 +2054,7 @@ manifest 解锁。论文工作稿位于 `paper/`，不能反向定义实验状�
 | `human_review_input_ready` | true | Layer E 输入门禁已满足；历史 "0/150 可开始"语义不等于当前审核进度 |
 | `human_review_freeze_ready` | true | 150/150 adjudicated（2026-08-06 经授权恢复）；freeze validator 通过，仍不足以发布 formal Gold |
 | `formal_gold_publication_ready` | **true** | 用户 2026-08-10 按 formal_gold_authorization_packet_v2 授权：stage3.status=locked、publication gate=ready_for_formal_gold_publication（白名单精确匹配）、freeze_policy 重锁（治理/许可/禁止约束保留）；formal Gold 已发布（尚不代表 S1.7/S2.13/Gold Rule-Process Records/Oracle/最终实验完成） |
-| `final_experiment_ready` | **true（仅机器门禁）** | 正式方法、冻结输入/Gold 与三方法正式 capsule 机器门禁就绪；**仅代表 Stage 2 三方法正式评价/最终指标机器门禁就绪，不代表 S2.13、S3.7 或完整 MASTER_PIPELINE 完成**（2026-08-15 过渡核账：S2.13 仍 blocked、正式 Oracle 未启动未授权；当前 fail-closed 入口为 `outputs/reports/s2_13_s3_7_transition_readiness_v8.json`，v7 及更早为 byte-exact 历史 provenance） |
+| `final_experiment_ready` | **true（仅机器门禁）** | 正式方法、冻结输入/Gold 与三方法正式 capsule 机器门禁就绪；**仅代表 Part 2 三方法正式评价/最终指标机器门禁就绪，不代表 S2.13、S3.7 或完整 MASTER_PIPELINE 完成**（2026-08-15 过渡核账：S2.13 仍 blocked、正式 Oracle 未启动未授权；当前 fail-closed 入口为 `outputs/reports/s2_13_s3_7_transition_readiness_v8.json`，v7 及更早为 byte-exact 历史 provenance） |
 
 每次修改后的最新值以机器检查输出为准；若本表与机器检查冲突，以机器检查为准并
 立即修正本页。
@@ -2050,9 +2068,9 @@ manifest 解锁。论文工作稿位于 `paper/`，不能反向定义实验状�
 | Rules-Only（旧代号 B0；BERT-TextCNN + CoreNLP/Tregex/Tsurgeon） | B0-R0–R5 verified（R1 七子批次闭环 2026-08-04；R2 method-level conformance 用户授权 2026-08-04；R3 56d2b03 快照细 Gold F1 0.71865、句子级粗 Gold 主口径 F1 0.7986（2026-08-07 用户决策口径对齐 Sun）） | 允许方法级独立复现（非 exact）；B0 v10 code/config/CoreNLP bridge/runner 已纳入 main，旧 heuristic 不再冒充 B0 入口；audit 区分 component presence（pass: `b0_paper_faithful_components_present`）与 method conformance（pass: `verified_method_level_independent_reconstruction`，2026-08-04 用户授权，见 `configs/methods.json` 与 docs/B0_R2_METHOD_CROSSWALK.md）；441MB checkpoint / CoreNLP jar / Legal-BERT cache 仍为 external runtime prerequisites（未提交、未下载） |
 | Rules+LLM-Repair（旧代号 H1；Sun + LLM fallback） | **对照方法（2026-08-08 用户确认，不再深究，§8.8.1）**；development 机制与全量 150 运行（commit 74614e3）：主口径 F1 0.7621 vs Rules-Only 0.7986（净负）、LLM 修复过度抽取 actor（P 0.7077→0.2754、spans 65→167） | runner 强制读取并 SHA 绑定落盘 B0，不再内部重跑；field-level patch 原子应用并记录 accepted/rejected/no-op（103 accepted / 89 changed / gate=True / 0 incidents）；机制正常但 trigger+repair 配方加 FP 不加召回 → 论文中仅作对照臂，不作贡献 |
 | LLM-SE（旧代号 D1；direct LLM） | 历史分支 development run 已登记 P/R；D1-R0 整合 verified、D1-R1 四子批次 verified（150 全量 F1 0.7735、constraint R 0.4172、0 事故）、**D1-R2 锁定 verified（2026-08-06）**（v6 prompt sha 3aa64877 固定、deepseek-v4-pro/temp0/top_p1/4096、预算合同，见 `configs/models/estg150_d1_active_registry_v1.json`）、**D1-R3 快照重跑 verified（2026-08-06）**（细 Gold F1 0.7756 / P 0.8793 / R 0.6938，0 事故）、**句子级粗 Gold 归因 verified（2026-08-07，用户决策口径对齐 Sun，粗 Gold 为主口径）**（F1 0.8726，与 B0 同 Gold 同口径）；**主方法（2026-08-08 导师汇报后确认，§8.8.4）**；**formal arm 已正式发布（2026-08-11，`direct_llm_formal_arm_v1`，zero-API 绑定 D1-R3 snapshot，独立 verifier VERIFIED）；正式三方法比较覆盖 D1** | 可引用为历史开发证据与 D1-R1/R2/R3 development 结果及归因实验；不得冒充当前冻结 capsule 的正式指标；贡献细模块化（8 模块）与消融矩阵 AB-1..AB-10 见 §8.8.4 |
-| Stage 1 | S1.1-S1.6 合同/解析/标注协议/评价器资产已从 56d2b03 checkpoint 恢复并重新绑定（2026-08-08）；37 项 stage1 测试全绿；audit pass：`stage1_structural_process_record_verified`/`stage1_label_semantics_p0_p1_verified`/`stage1_annotation_protocol_verified`/`stage1_evaluator_contract_verified`。**S1.5 人工裁决 7/7 批全部完成并正式冻结发布（2026-08-13）**：7/7 records adjudicated、135/135 label fields resolved、7/7 structures accepted_candidate、142/142 human decisions resolved、0 unresolved；七批链式 verifier（blank→b1..b7→磁盘逐位）VERIFIED；用户明确授权冻结（授权 manifest `s1_5_process_gold_freeze_authorization_v1.manifest.json`）；**正式 Stage 1 Process Gold 已发布**（`data/gold/stage1/process_records/stage1_process_gold_v1.json`，独立 verifier `verify_stage1_process_gold.py` VERIFIED）。**S1.3 P2 + S1.6 正式评价（2026-08-13）**：P2=Sun/Leopold-style 方法级重建（跨walk+锁定 config/实现/runtime），P0/P1/P2 正式评价完成（P2 语义 micro F1 0.8185）；**claim 已纠正（2026-08-13 纠错）**：target-overlap 审计（历史 3 条重合、当前 0）+ claim correction v2（target-aware、strict_test_blind=false、held-out 泛化禁止、fixed-GDPR7 描述性组件评价）+ 正式 v2 路径（`data/predictions/stage1_formal_v1/`、`data/results/stage1_formal_v1/`）；audit pass `stage1_formal_evaluation_verified`/`stage1_claim_correction_verified`；**S1.7 正式冻结已完成（2026-08-13 用户明确授权）**：授权 manifest `s1_7_freezer_authorization_v1.manifest.json`（P2 锁定方法/P0-P1-P2 预测/原始指标/Stage 1 Process Gold/评价 capsule 全部冻结；未改 P2、未选择性重算、零 LLM-API、未授权 Stage 3 Oracle）；audit pass `stage1_s7_freeze_authorized`；S3.7 Oracle 仍须经 Stage 3 独立门禁 | 合成 BPMN 上验证的 development 合同与机制；S1.5 正式 Process Gold 已冻结发布（2026-08-13）；S1.3/S1.6 verified（target-aware claim）；S1.7 frozen（2026-08-13 用户授权）；S3.7 Oracle 待 Stage 3 独立门禁 |
-| Stage 3 | **S3.1 verified（2026-08-08）**：7 个 Winter-provenance GDPR BPMN 以 byte-exact（LF）恢复至 `data/input/stage1_stage3/gdpr7/`；合同 `stage1_stage3_gdpr7_v1.json` hash 全匹配；`verify_stage1_stage3_gdpr7.py` 通过（7 byte-exact、45 activities、135 blank label fields）；audit pass `stage1_formal_bpmn_membership_locked`（claim=all-seven extension，非 Sun 原 4）。**S3.2/S3.3 decision Gold 已发布（2026-08-10，随 formal Gold publication）**：matching 25 条 + violation 33 条（`data/gold/stage3/stage3_matching_gold_v1.json` / `stage3_violation_gold_v1.json`，与 frozen correction `3310d624…` 一致，冻结 manifest `s32_s33_gold_annotation_freeze_v1.manifest.json`）；**这些 matching/violation decisions ≠ Gold Rule Records**。**S3.4/S3.5/S3.6 development verified（2026-08-08，DEV_ONLY，evidence capsule 已版本化）**：Winter wrapper / Sun Def 4-7 重建 / BM25 v3 + TF-IDF-SVD baseline；**S1.7 依赖已满足（2026-08-13 frozen），formal completion 仍 blocked on S2.13**。**S3.7 formal Oracle 未启动、未授权**（2026-08-15 过渡核账：`formal_oracle_started=false`、`formal_oracle_authorized=false`、`ready_for_oracle_authorization=false`、`authorization_sentence=null`、`no_pseudo_oracle=true`；9 个 GDPR rule IDs article6/7/15/16/17/20/22/33/34 的正式 Gold Rule Records 不存在，本轮未创建/未推断） | S3.1 文件名/hash/claim 已固定；S3.2/S3.3 decision Gold 已发布（非 Gold Rule Records）；S3.4-S3.6 为 development baseline，尚未进入 formal Oracle 主表；正式 Oracle 待 S2.13 + 人工 Gold Rule Records + S3.4-S3.6 formal promotion + 用户单独授权 |
-| 正式结果目录 | **Stage 2 三方法正式 capsule 已冻结发布**（`data/predictions`、`data/results` 下 `*_formal_arm_v1`，claim_scope=formal，独立 verifier 全过）；**Stage 3 formal 结果未冻结** | 禁止把 development Stage 3 数字写成 formal；不得声称 Stage 3/端到端最终实验结果 |
+| Part 1 | S1.1-S1.6 合同/解析/标注协议/评价器资产已从 56d2b03 checkpoint 恢复并重新绑定（2026-08-08）；37 项 Part 1 测试全绿；audit pass：`stage1_structural_process_record_verified`/`stage1_label_semantics_p0_p1_verified`/`stage1_annotation_protocol_verified`/`stage1_evaluator_contract_verified`。**S1.5 人工裁决 7/7 批全部完成并正式冻结发布（2026-08-13）**：7/7 records adjudicated、135/135 label fields resolved、7/7 structures accepted_candidate、142/142 human decisions resolved、0 unresolved；七批链式 verifier（blank→b1..b7→磁盘逐位）VERIFIED；用户明确授权冻结（授权 manifest `s1_5_process_gold_freeze_authorization_v1.manifest.json`）；**正式 Part 1 Process Gold 已发布**（`data/gold/stage1/process_records/stage1_process_gold_v1.json`，独立 verifier `verify_stage1_process_gold.py` VERIFIED）。**S1.3 P2 + S1.6 正式评价（2026-08-13）**：P2=Sun/Leopold-style 方法级重建（跨walk+锁定 config/实现/runtime），P0/P1/P2 正式评价完成（P2 语义 micro F1 0.8185）；**claim 已纠正（2026-08-13 纠错）**：target-overlap 审计（历史 3 条重合、当前 0）+ claim correction v2（target-aware、strict_test_blind=false、held-out 泛化禁止、fixed-GDPR7 描述性组件评价）+ 正式 v2 路径（`data/predictions/stage1_formal_v1/`、`data/results/stage1_formal_v1/`）；audit pass `stage1_formal_evaluation_verified`/`stage1_claim_correction_verified`；**S1.7 正式冻结已完成（2026-08-13 用户明确授权）**：授权 manifest `s1_7_freezer_authorization_v1.manifest.json`（P2 锁定方法/P0-P1-P2 预测/原始指标/Part 1 Process Gold/评价 capsule 全部冻结；未改 P2、未选择性重算、零 LLM-API、未授权 Part 3 Oracle）；audit pass `stage1_s7_freeze_authorized`；S3.7 Oracle 仍须经 Part 3 独立门禁 | 合成 BPMN 上验证的 development 合同与机制；S1.5 正式 Process Gold 已冻结发布（2026-08-13）；S1.3/S1.6 verified（target-aware claim）；S1.7 frozen（2026-08-13 用户授权）；S3.7 Oracle 待 Part 3 独立门禁 |
+| Part 3 | **S3.1 verified（2026-08-08）**：7 个 Winter-provenance GDPR BPMN 以 byte-exact（LF）恢复至 `data/input/stage1_stage3/gdpr7/`；合同 `stage1_stage3_gdpr7_v1.json` hash 全匹配；`verify_stage1_stage3_gdpr7.py` 通过（7 byte-exact、45 activities、135 blank label fields）；audit pass `stage1_formal_bpmn_membership_locked`（claim=all-seven extension，非 Sun 原 4）。**S3.2/S3.3 decision Gold 已发布（2026-08-10，随 formal Gold publication）**：matching 25 条 + violation 33 条（`data/gold/stage3/stage3_matching_gold_v1.json` / `stage3_violation_gold_v1.json`，与 frozen correction `3310d624…` 一致，冻结 manifest `s32_s33_gold_annotation_freeze_v1.manifest.json`）；**这些 matching/violation decisions ≠ Gold Rule Records**。**S3.4/S3.5/S3.6 development verified（2026-08-08，DEV_ONLY，evidence capsule 已版本化）**：Winter wrapper / Sun Def 4-7 重建 / BM25 v3 + TF-IDF-SVD baseline；**S1.7 依赖已满足（2026-08-13 frozen），formal completion 仍 blocked on S2.13**。**S3.7 formal Oracle 未启动、未授权**（2026-08-15 过渡核账：`formal_oracle_started=false`、`formal_oracle_authorized=false`、`ready_for_oracle_authorization=false`、`authorization_sentence=null`、`no_pseudo_oracle=true`；9 个 GDPR rule IDs article6/7/15/16/17/20/22/33/34 的正式 Gold Rule Records 不存在，本轮未创建/未推断） | S3.1 文件名/hash/claim 已固定；S3.2/S3.3 decision Gold 已发布（非 Gold Rule Records）；S3.4-S3.6 为 development baseline，尚未进入 formal Oracle 主表；正式 Oracle 待 S2.13 + 人工 Gold Rule Records + S3.4-S3.6 formal promotion + 用户单独授权 |
+| 正式结果目录 | **Part 2 三方法正式 capsule 已冻结发布**（`data/predictions`、`data/results` 下 `*_formal_arm_v1`，claim_scope=formal，独立 verifier 全过）；**Part 3 formal 结果未冻结** | 禁止把 development Part 3 数字写成 formal；不得声称 Part 3/端到端最终实验结果 |
 | Sun modality development 数据 | verified；2,831 analysis rows | 只允许本地 development 使用；许可未知、禁止再分发，不是 Sun original split |
 | public marker lexicon v1 | verified；7/25/19/5/8，共 64 个 | 英文 public-source reconstruction、development-only；不是 Sun original/full lexicon，不能据此训练或评价 |
 
@@ -2134,7 +2152,7 @@ evidence span。Overall F1=76.69%，`invalid_attempt_count=1`。manifest 状态�
 | 6.2 | B0-R0–B0-R5 | **B0-R0 verified**（2026-08-02 commit 之后）：actor_action.py + 12 个 b0_v10 模块 + sun_style/lexicon_v2_runtime + estg150_b0_development v1/v2/v3/v10 + corenlp_runtime/sun_b0/bert_textcnn + stage2_evaluation v1/v3 + 7 个 v2 lexicon 资源 + SunPhraseRuleBatchBridgeMulti.java + sun_corenlp_runtime.json + sun_b0_s26_candidate_B_v1.json + sun_bert_textcnn_s24.json + estg150_b0_enhanced_s27_v10a.json + estg150_b0_v10_preregistration_v2.json + stage2_evaluator_s210_v3.json + stage2_prediction.schema.json + scripts/run_estg150_b0_enhanced_v10_development.py + test_b0_v10_integration_contract.py（15 验收点） 已纳入 main；audit 区分 component presence（pass）与 method-conformance（blocker，必须由 B0-R2 才能解除）；B0-R1 ready（后续 R2/R3/R4/R5 逐批 verified，2026-08-04 → 2026-08-11）；未运行 CoreNLP、未读 Gold/Layer E、未调 API、未改 D1/H1（历史批次当时状态）；先前 6341136 的 B0-R0-C0 仅依赖闭包，状态从误报 COMPLETE 修正为 verified，correction event 已追加。**B0-R1 五批已完成并实测**（2026-08-04，全部在隔离 worktree + 56d2b03 历史输入 + 真实 CoreNLP 下验证，主口径 sun_literal_overlap_evaluation@2.0.0）：R1-A..C3（token-safe span）→ E1/E2（主口径 evaluator + v10a/C3 重评：F1 0.71019/0.71024，旧 0.5398→0.5326 推翻）→ ERR（错误分析文档，docs/B0_ERROR_ANALYSIS.md）→ **ACTION**（F1 持平，质量收益：主语吞并 8→0、strict-exact 3×）→ **SCOPE-DISAMBIG**（候选实测 −0.0005 拒绝回退，记方法局限）→ **ALIGN**（伪 validated 消除 DoD 达成，主口径不变，label 面板 −0.48pp 记录代价）→ **BRIDGE**（`<`/`<<` 语义测试 + operated 多命中 fail-closed 守卫）→ **ACTOR**（clause 内全 nsubj 弧 + obl/by-to + 中心词词典校验；**主口径 F1 +0.0018，系列首个正向**，actor F1 0.616→0.670，8/8 词典内漏抽找回）。当前 B0-R3 快照细 Gold F1=**0.71865**（P 0.6845 / R 0.7564，用户条件授权为论文依据候选）；**2026-08-07 用户决策：评价口径对齐 Sun 句子级粒度，句子级粗 Gold（609 spans）为主口径，B0 粗口径 F1=0.7986（P 0.7309 / R 0.8801）、D1 粗口径 F1=0.8726（P 0.9012 / R 0.8456），细 Gold 降为对照口径**。B0-R2 method-conformance 已由用户授权解除（2026-08-04，`method_conformance_status`=`verified_method_level_independent_reconstruction`）；LEXICON-DECISION 已实施（2026-08-04 用户授权路径 b，13 名词入词典）；CLAUSE-REVIEW 已复核不改动；C7 过短边界留待正式 Gold 后按需再议。**S2.13 Gold publication subtask 已发布（2026-08-10，发布 manifest outputs/reports/formal_gold_publication_v1.manifest.json，确定性重放 + 34 项验证全通过）**；B0-R4 ready 核账：冻结输入/Gold/共享 evaluator/schema/normalization 齐备（zero-API 满足），剩余 blocker=缺 formal claim_scope 运行入口（现有 runner 硬编码 development）→ 本轮不执行重评；B0-R4 formal candidate **verified**（2026-08-10：Gold-blind runner 只读 formal input v2，150 条全量 + 双跑语义 byte-identical，主口径 F1 0.71865 与 B0-R3 快照逐位一致，promotion 已授权应用（2026-08-10 用户明确授权：methods.json sun_rule_only formal_status→ready、command_status→formal_ready_candidate_authorized，其余未动，零 API））；**B0-R5 verified（2026-08-11，正式结论包 stage2_formal_conclusion_v1）** | B0 方法级实现可重放、B0-R1 确定性缺陷逐批实测（正/负结果均记录）、变更均有日志和 Git checkpoint；修复后低分可作为正式负结果 |
 | 6.3 | D1-R0–D1-R5 | **D1-R0 verified**（runner/prompt loader/canonical schema/s28_s29 产物 tracked 可重评）→ **D1-R1 verified**（2026-08-05，四子批次 FIELD-TYPING/PROMPT-CONTRACT/VERIFY-PASS/CLEAN-RERUN 闭环：v6= v5+规则25-27+示例5-6 KEEP；150 全量 0 事故，主口径 F1 0.7669→**0.7735**、constraint R 0.2881→**0.4172**，P 0.8799（−0.0269 披露 trade-off）；空不为错语义，坏 span/clause/边丢弃+审计）→ **D1-R2 锁定 verified**（2026-08-06）：`configs/models/estg150_d1_active_registry_v1.json` 固定 v6 prompt hash 3aa64877（磁盘/loader/manifest 三方一致）、模型钉死 deepseek-v4-pro、sampling temp0/top_p1/max_tokens4096、seed 策略 unsupported_or_omitted、transport 配方（thinking-disabled 无 json_object）、共享输入/evaluator hash、预算合同（逐批授权+`--max-calls` 硬上限 150）；12 项 lock-config 测试含 S2.9 Gold 不可见核查（6 个合成 fixture 与 150 测试句零交叠）；§8.5 S2.9 DoD（D1 侧）达成、整行仍 partial。**D1-R3 快照重跑 verified**（2026-08-06，用户授权 150 calls）：锁定配方逐项一致干净重跑，150/150 有效、0 事故；同一进程双评 R1/R3（sun_literal_overlap@2.0.0）R3 F1 **0.7756**（P 0.8793/R 0.6938）vs R1 0.7735（+0.0021，复现成功）；失败类型分析（1055 gold span：wrong_field 169 其中 constraint 100、not_extracted 154）见 docs/D1_ERROR_ANALYSIS.md §8；产物 outputs/development/s27_d1_v6_r3_clean_rerun_150_hist56d_v1/；**句子级粗 Gold 归因 verified**（2026-08-07，与 B0 同粗 Gold 同口径：F1 0.8726 / P 0.9012 / R 0.8456，见 outputs/development/s27_d1_coarse_gold_sentence_granularity_v1/）。**S2.13 Gold publication subtask 已发布（2026-08-10）**；D1-R4 ready 核账：冻结输入/Gold/共享组件齐备，剩余 blocker=LLM 调用授权与预算（本轮 zero-API 核账不调用 API、不伪造）→ 不执行；D1-R4 历史预测绑定核账（2026-08-10）：D1-R3 与 H1 的 150 条 predictions 与 formal input v2 逐项绑定（IDs/文本 hash/prompt/model/sampling/schema-valid 全过）→ zero-API candidate 重评允许；D1/H1 zero-API candidate 重评完成（2026-08-10，同 Gold/双口径视图/evaluators，comparison capsule outputs/evidence/d1_h1_zero_api_reeval_v1；D1 coarse 五字段与历史逐位一致；D1/H1 均 candidate/formal-gate-blocked，未写入正式目录）；2026-08-11 用户授权：D1/H1 门禁 ready（H1 为 comparison_arm_only），D1-R3/H1 snapshot 零 API 正式发布（direct_llm_formal_arm_v1 / sun_llm_fallback_formal_arm_v1，verifier 全过）；正式三方法比较报告完成（stage2_formal_three_method_comparison_v1），S2.10 verified（授权后 DoD），S2.12 描述性分析（retrospective），S2.11 dry-run + S2.13 gap capsule 已备；final_experiment_ready=true（fail-closed 条件真实满足，三方法 ready ≠ 全 Pipeline 完成）；D1-R5 verified（2026-08-11 正式结论包 stage2_formal_conclusion_v1） | D1-R3 experiment_run 事件 + 双评 evaluation JSON + audit --with-tests；150 次调用由用户逐批授权，manifest 记录 llm_calls/max_calls |
 | 7 | S2.7-S2.12 | H1 development wiring 已修复；S2.8A/B/C development verified；S2.8D-R1 transport 离线修复 verified；S2.8D-R1 单次 v4-flash canary（硬上限 1、0 retry）因 span reference mismatch 被原子拒绝（valid=1、accepted=0、effective=0、gate=false、H1==B0），历史真实调用累计 41 次。**S2.8D-R2 离线取证**（0 real API calls）：3/3 被拒 span 为正确文本+错误坐标（clause 内唯一 exact match），结论=情况 A。**S2.8D-R3 已实现**（0 real API calls）：fail-closed unique exact-text coordinate canonicalization（`bpc_hybrid/h1_span_canonicalizer.py`，单一共享路径接入四模式；zero/ambiguous/contract 整 patch 拒绝；只改 start/end；仍过现有 validator 与 atomic merge）；同一 R1 capture 的 R3 离线 transport replay：reanchored 3/3、validator 通过、merge accepted、effective_patch=true、changed=1、**gate=true、H1!=B0**、identity 不变；R1 历史 strict 结果未改。**S2.8D-R4 真实 canary 成功**（1 real API call、retry 0，用户明确授权）：requested/resolved/returned=deepseek-v4-flash；HTTP 200、ok_message_content、reasoning=false、tool_calls=0、usage=1305/405/1710；非空 patch→canonicalizer reanchored 3/3（zero/ambiguous/contract=0）→canonical validator 通过→merge accepted→effective_patch=true、changed=1、**gate=true、H1!=B0**、identity 不变；离线 replay（s28d_r4_h1_canary_replay_v1）H1 sha 与真实运行一致、byte-identical；R1/R3 历史结果未改。**S2.8D-R5 已冻结**（0 real API calls、retry 0、未运行 pilot）：历史真实调用集合恢复=42 calls / 20 唯一 plan keys（sha c813a384…）；Gold-blind 确定性选样 10 个不同 sample plan（排除全部历史已调用 keys，复用现有 risk 排序）；frozen plan 配置 `configs/s28d_r5_h1_small_pilot_plan_v1.json`（sha 35dc6a75…，cap=10/retry=0/early-stop 合同）；runner `--frozen-plan` 严格绑定 fail closed + early-stop 实现（provider model / capture / count / plan key / 连续 3 次失败 abort；patch 级拒绝 continue）；plan-only 验证：selected=10/10、llm_calls=0、gate=false、H1==B0、execution order 与 keys hash 一致、历史交集空、byte-identical；新增 29 项测试（30 验收点），H1 focused 106 passed；默认行为不变。**S2.8D-R6 已执行**（用户明确授权，主真实命令仅一次）：实际 API calls=5（冻结 order 1–5：estg_000118/000133/000164/000206/000207），每 plan 1 次、retry=0、模型/capture 全对、无未冻结 plan；proposed=5、accepted=3、rejected=2、effective=3、changed=3、gate=true、H1!=B0=3、identity violation=0；canonicalizer reanchored 4/failed 1；usage 总 8976。**early stop 于 order 5 后误报 plan_key_mismatch**（R5 runner 计数缺陷，已修复+回归测试；真实调用无违规）；未调用 order 6–10 保留 not-called、不补跑。离线 replay（s28d_r6_h1_small_pilot_replay_v1，0 API calls）与真实运行逐项一致、byte-identical；机制最低可用门 passed=true。**S2.8D-R6C1 已补完**（用户授权只补 order 6–10；新增 actual API calls=5、retry=0、order 1–5 新调用=0、无 early stop）：estg_000232/000285/000302/000414 被拒（canonical_invalid+reference_mismatch）、estg_000716 accepted/effective；proposed=5、accepted=1、rejected=4、effective=1、changed=1、gate=true、identity violation=0；continuation replay 一致且 byte-identical；合并 R6+R6C1 为完整 10-plan capsule（s28d_r6_complete_h1_small_pilot_v1）：**10/10 覆盖 complete**、keys sha=bb8d73b2…、每 plan 一次、10 不同 sample；合并指标 calls=10、accepted=4、rejected=6、effective=4、changed=4、H1!=B0=4、identity=0、usage 总 18628。**formal S2.8 仍 blocked on S2.6；不得自动重试或进入完整 pilot** | 具备申请 S2.8D-R7（完整 10-plan Gold-blind 结果审计与受控 P/R 评价解锁准备）；P/R 仍 not_computed。**2026-08-08 H1 降级为对照（§8.8.1）**：全量 150 运行（commit 74614e3，用户授权 150 calls，deepseek-v4-pro）主口径粗 Gold F1 **0.7621 vs Rules-Only 0.7986（净负 −0.0365）**、细 Gold 0.6875 vs 0.7186；LLM 修复过度抽取 actor（P 0.7077→0.2754、spans 65→167），其余 5 字段持平或微升；机制正常（103 accepted / 89 changed / gate=True / 0 incidents）但 trigger+repair 配方加 FP 不加召回；证据支持决策 A（LLM-SE 为主方法）；**H1 不再深究，仅作论文对照臂**；S2.8 正式 trigger 预注册取消 |
-| 8 | S3.1 | **verified（2026-08-08）**：S1/S3.1 资产从 56d2b03 checkpoint 恢复（configs/schemas/data/docs/outputs/scripts/src/tests + 5 个 s1 gate 模块）；7 个 GDPR BPMN byte-exact（LF）落地并加入 `.gitattributes` eol=lf；修复 56d2b03 快照先存的跨任务 binding 过期（s13/s15/s16 合同 upstream hash、5 个 gate 期望、合同 stage1 块），manifest 按当前合同重新生成并全链更新；`verify_stage1_stage3_gdpr7.py` 通过；audit pass `stage1_formal_bpmn_membership_locked`；37 项 stage1 测试全绿 | 文件名、hash、claim 固定（合同 `stage1_stage3_gdpr7_v1.json` user-approved 2026-07-18 + 验证 manifest `s15_s31_gdpr7_membership_v1.manifest.json`） |
+| 8 | S3.1 | **verified（2026-08-08）**：S1/S3.1 资产从 56d2b03 checkpoint 恢复（configs/schemas/data/docs/outputs/scripts/src/tests + 5 个 s1 gate 模块）；7 个 GDPR BPMN byte-exact（LF）落地并加入 `.gitattributes` eol=lf；修复 56d2b03 快照先存的跨任务 binding 过期（s13/s15/s16 合同 upstream hash、5 个 gate 期望、合同 Part 1 块），manifest 按当前合同重新生成并全链更新；`verify_stage1_stage3_gdpr7.py` 通过；audit pass `stage1_formal_bpmn_membership_locked`；37 项 Part 1 测试全绿 | 文件名、hash、claim 固定（合同 `stage1_stage3_gdpr7_v1.json` user-approved 2026-07-18 + 验证 manifest `s15_s31_gdpr7_membership_v1.manifest.json`） |
 | 9 | S3.2/S3.3 | **annotation frozen（2026-08-08）**：58 条候选全部由用户裁决（matching 25=11 相关/14 不相关；violation 33=三类各 11）；裁决存 `data/development/human_review/stage3_gold_annotation_human_correction_v1.json`（decision 与 candidate 分离）；冻结 manifest `s32_s33_gold_annotation_freeze_v1.manifest.json`；工具：`review_stage3_gold_annotation.py`（交互/批量出题+导入）、`build/verify_stage3_gold_annotation.py`；**decision Gold 已发布（2026-08-10 随 formal Gold publication：matching 25 + violation 33，与 frozen correction 一致，≠ Gold Rule Records）** | 用户裁决完成；decision Gold 已发布；Gold Rule Records 另行人工裁决 |
 | 10 | S3.4 | **development wrapper verified + 收口（2026-08-08）**：Winter baseline 转写 + 可移植重放（reachability 双模式、manifest 1.1.0、export index）；修复后重放 v3_clean/v3_prototype_literal（inference pack check_type 路由）；DEV_ONLY：MAP 0.6429、binary F1 0.6111、violation macro 0.373；evidence capsule `outputs/evidence/s34_winter_stage3_development_v3_clean|prototype_literal/`；S1.7 依赖已满足（2026-08-13 frozen）；formal completion blocked on S2.13 | 正式 canonical I/O + reproducible command（DoD 正式完成仍 blocked on S2.13；S1.7 已满足） |
 | 11 | S3.5 | **development implementation verified（2026-08-08）**：Sun Def 4-7 重建 + 证据修复（inference pack/check_type/Def 6 存在性语义/unobservable 口径/sensitivity 真实重算）；run v2（不覆盖 v1，before/after 对照：unobs 33→10、macro 0.333→0.389、exact 0.333→0.364）；DEV_ONLY：MAP 0.8175、binary F1 0.0 如实；evidence capsule `outputs/evidence/s35_sun_stage3_development_v2/`（含 5 方法 comparison）；S1.7 依赖已满足（2026-08-13 frozen）；formal completion blocked on S2.13 | 不再是 fixture approximation；formal Oracle 主表待 formal Gold 门禁 |
@@ -2148,11 +2166,11 @@ evidence span。Overall F1=76.69%，`invalid_attempt_count=1`。manifest 状态�
 | 12.7 | S2.12/S2.13 执行就绪（Checkpoint D） | **完成（2026-08-17，零 LLM/API）**：**S2.12 执行计划冻结**（`configs/s2_12_execution_plan_v1.json` + `outputs/reports/s2_12_execution_plan_v1.json`：预注册 G0.5 L1/L2/L3 分层（36 条密封链分类 L1 31/L2 5/L3 0）、三臂同一输入/Gold/evaluator、DoD 重述、retrospective 描述性分析保持历史；Gold=用户裁决 pending）；**fail-closed runner/evaluator readiness**（`src/bpc_hybrid/s2_12_stratified_evaluator.py`：确定性分层 per-field P/R/F1 + 错误类型 correct/missed/misclassified/extra，sample set 精确匹配/缺字段/坏 level/空集全拒绝；synthetic fixtures 通过；`outputs/reports/s2_12_execution_readiness_v1.json`：real_run_refused=true、S2.11 freeze 0/36、API 授权事件不存在、无 Gold、零 API）；**API 预算 dry-run**（typical 72/hard cap 100、calls_made=0、authorized=false、可复制授权句 present 但 sentence_used=false——本轮零调用未使用）；**transition readiness v4**（v4 capsule supersede v3 的 S2.11 workload 推导（36=29+7 空白 pack）与 S2.12 判断（partial+execution-ready）；新增独立 verifier verify_s2_12_execution_ready（8 个执行）；v1/v2/v3 逐字节保留且各自 verifier 继续通过；v4 V4 VERIFIED）；文档一致性（S2.11 行不再 blocked、G0.5=frozen、transition 当前=v4/v3 previous、gap capsule superseded、S1.7=frozen）；S2.12=partial+execution-ready、S2.13 blocked、S3.7 未动；零 LLM/API、未伪造 Gold、未使用 API 授权句、未发布受限原文 | Checkpoint D 构建器/验证器 + focused 测试 + record_change 事件 + audit --with-tests |
 | 12.8 | S2.11 canonical v2 校正 + 一次性导入 + S2.12 正式口径对齐（Checkpoint E） | **完成（2026-08-17，零 LLM/API）**：**canonical v2 模型**（`src/bpc_hybrid/s2_11_canonical_v2.py`：unresolved/absent/present 三态、modality=label+evidence spans、多 span 字段、actor-action map、order relations；blank pack/decisions v2 `data/development/human_review/s2_11_blank_review_v2.json` + `s2_11_review_decisions_v2.json`；freeze validator v2 `scripts/verify_s2_11_review_freeze_v2.py`；review tool v2 `scripts/review_s2_11_v2.py`）；**36 条独立语义复核**（`scripts/s2_11_build_proposals_v2.py`：proposal v1 superseded 不可批准；v2 本地完整包 `outputs/development/s2_11_local_working/adjudication_proposals_v2/`（proposals.jsonl/decision_package.md/v1→v2 diff/quality report）；提交报告 `s2_11_proposal_report_v2.json`（proposal SHA 93866427…）；验收：coverage 36/36、exact-slice=0、evidence missing=0、value_missing_in_text=0、display None=0、multi-value 结构合法）；**importer v2**（`scripts/s2_11_batch_import_v2.py`：dry-run blocked=0/unresolved=0/adjudicable=36/36；`--apply` fail-closed（确认事件绑定 proposal v2 SHA+revisions SHA+reviewer、原子写+备份）；本轮未创建确认事件、未 apply、freeze=false、无 Gold）；**S2.12 正式口径对齐**（`src/bpc_hybrid/s2_12_stratified_evaluator_v2.py`：modality label acc/macro-F1/per-class + 五字段 span P/R/F1 复用正式合同；parity 与正式 evaluator 一致；`s2_12_method_adapter.py`；plan/readiness v2 supersede v1；`outputs/reports/s2_12_api_readiness_v2.json`：两臂 deepseek-v4-pro、36/72/108 calls、输出 4096、输入未文档化、cost_cap_unresolved、**未发出最终授权句**、缺项精确列出）；**transition v5**（39 项 supersedes、9 个独立 verifier、V5 VERIFIED；v1–v4 逐字节保留且各自 verifier 继续通过）；S2.11=in_progress_human_adjudication（只剩一次性用户内容确认）、S2.12=partial+execution-ready v2、S2.13 blocked、S3.7 未动；零 LLM/API、未伪造 Gold、未使用 API 授权句、未发布受限原文 | Checkpoint E 构建器/验证器 + focused 测试 + record_change 事件 + audit --with-tests |
 | 12.9 | S2.11 proposal v3 最终校正与一次性确认就绪（Checkpoint F） | **完成（2026-08-17，零 LLM/API）**：六个已确认问题全部复现并修复——r10v1 双 actor 同 ID/条件内 customer 混入/缺 mapping → 显式 occurrence=1 + aam；canonical validator v3（`src/bpc_hybrid/s2_11_canonical_v3.py`：普通 span ID 全 record 唯一、clause ID 唯一、aam 存在/同 clause/无重复/全覆盖、order 两个不同 action、list-based 收集）；r4v2/r8v1/r18v2 action/constraint overlap=0（raw span + normalized 仅本地）；r3v1/r3v2 temporal-validity constraints（clause span 扩展至全文）；其余 30 条机械回归无证据不改写；**proposal v3**（`scripts/s2_11_build_proposals_v3.py`：explicit-occurrence spec、ambiguous 多命中 fail-closed；36/36 验收全零；SHA `9882ba45…`；本地完整包 `adjudication_proposals_v3/`；提交报告 `s2_11_proposal_report_v3.json` 零 ≥40 字符原文片段；**proposal v1/v2 superseded（v2=superseded_pending_targeted_correction_do_not_approve），v1/v2 逐字节保留**）；**importer v3**（dry-run blocked=0/unresolved=0/adjudicable=36；--apply fail-closed 绑定 proposal v3 SHA+revisions SHA+reviewer；本轮未创建确认事件、未 apply、freeze=false、无 Gold）；**freeze validator v3 + review tool v3**（canonical v3 + 7 checks）；**S2.12 readiness v3**（parity 重跑通过、re-bind proposal v3/importer v3；API dry-run 无最终授权句、缺项精确列出）；**transition v6**（47 项 supersedes、11 个独立 verifier、V6 VERIFIED；v1–v5 逐字节保留且各自 verifier 继续通过）；S2.11=只剩绑定 proposal v3 SHA 的一次性用户内容确认、S2.12=partial+execution-ready v3、S2.13 blocked、S3.7 未动；零 LLM/API、未伪造 Gold、未发布受限原文 | Checkpoint F 构建器/验证器 + focused 测试 + record_change 事件 + audit --with-tests |
-| 13 | S2.13 | **blocked（2026-08-15 核账）**：Stage 2 冻结 DoD（S2.1–S2.12 完整）未达成；精确 blockers：S2.11 blocked（外部复杂语料 artifact 许可 unknown_pending_confirmation（论文 CC BY 4.0 仅 article-only）、数据激活授权未授予、3→4 标签映射未裁决、人工 Gold 未开始、G0.5 复杂度规则 draft_not_frozen（promotion readiness=false）、Barrientos adapter hardened synthetic/shadow implementation verified——formal activation 仍 blocked）+ S2.12 full DoD 未达成（仅 retrospective 描述性部分）；`final_experiment_ready=true` 不代表 S2.13 完成；DoD 未改、未拆新任务 | 数据、方法、Gold、指标、成本、manifest 完整（全部达成前保持 blocked） |
+| 13 | S2.13 | **blocked（2026-08-15 核账）**：Part 2 冻结 DoD（S2.1–S2.12 完整）未达成；精确 blockers：S2.11 blocked（外部复杂语料 artifact 许可 unknown_pending_confirmation（论文 CC BY 4.0 仅 article-only）、数据激活授权未授予、3→4 标签映射未裁决、人工 Gold 未开始、G0.5 复杂度规则 draft_not_frozen（promotion readiness=false）、Barrientos adapter hardened synthetic/shadow implementation verified——formal activation 仍 blocked）+ S2.12 full DoD 未达成（仅 retrospective 描述性部分）；`final_experiment_ready=true` 不代表 S2.13 完成；DoD 未改、未拆新任务 | 数据、方法、Gold、指标、成本、manifest 完整（全部达成前保持 blocked） |
 | 14 | PW1 | **下一论文任务**：引言与 RQ0–RQ4 | 无结果性过度主张；主张矩阵同步 |
 
-Stage 1 和 Stage 3 的后续任务见主 Pipeline §8.9：S3.1-S3.3 数据治理及明确标注的
-development 准备可受控并行；Stage 3 LLM/Hybrid、正式 Oracle、端到端均不得抢跑。
+Part 1 和 Part 3 的后续任务见主 Pipeline §8.9：S3.1-S3.3 数据治理及明确标注的
+development 准备可受控并行；Part 3 LLM/Hybrid、正式 Oracle、端到端均不得抢跑。
 
 ## 5. 当前派工
 
@@ -2160,16 +2178,16 @@ development 准备可受控并行；Stage 3 LLM/Hybrid、正式 Oracle、端到�
 |---|---|---|---|---|
 | 协调 Agent | 维护门禁、验收和日志 | in_progress | shared docs/log only | `docs/AGENT_RUNBOOK.md` §§1–3 |
 | Agent-E1 | S2.1-A 官方数据来源证据 | **verified** (2026-07-15 字节级核验通过；许可仍 unknown_pending_confirmation；B2 仍 open) | `data/development/sun_modality/`、`docs/research/SUN_MODALITY_DATASET_INGESTION.md`、manifest、`scripts/verify_sun_modality_zip.py`、tests | §4.1 |
-| 当前执行 Agent | S2.11 proposal v3 最终校正与一次性确认就绪（2026-08-17，Checkpoint F） | **完成**：六个问题复现+修复（r10v1 消歧+aam、overlap=0×3、validity constraints×2、validator v3 强化）+ proposal v3（36/36 验收全零、SHA `9882ba45…`、v1/v2 superseded）+ importer v3（dry-run 0/0/36；--apply fail-closed 未执行）+ freeze/review v3 + S2.12 readiness v3（parity 重跑）+ transition v6（v1–v5 字节保留） | 只写 `formal_experiment/` 内 capsule/docs/scripts/tests/configs/src/data/development/human_review；references/ 只读未激活；未改 Gold/合同/Stage 3 门禁，零 LLM/API，未创建确认事件，未使用 API 授权句，未发布受限原文 | 下一真实路径：**用户一次性内容确认**（绑定 proposal v3 SHA `9882ba45…` 与 reviewer 署名；随后 `scripts/s2_11_batch_import_v3.py --apply` → `scripts/verify_s2_11_review_freeze_v3.py`）→ 用户对 S2.12 API 缺项（输入 token cap、cost cap）作决定并授权 → S2.12 真实运行 → S2.13 → Gold Rule Records（用户）→ S3.4–S3.6 → S3.7 单独授权 |
-| 当前执行 Agent | S3.9 synthetic controlled-error extension（2026-08-22，零 API） | **完成（development panel verified）**：冻结 30 个可控错误变体（MA 10/IA 10/OO 10；源 BPMN byte-unchanged、exactly-one-error、结构校验、replay byte-identical；规则绑定自冻结 inference pack）→ 同一 evaluator 下四方法 panel（Winter/Sun/BM25/TF-IDF；DEV_ONLY macro 0.333/0.333/0.333/0.635）；16 项 focused tests 全绿；面板明确 dev-only、never 人类 Gold、不得冒充 Oracle。主线切换：Stage 1 不再扩展、Stage 2 用已有结果、论文并行、S2.12 保持 pending authorization（非 blocker） | 未改 Gold/合同/Stage 3 门禁；零 LLM/API 零网络；.bak 未触碰；正式预测目录未写入 | 下一步（论文 Checkpoint B）：论文正文回填（Stage 1/2/3 方法结果、错误类型讨论、误差传播、Threats/Limitations/Conclusion） |
-| 当前执行 Agent | S3.9-EXT Stage 3 新违规类别扩展（2026-08-31，零 API） | **完成（development-only synthetic controlled extension v2 verified）**：新增 4 类违规 ×10 = 40 变体（prohibited_action_present / required_condition_not_enforced / constraint_violated / exception_not_handled）。选择理由已记录：原三类只覆盖动作存在/actor/顺序；四类分别补足 prohibition modality、condition、constraint、exception，且每类在原三类均正确时仍可独立发生、可做 exactly-one-error 变异并对应明确 BPMN 表面；因此是最小字段覆盖扩展而非任意补标签或穷尽分类。每变体 synthetic compliant control + 单一目标错误 variant（源 BPMN byte-unchanged、exactly-one-error、replay byte-identical、六要素字段锁定）；四方法共享同一新类型公式、仅替换各自冻结相似度后端（Winter-style extension / Sun-style extension / BM25 extension / TF-IDF-SVD extension；gamma_ext=0.5 统一冻结）；DEV_ONLY macro/exact/unobs：Winter 0.655/0.550/17、Sun 0.333/0.300/28、BM25 0.226/0.150/28、TF-IDF 0.379/0.325/27；对比报告 outputs/reports/s3_extended_violation_comparison_v2.{json,md}；17 项 focused tests 全绿；原三类 Gold/schema/预测字节不变 | 未改 Gold/合同/Stage 3 门禁/原三类产物；零 LLM/API 零网络；未调参追分；四类选择动机与边界已写入 config/report/论文；Winter/Sun 命名边界已写入报告（非原论文原生能力） | 下一步：论文侧仅按需引用 synthetic 结论（明确 dev-only 边界），不扩展 Stage 1/2/其他实验 |
-| 当前执行 Agent | S3.9-EXT 收尾：paired control-plus-variant 评价与报告修正（2026-08-31，零 API、零重跑） | **完成（reporting closed）**：仅从持久化四方法 predictions 离线新增 80 对象配对评价（40 control Gold=none + 40 variant；control 预测由持久化 control_scores 按原阈值与固定优先级重建）；paired 口径（DEV_ONLY）Winter/Sun/BM25/TF-IDF：5-class acc 0.425/0.263/0.250/0.338、variant exact 0.550/0.300/0.150/0.325、control FP rate 0.500/0.125/0.000/0.275、paired acc 0.225/0.175/0.100/0.300；七类 overview 仅 7 个 per-class F1（无联合指标）；结论收紧（prohibited=可行性支持、constraint=部分支持、condition/exception=可观察性/映射瓶颈）；论文 §7.4 与主张矩阵 C30 回填；39 项 focused tests；报告生成 --report-only 确定性重放 | 未改 Gold/样本/阈值/四方法原始预测；零 LLM/API 零网络；原三类与 v1/v2 面板字节不变 | Stage 3 实验可正式收尾；论文/PPT 直接引用时区分 33 条人工 Gold、30 条 v1、40 对 v2 三套口径 |
-| 当前执行 Agent | Stage 3 Sun 式阈值敏感性实验（S3.5 evidence extension，2026-09-04，零 API） | **完成（DEV_ONLY，Sun-style sensitivity verified）**：严格按 Sun 2024 §5.3/图 8/图 9 的离散网格离线重算（τ∈{0.0,0.2,0.4,0.6,0.8,0.9} 只评 matching AP/MAP；γ 同网格、ϑ 固定 0.8；ϑ∈{0.5,0.6,0.7,0.8,0.9} 固定 γ=0.8），每个 γ/ϑ 均由 SunScorer 真实重算 mappings/denominators/order endpoints/observability，缓存 Rule/Process Records，不重跑生成、不调用 LLM；Sun-transferred (0.8,0.8,0.8) Macro-F1 0.3889/exact 0.3636/unobs 10（低分基线保留）；best observed (0.8,0.6,0.8) Macro-F1 0.8733/exact 0.7879/unobs 4（Missing 1.0、Incorrect-actor 0.7778、Out-of-order 0.8421）；重算 primary 行与全部重叠行与 evidence `s35_sun_stage3_development_v2` 逐项一致；报告 JSON/MD + 图 A（γ，missing+out-of-order，Sun 图 8 口径，Precision 为主 + Recall/F1 补充面板）+ 图 B（ϑ@γ=0.8，incorrect actor，Sun 图 9 口径）+ 论文 §7.4.7 + 主张矩阵 C31；11 项新增 focused tests（阈值集合/指标重算/原始结果与 Gold 字节不变/零 API/确定性重放） | 未改 Gold/样本/预测/公式/既有 evidence；零 LLM/API、cost=0；33 条无 Gold=none 合规样本（不能证明 specificity/FP rate）；γ=0.6 仅称 tested values 中 best observed setting（非全局最优/非 Sun 固定阈值/非 held-out 最优） | 下一步：正式 Oracle 与端到端仍待 S3.7/S3.10；论文引用时区分 33 条人工 Gold 与 DEV 敏感性产物 |
-| 当前执行 Agent | S3.9-EXT-REAL-CASE 真实案例端到端（SIM 卡入网，2026-09-11，零 API） | **完成（development 案例交付）**：主案例 = Barrientos Sun 派生 SIM 流程 × 5 条 v2 规则；公共 Stage 1 记录 + 声明的协作图扁平化适配；A/B/C 三组实跑（A 15 检查 5 violation/9 undetermined/1 satisfied；B 15 检查 5/8/2；C 35 检查 8/25/2，含 15 条继承自 B 的三类行）；与 5 条开发参考判断对照：r9/r10 检出，r8/r11/r13 无法判断（原因 `action_mapping_below_gamma`/`no_mapped_rule_order_endpoints`/`empty_rule_condition`），**未检出项如实保留**；5 个最小修复对照**全部未消除问题**（含 frozen Def6 的 min-over-{actors ∪ business objects} 与无词向量后端）；重复运行 5/5 逐条一致；补充案例 Figure 10 重建件（18 项歧义有 provenance）跑非 LLM 基线 28 检查（4/24），**真实 LLM 组缺失且原因已记录** | 只写 `formal_experiment/`；references/ 只读未复制原文；未改 Gold/冻结实现/门禁；零 LLM/API 零网络 | 下一步：结果标注图与论文小节（子任务进行中）、更多误报对照与正式 Oracle 仍待独立授权 |
-| 当前执行 Agent | S3.9-EXT-REAL-CASE 真实案例端到端（SIM 卡入网，P1/P2/P4 四个缺口收尾，2026-09-12 第四轮，零 API） | **完成**：P1 修正显式 actor-action 配对路径的角色绑定回退，r11 A/B 最终 actors/pairs 均为 Phone company，同时保留 original=the Data Controller、bound_from=Data Controller 与 value-level change；r8 null actor 仍为 invalid_in_raw_no_valid_pair，不补造配对；政策说明改为有有效显式映射才消费配对动作，无有效映射时首个投影动作仅供动作存在性检查。P2 把五条固定参考问题改为证据绑定评价：r9 记录 Sign contract 只是定位锚点、流程清单无 verify/correctness 活动；r10 逐项列出 matched candidates，Activate SIM card 的具体 ID 归属 Customer，Send SIM card 单独归属 Phone company；r11 只有 out_of_order 报警映射 consent 与 request personal data 顺序时才对应，missing_action 不替代；r13 记录 50 EUR 文本位于 actor、condition/constraint 为空，threshold alarm evidence 为空；r8 只从 model-side 时间/终止字段与 process-scope facts 判定。P3 复用 A/B 抽取与预测，计数仍为 A 15 3/0/12/0、B 15 5/2/8/0、C 35 10/2/23/0；B/C 原三类逐项一致；参考对应 A 0/3/2，B/C 2/3/0。P4 修复表统一读取 C_original/C_repaired，流程图从只读 BPMNDI 恢复 26 条 sequence flow 连线、网关、条件标签与稳定节点，r9 缺失活动用明确占位符，r10/r11/r13/r8 标注动态读取 capsule；Chromium 实际渲染 1800x4495，无文本越界/重叠；报告、论文、SVG 同步更新。聚焦测试 36 passed。 | 只写 `formal_experiment/`；references/ 与既有预测只读；零 LLM/API；未调阈值、未新增别名或特判；r8 Stage 1 表示限制、r13 empty condition、r11 gamma/端点映射限制仍如实保留。 |
+| 当前执行 Agent | S2.11 proposal v3 最终校正与一次性确认就绪（2026-08-17，Checkpoint F） | **完成**：六个问题复现+修复（r10v1 消歧+aam、overlap=0×3、validity constraints×2、validator v3 强化）+ proposal v3（36/36 验收全零、SHA `9882ba45…`、v1/v2 superseded）+ importer v3（dry-run 0/0/36；--apply fail-closed 未执行）+ freeze/review v3 + S2.12 readiness v3（parity 重跑）+ transition v6（v1–v5 字节保留） | 只写 `formal_experiment/` 内 capsule/docs/scripts/tests/configs/src/data/development/human_review；references/ 只读未激活；未改 Gold/合同/Part 3 门禁，零 LLM/API，未创建确认事件，未使用 API 授权句，未发布受限原文 | 下一真实路径：**用户一次性内容确认**（绑定 proposal v3 SHA `9882ba45…` 与 reviewer 署名；随后 `scripts/s2_11_batch_import_v3.py --apply` → `scripts/verify_s2_11_review_freeze_v3.py`）→ 用户对 S2.12 API 缺项（输入 token cap、cost cap）作决定并授权 → S2.12 真实运行 → S2.13 → Gold Rule Records（用户）→ S3.4–S3.6 → S3.7 单独授权 |
+| 当前执行 Agent | S3.9 synthetic controlled-error extension（2026-08-22，零 API） | **完成（development panel verified）**：冻结 30 个可控错误变体（MA 10/IA 10/OO 10；源 BPMN byte-unchanged、exactly-one-error、结构校验、replay byte-identical；规则绑定自冻结 inference pack）→ 同一 evaluator 下四方法 panel（Winter/Sun/BM25/TF-IDF；DEV_ONLY macro 0.333/0.333/0.333/0.635）；16 项 focused tests 全绿；面板明确 dev-only、never 人类 Gold、不得冒充 Oracle。主线切换：Part 1 不再扩展、Part 2 用已有结果、论文并行、S2.12 保持 pending authorization（非 blocker） | 未改 Gold/合同/Part 3 门禁；零 LLM/API 零网络；.bak 未触碰；正式预测目录未写入 | 下一步（论文 Checkpoint B）：论文正文回填（Part 1/2/3 方法结果、错误类型讨论、误差传播、Threats/Limitations/Conclusion） |
+| 当前执行 Agent | S3.9-EXT Part 3 新违规类别扩展（2026-08-31，零 API） | **完成（development-only synthetic controlled extension v2 verified）**：新增 4 类违规 ×10 = 40 变体（prohibited_action_present / required_condition_not_enforced / constraint_violated / exception_not_handled）。选择理由已记录：原三类只覆盖动作存在/actor/顺序；四类分别补足 prohibition modality、condition、constraint、exception，且每类在原三类均正确时仍可独立发生、可做 exactly-one-error 变异并对应明确 BPMN 表面；因此是最小字段覆盖扩展而非任意补标签或穷尽分类。每变体 synthetic compliant control + 单一目标错误 variant（源 BPMN byte-unchanged、exactly-one-error、replay byte-identical、六要素字段锁定）；四方法共享同一新类型公式、仅替换各自冻结相似度后端（Winter-style extension / Sun-style extension / BM25 extension / TF-IDF-SVD extension；gamma_ext=0.5 统一冻结）；DEV_ONLY macro/exact/unobs：Winter 0.655/0.550/17、Sun 0.333/0.300/28、BM25 0.226/0.150/28、TF-IDF 0.379/0.325/27；对比报告 outputs/reports/s3_extended_violation_comparison_v2.{json,md}；17 项 focused tests 全绿；原三类 Gold/schema/预测字节不变 | 未改 Gold/合同/Part 3 门禁/原三类产物；零 LLM/API 零网络；未调参追分；四类选择动机与边界已写入 config/report/论文；Winter/Sun 命名边界已写入报告（非原论文原生能力） | 下一步：论文侧仅按需引用 synthetic 结论（明确 dev-only 边界），不扩展 Part 1/2/其他实验 |
+| 当前执行 Agent | S3.9-EXT 收尾：paired control-plus-variant 评价与报告修正（2026-08-31，零 API、零重跑） | **完成（reporting closed）**：仅从持久化四方法 predictions 离线新增 80 对象配对评价（40 control Gold=none + 40 variant；control 预测由持久化 control_scores 按原阈值与固定优先级重建）；paired 口径（DEV_ONLY）Winter/Sun/BM25/TF-IDF：5-class acc 0.425/0.263/0.250/0.338、variant exact 0.550/0.300/0.150/0.325、control FP rate 0.500/0.125/0.000/0.275、paired acc 0.225/0.175/0.100/0.300；七类 overview 仅 7 个 per-class F1（无联合指标）；结论收紧（prohibited=可行性支持、constraint=部分支持、condition/exception=可观察性/映射瓶颈）；论文 §7.4 与主张矩阵 C30 回填；39 项 focused tests；报告生成 --report-only 确定性重放 | 未改 Gold/样本/阈值/四方法原始预测；零 LLM/API 零网络；原三类与 v1/v2 面板字节不变 | Part 3 实验可正式收尾；论文/PPT 直接引用时区分 33 条人工 Gold、30 条 v1、40 对 v2 三套口径 |
+| 当前执行 Agent | Part 3 Sun 式阈值敏感性实验（S3.5 evidence extension，2026-09-04，零 API） | **完成（DEV_ONLY，Sun-style sensitivity verified）**：严格按 Sun 2024 §5.3/图 8/图 9 的离散网格离线重算（τ∈{0.0,0.2,0.4,0.6,0.8,0.9} 只评 matching AP/MAP；γ 同网格、ϑ 固定 0.8；ϑ∈{0.5,0.6,0.7,0.8,0.9} 固定 γ=0.8），每个 γ/ϑ 均由 SunScorer 真实重算 mappings/denominators/order endpoints/observability，缓存 Rule/Process Records，不重跑生成、不调用 LLM；Sun-transferred (0.8,0.8,0.8) Macro-F1 0.3889/exact 0.3636/unobs 10（低分基线保留）；best observed (0.8,0.6,0.8) Macro-F1 0.8733/exact 0.7879/unobs 4（Missing 1.0、Incorrect-actor 0.7778、Out-of-order 0.8421）；重算 primary 行与全部重叠行与 evidence `s35_sun_stage3_development_v2` 逐项一致；报告 JSON/MD + 图 A（γ，missing+out-of-order，Sun 图 8 口径，Precision 为主 + Recall/F1 补充面板）+ 图 B（ϑ@γ=0.8，incorrect actor，Sun 图 9 口径）+ 论文 §7.4.7 + 主张矩阵 C31；11 项新增 focused tests（阈值集合/指标重算/原始结果与 Gold 字节不变/零 API/确定性重放） | 未改 Gold/样本/预测/公式/既有 evidence；零 LLM/API、cost=0；33 条无 Gold=none 合规样本（不能证明 specificity/FP rate）；γ=0.6 仅称 tested values 中 best observed setting（非全局最优/非 Sun 固定阈值/非 held-out 最优） | 下一步：正式 Oracle 与端到端仍待 S3.7/S3.10；论文引用时区分 33 条人工 Gold 与 DEV 敏感性产物 |
+| 当前执行 Agent | S3.9-EXT-REAL-CASE 真实案例端到端（SIM 卡入网，2026-09-11，零 API） | **完成（development 案例交付）**：主案例 = Barrientos Sun 派生 SIM 流程 × 5 条 v2 规则；公共 Part 1 记录 + 声明的协作图扁平化适配；A/B/C 三组实跑（A 15 检查 5 violation/9 undetermined/1 satisfied；B 15 检查 5/8/2；C 35 检查 8/25/2，含 15 条继承自 B 的三类行）；与 5 条开发参考判断对照：r9/r10 检出，r8/r11/r13 无法判断（原因 `action_mapping_below_gamma`/`no_mapped_rule_order_endpoints`/`empty_rule_condition`），**未检出项如实保留**；5 个最小修复对照**全部未消除问题**（含 frozen Def6 的 min-over-{actors ∪ business objects} 与无词向量后端）；重复运行 5/5 逐条一致；补充案例 Figure 10 重建件（18 项歧义有 provenance）跑非 LLM 基线 28 检查（4/24），**真实 LLM 组缺失且原因已记录** | 只写 `formal_experiment/`；references/ 只读未复制原文；未改 Gold/冻结实现/门禁；零 LLM/API 零网络 | 下一步：结果标注图与论文小节（子任务进行中）、更多误报对照与正式 Oracle 仍待独立授权 |
+| 当前执行 Agent | S3.9-EXT-REAL-CASE 真实案例端到端（SIM 卡入网，P1/P2/P4 四个缺口收尾，2026-09-12 第四轮，零 API） | **完成**：P1 修正显式 actor-action 配对路径的角色绑定回退，r11 A/B 最终 actors/pairs 均为 Phone company，同时保留 original=the Data Controller、bound_from=Data Controller 与 value-level change；r8 null actor 仍为 invalid_in_raw_no_valid_pair，不补造配对；政策说明改为有有效显式映射才消费配对动作，无有效映射时首个投影动作仅供动作存在性检查。P2 把五条固定参考问题改为证据绑定评价：r9 记录 Sign contract 只是定位锚点、流程清单无 verify/correctness 活动；r10 逐项列出 matched candidates，Activate SIM card 的具体 ID 归属 Customer，Send SIM card 单独归属 Phone company；r11 只有 out_of_order 报警映射 consent 与 request personal data 顺序时才对应，missing_action 不替代；r13 记录 50 EUR 文本位于 actor、condition/constraint 为空，threshold alarm evidence 为空；r8 只从 model-side 时间/终止字段与 process-scope facts 判定。P3 复用 A/B 抽取与预测，计数仍为 A 15 3/0/12/0、B 15 5/2/8/0、C 35 10/2/23/0；B/C 原三类逐项一致；参考对应 A 0/3/2，B/C 2/3/0。P4 修复表统一读取 C_original/C_repaired，流程图从只读 BPMNDI 恢复 26 条 sequence flow 连线、网关、条件标签与稳定节点，r9 缺失活动用明确占位符，r10/r11/r13/r8 标注动态读取 capsule；Chromium 实际渲染 1800x4495，无文本越界/重叠；报告、论文、SVG 同步更新。聚焦测试 36 passed。 | 只写 `formal_experiment/`；references/ 与既有预测只读；零 LLM/API；未调阈值、未新增别名或特判；r8 Part 1 表示限制、r13 empty condition、r11 gamma/端点映射限制仍如实保留。 |
 | 当前执行 Agent | PAPER-FINAL-REPAIR：三张论文表的最终口径修复（2026-09-21，零 API；分支 `paper-final-repair`） | **Table 1 完成**：`formal_stage2_evaluation.evaluate_span_metrics` 的 `overall` 原为**六字段** pooled 聚合，把 G0.4 合同明令不可用、且由 coarse transform 用 clause span 合成出来的 modality span 计入；现改为 `pooled_five_span_fields`（仅 actor/action/condition/constraint/exception 的 micro pooled P/R/F1）作为唯一合同口径 overall，旧六字段聚合保留为显式 `NON_CANONICAL` provenance 字段。重算结果：Sun rules-only pooled F1 **0.7631**（P 0.6984/R 0.8410）vs LLM-SE **0.8378**（P 0.8695/R 0.8083），Δ **+7.47 pp**；字段级 action +5.10 / condition +6.42 / constraint +12.45 pp 归 Ours，actor −6.24 / exception −11.81 pp 归 Sun；modality label macro-F1 0.7128 vs 0.7695。产物 `outputs/reports/stage2_table1_paper_final_v1.{json,md}`（脚本 `scripts/build_stage2_table1_paper_final_v1.py`）。**Table 2 完成**：旧消融报告用六字段 pooled 口径，与 Table 1 不可直接比较；现从已执行的 450 次真实调用（DeepSeek-V4-Pro-0813）的持久化 canonical predictions **离线重算**到与 Table 1 同 prompt 家族（monolithic v6, sha `3aa64877…`）同口径，并加 10,000 次 paired bootstrap。Overall：Full 0.8224 / −E 0.8142 / −S 0.8299 / −J 0.8268，四臂均 150/150 有效。**如实结论**：三项删除在 pooled overall 上**都没有 CI 排除 0**；可分离的字段效应**符号不一致**（−E 使 Condition F1 +4.22 pp [+1.33,+7.78]；−J 使 Action F1 +3.47 pp [+0.67,+6.80]），且 leave-one-out 因 E/S 信息重叠无法隔离单模块。产物 `outputs/reports/stage2_table2_prompt_ablation_paper_final_v1.{json,md}`。**Table 3 判定为现有产物不可测**：见下一条。 | 只写 `formal_experiment/`；未改 Gold/面板/既有预测/正式 capsule；零 LLM/API 零网络；未按结果调阈值或改 prompt；旧六字段数字一律标为 development provenance | 下一步：Table 3 三选一决策（见 `docs/research/STAGE3_TABLE3_VIABILITY_DIAGNOSIS_2026-09-21.md` §7），以及把 Table 1/2 回填论文 §7.2/§7.3 |
-| 当前执行 Agent | PAPER-FINAL-REPAIR：Stage 3 Table 3 可行性诊断（2026-09-21，零 API，只读）**含自我更正** | **分层结论**：① 33 条 violation gold 的 `decision_violation_type` 逐字复制 `check_type`、`decision_evidence` 为模板句、无任何 BPMN 变异 → 是 check-point 决策集，不是性能 benchmark，不得再作 Table 3 的 F1 分母。② **结构可检测性 30/30**：用 Stage 1 Process Record 把每个变异体与其未变异原始体对比（不涉检测器与相似度）——missing_action 10/10、incorrect_actor 10/10、out_of_order 10/10。③ 但用冻结 Sun 重建打分时 **0/30 可分离**（原始体本已被判违规；out_of_order 分母 10/10 为 0；incorrect_actor 8/10 `action_mapping_below_gamma`），gamma 网格 {0.2,0.4,0.6,0.8,0.9} 最多 1/30 → 那是**检测器 grounding 缺陷**（GDPR 法条措辞与 BPMN 活动标签几无共同词汇），**不是数据缺陷**。④ 仍存独立缺口：Gold Rule Records 的 `order_relations` **0/92** 非空（`actor_action_map` 38/92）。**自我更正记录**：首版诊断误判"面板不可测"，根因是探针把 manifest 的 `f_first_id`/`f_last_id`（实为 sequence-flow id）当节点 id 查节点级 reachability，且把 `control_flow.reachable_pairs`（对象数组）当元组迭代，两错同向制造 out_of_order 10/10 的假"无变化"；已修正并留痕。脚本 `scripts/diagnose_stage3_table3_viability_v1.py`、`..._threshold_rootcause_v1.py`、`..._mutation_detectability_v1.py`；详见 `docs/research/STAGE3_TABLE3_VIABILITY_DIAGNOSIS_2026-09-21.md`。 | 只读：未写 Gold/面板/预测/结果；零 LLM/API；未为让某方法好看而挑阈值或后端；更正过程完整保留在 commit 与事件日志 | 已由下一行的配对 benchmark 承接 |
-| 当前执行 Agent | PAPER-FINAL-REPAIR：Stage 3 配对 benchmark 建成 + grounded 参考上界 + 前人 sanity run（2026-09-21，零 API） | **完成（objective item 4 前两步）**：旧 30 条面板无 compliant 样本，precision/specificity 无分母、per-type F1 全线退化；现建 **60 items = 30 pairs**（`data/development/stage3_synth/stage3_paired_benchmark_v1.json`），每个变异 BPMN 配同一流程的**未变异 BPMN** 作 compliant control，control 复用 variant manifest 自己声明的 `source_bpmn`+sha（冻结 Stage 1 GDPR7 字节），**未新造合规流程**，故不需新人工标注也不会漂移；gold = 30 compliant + 每类 10；每 item **显式声明 grounding**，使"消费绑定"与"相似度重推绑定"两路可比。**anti-degeneracy 30/30 PASS**（control 不违反、variant 必违反）。**grounded 参考上界** macro-F1 **1.0000**/micro-F1 1.0000/specificity 1.0000/exact 30/30/unobs 0 → benchmark 可测且 Gold 自洽（健康 benchmark 的必要 sanity check）。**前人同一 60 items 同协议**：sun_reconstruction macro 0.3175（micro 0.3871、spec 0.3333、exact 12/30、unobs 16、out_of_order 0.0）；winter_wrapper macro 0.2222（micro 0.3846、spec 0.6000、exact 10/30、out_of_order 0.0）。报告内写明该差距是 **grounding 效应**，不得写成"前人算法弱"。产物 `outputs/reports/stage3_{paired_benchmark,grounded_checker,predecessors_paired}_v1.*`；生成器/runner `scripts/build_stage3_paired_benchmark_v1.py`、`scripts/run_stage3_grounded_checker_v1.py`、`scripts/run_stage3_predecessors_paired_v1.py`；测试 `tests/test_stage3_paired_benchmark_v1.py`（5 项）。 | 只读既有产物：30 条面板与冻结 BPMN 字节未改；只新增文件；零 LLM/API 零网络；未调阈值追分；unobservable 计入 miss 不置零 | **仍缺**：`grounded_structural_checker_v1` 目前是**声明绑定下的参考上界**，把它写成 "Ours" 前必须先建**从已发布 Stage 2 Rule Record 真实推导 actor-action / order 绑定**的检测器（方案 A 剩余部分），且 out_of_order 还需补 Gold 的 order 关系标注（现 0/92 非空）；随后才能出 Table 3 的 Ours 行 |
+| 当前执行 Agent | PAPER-FINAL-REPAIR：Part 3 Table 3 可行性诊断（2026-09-21，零 API，只读）**含自我更正** | **分层结论**：① 33 条 violation gold 的 `decision_violation_type` 逐字复制 `check_type`、`decision_evidence` 为模板句、无任何 BPMN 变异 → 是 check-point 决策集，不是性能 benchmark，不得再作 Table 3 的 F1 分母。② **结构可检测性 30/30**：用 Part 1 Process Record 把每个变异体与其未变异原始体对比（不涉检测器与相似度）——missing_action 10/10、incorrect_actor 10/10、out_of_order 10/10。③ 但用冻结 Sun 重建打分时 **0/30 可分离**（原始体本已被判违规；out_of_order 分母 10/10 为 0；incorrect_actor 8/10 `action_mapping_below_gamma`），gamma 网格 {0.2,0.4,0.6,0.8,0.9} 最多 1/30 → 那是**检测器 grounding 缺陷**（GDPR 法条措辞与 BPMN 活动标签几无共同词汇），**不是数据缺陷**。④ 仍存独立缺口：Gold Rule Records 的 `order_relations` **0/92** 非空（`actor_action_map` 38/92）。**自我更正记录**：首版诊断误判"面板不可测"，根因是探针把 manifest 的 `f_first_id`/`f_last_id`（实为 sequence-flow id）当节点 id 查节点级 reachability，且把 `control_flow.reachable_pairs`（对象数组）当元组迭代，两错同向制造 out_of_order 10/10 的假"无变化"；已修正并留痕。脚本 `scripts/diagnose_stage3_table3_viability_v1.py`、`..._threshold_rootcause_v1.py`、`..._mutation_detectability_v1.py`；详见 `docs/research/STAGE3_TABLE3_VIABILITY_DIAGNOSIS_2026-09-21.md`。 | 只读：未写 Gold/面板/预测/结果；零 LLM/API；未为让某方法好看而挑阈值或后端；更正过程完整保留在 commit 与事件日志 | 已由下一行的配对 benchmark 承接 |
+| 当前执行 Agent | PAPER-FINAL-REPAIR：Part 3 配对 benchmark 建成 + grounded 参考上界 + 前人 sanity run（2026-09-21，零 API） | **完成（objective item 4 前两步）**：旧 30 条面板无 compliant 样本，precision/specificity 无分母、per-type F1 全线退化；现建 **60 items = 30 pairs**（`data/development/stage3_synth/stage3_paired_benchmark_v1.json`），每个变异 BPMN 配同一流程的**未变异 BPMN** 作 compliant control，control 复用 variant manifest 自己声明的 `source_bpmn`+sha（冻结 Part 1 GDPR7 字节），**未新造合规流程**，故不需新人工标注也不会漂移；gold = 30 compliant + 每类 10；每 item **显式声明 grounding**，使"消费绑定"与"相似度重推绑定"两路可比。**anti-degeneracy 30/30 PASS**（control 不违反、variant 必违反）。**grounded 参考上界** macro-F1 **1.0000**/micro-F1 1.0000/specificity 1.0000/exact 30/30/unobs 0 → benchmark 可测且 Gold 自洽（健康 benchmark 的必要 sanity check）。**前人同一 60 items 同协议**：sun_reconstruction macro 0.3175（micro 0.3871、spec 0.3333、exact 12/30、unobs 16、out_of_order 0.0）；winter_wrapper macro 0.2222（micro 0.3846、spec 0.6000、exact 10/30、out_of_order 0.0）。报告内写明该差距是 **grounding 效应**，不得写成"前人算法弱"。产物 `outputs/reports/stage3_{paired_benchmark,grounded_checker,predecessors_paired}_v1.*`；生成器/runner `scripts/build_stage3_paired_benchmark_v1.py`、`scripts/run_stage3_grounded_checker_v1.py`、`scripts/run_stage3_predecessors_paired_v1.py`；测试 `tests/test_stage3_paired_benchmark_v1.py`（5 项）。 | 只读既有产物：30 条面板与冻结 BPMN 字节未改；只新增文件；零 LLM/API 零网络；未调阈值追分；unobservable 计入 miss 不置零 | **仍缺**：`grounded_structural_checker_v1` 目前是**声明绑定下的参考上界**，把它写成 "Ours" 前必须先建**从已发布 Part 2 Rule Record 真实推导 actor-action / order 绑定**的检测器（方案 A 剩余部分），且 out_of_order 还需补 Gold 的 order 关系标注（现 0/92 非空）；随后才能出 Table 3 的 Ours 行 |
 | Agent-P1 | PW1 引言与研究问题 | ready | `paper/THESIS_DRAFT.md`、主张矩阵 | §4.2 |
 | Agent-R1 | 论文科学主张只读复核 | blocked on PW1 draft | 无写入 | §4.3 |
 | 用户 | S2.2 Layer E 人工裁决 | verified，150/150 adjudicated | 仅 Layer E | freeze validator 通过；formal Gold 已于 2026-08-10 发布（用户授权）；Gold Rule Records 另行裁决 |
@@ -2214,7 +2232,7 @@ development 准备可受控并行；Stage 3 LLM/Hybrid、正式 Oracle、端到�
   整个 control；`run_stage3_ours_v1.decide_item` 仅检查『control 活动是否在当前图缺失 /
   lane 是否改变』，`actor_predictions` 未进入 actor 判定；predecessor runner 另用
   development rule extractor 并按 `target_violation_type` 选输出。
-- 修复主比较：Sun 与 Ours 只替换 Stage 2 capsule，共用同一个 `gdpr_capsule_converter`、
+- 修复主比较：Sun 与 Ours 只替换 Part 2 capsule，共用同一个 `gdpr_capsule_converter`、
   同一个冻结 `SunScorer` 实例与 frozen thresholds；Winter 使用 native wrapper；input view
   无 role/target/gold；所有信号先持久化再由 evaluator 读 label。
 - 运行产物：`outputs/development/stage3_table3_v2/`（predictions、rule records、manifest）；
@@ -2259,7 +2277,7 @@ Confirmed Table 3 R1 scoped results (AI construction reference; `is_gold=false`,
 | Method | Missing F1 | Actor F1 | Order F1 | Overall P | Overall R | Overall F1 | Coverage | Status |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
 | Sun | 0.4545 | 0.2500 | 0.0000 | 0.3000 | 0.4000 | 0.3429 | 0.4600 | available |
-| Ours (LLM-SE v6 + same Sun Stage 3) | 0.4545 | 0.2500 | 0.0000 | 0.3000 | 0.4000 | 0.3429 | 0.4600 | available |
+| Ours (LLM-SE v6 + same Sun Part 3) | 0.4545 | 0.2500 | 0.0000 | 0.3000 | 0.4000 | 0.3429 | 0.4600 | available |
 | Winter (native) | 0.4286 | 0.8889 | 0.0000 | 0.5385 | 0.4667 | 0.5000 | 0.7000 | available_native |
 
 R1-A/B/C/D:

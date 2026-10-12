@@ -1,6 +1,8 @@
 # 从这里开始：CSCWD 2027 逐节修订阅读包
 
-这是交给网页版 GPT 的论文写作材料包，基于作者上传的六页 2027 原稿。用户要求：借鉴学长学姐论文的结构、把 Related Work 合并进 Introduction、实际引用 18 篇文献、解释清楚第二阶段后处理，并从头到尾逐节修改。
+这是交给网页版 GPT 的论文写作材料包，基于作者上传的六页 2027 原稿。用户要求：借鉴学长学姐论文的结构、把 Related Work 合并进 Introduction、实际引用 18 篇文献、解释清楚 Part 2 后处理，并从头到尾逐节修改。
+
+2026-10-12 起，活动修订使用 Part 1 / Part 2 / Part 3：前两部分独立并行，并共同为 Part 3 提供输入。原稿 PDF、辅助提取文本及阅读包中的原稿附录保留原文；应用候选修订时同步更新原稿图中的展示名称与并行关系。
 
 **最快使用方式：**把 [完整协作提示词](WEB_GPT_PROMPT.md) 复制到网页版对话；模型先读取 [完整文字阅读包](WEB_GPT_READING_PACK.md)，需要核对公式与图时读取 [2027 原稿 PDF](source_2027_CSCWD_16.pdf)。
 
@@ -14,7 +16,7 @@
 | 4 | [source_2027_CSCWD_16.md](source_2027_CSCWD_16.md) | 原稿按页、左栏→右栏提取的辅助文字，未修正原稿错误 |
 | 按需 | [REVIEW_AND_USE.md](REVIEW_AND_USE.md) | 逐页问题、18 篇引用对应论述、代码核对与修改建议 |
 | 按需 | [introduction.tex](introduction.tex) | 合并 Introduction / Related Work 的英文草稿 |
-| 按需 | [stage2_postprocessing.tex](stage2_postprocessing.tex) | 后处理替换稿、历史定位伪代码和合成例子 |
+| 按需 | [part2_postprocessing.tex](part2_postprocessing.tex) | 后处理替换稿、历史定位伪代码和合成例子 |
 | 按需 | [method_and_evaluation_notes.tex](method_and_evaluation_notes.tex) | 五处独立插入/替换说明，不应整段作为新章节 |
 | 按需 | [references_18.bib](references_18.bib) | 18 个文献条目；具体引用位置见审阅表 |
 
@@ -45,7 +47,7 @@
 
 ## 逐节协作方式
 
-先读材料并识别实际版本，然后按“标题与摘要 → 合并引言 → 问题定义与框架 → 三阶段方法 → 实验与局限 → 结论 → 全文一致性”推进。每次只处理一个可完成的小节，输出中文问题解释、中文逻辑、可替换英文/LaTeX、明确替换位置和验收点；等作者反馈后继续。完整约定见 WEB_GPT_PROMPT.md。
+先读材料并识别实际版本，然后按“标题与摘要 → 合并引言 → 问题定义与框架 → 三部分方法 → 实验与局限 → 结论 → 全文一致性”推进。每次只处理一个可完成的小节，输出中文问题解释、中文逻辑、可替换英文/LaTeX、明确替换位置和验收点；等作者反馈后继续。完整约定见 WEB_GPT_PROMPT.md。
 
 这是阅读与写作顺序，不是另建的实验状态表。实验真实状态仍只由项目已有 MASTER_PIPELINE / PROJECT_AUDIT 管理。
 

@@ -1,6 +1,40 @@
 {
   "schema_version": "paper_method_display_names@1.0.0",
   "scope": "Current paper and presentation display names; frozen experiment source metadata is retained byte-for-byte.",
+  "parts": {
+    "part1": {
+      "label": "Part 1",
+      "legacy_id": "stage1",
+      "task_name_en": "Process Model Parsing and Label Semantic Extraction",
+      "input": "BPMN process model",
+      "output_record": "Process Record"
+    },
+    "part2": {
+      "label": "Part 2",
+      "legacy_id": "stage2",
+      "task_name_en": "Semantic Extraction",
+      "input": "Natural-language Compliance Requirements",
+      "output_record": "Rule Record"
+    },
+    "part3": {
+      "label": "Part 3",
+      "legacy_id": "stage3",
+      "task_name_en": "Rule–Process Matching and Violation Checking",
+      "input": ["Process Record", "Rule Record"],
+      "output_record": "Violation Report"
+    }
+  },
+  "part_dependencies": {
+    "part1": [],
+    "part2": [],
+    "part3": ["part1", "part2"]
+  },
+  "part_relationship": "Part 1 and Part 2 independently process their respective inputs in parallel; their Process Record and Rule Record outputs jointly feed Part 3.",
+  "part2_task": {
+    "name_en": "Semantic Extraction",
+    "name_zh": "合规语义抽取",
+    "output_record": "Rule Record"
+  },
   "stage2_task": {
     "name_en": "Semantic Extraction",
     "name_zh": "合规语义抽取",
@@ -24,6 +58,8 @@
     }
   },
   "invariants": [
+    "Part numbers identify method components, not a sequential execution order; Part 1 and Part 2 have no dependency on each other.",
+    "stage2_task is retained as a compatibility alias equal to part2_task; legacy stage1/stage2/stage3 IDs remain unchanged.",
     "Display names do not change method IDs, paths, model/prompt bindings, frozen prediction files, scores or experiment authorization.",
     "configs/methods.json is a frozen implementation-hash source and retains its historical labels.",
     "Original publication titles and append-only experiment events retain their source wording."

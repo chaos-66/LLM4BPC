@@ -3,7 +3,8 @@
 完整阅读本文，再执行。你负责机械实现、具名验证、已授权运行和数据交付；Codex
 已作出下述方法判断。只做实验与数据，不写论文。工作区
 `D:\Paper\experiment\LLM4BPC`，活动改动仅在 `formal_experiment/`。
-本卡补充并优先于 `STAGE3_TABLE3_V4.md` 的冲突部分；原任务卡和历史授权保持原字节。
+本卡补充并优先于 `STAGE3_TABLE3_V4.md` 的冲突部分；任务卡仅按当前约定统一
+Part 展示术语，原实验范围、预算和历史授权记录保持不变。
 实时状态仍只在 PROJECT_AUDIT，路线在 MASTER_PIPELINE，不另造状态/交接页。
 
 ## 1. 审查结论与已确认的证据

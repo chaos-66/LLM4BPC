@@ -6271,3 +6271,31 @@
 - 仍存在 blocker：无
 - 备注：用户2026-10-11明确要求合并固定Base/G/J/E到System。清理版仅迁移固定返回要求和六个示例，User模板仅source_text；规则、示例输出和坐标不变。构建一致性与scoped diff检查通过。仅3个具名相关测试，fake transport验证实际消息；历史v6和固定预检请求保持。无真实模型/API/全量测试，未改Gold或历史结果。文件目录check因既存目录漂移未通过，本批未新增文件、不覆盖无关目录条目。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-12T01:15:17.860383+00:00 - PW3/PW5：将活动展示统一为Part 1/2/3并明确两个上游部分并行
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：否；正式实验就绪：否
+- 测试：1 failed, 7 passed in 0.53s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`de45c2edbc5f31234c23820cd200b1946abb2317`；相关未提交路径：67 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：stage1_annotation_protocol_not_verified
+- 备注：仅术语与现有框架说明迁移：三个报告/目录脚本只改5个显示字符串；现有机器ID/路径/schema/prompt/Gold/预测/指标/manifest和历史事件保持。part2_task兼容stage2_task；配置并行依赖明确。论文文档数值/公式/哈希/原始PDF及阅读包嵌入已静态核验，两份PPT包结构与未改条目核验通过，环境无PPT渲染/TeX编译器，不宣称最终版面验收。无新实验/API/全量测试，排除无关用户修改。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-12T01:18:36.949606+00:00 - PW3/PW5：保留哈希锁定协议并完成Part展示复现检查
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：1 passed in 0.11s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`de45c2edbc5f31234c23820cd200b1946abb2317`；相关未提交路径：68 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：上一记录的7项相关检查已通过；失败节点在修改前HEAD也因两段历史Direct-LLM名称不匹配当前LLM-SE而失败，已只投影2段JSON与1处Markdown标题及本轮2处Part说明，其他字节仍精确比较。恢复STAGE1_HUMAN_GOLD_GUIDE原字节SHA37b9eb04，保持旧门禁不变；活动HUMAN_PROCESS指南使用Part。保留首次失败事件，本次只重跑修正节点；无需重复已通过检查。无实验/API/全量，PPT/TeX仅静态与结构验收，渲染限制保持。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

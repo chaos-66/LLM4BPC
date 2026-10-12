@@ -48,7 +48,7 @@
 
 | 文献与核验深度 | 已有工作/重叠 | 本文可讨论的区别及尚需的证据 |
 |---|---|---|
-| Xiaoxiao Sun et al., *Design-time business process compliance assessment based on multi-granularity semantic information*, 2024 卷期；出版社摘要与元数据 [R1] | 深度学习与规则模板抽取多粒度法规语义，匹配流程并检查三类控制流违规 | 三阶段是继承主干。本文为独立重建和解析方法受控比较；不能称原作者系统精确复现。最终版表号/超参与本地作者稿的对应仍需原文核实 |
+| Xiaoxiao Sun et al., *Design-time business process compliance assessment based on multi-granularity semantic information*, 2024 卷期；出版社摘要与元数据 [R1] | 深度学习与规则模板抽取多粒度法规语义，匹配流程并检查三类控制流违规 | 三部分是继承主干。本文为独立重建和解析方法受控比较；不能称原作者系统精确复现。最终版表号/超参与本地作者稿的对应仍需原文核实 |
 | Barrientos et al., *Taming the Complexity of Legal Change for Business Process Compliance*, 2026；HTML 全文 §6.1–6.2 [R2] | LegalChanges4BPC 采用 Sun 语义，比较法规新旧版本，以 LLM 生成结构化变化并判断 BPC 相关性 | 正文明确具体流程影响分析不在实现范围。本文若完成固定检查器下的解析替换与误差传播，研究对象有区别；仅“Sun 语义＋LLM＋JSON”已非独有 |
 | Wang et al., *Leveraging LLMs for Automated Compliance Risk Identification in Business Processes*, 2025（ICONIP 2024）；出版社摘要 [R3] | 规范文本经 LLM 转为 process triple sequences，再比较标准流程与实际流程 | 整体架构接近；应补读全文的表示、检查机制与实验。本轮不能断言其没有字段级分析或没有相关功能，也不推定其是否直接采用 Sun |
 | Kölbel et al., *Context is key for cybersecurity: leveraging external knowledge for process model explanation via LLMs*, 2026；HTML 方法/评价正文 [R4] | BPMN 与安全标准上下文支持 LLM 合规问答，研究提示策略与评价 | 本文可研究显式记录与固定检查器的误差传播。其 74.6% 对应特定问答评价，不能与本文抽取 F1 比大小；确定性检查也不自动意味着语义正确或总体更可靠 |
@@ -73,8 +73,8 @@
 
 | 证据 | 可写的事实/价值 | 必须保留的限制 |
 |---|---|---|
-| [Stage 2 正式报告](../outputs/reports/stage2_formal_three_method_comparison_v1.md)，C23–C25 | EStG-150 上 Rules-Only 与 LLM-SE 的同输入/Gold/评价器比较；五字段均值 0.7970 / 0.8088，字段优势各异 | 描述性结果，无整体胜者或显著性结论；均值是五字段 F1 算术均值，modality accuracy 单列；历史 Repair 只作来源，不恢复后续实验 |
-| [Stage 1 v2](../outputs/reports/stage1_formal_evaluation_v2.md) | GDPR-7 的组件评价与重建；已有语义与结构结果 | 明确 post-Gold、target-aware、strict_test_blind=false；运行不读 Gold 不等于开发未见标签；结构 1.0 不是独立泛化证据 |
+| [Part 2 正式报告](../outputs/reports/stage2_formal_three_method_comparison_v1.md)，C23–C25 | EStG-150 上 Rules-Only 与 LLM-SE 的同输入/Gold/评价器比较；五字段均值 0.7970 / 0.8088，字段优势各异 | 描述性结果，无整体胜者或显著性结论；均值是五字段 F1 算术均值，modality accuracy 单列；历史 Repair 只作来源，不恢复后续实验 |
+| [Part 1 v2](../outputs/reports/stage1_formal_evaluation_v2.md) | GDPR-7 的组件评价与重建；已有语义与结构结果 | 明确 post-Gold、target-aware、strict_test_blind=false；运行不读 Gold 不等于开发未见标签；结构 1.0 不是独立泛化证据 |
 | [SEP-C3 四臂消融](../outputs/reports/sep_c3_modular_ablation_analysis_v1.md) | 600 次真实调用已完成；modular v1 未通过验收，旧 v6 保留；可报告该具体改写的失败 | 四臂不是完整八组合；一次失败不证明所有模块化提示都无效；0813 旧 v6 的 0.7850 不能与正式 D1 的 0.8088 混成同一批次 |
 | [两方法/Oracle 衔接快照 v10](../outputs/reports/s2_13_s3_7_transition_readiness_v10.md) | 人工 Rule Records 已发布，开发面板已有 Oracle 隔离结果，可以诊断检查器瓶颈 | Direct 两批实际结果仍缺；正式主表未启动。不能写成“完全没做 Oracle”，也不能写成“正式 Oracle/端到端已经完成” |
 | [四类 target-paired v2](../outputs/reports/s3_c36_target_paired_v2.md)，C41–C42 | 40 对受控面板上已记录 F1、配对成功、unknown 与 control target FP | 开发/合成/目标字段评价；control 不是全流程合规证明；Winter-style 四类基线为项目扩展，非 Winter 原生能力 |
@@ -86,7 +86,7 @@
 
 ## 5. 会影响结论的风险与处理原则
 
-1. **开发与独立测试边界。** 现有材料披露过 Stage 1 目标标签暴露、EStG 本地词典补充、
+1. **开发与独立测试边界。** 现有材料披露过 Part 1 目标标签暴露、EStG 本地词典补充、
    prompt 迭代及同面板阈值探索。逐个最终报告交代选型、调试、人工裁决、冻结与评价时序，
    不把内部 formal 标记等同于 unseen held-out test。若只支持固定样本的描述性研究，就
    限定结论；若要泛化主张，再明确新增独立证据需求。本记录不授权重抽 EStG-150 或新实验。
@@ -112,7 +112,7 @@
 ## 6. 论文组织准备：不新增实验路线
 
 沿用工作稿题名“面向自然语言合规需求的设计时业务流程检查：规则方法与大语言模型的
-分阶段比较”。贡献候选分三层，完成证据与拟做工作不能混写：
+按部分比较”。贡献候选分三层，完成证据与拟做工作不能混写：
 
 - **表示与实现说明**：在继承的语义框架中适配 Rules-Only/LLM-SE，交代原文证据、
   校验、归一化与检查接口；明确采用已有技术和自行实现的部分。
@@ -140,7 +140,7 @@
 - SEP-C1 / PW1–PW5：把最接近的文献和借鉴边界写入引言/相关工作；先形成连贯稿件，
   不等待全部补证。全文待核的细节保留 TODO-SOURCE。
 - SEP-C2 / S2.12–S2.13：按原合同补齐实际两方法证据；110 次是既有计划量，不能从本文
-  推导出新授权或新的可发送状态。不恢复 Repair、Stage 3 fallback 或已撤回的复现方案。
+  推导出新授权或新的可发送状态。不恢复 Repair、Part 3 fallback 或已撤回的复现方案。
 - SEP-C4 / PW8：优先回答固定检测器下的成对差异；复用匹配的已有资产，有实际缺口才
   请求必要补证。四类扩展保持可审查的探索范围，不为扩大创新数量追加新类型。
 - SEP-C5–C6 / OCT-C1–C4：持续写作、导师反馈、英文与当届格式核验；按最晚目标尽早

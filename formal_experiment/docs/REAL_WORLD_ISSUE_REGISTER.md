@@ -687,7 +687,7 @@ handoff：任务顺序仍以 `MASTER_PIPELINE.md` 为准，实时进度仍以
 ### RWI-0008 — 人工、D1 与 H1 的六要素操作语义未统一
 
 - **首次发现**：2026-07-19
-- **阶段/范围**：S2.2 人工 Gold、S2.8 H1、S2.9 D1、canonical schema 与 Stage 3
+- **阶段/范围**：S2.2 人工 Gold、S2.8 H1、S2.9 D1、canonical schema 与 Part 3
   admission
 - **观察事实**：既有材料虽然共同列出 modality/actor/action/condition/constraint/
   exception，但没有以一个版本化合同统一最小 span、exact/normalized 边界、代词
@@ -695,12 +695,12 @@ handoff：任务顺序仍以 `MASTER_PIPELINE.md` 为准，实时进度仍以
   clause、condition/constraint/exception scope，以及 H1 如何在局部 patch 中保留
   `unsupported_or_ambiguous`。这会使同一句在人工、D1、H1 间产生方法外差异。
 - **影响**：若不先冻结，后续差异可能来自提示词/标注定义漂移，而不是方法能力；无
-  句内先行词的 `It` 还可能被静默补成外部主体，或在 H1 merge 后丢失不可进 Stage 3
+  句内先行词的 `It` 还可能被静默补成外部主体，或在 H1 merge 后丢失不可进 Part 3
   的状态。
 - **状态**：`resolved`
 - **解决方法**：新增 `stage2_extraction_contract@1.0.0` 与人读合同，明确 sentence-only
   输入、六字段最小精确 span、受控不确定性、代词保留、被动隐含 actor 禁止推断、
-  clause/coordination、方法可见性、统一评价与 Stage 3 admission。D1/H1 同步为 v5；
+  clause/coordination、方法可见性、统一评价与 Part 3 admission。D1/H1 同步为 v5；
   H1 envelope 完整替换顶层 ambiguity list；现有 canonical schema 因已支持 exact/
   normalized 和受控元数据而保持 byte-identical。12 条既有 EStG 记录只作为 hash-bound
   静态覆盖 pilot，不成为 Gold、few-shot 或性能样本。

@@ -8,6 +8,7 @@
 - 原稿为作者上传的六页 2027_CSCWD (16).pdf；[原样 PDF](source_2027_CSCWD_16.pdf) 是公式、图表和版式的依据。
 - 现有审阅和替换稿基准提交为 1f00f155474329a0f73eb5c162688301d5e5414d；它们是候选修改，不是作者已接受的终稿。
 - 本文件末尾包含原稿分栏文本。它保留原文错误；下标、公式、表格可能提取失真，必须对照 PDF。
+- 2026-10-12 起，活动修订统一使用 Part 1 / Part 2 / Part 3；Part 1 和 Part 2 独立并行，共同输入 Part 3。原稿附录保留原文，后续整合修订时同步更新原稿图中的名称与关系。
 - 两篇已发表 CSCWD 论文只借鉴结构，不能借用不相关研究内容或凑引用。
 - 仓库旧 TeX 已与上传 PDF 部分不同，不能冒充当前准确源文件。
 - 先报告实际读取范围。无法打开链接或 PDF 时，请作者提供本文件和原稿，不要声称已经读取。
@@ -27,7 +28,7 @@
 
 ## C. 每轮如何推进
 
-按 标题与摘要 → 合并引言 → 问题定义与框架 → Stage 1 → Stage 2 → Stage 3 → 实验/局限 → 结论 → 全文回查 推进。每次一个可完成的小节。
+按 标题与摘要 → 合并引言 → 问题定义与框架 → Part 1 → Part 2 → Part 3 → 实验/局限 → 结论 → 全文回查 推进。每次一个可完成的小节。
 每轮给出：修改位置；中文问题解释；中文逻辑；可替换英文/LaTeX；删/换/留的具体操作；证据与待核实点；2—3 个验收点。等待作者反馈后继续。
 第一轮确认阅读范围与研究理解，列最重要的 5 个问题；材料足够就开始标题与摘要。完整交互要求见 [WEB_GPT_PROMPT.md](WEB_GPT_PROMPT.md)。
 
@@ -74,7 +75,7 @@
 - 需要直接纠正：坐标重定位与“坐标不变”的矛盾、actors/order 的符号冲突、公式未出现的 minimum-form 说明、把两个不同提示词版本仅解释为不同运行，以及用共同 TP/FP/FN 描述实际采用双向命中计数的抽取指标。
 - 18 篇可以合理安排。本目录已经给出合并引言中的 16 篇实际引用，以及相似度模型处的 2 篇实际引用；不是仅向 bib 添加 10 条。
 
-本次提供的是可替换文字和审阅材料，没有声称已经修改并重新编译上传的 PDF。仓库旧源文件第三阶段的文字已与上传 PDF 不同；当前环境也没有可用的 TeX 编译器，因此不能把片段检查冒充最终六页排版验收。
+本次提供的是可替换文字和审阅材料，没有声称已经修改并重新编译上传的 PDF。仓库旧源文件Part 3 的文字已与上传 PDF 不同；当前环境也没有可用的 TeX 编译器，因此不能把片段检查冒充最终六页排版验收。
 
 ## 2. 两篇已发表论文应当借鉴什么
 
@@ -82,7 +83,7 @@
 |---|---|---|---|
 | 引言 | 背景、既有方法、具体不足、本文方案、贡献、章节安排 | 按方法演进组织既有工作，导出具体缺口，再给方案和贡献 | 把 Related Work 的实质论述融合进引言，删去重复介绍 Winter/Sun 和 LLM 的段落 |
 | 方法前的准备 | II Motivation and Framework，用例子说明问题和框架 | II Preliminary 后接 III Framework，先定义后解释模块 | II Problem Formulation and Framework，补最必要的字段定义和一个贯穿例子 |
-| 核心方法 | 对目标问题定义、建模、说明求解过程 | 对框架中的主要模块逐项说明 | 给你实际改变的 Stage 2 足够篇幅，写出后处理规则或伪代码 |
+| 核心方法 | 对目标问题定义、建模、说明求解过程 | 对框架中的主要模块逐项说明 | 给你实际改变的 Part 2 足够篇幅，写出后处理规则或伪代码 |
 | 实验 | 实验设置、比较结果、结果分析 | 设置、性能比较、消融和参数分析 | 保持抽取比较、提示词分析、下游比较，但把数据和版本说清楚 |
 | 结论 | 回到问题与观察，再写未来工作 | 回到主要模块与实验观察，再写未来工作 | 总结已经得到的观察，并保留弱项与开发集限制 |
 
@@ -91,7 +92,7 @@
 建议最终五部分：
 
 1. Introduction：背景 → 传统形式化方法 → 文本语义抽取 → LLM 相关工作 → 本文具体问题 → 方法概述与贡献。
-2. Problem Formulation and Framework：输入输出、六类字段的简明定义、三阶段关系。
+2. Problem Formulation and Framework：输入输出、六类字段的简明定义、三部分关系。
 3. Methodology：A Process Model Parsing；B Compliance Requirement Parsing；C Compliance Checking。
 4. Experiments and Results：设置、抽取比较、提示词组合、下游检查、局限。
 5. Conclusion。
@@ -120,7 +121,7 @@
 | 14 | Wang 2025 / wang2025leveraging【新增】 | 同段：LLM 生成流程三元组，用于合规风险识别；必须讨论的相近工作之一 | https://doi.org/10.1007/978-981-96-6963-9_32 |
 | 15 | Park 2026 / park2026extracting【新增】 | 同段：自然语言到 Declare 约束；区别在目标表示和任务 | https://doi.org/10.1016/j.dss.2026.114627 |
 | 16 | Kölbel 2026 / koelbel2026context【新增】 | 同段：BPMN 与外部安全知识结合的解释和合规评估 | https://doi.org/10.1007/s10207-026-01245-x |
-| 17 | Reimers 2019 / reimers2019sentence【新增】 | Stage 3 相似度模型说明：Sentence-BERT 句向量框架 | https://aclanthology.org/D19-1410/ |
+| 17 | Reimers 2019 / reimers2019sentence【新增】 | Part 3 相似度模型说明：Sentence-BERT 句向量框架 | https://aclanthology.org/D19-1410/ |
 | 18 | Song 2020 / song2020mpnet【新增】 | 同处：实际 all-mpnet-base-v2 的基础架构；精确 checkpoint 另给模型卡脚注 | https://proceedings.neurips.cc/paper/2020/hash/c3a690be93aa602ee2dc0ccab5b7b67e-Abstract.html |
 
 筛选依据是“本文这句话需要什么证据”，而不是“Sun 引用了谁”。通过 Sun 的参考文献找到原始文献完全可以；直接引用之前仍须核实原始来源中相应的内容。只看过 Sun 的总结时，不应把它写成自己核验过原文的具体实验结论。
@@ -138,7 +139,7 @@
 - Wang 是 ICONIP 2024 会议论文集中的 2025 年出版章节；bib 年份用 2025。
 - De Jure 按 arXiv 预印本登记，不冒充已经发表的期刊文章。
 
-## 4. 第二阶段后处理：现在缺什么，应该怎么写
+## 4. Part 2 后处理：现在缺什么，应该怎么写
 
 PDF 第 2 页右栏到第 3 页开头只有一段概述。已有的校验项目是对的，但未说明执行过程，因此还不能回答“算法到底做了什么”。
 
@@ -184,19 +185,19 @@ PDF 第 2 页右栏到第 3 页开头只有一段概述。已有的校验项目�
 
 实际实现使用有上限的穷举，不是匈牙利算法。它是后续开发版本；不能为了使论文“看起来有算法”，把它加入对主表 0.8378 的解释。已有开发对照恢复部分片段但 actor F1 下降，也不能说每一步均提高语义准确率。
 
-本次 stage2_postprocessing.tex 给出历史唯一精确定位的可替换文字、定义、伪代码和一个合成例子。无需新增实验即可把当前主方法解释清楚。
+本次 part2_postprocessing.tex 给出历史唯一精确定位的可替换文字、定义、伪代码和一个合成例子。无需新增实验即可把当前主方法解释清楚。
 
 ## 5. 从头到尾的审阅
 
 | 位置 | 清楚程度 / 具体问题 | 修改建议 |
 |---|---|---|
-| 第 1 页标题、摘要 | 主题清楚；摘要主要说明“要做什么”，没有核心观察 | 补样本量、主表结果及限制，勿把三阶段框架本身作为新发明 |
+| 第 1 页标题、摘要 | 主题清楚；摘要主要说明“要做什么”，没有核心观察 | 补样本量、主表结果及限制，勿把三部分框架本身作为新发明 |
 | 第 1–2 页 Introduction / Related Work | 重复，最相近的 LLM 流程合规工作覆盖不够 | 使用合并引言；按任务和表示区别定位，不声称“别人没有做” |
 | 第 2 页 Problem Formulation | 有输入输出名称，缺字段的操作性定义 | 用一个紧凑表区分 modality、actor、action、condition、constraint、exception，尤其 condition 与 constraint |
-| 第 2 页 Framework | 三阶段关系明确；六字段输出与三类检查之间的关系不够明确 | 说明哪些字段直接进入当前检查，哪些仅保留在记录中；抽取了六类并不代表验证了六类违规 |
-| 第 2 页 Stage 1 | “fixed linguistic analysis”过于概括 | 补 BPMN 标签如何取得动作、对象、参与者；可达性如何计算以及网关、循环、缺失标签如何处理。应按实际冻结实现填写 |
-| 第 2–3 页 Stage 2 | 提示词模块较清楚，后处理不足且有矛盾 | 采用本目录替换段；明确 raw output、adaptation、alignment、validation 的区别 |
-| 第 3–4 页 Stage 3 | 符号与说明没有同步，影响读者判断实际算法 | 见下一节逐项纠正；不要仅复制 Sun 公式后省略所有定义 |
+| 第 2 页 Framework | 三部分关系明确；六字段输出与三类检查之间的关系不够明确 | 说明哪些字段直接进入当前检查，哪些仅保留在记录中；抽取了六类并不代表验证了六类违规 |
+| 第 2 页 Part 1 | “fixed linguistic analysis”过于概括 | 补 BPMN 标签如何取得动作、对象、参与者；可达性如何计算以及网关、循环、缺失标签如何处理。应按实际冻结实现填写 |
+| 第 2–3 页 Part 2 | 提示词模块较清楚，后处理不足且有矛盾 | 采用本目录替换段；明确 raw output、adaptation、alignment、validation 的区别 |
+| 第 3–4 页 Part 3 | 符号与说明没有同步，影响读者判断实际算法 | 见下一节逐项纠正；不要仅复制 Sun 公式后省略所有定义 |
 | 第 4–5 页实验设置 | 数据量和任务已给出，Gold 来源与版本身份还不充分 | 补重建和人工裁定流程、输入语言/翻译情况、重复与失败处理、每组配置 |
 | 第 5 页 Table I | 对优势和弱项的讨论诚实；指标说明与冻结统计不一致 | 改为双向命中计数的 pooled overlap F1，modality 单列；统一四位小数 |
 | 第 5 页 Table II | 8 个组合和基础契约说明较好 | 清楚说明与 Table I 的提示词版本不同、跨两批执行且每格一次；交互只是观察，不能暗示统计稳定性 |
@@ -204,7 +205,7 @@ PDF 第 2 页右栏到第 3 页开头只有一段概述。已有的校验项目�
 | 第 5–6 页错误分析 | 已限制到 missing-action 的 FP，边界较好 | 补分类依据与至少一个例子；50/70 是方法–案例单元，不是 50 个独立案例 |
 | 第 6 页结论、引用 | 结论与主要观察大体一致；仍使用旧名称与三位小数 | 统一 LLM-SE、0.8378/0.7631；18 篇与正文逐一对应 |
 
-### 5.1 Stage 3 中必须修正的符号问题
+### 5.1 Part 3 中必须修正的符号问题
 
 1. 第 3 页开头将 U_r 定义为 actors，公式 (8) 却用 U_r 表示顺序约束；公式 (4) 用到的 P_r 没有同处定义。应统一为 A_r=动作、P_r=主体、U_r=顺序关系。
 2. 文字使用过程 p，公式使用 m；D、O、R、C、U、S 的下标也混用。全节选择同一套符号。
@@ -243,18 +244,18 @@ PDF 第 2 页右栏到第 3 页开头只有一段概述。已有的校验项目�
 
 ### 5.3 可用的摘要替换草稿
 
-Design-time business process compliance checking requires regulatory requirements to be connected with process-model semantics. This paper investigates LLM-based Semantic Extraction (LLM-SE) within an existing three-stage compliance-checking framework. LLM-SE generates Rule Records containing modality, actor, action, condition, constraint, and exception information, followed by deterministic structural adaptation, evidence alignment, and validation. On a reconstructed benchmark of 150 requirements, LLM-SE achieves a pooled overlap F1 of 0.8378 over five span-bearing fields, compared with 0.7631 for a reconstructed Rules-Only baseline, while the baseline remains stronger for actor and exception extraction. A separate prompt factorial analysis examines examples, semantic guidance, and output-discipline instructions. On a GDPR-based development benchmark, the resulting records yield downstream F1 scores of 0.5341 and 0.4458 under the same checking pipeline. These results reveal field-dependent extraction benefits and remaining rule–process alignment limitations; the downstream benchmark is not an independently held-out test.
+Design-time business process compliance checking requires regulatory requirements to be connected with process-model semantics. This paper investigates LLM-based Semantic Extraction (LLM-SE) within an existing three-part compliance-checking framework. LLM-SE generates Rule Records containing modality, actor, action, condition, constraint, and exception information, followed by deterministic structural adaptation, evidence alignment, and validation. On a reconstructed benchmark of 150 requirements, LLM-SE achieves a pooled overlap F1 of 0.8378 over five span-bearing fields, compared with 0.7631 for a reconstructed Rules-Only baseline, while the baseline remains stronger for actor and exception extraction. A separate prompt factorial analysis examines examples, semantic guidance, and output-discipline instructions. On a GDPR-based development benchmark, the resulting records yield downstream F1 scores of 0.5341 and 0.4458 under the same checking pipeline. These results reveal field-dependent extraction benefits and remaining rule–process alignment limitations; the downstream benchmark is not an independently held-out test.
 
 此草稿只使用原稿及冻结材料已经出现的结果，不加入新的实验结论。是否放全部数值可按版面进一步压缩。
 
 ## 6. 文件使用顺序与尚待完成项
 
 1. 用 introduction.tex 替换原 Introduction 和 Related Work 两节。
-2. 用 stage2_postprocessing.tex 替换 Stage 2 最后那一段；伪代码可按版面取舍，但保留文字中的算法规则。
+2. 用 part2_postprocessing.tex 替换 Part 2 最后那一段；伪代码可按版面取舍，但保留文字中的算法规则。
 3. 将 method_and_evaluation_notes.tex 的五段分别放入对应位置，不要把它整体作为新章节插入。
 4. 合并 references_18.bib；保留原有键名，使用正常 \cite，不用 \nocite{*}。例如 \bibliographystyle{IEEEtran} 与 \bibliography{references_18}；实际文件路径按工程设置。
 5. 全文、图内、表内统一 LLM-SE。这是展示名统一，不改变历史实验 ID、模型或数值。
-6. 按第 5.1 节修正文字符号并核对冻结 Stage 3 代码；按第 5.2 节补数据来源与每组配置。没有核实的配置不要填猜测值。
+6. 按第 5.1 节修正文字符号并核对冻结 Part 3 代码；按第 5.2 节补数据来源与每组配置。没有核实的配置不要填猜测值。
 7. 在实际当前 TeX 工程编译，检查引用 18 篇、章节交叉引用、字体、公式、图表和页数。不要通过压缩到不可读字号解决版面。
 8. 主表保持四位小数和固定来源；无需为以上文字修订重跑实验。
 
@@ -318,7 +319,7 @@ Large language models (LLMs) offer another mechanism for interpreting regulatory
 
 These studies establish relevant uses of LLMs, but their outputs and evaluation tasks differ. Our question is more specific: how does LLM-based semantic extraction behave when evaluated against a reconstructed non-LLM extractor under the same six-element BPC representation, reference annotations, and evaluation procedure, and how do the resulting records affect a fixed downstream checker? Separating extraction from checking makes both field-level errors and downstream limitations observable, without attributing changes in the checker to the extractor.
 
-We investigate LLM-based Semantic Extraction (LLM-SE) within a three-stage design-time BPC framework. BPMN models are parsed into Process Records, while regulatory requirements are independently transformed into Rule Records. LLM-SE generates candidate records in a single call, followed by deterministic structural adaptation, evidence alignment, and validation. The records are then supplied to a shared checker for missing-action, incorrect-actor, and out-of-order violations. Our contributions are:
+We investigate LLM-based Semantic Extraction (LLM-SE) within a three-part design-time BPC framework. Part~1 parses BPMN models into Process Records, while Part~2 independently transforms regulatory requirements into Rule Records. These are parallel upstream branches with no input dependency between them; Part~3 consumes both records for compliance checking. LLM-SE generates candidate records in a single call, followed by deterministic structural adaptation, evidence alignment, and validation. The records are then supplied to a shared checker for missing-action, incorrect-actor, and out-of-order violations. Our contributions are:
 \begin{itemize}
     \item An implementation of LLM-SE for an existing fine-grained BPC representation, with source-linked evidence and an explicit deterministic postprocessing procedure.
     \item A controlled extraction comparison against a reconstructed Rules-Only baseline, together with a factorial analysis of semantic examples, semantic guidance, and additional output-discipline instructions.
@@ -329,13 +330,13 @@ Section~\ref{sec:3} presents the problem formulation and framework. Section~\ref
 ````
 <!-- END_SOURCE introduction.tex -->
 
-## G. 第二阶段后处理候选稿
+## G. Part 2后处理候选稿
 
-来源文件：[stage2_postprocessing.tex](stage2_postprocessing.tex)。以下完整嵌入，未把建议自动套用到原稿。
+来源文件：[part2_postprocessing.tex](part2_postprocessing.tex)。以下完整嵌入，未把建议自动套用到原稿。
 
-<!-- BEGIN_SOURCE stage2_postprocessing.tex -->
+<!-- BEGIN_SOURCE part2_postprocessing.tex -->
 ````latex
-% Replacement for Output Validation and Normalization in Stage 2.
+% Replacement for Output Validation and Normalization in Part 2.
 % Describes the historical unique-exact policy associated with Table I.
 % Requires amsmath; optional pseudocode requires algorithm + algorithmic.
 
@@ -375,7 +376,7 @@ For illustration, in \texttt{The clerk must approve.}, \texttt{approve} occupies
 \end{algorithmic}
 \end{algorithm}
 ````
-<!-- END_SOURCE stage2_postprocessing.tex -->
+<!-- END_SOURCE part2_postprocessing.tex -->
 
 ## H. 方法与实验说明的五处候选替换
 
@@ -384,15 +385,15 @@ For illustration, in \texttt{The clerk must approve.}, \texttt{approve} occupies
 <!-- BEGIN_SOURCE method_and_evaluation_notes.tex -->
 ````latex
 % These are SEPARATE replacements/insertions, not one continuous section.
-% INSERTION 1: add beside the embedding model in the Stage 3 setup.
+% INSERTION 1: add beside the embedding model in the Part 3 setup.
 % These two distinct citations bring the total to 18.
 Semantic similarity is computed using the
 \texttt{sentence-transformers/all-mpnet-base-v2} checkpoint, an MPNet-based
 sentence embedding model in the Sentence-BERT framework~\cite{reimers2019sentence,song2020mpnet}.
 The exact checkpoint is documented in its model card.\footnote{\url{https://huggingface.co/sentence-transformers/all-mpnet-base-v2}}
 
-% REPLACEMENT 2: Stage 2 metric. Preserves the frozen evaluation procedure.
-Stage~2 uses the frozen coarse sentence-level overlap view. Within each sample
+% REPLACEMENT 2: Part 2 metric. Preserves the frozen evaluation procedure.
+Part~2 uses the frozen coarse sentence-level overlap view. Within each sample
 and semantic field, an extracted span is counted as matched if it overlaps at
 least one reference region; a reference region is counted as matched if it
 overlaps at least one extracted span. These are separate counts, rather than

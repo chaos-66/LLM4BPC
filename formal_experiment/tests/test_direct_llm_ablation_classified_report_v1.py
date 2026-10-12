@@ -111,8 +111,36 @@ def test_checked_in_reports_are_byte_reproducible():
     expected_json = json.dumps(
         report, ensure_ascii=False, indent=2) + "\n"
     expected_md = builder.to_markdown(report) + "\n"
-    assert builder.REPORT_JSON.read_text(encoding="utf-8") == expected_json
-    assert builder.REPORT_MD.read_text(encoding="utf-8") == expected_md
+    historical_json = builder.REPORT_JSON.read_text(encoding="utf-8")
+    # The earlier method display migration also retained historical reports.
+    # Project its two known prose changes, keeping every numeric byte exact.
+    method_projections = (
+        "Few-shot examples are necessary for adherence to the current strict Direct-LLM output interface; their independent semantic contribution is not isolated by this arm.",
+        "The independent contribution of the remaining Direct-LLM modules cannot be attributed until the listed one-factor removals are run.",
+    )
+    for historical in method_projections:
+        assert historical_json.count(historical) == 1
+        historical_json = historical_json.replace(
+            historical, historical.replace("Direct-LLM", "LLM-SE"), 1)
+    assert historical_json == expected_json
+    historical_md = builder.REPORT_MD.read_text(encoding="utf-8")
+    # Retain the frozen historical source; project only the listed display
+    # strings to the current renderer terminology. All other bytes stay exact.
+    display_projections = (
+        ("# Direct-LLM / Barrientos", "# LLM-SE / Barrientos"),
+        (
+            "本批没有运行 Stage 3，因此不能据此声称已经提高 BPMN 违规检测准确率。",
+            "本批没有运行 Part 3，因此不能据此声称已经提高 BPMN 违规检测准确率。",
+        ),
+        (
+            "优于 Barrientos；本批也没有评价 Stage 3 违规检测效果。",
+            "优于 Barrientos；本批也没有评价 Part 3 违规检测效果。",
+        ),
+    )
+    for historical, current in display_projections:
+        assert historical_md.count(historical) == 1
+        historical_md = historical_md.replace(historical, current, 1)
+    assert historical_md == expected_md
     assert "只有其中 Full vs 去 few-shot" in expected_md
     assert "不能把两边 native F1 强行排成总榜" in expected_md
     assert "尚未单独证明其语义贡献" in expected_md
