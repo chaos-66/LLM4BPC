@@ -45,7 +45,7 @@ compliance assessment based on multi-granularity semantic information*（DOI
 - 已冻结资产：7 个 BPMN（`data/input/stage1_stage3/gdpr7/`）、33 条三类 violation
   decision Gold + 25 条 matching Gold（`data/gold/stage3/`，decision-only ≠ Gold Rule
   Records）、9 条款/74 句 Gold-blind 输入（`data/input/gdpr7_stage2_input_v1.json`）、
-  Rules-Only 74/74 胶囊（`data/predictions/gdpr7_sun_rule_only_v1/`）、统一口径与修复
+  Sun 74/74 胶囊（`data/predictions/gdpr7_sun_rule_only_v1/`）、统一口径与修复
   数字（`outputs/reports/s3_extended_unified_v1_*`、`s3_formula_repair_v2.*`）、
   S3.9-EXT 40 对四类扩展面板（DEV_ONLY）。
 - 推荐叙事锚点：**article33（gdpr_1_data_breach）**为主案例（义务活动缺失/顺序/执行者，
@@ -53,10 +53,10 @@ compliance assessment based on multi-granularity semantic information*（DOI
   小案例（统一口径 10/7/8/6 逐样本变化；文章 LINKAGE_RULES_ONLY_RESULTS_NOTE
   案例 a/b/c）。
 - 解释结构（分贡献，不预先承诺）：
-  1. Sun 方法重建基线是 Rules-Only：在 33 条三类 Gold 上的开发口径表现为
+  1. Sun 方法重建基线是 Sun：在 33 条三类 Gold 上的开发口径表现为
      macro 0.3333 / exact 0.3333；保留跨语言 pass-through 和适配限制。
      reference 确定性抽取（0.3889 / 0.3636）仅作开发诊断，不能当成 Sun 方法臂；
-  2. 用 LLM-SE 替换 Stage 2（GDPR 臂待真实运行），对比同配置 Rules-Only 后
+  2. 用 LLM-SE 替换 Stage 2（GDPR 臂待真实运行），对比同配置 Sun 后
      解释最终判定变化及抽取/适配/检测原因（Task D 已提供接口，尚无该臂实验数字）；
   3. 加 Stage 3 四类扩展（S3.9-EXT DEV_ONLY 40 对）在何种意义上扩展覆盖面，受
      可观察性/映射瓶颈限制的如实表述。
@@ -78,7 +78,7 @@ compliance assessment based on multi-granularity semantic information*（DOI
 |---|---|---|---|
 | L1 句子级六要素 | 案例句子的 modality/actor/action/… 最终值 | GDPR 74 句裁决面已就绪（v2 工具），**0/74**；Barrientos 36 句已有正式 Gold（可复用，reviewer=hyc，无独立专家背书） | 用唯一编辑入口 `formal_experiment/scripts/gdpr7_review_tool_v1.py --next`（默认 v2 文件 `data/development/human_review/gdpr7_six_element_review_decisions_v2.json`）核对；最小集可先只做案例条款（如 article33 10 句 + article34 7 句 + article22 6 句 ≈ 23 句），其余 51 句不阻塞开发口径比较 |
 | L2 流程级违规判定 | 每个待检对象“有/无违规、何类违规” | 33 条三类违规 Gold 可当“违规变体”答案；**“正常对照无违规”无人工 Gold 样本** | 对案例中每个正常对照对象做一次人工 compliant/none 确认（文件级确认事件即可，可逐对象批量给出） |
-| L3 争议判定 | 案例中涉及“参考错/Rules-Only 错/LLM-SE 更对”的句 | 未裁决 | 至少 article22 s1 的 modality 终裁（prohibition vs obligation）；裁决前论文只用中性表述“标签不同→可检性改变” |
+| L3 争议判定 | 案例中涉及“参考错/Sun 错/LLM-SE 更对”的句 | 未裁决 | 至少 article22 s1 的 modality 终裁（prohibition vs obligation）；裁决前论文只用中性表述“标签不同→可检性改变” |
 
 **用户可直接给出**（哪种形式都行，Agent 只导入不推断）：
 1. 选定 1–2 个 (流程, 条款) 作论文案例（推荐 gdpr_1×article33 + article22 s1 小案例）；
@@ -88,7 +88,7 @@ compliance assessment based on multi-granularity semantic information*（DOI
 
 ## 4. 后续写入（不在本注记冒充完成）
 
-- 真实 LLM-SE/Rules-Only 成对下游结果与逐样本差异 → 案例逐条表（检出/漏检/误报/
+- 真实 LLM-SE/Sun 成对下游结果与逐样本差异 → 案例逐条表（检出/漏检/误报/
   流程位置）+ 流程图（自制，基于 `data/input/stage1_stage3/gdpr7/gdpr_1_data_breach.bpmn`
   与冻结 inference pack 规则文本）；
 - Sun SIM 案例如需新数据激活/新裁决/额外 API：列出最小依赖并单独申请，不挪用 137 次预算

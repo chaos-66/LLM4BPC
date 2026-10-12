@@ -4,6 +4,10 @@
 必须停止。实时状态和当前派工只写在 `PROJECT_AUDIT.md`，本文不建立第二份状态页，
 也不改变 `MASTER_PIPELINE.md` 的权威性。
 
+**当前命名**：项目与 GitHub 中使用 Sun / LLM-SE；Sun 为 Sun et al. (2024)
+公开方法的本地独立重建。历史 Rules-Only、`sun_rule_only` 与 B0 是其来源/兼容名称。
+展示统一按 `configs/paper_method_display_names_v1.json`，冻结报告与运行来源不重写。
+
 ## S3-TABLE3-V4 静态执行入口（2026-09-24 用户选择）
 
 当前修正卡：[`agent_prompts/STAGE3_TABLE3_V4_R1.md`](agent_prompts/STAGE3_TABLE3_V4_R1.md)。
@@ -20,7 +24,7 @@
 
 > **2026-09-14 用户取消决定优先**：不再派发 Rules+LLM-Repair / H1 /
 > `sun_llm_fallback` 或规则先行的 LLM 修复/fallback 实验；S2.12 的 F-1/F-2/F-3
-> 共 27 次已取消。旧三方法模板和旧授权仅作历史。当前比较为 Rules-Only 与
+> 共 27 次已取消。旧三方法模板和旧授权仅作历史。当前比较为 Sun 与
 > LLM-SE，剩余 Direct 36+74=110 次；两方法执行/评价/冻结合同已于 2026-09-14
 > 适配（`s2_12_two_method_contract_v1`），取消的组不再是完成依赖，不得伪造完成或
 > 挪用调用额度；Direct 真实结果未出现前 completion/freeze 仍为 false。详见 AGENTS 与主 Pipeline 3.7.8。

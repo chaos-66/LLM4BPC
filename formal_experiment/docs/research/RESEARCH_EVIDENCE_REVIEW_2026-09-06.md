@@ -58,7 +58,7 @@ Sun 的 Stage 2 是传统 NLP 流水线（BERT-TextCNN 情态分类 + CoreNLP/Tr
 
 | 方法（正式名 / 机器 ID） | 是什么 | 角色 |
 |---|---|---|
-| Rules-Only（`sun_rule_only`，旧代号 B0） | 非 LLM 的 Sun Stage 2 方法级独立重建（重建口径经用户授权，不是作者原代码） | 基线 |
+| Sun（`sun_rule_only`，旧代号 B0） | 非 LLM 的 Sun Stage 2 方法级独立重建（重建口径经用户授权，不是作者原代码） | 基线 |
 | Rules+LLM-Repair（`sun_llm_fallback`，旧代号 H1） | 规则为主、只在预注册 trigger 下让 LLM 修字段 | 对照臂（负结果，不再优化） |
 | LLM-SE（`direct_llm`，旧代号 D1） | LLM 直接端到端生成同一六要素 Rule Record | 主方法 |
 
@@ -120,7 +120,7 @@ Stage 3（development 完成；formal Oracle/端到端被门禁锁定）。
 | 三阶段框架、中间合同（Process/Rule/Violation）、Stage 2 六要素定义、句子级粗/细双口径评价 | **沿用 Sun**（方法级独立重建；B0 是重建的基线） | Stage 1 的 P2 也按 Sun/Leopold 风格重建；全部不得称 exact reproduction |
 | Stage 1 流程模型解析方法 | **沿用 Sun 的思路**，不是本研究创新点 | 实现中的重建/适配差异（如 Tsurgeon 为 fail-closed 诚实非实现、词典规模与分词机制）如实披露 |
 | LLM-SE 的“LLM 结构化输出 + 校验 + 受控词汇/schema + 归一化纪律”设计思路 | **借鉴 Barrientos**（只借鉴思路与纪律，不照抄其 prompt/输出结构/系统） | 我们仍输出 Sun 六要素；modality 4 类（Barrientos 3 类，无 definition）；normalized view 受控但原文 span 回指；Barrientos 原生表示仅用于受控 adapter 对照 |
-| Rules-Only 之外的两个 Stage 2 对照/主方法（D1/H1） | **本项目实现** | 共享同一输入/Gold/evaluator；H1 已降级为负结果对照 |
+| Sun 之外的两个 Stage 2 对照/主方法（D1/H1） | **本项目实现** | 共享同一输入/Gold/evaluator；H1 已降级为负结果对照 |
 | Stage 3 违规检测扩展四类错误 | **本项目扩展**（Winter/Sun 原论文未定义；一律称 Winter-style/Sun-style extension） | 受控合成面板 + 配对评价，dev-only |
 | 坐标重锚、canonical validator、预算/授权合同、事件日志、fail-closed 门禁 | **本项目工程** | 属可复现/安全机制，**不是核心创新消融对象**（见 §3.3 说明） |
 
@@ -162,27 +162,27 @@ action 间的顺序（错误→out_of_order）。扩展四类分别消费：proh
 
 **结果（句子级粗 Gold 逐字段 F1，正式）**：
 
-| 字段 | Rules-Only | LLM-SE | Rules+LLM-Repair | 谁领先（描述性） |
+| 字段 | Sun | LLM-SE | Rules+LLM-Repair | 谁领先（描述性） |
 |---|---:|---:|---:|---|
-| actor | 0.820 | 0.758 | 0.430 | Rules-Only |
+| actor | 0.820 | 0.758 | 0.430 | Sun |
 | action | 0.893 | 0.944 | 0.895 | LLM-SE |
 | condition | 0.774 | 0.838 | 0.777 | LLM-SE |
 | constraint | 0.618 | 0.743 | 0.620 | LLM-SE |
-| exception | 0.880 | 0.762 | 0.880 | Rules-Only（与 H1 平） |
+| exception | 0.880 | 0.762 | 0.880 | Sun（与 H1 平） |
 | modality 标签 accuracy | 0.740 | 0.833 | 0.820 | LLM-SE |
 | modality label macro-F1 | 0.713 | 0.769 | 0.812 | Rules+LLM-Repair（macro-F1 最高但 span 净负；LLM-SE 在 label accuracy 领先） |
 | 五字段算术平均 F1（描述性） | 0.797 | 0.809 | 0.720 | LLM-SE |
 
 **可以支持的说法**（正式报告结论，字段级、无显著性推断）：
 - LLM-SE 在 action/condition/constraint 三个字段与 modality 标签准确率上领先；
-  Rules-Only 在 actor、exception 上领先（召回高：actor R 0.976 vs 0.878；exception R 1.0）；
+  Sun 在 actor、exception 上领先（召回高：actor R 0.976 vs 0.878；exception R 1.0）；
 - 两方法错误模式互补：规则法以**字段归属错误**为主（constraint 内容进了 action/condition，
   或 constraint↔condition 混淆），LLM 以**保守漏抽**为主（P 高 R 低，尤其低资源字段）；
 - Rules+LLM-Repair 是净负对照（actor P 0.708→0.275，spans 65→167，过度抽取）：**无证据
   约束的选择性 LLM 修复加 FP 不加召回**——这个负结果本身是论文要保留的证据。
 
 **反例/失败案例（解释“为什么差”）**：
-- Rules-Only constraint 弱的主因之一是**定义口径差异**：本项目 Gold 的 302 个 constraint
+- Sun constraint 弱的主因之一是**定义口径差异**：本项目 Gold 的 302 个 constraint
   里只有 13 个（4%）符合 Sun 公开 marker 的定义（Sun 自身也只有 35 个）；用 Sun-marker
   收敛口径后 B0 constraint R=1.0 (13/13)、condition R=0.989 (91/92)。**低分不等于
   “抽不到”，部分是标签定义范围宽 8–23 倍的口径问题**（归因证据，dev 口径，C19）。
@@ -214,7 +214,7 @@ action 间的顺序（错误→out_of_order）。扩展四类分别消费：proh
 | **坐标重锚器 span_canonicalizer** | **0.000** | validator 拒掉 149/150——坐标接口一旦失配，整个记录报废；这是**接口正确性模块**，证据是“拿掉就全灭” |
 | canonical validator | 0.772 | 0 条上游无效被观测到：Δ=0 只说明这批响应已合法，不取消其安全职责 |
 
-另有一组历史模块证据（AB-8/B0-R1 批次 + 模块去除实验 B）：Rules-Only 的 actor 词典
+另有一组历史模块证据（AB-8/B0-R1 批次 + 模块去除实验 B）：Sun 的 actor 词典
 扩展、modal classifier、multi-match guard 等各自 ±量级如实登记（含“去掉 guard 反而
 +0.0053”的副作用披露）。
 
@@ -264,7 +264,7 @@ action 间的顺序（错误→out_of_order）。扩展四类分别消费：proh
 
 ### 3.5 优先核查项：Stage 2 → Stage 3 衔接（成对比较）现状
 
-**要回答的问题**：Stage 2 的替换（Rules-Only vs LLM-SE 抽取）是否影响最终违规检测，
+**要回答的问题**：Stage 2 的替换（Sun vs LLM-SE 抽取）是否影响最终违规检测，
 而不只是改变抽取分数。
 
 **核验过程与结论**：
@@ -291,7 +291,7 @@ action 间的顺序（错误→out_of_order）。扩展四类分别消费：proh
 | # | 缺口 | 现状 | 谁可补 |
 |---|---|---|---|
 | 1 | GDPR 条款句子级 Gold-blind Stage 2 输入合同（9 段条款需先确定性分句，类似 EStG-150 输入 v2 结构：source locator + 文本 hash + approved 句子文本） | 不存在；分句结果只隐式存在于 S3.9-EXT 面板的 rule bindings（sentence_idx/sentence_text） | 离线工程可做（零 API），需先定分句器与输入 schema |
-| 2 | Rules-Only 在该输入上的预测 | 未运行（可零 API 跑，但要披露其 classifier 为德语合同、英文条款是 pass-through 的描述性限制，同 S2.12 零 API 臂的披露口径） | 离线可做 |
+| 2 | Sun 在该输入上的预测 | 未运行（可零 API 跑，但要披露其 classifier 为德语合同、英文条款是 pass-through 的描述性限制，同 S2.12 零 API 臂的披露口径） | 离线可做 |
 | 3 | LLM-SE / Rules+LLM-Repair 在该输入上的预测 | 未运行；需要**新的 API 授权与预算**（本提示不构成授权）；prompt 需按复杂语料口径复核 | 需用户授权 |
 | 4 | 9 段条款的六要素 Gold Rule Records（人工裁决） | 不存在 | 用户 |
 | 5 | 消费“预测 Rule Record”的固定 Stage 3 检测器适配与评价合同（把 E00/E10/E01/E11 落到可运行 runner） | 设计在路线图（§9.4/§10.2），无 runner | 离线工程（在用户对 §3.5-1/2 认可后） |
@@ -359,7 +359,7 @@ EStG-150 的抽取结果冒充该评测，也**不能**把确定性抽取当作 
 ### 4.1 逐项回答
 
 **① 当前实验已经证明了什么（可写进论文的正式结论）**
-1. 在 EStG-150/150 条、同一 Gold 与 evaluator 下，LLM-SE 与 Rules-Only（Sun 方法级
+1. 在 EStG-150/150 条、同一 Gold 与 evaluator 下，LLM-SE 与 Sun（Sun 方法级
    重建）**字段级互补**（D1：action/condition/constraint/标签；B0：actor/exception/
    高召回）；没有“一种方法全面胜出”的正式声明——这是 2026-08-11 正式比较与正式结论包
    支持的（描述性、无显著性推断）。
@@ -425,7 +425,7 @@ AB-6 零事故、AB-7 口径敏感性、AB-8 规则模块批次、AB-9 稳定性
 
 - 定位句：三阶段主干与改进对象 = Sun；Barrientos = Stage 2 LLM 方案（LLM-SE）的
   “结构化输出+校验+受控词汇+评价纪律”借鉴来源；**不写“整体优于 Barrientos”**；
-- Rules-Only = Sun Stage 2 的 *method-level independent reconstruction*（非 exact、
+- Sun = Sun Stage 2 的 *method-level independent reconstruction*（非 exact、
   非作者原代码；Tsurgeon 诚实非实现、词典/分词适配披露）；EStG-150 = 项目独立重建
   benchmark（非 Sun 原 150/443 spans）；Gold = LLM-assisted, human-adjudicated；
 - 正式数字只引 `stage2_formal_three_method_comparison_v1`（2026-08-11）与各 manifest；

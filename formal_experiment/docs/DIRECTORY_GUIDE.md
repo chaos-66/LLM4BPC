@@ -4,6 +4,15 @@
 清单见 `FILE_CATALOG.md`；研究任务顺序见 `MASTER_PIPELINE.md`；实时进度见
 `PROJECT_AUDIT.md`。
 
+## 方法名称与冻结来源
+
+项目和 GitHub 的当前展示采用 **Sun / LLM-SE**。Sun 正式署名为
+Sun et al. (2024)，在本项目中特指本地独立重建。历史名称 Rules-Only
+及兼容 ID `sun_rule_only` / B0 映射为 Sun。展示配置为
+[paper_method_display_names_v1.json](../configs/paper_method_display_names_v1.json)。
+冻结方法注册表与运行源码、已存结果/manifest、历史日志和原始附件保留来源字节；
+查询旧结果时按映射阅读，不通过重命名文件或重跑实验更新展示。
+
 ## 1. 进入项目的固定顺序
 
 1. `MASTER_PIPELINE.md`：完整三部分路线和任务树；

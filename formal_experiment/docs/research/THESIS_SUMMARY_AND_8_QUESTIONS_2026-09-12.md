@@ -13,7 +13,7 @@
 三阶段框架（Sun et al. 2024）的方法级独立重建已完成并可审计：Stage 1 在固定
 GDPR-7 上完成描述性复现并冻结（`data/gold/stage1/process_records/
 stage1_process_gold_v1.json`，2026-08-13）；Stage 2 完成正式三方法比较
-（Rules-Only / LLM-SE / Rules+LLM-Repair，`outputs/reports/
+（Sun / LLM-SE / Rules+LLM-Repair，`outputs/reports/
 stage2_formal_three_method_comparison_v1.json`，2026-08-11）；Stage 3 完成四方法
 非 LLM 对照、33 条人工 panel、30+40 条合成受控错误面板、阈值敏感性、以及四类违规
 的扩展实验。四个完整性门禁当前均为 true（`docs/PROJECT_AUDIT.md` L591–605），但
@@ -21,7 +21,7 @@ stage2_formal_three_method_comparison_v1.json`，2026-08-11）；Stage 3 完成�
 不代表 S2.13 / S3.7 / 端到端完成。
 
 **仍然没有的东西**：端到端 E00/E10/E01/E11 全部未执行；S2.12 复杂语料只有
-Rules-Only 单臂；S3.7 正式 Oracle 主表未授权；`paper/CLAIM_EVIDENCE_MATRIX.md`
+Sun 单臂；S3.7 正式 Oracle 主表未授权；`paper/CLAIM_EVIDENCE_MATRIX.md`
 中**没有任何一条以正证据等级声明"本文方法相对前人具有新颖性"**，且 C26（8+8 模块
 方法章节）状态为 `PLANNED_METHOD`，明确禁止写"模块有效性已验证"。
 
@@ -151,9 +151,9 @@ Rule Record，其条款处理是 4 个 signal words 的义务句筛选与 13 个
 
 1. **零 API、约 1 人日**：把 `winter_stage3` 的 clause 侧接到 EStG-150 英文输入，
    产出 Winter 义务动作集合，在同一粗/细 Gold 上算 action 字段的 P/R/F1，与
-   Rules-Only（0.8927 粗 action F1）和 LLM-SE（0.9437）并列成一行。
+   Sun（0.8927 粗 action F1）和 LLM-SE（0.9437）并列成一行。
 2. **零 API、约 0.5 人日**：用 4 个 signalword 做 modality 预测，报 4 类 label
-   accuracy / macro-F1，与 Rules-Only（0.7400 / 0.7128）、LLM-SE（0.8333 /
+   accuracy / macro-F1，与 Sun（0.7400 / 0.7128）、LLM-SE（0.8333 /
    0.7695）并列。**注意**：需先声明 `may not` 的处理规则（否则该下限不公平）。
 3. **写作、0 计算**：在 §2.3 补 Sleimi / Michel / Leopold / Agostinelli 的关系段
    （当前是 `[[TODO-SOURCE:...]]`，`paper/THESIS_DRAFT.md` L97、L101、L105）。
@@ -262,7 +262,7 @@ Winter-style 检出最好但**在 40 条合规对照上误报率 0.500**——"�
 权衡，不是实现缺陷。**
 
 另外有两条**方法学污染**必须一起写，否则结论会被高估：
-- Rules-Only 是**英文 GDPR 句经德语合同 classifier 槽的 pass-through**（跨语言
+- Sun 是**英文 GDPR 句经德语合同 classifier 槽的 pass-through**（跨语言
   适用限制）；
 - `first-valid-span` 投影**只取每字段第一个有效 span**（属衔接适配规则）。
   （`docs/research/S3_EXT_UNIFIED_EVALUATION_NOTE_2026-09-06.md` §4 L89–92）
@@ -428,7 +428,7 @@ article{5..50}.txt`），经人工裁决成
 
 | 方法 | actor | action | condition | constraint | exception | mean | label acc / macro-F1 |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| Rules-Only | **0.8203** | 0.8927 | 0.7738 | 0.6182 | **0.8800** | 0.797 | 0.7400 / 0.7128 |
+| Sun | **0.8203** | 0.8927 | 0.7738 | 0.6182 | **0.8800** | 0.797 | 0.7400 / 0.7128 |
 | LLM-SE | 0.7579 | **0.9437** | **0.8380** | **0.7427** | 0.7619 | **0.8088** | **0.8333** / 0.7695 |
 | Rules+LLM-Repair（对照） | 0.4296 | 0.8945 | 0.7774 | 0.6200 | 0.8800 | 0.7203 | 0.8200 / **0.8123** |
 
@@ -842,7 +842,7 @@ tregex），且 Gold 自身对 `that/who/to the extent/only` 的 condition/const
 condition = `if` / `in case of` / `provided that` / `in the context of` / `who` /
 `whose` / `which`；constraint = `before` / `after` / `at least` / `at most` /
 `equal to` / `greatest` / `smallest` / `last of` / `least of`。用这套 cue 收敛后，
-Gold condition 214→92、constraint 302→**13**，Rules-Only 的
+Gold condition 214→92、constraint 302→**13**，Sun 的
 **constraint R 0.526→1.000 (13/13)、condition R 0.762→0.989 (91/92)**。
 **这张表可以直接作为"人工是怎么想的"的权威依据写进 §5.1**，比自造 cue 更安全。
 
@@ -880,7 +880,7 @@ S2.11 的语料来自 **Barrientos et al. (2026)**，其对象是 regulatory
 
 - 构件名：`Process Record` / `Rule Record` / `Violation Report`
   （`MASTER_PIPELINE.md` §5「统一中间合同」）；
-- 方法名：**Rules-Only / LLM-SE / Rules+LLM-Repair**
+- 方法名：**Sun / LLM-SE / Rules+LLM-Repair**
   （`paper/THESIS_DRAFT.md` L8–10；`configs/methods.json`）；
 - 任务名：`design-time compliance checking`；
 - 禁止表述：不得称 "exact Sun"/"Sun original"，只能称

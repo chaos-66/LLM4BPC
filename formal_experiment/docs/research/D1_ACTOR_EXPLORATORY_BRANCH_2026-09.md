@@ -287,7 +287,7 @@ No further optimization is recorded.
 - No new overall-method conclusion is recorded.
 - The following statements are not supported and are not recorded as
   conclusions: R is the final best Prompt; P is better than R; the Actor problem
-  is solved; LLM-SE now beats Rules-Only on Actor.
+  is solved; LLM-SE now beats Sun on Actor.
 
 ## 8. Relationship to Formal Stage 2 Results
 

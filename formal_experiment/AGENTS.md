@@ -4,12 +4,17 @@ This directory is the only active experiment surface.
 
 ## Current baseline display name (2026-10-12)
 
-用户确认：活动论文与汇报中的基线名称采用 **Sun et al. (2024)**，正文、表格和图例简称 **Sun**。
-首次出现说明是依据该文公开方法进行的本地独立重建。Part 2 基线包含 BERT-TextCNN
-情态分类器、句法分析和人工抽取规则，属于非 LLM 基线，不能称整条方法为纯手写规则。
+用户确认：项目与 GitHub 仓库中的当前方法展示名称采用 **Sun et al. (2024)**，正文、表格和图例简称 **Sun**。
+范围包括项目入口、主 Pipeline、实时状态、Agent 手册、研究说明和论文工作稿。
+本轮不处理 PPT。首次出现说明是依据该文公开方法进行的本地独立重建。
+Part 2 基线包含 BERT-TextCNN 情态分类器、句法分析和人工抽取规则，
+属于非 LLM 基线，不能称整条方法为纯手写规则。
 历史展示名 Rules-Only / Sun-style Rules-Only、兼容 ID `sun_rule_only` / B0
 仍映射同一方法；冻结配置、预测、结果、manifest、原稿附件、原文附录和历史事件
 保留原字节。项目报告的 Sun 分数来自本地重建，不能写成原作者实现或原论文报告值。
+当前展示统一按 `configs/paper_method_display_names_v1.json`；冻结注册表
+`configs/methods.json` 保留历史标签。本轮仅改展示文档，不改既有运行器与报告生成源码。
+引用旧报告时按展示映射说明 Sun，不改写原始产物或重新生成旧报告。
 本次仅统一展示名称，不改变实验行为、数值、版本绑定或门禁，也不授权重跑。
 
 ## Current framework terminology (2026-10-12)

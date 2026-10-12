@@ -9,6 +9,22 @@ Rule Record；Part 3 使用两种记录完成匹配与违规检查。Part 1 与 
 合同键和 S1/S2/S3 任务 ID 作为兼容标识保留；冻结结果、manifest、日志与原始
 附件保留来源字节。统一名称和依赖映射见 `configs/paper_method_display_names_v1.json`。
 
+## 方法展示名称
+
+项目文档与 GitHub 仓库中的基线统一称 **Sun et al. (2024)**，简称 **Sun**；
+首次出现注明是依据公开方法进行的**本地独立重建**。当前 Part 2 比较为
+**Sun / LLM-SE**。Sun 包含 BERT-TextCNN 情态分类器、句法分析与人工抽取规则。
+
+| 当前展示名 | 历史展示名 | 兼容 ID |
+|---|---|---|
+| Sun（本地重建） | Rules-Only / Sun-style Rules-Only | `sun_rule_only` / B0 |
+| LLM-SE | Direct-LLM / LLM-RE | `direct_llm` / D1 |
+
+统一映射见 [方法展示名称配置](configs/paper_method_display_names_v1.json)。
+冻结注册表 `configs/methods.json`、冻结运行源码、已存报告、预测、
+manifest 与历史日志保留来源名称和字节；引用时使用上述映射，不改指标或运行绑定。
+Sun 的实验分数来自本项目重建，不能归为原作者代码的结果或原论文报告值。
+
 ## 项目名称与路径
 
 项目名称为 `LLM4BPC`，当前工作区为 `D:\Paper\experiment\LLM4BPC`，Git 远端为
