@@ -6299,3 +6299,17 @@
 - 仍存在 blocker：无
 - 备注：上一记录的7项相关检查已通过；失败节点在修改前HEAD也因两段历史Direct-LLM名称不匹配当前LLM-SE而失败，已只投影2段JSON与1处Markdown标题及本轮2处Part说明，其他字节仍精确比较。恢复STAGE1_HUMAN_GOLD_GUIDE原字节SHA37b9eb04，保持旧门禁不变；活动HUMAN_PROCESS指南使用Part。保留首次失败事件，本次只重跑修正节点；无需重复已通过检查。无实验/API/全量，PPT/TeX仅静态与结构验收，渲染限制保持。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-12T05:36:50.493528+00:00 - S3-BASELINE-REPAIR-V1：实现独立基线修复组件，冻结零API同批对照设计
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：8 passed in 3.63s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`c5adddc00171ab3fa499200ac371613ebbd8d4c9`；相关未提交路径：19 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：本轮仅局部修复与具名相关验证；实际Tsurgeon/原文分段/角色词形/Winter节点标签对齐。115案例33要求及阈值固定，新评分未开始，不认证完整论文复现；不改旧结果、Part2固定表、Gold，不跑全量。首次启动因sandbox拒绝临时目录且未开始测试，使用明确工作区写权限继续。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
