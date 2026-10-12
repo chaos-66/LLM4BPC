@@ -21,7 +21,7 @@
 - Table I 固定 0.8378 vs 0.7631，+7.47 pp，五字段 pooled overlap F1；modality 单列。分别统计命中预测和命中参考区域。
 - Table I v6/R3 与 Table II modular_v1 的 111 不是相同提示词快照，不能把 0.8224 当成主表配置的重复。
 - 主表历史后处理采用唯一精确定位，不是后来 repair_v1 的重复片段分配；定位正确不保证语义正确。
-- Rules-Only 是包含 BERT-TextCNN 模态分类器的本地重建，不是 Sun 原实现或原论文分数。
+- 基线正式称 Sun et al. (2024)，简称 Sun，首次说明为本地独立重建；历史名称 Rules-Only 仅保留在来源。基线包含 BERT-TextCNN 模态分类器，分数来自本项目运行。
 - 原稿 Table III 的 0.5341 vs 0.4458 是 GDPR 开发比较；同一 benchmark 参与开发/校准，不是独立未见测试。
 - 后续 Winter 对照单独存在；到实验一节再和作者明确是否纳入，不能默默替换原稿。
 - 本轮为写作：不授权 API、实验重跑、Gold 修改或调参。缺证据的内容标待核实，不编造。
@@ -230,9 +230,9 @@ PDF 第 2 页右栏到第 3 页开头只有一段概述。已有的校验项目�
 
 主表固定在 v6/R3，提示词 SHA 开头 3aa64877；表 II 的 111 属于 modular_v1，生成提示词 SHA 开头 38144b75。不能解释成“同一个 full prompt 的另一次运行”，也不能用表 II 的最佳 100 替换主表。主表登记的模型 ID 是 deepseek-v4-pro；后续消融 manifest 有 documented_release=DeepSeek-V4-Pro-0813。当前证据不支持把这个后续 release 名称追溯写给全部历史主表运行。
 
-**Rules-Only 名称会误导读者。**
+**基线命名：Sun（2026-10-12 已确认）。**
 
-项目重建基线包含 BERT-TextCNN 模态分类器。只写“句法分析和人工规则”不完整。可以保留约定名称，但明确它是非生成式 LLM 基线，不意味着每个组件都是手写规则，更不是 Sun 原始代码及其原论文分数。
+项目重建基线包含 BERT-TextCNN 模态分类器。只写“句法分析和人工规则”不完整。活动稿统一称 Sun et al. (2024)，简称 Sun，首次说明是本地独立重建。它是非 LLM 基线，包含学习型分类组件；结果来自本项目运行，不能归为原作者代码或原论文分数。原稿附录中的旧称 Rules-Only 作为来源保留。
 
 **六字段的抽取实验与下游验证范围不同。**
 
@@ -244,7 +244,7 @@ PDF 第 2 页右栏到第 3 页开头只有一段概述。已有的校验项目�
 
 ### 5.3 可用的摘要替换草稿
 
-Design-time business process compliance checking requires regulatory requirements to be connected with process-model semantics. This paper investigates LLM-based Semantic Extraction (LLM-SE) within an existing three-part compliance-checking framework. LLM-SE generates Rule Records containing modality, actor, action, condition, constraint, and exception information, followed by deterministic structural adaptation, evidence alignment, and validation. On a reconstructed benchmark of 150 requirements, LLM-SE achieves a pooled overlap F1 of 0.8378 over five span-bearing fields, compared with 0.7631 for a reconstructed Rules-Only baseline, while the baseline remains stronger for actor and exception extraction. A separate prompt factorial analysis examines examples, semantic guidance, and output-discipline instructions. On a GDPR-based development benchmark, the resulting records yield downstream F1 scores of 0.5341 and 0.4458 under the same checking pipeline. These results reveal field-dependent extraction benefits and remaining rule–process alignment limitations; the downstream benchmark is not an independently held-out test.
+Design-time business process compliance checking requires regulatory requirements to be connected with process-model semantics. This paper investigates LLM-based Semantic Extraction (LLM-SE) within an existing three-part compliance-checking framework. LLM-SE generates Rule Records containing modality, actor, action, condition, constraint, and exception information, followed by deterministic structural adaptation, evidence alignment, and validation. On a reconstructed benchmark of 150 requirements, LLM-SE achieves a pooled overlap F1 of 0.8378 over five span-bearing fields, compared with 0.7631 for a reconstructed Sun baseline, while the baseline remains stronger for actor and exception extraction. A separate prompt factorial analysis examines examples, semantic guidance, and output-discipline instructions. On a GDPR-based development benchmark, the resulting records yield downstream F1 scores of 0.5341 and 0.4458 under the same checking pipeline. These results reveal field-dependent extraction benefits and remaining rule–process alignment limitations; the downstream benchmark is not an independently held-out test.
 
 此草稿只使用原稿及冻结材料已经出现的结果，不加入新的实验结论。是否放全部数值可按版面进一步压缩。
 
@@ -322,7 +322,7 @@ These studies establish relevant uses of LLMs, but their outputs and evaluation 
 We investigate LLM-based Semantic Extraction (LLM-SE) within a three-part design-time BPC framework. Part~1 parses BPMN models into Process Records, while Part~2 independently transforms regulatory requirements into Rule Records. These are parallel upstream branches with no input dependency between them; Part~3 consumes both records for compliance checking. LLM-SE generates candidate records in a single call, followed by deterministic structural adaptation, evidence alignment, and validation. The records are then supplied to a shared checker for missing-action, incorrect-actor, and out-of-order violations. Our contributions are:
 \begin{itemize}
     \item An implementation of LLM-SE for an existing fine-grained BPC representation, with source-linked evidence and an explicit deterministic postprocessing procedure.
-    \item A controlled extraction comparison against a reconstructed Rules-Only baseline, together with a factorial analysis of semantic examples, semantic guidance, and additional output-discipline instructions.
+    \item A controlled extraction comparison against a reconstructed Sun baseline, together with a factorial analysis of semantic examples, semantic guidance, and additional output-discipline instructions.
     \item A downstream comparison using the same checking pipeline on a separate GDPR-based development benchmark, identifying both performance differences and remaining rule--process alignment limitations.
 \end{itemize}
 
@@ -419,12 +419,12 @@ descriptive and do not establish stability across repeated runs. The basic
 task and schema requirements remain present in configuration~000.
 
 % REPLACEMENT 4: non-LLM baseline.
-Rules-Only is our independent reconstruction of the approach of
-Sun et al.~\cite{sun2024design}. It combines a BERT-TextCNN modality classifier
-with syntactic analysis and manually specified extraction rules. Thus,
-Rules-Only denotes the non-generative-LLM baseline and does not imply that
-every component is an untrained rule system. Its scores are results of this
-local reconstruction, not scores reported in Sun et al.'s original paper.
+\textbf{Sun baseline.} We use Sun to denote our independent local
+reconstruction of the approach of Sun et al. (2024)~\cite{sun2024design}.
+It combines a BERT-TextCNN modality classifier with syntactic analysis
+and manually specified extraction rules. Sun is the non-LLM baseline
+in our comparison. Its scores are measured in this study using the
+local reconstruction; they are not scores reported in the original paper.
 
 % REPLACEMENT 5: compact limitations paragraph after the results.
 The findings have several limits. The extraction benchmark contains 150

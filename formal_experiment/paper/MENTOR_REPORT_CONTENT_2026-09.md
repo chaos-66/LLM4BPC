@@ -18,7 +18,7 @@
 > 演讲备注供口播。
 > 纪律：只写事实与状态；无显著性推断；未运行项写“未运行/待授权”，不填预期数字。
 > 每个结果表标注：样本量 / 评价口径 / 证据级别 / 来源。
-> 代号：Rules-Only（=sun_rule_only，Sun Part 2 方法级重建，非 LLM）；LLM-SE
+> 代号：Sun（=sun_rule_only，Sun et al. (2024) 的 Part 2 本地重建，非 LLM）；LLM-SE
 > （=direct_llm，主方法）；Rules+LLM-Repair（=sun_llm_fallback，负结果对照）。
 
 ---
@@ -29,7 +29,7 @@
 
 **正文**：研究以 Sun et al. (2024) 的三部分框架（流程解析与法规解析并行，共同输入匹配与违规
 检测）为整体主干与改进对象。两处改进：(1) **Part 2 用受约束 LLM 直接抽取 Sun
-六要素 Rule Record**（LLM-SE 为主方法；Rules-Only 为 Sun Part 2 方法级重建的
+六要素 Rule Record**（LLM-SE 为主方法；Sun 为 Sun Part 2 方法级重建的
 强对照；Rules+LLM-Repair 为负结果对照）；(2) **Part 3 扩展四类违规类型**
 （prohibited_action_present / required_condition_not_enforced / constraint_violated /
 exception_not_handled），消费六要素中此前无下游消费者的字段。Barrientos et al.
@@ -126,7 +126,7 @@ Part 3 配置；Gold 对 runner 不可见；禁止用 EStG 预测接 GDPR 流程
 
 **正文表（150 句，句子级粗 Gold 主口径，逐字段 F1 + modality 标签）**：
 
-| 字段 | Rules-Only | LLM-SE | Rules+LLM-Repair |
+| 字段 | Sun | LLM-SE | Rules+LLM-Repair |
 |---|---:|---:|---:|
 | actor | 0.820 | 0.758 | 0.430 |
 | action | 0.893 | **0.944** | 0.895 |
@@ -139,9 +139,9 @@ Part 3 配置；Gold 对 runner 不可见；禁止用 EStG 预测接 GDPR 流程
 证据级别=**正式**（零新增 API，历史真实调用 300 次）；来源=
 `outputs/reports/stage2_formal_three_method_comparison_v1.*`。
 结论（描述性）：LLM-SE 在 action/condition/constraint 与标签准确率领先；
-Rules-Only 在 actor/exception（高召回）领先；**无整体胜者声明**。Rules+LLM-Repair
+Sun 在 actor/exception（高召回）领先；**无整体胜者声明**。Rules+LLM-Repair
 为对照臂：其全量 150 运行（development，commit 74614e3）主口径 F1 0.7621 vs
-Rules-Only 0.7986（净负、actor 过抽）——该数字只在对 Hybrid 负结果的备注中单列，
+Sun 0.7986（净负、actor 过抽）——该数字只在对 Hybrid 负结果的备注中单列，
 **不混入正式主表**。
 
 **演讲备注**：讲“互补”而非“谁赢”；把负结果对照作为“需要证据约束的修复”的论据。
@@ -211,9 +211,9 @@ parse 率——no-fewshot parse 0.980、Barrientos-style 0.993（可解析但 ca
 
 ## 第 10 页｜Part 2 的输出是否会影响下游
 
-**设计**：固定法规、流程、检测器和阈值，仅替换规则记录来源。已有真实 Rules-Only 预测 74 句；LLM-SE 的 GDPR 下游臂尚未运行。
+**设计**：固定法规、流程、检测器和阈值，仅替换规则记录来源。已有真实 Sun 预测 74 句；LLM-SE 的 GDPR 下游臂尚未运行。
 
-**结果：Rules-Only，40 个变体；另用 40 个对照测误报**
+**结果：Sun，40 个变体；另用 40 个对照测误报**
 
 | 方法 | 禁止动作 / 条件 / 约束 / 例外 F1 | Macro-F1 | Exact | 错误类型数 | 目标类型不可观察数 |
 |---|---:|---:|---:|---:|---:|
@@ -240,7 +240,7 @@ parse 率——no-fewshot parse 0.980、Barrientos-style 0.993（可解析但 ca
 1. Part 2 用 LLM 替代传统抽取：150 句正式比较支持字段级互补；action、condition、constraint 与情态准确率方面 LLM-SE 领先，不声称全面领先。
 2. 借鉴 Barrientos 的结构化生成与验证：已有提示和后处理消融，说明示例、语义规则、输出接口各自的作用及局限，不把接口失败当作语义能力崩溃。
 3. Part 3 丰富错误类型：四类字段已接入检测，禁止动作可行性证据较强，其他类型支持程度不同。
-4. 原三类 33 条人工标签：参考 Macro-F1 0.389、Rules-Only 0.333。修复前后各自最终判定不变；两来源之间只有 v014 判定不同。缺失动作均为 11/11 检出；顺序类缺少可用关系或端点映射，0 分不能解释为流程合规。
+4. 原三类 33 条人工标签：参考 Macro-F1 0.389、Sun 0.333。修复前后各自最终判定不变；两来源之间只有 v014 判定不同。缺失动作均为 11/11 检出；顺序类缺少可用关系或端点映射，0 分不能解释为流程合规。
 
 **案例讲法**：同一句法规的禁止/义务标签不同，会使禁止动作检查可用或不可用；规则未提取到例外时，检测器无法检查例外。这说明抽取字段会影响下游，不能代替真实 LLM 臂的比较。
 
@@ -252,7 +252,7 @@ parse 率——no-fewshot parse 0.980、Barrientos-style 0.993（可解析但 ca
 
 **幻灯片标题**：可汇报结论 + 只剩外部依赖的三件事
 
-**正文（结论 ≤4 句）**：正式 Part 2 比较表明 LLM-SE 与 Rules-Only 字段级互补、
+**正文（结论 ≤4 句）**：正式 Part 2 比较表明 LLM-SE 与 Sun 字段级互补、
 Hybrid 对照净负（描述性）；提示与后处理消融定位了模块贡献与接口风险；Part 3
 四类扩展与两条衔接链路在受控/开发口径给出可复现证据，统一规则下不再有
 “P=1/无 wrong-type”式结论；所有结果不并入 33 条人工 Gold、不冒充正式 Oracle。
@@ -362,9 +362,9 @@ Hybrid 对照净负（描述性）；提示与后处理消融定位了模块贡�
 | Part 2 逐字段 F1（0.820…0.880） | 150 句 / 句子级粗 Gold / 正式 | `stage2_formal_three_method_comparison_v1.*` |
 | Prompt 消融 0.7719/0.7650/0.7759/0.7790 | 150 句 / 同一 Gold+evaluator / development（真实 450 calls） | `d1_prompt_factorial_results_v1.*` |
 | 后处理 0.772/0/0.772 | 150 条 raw 离线 / development | `d_full_postprocessing_ablation_v1.md` |
-| 四类修复后 macro 0.474/0.238/0.143/0.375（参考）与 0.331/0.188/0/0.332（Rules-Only 臂） | 40 变体+40 对照 / 统一五分类 / DEV_ONLY 合成 | `outputs/reports/s3_formula_repair_v2.json` |
+| 四类修复后 macro 0.474/0.238/0.143/0.375（参考）与 0.331/0.188/0/0.332（Sun 臂） | 40 变体+40 对照 / 统一五分类 / DEV_ONLY 合成 | `outputs/reports/s3_formula_repair_v2.json` |
 | 原三类 macro 0.389/0.333 | 33 条人工 Gold / dev Sun-style / development | `outputs/reports/s3_formula_repair_v2.json` |
-| 74 句输入、74/74 Rules-Only | 9 段条款 / Gold-blind / 已运行（零 API） | `data/input/gdpr7_stage2_input_v1.json`、`data/predictions/gdpr7_sun_rule_only_v1/` |
+| 74 句输入、74/74 Sun | 9 段条款 / Gold-blind / 已运行（零 API） | `data/input/gdpr7_stage2_input_v1.json`、`data/predictions/gdpr7_sun_rule_only_v1/` |
 | LLM-SE 74 臂 | 假响应 74/74（程序验证，非实验）→ 真实待授权 | `run_gdpr7_direct_llm_v1.py --fake-transport`；申请 §12 |
 | 三类检查成对受控机制实验：macro-F1 0.7874（Sun）/0.7579（Dev），成对成功 16/28 与 17/28，unknown 0 与 19；incorrect_actor 对照误报 7/8 对 0/8；有效契约 28/30 | 28 个有效配对 / 56 个检查实例 / development + synthetic / 零 API | `outputs/development/s3_paired_mechanism_v1/metrics.json`、`.../REPORT.md`、`.../manifest.json` |
 | 本轮未解决契约 2 项（`syn_incorrect_actor_03/04` 注入 lane 名等于既有 pool，所有权未变） | 固定面板 30 项中保留并标注，未删除未补写 | `outputs/development/s3_paired_mechanism_v1/contracts_locked.json` |

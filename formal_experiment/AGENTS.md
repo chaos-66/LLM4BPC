@@ -2,6 +2,16 @@
 
 This directory is the only active experiment surface.
 
+## Current baseline display name (2026-10-12)
+
+用户确认：活动论文与汇报中的基线名称采用 **Sun et al. (2024)**，正文、表格和图例简称 **Sun**。
+首次出现说明是依据该文公开方法进行的本地独立重建。Part 2 基线包含 BERT-TextCNN
+情态分类器、句法分析和人工抽取规则，属于非 LLM 基线，不能称整条方法为纯手写规则。
+历史展示名 Rules-Only / Sun-style Rules-Only、兼容 ID `sun_rule_only` / B0
+仍映射同一方法；冻结配置、预测、结果、manifest、原稿附件、原文附录和历史事件
+保留原字节。项目报告的 Sun 分数来自本地重建，不能写成原作者实现或原论文报告值。
+本次仅统一展示名称，不改变实验行为、数值、版本绑定或门禁，也不授权重跑。
+
 ## Current framework terminology (2026-10-12)
 
 用户要求将当前项目旧的阶段编号展示名称统一改为 **Part 1/2/3**。
@@ -43,8 +53,8 @@ Part 2 任务统一称 Semantic Extraction；Rule Record 是输出，rule-based 
 
 用户要求再次核对并固定Part 2论文主表，后续不再改变。唯一数值来源为
 `outputs/reports/stage2_table1_paper_final_v1.json`：EStG-150、coarse sentence view、
-五字段 `pooled_five_span_fields` Overall F1，LLM-SE **0.8378**，Sun 方法本地
-重建 Rules-Only **0.7631**，差 **+7.47 个百分点**。保留四位小数；两位舍入是
+五字段 `pooled_five_span_fields` Overall F1，LLM-SE **0.8378**，Sun（本地重建）
+**0.7631**，差 **+7.47 个百分点**。保留四位小数；两位舍入是
 0.84/0.76，不能截断成 0.83/0.76。modality label 单列，不并入 Overall。
 固定来源臂 `direct_llm_formal_arm_v1`（原 v6/R3 快照）与 `b0_formal_arm_v1`；
 不再为本表调参、改变评价口径、重跑或用后续消融/actor refinement/100 候选替换。
@@ -105,7 +115,7 @@ Preserve existing code, predictions, manifests, authorization records, and
 results as historical provenance; their presence or old ready/authorized
 statuses does not authorize further hybrid experiments.
 
-The active Part 2 comparison is Rules-Only versus LLM-SE. Independent
+The active Part 2 comparison is Sun versus LLM-SE. Independent
 LLM-SE extraction evaluated through the same fixed Part 3 detector stays
 in scope. The previously proposed 137-call execution is superseded: the
 remaining planned LLM-SE calls are S2.12 36 plus GDPR 74 = 110; the removed

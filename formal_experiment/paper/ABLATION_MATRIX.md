@@ -34,7 +34,7 @@ BARRIENTOS_BORROWING_AUDIT_2026-07-12.md`；`docs/EVAL_3DIM_SPEC.md`；
 `outputs/development/barrientos_ablation_suite_v1/`；
 `outputs/development/b0_module_removal_ablation_v1/`；
 `outputs/reports/barrientos_ablation_comparison_v1.json`。
-**命名**：Rules-Only（旧代号 B0）、LLM-SE（LLM-based Semantic Extraction，旧代号
+**命名**：Sun（Sun et al. (2024) 的本地重建，旧代号 B0）、LLM-SE（LLM-based Semantic Extraction，旧代号
 D1；历史名称 Direct-LLM、此前暂用 LLM-RE）、Rules+LLM-Repair（旧代号 H1）。
 语义抽取是任务，Rule Record 是输出，规则模板是基线机制；术语定义见
 [主稿 §3.2](THESIS_DRAFT.md)。机器 ID 与原始报告标签仅为兼容和来源追溯保留。
@@ -256,7 +256,7 @@ D 的五字段 mean F1=0.7858，高于 B 的 0.7806；因此不能写"B 总分�
   post-canonical 输出构造，**不得称为精确 raw-response 消融**（原始模型 JSON 未
   持久化于锁定 s27 产物）。
 
-### 实验 B：Rules-Only 模块去除（同一 EStG-150 / 同 Gold / 同 evaluator；full 复刻锁定 v10a；v2 补结构指标）
+### 实验 B：Sun 模块去除（同一 EStG-150 / 同 Gold / 同 evaluator；full 复刻锁定 v10a；v2 补结构指标）
 
 | 条件 | overall F1 | ΔF1 | modality label acc | label macro-F1 | gold map 可解析率 | predicted map 内部有效 | map 变化样本 | 说明 |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
@@ -314,13 +314,13 @@ D 的五字段 mean F1=0.7858，高于 B 的 0.7806；因此不能写"B 总分�
 | AB-4 受控词汇 | Six-field 受控 schema（normalized view 受控，原文 span 不覆盖）+ public marker lexicon | 移植其 44 模式 dual-view（control_flow/resource/data/time） | 无受控 schema（裸输出） | schema 受控 + verbatim span 回指 | 44 模式分类更适合 change-impact 表示层 | **待运行**（需实现 dual-view adapter 与消融脚本，真实 LLM 项逐批授权） | C4 跨 schema；pattern 层与 six-field 层不对齐 |
 | AB-6 transport | thinking-disabled、无 json_object、temp0/top_p1、max_tokens4096、stream=false | 默认 transport（provider 默认 thinking / json_object） | — | **已有历史证据**：D1-R3 干净重跑 150/150 有效、0 事故（lost=recovery=retry=0）；实证官方端点在默认 thinking 下返回空内容、json_object 下形状不同 | 论文未披露 transport 细节 | 锁定配方唯一、0 事故；默认配方事故率/形状差异为已披露动机 | 官方端点行为跨版本可能变化，需重验 |
 | AB-7 评价口径 | 细 Gold（1055 spans 对照）/ 粗 Gold（609 spans，Sun 句子级主口径）/ Sun-marker 收敛 | 其 Step-specific P/R/F1 + strict JSON + self-consistency | 单一口径 | **已有历史证据**（见 §口径表）：细 0.7186 vs 0.7756、粗 0.7986 vs 0.8726；Sun-marker 收敛后 B0 constraint R 1.0 (13/13)、condition R 0.989 (91/92) | 其主指标为结构化表示合法性与稳定率，与 span 口径不可直接换算 | 口径敏感性已有正式归因证据（2026-08-07 用户决策 + formal comparison）；两种口径必须分表 | 细/粗同 Gold 可 C1；span vs 结构化指标跨任务 C4 |
-| AB-8 Rules-Only 模块 | public marker lexicon / BERT-TextCNN / marker routing+DE-EN cue 验证 / CoreNLP / Tregex / Tsurgeon guard / actor-action 归属 / 确定性评价 | 其 44 模式分类 / LLM 结构化输出 | 逐模块去掉 | **已有历史证据 + 2026-08-22 实验 B（real offline，同一 150/同一 Gold/同一 evaluator）**：full 0.7186；no_lexicon −0.0066（actor 词典扩展移除）、no_modality_classifier label acc 下降（span 口径不变）、no_multi_match_guard +0.0053（首候选消费副作用，如实披露）、其余 0.0（只改 map/route 不改 span） | 其模块面向 change-impact 表示，与六要素抽取模块不对应 | 逐模块去除矩阵已跑（B）；每个模块贡献/副作用按数据如实报告 | C4：Barrientos 模块与 B0 模块语义不同，逐模块替换需 adapter |
+| AB-8 Sun 模块 | public marker lexicon / BERT-TextCNN / marker routing+DE-EN cue 验证 / CoreNLP / Tregex / Tsurgeon guard / actor-action 归属 / 确定性评价 | 其 44 模式分类 / LLM 结构化输出 | 逐模块去掉 | **已有历史证据 + 2026-08-22 实验 B（real offline，同一 150/同一 Gold/同一 evaluator）**：full 0.7186；no_lexicon −0.0066（actor 词典扩展移除）、no_modality_classifier label acc 下降（span 口径不变）、no_multi_match_guard +0.0053（首候选消费副作用，如实披露）、其余 0.0（只改 map/route 不改 span） | 其模块面向 change-impact 表示，与六要素抽取模块不对应 | 逐模块去除矩阵已跑（B）；每个模块贡献/副作用按数据如实报告 | C4：Barrientos 模块与 B0 模块语义不同，逐模块替换需 adapter |
 | AB-9 稳定性 | OURS-FULL 36条×5次、temp0、prompt hash锁定 | Barrientos 36条×5次、pairwise distance≤2 self-consistency | — | 同协议同输入重复运行已完成 | 其论文给出原生 self-consistency 定义 | **已完成**：BARR-FULL / OURS-FULL / OURS-BARRIENTOS-MODULE 各36×5；稳定性只报告同一arm内部一致性 | 稳定性不是准确率，不用于跨方法F1排名 |
 | AB-10 style-equivalent | 关闭（主表为 span-overlap 字面匹配） | 其专家协议的 style-equivalent alignment 概念 | — | 主指标不受风格差异污染 | 允许“表达不同语义相同”算正确（更宽容） | **待实现**（需新一代价指标与匹配规则，明确为辅助敏感性分析，不冒充主指标） | 只能作为敏感性分析分表；不得冒充论文主表 |
 
 ## AB-7 口径表（已有历史证据，development 归因，2026-08-07 用户决策 + formal 横向）
 
-| 口径 | Rules-Only P/R/F1 | LLM-SE P/R/F1 | 谁领先（描述性） | 依据 |
+| 口径 | Sun P/R/F1 | LLM-SE P/R/F1 | 谁领先（描述性） | 依据 |
 |---|---|---|---|---|
 | 细 Gold（1055 spans，对照口径） | 0.6845 / 0.7564 / **0.7186** | 0.8793 / 0.6938 / **0.7756** | LLM-SE F1 +0.057 | B0-R3/D1-R3 同口径；formal comparison 细字段诊断沿用 |
 | 粗 Gold（609 spans，Sun 句子级主口径） | 0.7309 / 0.8801 / **0.7986** | 0.9012 / 0.8456 / **0.8726** | LLM-SE F1 +0.074 | 2026-08-07 归因；formal 三方法对照沿用粗五字段 |

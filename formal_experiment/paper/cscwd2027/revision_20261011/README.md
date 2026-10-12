@@ -35,12 +35,12 @@
 
 | 项目 | 本轮应保持的边界 |
 |---|---|
-| 方法名 | LLM-based Semantic Extraction / LLM-SE；历史 ID 与冻结文件不改 |
+| 方法名 | LLM-based Semantic Extraction / LLM-SE；基线 Sun et al. (2024)，简称 Sun，首次说明本地重建；历史 ID 与冻结文件不改 |
 | Table I | EStG-150，五个 span 字段 pooled overlap F1：0.8378 vs 0.7631，差 7.47 pp；modality 单列 |
 | 指标计数 | 命中预测与命中参考区域分别计数，不是假定共同 TP 的一对一匹配 |
 | Table I / II | v6/R3 与 modular_v1 两套提示词快照；111=0.8224 不能冒充主表的同配置重复 |
 | 后处理 | 主表用历史唯一精确定位；当前 repair_v1 不能追溯用于解释旧结果 |
-| 基线 | 本地 Rules-Only 重建包含 BERT-TextCNN；其分数不是 Sun 原论文值 |
+| 基线 | 本地 Sun 重建包含 BERT-TextCNN；其分数不是 Sun 原论文值 |
 | Table III 原稿 | 0.5341 vs 0.4458，单独 GDPR 开发比较，不能称独立未见测试 |
 | 范围 | 抽取六类语义与评估三类违规不同；必须解释具体使用路径 |
 | 授权 | 写作、引用、公式说明；不授权新实验、API、Gold 修改或调参 |

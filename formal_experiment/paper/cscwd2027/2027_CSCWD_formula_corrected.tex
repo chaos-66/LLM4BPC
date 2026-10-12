@@ -69,7 +69,7 @@ Email: \{huoyingchao666, xiaoqingchen696, jiahaoma2627, guoshengkang, wenli0023c
 % =========================================================
 
 \begin{abstract}
-Design-time business process compliance (BPC) checking aims to identify potential violations before process execution. Existing approaches often rely on manually designed linguistic rules and syntactic patterns to transform natural-language compliance requirements into machine-processable representations. This paper investigates large language model (LLM)-based semantic extraction for design-time BPC checking. Natural-language compliance requirements are transformed into structured Rule Records containing modality, actor, action, condition, constraint, and exception information. We compare Direct-LLM with a reconstructed Rules-Only approach under a common semantic representation and evaluation setting. We further analyze the effects of prompt configurations and examine how the resulting Rule Records influence downstream compliance checking.
+Design-time business process compliance (BPC) checking aims to identify potential violations before process execution. Existing approaches often rely on manually designed linguistic rules and syntactic patterns to transform natural-language compliance requirements into machine-processable representations. This paper investigates large language model (LLM)-based semantic extraction for design-time BPC checking. Natural-language compliance requirements are transformed into structured Rule Records containing modality, actor, action, condition, constraint, and exception information. We compare Direct-LLM with a reconstructed Sun approach under a common semantic representation and evaluation setting. We further analyze the effects of prompt configurations and examine how the resulting Rule Records influence downstream compliance checking.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -92,13 +92,13 @@ To reduce this effort, Winter et al.~\cite{winter2020assessing} investigated com
 
 Recent work has explored Large Language Models (LLMs) for legal requirement modeling, structured regulatory-rule extraction, and BPC-related analysis~\cite{de2024towards,barrientos2026impact,barrientos2026taming,guliani2026dejure}. Although some of these studies adopt BPC-relevant semantics or extract fine-grained regulatory information, their primary objectives differ from directly comparing LLM-based and rule-based extraction of individual compliance requirements within a common design-time BPC setting. It therefore remains useful to examine how Direct-LLM extraction behaves under the same target representation and evaluation setting as a reconstructed non-LLM baseline, and how the resulting Rule Records affect downstream BPMN compliance checking.
 
-In this paper, we investigate Direct-LLM semantic extraction within this design-time BPC setting. Natural-language compliance requirements are transformed into structured Rule Records, while BPMN process models are converted into structured process information for downstream matching and violation analysis. We compare Direct-LLM with an independent Rules-Only reconstruction under common inputs, semantic representations, reference annotations, and evaluation procedures. We further analyze the effects of different prompt configurations and examine how the resulting Rule Records influence downstream compliance checking.
+In this paper, we investigate Direct-LLM semantic extraction within this design-time BPC setting. Natural-language compliance requirements are transformed into structured Rule Records, while BPMN process models are converted into structured process information for downstream matching and violation analysis. We compare Direct-LLM with an independent Sun reconstruction under common inputs, semantic representations, reference annotations, and evaluation procedures. We further analyze the effects of different prompt configurations and examine how the resulting Rule Records influence downstream compliance checking.
 
 The main contributions of this work are:
 \begin{itemize}
     \item We apply Direct-LLM extraction to an existing fine-grained BPC semantic representation and generate structured Rule Records for downstream compliance checking.
 
-    \item We conduct a controlled comparison between Rules-Only and Direct-LLM extraction, analyze their strengths and limitations at the semantic-element level, and examine the effects of different prompt configurations.
+    \item We conduct a controlled comparison between Sun and Direct-LLM extraction, analyze their strengths and limitations at the semantic-element level, and examine the effects of different prompt configurations.
 
     \item We connect the extracted Rule Records with downstream compliance checking and evaluate their effects on the three original violation types: missing action, incorrect actor, and out-of-order execution.
 \end{itemize}
@@ -294,14 +294,14 @@ The ratios above apply when their denominators are nonzero. In our reconstructio
 \section{Experiments and Results}
 \label{sec:5}
 
-We evaluate the proposed approach from three perspectives. First, we compare Rules-Only and Direct-LLM for fine-grained semantic extraction. Second, we analyze how different prompt components affect Direct-LLM through a full factorial experiment. Finally, we examine whether the extracted Rule Records lead to different downstream compliance-checking performance.
+We evaluate the proposed approach from three perspectives. First, we compare Sun and Direct-LLM for fine-grained semantic extraction. Second, we analyze how different prompt components affect Direct-LLM through a full factorial experiment. Finally, we examine whether the extracted Rule Records lead to different downstream compliance-checking performance.
 
 \subsection{Experimental Setup}
 \label{sec:5.1}
 
-\textbf{Part 2 evaluation.} We use an independently reconstructed EStG-150 benchmark containing 150 compliance requirements. Its reference annotations form an LLM-assisted, human-adjudicated Gold standard constructed for this study rather than the original unpublished annotations of Sun et al.~\cite{sun2024design}. Rules-Only and Direct-LLM are evaluated against the same frozen Gold and evaluator. For actor, action, condition, constraint, and exception, a prediction matches a Gold span when their character intervals have a non-empty overlap; Overall Micro-F1 pools TP, FP, and FN over these five fields. Modality is evaluated separately by four-class Macro-F1 and is excluded from the overall score.
+\textbf{Part 2 evaluation.} We use an independently reconstructed EStG-150 benchmark containing 150 compliance requirements. Its reference annotations form an LLM-assisted, human-adjudicated Gold standard constructed for this study rather than the original unpublished annotations of Sun et al.~\cite{sun2024design}. Sun and Direct-LLM are evaluated against the same frozen Gold and evaluator. For actor, action, condition, constraint, and exception, a prediction matches a Gold span when their character intervals have a non-empty overlap; Overall Micro-F1 pools TP, FP, and FN over these five fields. Modality is evaluated separately by four-class Macro-F1 and is excluded from the overall score.
 
-\textbf{Rules-Only baseline.} Rules-Only is an independent reconstruction of the Part~2 approach described by Sun et al.~\cite{sun2024design}, based on syntactic analysis and manually designed linguistic rules. It is treated as a reconstructed baseline rather than the original implementation. Both methods use the same frozen inputs, Gold annotations, target representation, and evaluator.
+\textbf{Sun baseline.} Sun denotes our independent local reconstruction of the Part~2 approach described by Sun et al. (2024)~\cite{sun2024design}, combining a BERT-TextCNN modality classifier with syntactic analysis and manually designed linguistic rules. It is treated as a reconstructed baseline rather than the original implementation. Both methods use the same frozen inputs, Gold annotations, target representation, and evaluator.
 
 \textbf{Direct-LLM and prompt configurations.} All Direct-LLM experiments use DeepSeek-V4-Pro-0813 with temperature \(0\), top-\(p\) \(1.0\), and a maximum output length of 4096 tokens. Table~\ref{tab:semantic_results} and Table~\ref{tab:prompt_analysis} are separate frozen runs; the provider exposes no supported random seed, so all differences are interpreted descriptively without statistical-significance claims. The shared prompt base remains fixed, while \(E\), \(S\), and \(J\) denote semantic examples, semantic guidance, and additional output discipline. Configuration 111 is the intact frozen full prompt, the other configurations are controlled factorial variants, and 000 retains the shared base rather than representing an unprompted LLM.
 
@@ -312,11 +312,11 @@ We evaluate the proposed approach from three perspectives. First, we compare Rul
 
 \begin{table}[t]
 \centering
-\caption{Semantic extraction performance of Rules-Only and Direct-LLM.}
+\caption{Semantic extraction performance of Sun and Direct-LLM.}
 \label{tab:semantic_results}
 \begin{tabular}{lcc}
 \toprule
-\textbf{Element} & \textbf{Rules-Only} & \textbf{Direct-LLM} \\
+\textbf{Element} & \textbf{Sun} & \textbf{Direct-LLM} \\
 \midrule
 Modality (Macro-F1) & 0.713 & \textbf{0.769} \\
 Actor                & \textbf{0.820} & 0.758 \\
@@ -333,9 +333,9 @@ Overall (Micro-F1)$^{*}$ & 0.763 & \textbf{0.838} \\
 \footnotesize{$^{*}$Pooled over actor, action, condition, constraint, and exception; modality is excluded.}
 \end{table}
 
-Table~\ref{tab:semantic_results} shows that the two approaches have different field-level strengths. Direct-LLM achieves higher F1 for action, condition, and constraint, and higher modality macro-F1, whereas Rules-Only performs better for actor and exception. The largest Direct-LLM gain occurs for constraint extraction, increasing from 0.618 to 0.743. Overall pooled F1 over the five span-bearing fields increases from 0.763 to 0.838, an absolute improvement of approximately 7.5 percentage points.
+Table~\ref{tab:semantic_results} shows that the two approaches have different field-level strengths. Direct-LLM achieves higher F1 for action, condition, and constraint, and higher modality macro-F1, whereas Sun performs better for actor and exception. The largest Direct-LLM gain occurs for constraint extraction, increasing from 0.618 to 0.743. Overall pooled F1 over the five span-bearing fields increases from 0.763 to 0.838, an absolute improvement of approximately 7.5 percentage points.
 
-The results therefore do not indicate uniform superiority across all semantic elements. Rules-Only remains stronger for actor and exception extraction, while Direct-LLM performs better on most of the remaining semantic fields. These field-level results characterize the extraction behavior of the two methods on EStG-150; the downstream experiment in Section~\ref{sec:5.4} is evaluated separately on the GDPR-based benchmark.
+The results therefore do not indicate uniform superiority across all semantic elements. Sun remains stronger for actor and exception extraction, while Direct-LLM performs better on most of the remaining semantic fields. These field-level results characterize the extraction behavior of the two methods on EStG-150; the downstream experiment in Section~\ref{sec:5.4} is evaluated separately on the GDPR-based benchmark.
 
 \subsection{Prompt Factorial Analysis}
 \label{sec:5.3}
@@ -375,22 +375,22 @@ Configuration 100 achieves the highest observed F1 of 0.8354, whereas the intact
 \toprule
 \textbf{Method} & \textbf{Precision} & \textbf{Recall} & \textbf{F1} \\
 \midrule
-Sun-style Rules-Only & 0.3814 & 0.5362 & 0.4458 \\
+Sun & 0.3814 & 0.5362 & 0.4458 \\
 Direct-LLM & \textbf{0.4393} & \textbf{0.6812} & \textbf{0.5341} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Rules-Only and Direct-LLM are applied to the same GDPR compliance texts, and their resulting Rule Records are processed by the same frozen Part~3 pipeline. Table~\ref{tab:downstream_results} reports pooled performance over the 201 applicable evaluation cells. Direct-LLM achieves an overall F1 of 0.5341 compared with 0.4458 for Rules-Only, an absolute gain of 8.83 percentage points. Recall increases from 0.5362 to 0.6812 and precision from 0.3814 to 0.4393. At the violation-type level, missing-action F1 increases from 0.4554 to 0.4935 and incorrect-actor F1 from 0.4262 to 0.5684, while both methods obtain 0.5000 for out-of-order checking.
+Sun and Direct-LLM are applied to the same GDPR compliance texts, and their resulting Rule Records are processed by the same frozen Part~3 pipeline. Table~\ref{tab:downstream_results} reports pooled performance over the 201 applicable evaluation cells. Direct-LLM achieves an overall F1 of 0.5341 compared with 0.4458 for Sun, an absolute gain of 8.83 percentage points. Recall increases from 0.5362 to 0.6812 and precision from 0.3814 to 0.4393. At the violation-type level, missing-action F1 increases from 0.4554 to 0.4935 and incorrect-actor F1 from 0.4262 to 0.5684, while both methods obtain 0.5000 for out-of-order checking.
 
 These downstream scores should not be directly compared with the Part~2 extraction scores because the two experiments use different benchmarks, tasks, and evaluation units. Downstream checking additionally requires the extracted compliance semantics to be aligned with BPMN activity labels and process-control information. A post-hoc analysis of the frozen missing-action results identifies 50 of 70 false-positive method--case cells (71.4\%) as mapping-related and 20 (28.6\%) as broadly scope-related. Only 11 of the latter satisfy the stricter criterion for safely removable scope errors. Since this analysis concerns missing-action false positives only, it should not be interpreted as a decomposition of all Part~3 errors. The results nevertheless identify rule--process semantic alignment as a major remaining limitation.
 
 \section{Conclusion}
 \label{sec:6}
 
-This paper investigates Direct-LLM semantic extraction within a three-part design-time BPC framework. Rules-Only and Direct-LLM produce the same structured Rule Record representation, enabling controlled comparison in Part~2 and downstream evaluation under the same Part~3 pipeline. On EStG-150, Direct-LLM performs better for modality, action, condition, and constraint, while Rules-Only remains stronger for actor and exception; Overall Micro-F1 over the five span-bearing fields increases from 0.763 to 0.838. The factorial analysis further shows that semantic examples provide the most consistent prompt benefit, while detailed semantic guidance and additional output discipline exhibit non-additive effects.
+This paper investigates Direct-LLM semantic extraction within a three-part design-time BPC framework. Sun and Direct-LLM produce the same structured Rule Record representation, enabling controlled comparison in Part~2 and downstream evaluation under the same Part~3 pipeline. On EStG-150, Direct-LLM performs better for modality, action, condition, and constraint, while Sun remains stronger for actor and exception; Overall Micro-F1 over the five span-bearing fields increases from 0.763 to 0.838. The factorial analysis further shows that semantic examples provide the most consistent prompt benefit, while detailed semantic guidance and additional output discipline exhibit non-additive effects.
 
-On the separate GDPR-based development benchmark, Direct-LLM Rule Records yield a downstream F1 of 0.5341 compared with 0.4458 for Rules-Only under the same checking pipeline. These results should not be interpreted as a direct field-level transfer of the EStG-150 results. The downstream analysis identifies rule--process semantic alignment, particularly the alignment between extracted compliance actions and BPMN activity labels, as an important remaining challenge. Future work will therefore focus on improving this alignment and evaluating the approach on independently held-out benchmarks.
+On the separate GDPR-based development benchmark, Direct-LLM Rule Records yield a downstream F1 of 0.5341 compared with 0.4458 for Sun under the same checking pipeline. These results should not be interpreted as a direct field-level transfer of the EStG-150 results. The downstream analysis identifies rule--process semantic alignment, particularly the alignment between extracted compliance actions and BPMN activity labels, as an important remaining challenge. Future work will therefore focus on improving this alignment and evaluating the approach on independently held-out benchmarks.
 
 % =========================================================
 % ACKNOWLEDGMENT

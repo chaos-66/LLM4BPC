@@ -46,11 +46,11 @@ https://raw.githubusercontent.com/chaos-66/LLM4BPC/refs/heads/codex/s2-prompt-si
 
 ## 三、不可混淆的事实
 
-1. 主表固定为 EStG-150、五个 span 字段的 pooled overlap F1：LLM-SE 0.8378，Rules-Only 0.7631，相差 7.47 个百分点；modality 单独报告四类 Macro-F1。保留 actor 和 exception 的不利结果。
+1. 主表固定为 EStG-150、五个 span 字段的 pooled overlap F1：LLM-SE 0.8378，Sun 0.7631，相差 7.47 个百分点；modality 单独报告四类 Macro-F1。保留 actor 和 exception 的不利结果。
 2. 主表分别统计命中预测和命中参考区域，二者不保证相同。它不是一对一 TP 匹配。请依据冻结计数说明 precision、recall 和 F1，不更改评价器或数值。
 3. 表 I 是 v6/R3，表 II 的 111 是 modular_v1；0.8378 和 0.8224 不能解释为完全相同提示词的重复。不要把后续 0813 release 名称追溯套给全部历史主表运行。
 4. 主表历史后处理使用唯一精确定位。当前代码中后来加入的 repair_v1 重复片段分配不能用来解释旧主表，也不是匈牙利算法。通过结构校验不等于语义正确。
-5. Rules-Only 是本地重建，包含 BERT-TextCNN 模态分类器；它的结果不是 Sun 原论文的分数。
+5. 基线正式称 Sun et al. (2024)，正文和图表简称 Sun，首次说明为本地独立重建。其历史名称为 Rules-Only，包含 BERT-TextCNN 模态分类器；结果来自本项目运行，不是 Sun 原论文的分数。原稿附件与原文附录保持原样。
 6. 当前上传稿的下游比较是 0.5341 对 0.4458，来自单独的 GDPR 开发评价集，同一 benchmark 参与开发和阈值校准；不能包装成未见测试集。
 7. 仓库还有后来补充的 Winter 对照。不要默默把新表移入旧稿；到了该节再明确说明是否调整比较范围及其证据。
 8. 本轮只改写作和说明，不授权新实验、真实 API、Gold 修改、数据筛选或重新调参。
