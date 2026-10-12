@@ -1,0 +1,271 @@
+{
+  "conversion_and_detector_cache_shared": {
+    "gamma": 0.55,
+    "incorrect_actor": {
+      "denominator": 1,
+      "evidence": {
+        "details": [
+          {
+            "exists_low_similarity": true,
+            "min_process_actor_similarity": 0.0368,
+            "rule_actor": "the processor",
+            "violated": true
+          }
+        ],
+        "matched_process_action_ids": [
+          "Activity_1"
+        ],
+        "process_actor_candidates": [
+          "Controller",
+          "personal data"
+        ]
+      },
+      "observable": true,
+      "raw_score": 1.0,
+      "reason": null,
+      "status": "violated"
+    },
+    "missing_action": {
+      "denominator": 2,
+      "evidence": {
+        "details": [
+          {
+            "best_model_action": "Process personal data only on those documented instructions",
+            "missing": false,
+            "rule_action": "processes the personal data including with regard to transfers of personal data to a third country or an international organisation",
+            "similarity": 0.597
+          },
+          {
+            "best_model_action": "Report any instruction that appears to infringe data-protection law",
+            "missing": true,
+            "rule_action": "inform the controller of that legal requirement",
+            "similarity": 0.3652
+          }
+        ]
+      },
+      "observable": true,
+      "raw_score": 0.5,
+      "reason": null,
+      "status": "violated"
+    },
+    "out_of_order": {
+      "denominator": 0,
+      "evidence": {
+        "details": [
+          {
+            "constraint": [
+              "inform the controller of that legal requirement",
+              "processes the personal data including with regard to transfers of personal data to a third country or an international organisation"
+            ],
+            "mapped": false,
+            "reason": "endpoint similarity below gamma"
+          }
+        ]
+      },
+      "observable": false,
+      "raw_score": 0.0,
+      "reason": "no_rule_order_endpoints",
+      "status": "unknown"
+    },
+    "raw": {
+      "incorrect_actor": {
+        "actor_scope_policy": "sun_def6_action_bound_v2",
+        "denominator": 1,
+        "details": [
+          {
+            "exists_low_similarity": true,
+            "min_process_actor_similarity": 0.0368,
+            "rule_actor": "the processor",
+            "violated": true
+          }
+        ],
+        "matched_process_action_ids": [
+          "Activity_1"
+        ],
+        "observable": true,
+        "process_actor_candidates": [
+          "Controller",
+          "personal data"
+        ],
+        "reason": null,
+        "score": 1.0,
+        "violations": 1
+      },
+      "missing_action": {
+        "denominator": 2,
+        "details": [
+          {
+            "best_model_action": "Process personal data only on those documented instructions",
+            "missing": false,
+            "rule_action": "processes the personal data including with regard to transfers of personal data to a third country or an international organisation",
+            "similarity": 0.597
+          },
+          {
+            "best_model_action": "Report any instruction that appears to infringe data-protection law",
+            "missing": true,
+            "rule_action": "inform the controller of that legal requirement",
+            "similarity": 0.3652
+          }
+        ],
+        "missing": 1,
+        "score": 0.5
+      },
+      "out_of_order": {
+        "denominator": 0,
+        "details": [
+          {
+            "constraint": [
+              "inform the controller of that legal requirement",
+              "processes the personal data including with regard to transfers of personal data to a third country or an international organisation"
+            ],
+            "mapped": false,
+            "reason": "endpoint similarity below gamma"
+          }
+        ],
+        "satisfied": 0,
+        "score": 0.0,
+        "violations": 0
+      }
+    },
+    "schema_version": "stage3_v2_checker@1.0.0",
+    "tau": 0.8,
+    "theta": 0.45
+  },
+  "original_separate_detector_phase": {
+    "gamma": 0.55,
+    "incorrect_actor": {
+      "denominator": 1,
+      "evidence": {
+        "details": [
+          {
+            "exists_low_similarity": true,
+            "min_process_actor_similarity": 0.0368,
+            "rule_actor": "the processor",
+            "violated": true
+          }
+        ],
+        "matched_process_action_ids": [
+          "Activity_1"
+        ],
+        "process_actor_candidates": [
+          "Controller",
+          "personal data"
+        ]
+      },
+      "observable": true,
+      "raw_score": 1.0,
+      "reason": null,
+      "status": "violated"
+    },
+    "missing_action": {
+      "denominator": 2,
+      "evidence": {
+        "details": [
+          {
+            "best_model_action": "Process personal data only on those documented instructions",
+            "missing": false,
+            "rule_action": "processes the personal data including with regard to transfers of personal data to a third country or an international organisation",
+            "similarity": 0.597
+          },
+          {
+            "best_model_action": "Report any instruction that appears to infringe data-protection law",
+            "missing": true,
+            "rule_action": "inform the controller of that legal requirement",
+            "similarity": 0.3652
+          }
+        ]
+      },
+      "observable": true,
+      "raw_score": 0.5,
+      "reason": null,
+      "status": "violated"
+    },
+    "out_of_order": {
+      "denominator": 0,
+      "evidence": {
+        "details": [
+          {
+            "constraint": [
+              "inform the controller of that legal requirement",
+              "processes the personal data including with regard to transfers of personal data to a third country or an international organisation"
+            ],
+            "mapped": false,
+            "reason": "endpoint similarity below gamma"
+          }
+        ]
+      },
+      "observable": false,
+      "raw_score": 0.0,
+      "reason": "no_rule_order_endpoints",
+      "status": "unknown"
+    },
+    "raw": {
+      "incorrect_actor": {
+        "actor_scope_policy": "sun_def6_action_bound_v2",
+        "denominator": 1,
+        "details": [
+          {
+            "exists_low_similarity": true,
+            "min_process_actor_similarity": 0.0368,
+            "rule_actor": "the processor",
+            "violated": true
+          }
+        ],
+        "matched_process_action_ids": [
+          "Activity_1"
+        ],
+        "observable": true,
+        "process_actor_candidates": [
+          "Controller",
+          "personal data"
+        ],
+        "reason": null,
+        "score": 1.0,
+        "violations": 1
+      },
+      "missing_action": {
+        "denominator": 2,
+        "details": [
+          {
+            "best_model_action": "Process personal data only on those documented instructions",
+            "missing": false,
+            "rule_action": "processes the personal data including with regard to transfers of personal data to a third country or an international organisation",
+            "similarity": 0.597
+          },
+          {
+            "best_model_action": "Report any instruction that appears to infringe data-protection law",
+            "missing": true,
+            "rule_action": "inform the controller of that legal requirement",
+            "similarity": 0.3652
+          }
+        ],
+        "missing": 1,
+        "score": 0.5
+      },
+      "out_of_order": {
+        "denominator": 0,
+        "details": [
+          {
+            "constraint": [
+              "inform the controller of that legal requirement",
+              "processes the personal data including with regard to transfers of personal data to a third country or an international organisation"
+            ],
+            "mapped": false,
+            "reason": "endpoint similarity below gamma"
+          }
+        ],
+        "satisfied": 0,
+        "score": 0.0,
+        "violations": 0
+      }
+    },
+    "schema_version": "stage3_v2_checker@1.0.0",
+    "tau": 0.8,
+    "theta": 0.45
+  },
+  "probe_case": "case_0f67bfdd277b",
+  "probe_in_memory_equality": false,
+  "probe_persisted_JSON_exact_equality": true,
+  "resolution": "compare the exact persisted JSON representation; no float tolerance",
+  "scoring_formula_thresholds_and_reference_unchanged": true
+}

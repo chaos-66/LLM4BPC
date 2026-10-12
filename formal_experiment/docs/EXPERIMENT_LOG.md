@@ -6395,3 +6395,49 @@
 - 仍存在 blocker：无
 - 备注：只运行一个针对性的离线实际重算检查，预计一分钟内；LLM抽取和CoreNLP解析复用已存输入，Sun句法删除/抽取、BPMN解析、MPNet和两个检查器重新运行；不改阈值、数据或参考。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-12T06:38:15.061723+00:00 - S3-BASELINE-REPAIR-V1：按原运行的转换/检测缓存边界重现，保存浮点差异诊断
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：否；正式实验就绪：是
+- 测试：1 failed in 34.30s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`e26a92885ce3fc075964b7de98927ce7193a008c`；相关未提交路径：28 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：首轮严格重现失败完整保留；重新推理前缓存要与原重启的独立检测阶段一致。先保存旧共享缓存与原信号的具体差异，再清空转换缓存并新建相同检查器，仍要求所有690对象和3795Winter对象精确一致；不放宽断言或阈值。约一分钟，非全量。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-12T06:41:33.472373+00:00 - S3-BASELINE-REPAIR-V1：按持久化JSON合同严格重现全部预测，保留两次比较器失败
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=stage3_reproduction_repair_20261012_v2_actual_replay_v3；阶段=stage3；方法=sun_rule_only,direct_llm,winter_native；状态=成功（`succeeded`）
+- 实际运行命令：`mpnet_venv/python -X utf8 replay_stage3_repair_v2.py --attempt-id actual_replay_v3`
+- manifest：outputs/reports/stage3_reproduction_repair_20261012_v2_actual_replay_v3.json
+- 结果摘要：实际重算：Sun抽取及690检测信号、Winter3795配对/11385类型信号，要求持久化JSON逐对象精确相同，无数值容差
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：2 passed in 27.05s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`e26a92885ce3fc075964b7de98927ce7193a008c`；相关未提交路径：34 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：首轮和第二轮失败及源码/诊断均保留；错误来自Python tuple与JSON array直接比较，数值和方向不变。一个具名文件2项相关检查，约一分钟，零API，不跑全量。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-12T06:46:33.119964+00:00 - S3-BASELINE-REPAIR-V1：测试入口复用同状态实际重算凭据，避免覆盖与重复运行
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：1 passed in 0.13s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`e26a92885ce3fc075964b7de98927ce7193a008c`；相关未提交路径：37 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：已有实际重算2 passed/27.05秒、全部预测JSON一致；本次只核对运行器/配置/来源manifest及冻结输入哈希，复用相同状态的凭据。重现核心代码、旧指标和预测不改，不重复执行推理或全量测试。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

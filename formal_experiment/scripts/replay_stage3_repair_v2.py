@@ -6,12 +6,18 @@ This checks reproducibility of this repair study, not complete paper fidelity.
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import sys
 import time
 from pathlib import Path
 
 sys.dont_write_bytecode=True
+
+
+def json_view(value):
+    """Compare exact persisted JSON values; tuples are serialized as arrays."""
+    return json.loads(json.dumps(value,ensure_ascii=False,allow_nan=False))
 
 
 def replay(attempt_id):
@@ -94,11 +100,22 @@ def replay(attempt_id):
         warm.update(model.actors); warm.update(b['object'] for b in model.business_objects)
     backend.embed(sorted({normalize_text_v2(checker.scorer._lemma(t)) for t in warm if t}))
     expected=run.read(run.OUT/'sun_ours_signals.json')['signals']
+    # Persisted JSON arrays and in-memory tuple evidence have the same contract.
+    probe_id='case_0f67bfdd277b'
+    probe_target=next(t for t in run.read(run.OUT/'known_applicability.json')['targets'] if t['case_id']==probe_id)
+    probe=checker.check_rule_record(converted['sun'][probe_target['requirement_id']],models[probe_id])
+    run.write_new(result_path.with_name(result_path.stem+'_cache_diagnostic.json'),{
+        'probe_case':probe_id,'conversion_and_detector_cache_shared':probe,
+        'original_separate_detector_phase':expected['sun'][probe_id],
+        'probe_in_memory_equality':probe==expected['sun'][probe_id],
+        'probe_persisted_JSON_exact_equality':json_view(probe)==expected['sun'][probe_id],
+        'resolution':'compare the exact persisted JSON representation; no float tolerance',
+        'scoring_formula_thresholds_and_reference_unchanged':True})
     compared=0
     for target in run.read(run.OUT/'known_applicability.json')['targets']:
         cid,rid=target['case_id'],target['requirement_id']
         for method in converted:
-            signals=checker.check_rule_record(converted[method][rid],models[cid])
+            signals=json_view(checker.check_rule_record(converted[method][rid],models[cid]))
             if signals!=expected[method][cid]:
                 raise RuntimeError('fresh detector signal drift: '+method+'/'+cid)
             compared+=3
@@ -120,7 +137,7 @@ def replay(attempt_id):
             rows.append({'case_id':item['case_id'],'rule_id':rid,
                 'signals':winter_signals(pair=pair,model=model,paragraph=paragraph,resource_set=roles)})
     validate_predictions(rows,{(i['case_id'],r['rule_id']) for i in view['items'] for r in sources})
-    if rows!=run.read(run.OUT/'winter_predictions.json')['records']:
+    if json_view(rows)!=run.read(run.OUT/'winter_predictions.json')['records']:
         raise RuntimeError('fresh native Winter predictions drift')
     report={'run_id':original_id+'_'+attempt_id,'status':'succeeded','scope':'development_reproducibility',
         'fresh_sun_from_cached_corenlp':True,'sun_repaired_records_exact':True,'sun_surgery_exact':True,
@@ -131,7 +148,9 @@ def replay(attempt_id):
         'config_sha256':run.sha(run.CONFIG),'source_manifest_sha256':run.sha(run.OUT/'manifest.json'),
         'replay_runner_sha256':run.sha(__file__),'git_commit':run.subprocess.check_output(
             ['git','rev-parse','HEAD'],cwd=run.ROOT,text=True).strip(),
-        'command':'mpnet_venv/python -X utf8 replay_stage3_repair_v2.py --attempt-id '+attempt_id}
+        'command':'mpnet_venv/python -X utf8 replay_stage3_repair_v2.py --attempt-id '+attempt_id,
+        'exact_persisted_JSON_comparison':True,'numeric_tolerance':0,
+        'diagnostic_probe_JSON_exact':json_view(probe)==expected['sun'][probe_id]}
     run.write_new(result_path,report)
     print('Fresh Winter: all 3795 pair objects exactly match.',flush=True)
     print(str(result_path),flush=True)
