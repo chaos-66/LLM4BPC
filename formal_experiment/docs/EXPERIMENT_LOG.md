@@ -6331,3 +6331,17 @@
 - 仍存在 blocker：无
 - 备注：只做两个具名测试文件，不运行全量；v2另存且先核对50对旧MPNet相似度；不调参、不改参考、无新API。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-12T06:14:33.132396+00:00 - S3-BASELINE-REPAIR-V1：固定 Windows UTF-8 命令与只续写缺失元数据的 v2 准备恢复器
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：2 passed in 0.08s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`c606b8f4fd6f6b08b5994c46fd1d597816bbfe0f`；相关未提交路径：44 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：准备阶段 Git status 的 GBK 解码失败；已生成快照不改字节、不重绑旧代码；恢复器先核对全部哈希并拒绝覆盖，后续命令统一 -X utf8。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
