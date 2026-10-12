@@ -6359,3 +6359,21 @@
 - 仍存在 blocker：无
 - 备注：v2已通过50对同MPNet相似度和LLM转换一致性；源码移动后相对schema路径错误。只设置资源根路径，复用已完成抽取，两个测试验证正常加载和拒绝错误哈希；原schema/参数/参考不改。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-12T06:28:13.489941+00:00 - S3-BASELINE-REPAIR-V1：保存局部修复后的同批真实对照及复算证据
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=stage3_reproduction_repair_20261012_v2；阶段=stage3；方法=sun_rule_only,direct_llm,winter_native；状态=成功（`succeeded`）
+- 实际运行命令：`python -X utf8 run_stage3_reproduction_repair_v2.py prepare; resume_stage3_repair_prepare_v2.py; mpnet_venv/python -X utf8 run_stage3_reproduction_repair_v2.py sun; resume_stage3_repair_sun_v2.py; evaluate; verify`
+- manifest：outputs/evidence/stage3_reproduction_repair_20261012_v2/manifest.json
+- 结果摘要：201单元F1：LLM-SE=0.5341,Sun=0.4487,Winter=0.5033；预期排名未成立；6评价对象和独立F1计数复算通过；完整Sun复现未认证
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：2 passed in 0.07s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`2bfc2f6c8d83431c42f8f0a730df06148e2092d0`；相关未提交路径：62 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：50对旧MPNet相似度通过舍入误差核对；LLM-SE全部345信号与旧实验完全一致；115案例33法规3795Winter配对齐全；分类/VP/标签分解差异披露。只做2个评价器/总体覆盖节点，不运行全量。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

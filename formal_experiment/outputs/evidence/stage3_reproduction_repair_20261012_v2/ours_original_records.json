@@ -1,0 +1,4464 @@
+{
+  "benchmark_id": "stage3_table3_r5_benchmark_v2",
+  "gold_read_by_runner": false,
+  "method_id": "ours_direct_llm_stage2",
+  "raw_text_committed": false,
+  "record_count": 33,
+  "records": [
+    {
+      "canonical_validation_status": "passed_historical_reuse",
+      "prediction_artifact": "data/predictions/stage3_v4_d1_frozen_v1/predictions.json",
+      "prediction_artifact_sha256": "3921a8902d090c49419aac4211e99e451710259ade7a106174991a95569cfc5f",
+      "prediction_sample_id": "gdpr_article13p3_s001",
+      "prediction_source_type": "STRONG_REUSE",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 257,
+                "id": "p01",
+                "normalized": "provide the data subject prior to that further processing with information on that other purpose",
+                "start": 161,
+                "text": "provide the data subject prior to that further processing with information on that other purpose"
+              },
+              {
+                "end": 329,
+                "id": "p02",
+                "normalized": "with any relevant further information as referred to in paragraph 2",
+                "start": 262,
+                "text": "with any relevant further information as referred to in paragraph 2"
+              }
+            ],
+            "actor_action_map": [],
+            "actors": [],
+            "clause_id": "gdpr_article13p3_s001_c01",
+            "clause_span": {
+              "end": 330,
+              "start": 0,
+              "text": "Where the controller intends to further process the personal data for a purpose other than that for which the personal data were collected, the controller shall provide the data subject prior to that further processing with information on that other purpose and with any relevant further information as referred to in paragraph 2."
+            },
+            "conditions": [
+              {
+                "end": 138,
+                "id": "c01",
+                "normalized": "where the controller intends to further process the personal data for a purpose other than that for which the personal data were collected",
+                "start": 0,
+                "text": "Where the controller intends to further process the personal data for a purpose other than that for which the personal data were collected"
+              }
+            ],
+            "constraints": [
+              {
+                "end": 218,
+                "id": "c02",
+                "normalized": "prior to that further processing",
+                "start": 186,
+                "text": "prior to that further processing"
+              },
+              {
+                "end": 329,
+                "id": "c03",
+                "normalized": "as referred to in paragraph 2",
+                "start": 300,
+                "text": "as referred to in paragraph 2"
+              }
+            ],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 160,
+                  "start": 155,
+                  "text": "shall"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "gdpr_article13p3_s001",
+        "schema_version": "1.0.0",
+        "source_id": "gdpr_article13p3_s001",
+        "source_text": "Where the controller intends to further process the personal data for a purpose other than that for which the personal data were collected, the controller shall provide the data subject prior to that further processing with information on that other purpose and with any relevant further information as referred to in paragraph 2.",
+        "unsupported_or_ambiguous": [],
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_status": "ok",
+      "requirement_id": "R5-D-01",
+      "reuse_evidence": {
+        "canonical_validation_status": "passed",
+        "expected_source_text_sha256": "3d437c14818da102a6a199178f4cdc5e4cf770a6a05f81cd110683a2ee795bfa",
+        "input_binding_expected_sample_id": "gdpr_article13p3_s001",
+        "input_binding_status": "passed",
+        "manifest_model": "deepseek-v4-pro",
+        "manifest_output_predictions_sha256": "be83c1c02e96037dca948450a835dd01f46c4cd9a34b8ab557e498a427d44821",
+        "manifest_prompt_sha256": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "observed_source_text_sha256": "3d437c14818da102a6a199178f4cdc5e4cf770a6a05f81cd110683a2ee795bfa",
+        "prediction_file_sha256": "be83c1c02e96037dca948450a835dd01f46c4cd9a34b8ab557e498a427d44821",
+        "prompt_sha256_computed": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "record_response_model": "deepseek-v4-pro"
+      }
+    },
+    {
+      "canonical_validation_status": "passed_historical_reuse",
+      "prediction_artifact": "data/predictions/stage3_v4_d1_frozen_v1/predictions.json",
+      "prediction_artifact_sha256": "3921a8902d090c49419aac4211e99e451710259ade7a106174991a95569cfc5f",
+      "prediction_sample_id": "gdpr_article14p4_s001",
+      "prediction_source_type": "STRONG_REUSE",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 328,
+                "id": "p01",
+                "normalized": "provide the data subject prior to that further processing with information on that other purpose and with any relevant further information as referred to in paragraph 2",
+                "start": 160,
+                "text": "provide the data subject prior to that further processing with information on that other purpose and with any relevant further information as referred to in paragraph 2"
+              }
+            ],
+            "actor_action_map": [],
+            "actors": [],
+            "clause_id": "gdpr_article14p4_s001_c01",
+            "clause_span": {
+              "end": 329,
+              "start": 0,
+              "text": "Where the controller intends to further process the personal data for a purpose other than that for which the personal data were obtained, the controller shall provide the data subject prior to that further processing with information on that other purpose and with any relevant further information as referred to in paragraph 2."
+            },
+            "conditions": [
+              {
+                "end": 137,
+                "id": "c01",
+                "normalized": "where the controller intends to further process the personal data for a purpose other than that for which the personal data were obtained",
+                "start": 0,
+                "text": "Where the controller intends to further process the personal data for a purpose other than that for which the personal data were obtained"
+              }
+            ],
+            "constraints": [
+              {
+                "end": 217,
+                "id": "c02",
+                "normalized": "prior to that further processing",
+                "start": 185,
+                "text": "prior to that further processing"
+              },
+              {
+                "end": 328,
+                "id": "c03",
+                "normalized": "as referred to in paragraph 2",
+                "start": 299,
+                "text": "as referred to in paragraph 2"
+              }
+            ],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 159,
+                  "start": 154,
+                  "text": "shall"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "gdpr_article14p4_s001",
+        "schema_version": "1.0.0",
+        "source_id": "gdpr_article14p4_s001",
+        "source_text": "Where the controller intends to further process the personal data for a purpose other than that for which the personal data were obtained, the controller shall provide the data subject prior to that further processing with information on that other purpose and with any relevant further information as referred to in paragraph 2.",
+        "unsupported_or_ambiguous": [],
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_status": "ok",
+      "requirement_id": "R5-D-02",
+      "reuse_evidence": {
+        "canonical_validation_status": "passed",
+        "expected_source_text_sha256": "12bd5997087b344a6e88c6eb06253caeb4b06015f06194097cdbef2c7419c3b5",
+        "input_binding_expected_sample_id": "gdpr_article14p4_s001",
+        "input_binding_status": "passed",
+        "manifest_model": "deepseek-v4-pro",
+        "manifest_output_predictions_sha256": "be83c1c02e96037dca948450a835dd01f46c4cd9a34b8ab557e498a427d44821",
+        "manifest_prompt_sha256": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "observed_source_text_sha256": "12bd5997087b344a6e88c6eb06253caeb4b06015f06194097cdbef2c7419c3b5",
+        "prediction_file_sha256": "be83c1c02e96037dca948450a835dd01f46c4cd9a34b8ab557e498a427d44821",
+        "prompt_sha256_computed": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "record_response_model": "deepseek-v4-pro"
+      }
+    },
+    {
+      "canonical_validation_status": "passed_historical_reuse",
+      "prediction_artifact": "data/predictions/stage3_v4_d1_frozen_v1/predictions.json",
+      "prediction_artifact_sha256": "3921a8902d090c49419aac4211e99e451710259ade7a106174991a95569cfc5f",
+      "prediction_sample_id": "gdpr_article18p3_s001",
+      "prediction_source_type": "STRONG_REUSE",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 99,
+                "id": "p01",
+                "normalized": "be informed",
+                "start": 88,
+                "text": "be informed"
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 117,
+                "id": "a01",
+                "normalized": "the controller",
+                "start": 103,
+                "text": "the controller"
+              }
+            ],
+            "clause_id": "gdpr_article18p3_s001_c01",
+            "clause_span": {
+              "end": 165,
+              "start": 0,
+              "text": "A data subject who has obtained restriction of processing pursuant to paragraph 1 shall be informed by the controller before the restriction of processing is lifted."
+            },
+            "conditions": [],
+            "constraints": [
+              {
+                "end": 164,
+                "id": "c01",
+                "normalized": "before the restriction of processing is lifted",
+                "start": 118,
+                "text": "before the restriction of processing is lifted"
+              }
+            ],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 87,
+                  "start": 82,
+                  "text": "shall"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "gdpr_article18p3_s001",
+        "schema_version": "1.0.0",
+        "source_id": "gdpr_article18p3_s001",
+        "source_text": "A data subject who has obtained restriction of processing pursuant to paragraph 1 shall be informed by the controller before the restriction of processing is lifted.",
+        "unsupported_or_ambiguous": [],
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_status": "ok",
+      "requirement_id": "R5-D-03",
+      "reuse_evidence": {
+        "canonical_validation_status": "passed",
+        "expected_source_text_sha256": "09fc6a3288f022c371a1db3a6df1ffa00f31c4a5cc216fda78d6aa084745176f",
+        "input_binding_expected_sample_id": "gdpr_article18p3_s001",
+        "input_binding_status": "passed",
+        "manifest_model": "deepseek-v4-pro",
+        "manifest_output_predictions_sha256": "be83c1c02e96037dca948450a835dd01f46c4cd9a34b8ab557e498a427d44821",
+        "manifest_prompt_sha256": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "observed_source_text_sha256": "09fc6a3288f022c371a1db3a6df1ffa00f31c4a5cc216fda78d6aa084745176f",
+        "prediction_file_sha256": "be83c1c02e96037dca948450a835dd01f46c4cd9a34b8ab557e498a427d44821",
+        "prompt_sha256_computed": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "record_response_model": "deepseek-v4-pro"
+      }
+    },
+    {
+      "canonical_validation_status": "passed_historical_reuse",
+      "prediction_artifact": "data/predictions/stage3_v4_d1_frozen_v1/predictions.json",
+      "prediction_artifact_sha256": "3921a8902d090c49419aac4211e99e451710259ade7a106174991a95569cfc5f",
+      "prediction_sample_id": "gdpr_article35p1_s001",
+      "prediction_source_type": "STRONG_REUSE",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 388,
+                "id": "p01",
+                "normalized": "carry out an assessment of the impact of the envisaged processing operations on the protection of personal data",
+                "start": 277,
+                "text": "carry out an assessment of the impact of the envisaged processing operations on the protection of personal data"
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 244,
+                "id": "a01",
+                "normalized": "the controller",
+                "start": 230,
+                "text": "the controller"
+              }
+            ],
+            "clause_id": "gdpr_article35p1_s001_c01",
+            "clause_span": {
+              "end": 389,
+              "start": 0,
+              "text": "Where a type of processing in particular using new technologies, and taking into account the nature, scope, context and purposes of the processing, is likely to result in a high risk to the rights and freedoms of natural persons, the controller shall, prior to the processing, carry out an assessment of the impact of the envisaged processing operations on the protection of personal data."
+            },
+            "conditions": [
+              {
+                "end": 228,
+                "id": "c01",
+                "normalized": "where a type of processing in particular using new technologies, and taking into account the nature, scope, context and purposes of the processing, is likely to result in a high risk to the rights and freedoms of natural persons",
+                "start": 0,
+                "text": "Where a type of processing in particular using new technologies, and taking into account the nature, scope, context and purposes of the processing, is likely to result in a high risk to the rights and freedoms of natural persons"
+              }
+            ],
+            "constraints": [
+              {
+                "end": 275,
+                "id": "c02",
+                "normalized": "prior to the processing",
+                "start": 252,
+                "text": "prior to the processing"
+              }
+            ],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 250,
+                  "start": 245,
+                  "text": "shall"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "gdpr_article35p1_s001",
+        "schema_version": "1.0.0",
+        "source_id": "gdpr_article35p1_s001",
+        "source_text": "Where a type of processing in particular using new technologies, and taking into account the nature, scope, context and purposes of the processing, is likely to result in a high risk to the rights and freedoms of natural persons, the controller shall, prior to the processing, carry out an assessment of the impact of the envisaged processing operations on the protection of personal data.",
+        "unsupported_or_ambiguous": [],
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_status": "ok",
+      "requirement_id": "R5-D-04",
+      "reuse_evidence": {
+        "canonical_validation_status": "passed",
+        "expected_source_text_sha256": "598b6a255dbb9761396e380ad3bd8d214fbe596368fb1aef8a29bbc04f2e337e",
+        "input_binding_expected_sample_id": "gdpr_article35p1_s001",
+        "input_binding_status": "passed",
+        "manifest_model": "deepseek-v4-pro",
+        "manifest_output_predictions_sha256": "be83c1c02e96037dca948450a835dd01f46c4cd9a34b8ab557e498a427d44821",
+        "manifest_prompt_sha256": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "observed_source_text_sha256": "598b6a255dbb9761396e380ad3bd8d214fbe596368fb1aef8a29bbc04f2e337e",
+        "prediction_file_sha256": "be83c1c02e96037dca948450a835dd01f46c4cd9a34b8ab557e498a427d44821",
+        "prompt_sha256_computed": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "record_response_model": "deepseek-v4-pro"
+      }
+    },
+    {
+      "canonical_validation_status": "passed_historical_reuse",
+      "prediction_artifact": "data/predictions/stage3_v4_d1_frozen_v1/predictions.json",
+      "prediction_artifact_sha256": "3921a8902d090c49419aac4211e99e451710259ade7a106174991a95569cfc5f",
+      "prediction_sample_id": "gdpr_article36p1_s001",
+      "prediction_source_type": "STRONG_REUSE",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 54,
+                "id": "p01",
+                "normalized": "consult the supervisory authority",
+                "start": 21,
+                "text": "consult the supervisory authority"
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 14,
+                "id": "a01",
+                "normalized": "the controller",
+                "start": 0,
+                "text": "The controller"
+              }
+            ],
+            "clause_id": "gdpr_article36p1_s001_c01",
+            "clause_span": {
+              "end": 264,
+              "start": 0,
+              "text": "The controller shall consult the supervisory authority prior to processing where a data protection impact assessment under Article 35 indicates that the processing would result in a high risk in the absence of measures taken by the controller to mitigate the risk."
+            },
+            "conditions": [
+              {
+                "end": 263,
+                "id": "d01",
+                "normalized": "where a data protection impact assessment under article 35 indicates that the processing would result in a high risk in the absence of measures taken by the controller to mitigate the risk",
+                "start": 75,
+                "text": "where a data protection impact assessment under Article 35 indicates that the processing would result in a high risk in the absence of measures taken by the controller to mitigate the risk"
+              }
+            ],
+            "constraints": [
+              {
+                "end": 74,
+                "id": "c01",
+                "normalized": "prior to processing",
+                "start": 55,
+                "text": "prior to processing"
+              }
+            ],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 20,
+                  "start": 15,
+                  "text": "shall"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "gdpr_article36p1_s001",
+        "schema_version": "1.0.0",
+        "source_id": "gdpr_article36p1_s001",
+        "source_text": "The controller shall consult the supervisory authority prior to processing where a data protection impact assessment under Article 35 indicates that the processing would result in a high risk in the absence of measures taken by the controller to mitigate the risk.",
+        "unsupported_or_ambiguous": [],
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_status": "ok",
+      "requirement_id": "R5-D-05",
+      "reuse_evidence": {
+        "canonical_validation_status": "passed",
+        "expected_source_text_sha256": "e172a9fcd184e4571d10061a5128e3522a6ac0298d71957ddfcdbf9c83e1fa52",
+        "input_binding_expected_sample_id": "gdpr_article36p1_s001",
+        "input_binding_status": "passed",
+        "manifest_model": "deepseek-v4-pro",
+        "manifest_output_predictions_sha256": "be83c1c02e96037dca948450a835dd01f46c4cd9a34b8ab557e498a427d44821",
+        "manifest_prompt_sha256": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "observed_source_text_sha256": "e172a9fcd184e4571d10061a5128e3522a6ac0298d71957ddfcdbf9c83e1fa52",
+        "prediction_file_sha256": "be83c1c02e96037dca948450a835dd01f46c4cd9a34b8ab557e498a427d44821",
+        "prompt_sha256_computed": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "record_response_model": "deepseek-v4-pro"
+      }
+    },
+    {
+      "canonical_validation_status": "passed_historical_reuse",
+      "prediction_artifact": "data/predictions/gdpr7_direct_llm_v1/predictions.json",
+      "prediction_artifact_sha256": "5381b1807fb3d020deb51ebc8cee9f5ea21de50ea9c0a426a0a16cb42457e1c0",
+      "prediction_sample_id": "gdpr_article7_s001",
+      "prediction_source_type": "HISTORICAL_CHAIN_REUSE",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 159,
+                "id": "p01",
+                "start": 59
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 52,
+                "id": "a01",
+                "start": 38
+              }
+            ],
+            "clause_id": "gdpr_article7_s001_c01",
+            "clause_span": {
+              "end": 160,
+              "start": 0
+            },
+            "conditions": [
+              {
+                "end": 36,
+                "id": "c01",
+                "start": 0
+              }
+            ],
+            "constraints": [],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 58,
+                  "start": 53
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "gdpr_article7_s001",
+        "schema_version": "1.0.0",
+        "source_id": "gdpr_article7_s001",
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_status": "ok",
+      "requirement_id": "R5-D-06",
+      "reuse_evidence": {
+        "declared_capsule_path": "data/predictions/gdpr7_direct_llm_v1",
+        "input_file_sha256": "558b80131394c8ac349db42cc323ffcf7264b7ae7da796522d55bf5ff89eb109",
+        "manifest_input_sha256": "558b80131394c8ac349db42cc323ffcf7264b7ae7da796522d55bf5ff89eb109",
+        "manifest_model": "deepseek-v4-pro",
+        "manifest_prompt_sha256": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "output_binding_strength": "declared_capsule_path_and_schema_no_explicit_output_hash",
+        "prediction_file_sha256": "b625692d1e4e85b22f0c2e428a46a7c6cd49a2cc4b77a10f6c8e8d25adec50a1",
+        "prompt_sha256_computed": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "request_status": "ok",
+        "sentence_text_sha256": "e00763881eb6ffcb71cd7f3dfda726448d24731fa06d9b217e2dce6dd00bce87"
+      }
+    },
+    {
+      "canonical_validation_status": "passed_historical_reuse",
+      "prediction_artifact": "data/predictions/gdpr7_direct_llm_v1/predictions.json",
+      "prediction_artifact_sha256": "5381b1807fb3d020deb51ebc8cee9f5ea21de50ea9c0a426a0a16cb42457e1c0",
+      "prediction_sample_id": "gdpr_article7_s008",
+      "prediction_source_type": "HISTORICAL_CHAIN_REUSE",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 77,
+                "id": "p01",
+                "start": 72
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": null
+              }
+            ],
+            "actors": [],
+            "clause_id": "gdpr_article7_s008_c01",
+            "clause_span": {
+              "end": 291,
+              "start": 0
+            },
+            "conditions": [
+              {
+                "end": 46,
+                "id": "d01",
+                "start": 0
+              }
+            ],
+            "constraints": [
+              {
+                "end": 290,
+                "id": "c01",
+                "start": 78
+              }
+            ],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 68,
+                  "start": 63
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "gdpr_article7_s008",
+        "schema_version": "1.0.0",
+        "source_id": "gdpr_article7_s008",
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_status": "ok",
+      "requirement_id": "R5-D-07",
+      "reuse_evidence": {
+        "declared_capsule_path": "data/predictions/gdpr7_direct_llm_v1",
+        "input_file_sha256": "558b80131394c8ac349db42cc323ffcf7264b7ae7da796522d55bf5ff89eb109",
+        "manifest_input_sha256": "558b80131394c8ac349db42cc323ffcf7264b7ae7da796522d55bf5ff89eb109",
+        "manifest_model": "deepseek-v4-pro",
+        "manifest_prompt_sha256": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "output_binding_strength": "declared_capsule_path_and_schema_no_explicit_output_hash",
+        "prediction_file_sha256": "b625692d1e4e85b22f0c2e428a46a7c6cd49a2cc4b77a10f6c8e8d25adec50a1",
+        "prompt_sha256_computed": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "request_status": "ok",
+        "sentence_text_sha256": "7a5c82e05e06aed5e174c23dbbcea4a8e7b9916f0cae5695f6f5f43daad20619"
+      }
+    },
+    {
+      "canonical_validation_status": "passed_historical_reuse",
+      "prediction_artifact": "data/predictions/gdpr7_direct_llm_v1/predictions.json",
+      "prediction_artifact_sha256": "5381b1807fb3d020deb51ebc8cee9f5ea21de50ea9c0a426a0a16cb42457e1c0",
+      "prediction_sample_id": "gdpr_article15_s001",
+      "prediction_source_type": "HISTORICAL_CHAIN_REUSE",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 157,
+                "id": "p01",
+                "start": 41
+              },
+              {
+                "end": 276,
+                "id": "p02",
+                "start": 188
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              },
+              {
+                "action_id": "p02",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 16,
+                "id": "a01",
+                "start": 0
+              }
+            ],
+            "clause_id": "gdpr_article15_s001_c01",
+            "clause_span": {
+              "end": 277,
+              "start": 0
+            },
+            "conditions": [
+              {
+                "end": 186,
+                "id": "c01",
+                "start": 164
+              }
+            ],
+            "constraints": [],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 22,
+                  "start": 17
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "gdpr_article15_s001",
+        "schema_version": "1.0.0",
+        "source_id": "gdpr_article15_s001",
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_status": "ok",
+      "requirement_id": "R5-D-08",
+      "reuse_evidence": {
+        "declared_capsule_path": "data/predictions/gdpr7_direct_llm_v1",
+        "input_file_sha256": "558b80131394c8ac349db42cc323ffcf7264b7ae7da796522d55bf5ff89eb109",
+        "manifest_input_sha256": "558b80131394c8ac349db42cc323ffcf7264b7ae7da796522d55bf5ff89eb109",
+        "manifest_model": "deepseek-v4-pro",
+        "manifest_prompt_sha256": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "output_binding_strength": "declared_capsule_path_and_schema_no_explicit_output_hash",
+        "prediction_file_sha256": "b625692d1e4e85b22f0c2e428a46a7c6cd49a2cc4b77a10f6c8e8d25adec50a1",
+        "prompt_sha256_computed": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "request_status": "ok",
+        "sentence_text_sha256": "4d55a1fb6743e546ba673fe377a388638f99a50ac240d482a0d2c394ce3256ac"
+      }
+    },
+    {
+      "canonical_validation_status": "passed_historical_reuse",
+      "prediction_artifact": "data/predictions/gdpr7_direct_llm_v1/predictions.json",
+      "prediction_artifact_sha256": "5381b1807fb3d020deb51ebc8cee9f5ea21de50ea9c0a426a0a16cb42457e1c0",
+      "prediction_sample_id": "gdpr_article16_s001",
+      "prediction_source_type": "HISTORICAL_CHAIN_REUSE",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 155,
+                "id": "p01",
+                "start": 41
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 16,
+                "id": "a01",
+                "start": 0
+              }
+            ],
+            "clause_id": "gdpr_article16_s001_c01",
+            "clause_span": {
+              "end": 156,
+              "start": 0
+            },
+            "conditions": [],
+            "constraints": [
+              {
+                "end": 87,
+                "id": "c01",
+                "start": 68
+              }
+            ],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 22,
+                  "start": 17
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "gdpr_article16_s001",
+        "schema_version": "1.0.0",
+        "source_id": "gdpr_article16_s001",
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_status": "ok",
+      "requirement_id": "R5-D-09",
+      "reuse_evidence": {
+        "declared_capsule_path": "data/predictions/gdpr7_direct_llm_v1",
+        "input_file_sha256": "558b80131394c8ac349db42cc323ffcf7264b7ae7da796522d55bf5ff89eb109",
+        "manifest_input_sha256": "558b80131394c8ac349db42cc323ffcf7264b7ae7da796522d55bf5ff89eb109",
+        "manifest_model": "deepseek-v4-pro",
+        "manifest_prompt_sha256": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "output_binding_strength": "declared_capsule_path_and_schema_no_explicit_output_hash",
+        "prediction_file_sha256": "b625692d1e4e85b22f0c2e428a46a7c6cd49a2cc4b77a10f6c8e8d25adec50a1",
+        "prompt_sha256_computed": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "request_status": "ok",
+        "sentence_text_sha256": "1ae6c72eb70eb6b75ce1c88d6d50adbfd098ce38eab56c892f31d07b353adbe1"
+      }
+    },
+    {
+      "canonical_validation_status": "passed_historical_reuse",
+      "prediction_artifact": "data/predictions/gdpr7_direct_llm_v1/predictions.json",
+      "prediction_artifact_sha256": "5381b1807fb3d020deb51ebc8cee9f5ea21de50ea9c0a426a0a16cb42457e1c0",
+      "prediction_sample_id": "gdpr_article17_s001",
+      "prediction_source_type": "HISTORICAL_CHAIN_REUSE",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 118,
+                "id": "p01",
+                "start": 41
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 16,
+                "id": "a01",
+                "start": 0
+              }
+            ],
+            "clause_id": "gdpr_article17_s001_c01",
+            "clause_span": {
+              "end": 138,
+              "start": 0
+            },
+            "conditions": [],
+            "constraints": [
+              {
+                "end": 138,
+                "id": "c01",
+                "start": 119
+              }
+            ],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 22,
+                  "start": 17
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          },
+          {
+            "actions": [
+              {
+                "end": 206,
+                "id": "p02",
+                "start": 187
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p02",
+                "actor_id": "a02"
+              }
+            ],
+            "actors": [
+              {
+                "end": 157,
+                "id": "a02",
+                "start": 143
+              }
+            ],
+            "clause_id": "gdpr_article17_s001_c02",
+            "clause_span": {
+              "end": 269,
+              "start": 143
+            },
+            "conditions": [
+              {
+                "end": 269,
+                "id": "d01",
+                "start": 227
+              }
+            ],
+            "constraints": [
+              {
+                "end": 226,
+                "id": "c02",
+                "start": 207
+              }
+            ],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 163,
+                  "start": 158
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "gdpr_article17_s001",
+        "schema_version": "1.0.0",
+        "source_id": "gdpr_article17_s001",
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_status": "ok",
+      "requirement_id": "R5-D-10",
+      "reuse_evidence": {
+        "declared_capsule_path": "data/predictions/gdpr7_direct_llm_v1",
+        "input_file_sha256": "558b80131394c8ac349db42cc323ffcf7264b7ae7da796522d55bf5ff89eb109",
+        "manifest_input_sha256": "558b80131394c8ac349db42cc323ffcf7264b7ae7da796522d55bf5ff89eb109",
+        "manifest_model": "deepseek-v4-pro",
+        "manifest_prompt_sha256": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "output_binding_strength": "declared_capsule_path_and_schema_no_explicit_output_hash",
+        "prediction_file_sha256": "b625692d1e4e85b22f0c2e428a46a7c6cd49a2cc4b77a10f6c8e8d25adec50a1",
+        "prompt_sha256_computed": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "request_status": "ok",
+        "sentence_text_sha256": "ffce4b993017dcb956e232f8d9afc93daa5f6ab08ecd4c72f06b4427796f8be2"
+      }
+    },
+    {
+      "canonical_validation_status": "passed_historical_reuse",
+      "prediction_artifact": "data/predictions/gdpr7_direct_llm_v1/predictions.json",
+      "prediction_artifact_sha256": "5381b1807fb3d020deb51ebc8cee9f5ea21de50ea9c0a426a0a16cb42457e1c0",
+      "prediction_sample_id": "gdpr_article20_s001",
+      "prediction_source_type": "HISTORICAL_CHAIN_REUSE",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 194,
+                "id": "p01",
+                "start": 41
+              },
+              {
+                "end": 342,
+                "id": "p02",
+                "start": 217
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              },
+              {
+                "action_id": "p02",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 16,
+                "id": "a01",
+                "start": 0
+              }
+            ],
+            "clause_id": "gdpr_article20_s001_c01",
+            "clause_span": {
+              "end": 561,
+              "start": 0
+            },
+            "conditions": [
+              {
+                "end": 506,
+                "id": "c01",
+                "start": 344
+              },
+              {
+                "end": 560,
+                "id": "c02",
+                "start": 512
+              }
+            ],
+            "constraints": [
+              {
+                "end": 194,
+                "id": "r01",
+                "start": 136
+              },
+              {
+                "end": 342,
+                "id": "r02",
+                "start": 259
+              }
+            ],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 22,
+                  "start": 17
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "gdpr_article20_s001",
+        "schema_version": "1.0.0",
+        "source_id": "gdpr_article20_s001",
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_status": "ok",
+      "requirement_id": "R5-D-11",
+      "reuse_evidence": {
+        "declared_capsule_path": "data/predictions/gdpr7_direct_llm_v1",
+        "input_file_sha256": "558b80131394c8ac349db42cc323ffcf7264b7ae7da796522d55bf5ff89eb109",
+        "manifest_input_sha256": "558b80131394c8ac349db42cc323ffcf7264b7ae7da796522d55bf5ff89eb109",
+        "manifest_model": "deepseek-v4-pro",
+        "manifest_prompt_sha256": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "output_binding_strength": "declared_capsule_path_and_schema_no_explicit_output_hash",
+        "prediction_file_sha256": "b625692d1e4e85b22f0c2e428a46a7c6cd49a2cc4b77a10f6c8e8d25adec50a1",
+        "prompt_sha256_computed": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "request_status": "ok",
+        "sentence_text_sha256": "5b63ec29d24bd77cbe3cc19136ae1b0c30f5378d28a25aebc101260d2e0023ca"
+      }
+    },
+    {
+      "canonical_validation_status": "passed_historical_reuse",
+      "prediction_artifact": "data/predictions/gdpr7_direct_llm_v1/predictions.json",
+      "prediction_artifact_sha256": "5381b1807fb3d020deb51ebc8cee9f5ea21de50ea9c0a426a0a16cb42457e1c0",
+      "prediction_sample_id": "gdpr_article33_s001",
+      "prediction_source_type": "HISTORICAL_CHAIN_REUSE",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 258,
+                "id": "p01",
+                "start": 158
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 53,
+                "id": "a01",
+                "start": 39
+              }
+            ],
+            "clause_id": "gdpr_article33_s001_c01",
+            "clause_span": {
+              "end": 370,
+              "start": 0
+            },
+            "conditions": [
+              {
+                "end": 37,
+                "id": "c01",
+                "start": 0
+              }
+            ],
+            "constraints": [
+              {
+                "end": 79,
+                "id": "c02",
+                "start": 60
+              },
+              {
+                "end": 99,
+                "id": "c03",
+                "start": 85
+              },
+              {
+                "end": 156,
+                "id": "c04",
+                "start": 101
+              }
+            ],
+            "exceptions": [
+              {
+                "end": 369,
+                "id": "e01",
+                "start": 260
+              }
+            ],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 59,
+                  "start": 54
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "gdpr_article33_s001",
+        "schema_version": "1.0.0",
+        "source_id": "gdpr_article33_s001",
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_status": "ok",
+      "requirement_id": "R5-D-12",
+      "reuse_evidence": {
+        "declared_capsule_path": "data/predictions/gdpr7_direct_llm_v1",
+        "input_file_sha256": "558b80131394c8ac349db42cc323ffcf7264b7ae7da796522d55bf5ff89eb109",
+        "manifest_input_sha256": "558b80131394c8ac349db42cc323ffcf7264b7ae7da796522d55bf5ff89eb109",
+        "manifest_model": "deepseek-v4-pro",
+        "manifest_prompt_sha256": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "output_binding_strength": "declared_capsule_path_and_schema_no_explicit_output_hash",
+        "prediction_file_sha256": "b625692d1e4e85b22f0c2e428a46a7c6cd49a2cc4b77a10f6c8e8d25adec50a1",
+        "prompt_sha256_computed": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "request_status": "ok",
+        "sentence_text_sha256": "d3327ce470720a494bfb05a72841a073e0c7bac1673f11545833dcce72ef0a65"
+      }
+    },
+    {
+      "api_call_status": "ok_message_content",
+      "canonical_validation_status": "passed",
+      "canonicalizer_audit": {
+        "attempted": true,
+        "clause_span_count": 1,
+        "dropped_clauses": [],
+        "dropped_edges": [],
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "field_span_count": 5,
+        "reanchored_count": 6,
+        "status": "reanchored"
+      },
+      "error": null,
+      "error_category": null,
+      "estimated_cost_usd": 0.00817608,
+      "failure_stage": null,
+      "input_binding": {
+        "errors": [],
+        "expected": {
+          "sample_id": "r5_r5_s1_t1_s001",
+          "source_id": "r5_r5_s1_t1_s001",
+          "source_text_length": 214,
+          "source_text_sha256": "16a2a3b5ceb63999f1758de7f91a407c52e36eeef8d0627516e41bbb43aa5c1d"
+        },
+        "observed": {
+          "payload_type": "dict",
+          "sample_id": "r5_r5_s1_t1_s001",
+          "source_id": "r5_r5_s1_t1_s001",
+          "source_text_length": 214,
+          "source_text_sha256": "16a2a3b5ceb63999f1758de7f91a407c52e36eeef8d0627516e41bbb43aa5c1d"
+        },
+        "status": "passed"
+      },
+      "input_binding_status": "passed",
+      "output_parse_status": "passed",
+      "parser_audit": {
+        "attempted": true,
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "spans_adapted": 4,
+        "status": "adapted"
+      },
+      "prediction_sample_id": "r5_r5_s1_t1_s001",
+      "prediction_source_type": "NEW_AUTHORIZED_RUN",
+      "raw_response_content_sha256": "876bc916270fea719308924eb03f4c2793ec922aebaa4ad22cb8b0ef7a5ce6a7",
+      "raw_response_path": "data/predictions/stage3_table3_r5_ours_stage2_new19_v1/raw_responses/01_R5-S1-T1.json",
+      "raw_response_sha256": "9fedc8653a91bea8dc308c8275719440376c0da4e78605eb937cef667cc38e3f",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 213,
+                "id": "p01",
+                "normalized": "provide the data subject with all of the following information",
+                "start": 151,
+                "text": "provide the data subject with all of the following information"
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 98,
+                "id": "a01",
+                "normalized": "the controller",
+                "start": 84,
+                "text": "the controller"
+              }
+            ],
+            "clause_id": "r5_r5_s1_t1_s001_c01",
+            "clause_span": {
+              "end": 214,
+              "start": 0,
+              "text": "Where personal data relating to a data subject are collected from the data subject, the controller shall, at the time when personal data are obtained, provide the data subject with all of the following information."
+            },
+            "conditions": [
+              {
+                "end": 82,
+                "id": "d01",
+                "normalized": "where personal data relating to a data subject are collected from the data subject",
+                "start": 0,
+                "text": "Where personal data relating to a data subject are collected from the data subject"
+              }
+            ],
+            "constraints": [
+              {
+                "end": 149,
+                "id": "c01",
+                "normalized": "at the time when personal data are obtained",
+                "start": 106,
+                "text": "at the time when personal data are obtained"
+              }
+            ],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 104,
+                  "start": 99,
+                  "text": "shall"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "r5_r5_s1_t1_s001",
+        "schema_version": "1.0.0",
+        "source_id": "r5_r5_s1_t1_s001",
+        "source_text": "Where personal data relating to a data subject are collected from the data subject, the controller shall, at the time when personal data are obtained, provide the data subject with all of the following information.",
+        "unsupported_or_ambiguous": [],
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_body_sha256": "a1200b4766ab102fa04ba9d7bc4d7585f79472c01fc245d95a9958df45ef53c6",
+      "request_ordinal": 1,
+      "request_status": "ok",
+      "requirement_id": "R5-S1-T1",
+      "response_model": "deepseek-v4-pro",
+      "runtime_validation": {
+        "cross_field_valid": true,
+        "errors": [],
+        "schema_valid": true
+      },
+      "sample_id": "r5_r5_s1_t1_s001",
+      "transport_error": null,
+      "usage": {
+        "completion_tokens": 611,
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 3081,
+        "prompt_tokens": 4361,
+        "total_tokens": 4972
+      }
+    },
+    {
+      "api_call_status": "ok_message_content",
+      "canonical_validation_status": "passed",
+      "canonicalizer_audit": {
+        "attempted": true,
+        "clause_span_count": 1,
+        "dropped_clauses": [],
+        "dropped_edges": [],
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "field_span_count": 5,
+        "reanchored_count": 5,
+        "status": "reanchored"
+      },
+      "error": null,
+      "error_category": null,
+      "estimated_cost_usd": 0.00848364,
+      "failure_stage": null,
+      "input_binding": {
+        "errors": [],
+        "expected": {
+          "sample_id": "r5_r5_s1_t2_s001",
+          "source_id": "r5_r5_s1_t2_s001",
+          "source_text_length": 369,
+          "source_text_sha256": "c857f4424b6e5e8532d1241d4fb6745148aa56069518c1d9fe9dfc853a454491"
+        },
+        "observed": {
+          "payload_type": "dict",
+          "sample_id": "r5_r5_s1_t2_s001",
+          "source_id": "r5_r5_s1_t2_s001",
+          "source_text_length": 369,
+          "source_text_sha256": "c857f4424b6e5e8532d1241d4fb6745148aa56069518c1d9fe9dfc853a454491"
+        },
+        "status": "passed"
+      },
+      "input_binding_status": "passed",
+      "output_parse_status": "passed",
+      "parser_audit": {
+        "attempted": true,
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "spans_adapted": 4,
+        "status": "adapted"
+      },
+      "prediction_sample_id": "r5_r5_s1_t2_s001",
+      "prediction_source_type": "NEW_AUTHORIZED_RUN",
+      "raw_response_content_sha256": "38f593b8b80afb9157ed2fc88eb2f14ed1333a8aed2aab68a914168a4727e27e",
+      "raw_response_path": "data/predictions/stage3_table3_r5_ours_stage2_new19_v1/raw_responses/02_R5-S1-T2.json",
+      "raw_response_sha256": "d305c242baec15a02ec9888909f13cdb053a1ab9cc6dd2509e1c28ab6bd42462",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 241,
+                "id": "p01",
+                "normalized": "provide the data subject with the following further information necessary to ensure fair and transparent processing",
+                "start": 126,
+                "text": "provide the data subject with the following further information necessary to ensure fair and transparent processing"
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 73,
+                "id": "a01",
+                "normalized": "the controller",
+                "start": 59,
+                "text": "the controller"
+              }
+            ],
+            "clause_id": "r5_r5_s1_t2_s001_c01",
+            "clause_span": {
+              "end": 369,
+              "start": 0,
+              "text": "In addition to the information referred to in paragraph 1, the controller shall, at the time when personal data are obtained, provide the data subject with the following further information necessary to ensure fair and transparent processing: The period for which the personal data will be stored, or if that is not possible, the criteria used to determine that period."
+            },
+            "conditions": [
+              {
+                "end": 124,
+                "id": "d01",
+                "normalized": "at the time when personal data are obtained",
+                "start": 81,
+                "text": "at the time when personal data are obtained"
+              }
+            ],
+            "constraints": [
+              {
+                "end": 57,
+                "id": "c01",
+                "normalized": "in addition to the information referred to in paragraph 1",
+                "start": 0,
+                "text": "In addition to the information referred to in paragraph 1"
+              }
+            ],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 79,
+                  "start": 74,
+                  "text": "shall"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "r5_r5_s1_t2_s001",
+        "schema_version": "1.0.0",
+        "source_id": "r5_r5_s1_t2_s001",
+        "source_text": "In addition to the information referred to in paragraph 1, the controller shall, at the time when personal data are obtained, provide the data subject with the following further information necessary to ensure fair and transparent processing: The period for which the personal data will be stored, or if that is not possible, the criteria used to determine that period.",
+        "unsupported_or_ambiguous": [],
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_body_sha256": "b6f65195a65c1aa068bf7b97bed2d7d7bf4665cd2c3b2dcc11413728d930ae53",
+      "request_ordinal": 2,
+      "request_status": "ok",
+      "requirement_id": "R5-S1-T2",
+      "response_model": "deepseek-v4-pro",
+      "runtime_validation": {
+        "cross_field_valid": true,
+        "errors": [],
+        "schema_valid": true
+      },
+      "sample_id": "r5_r5_s1_t2_s001",
+      "transport_error": null,
+      "usage": {
+        "completion_tokens": 679,
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 3110,
+        "prompt_tokens": 4390,
+        "total_tokens": 5069
+      }
+    },
+    {
+      "api_call_status": "ok_message_content",
+      "canonical_validation_status": "passed",
+      "canonicalizer_audit": {
+        "attempted": true,
+        "clause_span_count": 1,
+        "dropped_clauses": [],
+        "dropped_edges": [],
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "field_span_count": 4,
+        "reanchored_count": 5,
+        "status": "reanchored"
+      },
+      "error": null,
+      "error_category": null,
+      "estimated_cost_usd": 0.00777216,
+      "failure_stage": null,
+      "input_binding": {
+        "errors": [],
+        "expected": {
+          "sample_id": "r5_r5_s1_t3_s001",
+          "source_id": "r5_r5_s1_t3_s001",
+          "source_text_length": 143,
+          "source_text_sha256": "a0f592432d9fa34faeb2b819ff30f830c3e9dcc41fc8bc82faab58d5ab3cfd2f"
+        },
+        "observed": {
+          "payload_type": "dict",
+          "sample_id": "r5_r5_s1_t3_s001",
+          "source_id": "r5_r5_s1_t3_s001",
+          "source_text_length": 143,
+          "source_text_sha256": "a0f592432d9fa34faeb2b819ff30f830c3e9dcc41fc8bc82faab58d5ab3cfd2f"
+        },
+        "status": "passed"
+      },
+      "input_binding_status": "passed",
+      "output_parse_status": "passed",
+      "parser_audit": {
+        "attempted": true,
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "spans_adapted": 3,
+        "status": "adapted"
+      },
+      "prediction_sample_id": "r5_r5_s1_t3_s001",
+      "prediction_source_type": "NEW_AUTHORIZED_RUN",
+      "raw_response_content_sha256": "e82b8f02c21b9b29ba89d4a411f58f34ddd4385979cd767c32e061d7874c508c",
+      "raw_response_path": "data/predictions/stage3_table3_r5_ours_stage2_new19_v1/raw_responses/03_R5-S1-T3.json",
+      "raw_response_sha256": "ec702f94352e153a332d9a214886120460796679c0748a0e0eadf7b869edcaec",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 142,
+                "id": "p01",
+                "normalized": "provide the data subject with the following information",
+                "start": 87,
+                "text": "provide the data subject with the following information"
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 80,
+                "id": "a01",
+                "normalized": "the controller",
+                "start": 66,
+                "text": "the controller"
+              }
+            ],
+            "clause_id": "r5_r5_s1_t3_s001_c01",
+            "clause_span": {
+              "end": 143,
+              "start": 0,
+              "text": "Where personal data have not been obtained from the data subject, the controller shall provide the data subject with the following information."
+            },
+            "conditions": [
+              {
+                "end": 64,
+                "id": "c01",
+                "normalized": "where personal data have not been obtained from the data subject",
+                "start": 0,
+                "text": "Where personal data have not been obtained from the data subject"
+              }
+            ],
+            "constraints": [],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 86,
+                  "start": 81,
+                  "text": "shall"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "r5_r5_s1_t3_s001",
+        "schema_version": "1.0.0",
+        "source_id": "r5_r5_s1_t3_s001",
+        "source_text": "Where personal data have not been obtained from the data subject, the controller shall provide the data subject with the following information.",
+        "unsupported_or_ambiguous": [],
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_body_sha256": "8c252e1ee53f2cbc228a02d301d59d8dc6b0e743fb507dbacfb5c91698c96186",
+      "request_ordinal": 3,
+      "request_status": "ok",
+      "requirement_id": "R5-S1-T3",
+      "response_model": "deepseek-v4-pro",
+      "runtime_validation": {
+        "cross_field_valid": true,
+        "errors": [],
+        "schema_valid": true
+      },
+      "sample_id": "r5_r5_s1_t3_s001",
+      "transport_error": null,
+      "usage": {
+        "completion_tokens": 514,
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 3066,
+        "prompt_tokens": 4346,
+        "total_tokens": 4860
+      }
+    },
+    {
+      "api_call_status": "ok_message_content",
+      "canonical_validation_status": "passed",
+      "canonicalizer_audit": {
+        "attempted": true,
+        "clause_span_count": 1,
+        "dropped_clauses": [],
+        "dropped_edges": [],
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "field_span_count": 5,
+        "reanchored_count": 6,
+        "status": "reanchored"
+      },
+      "error": null,
+      "error_category": null,
+      "estimated_cost_usd": 0.00816552,
+      "failure_stage": null,
+      "input_binding": {
+        "errors": [],
+        "expected": {
+          "sample_id": "r5_r5_s1_t4_s001",
+          "source_id": "r5_r5_s1_t4_s001",
+          "source_text_length": 219,
+          "source_text_sha256": "483e0d76cf9b0f5e8794e62857fa6f7711052376ba77ad04bae320cb0652ec9e"
+        },
+        "observed": {
+          "payload_type": "dict",
+          "sample_id": "r5_r5_s1_t4_s001",
+          "source_id": "r5_r5_s1_t4_s001",
+          "source_text_length": 219,
+          "source_text_sha256": "483e0d76cf9b0f5e8794e62857fa6f7711052376ba77ad04bae320cb0652ec9e"
+        },
+        "status": "passed"
+      },
+      "input_binding_status": "passed",
+      "output_parse_status": "passed",
+      "parser_audit": {
+        "attempted": true,
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "spans_adapted": 4,
+        "status": "adapted"
+      },
+      "prediction_sample_id": "r5_r5_s1_t4_s001",
+      "prediction_source_type": "NEW_AUTHORIZED_RUN",
+      "raw_response_content_sha256": "ac915ab18fb2d18dac2f542ce8ee3c6cef80018ddba7d4f208c1641c79928eac",
+      "raw_response_path": "data/predictions/stage3_table3_r5_ours_stage2_new19_v1/raw_responses/04_R5-S1-T4.json",
+      "raw_response_sha256": "6b02f749c900c33912ff4394829d2107504fb110149650a92bbf90961255ea01",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 135,
+                "id": "p01",
+                "normalized": "provide the data subject with the following information",
+                "start": 80,
+                "text": "provide the data subject with the following information"
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 73,
+                "id": "a01",
+                "normalized": "the controller",
+                "start": 59,
+                "text": "the controller"
+              }
+            ],
+            "clause_id": "r5_r5_s1_t4_s001_c01",
+            "clause_span": {
+              "end": 219,
+              "start": 0,
+              "text": "In addition to the information referred to in paragraph 1, the controller shall provide the data subject with the following information necessary to ensure fair and transparent processing in respect of the data subject."
+            },
+            "conditions": [],
+            "constraints": [
+              {
+                "end": 57,
+                "id": "c01",
+                "normalized": "in addition to the information referred to in paragraph 1",
+                "start": 0,
+                "text": "In addition to the information referred to in paragraph 1"
+              },
+              {
+                "end": 218,
+                "id": "c02",
+                "normalized": "necessary to ensure fair and transparent processing in respect of the data subject",
+                "start": 136,
+                "text": "necessary to ensure fair and transparent processing in respect of the data subject"
+              }
+            ],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 79,
+                  "start": 74,
+                  "text": "shall"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "r5_r5_s1_t4_s001",
+        "schema_version": "1.0.0",
+        "source_id": "r5_r5_s1_t4_s001",
+        "source_text": "In addition to the information referred to in paragraph 1, the controller shall provide the data subject with the following information necessary to ensure fair and transparent processing in respect of the data subject.",
+        "unsupported_or_ambiguous": [],
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_body_sha256": "0c5ef6738c4c86f79891b4a7bb5b0f27ef8fb301f57909a750e4df62afe01336",
+      "request_ordinal": 4,
+      "request_status": "ok",
+      "requirement_id": "R5-S1-T4",
+      "response_model": "deepseek-v4-pro",
+      "runtime_validation": {
+        "cross_field_valid": true,
+        "errors": [],
+        "schema_valid": true
+      },
+      "sample_id": "r5_r5_s1_t4_s001",
+      "transport_error": null,
+      "usage": {
+        "completion_tokens": 609,
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 3079,
+        "prompt_tokens": 4359,
+        "total_tokens": 4968
+      }
+    },
+    {
+      "api_call_status": "ok_message_content",
+      "canonical_validation_status": "passed",
+      "canonicalizer_audit": {
+        "attempted": true,
+        "clause_span_count": 1,
+        "dropped_clauses": [],
+        "dropped_edges": [],
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "field_span_count": 4,
+        "reanchored_count": 3,
+        "status": "reanchored"
+      },
+      "error": null,
+      "error_category": null,
+      "estimated_cost_usd": 0.0079266,
+      "failure_stage": null,
+      "input_binding": {
+        "errors": [],
+        "expected": {
+          "sample_id": "r5_r5_s2_t2_s001",
+          "source_id": "r5_r5_s2_t2_s001",
+          "source_text_length": 209,
+          "source_text_sha256": "4a572b9fde1b8fd97666c3cb5925d2edd2527b4969b67ab65fb7fcf84124e267"
+        },
+        "observed": {
+          "payload_type": "dict",
+          "sample_id": "r5_r5_s2_t2_s001",
+          "source_id": "r5_r5_s2_t2_s001",
+          "source_text_length": 209,
+          "source_text_sha256": "4a572b9fde1b8fd97666c3cb5925d2edd2527b4969b67ab65fb7fcf84124e267"
+        },
+        "status": "passed"
+      },
+      "input_binding_status": "passed",
+      "output_parse_status": "passed",
+      "parser_audit": {
+        "attempted": true,
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "spans_adapted": 3,
+        "status": "adapted"
+      },
+      "prediction_sample_id": "r5_r5_s2_t2_s001",
+      "prediction_source_type": "NEW_AUTHORIZED_RUN",
+      "raw_response_content_sha256": "ba580a3a5e2d1b1b735218e94201969b2d76b3de099c919d8c10047e049d721e",
+      "raw_response_path": "data/predictions/stage3_table3_r5_ours_stage2_new19_v1/raw_responses/05_R5-S2-T2.json",
+      "raw_response_sha256": "25f7b5673aad70957d062667b3cf7f1a0e6c5123320f64e6c551ee88a3413293",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 160,
+                "id": "p01",
+                "normalized": "make reasonable efforts to verify in such cases that consent is given or authorised by the holder of parental responsibility over the child",
+                "start": 21,
+                "text": "make reasonable efforts to verify in such cases that consent is given or authorised by the holder of parental responsibility over the child"
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 14,
+                "id": "a01",
+                "normalized": "the controller",
+                "start": 0,
+                "text": "The controller"
+              }
+            ],
+            "clause_id": "r5_r5_s2_t2_s001_c01",
+            "clause_span": {
+              "end": 209,
+              "start": 0,
+              "text": "The controller shall make reasonable efforts to verify in such cases that consent is given or authorised by the holder of parental responsibility over the child, taking into consideration available technology."
+            },
+            "conditions": [],
+            "constraints": [
+              {
+                "end": 208,
+                "id": "c01",
+                "normalized": "taking into consideration available technology",
+                "start": 162,
+                "text": "taking into consideration available technology"
+              }
+            ],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 20,
+                  "start": 15,
+                  "text": "shall"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "r5_r5_s2_t2_s001",
+        "schema_version": "1.0.0",
+        "source_id": "r5_r5_s2_t2_s001",
+        "source_text": "The controller shall make reasonable efforts to verify in such cases that consent is given or authorised by the holder of parental responsibility over the child, taking into consideration available technology.",
+        "unsupported_or_ambiguous": [],
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_body_sha256": "dc465c9579c2c31d39c5df07748644468db2053cc6d0c77d398e9c06153c519f",
+      "request_ordinal": 5,
+      "request_status": "ok",
+      "requirement_id": "R5-S2-T2",
+      "response_model": "deepseek-v4-pro",
+      "runtime_validation": {
+        "cross_field_valid": true,
+        "errors": [],
+        "schema_valid": true
+      },
+      "sample_id": "r5_r5_s2_t2_s001",
+      "transport_error": null,
+      "usage": {
+        "completion_tokens": 550,
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 3075,
+        "prompt_tokens": 4355,
+        "total_tokens": 4905
+      }
+    },
+    {
+      "api_call_status": "ok_message_content",
+      "canonical_validation_status": "passed",
+      "canonicalizer_audit": {
+        "attempted": true,
+        "clause_span_count": 1,
+        "dropped_clauses": [],
+        "dropped_edges": [],
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "field_span_count": 5,
+        "reanchored_count": 4,
+        "status": "reanchored"
+      },
+      "error": null,
+      "error_category": null,
+      "estimated_cost_usd": 0.00816684,
+      "failure_stage": null,
+      "input_binding": {
+        "errors": [],
+        "expected": {
+          "sample_id": "r5_r5_s3_t1_s001",
+          "source_id": "r5_r5_s3_t1_s001",
+          "source_text_length": 194,
+          "source_text_sha256": "34af79e05cce4587e3d3008b2471632e4282bcf238912cfa07a55cfa985ed9cb"
+        },
+        "observed": {
+          "payload_type": "dict",
+          "sample_id": "r5_r5_s3_t1_s001",
+          "source_id": "r5_r5_s3_t1_s001",
+          "source_text_length": 194,
+          "source_text_sha256": "34af79e05cce4587e3d3008b2471632e4282bcf238912cfa07a55cfa985ed9cb"
+        },
+        "status": "passed"
+      },
+      "input_binding_status": "passed",
+      "output_parse_status": "passed",
+      "parser_audit": {
+        "attempted": true,
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "spans_adapted": 4,
+        "status": "adapted"
+      },
+      "prediction_sample_id": "r5_r5_s3_t1_s001",
+      "prediction_source_type": "NEW_AUTHORIZED_RUN",
+      "raw_response_content_sha256": "65e07af0fb10e49c8783a70c1ea82df18aac8dafa7b18866c4b7e40e87772d97",
+      "raw_response_path": "data/predictions/stage3_table3_r5_ours_stage2_new19_v1/raw_responses/06_R5-S3-T1.json",
+      "raw_response_sha256": "34607d506d56946e1e1489509863a65cc8e4cd803edb65c041b8d45f32d09e27",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 113,
+                "id": "p01",
+                "normalized": "provide information on action taken on a request under articles 15 to 22 to the data subject",
+                "start": 21,
+                "text": "provide information on action taken on a request under Articles 15 to 22 to the data subject"
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 14,
+                "id": "a01",
+                "normalized": "the controller",
+                "start": 0,
+                "text": "The controller"
+              }
+            ],
+            "clause_id": "r5_r5_s3_t1_s001_c01",
+            "clause_span": {
+              "end": 194,
+              "start": 0,
+              "text": "The controller shall provide information on action taken on a request under Articles 15 to 22 to the data subject without undue delay and in any event within one month of receipt of the request."
+            },
+            "conditions": [],
+            "constraints": [
+              {
+                "end": 133,
+                "id": "c01",
+                "normalized": "without undue delay",
+                "start": 114,
+                "text": "without undue delay"
+              },
+              {
+                "end": 193,
+                "id": "c02",
+                "normalized": "in any event within one month of receipt of the request",
+                "start": 138,
+                "text": "in any event within one month of receipt of the request"
+              }
+            ],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 20,
+                  "start": 15,
+                  "text": "shall"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "r5_r5_s3_t1_s001",
+        "schema_version": "1.0.0",
+        "source_id": "r5_r5_s3_t1_s001",
+        "source_text": "The controller shall provide information on action taken on a request under Articles 15 to 22 to the data subject without undue delay and in any event within one month of receipt of the request.",
+        "unsupported_or_ambiguous": [],
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_body_sha256": "aa0cd11e97d6368f2a8e5332b98e9252b7e88bdcb440d1d59dd578176545d046",
+      "request_ordinal": 6,
+      "request_status": "ok",
+      "requirement_id": "R5-S3-T1",
+      "response_model": "deepseek-v4-pro",
+      "runtime_validation": {
+        "cross_field_valid": true,
+        "errors": [],
+        "schema_valid": true
+      },
+      "sample_id": "r5_r5_s3_t1_s001",
+      "transport_error": null,
+      "usage": {
+        "completion_tokens": 609,
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 3080,
+        "prompt_tokens": 4360,
+        "total_tokens": 4969
+      }
+    },
+    {
+      "api_call_status": "ok_message_content",
+      "canonical_validation_status": "passed",
+      "canonicalizer_audit": {
+        "attempted": true,
+        "clause_span_count": 1,
+        "dropped_clauses": [],
+        "dropped_edges": [],
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "field_span_count": 6,
+        "reanchored_count": 5,
+        "status": "reanchored"
+      },
+      "error": null,
+      "error_category": null,
+      "estimated_cost_usd": 0.00852588,
+      "failure_stage": null,
+      "input_binding": {
+        "errors": [],
+        "expected": {
+          "sample_id": "r5_r5_s3_t2_s001",
+          "source_id": "r5_r5_s3_t2_s001",
+          "source_text_length": 337,
+          "source_text_sha256": "3fbc125c7c2de3c37ca8c4c4a6535c848ac412bd01598ff38d9e19058fa6eaeb"
+        },
+        "observed": {
+          "payload_type": "dict",
+          "sample_id": "r5_r5_s3_t2_s001",
+          "source_id": "r5_r5_s3_t2_s001",
+          "source_text_length": 337,
+          "source_text_sha256": "3fbc125c7c2de3c37ca8c4c4a6535c848ac412bd01598ff38d9e19058fa6eaeb"
+        },
+        "status": "passed"
+      },
+      "input_binding_status": "passed",
+      "output_parse_status": "passed",
+      "parser_audit": {
+        "attempted": true,
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "spans_adapted": 5,
+        "status": "adapted"
+      },
+      "prediction_sample_id": "r5_r5_s3_t2_s001",
+      "prediction_source_type": "NEW_AUTHORIZED_RUN",
+      "raw_response_content_sha256": "e8cf5bb3f64f9a6408ada8e1fefe1337070391f8e2f744b31c7cb0d75ca6e478",
+      "raw_response_path": "data/predictions/stage3_table3_r5_ours_stage2_new19_v1/raw_responses/07_R5-S3-T2.json",
+      "raw_response_sha256": "52057859c75f8a8fcaaa1ebbbc7b648667c906ef8913d80d47292e0d5bbcb2ca",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 119,
+                "id": "p01",
+                "normalized": "inform the data subject",
+                "start": 96,
+                "text": "inform the data subject"
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 89,
+                "id": "a01",
+                "normalized": "the controller",
+                "start": 75,
+                "text": "the controller"
+              }
+            ],
+            "clause_id": "r5_r5_s3_t2_s001_c01",
+            "clause_span": {
+              "end": 337,
+              "start": 0,
+              "text": "If the controller does not take action on the request of the data subject, the controller shall inform the data subject without delay and at the latest within one month of receipt of the request of the reasons for not taking action and on the possibility of lodging a complaint with a supervisory authority and seeking a judicial remedy."
+            },
+            "conditions": [
+              {
+                "end": 73,
+                "id": "d01",
+                "normalized": "if the controller does not take action on the request of the data subject",
+                "start": 0,
+                "text": "If the controller does not take action on the request of the data subject"
+              }
+            ],
+            "constraints": [
+              {
+                "end": 133,
+                "id": "c01",
+                "normalized": "without delay",
+                "start": 120,
+                "text": "without delay"
+              },
+              {
+                "end": 194,
+                "id": "c02",
+                "normalized": "at the latest within one month of receipt of the request",
+                "start": 138,
+                "text": "at the latest within one month of receipt of the request"
+              }
+            ],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 95,
+                  "start": 90,
+                  "text": "shall"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "r5_r5_s3_t2_s001",
+        "schema_version": "1.0.0",
+        "source_id": "r5_r5_s3_t2_s001",
+        "source_text": "If the controller does not take action on the request of the data subject, the controller shall inform the data subject without delay and at the latest within one month of receipt of the request of the reasons for not taking action and on the possibility of lodging a complaint with a supervisory authority and seeking a judicial remedy.",
+        "unsupported_or_ambiguous": [],
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_body_sha256": "963bdd7ff9fa15f5d5c5ca387235e27e6a4d44df020efd3a2c416a6603321dbd",
+      "request_ordinal": 7,
+      "request_status": "ok",
+      "requirement_id": "R5-S3-T2",
+      "response_model": "deepseek-v4-pro",
+      "runtime_validation": {
+        "cross_field_valid": true,
+        "errors": [],
+        "schema_valid": true
+      },
+      "sample_id": "r5_r5_s3_t2_s001",
+      "transport_error": null,
+      "usage": {
+        "completion_tokens": 692,
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 3103,
+        "prompt_tokens": 4383,
+        "total_tokens": 5075
+      }
+    },
+    {
+      "api_call_status": "ok_message_content",
+      "canonical_validation_status": "passed",
+      "canonicalizer_audit": {
+        "attempted": true,
+        "clause_span_count": 2,
+        "dropped_clauses": [],
+        "dropped_edges": [],
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "field_span_count": 11,
+        "reanchored_count": 12,
+        "status": "reanchored"
+      },
+      "error": null,
+      "error_category": null,
+      "estimated_cost_usd": 0.01050852,
+      "failure_stage": null,
+      "input_binding": {
+        "errors": [],
+        "expected": {
+          "sample_id": "r5_r5_s4_t1_s001",
+          "source_id": "r5_r5_s4_t1_s001",
+          "source_text_length": 425,
+          "source_text_sha256": "4ab0b5c456120cbbc85a045342d7eb9d850db264e4e747af4f882b8fa7513c9d"
+        },
+        "observed": {
+          "payload_type": "dict",
+          "sample_id": "r5_r5_s4_t1_s001",
+          "source_id": "r5_r5_s4_t1_s001",
+          "source_text_length": 425,
+          "source_text_sha256": "4ab0b5c456120cbbc85a045342d7eb9d850db264e4e747af4f882b8fa7513c9d"
+        },
+        "status": "passed"
+      },
+      "input_binding_status": "passed",
+      "output_parse_status": "passed",
+      "parser_audit": {
+        "attempted": true,
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "spans_adapted": 9,
+        "status": "adapted"
+      },
+      "prediction_sample_id": "r5_r5_s4_t1_s001",
+      "prediction_source_type": "NEW_AUTHORIZED_RUN",
+      "raw_response_content_sha256": "00a482a45b70d07b23f1e10284a668ab969e62617e721992adbcd281c6b63de8",
+      "raw_response_path": "data/predictions/stage3_table3_r5_ours_stage2_new19_v1/raw_responses/08_R5-S4-T1.json",
+      "raw_response_sha256": "2a62015efb76f179a3841c098ce41ccf914ce70d787ee63e7fc987d30faf555b",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 258,
+                "id": "p01",
+                "normalized": "implement appropriate technical and organisational measures",
+                "start": 199,
+                "text": "implement appropriate technical and organisational measures"
+              },
+              {
+                "end": 268,
+                "id": "p02",
+                "normalized": "ensure",
+                "start": 262,
+                "text": "ensure"
+              },
+              {
+                "end": 362,
+                "id": "p03",
+                "normalized": "be able to demonstrate that processing is performed in accordance with this regulation",
+                "start": 276,
+                "text": "be able to demonstrate that processing is performed in accordance with this Regulation"
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              },
+              {
+                "action_id": "p02",
+                "actor_id": "a01"
+              },
+              {
+                "action_id": "p03",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 192,
+                "id": "a01",
+                "normalized": "the controller",
+                "start": 178,
+                "text": "the controller"
+              }
+            ],
+            "clause_id": "r5_r5_s4_t1_s001_c01",
+            "clause_span": {
+              "end": 363,
+              "start": 0,
+              "text": "Taking into account the nature, scope, context and purposes of processing as well as the risks of varying likelihood and severity for the rights and freedoms of natural persons, the controller shall implement appropriate technical and organisational measures to ensure and to be able to demonstrate that processing is performed in accordance with this Regulation."
+            },
+            "conditions": [],
+            "constraints": [
+              {
+                "end": 176,
+                "id": "c01",
+                "normalized": "taking into account the nature, scope, context and purposes of processing as well as the risks of varying likelihood and severity for the rights and freedoms of natural persons",
+                "start": 0,
+                "text": "Taking into account the nature, scope, context and purposes of processing as well as the risks of varying likelihood and severity for the rights and freedoms of natural persons"
+              },
+              {
+                "end": 362,
+                "id": "c02",
+                "normalized": "in accordance with this regulation",
+                "start": 328,
+                "text": "in accordance with this Regulation"
+              }
+            ],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 198,
+                  "start": 193,
+                  "text": "shall"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          },
+          {
+            "actions": [
+              {
+                "end": 396,
+                "id": "p04",
+                "normalized": "reviewed",
+                "start": 388,
+                "text": "reviewed"
+              },
+              {
+                "end": 408,
+                "id": "p05",
+                "normalized": "updated",
+                "start": 401,
+                "text": "updated"
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p04",
+                "actor_id": null
+              },
+              {
+                "action_id": "p05",
+                "actor_id": null
+              }
+            ],
+            "actors": [],
+            "clause_id": "r5_r5_s4_t1_s001_c02",
+            "clause_span": {
+              "end": 425,
+              "start": 364,
+              "text": "Those measures shall be reviewed and updated where necessary."
+            },
+            "conditions": [
+              {
+                "end": 424,
+                "id": "d01",
+                "normalized": "where necessary",
+                "start": 409,
+                "text": "where necessary"
+              }
+            ],
+            "constraints": [],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 384,
+                  "start": 379,
+                  "text": "shall"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "r5_r5_s4_t1_s001",
+        "schema_version": "1.0.0",
+        "source_id": "r5_r5_s4_t1_s001",
+        "source_text": "Taking into account the nature, scope, context and purposes of processing as well as the risks of varying likelihood and severity for the rights and freedoms of natural persons, the controller shall implement appropriate technical and organisational measures to ensure and to be able to demonstrate that processing is performed in accordance with this Regulation. Those measures shall be reviewed and updated where necessary.",
+        "unsupported_or_ambiguous": [
+          {
+            "field": "actor",
+            "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+          }
+        ],
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_body_sha256": "33b8586506e49f913510369f47ec3e2fff2ecdc70edc7473803e61bac164caa5",
+      "request_ordinal": 8,
+      "request_status": "ok",
+      "requirement_id": "R5-S4-T1",
+      "response_model": "deepseek-v4-pro",
+      "runtime_validation": {
+        "cross_field_valid": true,
+        "errors": [],
+        "schema_valid": true
+      },
+      "sample_id": "r5_r5_s4_t1_s001",
+      "transport_error": null,
+      "usage": {
+        "completion_tokens": 1190,
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 3111,
+        "prompt_tokens": 4391,
+        "total_tokens": 5581
+      }
+    },
+    {
+      "api_call_status": "ok_message_content",
+      "canonical_validation_status": "passed",
+      "canonicalizer_audit": {
+        "attempted": true,
+        "clause_span_count": 1,
+        "dropped_clauses": [],
+        "dropped_edges": [],
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "field_span_count": 7,
+        "reanchored_count": 8,
+        "status": "reanchored"
+      },
+      "error": null,
+      "error_category": null,
+      "estimated_cost_usd": 0.00959508,
+      "failure_stage": null,
+      "input_binding": {
+        "errors": [],
+        "expected": {
+          "sample_id": "r5_r5_s4_t2_s001",
+          "source_id": "r5_r5_s4_t2_s001",
+          "source_text_length": 733,
+          "source_text_sha256": "e6fa8bd9e008b448d4904925e75fb86d9aa6ebecc87394c917f6967d2d03979f"
+        },
+        "observed": {
+          "payload_type": "dict",
+          "sample_id": "r5_r5_s4_t2_s001",
+          "source_id": "r5_r5_s4_t2_s001",
+          "source_text_length": 733,
+          "source_text_sha256": "e6fa8bd9e008b448d4904925e75fb86d9aa6ebecc87394c917f6967d2d03979f"
+        },
+        "status": "passed"
+      },
+      "input_binding_status": "passed",
+      "output_parse_status": "passed",
+      "parser_audit": {
+        "attempted": true,
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "spans_adapted": 6,
+        "status": "adapted"
+      },
+      "prediction_sample_id": "r5_r5_s4_t2_s001",
+      "prediction_source_type": "NEW_AUTHORIZED_RUN",
+      "raw_response_content_sha256": "e264b78cf116d9c2766b21a7d361c65017fa4fe44d368dcfade79c52979e0982",
+      "raw_response_path": "data/predictions/stage3_table3_r5_ours_stage2_new19_v1/raw_responses/09_R5-S4-T2.json",
+      "raw_response_sha256": "5809fd16aefd537f5bc9697eda344cfbcc474c3ddcde3cc2dca1410a62da1d7a",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 440,
+                "id": "p01",
+                "normalized": "implement appropriate technical and organisational measures",
+                "start": 381,
+                "text": "implement appropriate technical and organisational measures"
+              },
+              {
+                "end": 639,
+                "id": "p02",
+                "normalized": "integrate the necessary safeguards into the processing",
+                "start": 585,
+                "text": "integrate the necessary safeguards into the processing"
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              },
+              {
+                "action_id": "p02",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 265,
+                "id": "a01",
+                "normalized": "the controller",
+                "start": 251,
+                "text": "the controller"
+              }
+            ],
+            "clause_id": "r5_r5_s4_t2_s001_c01",
+            "clause_span": {
+              "end": 733,
+              "start": 0,
+              "text": "Taking into account the state of the art, the cost of implementation and the nature, scope, context and purposes of processing as well as the risks of varying likelihood and severity for rights and freedoms of natural persons posed by the processing, the controller shall, both at the time of the determination of the means for processing and at the time of the processing itself, implement appropriate technical and organisational measures, such as pseudonymisation, which are designed to implement data-protection principles, such as data minimisation, in an effective manner and to integrate the necessary safeguards into the processing in order to meet the requirements of this Regulation and protect the rights of data subjects."
+            },
+            "conditions": [],
+            "constraints": [
+              {
+                "end": 379,
+                "id": "c01",
+                "normalized": "both at the time of the determination of the means for processing and at the time of the processing itself",
+                "start": 273,
+                "text": "both at the time of the determination of the means for processing and at the time of the processing itself"
+              },
+              {
+                "end": 577,
+                "id": "c02",
+                "normalized": "in an effective manner",
+                "start": 555,
+                "text": "in an effective manner"
+              },
+              {
+                "end": 732,
+                "id": "c03",
+                "normalized": "in order to meet the requirements of this regulation and protect the rights of data subjects",
+                "start": 640,
+                "text": "in order to meet the requirements of this Regulation and protect the rights of data subjects"
+              }
+            ],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 271,
+                  "start": 266,
+                  "text": "shall"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "r5_r5_s4_t2_s001",
+        "schema_version": "1.0.0",
+        "source_id": "r5_r5_s4_t2_s001",
+        "source_text": "Taking into account the state of the art, the cost of implementation and the nature, scope, context and purposes of processing as well as the risks of varying likelihood and severity for rights and freedoms of natural persons posed by the processing, the controller shall, both at the time of the determination of the means for processing and at the time of the processing itself, implement appropriate technical and organisational measures, such as pseudonymisation, which are designed to implement data-protection principles, such as data minimisation, in an effective manner and to integrate the necessary safeguards into the processing in order to meet the requirements of this Regulation and protect the rights of data subjects.",
+        "unsupported_or_ambiguous": [],
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_body_sha256": "84998745077cdf5a4b743e3a22fd8ef95ff84a3dda0082fbde8d1c70b429d3bf",
+      "request_ordinal": 9,
+      "request_status": "ok",
+      "requirement_id": "R5-S4-T2",
+      "response_model": "deepseek-v4-pro",
+      "runtime_validation": {
+        "cross_field_valid": true,
+        "errors": [],
+        "schema_valid": true
+      },
+      "sample_id": "r5_r5_s4_t2_s001",
+      "transport_error": null,
+      "usage": {
+        "completion_tokens": 939,
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 3172,
+        "prompt_tokens": 4452,
+        "total_tokens": 5391
+      }
+    },
+    {
+      "api_call_status": "ok_message_content",
+      "canonical_validation_status": "passed",
+      "canonicalizer_audit": {
+        "attempted": true,
+        "clause_span_count": 2,
+        "dropped_clauses": [],
+        "dropped_edges": [],
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "field_span_count": 12,
+        "reanchored_count": 13,
+        "status": "reanchored"
+      },
+      "error": null,
+      "error_category": null,
+      "estimated_cost_usd": 0.01061808,
+      "failure_stage": null,
+      "input_binding": {
+        "errors": [],
+        "expected": {
+          "sample_id": "r5_r5_s4_t3_s001",
+          "source_id": "r5_r5_s4_t3_s001",
+          "source_text_length": 474,
+          "source_text_sha256": "21f3c3086326373c00a525d53178744bd185a1f6babe5e24dfef0753e4d07a10"
+        },
+        "observed": {
+          "payload_type": "dict",
+          "sample_id": "r5_r5_s4_t3_s001",
+          "source_id": "r5_r5_s4_t3_s001",
+          "source_text_length": 474,
+          "source_text_sha256": "21f3c3086326373c00a525d53178744bd185a1f6babe5e24dfef0753e4d07a10"
+        },
+        "status": "passed"
+      },
+      "input_binding_status": "passed",
+      "output_parse_status": "passed",
+      "parser_audit": {
+        "attempted": true,
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "spans_adapted": 10,
+        "status": "adapted"
+      },
+      "prediction_sample_id": "r5_r5_s4_t3_s001",
+      "prediction_source_type": "NEW_AUTHORIZED_RUN",
+      "raw_response_content_sha256": "550144ccea264d81fa9e7bc3ad148e9023164dee17fd4a8048be8cfb9b1c6a0e",
+      "raw_response_path": "data/predictions/stage3_table3_r5_ours_stage2_new19_v1/raw_responses/10_R5-S4-T3.json",
+      "raw_response_sha256": "937be269cd9d2e74429852b2a18d3b39981b8717c22f3bfdb1bae8ace9065460",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 41,
+                "id": "p01",
+                "normalized": "processes the personal data",
+                "start": 14,
+                "text": "processes the personal data"
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 13,
+                "id": "a01",
+                "normalized": "the processor",
+                "start": 0,
+                "text": "the processor"
+              }
+            ],
+            "clause_id": "r5_r5_s4_t3_s001_c01",
+            "clause_span": {
+              "end": 287,
+              "start": 0,
+              "text": "the processor processes the personal data only on documented instructions from the controller, including with regard to transfers of personal data to a third country or an international organisation, unless required to do so by Union or Member State law to which the processor is subject"
+            },
+            "conditions": [],
+            "constraints": [
+              {
+                "end": 93,
+                "id": "c01",
+                "normalized": "only on documented instructions from the controller",
+                "start": 42,
+                "text": "only on documented instructions from the controller"
+              },
+              {
+                "end": 198,
+                "id": "c02",
+                "normalized": "including with regard to transfers of personal data to a third country or an international organisation",
+                "start": 95,
+                "text": "including with regard to transfers of personal data to a third country or an international organisation"
+              }
+            ],
+            "exceptions": [
+              {
+                "end": 287,
+                "id": "e01",
+                "normalized": "unless required to do so by union or member state law to which the processor is subject",
+                "start": 200,
+                "text": "unless required to do so by Union or Member State law to which the processor is subject"
+              }
+            ],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 46,
+                  "start": 42,
+                  "text": "only"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          },
+          {
+            "actions": [
+              {
+                "end": 372,
+                "id": "p02",
+                "normalized": "inform the controller of that legal requirement",
+                "start": 325,
+                "text": "inform the controller of that legal requirement"
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p02",
+                "actor_id": "a02"
+              }
+            ],
+            "actors": [
+              {
+                "end": 318,
+                "id": "a02",
+                "normalized": "the processor",
+                "start": 305,
+                "text": "the processor"
+              }
+            ],
+            "clause_id": "r5_r5_s4_t3_s001_c02",
+            "clause_span": {
+              "end": 474,
+              "start": 289,
+              "text": "in such a case, the processor shall inform the controller of that legal requirement before processing, unless that law prohibits such information on important grounds of public interest"
+            },
+            "conditions": [
+              {
+                "end": 303,
+                "id": "d01",
+                "normalized": "in such a case",
+                "start": 289,
+                "text": "in such a case"
+              }
+            ],
+            "constraints": [
+              {
+                "end": 390,
+                "id": "c03",
+                "normalized": "before processing",
+                "start": 373,
+                "text": "before processing"
+              }
+            ],
+            "exceptions": [
+              {
+                "end": 474,
+                "id": "e02",
+                "normalized": "unless that law prohibits such information on important grounds of public interest",
+                "start": 392,
+                "text": "unless that law prohibits such information on important grounds of public interest"
+              }
+            ],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 324,
+                  "start": 319,
+                  "text": "shall"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "r5_r5_s4_t3_s001",
+        "schema_version": "1.0.0",
+        "source_id": "r5_r5_s4_t3_s001",
+        "source_text": "the processor processes the personal data only on documented instructions from the controller, including with regard to transfers of personal data to a third country or an international organisation, unless required to do so by Union or Member State law to which the processor is subject; in such a case, the processor shall inform the controller of that legal requirement before processing, unless that law prohibits such information on important grounds of public interest",
+        "unsupported_or_ambiguous": [
+          {
+            "field": "condition",
+            "reason": "reference_status=unresolved_coreference;independence_status=context_required"
+          }
+        ],
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_body_sha256": "20c4204c8fec8acac3bc409e89f89dd114d7ff133f10c53c09be4ae94fbbacad",
+      "request_ordinal": 10,
+      "request_status": "ok",
+      "requirement_id": "R5-S4-T3",
+      "response_model": "deepseek-v4-pro",
+      "runtime_validation": {
+        "cross_field_valid": true,
+        "errors": [],
+        "schema_valid": true
+      },
+      "sample_id": "r5_r5_s4_t3_s001",
+      "transport_error": null,
+      "usage": {
+        "completion_tokens": 1214,
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 3122,
+        "prompt_tokens": 4402,
+        "total_tokens": 5616
+      }
+    },
+    {
+      "api_call_status": "ok_message_content",
+      "canonical_validation_status": "passed",
+      "canonicalizer_audit": {
+        "attempted": true,
+        "clause_span_count": 1,
+        "dropped_clauses": [],
+        "dropped_edges": [],
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "field_span_count": 6,
+        "reanchored_count": 5,
+        "status": "reanchored"
+      },
+      "error": null,
+      "error_category": null,
+      "estimated_cost_usd": 0.00864732,
+      "failure_stage": null,
+      "input_binding": {
+        "errors": [],
+        "expected": {
+          "sample_id": "r5_r5_s4_t4_s001",
+          "source_id": "r5_r5_s4_t4_s001",
+          "source_text_length": 311,
+          "source_text_sha256": "6d16dedab3b12954ac7972d1c6b18ce394ccd00428c3cf7f49d9832e0c2098fc"
+        },
+        "observed": {
+          "payload_type": "dict",
+          "sample_id": "r5_r5_s4_t4_s001",
+          "source_id": "r5_r5_s4_t4_s001",
+          "source_text_length": 311,
+          "source_text_sha256": "6d16dedab3b12954ac7972d1c6b18ce394ccd00428c3cf7f49d9832e0c2098fc"
+        },
+        "status": "passed"
+      },
+      "input_binding_status": "passed",
+      "output_parse_status": "passed",
+      "parser_audit": {
+        "attempted": true,
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "spans_adapted": 5,
+        "status": "adapted"
+      },
+      "prediction_sample_id": "r5_r5_s4_t4_s001",
+      "prediction_source_type": "NEW_AUTHORIZED_RUN",
+      "raw_response_content_sha256": "fc72033d21eb64f69c282eab76c4c5d2c862b950c5a260d0f5e277121cfc3c3d",
+      "raw_response_path": "data/predictions/stage3_table3_r5_ours_stage2_new19_v1/raw_responses/11_R5-S4-T4.json",
+      "raw_response_sha256": "a63f769c71db8e4a4cdfd63ac48816e64961b6c1281dfc40c7c1575ff2b1dafc",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 107,
+                "id": "p01",
+                "normalized": "communicate any rectification or erasure of personal data or restriction of processing",
+                "start": 21,
+                "text": "communicate any rectification or erasure of personal data or restriction of processing"
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 14,
+                "id": "a01",
+                "normalized": "the controller",
+                "start": 0,
+                "text": "The controller"
+              }
+            ],
+            "clause_id": "r5_r5_s4_t4_s001_c01",
+            "clause_span": {
+              "end": 311,
+              "start": 0,
+              "text": "The controller shall communicate any rectification or erasure of personal data or restriction of processing carried out in accordance with Article 16, Article 17(1) and Article 18 to each recipient to whom the personal data have been disclosed, unless this proves impossible or involves disproportionate effort."
+            },
+            "conditions": [],
+            "constraints": [
+              {
+                "end": 179,
+                "id": "c01",
+                "normalized": "in accordance with article 16, article 17(1) and article 18",
+                "start": 120,
+                "text": "in accordance with Article 16, Article 17(1) and Article 18"
+              },
+              {
+                "end": 243,
+                "id": "c02",
+                "normalized": "to each recipient to whom the personal data have been disclosed",
+                "start": 180,
+                "text": "to each recipient to whom the personal data have been disclosed"
+              }
+            ],
+            "exceptions": [
+              {
+                "end": 310,
+                "id": "e01",
+                "normalized": "unless this proves impossible or involves disproportionate effort",
+                "start": 245,
+                "text": "unless this proves impossible or involves disproportionate effort"
+              }
+            ],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 20,
+                  "start": 15,
+                  "text": "shall"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "r5_r5_s4_t4_s001",
+        "schema_version": "1.0.0",
+        "source_id": "r5_r5_s4_t4_s001",
+        "source_text": "The controller shall communicate any rectification or erasure of personal data or restriction of processing carried out in accordance with Article 16, Article 17(1) and Article 18 to each recipient to whom the personal data have been disclosed, unless this proves impossible or involves disproportionate effort.",
+        "unsupported_or_ambiguous": [],
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_body_sha256": "06e1fc5a07609206853b2bc7197761d724256bfa8a70cceba3996df1387b8061",
+      "request_ordinal": 11,
+      "request_status": "ok",
+      "requirement_id": "R5-S4-T4",
+      "response_model": "deepseek-v4-pro",
+      "runtime_validation": {
+        "cross_field_valid": true,
+        "errors": [],
+        "schema_valid": true
+      },
+      "sample_id": "r5_r5_s4_t4_s001",
+      "transport_error": null,
+      "usage": {
+        "completion_tokens": 724,
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 3099,
+        "prompt_tokens": 4379,
+        "total_tokens": 5103
+      }
+    },
+    {
+      "api_call_status": "ok_message_content",
+      "canonical_validation_status": "passed",
+      "canonicalizer_audit": {
+        "attempted": true,
+        "clause_span_count": 1,
+        "dropped_clauses": [],
+        "dropped_edges": [],
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "field_span_count": 5,
+        "reanchored_count": 4,
+        "status": "reanchored"
+      },
+      "error": null,
+      "error_category": null,
+      "estimated_cost_usd": 0.0079266,
+      "failure_stage": null,
+      "input_binding": {
+        "errors": [],
+        "expected": {
+          "sample_id": "r5_r5_s5_t1_s001",
+          "source_id": "r5_r5_s5_t1_s001",
+          "source_text_length": 141,
+          "source_text_sha256": "d65f391cfe4f4159883a211594774f386c105d08deac35b43f2e0b777fddc47b"
+        },
+        "observed": {
+          "payload_type": "dict",
+          "sample_id": "r5_r5_s5_t1_s001",
+          "source_id": "r5_r5_s5_t1_s001",
+          "source_text_length": 141,
+          "source_text_sha256": "d65f391cfe4f4159883a211594774f386c105d08deac35b43f2e0b777fddc47b"
+        },
+        "status": "passed"
+      },
+      "input_binding_status": "passed",
+      "output_parse_status": "passed",
+      "parser_audit": {
+        "attempted": true,
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "spans_adapted": 4,
+        "status": "adapted"
+      },
+      "prediction_sample_id": "r5_r5_s5_t1_s001",
+      "prediction_source_type": "NEW_AUTHORIZED_RUN",
+      "raw_response_content_sha256": "8023069290eaf73875b6d9737714f1c918e7ae5330c31784463739e2cd57d251",
+      "raw_response_path": "data/predictions/stage3_table3_r5_ours_stage2_new19_v1/raw_responses/12_R5-S5-T1.json",
+      "raw_response_sha256": "e4f9ab90f6e42855b1e84abd64c4a969451be781982d059a9995a62799834082",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 67,
+                "id": "p01",
+                "normalized": "seek the advice of the data protection officer",
+                "start": 21,
+                "text": "seek the advice of the data protection officer"
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 14,
+                "id": "a01",
+                "normalized": "the controller",
+                "start": 0,
+                "text": "The controller"
+              }
+            ],
+            "clause_id": "r5_r5_s5_t1_s001_c01",
+            "clause_span": {
+              "end": 141,
+              "start": 0,
+              "text": "The controller shall seek the advice of the data protection officer, where designated, when carrying out a data protection impact assessment."
+            },
+            "conditions": [
+              {
+                "end": 140,
+                "id": "d01",
+                "normalized": "when carrying out a data protection impact assessment",
+                "start": 87,
+                "text": "when carrying out a data protection impact assessment"
+              }
+            ],
+            "constraints": [
+              {
+                "end": 85,
+                "id": "c01",
+                "normalized": "where designated",
+                "start": 69,
+                "text": "where designated"
+              }
+            ],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 20,
+                  "start": 15,
+                  "text": "shall"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "r5_r5_s5_t1_s001",
+        "schema_version": "1.0.0",
+        "source_id": "r5_r5_s5_t1_s001",
+        "source_text": "The controller shall seek the advice of the data protection officer, where designated, when carrying out a data protection impact assessment.",
+        "unsupported_or_ambiguous": [],
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_body_sha256": "969f9ae384374d5ed9fb7bdccaa6be9c6b81707f537a6c990bd287269f76aa8f",
+      "request_ordinal": 12,
+      "request_status": "ok",
+      "requirement_id": "R5-S5-T1",
+      "response_model": "deepseek-v4-pro",
+      "runtime_validation": {
+        "cross_field_valid": true,
+        "errors": [],
+        "schema_valid": true
+      },
+      "sample_id": "r5_r5_s5_t1_s001",
+      "transport_error": null,
+      "usage": {
+        "completion_tokens": 553,
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 3066,
+        "prompt_tokens": 4346,
+        "total_tokens": 4899
+      }
+    },
+    {
+      "api_call_status": "ok_message_content",
+      "canonical_validation_status": "passed",
+      "canonicalizer_audit": {
+        "attempted": true,
+        "clause_span_count": 1,
+        "dropped_clauses": [],
+        "dropped_edges": [],
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "field_span_count": 5,
+        "reanchored_count": 4,
+        "status": "reanchored"
+      },
+      "error": null,
+      "error_category": null,
+      "estimated_cost_usd": 0.00816552,
+      "failure_stage": null,
+      "input_binding": {
+        "errors": [],
+        "expected": {
+          "sample_id": "r5_r5_s5_t2_s001",
+          "source_id": "r5_r5_s5_t2_s001",
+          "source_text_length": 236,
+          "source_text_sha256": "dfbc48c5f0729dc31ce006f0a8b8d958ba1df825b086851435c703e2e67a86ea"
+        },
+        "observed": {
+          "payload_type": "dict",
+          "sample_id": "r5_r5_s5_t2_s001",
+          "source_id": "r5_r5_s5_t2_s001",
+          "source_text_length": 236,
+          "source_text_sha256": "dfbc48c5f0729dc31ce006f0a8b8d958ba1df825b086851435c703e2e67a86ea"
+        },
+        "status": "passed"
+      },
+      "input_binding_status": "passed",
+      "output_parse_status": "passed",
+      "parser_audit": {
+        "attempted": true,
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "spans_adapted": 4,
+        "status": "adapted"
+      },
+      "prediction_sample_id": "r5_r5_s5_t2_s001",
+      "prediction_source_type": "NEW_AUTHORIZED_RUN",
+      "raw_response_content_sha256": "4741dca0cd013f25144205dc2b49e3db6c26d1fa9d8823873f8ffc159e26055e",
+      "raw_response_path": "data/predictions/stage3_table3_r5_ours_stage2_new19_v1/raw_responses/13_R5-S5-T2.json",
+      "raw_response_sha256": "4440c13d340fc38be72c5a3ea3f1ad9cb5c6e704bcc371786a42ee78d449e0c7",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 123,
+                "id": "p01",
+                "normalized": "seek the views of data subjects or their representatives on the intended processing",
+                "start": 40,
+                "text": "seek the views of data subjects or their representatives on the intended processing"
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 33,
+                "id": "a01",
+                "normalized": "the controller",
+                "start": 19,
+                "text": "the controller"
+              }
+            ],
+            "clause_id": "r5_r5_s5_t2_s001_c01",
+            "clause_span": {
+              "end": 236,
+              "start": 0,
+              "text": "Where appropriate, the controller shall seek the views of data subjects or their representatives on the intended processing, without prejudice to the protection of commercial or public interests or the security of processing operations."
+            },
+            "conditions": [
+              {
+                "end": 17,
+                "id": "d01",
+                "normalized": "where appropriate",
+                "start": 0,
+                "text": "Where appropriate"
+              }
+            ],
+            "constraints": [],
+            "exceptions": [
+              {
+                "end": 235,
+                "id": "e01",
+                "normalized": "without prejudice to the protection of commercial or public interests or the security of processing operations",
+                "start": 125,
+                "text": "without prejudice to the protection of commercial or public interests or the security of processing operations"
+              }
+            ],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 39,
+                  "start": 34,
+                  "text": "shall"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "r5_r5_s5_t2_s001",
+        "schema_version": "1.0.0",
+        "source_id": "r5_r5_s5_t2_s001",
+        "source_text": "Where appropriate, the controller shall seek the views of data subjects or their representatives on the intended processing, without prejudice to the protection of commercial or public interests or the security of processing operations.",
+        "unsupported_or_ambiguous": [],
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_body_sha256": "2bda7a9320f38387dff6674f13d08e711f55aea2579860027e9e8ad8d1311975",
+      "request_ordinal": 13,
+      "request_status": "ok",
+      "requirement_id": "R5-S5-T2",
+      "response_model": "deepseek-v4-pro",
+      "runtime_validation": {
+        "cross_field_valid": true,
+        "errors": [],
+        "schema_valid": true
+      },
+      "sample_id": "r5_r5_s5_t2_s001",
+      "transport_error": null,
+      "usage": {
+        "completion_tokens": 609,
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 3079,
+        "prompt_tokens": 4359,
+        "total_tokens": 4968
+      }
+    },
+    {
+      "api_call_status": "ok_message_content",
+      "canonical_validation_status": "passed",
+      "canonicalizer_audit": {
+        "attempted": true,
+        "clause_span_count": 1,
+        "dropped_clauses": [],
+        "dropped_edges": [],
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "field_span_count": 6,
+        "reanchored_count": 4,
+        "status": "reanchored"
+      },
+      "error": null,
+      "error_category": null,
+      "estimated_cost_usd": 0.00835428,
+      "failure_stage": null,
+      "input_binding": {
+        "errors": [],
+        "expected": {
+          "sample_id": "r5_r5_s5_t3_s001",
+          "source_id": "r5_r5_s5_t3_s001",
+          "source_text_length": 232,
+          "source_text_sha256": "cf1e4c40ef5083d35242f540be5c68b5565145d1ea970540d76a684c3657850c"
+        },
+        "observed": {
+          "payload_type": "dict",
+          "sample_id": "r5_r5_s5_t3_s001",
+          "source_id": "r5_r5_s5_t3_s001",
+          "source_text_length": 232,
+          "source_text_sha256": "cf1e4c40ef5083d35242f540be5c68b5565145d1ea970540d76a684c3657850c"
+        },
+        "status": "passed"
+      },
+      "input_binding_status": "passed",
+      "output_parse_status": "passed",
+      "parser_audit": {
+        "attempted": true,
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "spans_adapted": 5,
+        "status": "adapted"
+      },
+      "prediction_sample_id": "r5_r5_s5_t3_s001",
+      "prediction_source_type": "NEW_AUTHORIZED_RUN",
+      "raw_response_content_sha256": "46cddafd6f804527c897568be95a38c782c3fc4ea7187fb1077e392f1902acf4",
+      "raw_response_path": "data/predictions/stage3_table3_r5_ours_stage2_new19_v1/raw_responses/14_R5-S5-T3.json",
+      "raw_response_sha256": "8ea0ce910afbd352979661ed7aa9f494ce01455cdd945c08812aa909a88c4ff3",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 56,
+                "id": "p01",
+                "normalized": "carry out a review",
+                "start": 38,
+                "text": "carry out a review"
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 31,
+                "id": "a01",
+                "normalized": "the controller",
+                "start": 17,
+                "text": "the controller"
+              }
+            ],
+            "clause_id": "r5_r5_s5_t3_s001_c01",
+            "clause_span": {
+              "end": 232,
+              "start": 0,
+              "text": "Where necessary, the controller shall carry out a review to assess if processing is performed in accordance with the data protection impact assessment at least when there is a change of the risk represented by processing operations."
+            },
+            "conditions": [
+              {
+                "end": 15,
+                "id": "d01",
+                "normalized": "where necessary",
+                "start": 0,
+                "text": "Where necessary"
+              },
+              {
+                "end": 231,
+                "id": "d02",
+                "normalized": "at least when there is a change of the risk represented by processing operations",
+                "start": 151,
+                "text": "at least when there is a change of the risk represented by processing operations"
+              }
+            ],
+            "constraints": [
+              {
+                "end": 150,
+                "id": "c01",
+                "normalized": "to assess if processing is performed in accordance with the data protection impact assessment",
+                "start": 57,
+                "text": "to assess if processing is performed in accordance with the data protection impact assessment"
+              }
+            ],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 37,
+                  "start": 32,
+                  "text": "shall"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "r5_r5_s5_t3_s001",
+        "schema_version": "1.0.0",
+        "source_id": "r5_r5_s5_t3_s001",
+        "source_text": "Where necessary, the controller shall carry out a review to assess if processing is performed in accordance with the data protection impact assessment at least when there is a change of the risk represented by processing operations.",
+        "unsupported_or_ambiguous": [],
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_body_sha256": "02dc53f100eb8911968ef5b0f2c27ef2eb624062447cb9f79d6a18a560ae7a03",
+      "request_ordinal": 14,
+      "request_status": "ok",
+      "requirement_id": "R5-S5-T3",
+      "response_model": "deepseek-v4-pro",
+      "runtime_validation": {
+        "cross_field_valid": true,
+        "errors": [],
+        "schema_valid": true
+      },
+      "sample_id": "r5_r5_s5_t3_s001",
+      "transport_error": null,
+      "usage": {
+        "completion_tokens": 656,
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 3081,
+        "prompt_tokens": 4361,
+        "total_tokens": 5017
+      }
+    },
+    {
+      "api_call_status": "ok_message_content",
+      "canonical_validation_status": "passed",
+      "canonicalizer_audit": {
+        "attempted": true,
+        "clause_span_count": 1,
+        "dropped_clauses": [],
+        "dropped_edges": [],
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "field_span_count": 8,
+        "reanchored_count": 9,
+        "status": "reanchored"
+      },
+      "error": null,
+      "error_category": null,
+      "estimated_cost_usd": 0.00948552,
+      "failure_stage": null,
+      "input_binding": {
+        "errors": [],
+        "expected": {
+          "sample_id": "r5_r5_s5_t4_s001",
+          "source_id": "r5_r5_s5_t4_s001",
+          "source_text_length": 475,
+          "source_text_sha256": "f6cd10751a3b054e2e95ecb7ac92d2c77e2e4edbf4b634bdb3489a9eb4e310a9"
+        },
+        "observed": {
+          "payload_type": "dict",
+          "sample_id": "r5_r5_s5_t4_s001",
+          "source_id": "r5_r5_s5_t4_s001",
+          "source_text_length": 475,
+          "source_text_sha256": "f6cd10751a3b054e2e95ecb7ac92d2c77e2e4edbf4b634bdb3489a9eb4e310a9"
+        },
+        "status": "passed"
+      },
+      "input_binding_status": "passed",
+      "output_parse_status": "passed",
+      "parser_audit": {
+        "attempted": true,
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "spans_adapted": 7,
+        "status": "adapted"
+      },
+      "prediction_sample_id": "r5_r5_s5_t4_s001",
+      "prediction_source_type": "NEW_AUTHORIZED_RUN",
+      "raw_response_content_sha256": "fd7245f66c0aa9e06b331cd2526a3e8a0f0a5dbdb42555e2e37888d98b01c3df",
+      "raw_response_path": "data/predictions/stage3_table3_r5_ours_stage2_new19_v1/raw_responses/15_R5-S5-T4.json",
+      "raw_response_sha256": "74d2ad22bfcb5cbc6bab2ae34cbabac92a639bd0558f977ebe02eeb8fa2bd74f",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 378,
+                "id": "p01",
+                "normalized": "provide written advice to the controller",
+                "start": 338,
+                "text": "provide written advice to the controller"
+              },
+              {
+                "end": 474,
+                "id": "p02",
+                "normalized": "use any of its powers referred to in article 58",
+                "start": 427,
+                "text": "use any of its powers referred to in Article 58"
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              },
+              {
+                "action_id": "p02",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 251,
+                "id": "a01",
+                "normalized": "the supervisory authority",
+                "start": 226,
+                "text": "the supervisory authority"
+              }
+            ],
+            "clause_id": "r5_r5_s5_t4_s001_c01",
+            "clause_span": {
+              "end": 475,
+              "start": 0,
+              "text": "Where the supervisory authority is of the opinion that the intended processing referred to in paragraph 1 would infringe this Regulation, in particular where the controller has insufficiently identified or mitigated the risk, the supervisory authority shall, within period of up to eight weeks of receipt of the request for consultation, provide written advice to the controller and, where applicable to the processor, and may use any of its powers referred to in Article 58."
+            },
+            "conditions": [
+              {
+                "end": 136,
+                "id": "d01",
+                "normalized": "where the supervisory authority is of the opinion that the intended processing referred to in paragraph 1 would infringe this regulation",
+                "start": 0,
+                "text": "Where the supervisory authority is of the opinion that the intended processing referred to in paragraph 1 would infringe this Regulation"
+              },
+              {
+                "end": 224,
+                "id": "d02",
+                "normalized": "in particular where the controller has insufficiently identified or mitigated the risk",
+                "start": 138,
+                "text": "in particular where the controller has insufficiently identified or mitigated the risk"
+              }
+            ],
+            "constraints": [
+              {
+                "end": 336,
+                "id": "c01",
+                "normalized": "within period of up to eight weeks of receipt of the request for consultation",
+                "start": 259,
+                "text": "within period of up to eight weeks of receipt of the request for consultation"
+              },
+              {
+                "end": 417,
+                "id": "c02",
+                "normalized": "where applicable to the processor",
+                "start": 384,
+                "text": "where applicable to the processor"
+              }
+            ],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 257,
+                  "start": 252,
+                  "text": "shall"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "r5_r5_s5_t4_s001",
+        "schema_version": "1.0.0",
+        "source_id": "r5_r5_s5_t4_s001",
+        "source_text": "Where the supervisory authority is of the opinion that the intended processing referred to in paragraph 1 would infringe this Regulation, in particular where the controller has insufficiently identified or mitigated the risk, the supervisory authority shall, within period of up to eight weeks of receipt of the request for consultation, provide written advice to the controller and, where applicable to the processor, and may use any of its powers referred to in Article 58.",
+        "unsupported_or_ambiguous": [],
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_body_sha256": "62749a1fdf0bde1cd9842de40b8fe15cc577fc35f953954371907632cd2ccdc4",
+      "request_ordinal": 15,
+      "request_status": "ok",
+      "requirement_id": "R5-S5-T4",
+      "response_model": "deepseek-v4-pro",
+      "runtime_validation": {
+        "cross_field_valid": true,
+        "errors": [],
+        "schema_valid": true
+      },
+      "sample_id": "r5_r5_s5_t4_s001",
+      "transport_error": null,
+      "usage": {
+        "completion_tokens": 926,
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 3128,
+        "prompt_tokens": 4408,
+        "total_tokens": 5334
+      }
+    },
+    {
+      "api_call_status": "ok_message_content",
+      "canonical_validation_status": "passed",
+      "canonicalizer_audit": {
+        "attempted": true,
+        "clause_span_count": 1,
+        "dropped_clauses": [],
+        "dropped_edges": [],
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "field_span_count": 7,
+        "reanchored_count": 8,
+        "status": "reanchored"
+      },
+      "error": null,
+      "error_category": null,
+      "estimated_cost_usd": 0.00922812,
+      "failure_stage": null,
+      "input_binding": {
+        "errors": [],
+        "expected": {
+          "sample_id": "r5_r5_s6_t1_s001",
+          "source_id": "r5_r5_s6_t1_s001",
+          "source_text_length": 448,
+          "source_text_sha256": "7a611aab8130f0bacc05b99d03ba542cfc0c00f0af5966bc95e448c4dbfee0fd"
+        },
+        "observed": {
+          "payload_type": "dict",
+          "sample_id": "r5_r5_s6_t1_s001",
+          "source_id": "r5_r5_s6_t1_s001",
+          "source_text_length": 448,
+          "source_text_sha256": "7a611aab8130f0bacc05b99d03ba542cfc0c00f0af5966bc95e448c4dbfee0fd"
+        },
+        "status": "passed"
+      },
+      "input_binding_status": "passed",
+      "output_parse_status": "passed",
+      "parser_audit": {
+        "attempted": true,
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "spans_adapted": 6,
+        "status": "adapted"
+      },
+      "prediction_sample_id": "r5_r5_s6_t1_s001",
+      "prediction_source_type": "NEW_AUTHORIZED_RUN",
+      "raw_response_content_sha256": "65b59490ecd77363c966e6fc2d6bf55df181ec5d50fec92e45409121371176bc",
+      "raw_response_path": "data/predictions/stage3_table3_r5_ours_stage2_new19_v1/raw_responses/16_R5-S6-T1.json",
+      "raw_response_sha256": "6115b2c6cc4912ecce2a89835c44412dcd9bf641cb13a640850c8f804cae548e",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 329,
+                "id": "p01",
+                "normalized": "implement appropriate technical and organisational measures",
+                "start": 270,
+                "text": "implement appropriate technical and organisational measures"
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              },
+              {
+                "action_id": "p01",
+                "actor_id": "a02"
+              }
+            ],
+            "actors": [
+              {
+                "end": 245,
+                "id": "a01",
+                "normalized": "the controller",
+                "start": 231,
+                "text": "the controller"
+              },
+              {
+                "end": 263,
+                "id": "a02",
+                "normalized": "the processor",
+                "start": 250,
+                "text": "the processor"
+              }
+            ],
+            "clause_id": "r5_r5_s6_t1_s001_c01",
+            "clause_span": {
+              "end": 448,
+              "start": 0,
+              "text": "Taking into account the state of the art, the costs of implementation and the nature, scope, context and purposes of processing as well as the risk of varying likelihood and severity for the rights and freedoms of natural persons, the controller and the processor shall implement appropriate technical and organisational measures to ensure a level of security appropriate to the risk, including the pseudonymisation and encryption of personal data."
+            },
+            "conditions": [],
+            "constraints": [
+              {
+                "end": 229,
+                "id": "c01",
+                "normalized": "taking into account the state of the art, the costs of implementation and the nature, scope, context and purposes of processing as well as the risk of varying likelihood and severity for the rights and freedoms of natural persons",
+                "start": 0,
+                "text": "Taking into account the state of the art, the costs of implementation and the nature, scope, context and purposes of processing as well as the risk of varying likelihood and severity for the rights and freedoms of natural persons"
+              },
+              {
+                "end": 383,
+                "id": "c02",
+                "normalized": "to ensure a level of security appropriate to the risk",
+                "start": 330,
+                "text": "to ensure a level of security appropriate to the risk"
+              },
+              {
+                "end": 447,
+                "id": "c03",
+                "normalized": "including the pseudonymisation and encryption of personal data",
+                "start": 385,
+                "text": "including the pseudonymisation and encryption of personal data"
+              }
+            ],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 269,
+                  "start": 264,
+                  "text": "shall"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "r5_r5_s6_t1_s001",
+        "schema_version": "1.0.0",
+        "source_id": "r5_r5_s6_t1_s001",
+        "source_text": "Taking into account the state of the art, the costs of implementation and the nature, scope, context and purposes of processing as well as the risk of varying likelihood and severity for the rights and freedoms of natural persons, the controller and the processor shall implement appropriate technical and organisational measures to ensure a level of security appropriate to the risk, including the pseudonymisation and encryption of personal data.",
+        "unsupported_or_ambiguous": [],
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_body_sha256": "90a4ea35689aed92aea190824c6c83258d5d1b3d869c6965b7604fc84849d67f",
+      "request_ordinal": 16,
+      "request_status": "ok",
+      "requirement_id": "R5-S6-T1",
+      "response_model": "deepseek-v4-pro",
+      "runtime_validation": {
+        "cross_field_valid": true,
+        "errors": [],
+        "schema_valid": true
+      },
+      "sample_id": "r5_r5_s6_t1_s001",
+      "transport_error": null,
+      "usage": {
+        "completion_tokens": 864,
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 3119,
+        "prompt_tokens": 4399,
+        "total_tokens": 5263
+      }
+    },
+    {
+      "api_call_status": "ok_message_content",
+      "canonical_validation_status": "passed",
+      "canonicalizer_audit": {
+        "attempted": true,
+        "clause_span_count": 1,
+        "dropped_clauses": [],
+        "dropped_edges": [],
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "field_span_count": 5,
+        "reanchored_count": 4,
+        "status": "reanchored"
+      },
+      "error": null,
+      "error_category": null,
+      "estimated_cost_usd": 0.00855492,
+      "failure_stage": null,
+      "input_binding": {
+        "errors": [],
+        "expected": {
+          "sample_id": "r5_r5_s6_t2_s001",
+          "source_id": "r5_r5_s6_t2_s001",
+          "source_text_length": 307,
+          "source_text_sha256": "b4eb199a1981e55f124df9ce2620678f7d2bdec0c7fef3550f101091ed55b2be"
+        },
+        "observed": {
+          "payload_type": "dict",
+          "sample_id": "r5_r5_s6_t2_s001",
+          "source_id": "r5_r5_s6_t2_s001",
+          "source_text_length": 307,
+          "source_text_sha256": "b4eb199a1981e55f124df9ce2620678f7d2bdec0c7fef3550f101091ed55b2be"
+        },
+        "status": "passed"
+      },
+      "input_binding_status": "passed",
+      "output_parse_status": "passed",
+      "parser_audit": {
+        "attempted": true,
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "spans_adapted": 4,
+        "status": "adapted"
+      },
+      "prediction_sample_id": "r5_r5_s6_t2_s001",
+      "prediction_source_type": "NEW_AUTHORIZED_RUN",
+      "raw_response_content_sha256": "d84fb56320a7191ba10144799a05e790ee0115db64c39922fef65e7f0790335f",
+      "raw_response_path": "data/predictions/stage3_table3_r5_ours_stage2_new19_v1/raw_responses/17_R5-S6-T2.json",
+      "raw_response_sha256": "1279e31b0201eed6ab67fecec2c9df5ed3a007623dd6db2f1d751011d19c1b5f",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 238,
+                "id": "p01",
+                "normalized": "take steps to ensure that any natural person acting under the authority of the controller or the processor who has access to personal data does not process them except on instructions from the controller",
+                "start": 35,
+                "text": "take steps to ensure that any natural person acting under the authority of the controller or the processor who has access to personal data does not process them except on instructions from the controller"
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              },
+              {
+                "action_id": "p01",
+                "actor_id": "a02"
+              }
+            ],
+            "actors": [
+              {
+                "end": 14,
+                "id": "a01",
+                "normalized": "the controller",
+                "start": 0,
+                "text": "The controller"
+              },
+              {
+                "end": 28,
+                "id": "a02",
+                "normalized": "processor",
+                "start": 19,
+                "text": "processor"
+              }
+            ],
+            "clause_id": "r5_r5_s6_t2_s001_c01",
+            "clause_span": {
+              "end": 307,
+              "start": 0,
+              "text": "The controller and processor shall take steps to ensure that any natural person acting under the authority of the controller or the processor who has access to personal data does not process them except on instructions from the controller, unless he or she is required to do so by Union or Member State law."
+            },
+            "conditions": [],
+            "constraints": [],
+            "exceptions": [
+              {
+                "end": 306,
+                "id": "e01",
+                "normalized": "unless he or she is required to do so by union or member state law",
+                "start": 240,
+                "text": "unless he or she is required to do so by Union or Member State law"
+              }
+            ],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 34,
+                  "start": 29,
+                  "text": "shall"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "r5_r5_s6_t2_s001",
+        "schema_version": "1.0.0",
+        "source_id": "r5_r5_s6_t2_s001",
+        "source_text": "The controller and processor shall take steps to ensure that any natural person acting under the authority of the controller or the processor who has access to personal data does not process them except on instructions from the controller, unless he or she is required to do so by Union or Member State law.",
+        "unsupported_or_ambiguous": [],
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_body_sha256": "942e2a1eca85af98854bd6892488b973f53360a2e6542dcc3e02c33a97c43bf4",
+      "request_ordinal": 17,
+      "request_status": "ok",
+      "requirement_id": "R5-S6-T2",
+      "response_model": "deepseek-v4-pro",
+      "runtime_validation": {
+        "cross_field_valid": true,
+        "errors": [],
+        "schema_valid": true
+      },
+      "sample_id": "r5_r5_s6_t2_s001",
+      "transport_error": null,
+      "usage": {
+        "completion_tokens": 701,
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 3098,
+        "prompt_tokens": 4378,
+        "total_tokens": 5079
+      }
+    },
+    {
+      "canonical_validation_status": "passed_historical_reuse",
+      "prediction_artifact": "data/predictions/gdpr7_direct_llm_v1/predictions.json",
+      "prediction_artifact_sha256": "5381b1807fb3d020deb51ebc8cee9f5ea21de50ea9c0a426a0a16cb42457e1c0",
+      "prediction_sample_id": "gdpr_article33_s003",
+      "prediction_source_type": "HISTORICAL_CHAIN_REUSE",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 41,
+                "id": "p01",
+                "start": 20
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 13,
+                "id": "a01",
+                "start": 0
+              }
+            ],
+            "clause_id": "gdpr_article33_s003_c01",
+            "clause_span": {
+              "end": 109,
+              "start": 0
+            },
+            "conditions": [
+              {
+                "end": 108,
+                "id": "d01",
+                "start": 62
+              }
+            ],
+            "constraints": [
+              {
+                "end": 61,
+                "id": "c01",
+                "start": 42
+              }
+            ],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 19,
+                  "start": 14
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "gdpr_article33_s003",
+        "schema_version": "1.0.0",
+        "source_id": "gdpr_article33_s003",
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_status": "ok",
+      "requirement_id": "R5-S6-T3",
+      "reuse_evidence": {
+        "declared_capsule_path": "data/predictions/gdpr7_direct_llm_v1",
+        "input_file_sha256": "558b80131394c8ac349db42cc323ffcf7264b7ae7da796522d55bf5ff89eb109",
+        "manifest_input_sha256": "558b80131394c8ac349db42cc323ffcf7264b7ae7da796522d55bf5ff89eb109",
+        "manifest_model": "deepseek-v4-pro",
+        "manifest_prompt_sha256": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "output_binding_strength": "declared_capsule_path_and_schema_no_explicit_output_hash",
+        "prediction_file_sha256": "b625692d1e4e85b22f0c2e428a46a7c6cd49a2cc4b77a10f6c8e8d25adec50a1",
+        "prompt_sha256_computed": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "request_status": "ok",
+        "sentence_text_sha256": "cdafa0c9267f2078a7fc65bf8093c7f6a7f5717ae244b55f5088fff98daaa7f2"
+      }
+    },
+    {
+      "canonical_validation_status": "passed_historical_reuse",
+      "prediction_artifact": "data/predictions/gdpr7_direct_llm_v1/predictions.json",
+      "prediction_artifact_sha256": "5381b1807fb3d020deb51ebc8cee9f5ea21de50ea9c0a426a0a16cb42457e1c0",
+      "prediction_sample_id": "gdpr_article34_s001",
+      "prediction_source_type": "HISTORICAL_CHAIN_REUSE",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 189,
+                "id": "p01",
+                "start": 133
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 126,
+                "id": "a01",
+                "start": 112
+              }
+            ],
+            "clause_id": "gdpr_article34_s001_c01",
+            "clause_span": {
+              "end": 210,
+              "start": 0
+            },
+            "conditions": [
+              {
+                "end": 110,
+                "id": "c01",
+                "start": 0
+              }
+            ],
+            "constraints": [
+              {
+                "end": 209,
+                "id": "c02",
+                "start": 190
+              }
+            ],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 132,
+                  "start": 127
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "gdpr_article34_s001",
+        "schema_version": "1.0.0",
+        "source_id": "gdpr_article34_s001",
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_status": "ok",
+      "requirement_id": "R5-S6-T4",
+      "reuse_evidence": {
+        "declared_capsule_path": "data/predictions/gdpr7_direct_llm_v1",
+        "input_file_sha256": "558b80131394c8ac349db42cc323ffcf7264b7ae7da796522d55bf5ff89eb109",
+        "manifest_input_sha256": "558b80131394c8ac349db42cc323ffcf7264b7ae7da796522d55bf5ff89eb109",
+        "manifest_model": "deepseek-v4-pro",
+        "manifest_prompt_sha256": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "output_binding_strength": "declared_capsule_path_and_schema_no_explicit_output_hash",
+        "prediction_file_sha256": "b625692d1e4e85b22f0c2e428a46a7c6cd49a2cc4b77a10f6c8e8d25adec50a1",
+        "prompt_sha256_computed": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+        "request_status": "ok",
+        "sentence_text_sha256": "15fe84681e44264818adbcb9f11162c02d9696a581f77b0e8dff56b3eb09e5a5"
+      }
+    },
+    {
+      "api_call_status": "ok_message_content",
+      "canonical_validation_status": "passed",
+      "canonicalizer_audit": {
+        "attempted": true,
+        "clause_span_count": 1,
+        "dropped_clauses": [],
+        "dropped_edges": [],
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "field_span_count": 7,
+        "reanchored_count": 8,
+        "status": "reanchored"
+      },
+      "error": null,
+      "error_category": null,
+      "estimated_cost_usd": 0.00944592,
+      "failure_stage": null,
+      "input_binding": {
+        "errors": [],
+        "expected": {
+          "sample_id": "r5_r5_s7_t1_s001",
+          "source_id": "r5_r5_s7_t1_s001",
+          "source_text_length": 495,
+          "source_text_sha256": "91d1a82e534e9695c90d73d905e741f0e191d9251cb4532f7ab7cd66a5f8f0c6"
+        },
+        "observed": {
+          "payload_type": "dict",
+          "sample_id": "r5_r5_s7_t1_s001",
+          "source_id": "r5_r5_s7_t1_s001",
+          "source_text_length": 495,
+          "source_text_sha256": "91d1a82e534e9695c90d73d905e741f0e191d9251cb4532f7ab7cd66a5f8f0c6"
+        },
+        "status": "passed"
+      },
+      "input_binding_status": "passed",
+      "output_parse_status": "passed",
+      "parser_audit": {
+        "attempted": true,
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "spans_adapted": 6,
+        "status": "adapted"
+      },
+      "prediction_sample_id": "r5_r5_s7_t1_s001",
+      "prediction_source_type": "NEW_AUTHORIZED_RUN",
+      "raw_response_content_sha256": "64bf884575c84961d2be79a71b26a7f3d2b71442b724ba87bf81d57afba71de8",
+      "raw_response_path": "data/predictions/stage3_table3_r5_ours_stage2_new19_v1/raw_responses/18_R5-S7-T1.json",
+      "raw_response_sha256": "0858da57d2969930295e9ff34a5f138b2a5c7dedc8e7afc9753b5c4dee954517",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 286,
+                "id": "p01",
+                "normalized": "submit it in the procedure referred to in article 63 to the board",
+                "start": 221,
+                "text": "submit it in the procedure referred to in Article 63 to the Board"
+              },
+              {
+                "end": 494,
+                "id": "p02",
+                "normalized": "provide an opinion on whether the draft code, amendment or extension complies with this regulation or, in the situation referred to in paragraph 3 of this article, provides appropriate safeguards",
+                "start": 299,
+                "text": "provide an opinion on whether the draft code, amendment or extension complies with this Regulation or, in the situation referred to in paragraph 3 of this Article, provides appropriate safeguards"
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              },
+              {
+                "action_id": "p02",
+                "actor_id": "a02"
+              }
+            ],
+            "actors": [
+              {
+                "end": 156,
+                "id": "a01",
+                "normalized": "the supervisory authority which is competent pursuant to article 55",
+                "start": 89,
+                "text": "the supervisory authority which is competent pursuant to Article 55"
+              },
+              {
+                "end": 286,
+                "id": "a02",
+                "normalized": "the board",
+                "start": 277,
+                "text": "the Board"
+              }
+            ],
+            "clause_id": "r5_r5_s7_t1_s001_c01",
+            "clause_span": {
+              "end": 495,
+              "start": 0,
+              "text": "Where a draft code of conduct relates to processing activities in several Member States, the supervisory authority which is competent pursuant to Article 55 shall, before approving the draft code, amendment or extension, submit it in the procedure referred to in Article 63 to the Board which shall provide an opinion on whether the draft code, amendment or extension complies with this Regulation or, in the situation referred to in paragraph 3 of this Article, provides appropriate safeguards."
+            },
+            "conditions": [
+              {
+                "end": 87,
+                "id": "d01",
+                "normalized": "where a draft code of conduct relates to processing activities in several member states",
+                "start": 0,
+                "text": "Where a draft code of conduct relates to processing activities in several Member States"
+              }
+            ],
+            "constraints": [
+              {
+                "end": 219,
+                "id": "c01",
+                "normalized": "before approving the draft code, amendment or extension",
+                "start": 164,
+                "text": "before approving the draft code, amendment or extension"
+              }
+            ],
+            "exceptions": [],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 162,
+                  "start": 157,
+                  "text": "shall"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "r5_r5_s7_t1_s001",
+        "schema_version": "1.0.0",
+        "source_id": "r5_r5_s7_t1_s001",
+        "source_text": "Where a draft code of conduct relates to processing activities in several Member States, the supervisory authority which is competent pursuant to Article 55 shall, before approving the draft code, amendment or extension, submit it in the procedure referred to in Article 63 to the Board which shall provide an opinion on whether the draft code, amendment or extension complies with this Regulation or, in the situation referred to in paragraph 3 of this Article, provides appropriate safeguards.",
+        "unsupported_or_ambiguous": [],
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_body_sha256": "95b2fbddc392c0ebc7609d8c6ee37882c19e8dbd03c493970a996a688763432c",
+      "request_ordinal": 18,
+      "request_status": "ok",
+      "requirement_id": "R5-S7-T1",
+      "response_model": "deepseek-v4-pro",
+      "runtime_validation": {
+        "cross_field_valid": true,
+        "errors": [],
+        "schema_valid": true
+      },
+      "sample_id": "r5_r5_s7_t1_s001",
+      "transport_error": null,
+      "usage": {
+        "completion_tokens": 915,
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 3131,
+        "prompt_tokens": 4411,
+        "total_tokens": 5326
+      }
+    },
+    {
+      "api_call_status": "ok_message_content",
+      "canonical_validation_status": "passed",
+      "canonicalizer_audit": {
+        "attempted": true,
+        "clause_span_count": 1,
+        "dropped_clauses": [],
+        "dropped_edges": [],
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "field_span_count": 6,
+        "reanchored_count": 7,
+        "status": "reanchored"
+      },
+      "error": null,
+      "error_category": null,
+      "estimated_cost_usd": 0.00897864,
+      "failure_stage": null,
+      "input_binding": {
+        "errors": [],
+        "expected": {
+          "sample_id": "r5_r5_s8_t1_s001",
+          "source_id": "r5_r5_s8_t1_s001",
+          "source_text_length": 383,
+          "source_text_sha256": "367392f6e377363ce4164c015f075d716c2a1e23e71386161eeba4042f535e30"
+        },
+        "observed": {
+          "payload_type": "dict",
+          "sample_id": "r5_r5_s8_t1_s001",
+          "source_id": "r5_r5_s8_t1_s001",
+          "source_text_length": 383,
+          "source_text_sha256": "367392f6e377363ce4164c015f075d716c2a1e23e71386161eeba4042f535e30"
+        },
+        "status": "passed"
+      },
+      "input_binding_status": "passed",
+      "output_parse_status": "passed",
+      "parser_audit": {
+        "attempted": true,
+        "dropped_spans": [],
+        "failed_reasons": [],
+        "spans_adapted": 5,
+        "status": "adapted"
+      },
+      "prediction_sample_id": "r5_r5_s8_t1_s001",
+      "prediction_source_type": "NEW_AUTHORIZED_RUN",
+      "raw_response_content_sha256": "e58728db3320eb09dbef8b6e91039aacba821535626937776bf290a82400bbb9",
+      "raw_response_path": "data/predictions/stage3_table3_r5_ours_stage2_new19_v1/raw_responses/19_R5-S8-T1.json",
+      "raw_response_sha256": "573953f7ab2a98a82e17d9b101da771c80c023dfdc517c22c0e7b90dada13bad",
+      "record": {
+        "clauses": [
+          {
+            "actions": [
+              {
+                "end": 358,
+                "id": "p01",
+                "normalized": "issue",
+                "start": 353,
+                "text": "issue"
+              },
+              {
+                "end": 382,
+                "id": "p02",
+                "normalized": "renew certification",
+                "start": 363,
+                "text": "renew certification"
+              }
+            ],
+            "actor_action_map": [
+              {
+                "action_id": "p01",
+                "actor_id": "a01"
+              },
+              {
+                "action_id": "p02",
+                "actor_id": "a01"
+              }
+            ],
+            "actors": [
+              {
+                "end": 203,
+                "id": "a01",
+                "normalized": "certification bodies which have an appropriate level of expertise in relation to data protection",
+                "start": 107,
+                "text": "certification bodies which have an appropriate level of expertise in relation to data protection"
+              }
+            ],
+            "clause_id": "r5_r5_s8_t1_s001_c01",
+            "clause_span": {
+              "end": 383,
+              "start": 0,
+              "text": "Without prejudice to the tasks and powers of the competent supervisory authority under Articles 57 and 58, certification bodies which have an appropriate level of expertise in relation to data protection shall, after informing the supervisory authority in order to allow it to exercise its powers pursuant to point (h) of Article 58(2) where necessary, issue and renew certification."
+            },
+            "conditions": [],
+            "constraints": [
+              {
+                "end": 351,
+                "id": "c01",
+                "normalized": "after informing the supervisory authority in order to allow it to exercise its powers pursuant to point (h) of article 58(2) where necessary",
+                "start": 211,
+                "text": "after informing the supervisory authority in order to allow it to exercise its powers pursuant to point (h) of Article 58(2) where necessary"
+              }
+            ],
+            "exceptions": [
+              {
+                "end": 105,
+                "id": "e01",
+                "normalized": "without prejudice to the tasks and powers of the competent supervisory authority under articles 57 and 58",
+                "start": 0,
+                "text": "Without prejudice to the tasks and powers of the competent supervisory authority under Articles 57 and 58"
+              }
+            ],
+            "modality": {
+              "evidence": [
+                {
+                  "end": 209,
+                  "start": 204,
+                  "text": "shall"
+                }
+              ],
+              "label": "obligation"
+            },
+            "order_relations": []
+          }
+        ],
+        "method": {
+          "name": "direct_llm",
+          "schema_source": "stage2_prediction.schema.json@1.0.0"
+        },
+        "sample_id": "r5_r5_s8_t1_s001",
+        "schema_version": "1.0.0",
+        "source_id": "r5_r5_s8_t1_s001",
+        "source_text": "Without prejudice to the tasks and powers of the competent supervisory authority under Articles 57 and 58, certification bodies which have an appropriate level of expertise in relation to data protection shall, after informing the supervisory authority in order to allow it to exercise its powers pursuant to point (h) of Article 58(2) where necessary, issue and renew certification.",
+        "unsupported_or_ambiguous": [],
+        "validation": {
+          "cross_field_valid": true,
+          "errors": [],
+          "schema_valid": true
+        }
+      },
+      "request_body_sha256": "168491c99933024a4f4dee8c2a4e2bc762407eb83f73465cd42b48df75f00bd9",
+      "request_ordinal": 19,
+      "request_status": "ok",
+      "requirement_id": "R5-S8-T1",
+      "response_model": "deepseek-v4-pro",
+      "runtime_validation": {
+        "cross_field_valid": true,
+        "errors": [],
+        "schema_valid": true
+      },
+      "sample_id": "r5_r5_s8_t1_s001",
+      "transport_error": null,
+      "usage": {
+        "completion_tokens": 803,
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 3113,
+        "prompt_tokens": 4393,
+        "total_tokens": 5196
+      }
+    }
+  ],
+  "schema_version": "stage3_table3_r5_ours_stage2_predictions@1.0.0"
+}
