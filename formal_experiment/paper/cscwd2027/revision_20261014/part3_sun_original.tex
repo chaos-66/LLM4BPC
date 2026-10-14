@@ -1,0 +1,102 @@
+% Replace III.C of 2027_CSCWD (32).pdf. Requires amsmath.
+% Source: Sun author manuscript, Section 4.3, Definitions 4--7, pp. 13--14.
+% Only line breaks: no auxiliary functions/sets or equivalent reformulations.
+% Read REVIEW_AND_USE.md for the existing formula/result mismatch.
+\subsection{Compliance Checking}
+\label{sec:3.3}
+
+Part~3 combines the Process Record and Rule Record using the matching score and three violation definitions of Sun et al.~\cite{sun2024design}. Our methodological extension concerns Part~2; the checking formulas below are retained from Sun et al.
+
+For rule \(r\), \(A_r\), \(P_r\), and \(U_r\) denote its actions, actors, and sequential constraints. For process model \(m\), \(A_m\), \(E_m\), and \(R_m\) denote activities, events, and actors. The functions \(action\) and \(\mathit{bs\_obj}\) extract actions and business objects from activity and event labels; \(f_r\) and \(f_m\) associate actors or business objects with their corresponding actions, and \(F_m\) denotes the process control-flow relation. The text similarity is denoted by \(sim\); \(\tau\), \(\gamma\), and \(\vartheta\) are the matching, action, and actor similarity thresholds.
+
+\textbf{Rule--Process Matching.} Each rule action is paired with its most similar element in \(action(A_m\cup E_m)\), forming \(D_{r,m}\). Each rule actor is similarly paired with an element in \(\mathit{bs\_obj}(A_m\cup E_m)\cup R_m\), forming \(O_{r,m}\). The matching score is
+\begin{equation}
+\begin{aligned}
+\mathcal{F}(r,m,\tau)
+&=\max\left(
+\begin{aligned}
+&\frac{\displaystyle\sum_{(a_r,a_m)\in D_{r,m}}
+sim(a_r,a_m)>\tau}{|D_{r,m}|},\\[2pt]
+&\frac{\displaystyle\sum_{(o_r,o_m)\in O_{r,m}}
+sim(o_r,o_m)>\tau}{|O_{r,m}|}
+\end{aligned}
+\right).
+\end{aligned}
+\label{eq:matching}
+\end{equation}
+The sums count mapping pairs whose similarity exceeds \(\tau\); a higher score indicates greater rule--process relevance.
+
+\textbf{Missing-Action Violation.} This score measures the proportion of rule actions whose mapped process actions have similarity below \(\gamma\):
+\begin{equation}
+\begin{aligned}
+&\mathit{action\_violation}(r,m,\gamma)\\
+&\quad=\frac{\left|\left\{\begin{aligned}
+&(a_r,a_m)\in D_{r,m}\mid\\
+&sim(a_r,a_m)<\gamma
+\end{aligned}\right\}\right|}{|A_r|}.
+\end{aligned}
+\label{eq:missing}
+\end{equation}
+
+\textbf{Incorrect-Actor Violation.} Rule actors with matched actions form \(R_{r,m,\gamma}\). The shared process-side candidate set \(C_{r,m,\gamma}\) contains actors and business objects associated with sufficiently similar actions:
+\begin{equation}
+\begin{aligned}
+R_{r,m,\gamma}
+&=\bigl\{g\in P_r\mid\exists(a_r,a_m)\in D_{r,m},\\
+&\qquad f_r(g)=a_r\land sim(a_r,a_m)>\gamma\bigr\},
+\end{aligned}
+\label{eq:actor_rule_candidates}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+C_{r,m,\gamma}
+&=\bigl\{r\in\mathit{bs\_obj}(A_m\cup E_m)\cup R_m\mid\\
+&\qquad\exists g\in R_{r,m,\gamma},\\
+&\qquad sim(f_r(g),f_m(r))>\gamma\bigr\}.
+\end{aligned}
+\label{eq:actor_process_candidates}
+\end{equation}
+Sun's score counts a rule actor when at least one candidate in this shared set has similarity below \(\vartheta\):
+\begin{equation}
+\begin{aligned}
+&\mathit{actor\_violation}(r,m,\gamma,\vartheta)\\
+&\quad=\frac{
+\left|\left\{\begin{aligned}
+&r\in R_{r,m,\gamma}\mid\exists r'\in C_{r,m,\gamma},\\
+&sim(r,r')<\vartheta
+\end{aligned}\right\}\right|
+}{|R_{r,m,\gamma}|}.
+\end{aligned}
+\label{eq:actor}
+\end{equation}
+
+\textbf{Out-of-Order Violation.} Sequential constraints with both endpoint actions matched form
+\begin{equation}
+\begin{aligned}
+U_{r,m,\gamma}
+&=\bigl\{(u_r,u'_r)\in U_r\mid\\
+&\quad\exists\bigl\{(u_r,u_m)\in D_{r,m},
+(u'_r,u'_m)\in D_{r,m}\bigr\},\\
+&\quad sim(u_r,u_m)>\gamma\land
+sim(u'_r,u'_m)>\gamma\bigr\}.
+\end{aligned}
+\label{eq:order_evaluable}
+\end{equation}
+The score subtracts the constraints satisfying the prescribed forward relation and excluding its reverse:
+\begin{equation}
+\begin{aligned}
+&\mathit{order\_violation}(r,m,\gamma)\\
+&\quad=\frac{
+\begin{gathered}
+|U_{r,m,\gamma}|-\left|\left\{\begin{aligned}
+&(u_r,u'_r)\in U_{r,m,\gamma}\mid\\
+&\exists\bigl\{(u_r,u_m)\in D_{r,m},\\
+&\qquad (u'_r,u'_m)\in D_{r,m}\bigr\},\\
+&(u_m,u'_m)\in F_m\\
+&\land(u'_m,u_m)\notin F_m
+\end{aligned}\right\}\right|
+\end{gathered}
+}{|U_{r,m,\gamma}|}.
+\end{aligned}
+\label{eq:order}
+\end{equation}

@@ -1,0 +1,43 @@
+% Target: 2027_CSCWD (32).pdf. Replace only the indicated passages.
+% This file is a collection of replacements, not one continuous section.
+% Citation keys follow the repository source; check the latest .bib when merging.
+
+% ABSTRACT: replace the sentence beginning "These Rule Records are then".
+These Rule Records are combined with Process Records using the rule--process matching and violation definitions of Sun et al. for downstream compliance checking.
+
+% I. INTRODUCTION: replace the paragraph beginning "We investigate LLM-SE".
+We build on the three-part design-time BPC framework of Sun et al.~\cite{sun2024design}: Process Model Parsing, Compliance Requirement Parsing, and Compliance Checking. The first two parts independently produce Process Records and Rule Records, respectively. Our contribution is confined to Part~2, where LLM-SE and deterministic post-processing construct Rule Records from regulatory requirements. Part~3 follows Sun et al.'s matching score and definitions of missing-action, incorrect-actor, and out-of-order violations.
+
+% I. INTRODUCTION: replace contribution 3; retain contributions 1 and 2.
+\item We evaluate LLM-SE against an independent local reconstruction of Sun et al.'s semantic extraction approach under the same representation and evaluation procedure. We analyze prompt components and assess the resulting Rule Records using a shared downstream checker.
+
+% II.B OVERALL FRAMEWORK: replace the paragraph beginning "As shown in Fig. 1".
+As shown in Fig.~1, Part~1 follows Sun et al.~\cite{sun2024design} to derive Process Records from BPMN structures and label semantics. Independently, Part~2 uses LLM-SE and deterministic post-processing to construct Rule Records from natural-language requirements. Part~3 combines both records using Sun et al.'s rule--process matching and violation definitions.
+
+% III.B: replace the opening comparison, through "common representation".
+Sun et al.~\cite{sun2024design} combine a BERT-TextCNN modality classifier with syntactic analysis and manually designed extraction rules. We replace this Part~2 extraction approach with prompt-guided LLM-based Semantic Extraction (LLM-SE), while retaining the six semantic categories---modality, actor, action, condition, constraint, and exception---for comparison under a common representation.
+
+% III.B example paragraph: replace only the sentence beginning
+% "Unlike the Rules-Only baseline".
+Unlike the reconstructed Sun baseline, LLM-SE does not use predefined linguistic extraction patterns or baseline predictions to identify these elements.
+
+% IV.A COMPARED METHODS: replace the two method-comparison paragraphs.
+For semantic extraction, we compare LLM-SE with Sun, our independent local reconstruction of the method published by Sun et al.~\cite{sun2024design}. Sun combines a BERT-TextCNN modality classifier, syntactic analysis, and manually designed extraction rules; LLM-SE uses an LLM with deterministic post-processing. Both use the same input texts, reference annotations, Rule Record representation, and evaluation procedure.
+
+For compliance checking, Sun and LLM-SE use the same downstream checker and parameter settings, with their Rule Records supplied by the respective Part~2 extractors. Winter et al.~\cite{winter2020assessing} is independently reconstructed with its own checking procedure. All three methods use the same reference labels and evaluation metrics.
+
+% IV.A MODEL AND PARAMETER SETTINGS: move the MPNet/SBERT description here
+% from III.C. Retain the actual citation keys for references [17] and [18].
+For Sun and LLM-SE, \(sim\) is computed as cosine similarity between sentence embeddings from MPNet-based Sentence-BERT~\cite{reimers2019sentence,song2020mpnet}. Both methods use \(\gamma=0.55\) and \(\vartheta=0.45\). The benchmark supplies fixed process--requirement pairs, so the matching threshold \(\tau=0.8\) is not used to filter the evaluated pairs. Winter et al. uses its own procedure with \(\gamma=0.4\) and \(\delta=0.8\).
+
+% IV.A EVALUATION METRICS: add once before the existing unknown-scoring rules.
+Inputs with no evaluable denominator or unavailable actor associations are reported as unknown under the shared implementation policy.
+
+% V. CONCLUSION: replace the opening paragraph. Numerical claims elsewhere
+% remain subject to the formula/result binding in REVIEW_AND_USE.md.
+We propose LLM-SE for the compliance requirement parsing part of a design-time BPC framework. Prompt-guided extraction and deterministic post-processing construct Rule Records containing six regulatory semantic elements. The method retains Sun et al.'s downstream checking definitions, allowing the effect of Part~2 extraction to be assessed using a shared checker.
+
+% Use vartheta consistently in the actor-threshold text and figure labels,
+% without changing numeric thresholds. If the image cannot be edited, add:
+% "The actor threshold theta in Fig. 3 denotes vartheta."
+% Replace residual Rules-Only display names with Sun, not frozen machine IDs.
