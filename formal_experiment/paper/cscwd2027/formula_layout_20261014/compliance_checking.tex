@@ -1,0 +1,101 @@
+\subsection{Compliance Checking}
+\label{sec:3.3}
+
+Part~3 combines the Process Record and Rule Record using the rule--process matching and three violation definitions of Sun et al.~\cite{sun2024design}. Our contribution concerns Part~2; the checking formulas are retained below.
+
+For rule \(r\), \(A_r\), \(P_r\), and \(U_r\) denote its actions, actors, and sequential constraints. For process model \(m\), \(A_m\), \(E_m\), and \(R_m\) denote activities, events, and actors. The functions \(action\) and \(\mathit{bs\_obj}\) extract actions and business objects from activity and event labels. The mappings \(f_r\) and \(f_m\) associate actors or business objects with their corresponding actions, and \(F_m\) denotes the process control-flow relation.
+
+We compute text similarity \(sim(x,y)\) using cosine similarity between MPNet-based Sentence-BERT embeddings~\cite{reimers2019sentence,song2020mpnet}. Thresholds \(\tau\), \(\gamma\), and \(\vartheta\) control rule--process matching, action matching, and actor comparison, respectively; \(\vartheta\) corresponds to \(\theta\) in the experimental results.
+
+\textbf{Rule--Process Matching.}
+The set \(D_{r,m}\) pairs each rule action with its most similar element in \(action(A_m\cup E_m)\). Similarly, \(O_{r,m}\) pairs each rule actor with its most similar element in \(\mathit{bs\_obj}(A_m\cup E_m)\cup R_m\). Sun's matching score is
+\begin{equation}
+\begin{aligned}
+\mathcal{F}(r,m,\tau)
+=\max\Biggl(
+&\frac{\displaystyle\sum_{(a_r,a_m)\in D_{r,m}}
+sim(a_r,a_m)>\tau}{|D_{r,m}|},\\[2pt]
+&\frac{\displaystyle\sum_{(o_r,o_m)\in O_{r,m}}
+sim(o_r,o_m)>\tau}{|O_{r,m}|}
+\Biggr).
+\end{aligned}
+\label{eq:matching}
+\end{equation}
+The sums count mapping pairs whose similarity exceeds \(\tau\).
+
+\textbf{Missing-Action Violation.}
+The score counts mapped rule actions with similarity below \(\gamma\):
+\begin{equation}
+\begin{aligned}
+&\mathit{action\_violation}(r,m,\gamma)\\
+&\quad=
+\frac{\bigl|\{(a_r,a_m)\in D_{r,m}
+\mid sim(a_r,a_m)<\gamma\}\bigr|}{|A_r|}.
+\end{aligned}
+\label{eq:missing}
+\end{equation}
+
+\textbf{Incorrect-Actor Violation.}
+Rule actors with matched actions form \(R_{r,m,\gamma}\), and the corresponding shared process-side candidates form \(C_{r,m,\gamma}\):
+\begin{equation}
+\begin{aligned}
+R_{r,m,\gamma}
+=\bigl\{g\in P_r\mid{}&
+\exists(a_r,a_m)\in D_{r,m},\\
+&f_r(g)=a_r\land sim(a_r,a_m)>\gamma\bigr\},
+\end{aligned}
+\label{eq:actor_rule_candidates}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+C_{r,m,\gamma}
+=\bigl\{r\in{}&
+\mathit{bs\_obj}(A_m\cup E_m)\cup R_m\mid\\
+&\exists g\in R_{r,m,\gamma},\\
+&sim(f_r(g),f_m(r))>\gamma\bigr\}.
+\end{aligned}
+\label{eq:actor_process_candidates}
+\end{equation}
+A rule actor contributes to the score if a candidate in the shared set has similarity below \(\vartheta\):
+\begin{equation}
+\begin{aligned}
+&\mathit{actor\_violation}(r,m,\gamma,\vartheta)\\
+&\quad=
+\frac{\bigl|\{r\in R_{r,m,\gamma}\mid
+\exists r'\in C_{r,m,\gamma},
+sim(r,r')<\vartheta\}\bigr|}{|R_{r,m,\gamma}|}.
+\end{aligned}
+\label{eq:actor}
+\end{equation}
+
+\textbf{Out-of-Order Violation.}
+Sequential constraints with both endpoint actions matched form
+\begin{equation}
+\begin{aligned}
+U_{r,m,\gamma}
+=\bigl\{&(u_r,u'_r)\in U_r\mid\\
+&\exists\bigl\{(u_r,u_m)\in D_{r,m},
+(u'_r,u'_m)\in D_{r,m}\bigr\},\\
+&sim(u_r,u_m)>\gamma\land
+sim(u'_r,u'_m)>\gamma\bigr\}.
+\end{aligned}
+\label{eq:order_evaluable}
+\end{equation}
+The score is the fraction of evaluable constraints that do not satisfy the prescribed order:
+\begin{equation}
+\begin{aligned}
+&\mathit{order\_violation}(r,m,\gamma)\\
+&\quad=
+\frac{
+\begin{aligned}
+&|U_{r,m,\gamma}|-
+\bigl|\bigl\{(u_r,u'_r)\in U_{r,m,\gamma}\mid\\
+&\quad\exists\bigl\{(u_r,u_m)\in D_{r,m},
+(u'_r,u'_m)\in D_{r,m}\bigr\},\\
+&\quad(u_m,u'_m)\in F_m\land
+(u'_m,u_m)\notin F_m\bigr\}\bigr|
+\end{aligned}
+}{|U_{r,m,\gamma}|}.
+\end{aligned}
+\label{eq:order}
+\end{equation}
