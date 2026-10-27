@@ -1,0 +1,795 @@
+{
+  "capsule_id": "g04_fine_gold_span_formal_results_v2",
+  "code_version": {
+    "scripts/build_stage2_table1_paper_final_v1.py": "e13bb836d1b53c04bc9177a4c9aa16f011c45f7441b6a398d47e40632cffeaed",
+    "scripts/run_v6_factorial_ablation_v1.py": "f3d0bceba86c9fb45e6f3a1709f7e7df65690021ca7311a6a541cc26ae1115cc",
+    "src/bpc_hybrid/formal_stage2_evaluation.py": "28be155401ff44479771c0c1901e170c3064e076b36f24cfc094f257ab87b3a0",
+    "src/bpc_hybrid/g04_coarse_view.py": "a8a867964036e77d5fa83f9f430b0ea7dced9fd3ba2a170131fb09183a49ae7d",
+    "src/bpc_hybrid/sep_c3_modular_evaluation.py": "31363c2e0bad27ebbe2b9e1fa56b5aae3cbe2e1e5c12204627e173a8db8b5330",
+    "src/bpc_hybrid/sep_c3_primary_evaluation.py": "5c5db1b951d86120c93ce2f1fcf0a7612b6f8d440477ff78671c7022c8668f53",
+    "src/bpc_hybrid/stage2_sun_literal_overlap.py": "a6df234611ef63ab9d47a3d5e886c3a711ccce8c6e5d8e164e42826bef978de7"
+  },
+  "config_version": {
+    "configs/evaluation/g04_evaluation_views_contract_v1.json": "fe01429c8b99acc6f61f368ee286c220d11f751a1714df3391811a4b3379d0b8",
+    "configs/evaluation/g04_evaluation_views_contract_v2.json": "ec6404077dc7c488c0c92021f5da971dfde12aad801e39dbfde001d617dce245",
+    "prompts/sun_compat/ablation_v2_factorial/manifest.json": "2bab59855058ed2e63f772f41be8766af15923e7704ee3df7a4a733706d8a076"
+  },
+  "defect_fixed": {
+    "description": "The superseded main view merged every semantic field of a sentence into one envelope [min(start), max(end)) on the Gold side only, so a prediction between two annotated spans earned credit without overlapping any annotated span.",
+    "fix": "evaluate the original Gold spans; keep the match rule",
+    "reference_spans_original_gold": 824,
+    "reference_spans_superseded_coarse": 459
+  },
+  "definition": {
+    "coordinate_convention": "zero-based character offsets into approved_text_en, half-open [start,end)",
+    "evaluator_schema": "sun_literal_overlap_evaluation@2.0.0",
+    "fields": [
+      "actor",
+      "action",
+      "condition",
+      "constraint",
+      "exception"
+    ],
+    "match_rule": "independent_same_field_any_nonempty_character_span_intersection",
+    "modality": "four-class label macro-F1, separate, never pooled",
+    "note": "Table I scores the two frozen formal arms; Table II scores the eight frozen E/S/J cells of a DIFFERENT saved run. They share the metric definition, not the predictions.",
+    "overall_aggregation": "micro over the evaluator's own counters",
+    "overall_metric_id": "pooled_five_span_fields",
+    "prediction_side": "original validated prediction spans (unmerged)",
+    "reference_side": "original annotated Gold spans (no envelope merge)",
+    "table1_and_table2_share_definition": true,
+    "view": "fine_gold_span"
+  },
+  "evaluation_contract": {
+    "contract_id": "g04_evaluation_views_contract_v2",
+    "contract_path": "configs/evaluation/g04_evaluation_views_contract_v2.json",
+    "contract_sha256": "ec6404077dc7c488c0c92021f5da971dfde12aad801e39dbfde001d617dce245",
+    "historical_coarse_view_retained": "coarse_sentence_level",
+    "supersedes_for_main_report": "configs/evaluation/g04_evaluation_views_contract_v1.json"
+  },
+  "git": {
+    "base_commit": "2f4a43efbe1faa17d860b32c969818ff62938938",
+    "base_commit_subject": "PW3: verify Sun formulas and IEEE two-column paper layout",
+    "branch": "codex/s2-prompt-simplification-v1",
+    "worktree_dirty_at_freeze": true
+  },
+  "inputs": {
+    "gold": {
+      "path": "data/gold/stage2/estg150_formal_gold_v1.json",
+      "records": 150,
+      "sha256": "c31a514a6b58b640ed020c380c0b7bed136dc9574b2c98c98dedec1ecdb57100"
+    },
+    "prompt_manifest": {
+      "path": "prompts/sun_compat/ablation_v2_factorial/manifest.json",
+      "sha256": "2bab59855058ed2e63f772f41be8766af15923e7704ee3df7a4a733706d8a076"
+    },
+    "table1_predictions": {
+      "direct_llm": {
+        "path": "data/predictions/direct_llm_formal_arm_v1/predictions.json",
+        "sha256": "bbadb6834572e58fb8321204b3bc975c887d23d9ae60bd804bf91137bb46072b"
+      },
+      "sun_rule_only": {
+        "path": "data/predictions/b0_formal_arm_v1/predictions.json",
+        "sha256": "fa94991d246db9876b55d6a473644a4a1b93404bc35d3e314d3dba4768d9278d"
+      }
+    },
+    "table2_predictions": {
+      "000": {
+        "path": "outputs/development/v6_factorial_ablation_v1/000/repeat-01/canonical_predictions.jsonl",
+        "sha256": "83e56603ab72f16e8c7d9677d388b63bbdeb0abef6ecc4dd88fc66bc4bdd8164",
+        "source": "v6_factorial_new_calls"
+      },
+      "001": {
+        "path": "outputs/development/v6_factorial_ablation_v1/001/repeat-01/canonical_predictions.jsonl",
+        "sha256": "081da6f4f3ca4980903ac250d7320fe56777e0a07e0394dee4ccf50f026a2a73",
+        "source": "v6_factorial_new_calls"
+      },
+      "010": {
+        "path": "outputs/development/v6_factorial_ablation_v1/010/repeat-01/canonical_predictions.jsonl",
+        "sha256": "602031ec551900bee12e02c9833cc00602a544c357b7a77a38f098064e0d2f43",
+        "source": "v6_factorial_new_calls"
+      },
+      "011": {
+        "path": "outputs/development/d1_prompt_factorial_ablation_v2/D-no-semantic-examples-0813/repeat-01/canonical_predictions.jsonl",
+        "sha256": "ba642d6a8377720b71a9d2c4a5ae3a4b7417c9783bfa7c8efd4aa2aa1a77d121",
+        "source": "historical_same_release"
+      },
+      "100": {
+        "path": "outputs/development/v6_factorial_ablation_v1/100/repeat-01/canonical_predictions.jsonl",
+        "sha256": "d7bc985f395576260af7972107290cb467fa9a2ee4aebb03416c7381251288a7",
+        "source": "v6_factorial_new_calls"
+      },
+      "101": {
+        "path": "outputs/development/d1_prompt_factorial_ablation_v2/D-no-semantic-guidance-0813/repeat-01/canonical_predictions.jsonl",
+        "sha256": "a32e60c7982765f1ab453eddde45c37ae82f474ae8f8173d2e81ab36e798bd6e",
+        "source": "historical_same_release"
+      },
+      "110": {
+        "path": "outputs/development/d1_prompt_factorial_ablation_v2/D-no-explicit-json-contract-0813/repeat-01/canonical_predictions.jsonl",
+        "sha256": "a240a11a2bba3a0e6196d36dd62ea6a036b83ba4be476efaac0723a44ccef5ed",
+        "source": "historical_same_release"
+      },
+      "111": {
+        "path": "outputs/development/barrientos_ablation_suite_v2/D-full-0813/repeat-01/canonical_predictions.jsonl",
+        "sha256": "2dc036c3c72f54e194ad9882aac5b78f2fd0e0a7f9fbdf44dc73baa31ce23195",
+        "source": "historical_same_release"
+      }
+    }
+  },
+  "nature": "metric-implementation fix + recomputation of already saved experiments; NOT a new experiment, NOT a retraining, NOT a new LLM run",
+  "phase": "Part 2 (Stage 2) formal semantic-extraction evaluation",
+  "preserved_history": {
+    "coarse_view_evidence": "outputs/evidence/g04_formal_coarse_view_v1",
+    "note": "historical coarse capsules and their generating configurations are untouched; the coarse view remains readable and reproducible",
+    "table1_coarse": {
+      "path": "outputs/reports/stage2_table1_paper_final_v1.json",
+      "sha256": "05a601d16034db6bc6981122651ba4549aa686be74da6a9e0b32d8dc076bd941"
+    },
+    "table2_coarse": {
+      "path": "outputs/reports/stage2_table2_prompt_ablation_paper_final_v2.json",
+      "sha256": "3725eb574747fc871e5f2f78978c30a2f19252563262e44e34614343b44311b5"
+    }
+  },
+  "reproduction": {
+    "capsule": "python scripts/build_stage2_fine_gold_span_freeze_v1.py",
+    "historical_coarse_table1": "python scripts/build_stage2_table1_paper_final_v1.py --evaluation-view coarse_sentence_level",
+    "historical_coarse_table2": "python scripts/run_v6_factorial_ablation_v1.py --report-only --evaluation-view coarse_sentence_level",
+    "llm_calls": 0,
+    "network_calls": 0,
+    "table1": "python scripts/build_stage2_table1_paper_final_v1.py",
+    "table2": "python scripts/run_v6_factorial_ablation_v1.py --report-only"
+  },
+  "rounding": {
+    "stored": "full precision; paper_display* fields carry the rounded paper value",
+    "table1": "3 decimals (F1 and macro-F1)",
+    "table2": "4 decimals (Micro-F1)"
+  },
+  "safety": {
+    "gold_modified": false,
+    "historical_results_overwritten": false,
+    "llm_api_called": false,
+    "paper_latex_modified": false,
+    "predictions_modified": false,
+    "prompts_modified": false,
+    "stage3_touched": false
+  },
+  "schema_version": "g04_fine_gold_span_formal_results@2.0.0",
+  "table1_overall_lead_pp": 5.1612940144993065,
+  "table1_semantic_extraction": {
+    "direct_llm": {
+      "arm_directory": "direct_llm_formal_arm_v1",
+      "display_name": "LLM-SE (Ours)",
+      "modality_label_accuracy": 0.8333333333333334,
+      "modality_label_macro_f1": 0.7694506979014613,
+      "overall_micro": {
+        "extracted": 590,
+        "f1": 0.7294372414251455,
+        "ground_truth": 824,
+        "matched_ground_truth": 530,
+        "matched_predictions": 497,
+        "misclassified": 93,
+        "missed": 294,
+        "precision": 0.8423728813559322,
+        "recall": 0.6432038834951457
+      },
+      "paper_display": {
+        "action": 0.88,
+        "actor": 0.722,
+        "condition": 0.786,
+        "constraint": 0.548,
+        "exception": 0.696,
+        "modality_macro_f1": 0.769,
+        "overall_micro_f1": 0.729
+      },
+      "per_field": {
+        "action": {
+          "extracted": 210,
+          "f1": 0.8799825746024831,
+          "ground_truth": 247,
+          "precision": 0.9523809523809523,
+          "recall": 0.8178137651821862
+        },
+        "actor": {
+          "extracted": 60,
+          "f1": 0.7222222222222223,
+          "ground_truth": 48,
+          "precision": 0.65,
+          "recall": 0.8125
+        },
+        "condition": {
+          "extracted": 135,
+          "f1": 0.7863159258779318,
+          "ground_truth": 214,
+          "precision": 0.9111111111111111,
+          "recall": 0.6915887850467289
+        },
+        "constraint": {
+          "extracted": 175,
+          "f1": 0.5481510327930033,
+          "ground_truth": 302,
+          "precision": 0.7257142857142858,
+          "recall": 0.44039735099337746
+        },
+        "exception": {
+          "extracted": 10,
+          "f1": 0.6956521739130435,
+          "ground_truth": 13,
+          "precision": 0.8,
+          "recall": 0.6153846153846154
+        }
+      },
+      "predictions_path": "data/predictions/direct_llm_formal_arm_v1/predictions.json",
+      "predictions_sha256": "bbadb6834572e58fb8321204b3bc975c887d23d9ae60bd804bf91137bb46072b"
+    },
+    "sun_rule_only": {
+      "arm_directory": "b0_formal_arm_v1",
+      "display_name": "Sun et al. (rules-only)",
+      "modality_label_accuracy": 0.74,
+      "modality_label_macro_f1": 0.712845542257307,
+      "overall_micro": {
+        "extracted": 892,
+        "f1": 0.6778243012801525,
+        "ground_truth": 824,
+        "matched_ground_truth": 590,
+        "matched_predictions": 574,
+        "misclassified": 318,
+        "missed": 234,
+        "precision": 0.6434977578475336,
+        "recall": 0.7160194174757282
+      },
+      "paper_display": {
+        "action": 0.855,
+        "actor": 0.804,
+        "condition": 0.705,
+        "constraint": 0.491,
+        "exception": 0.815,
+        "modality_macro_f1": 0.713,
+        "overall_micro_f1": 0.678
+      },
+      "per_field": {
+        "action": {
+          "extracted": 244,
+          "f1": 0.8554026399759472,
+          "ground_truth": 247,
+          "precision": 0.8565573770491803,
+          "recall": 0.854251012145749
+        },
+        "actor": {
+          "extracted": 65,
+          "f1": 0.8038834951456311,
+          "ground_truth": 48,
+          "precision": 0.6923076923076923,
+          "recall": 0.9583333333333334
+        },
+        "condition": {
+          "extracted": 239,
+          "f1": 0.705423471848942,
+          "ground_truth": 214,
+          "precision": 0.6569037656903766,
+          "recall": 0.7616822429906542
+        },
+        "constraint": {
+          "extracted": 330,
+          "f1": 0.4913493402728364,
+          "ground_truth": 302,
+          "precision": 0.46060606060606063,
+          "recall": 0.5264900662251656
+        },
+        "exception": {
+          "extracted": 14,
+          "f1": 0.8148148148148148,
+          "ground_truth": 13,
+          "precision": 0.7857142857142857,
+          "recall": 0.8461538461538461
+        }
+      },
+      "predictions_path": "data/predictions/b0_formal_arm_v1/predictions.json",
+      "predictions_sha256": "fa94991d246db9876b55d6a473644a4a1b93404bc35d3e314d3dba4768d9278d"
+    }
+  },
+  "table2_prompt_ablation": {
+    "000": {
+      "factors": {
+        "E": false,
+        "J": false,
+        "S": false
+      },
+      "modality_label_accuracy": 0.8733333333333333,
+      "modality_label_macro_f1": 0.833823450922019,
+      "overall_micro": {
+        "extracted": 736,
+        "f1": 0.6531683407475996,
+        "ground_truth": 824,
+        "matched_ground_truth": 509,
+        "matched_predictions": 510,
+        "misclassified": 226,
+        "missed": 315,
+        "precision": 0.6929347826086957,
+        "recall": 0.6177184466019418
+      },
+      "paper_display_micro_f1": 0.6532,
+      "per_field": {
+        "action": {
+          "extracted": 278,
+          "f1": 0.8017877822814129,
+          "ground_truth": 247,
+          "precision": 0.7553956834532374,
+          "recall": 0.854251012145749
+        },
+        "actor": {
+          "extracted": 154,
+          "f1": 0.45792736935341016,
+          "ground_truth": 48,
+          "precision": 0.3051948051948052,
+          "recall": 0.9166666666666666
+        },
+        "condition": {
+          "extracted": 206,
+          "f1": 0.8046430382599876,
+          "ground_truth": 214,
+          "precision": 0.8252427184466019,
+          "recall": 0.7850467289719626
+        },
+        "constraint": {
+          "extracted": 92,
+          "f1": 0.4024302606650553,
+          "ground_truth": 302,
+          "precision": 0.8369565217391305,
+          "recall": 0.26490066225165565
+        },
+        "exception": {
+          "extracted": 6,
+          "f1": 0.631578947368421,
+          "ground_truth": 13,
+          "precision": 1.0,
+          "recall": 0.46153846153846156
+        }
+      },
+      "predictions_path": "outputs/development/v6_factorial_ablation_v1/000/repeat-01/canonical_predictions.jsonl",
+      "predictions_sha256": "83e56603ab72f16e8c7d9677d388b63bbdeb0abef6ecc4dd88fc66bc4bdd8164",
+      "prompt_sha256": "e1fb9a2ac23c052a3ea521de5a6d4bad089fea1bafba405c7805deb78764a1ad",
+      "source": "v6_factorial_new_calls"
+    },
+    "001": {
+      "factors": {
+        "E": false,
+        "J": true,
+        "S": false
+      },
+      "modality_label_accuracy": 0.86,
+      "modality_label_macro_f1": 0.8095756925733121,
+      "overall_micro": {
+        "extracted": 729,
+        "f1": 0.6389108918605163,
+        "ground_truth": 824,
+        "matched_ground_truth": 498,
+        "matched_predictions": 494,
+        "misclassified": 235,
+        "missed": 326,
+        "precision": 0.6776406035665294,
+        "recall": 0.6043689320388349
+      },
+      "paper_display_micro_f1": 0.6389,
+      "per_field": {
+        "action": {
+          "extracted": 292,
+          "f1": 0.7809167973775577,
+          "ground_truth": 247,
+          "precision": 0.7191780821917808,
+          "recall": 0.854251012145749
+        },
+        "actor": {
+          "extracted": 161,
+          "f1": 0.44282655246252667,
+          "ground_truth": 48,
+          "precision": 0.2919254658385093,
+          "recall": 0.9166666666666666
+        },
+        "condition": {
+          "extracted": 194,
+          "f1": 0.8139363147633958,
+          "ground_truth": 214,
+          "precision": 0.8505154639175257,
+          "recall": 0.780373831775701
+        },
+        "constraint": {
+          "extracted": 75,
+          "f1": 0.36162064099979846,
+          "ground_truth": 302,
+          "precision": 0.8666666666666667,
+          "recall": 0.22847682119205298
+        },
+        "exception": {
+          "extracted": 7,
+          "f1": 0.7000000000000001,
+          "ground_truth": 13,
+          "precision": 1.0,
+          "recall": 0.5384615384615384
+        }
+      },
+      "predictions_path": "outputs/development/v6_factorial_ablation_v1/001/repeat-01/canonical_predictions.jsonl",
+      "predictions_sha256": "081da6f4f3ca4980903ac250d7320fe56777e0a07e0394dee4ccf50f026a2a73",
+      "prompt_sha256": "ad1546b151263ea6442216d9911fc2171a2d792d2e3bea86353b1c6b0073c919",
+      "source": "v6_factorial_new_calls"
+    },
+    "010": {
+      "factors": {
+        "E": false,
+        "J": false,
+        "S": true
+      },
+      "modality_label_accuracy": 0.8466666666666667,
+      "modality_label_macro_f1": 0.8005870433279695,
+      "overall_micro": {
+        "extracted": 767,
+        "f1": 0.7155029959909761,
+        "ground_truth": 824,
+        "matched_ground_truth": 579,
+        "matched_predictions": 559,
+        "misclassified": 208,
+        "missed": 245,
+        "precision": 0.7288135593220338,
+        "recall": 0.7026699029126213
+      },
+      "paper_display_micro_f1": 0.7155,
+      "per_field": {
+        "action": {
+          "extracted": 237,
+          "f1": 0.845123935208108,
+          "ground_truth": 247,
+          "precision": 0.8565400843881856,
+          "recall": 0.8340080971659919
+        },
+        "actor": {
+          "extracted": 110,
+          "f1": 0.5443037974683544,
+          "ground_truth": 48,
+          "precision": 0.39090909090909093,
+          "recall": 0.8958333333333334
+        },
+        "condition": {
+          "extracted": 155,
+          "f1": 0.8013613285971992,
+          "ground_truth": 214,
+          "precision": 0.896774193548387,
+          "recall": 0.7242990654205608
+        },
+        "constraint": {
+          "extracted": 258,
+          "f1": 0.6019207530369522,
+          "ground_truth": 302,
+          "precision": 0.6511627906976745,
+          "recall": 0.5596026490066225
+        },
+        "exception": {
+          "extracted": 7,
+          "f1": 0.6,
+          "ground_truth": 13,
+          "precision": 0.8571428571428571,
+          "recall": 0.46153846153846156
+        }
+      },
+      "predictions_path": "outputs/development/v6_factorial_ablation_v1/010/repeat-01/canonical_predictions.jsonl",
+      "predictions_sha256": "602031ec551900bee12e02c9833cc00602a544c357b7a77a38f098064e0d2f43",
+      "prompt_sha256": "5d60ca07be80dbcfa717c995f335884ecced97ec31985edfd10a1d6477511d36",
+      "source": "v6_factorial_new_calls"
+    },
+    "011": {
+      "factors": {
+        "E": false,
+        "J": true,
+        "S": true
+      },
+      "modality_label_accuracy": 0.8266666666666667,
+      "modality_label_macro_f1": 0.7627379774274876,
+      "overall_micro": {
+        "extracted": 771,
+        "f1": 0.7212018394165362,
+        "ground_truth": 824,
+        "matched_ground_truth": 585,
+        "matched_predictions": 565,
+        "misclassified": 206,
+        "missed": 239,
+        "precision": 0.7328145265888456,
+        "recall": 0.7099514563106796
+      },
+      "paper_display_micro_f1": 0.7212,
+      "per_field": {
+        "action": {
+          "extracted": 241,
+          "f1": 0.8565881591591002,
+          "ground_truth": 247,
+          "precision": 0.8630705394190872,
+          "recall": 0.8502024291497976
+        },
+        "actor": {
+          "extracted": 107,
+          "f1": 0.5548387096774193,
+          "ground_truth": 48,
+          "precision": 0.40186915887850466,
+          "recall": 0.8958333333333334
+        },
+        "condition": {
+          "extracted": 164,
+          "f1": 0.80744580254264,
+          "ground_truth": 214,
+          "precision": 0.8841463414634146,
+          "recall": 0.7429906542056075
+        },
+        "constraint": {
+          "extracted": 251,
+          "f1": 0.5937079147808809,
+          "ground_truth": 302,
+          "precision": 0.6454183266932271,
+          "recall": 0.5496688741721855
+        },
+        "exception": {
+          "extracted": 8,
+          "f1": 0.6666666666666667,
+          "ground_truth": 13,
+          "precision": 0.875,
+          "recall": 0.5384615384615384
+        }
+      },
+      "predictions_path": "outputs/development/d1_prompt_factorial_ablation_v2/D-no-semantic-examples-0813/repeat-01/canonical_predictions.jsonl",
+      "predictions_sha256": "ba642d6a8377720b71a9d2c4a5ae3a4b7417c9783bfa7c8efd4aa2aa1a77d121",
+      "prompt_sha256": "261d7b23e015c9faa3bcb75ad49c440dfdd96c00567fb498edeed939f364f072",
+      "source": "historical_same_release"
+    },
+    "100": {
+      "factors": {
+        "E": true,
+        "J": false,
+        "S": false
+      },
+      "modality_label_accuracy": 0.8,
+      "modality_label_macro_f1": 0.7369687005236877,
+      "overall_micro": {
+        "extracted": 669,
+        "f1": 0.7372956706107653,
+        "ground_truth": 824,
+        "matched_ground_truth": 560,
+        "matched_predictions": 539,
+        "misclassified": 130,
+        "missed": 264,
+        "precision": 0.8056801195814649,
+        "recall": 0.6796116504854369
+      },
+      "paper_display_micro_f1": 0.7373,
+      "per_field": {
+        "action": {
+          "extracted": 248,
+          "f1": 0.8464557438068331,
+          "ground_truth": 247,
+          "precision": 0.842741935483871,
+          "recall": 0.8502024291497976
+        },
+        "actor": {
+          "extracted": 69,
+          "f1": 0.7738847405705535,
+          "ground_truth": 48,
+          "precision": 0.6811594202898551,
+          "recall": 0.8958333333333334
+        },
+        "condition": {
+          "extracted": 154,
+          "f1": 0.7822927879440259,
+          "ground_truth": 214,
+          "precision": 0.8636363636363636,
+          "recall": 0.7149532710280374
+        },
+        "constraint": {
+          "extracted": 189,
+          "f1": 0.5923994983725288,
+          "ground_truth": 302,
+          "precision": 0.7566137566137566,
+          "recall": 0.4867549668874172
+        },
+        "exception": {
+          "extracted": 9,
+          "f1": 0.6363636363636364,
+          "ground_truth": 13,
+          "precision": 0.7777777777777778,
+          "recall": 0.5384615384615384
+        }
+      },
+      "predictions_path": "outputs/development/v6_factorial_ablation_v1/100/repeat-01/canonical_predictions.jsonl",
+      "predictions_sha256": "d7bc985f395576260af7972107290cb467fa9a2ee4aebb03416c7381251288a7",
+      "prompt_sha256": "f6b176191fd31f2d77cb876aef2a9008d186ae7db084aed4c0afd49a3d413942",
+      "source": "v6_factorial_new_calls"
+    },
+    "101": {
+      "factors": {
+        "E": true,
+        "J": true,
+        "S": false
+      },
+      "modality_label_accuracy": 0.7933333333333333,
+      "modality_label_macro_f1": 0.7083290074750831,
+      "overall_micro": {
+        "extracted": 690,
+        "f1": 0.7342195067858088,
+        "ground_truth": 824,
+        "matched_ground_truth": 567,
+        "matched_predictions": 543,
+        "misclassified": 147,
+        "missed": 257,
+        "precision": 0.7869565217391304,
+        "recall": 0.6881067961165048
+      },
+      "paper_display_micro_f1": 0.7342,
+      "per_field": {
+        "action": {
+          "extracted": 260,
+          "f1": 0.8085581252164543,
+          "ground_truth": 247,
+          "precision": 0.7846153846153846,
+          "recall": 0.8340080971659919
+        },
+        "actor": {
+          "extracted": 77,
+          "f1": 0.7328136073706591,
+          "ground_truth": 48,
+          "precision": 0.6103896103896104,
+          "recall": 0.9166666666666666
+        },
+        "condition": {
+          "extracted": 147,
+          "f1": 0.7989623865110247,
+          "ground_truth": 214,
+          "precision": 0.8979591836734694,
+          "recall": 0.719626168224299
+        },
+        "constraint": {
+          "extracted": 196,
+          "f1": 0.6152875617705814,
+          "ground_truth": 302,
+          "precision": 0.7755102040816326,
+          "recall": 0.5099337748344371
+        },
+        "exception": {
+          "extracted": 10,
+          "f1": 0.7422680412371134,
+          "ground_truth": 13,
+          "precision": 0.8,
+          "recall": 0.6923076923076923
+        }
+      },
+      "predictions_path": "outputs/development/d1_prompt_factorial_ablation_v2/D-no-semantic-guidance-0813/repeat-01/canonical_predictions.jsonl",
+      "predictions_sha256": "a32e60c7982765f1ab453eddde45c37ae82f474ae8f8173d2e81ab36e798bd6e",
+      "prompt_sha256": "fa5e9f0043809428b8034a08cb58ff0e98a7e5b69c5be99f88286724217f0aa3",
+      "source": "historical_same_release"
+    },
+    "110": {
+      "factors": {
+        "E": true,
+        "J": false,
+        "S": true
+      },
+      "modality_label_accuracy": 0.82,
+      "modality_label_macro_f1": 0.752003831913289,
+      "overall_micro": {
+        "extracted": 722,
+        "f1": 0.7334644049197567,
+        "ground_truth": 824,
+        "matched_ground_truth": 576,
+        "matched_predictions": 557,
+        "misclassified": 165,
+        "missed": 248,
+        "precision": 0.7714681440443213,
+        "recall": 0.6990291262135923
+      },
+      "paper_display_micro_f1": 0.7335,
+      "per_field": {
+        "action": {
+          "extracted": 226,
+          "f1": 0.8837209302325582,
+          "ground_truth": 247,
+          "precision": 0.9247787610619469,
+          "recall": 0.8461538461538461
+        },
+        "actor": {
+          "extracted": 84,
+          "f1": 0.6704781704781705,
+          "ground_truth": 48,
+          "precision": 0.5357142857142857,
+          "recall": 0.8958333333333334
+        },
+        "condition": {
+          "extracted": 137,
+          "f1": 0.7749832977737547,
+          "ground_truth": 214,
+          "precision": 0.9051094890510949,
+          "recall": 0.677570093457944
+        },
+        "constraint": {
+          "extracted": 264,
+          "f1": 0.6007067137809187,
+          "ground_truth": 302,
+          "precision": 0.6439393939393939,
+          "recall": 0.5629139072847682
+        },
+        "exception": {
+          "extracted": 11,
+          "f1": 0.7500000000000001,
+          "ground_truth": 13,
+          "precision": 0.8181818181818182,
+          "recall": 0.6923076923076923
+        }
+      },
+      "predictions_path": "outputs/development/d1_prompt_factorial_ablation_v2/D-no-explicit-json-contract-0813/repeat-01/canonical_predictions.jsonl",
+      "predictions_sha256": "a240a11a2bba3a0e6196d36dd62ea6a036b83ba4be476efaac0723a44ccef5ed",
+      "prompt_sha256": "0b7b93ad30e3d72f20fb809b48fdda694a2242233f203234a3f5d8dc91ab5da7",
+      "source": "historical_same_release"
+    },
+    "111": {
+      "factors": {
+        "E": true,
+        "J": true,
+        "S": true
+      },
+      "modality_label_accuracy": 0.82,
+      "modality_label_macro_f1": 0.7537201079506458,
+      "overall_micro": {
+        "extracted": 708,
+        "f1": 0.7280041130043242,
+        "ground_truth": 824,
+        "matched_ground_truth": 569,
+        "matched_predictions": 545,
+        "misclassified": 163,
+        "missed": 255,
+        "precision": 0.769774011299435,
+        "recall": 0.6905339805825242
+      },
+      "paper_display_micro_f1": 0.728,
+      "per_field": {
+        "action": {
+          "extracted": 225,
+          "f1": 0.8603461594671901,
+          "ground_truth": 247,
+          "precision": 0.8977777777777778,
+          "recall": 0.8259109311740891
+        },
+        "actor": {
+          "extracted": 82,
+          "f1": 0.6865464632454924,
+          "ground_truth": 48,
+          "precision": 0.5487804878048781,
+          "recall": 0.9166666666666666
+        },
+        "condition": {
+          "extracted": 138,
+          "f1": 0.78433035146479,
+          "ground_truth": 214,
+          "precision": 0.9057971014492754,
+          "recall": 0.6915887850467289
+        },
+        "constraint": {
+          "extracted": 254,
+          "f1": 0.5971223021582733,
+          "ground_truth": 302,
+          "precision": 0.6535433070866141,
+          "recall": 0.5496688741721855
+        },
+        "exception": {
+          "extracted": 9,
+          "f1": 0.6363636363636364,
+          "ground_truth": 13,
+          "precision": 0.7777777777777778,
+          "recall": 0.5384615384615384
+        }
+      },
+      "predictions_path": "outputs/development/barrientos_ablation_suite_v2/D-full-0813/repeat-01/canonical_predictions.jsonl",
+      "predictions_sha256": "2dc036c3c72f54e194ad9882aac5b78f2fd0e0a7f9fbdf44dc73baa31ce23195",
+      "prompt_sha256": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+      "source": "historical_same_release"
+    }
+  },
+  "verification": {
+    "all_match": true,
+    "audit_reference_source": "independent 2026-10 offline re-computation (audit), used as an acceptance reference only, never copied into results",
+    "checks_failed": 0,
+    "checks_passed": 24,
+    "checks_total": 24
+  }
+}

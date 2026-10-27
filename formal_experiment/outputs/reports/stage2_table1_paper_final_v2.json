@@ -1,0 +1,263 @@
+{
+  "arms": {
+    "direct_llm": {
+      "arm_directory": "direct_llm_formal_arm_v1",
+      "display_name": "Ours (LLM-SE)",
+      "modality_labels": {
+        "accuracy": 0.8333333333333334,
+        "classes": [
+          "obligation",
+          "permission",
+          "prohibition",
+          "definition"
+        ],
+        "macro_f1": 0.7694506979014613,
+        "per_class": [
+          {
+            "class": "obligation",
+            "f1": 0.9206349206349207,
+            "precision": 0.8656716417910447,
+            "recall": 0.9830508474576272
+          },
+          {
+            "class": "permission",
+            "f1": 0.9302325581395349,
+            "precision": 0.9090909090909091,
+            "recall": 0.9523809523809523
+          },
+          {
+            "class": "prohibition",
+            "f1": 0.7391304347826088,
+            "precision": 0.6538461538461539,
+            "recall": 0.85
+          },
+          {
+            "class": "definition",
+            "f1": 0.4878048780487806,
+            "precision": 0.8333333333333334,
+            "recall": 0.3448275862068966
+          }
+        ],
+        "records": 150,
+        "unlabeled_predictions": 1
+      },
+      "overall_pooled_five_span_fields": {
+        "extracted": 590,
+        "f1": 0.7294372414251455,
+        "ground_truth": 824,
+        "matched_ground_truth": 530,
+        "matched_predictions": 497,
+        "misclassified": 93,
+        "missed": 294,
+        "precision": 0.8423728813559322,
+        "recall": 0.6432038834951457
+      },
+      "pooled_metric_id": "pooled_five_span_fields",
+      "predictions_path": "data/predictions/direct_llm_formal_arm_v1/predictions.json",
+      "predictions_sha256": "bbadb6834572e58fb8321204b3bc975c887d23d9ae60bd804bf91137bb46072b",
+      "span_fields": {
+        "action": {
+          "extracted": 210,
+          "f1": 0.8799825746024831,
+          "ground_truth": 247,
+          "precision": 0.9523809523809523,
+          "recall": 0.8178137651821862
+        },
+        "actor": {
+          "extracted": 60,
+          "f1": 0.7222222222222223,
+          "ground_truth": 48,
+          "precision": 0.65,
+          "recall": 0.8125
+        },
+        "condition": {
+          "extracted": 135,
+          "f1": 0.7863159258779318,
+          "ground_truth": 214,
+          "precision": 0.9111111111111111,
+          "recall": 0.6915887850467289
+        },
+        "constraint": {
+          "extracted": 175,
+          "f1": 0.5481510327930033,
+          "ground_truth": 302,
+          "precision": 0.7257142857142858,
+          "recall": 0.44039735099337746
+        },
+        "exception": {
+          "extracted": 10,
+          "f1": 0.6956521739130435,
+          "ground_truth": 13,
+          "precision": 0.8,
+          "recall": 0.6153846153846154
+        }
+      },
+      "view": "fine_gold_span"
+    },
+    "sun_rule_only": {
+      "arm_directory": "b0_formal_arm_v1",
+      "display_name": "Sun et al. (rules-only)",
+      "modality_labels": {
+        "accuracy": 0.74,
+        "classes": [
+          "obligation",
+          "permission",
+          "prohibition",
+          "definition"
+        ],
+        "macro_f1": 0.712845542257307,
+        "per_class": [
+          {
+            "class": "obligation",
+            "f1": 0.8,
+            "precision": 0.7105263157894737,
+            "recall": 0.9152542372881356
+          },
+          {
+            "class": "permission",
+            "f1": 0.8051948051948051,
+            "precision": 0.8857142857142857,
+            "recall": 0.7380952380952381
+          },
+          {
+            "class": "prohibition",
+            "f1": 0.7647058823529412,
+            "precision": 0.9285714285714286,
+            "recall": 0.65
+          },
+          {
+            "class": "definition",
+            "f1": 0.48148148148148145,
+            "precision": 0.52,
+            "recall": 0.4482758620689655
+          }
+        ],
+        "records": 150,
+        "unlabeled_predictions": 0
+      },
+      "overall_pooled_five_span_fields": {
+        "extracted": 892,
+        "f1": 0.6778243012801525,
+        "ground_truth": 824,
+        "matched_ground_truth": 590,
+        "matched_predictions": 574,
+        "misclassified": 318,
+        "missed": 234,
+        "precision": 0.6434977578475336,
+        "recall": 0.7160194174757282
+      },
+      "pooled_metric_id": "pooled_five_span_fields",
+      "predictions_path": "data/predictions/b0_formal_arm_v1/predictions.json",
+      "predictions_sha256": "fa94991d246db9876b55d6a473644a4a1b93404bc35d3e314d3dba4768d9278d",
+      "span_fields": {
+        "action": {
+          "extracted": 244,
+          "f1": 0.8554026399759472,
+          "ground_truth": 247,
+          "precision": 0.8565573770491803,
+          "recall": 0.854251012145749
+        },
+        "actor": {
+          "extracted": 65,
+          "f1": 0.8038834951456311,
+          "ground_truth": 48,
+          "precision": 0.6923076923076923,
+          "recall": 0.9583333333333334
+        },
+        "condition": {
+          "extracted": 239,
+          "f1": 0.705423471848942,
+          "ground_truth": 214,
+          "precision": 0.6569037656903766,
+          "recall": 0.7616822429906542
+        },
+        "constraint": {
+          "extracted": 330,
+          "f1": 0.4913493402728364,
+          "ground_truth": 302,
+          "precision": 0.46060606060606063,
+          "recall": 0.5264900662251656
+        },
+        "exception": {
+          "extracted": 14,
+          "f1": 0.8148148148148148,
+          "ground_truth": 13,
+          "precision": 0.7857142857142857,
+          "recall": 0.8461538461538461
+        }
+      },
+      "view": "fine_gold_span"
+    }
+  },
+  "dataset_id": "independently_reconstructed_estg_150_v1",
+  "evaluation_contract": {
+    "assignment": "none_independent_overlap_coverage (not one-to-one)",
+    "contract": "g04_evaluation_views_contract_v2 (configs/evaluation/g04_evaluation_views_contract_v2.json)",
+    "contract_id": "g04_evaluation_views_contract_v2",
+    "coordinate_convention": "zero-based character offsets into approved_text_en, half-open [start,end)",
+    "match_rule": "independent_same_field_any_nonempty_character_span_intersection",
+    "modality_policy": "four-class label macro-F1 reported separately; modality evidence spans are unavailable in the published decision-only Gold and are never aggregated into the overall score",
+    "overall_aggregation": "micro_pooled_over_five_span_bearing_fields",
+    "overall_fields": [
+      "actor",
+      "action",
+      "condition",
+      "constraint",
+      "exception"
+    ],
+    "overall_metric_id": "pooled_five_span_fields",
+    "prediction_side": "original validated prediction spans (unmerged)",
+    "reference_side": "original annotated Gold spans, one reference span per annotated span (no envelope merge)",
+    "view_role": "formal main report"
+  },
+  "field_deltas_ours_minus_baseline": {
+    "action": {
+      "baseline_f1": 0.8554026399759472,
+      "delta_f1": 0.02457993462653585,
+      "delta_f1_pp": 2.457993462653585,
+      "ours_f1": 0.8799825746024831,
+      "winner": "ours"
+    },
+    "actor": {
+      "baseline_f1": 0.8038834951456311,
+      "delta_f1": -0.08166127292340875,
+      "delta_f1_pp": -8.166127292340875,
+      "ours_f1": 0.7222222222222223,
+      "winner": "baseline"
+    },
+    "condition": {
+      "baseline_f1": 0.705423471848942,
+      "delta_f1": 0.0808924540289897,
+      "delta_f1_pp": 8.089245402898971,
+      "ours_f1": 0.7863159258779318,
+      "winner": "ours"
+    },
+    "constraint": {
+      "baseline_f1": 0.4913493402728364,
+      "delta_f1": 0.05680169252016687,
+      "delta_f1_pp": 5.680169252016687,
+      "ours_f1": 0.5481510327930033,
+      "winner": "ours"
+    },
+    "exception": {
+      "baseline_f1": 0.8148148148148148,
+      "delta_f1": -0.11916264090177131,
+      "delta_f1_pp": -11.916264090177132,
+      "ours_f1": 0.6956521739130435,
+      "winner": "baseline"
+    }
+  },
+  "fields_won_by_baseline": 2,
+  "fields_won_by_ours": 3,
+  "overall_pooled_delta_pp": 5.1612940144993065,
+  "report_id": "stage2_table1_paper_final_v2",
+  "sample_count": 150,
+  "schema_version": "stage2_table1_paper_final@2.0.0",
+  "source_artifacts": {
+    "evaluator": "bpc_hybrid.formal_stage2_evaluation (evaluate_primary_view / evaluate_span_metrics) + bpc_hybrid.stage2_sun_literal_overlap",
+    "gold_path": "data/gold/stage2/estg150_formal_gold_v1.json",
+    "gold_sha256": "c31a514a6b58b640ed020c380c0b7bed136dc9574b2c98c98dedec1ecdb57100",
+    "llm_calls_performed": 0
+  },
+  "view": "fine_gold_span"
+}

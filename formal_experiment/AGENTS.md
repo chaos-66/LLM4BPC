@@ -2,6 +2,34 @@
 
 This directory is the only active experiment surface.
 
+## User decision: Part 2 (Stage 2) main metric uses the original Gold spans (2026-10-27)
+
+用户依据 Overlap-F1 专项审计认定原正式主评价存在客观错误：`g04_coarse_view.coarse_record()`
+把每条样本每类语义的多个 Gold Span 合并为 `[min(start), max(end))`，而 Prediction 未做同样的
+合并，因此落在两个 Gold Span 之间、未标注的中间文本也会被判为命中（五字段 Gold Span 824→459，
+150 条中 103 条受影响；Sun 49 个、LLM-SE 16 个预测仅因包络合并获得信用）。正式决定（方案 B）：
+**保留原 Overlap-F1 匹配定义，取消 Gold 侧包络合并，用原始 Gold Span 统一评价** Sun、
+LLM-SE 与八组 E/S/J Prompt Ablation；不改用 Exact Match / Token-F1 / IoU / 最大二分匹配。
+
+- 契约：`configs/evaluation/g04_evaluation_views_contract_v2.json`，主视图 `fine_gold_span`。
+  v1 契约继续有效，`coarse_sentence_level` 降为历史/诊断视图；`coarse_record()`、coarse 产物与
+  其生成配置一律保留，不删除、不重写。
+- 唯一评价入口：`bpc_hybrid.formal_stage2_evaluation.evaluate_primary_view`
+  （`sep_c3_modular_evaluation.evaluate_primary` 转调）。Table I 与 Table II 必须共用同一
+  Gold 视图、同一匹配规则与同一 Overall 口径。
+- 正式结果：`outputs/reports/stage2_table1_paper_final_v2.json`（Sun **0.6778** / LLM-SE
+  **0.7294**，+5.16 pp）与
+  `outputs/reports/stage2_table2_prompt_ablation_paper_final_v3.json`
+  （000 0.6532 / 001 0.6389 / 010 0.7155 / 011 0.7212 / 100 0.7373 / 101 0.7342 /
+  110 0.7335 / 111 0.7280）。modality 仍单列四分类 Macro-F1（Sun 0.713 / LLM-SE 0.769）。
+- 冻结 capsule：`outputs/evidence/g04_fine_gold_span_formal_results_v2/`
+  （输入路径与 SHA-256、代码/配置版本、匹配规则、坐标约定、未舍入值与展示舍入、复算命令）。
+- 本轮为零 API 的评价实现修正与已存预测复算：不重跑 LLM、不重生成 Prediction、不改 Gold、
+  Prompt、Sun 抽取、Winter 基线、Part 3 算法与 Table III，不改 LaTeX。新结果更低也照实报告
+  （Overall 领先由 coarse 口径的 +7.47 pp 变为 fine 口径的 +5.16 pp）。
+- 下方 “User final paper decision: Part 2 Table 1 (2026-09-26)” 固定的 0.8378/0.7631 属于
+  coarse 视图，自本轮起只作历史/诊断记录，不再是论文正式主指标。
+
 ## Current baseline display name (2026-10-12)
 
 用户确认：项目与 GitHub 仓库中的当前方法展示名称采用 **Sun et al. (2024)**，正文、表格和图例简称 **Sun**。

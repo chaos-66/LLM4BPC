@@ -10,14 +10,15 @@ Zero-API, read-only over frozen artifacts.  Reads ONLY:
   ``data/predictions/direct_llm_formal_arm_v1/predictions.json`` (LLM-SE)
 
 and the frozen evaluator (``formal_stage2_evaluation`` +
-``stage2_sun_literal_overlap`` + the G0.4 coarse transform).
+``stage2_sun_literal_overlap``).
 
-Writes ONE report pair under ``outputs/reports/``:
+Evaluation view (``g04_evaluation_views_contract_v2``, user decision
+2026-10-27): the DEFAULT and formal main view is ``fine_gold_span`` -- the
+reference side is the original annotated Gold spans, with no per-field
+envelope merge.  ``--evaluation-view coarse_sentence_level`` reproduces the
+superseded historical numbers into the v1 report paths.
 
-- ``stage2_table1_paper_final_v1.json``
-- ``stage2_table1_paper_final_v1.md``
-
-Contract notes (G0.4 evaluation-views contract, user-authorized 2026-08-11):
+Contract notes:
 
 - the reported OVERALL score is ``pooled_five_span_fields``: a micro/pooled
   P/R/F1 over the five span-bearing fields
@@ -26,8 +27,14 @@ Contract notes (G0.4 evaluation-views contract, user-authorized 2026-08-11):
   never folded into the overall score (modality evidence spans are not
   recoverable from the published decision-only Gold).
 
+Writes ONE report pair under ``outputs/reports/``:
+
+- ``stage2_table1_paper_final_v2.json`` / ``.md``   (fine_gold_span, default)
+- ``stage2_table1_paper_final_v1.json`` / ``.md``   (coarse_sentence_level)
+
 Usage:
     python scripts/build_stage2_table1_paper_final_v1.py
+    python scripts/build_stage2_table1_paper_final_v1.py --evaluation-view coarse_sentence_level
 """
 
 from __future__ import annotations
@@ -52,9 +59,25 @@ from bpc_hybrid.formal_stage2_evaluation import (  # noqa: E402
     predictions_to_evaluator,
 )
 from bpc_hybrid.g04_coarse_view import build_coarse_view  # noqa: E402
+from bpc_hybrid.sep_c3_primary_evaluation import (  # noqa: E402
+    CONTRACT_ID,
+    CONTRACT_PATH,
+    LEGACY_COARSE_VIEW_ID,
+    MATCH_RULE,
+    PRIMARY_VIEW_ID,
+    evaluate_primary_view,
+)
 
 FORMAL_GOLD = ROOT / "data" / "gold" / "stage2" / "estg150_formal_gold_v1.json"
 DATASET_ID = "independently_reconstructed_estg_150_v1"
+
+#: Report id per evaluation view.  The fine (primary) view writes a NEW v2
+#: capsule; the coarse view keeps writing the historical v1 capsule so that
+#: every pre-2026-10-27 artifact stays byte-stable and reproducible.
+REPORT_ID = {
+    PRIMARY_VIEW_ID: "stage2_table1_paper_final_v2",
+    LEGACY_COARSE_VIEW_ID: "stage2_table1_paper_final_v1",
+}
 
 #: Display order and paper-facing names of the two formal arms.  The method
 #: ids are the frozen ids used by the formal capsules; the display names are
@@ -94,10 +117,12 @@ def _load_json(path: Path) -> Any:
         return json.load(handle)
 
 
-def collect() -> dict[str, Any]:
+def collect(view: str = PRIMARY_VIEW_ID) -> dict[str, Any]:
+    if view not in (PRIMARY_VIEW_ID, LEGACY_COARSE_VIEW_ID):
+        raise SystemExit(f"unknown evaluation view: {view}")
     gold_doc = _load_json(FORMAL_GOLD)
-    coarse_gold = build_coarse_view(gold_doc)
     fine_gold = published_gold_to_evaluator(gold_doc)
+    is_primary = view == PRIMARY_VIEW_ID
 
     arms: dict[str, Any] = {}
     for spec in ARMS:
@@ -105,17 +130,26 @@ def collect() -> dict[str, Any]:
                      / "predictions.json")
         attempts = predictions_to_evaluator(
             _load_json(pred_path)["records"])
-        coarse = evaluate_span_metrics(
-            coarse_gold, attempts, dataset_id=DATASET_ID,
-            method_id=spec["method_id"], view="coarse_sentence_level")
-        labels = evaluate_modality_labels(fine_gold, attempts)
+        if is_primary:
+            primary = evaluate_primary_view(
+                gold_doc, attempts, dataset_id=DATASET_ID,
+                method_id=spec["method_id"])
+            span = primary["span"]
+            labels = primary["modality_labels"]
+        else:
+            # historical coarse view (superseded as the paper main report)
+            coarse_gold = build_coarse_view(gold_doc)
+            span = evaluate_span_metrics(
+                coarse_gold, attempts, dataset_id=DATASET_ID,
+                method_id=spec["method_id"], view=LEGACY_COARSE_VIEW_ID)
+            labels = evaluate_modality_labels(fine_gold, attempts)
         arms[spec["method_id"]] = {
             "display_name": spec["display_name"],
             "arm_directory": spec["arm"],
             "predictions_path": str(pred_path.relative_to(ROOT)).replace("\\", "/"),
             "predictions_sha256": _sha256(pred_path),
-            "overall_pooled_five_span_fields": coarse["pooled_five_span_fields"],
-            "span_fields": coarse["span_fields"],
+            "overall_pooled_five_span_fields": span["pooled_five_span_fields"],
+            "span_fields": span["span_fields"],
             "modality_labels": {
                 "accuracy": labels["accuracy"],
                 "macro_f1": labels["macro_f1"],
@@ -124,8 +158,8 @@ def collect() -> dict[str, Any]:
                 "records": labels["records"],
                 "unlabeled_predictions": labels["unlabeled_predictions"],
             },
-            "view": coarse["view"],
-            "pooled_metric_id": coarse["pooled_metric_id"],
+            "view": view,
+            "pooled_metric_id": span["pooled_metric_id"],
         }
 
     # ---- deltas in percentage points (LLM-SE minus rules-only) ----
@@ -151,13 +185,27 @@ def collect() -> dict[str, Any]:
     pooled_delta_pp = 100.0 * (pooled_ours["f1"] - pooled_base["f1"])
 
     return {
-        "schema_version": "stage2_table1_paper_final@1.0.0",
-        "report_id": "stage2_table1_paper_final_v1",
+        "schema_version": ("stage2_table1_paper_final@2.0.0" if is_primary
+                           else "stage2_table1_paper_final@1.0.0"),
+        "report_id": REPORT_ID[view],
         "dataset_id": DATASET_ID,
-        "sample_count": len(coarse_gold),
-        "view": "coarse_sentence_level",
+        "sample_count": len(fine_gold),
+        "view": view,
         "evaluation_contract": {
-            "contract": "g04_evaluation_views_contract@1.0.0",
+            "contract": (f"{CONTRACT_ID} "
+                         f"({CONTRACT_PATH})" if is_primary
+                         else "g04_evaluation_views_contract@1.0.0 "
+                              "(historical; superseded as main report)"),
+            "contract_id": CONTRACT_ID if is_primary else (
+                "g04_evaluation_views_contract_v1"),
+            "view_role": ("formal main report" if is_primary
+                          else "historical/diagnostic only"),
+            "reference_side": ("original annotated Gold spans, one reference "
+                               "span per annotated span (no envelope merge)"
+                               if is_primary else
+                               "one [min(start), max(end)) envelope per field "
+                               "per sentence"),
+            "prediction_side": "original validated prediction spans (unmerged)",
             "overall_metric_id": "pooled_five_span_fields",
             "overall_aggregation": "micro_pooled_over_five_span_bearing_fields",
             "overall_fields": list(SPAN_FIELDS),
@@ -166,16 +214,20 @@ def collect() -> dict[str, Any]:
                 "evidence spans are unavailable in the published "
                 "decision-only Gold and are never aggregated into the overall "
                 "score"),
-            "match_rule": (
-                "independent same-field any-nonempty-character-span "
-                "intersection (Sun literal-overlap contract)"),
+            "match_rule": MATCH_RULE,
+            "coordinate_convention": (
+                "zero-based character offsets into approved_text_en, "
+                "half-open [start,end)"),
+            "assignment": "none_independent_overlap_coverage (not one-to-one)",
         },
         "source_artifacts": {
             "gold_path": str(FORMAL_GOLD.relative_to(ROOT)).replace("\\", "/"),
             "gold_sha256": _sha256(FORMAL_GOLD),
-            "evaluator": "bpc_hybrid.formal_stage2_evaluation + "
-                         "bpc_hybrid.stage2_sun_literal_overlap + "
-                         "bpc_hybrid.g04_coarse_view",
+            "evaluator": "bpc_hybrid.formal_stage2_evaluation "
+                         "(evaluate_primary_view / evaluate_span_metrics) + "
+                         "bpc_hybrid.stage2_sun_literal_overlap"
+                         + ("" if is_primary
+                            else " + bpc_hybrid.g04_coarse_view (legacy)"),
             "llm_calls_performed": 0,
         },
         "arms": arms,
@@ -192,10 +244,17 @@ def render_markdown(report: dict[str, Any]) -> str:
     base_id, ours_id = ARMS[0]["method_id"], ARMS[1]["method_id"]
     base, ours = report["arms"][base_id], report["arms"][ours_id]
     lines: list[str] = []
+    view = report.get("view")
+    view_label = ("original Gold spans (fine_gold_span, formal main view)"
+                  if view == PRIMARY_VIEW_ID
+                  else "coarse sentence view (coarse_sentence_level, "
+                       "historical; superseded as main report)")
     lines.append("# Table 1 — Part 2 regulatory information extraction "
-                 "(EStG-150, coarse sentence view)")
+                 "(EStG-150)")
     lines.append("")
-    lines.append("Report id: `stage2_table1_paper_final_v1` · zero new LLM calls "
+    lines.append(f"Evaluation view: **{view_label}**")
+    lines.append("")
+    lines.append(f"Report id: `{report['report_id']}` · zero new LLM calls "
                  "· regenerated from frozen Gold + frozen arm predictions.")
     lines.append("")
     lines.append("## Main table")
@@ -290,13 +349,20 @@ def render_markdown(report: dict[str, Any]) -> str:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--out-dir", default=str(ROOT / "outputs" / "reports"))
+    parser.add_argument(
+        "--evaluation-view", default=PRIMARY_VIEW_ID,
+        choices=(PRIMARY_VIEW_ID, LEGACY_COARSE_VIEW_ID),
+        help=("evaluation view to score; default = formal main view "
+              "(original Gold spans). coarse_sentence_level reproduces the "
+              "historical v1 capsule."))
     args = parser.parse_args()
 
-    report = collect()
+    report = collect(args.evaluation_view)
+    report_id = report["report_id"]
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
-    json_path = out_dir / "stage2_table1_paper_final_v1.json"
-    md_path = out_dir / "stage2_table1_paper_final_v1.md"
+    json_path = out_dir / f"{report_id}.json"
+    md_path = out_dir / f"{report_id}.md"
     json_path.write_text(
         json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
         encoding="utf-8")

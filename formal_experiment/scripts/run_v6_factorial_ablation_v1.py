@@ -5,17 +5,29 @@ This runner is a thin adapter over the already-audited
 ``run_sep_c3_modular_ablation_v1`` call/parse/persist/evaluate stack.  It
 replaces only the prompt side with the v6 chunk-assembly prompts under
 ``prompts/sun_compat/ablation_v2_factorial`` and evaluates all eight arms with
-the same frozen EStG-150 Gold and the same coarse five-field evaluator.
+the same frozen EStG-150 Gold and the same five-field evaluator.
 
 The historical four cells (111/110/101/011) are reused byte-identically from
 the same model-release batch.  The four new cells (000/001/010/100) are the only
 arms sent in this batch: 4 x 150 = 600 calls.
+
+Evaluation view (``g04_evaluation_views_contract_v2``, user decision
+2026-10-27)
+--------------------------------------------------------------------------
+``--evaluation-view fine_gold_span`` (DEFAULT, formal main view) scores the
+frozen predictions against the ORIGINAL annotated Gold spans -- no per-field
+envelope merge -- with the unchanged non-one-to-one overlap rule.  This is the
+view Table I uses, so Table I and Table II stay directly comparable.
+
+``--evaluation-view coarse_sentence_level`` reproduces the superseded
+historical numbers into the historical output paths; it is diagnostic only.
 
 Modes
 -----
 --offline-check : zero-network prompt/request/render/evaluator audit
 --smoke         : 4 arms x 5 samples = 20 calls, same persistence tree
 --execute       : 4 arms x 150 samples = 600 calls (resumes smoke rows first)
+--report-only   : zero-API re-score of the persisted predictions
 
 Real sends require ``--execute/--smoke --allow-llm``.  Use ``--project-env`` to
 load the project ``.env`` through ``LLMConfig.from_env``; secrets are never
@@ -42,6 +54,16 @@ for candidate in (SRC, SCRIPTS):
 
 import run_sep_c3_modular_ablation_v1 as core  # noqa: E402
 from bpc_hybrid.prompt_loader import load_prompt  # noqa: E402
+from bpc_hybrid.sep_c3_modular_evaluation import (  # noqa: E402
+    evaluate_coarse as evaluate_coarse_legacy,
+)
+from bpc_hybrid.sep_c3_primary_evaluation import (  # noqa: E402
+    CONTRACT_ID,
+    CONTRACT_PATH,
+    LEGACY_COARSE_VIEW_ID,
+    PRIMARY_VIEW_ID,
+    evaluate_primary_view,
+)
 
 NEW_ARMS = ("000", "001", "010", "100")
 HISTORICAL_ARMS = ("111", "110", "101", "011")
@@ -62,19 +84,63 @@ SMOKE_BUDGET_PATH = (
     ROOT / "configs" / "v6_factorial_ablation_budget_smoke_v1.json"
 )
 OUT_DIR = ROOT / "outputs" / "development" / "v6_factorial_ablation_v1"
-REPORT_JSON = ROOT / "outputs" / "reports" / "v6_factorial_ablation_v1.json"
-REPORT_MD = ROOT / "outputs" / "reports" / "v6_factorial_ablation_v1.md"
-TABLE2_JSON = (
-    ROOT / "outputs" / "reports"
-    / "stage2_table2_prompt_ablation_paper_final_v2.json"
-)
-TABLE2_MD = (
-    ROOT / "outputs" / "reports"
-    / "stage2_table2_prompt_ablation_paper_final_v2.md"
-)
 OFFLINE_REPORT = (
     ROOT / "outputs" / "reports" / "v6_factorial_ablation_v1_offline_check.json"
 )
+
+#: Output capsules per evaluation view.  The formal (fine) view writes a NEW
+#: v2/v3 capsule; the coarse view keeps writing the historical paths so the
+#: pre-2026-10-27 artifacts stay reproducible and are never overwritten.
+OUT_PATHS: dict[str, dict[str, Path]] = {
+    PRIMARY_VIEW_ID: {
+        "report_json": (ROOT / "outputs" / "reports"
+                        / "v6_factorial_ablation_v2_fine_gold_span.json"),
+        "report_md": (ROOT / "outputs" / "reports"
+                      / "v6_factorial_ablation_v2_fine_gold_span.md"),
+        "table2_json": (ROOT / "outputs" / "reports"
+                        / "stage2_table2_prompt_ablation_paper_final_v3.json"),
+        "table2_md": (ROOT / "outputs" / "reports"
+                      / "stage2_table2_prompt_ablation_paper_final_v3.md"),
+    },
+    LEGACY_COARSE_VIEW_ID: {
+        "report_json": ROOT / "outputs" / "reports" / "v6_factorial_ablation_v1.json",
+        "report_md": ROOT / "outputs" / "reports" / "v6_factorial_ablation_v1.md",
+        "table2_json": (ROOT / "outputs" / "reports"
+                        / "stage2_table2_prompt_ablation_paper_final_v2.json"),
+        "table2_md": (ROOT / "outputs" / "reports"
+                      / "stage2_table2_prompt_ablation_paper_final_v2.md"),
+    },
+}
+
+
+def out_paths(view: str) -> dict[str, Path]:
+    if view not in OUT_PATHS:
+        raise V6FactorialError(f"unknown evaluation view: {view}")
+    return OUT_PATHS[view]
+
+
+def evaluate_arm(gold_doc: dict[str, Any],
+                 attempts: Sequence[Mapping[str, Any]], *,
+                 method_id: str, view: str) -> dict[str, Any]:
+    """Score one arm under the requested view (formal view by default)."""
+    if view == PRIMARY_VIEW_ID:
+        return evaluate_primary_view(gold_doc, attempts, method_id=method_id)
+    if view == LEGACY_COARSE_VIEW_ID:
+        return evaluate_coarse_legacy(gold_doc, attempts, method_id=method_id)
+    raise V6FactorialError(f"unknown evaluation view: {view}")
+
+
+def overall_micro(evaluation: Mapping[str, Any]) -> Mapping[str, Any]:
+    """Overall micro P/R/F1 of either evaluation shape."""
+    if "five_field_micro" in evaluation:
+        return evaluation["five_field_micro"]
+    return evaluation["coarse_five_field_micro"]
+
+
+def mean_field_f1(evaluation: Mapping[str, Any]) -> float:
+    if "five_field_mean_f1" in evaluation:
+        return float(evaluation["five_field_mean_f1"])
+    return float(evaluation["coarse_five_field_mean_f1"])
 
 
 class V6FactorialError(RuntimeError):
@@ -373,7 +439,7 @@ def _attempt_rows_for(path: Path) -> list[dict[str, Any]]:
     return core.attempt_rows(rows)
 
 
-def _evaluate_all() -> dict[str, Any]:
+def _evaluate_all(view: str = PRIMARY_VIEW_ID) -> dict[str, Any]:
     gold_doc = _read_json(FORMAL_GOLD)
     arms: dict[str, Any] = {}
     for arm in ALL_ARMS:
@@ -385,8 +451,9 @@ def _evaluate_all() -> dict[str, Any]:
             }
             continue
         attempts = _attempt_rows_for(path)
-        evaluation = core.evaluate_coarse(
-            gold_doc, attempts, method_id=f"direct_llm_v6_chunk_{arm}")
+        evaluation = evaluate_arm(
+            gold_doc, attempts,
+            method_id=f"direct_llm_v6_chunk_{arm}", view=view)
         arms[arm] = {
             "status": "evaluated",
             "source": ("historical_same_release" if arm in HISTORICAL_ARMS
@@ -403,8 +470,7 @@ def _main_effects(arms: Mapping[str, Mapping[str, Any]]) -> dict[str, float]:
     for arm, row in arms.items():
         if row.get("status") != "evaluated":
             continue
-        means[arm] = float(
-            row["evaluation"]["coarse_five_field_micro"]["f1"])
+        means[arm] = float(overall_micro(row["evaluation"])["f1"])
     out: dict[str, float] = {}
     for factor, index in (("E", 0), ("S", 1), ("J", 2)):
         on = [v for k, v in means.items() if k[index] == "1"]
@@ -431,11 +497,14 @@ def _main_effects(arms: Mapping[str, Mapping[str, Any]]) -> dict[str, float]:
     return out
 
 
-def _build_report(execution: Mapping[str, Any] | None = None) -> dict[str, Any]:
-    arms = _evaluate_all()
+def _build_report(execution: Mapping[str, Any] | None = None,
+                  view: str = PRIMARY_VIEW_ID) -> dict[str, Any]:
+    is_primary = view == PRIMARY_VIEW_ID
+    paths = out_paths(view)
+    arms = _evaluate_all(view)
     manifest = _read_json(PROMPT_MANIFEST)
     means = {
-        arm: float(row["evaluation"]["coarse_five_field_micro"]["f1"])
+        arm: float(overall_micro(row["evaluation"])["f1"])
         for arm, row in arms.items() if row.get("status") == "evaluated"
     }
     baseline = means.get("111")
@@ -448,23 +517,25 @@ def _build_report(execution: Mapping[str, Any] | None = None) -> dict[str, Any]:
             table[arm] = {"factors": factors, **row}
             continue
         ev = row["evaluation"]
-        table[arm] = {
+        micro = overall_micro(ev)
+        mean_f1 = mean_field_f1(ev)
+        entry: dict[str, Any] = {
             "factors": factors,
             "source": row["source"],
             "path": row["path"],
             "sha256": row["sha256"],
+            "view": ev.get("view"),
             "prompt_sha256": manifest["arms"][arm]["prompt_sha256"],
-            "coarse_five_field_mean_f1": ev["coarse_five_field_mean_f1"],
-            "coarse_five_field_micro_f1": ev["coarse_five_field_micro"]["f1"],
-            "coarse_five_field_micro_precision":
-                ev["coarse_five_field_micro"]["precision"],
-            "coarse_five_field_micro_recall":
-                ev["coarse_five_field_micro"]["recall"],
+            "overall_micro_f1": micro["f1"],
+            "overall_micro_precision": micro["precision"],
+            "overall_micro_recall": micro["recall"],
+            "overall_ground_truth_spans": micro.get("ground_truth"),
+            "overall_extracted_spans": micro.get("extracted"),
+            "mean_field_f1": mean_f1,
             "modality_label_macro_f1":
                 (ev.get("modality_labels") or {}).get("macro_f1"),
             "delta_vs_111": (
-                None if baseline is None
-                else round(ev["coarse_five_field_micro"]["f1"] - baseline, 8)),
+                None if baseline is None else round(micro["f1"] - baseline, 8)),
             "failed_count": ev.get("failed_count"),
             "per_field_f1": {
                 k: v.get("f1")
@@ -472,23 +543,60 @@ def _build_report(execution: Mapping[str, Any] | None = None) -> dict[str, Any]:
                              or ev.get("per_field") or {}).items()
             },
         }
+        if not is_primary:
+            # historical key names, kept so pre-2026-10-27 consumers and the
+            # historical coarse capsule stay readable
+            entry.update({
+                "coarse_five_field_micro_f1": micro["f1"],
+                "coarse_five_field_micro_precision": micro["precision"],
+                "coarse_five_field_micro_recall": micro["recall"],
+                "coarse_five_field_mean_f1": mean_f1,
+            })
+        table[arm] = entry
     report = {
-        "schema_version": "v6_factorial_ablation_report@1.0.0",
+        "schema_version": ("v6_factorial_ablation_report@2.0.0" if is_primary
+                           else "v6_factorial_ablation_report@1.0.0"),
         "suite_id": "V6-ESJ-FACTORIAL-001",
         "status": "complete" if len(means) == 8 else "incomplete",
         "prompt_family": "v6_chunk_direct_assembly",
+        "view": view,
+        "view_role": ("formal main report (original Gold spans)" if is_primary
+                      else "historical/diagnostic only (superseded)"),
+        "evaluation_contract": {
+            "contract_id": CONTRACT_ID if is_primary else (
+                "g04_evaluation_views_contract_v1"),
+            "contract_path": CONTRACT_PATH,
+            "reference_side": ("original annotated Gold spans, one reference "
+                               "span per annotated span (no envelope merge)"
+                               if is_primary else
+                               "one [min(start), max(end)) envelope per field "
+                               "per sentence"),
+            "prediction_side": "original validated prediction spans (unmerged)",
+            "match_rule": (
+                "independent_same_field_any_nonempty_character_span_intersection"),
+            "coordinate_convention": (
+                "zero-based character offsets into approved_text_en, "
+                "half-open [start,end)"),
+            "assignment": "none_independent_overlap_coverage (not one-to-one)",
+            "metric_family_matches_table1": True,
+        },
         "prompt_manifest": str(PROMPT_MANIFEST.relative_to(ROOT)).replace(
             "\\", "/"),
         "prompt_manifest_sha256": hashlib.sha256(
             PROMPT_MANIFEST.read_bytes()).hexdigest(),
         "gold_path": str(FORMAL_GOLD.relative_to(ROOT)).replace("\\", "/"),
         "gold_sha256": hashlib.sha256(FORMAL_GOLD.read_bytes()).hexdigest(),
-        "evaluator": "coarse_five_field + modality labels",
-        "primary_metric": "coarse_five_field_micro_f1",
+        "evaluator": ("bpc_hybrid.sep_c3_primary_evaluation."
+                      "evaluate_primary_view (five_field_micro + modality "
+                      "labels)" if is_primary
+                      else "coarse_five_field + modality labels"),
+        "primary_metric": ("five_field_micro_f1" if is_primary
+                           else "coarse_five_field_micro_f1"),
         "primary_metric_definition": (
             "pooled five-span-field micro-F1; identical family to the "
-            "paper's Table 1 Overall (pooled 5) metric"),
-        "secondary_metric": "coarse_five_field_mean_f1",
+            "paper's Table 1 Overall (Micro-F1) metric"),
+        "secondary_metric": ("five_field_mean_f1" if is_primary
+                             else "coarse_five_field_mean_f1"),
         "historical_reuse": {
             arm: {
                 "prompt_sha256": manifest["arms"][arm]["prompt_sha256"],
@@ -514,14 +622,24 @@ def _build_report(execution: Mapping[str, Any] | None = None) -> dict[str, Any]:
             "The four new cells are the 600 authorized calls.",
             "The evaluator and Gold are identical for every cell.",
             "E/S/J are coded in that order.",
+            (f"Evaluation view: {view} (formal main view, original Gold "
+             "spans)." if is_primary else
+             f"Evaluation view: {view} (historical; NOT the paper main "
+             "report)."),
         ],
     }
-    _write_json(REPORT_JSON, report)
-    _write_json(TABLE2_JSON, report)
+    _write_json(paths["report_json"], report)
+    _write_json(paths["table2_json"], report)
+    view_line = (
+        "- evaluation view: **fine_gold_span** (original Gold spans, formal "
+        "main view; no envelope merge)" if is_primary else
+        "- evaluation view: **coarse_sentence_level** (historical/diagnostic; "
+        "superseded as the paper main report)")
     lines = [
         "# Table 2 - v6 prompt-family 2^3 E/S/J factorial ablation",
         "",
         f"- status: **{report['status']}**",
+        view_line,
         f"- primary metric: `{report['primary_metric']}`",
         f"- Gold: `{report['gold_path']}`",
         f"- prompt family: `{report['prompt_family']}`",
@@ -533,7 +651,7 @@ def _build_report(execution: Mapping[str, Any] | None = None) -> dict[str, Any]:
     ]
     for arm in ALL_ARMS:
         row = table[arm]
-        if row.get("coarse_five_field_micro_f1") is None:
+        if row.get("overall_micro_f1") is None:
             lines.append(
                 f"| {arm[0]} {arm[1]} {arm[2]} | | | | | | | | | | |")
             continue
@@ -546,25 +664,27 @@ def _build_report(execution: Mapping[str, Any] | None = None) -> dict[str, Any]:
             f"{row['modality_label_macro_f1']:.4f} | "
             f"{fmt('actor')} | {fmt('action')} | {fmt('condition')} | "
             f"{fmt('constraint')} | {fmt('exception')} | "
-            f"{row['coarse_five_field_micro_f1']:.4f} | "
-            f"{row['coarse_five_field_mean_f1']:.4f} | "
+            f"{row['overall_micro_f1']:.4f} | "
+            f"{row['mean_field_f1']:.4f} | "
             f"{row['delta_vs_111']:+.4f} | {row['failed_count']} |")
     lines += [
         "",
         "## Overall metric detail",
         "",
-        "| E S J | Precision | Recall | F1 | Source |",
-        "|---|---:|---:|---:|---|",
+        "| E S J | Precision | Recall | F1 | Gold spans | Extracted | Source |",
+        "|---|---:|---:|---:|---:|---:|---|",
     ]
     for arm in ALL_ARMS:
         row = table[arm]
-        if row.get("coarse_five_field_micro_f1") is None:
+        if row.get("overall_micro_f1") is None:
             continue
         lines.append(
             f"| {arm[0]} {arm[1]} {arm[2]} | "
-            f"{row['coarse_five_field_micro_precision']:.4f} | "
-            f"{row['coarse_five_field_micro_recall']:.4f} | "
-            f"{row['coarse_five_field_micro_f1']:.4f} | {row['source']} |")
+            f"{row['overall_micro_precision']:.4f} | "
+            f"{row['overall_micro_recall']:.4f} | "
+            f"{row['overall_micro_f1']:.4f} | "
+            f"{row['overall_ground_truth_spans']} | "
+            f"{row['overall_extracted_spans']} | {row['source']} |")
     lines += [
         "",
         "## Main effects (overall pooled micro-F1 scale)",
@@ -582,16 +702,17 @@ def _build_report(execution: Mapping[str, Any] | None = None) -> dict[str, Any]:
         "DeepSeek-V4-Pro-0813 release window.",
         "- new 000/001/010/100: 600 calls in this batch.",
         "- no Gold or benchmark mutation; evaluator fixed.",
+        "- no new LLM call was made for this re-score.",
     ]
-    REPORT_MD.write_text("\n".join(lines) + "\n", encoding="utf-8",
-                         newline="\n")
-    TABLE2_MD.write_text("\n".join(lines) + "\n", encoding="utf-8",
-                         newline="\n")
+    paths["report_md"].write_text("\n".join(lines) + "\n", encoding="utf-8",
+                                  newline="\n")
+    paths["table2_md"].write_text("\n".join(lines) + "\n", encoding="utf-8",
+                                  newline="\n")
     return report
 
 
 def _result_writer(execution: Mapping[str, Any]) -> None:
-    _build_report(execution)
+    _build_report(execution, PRIMARY_VIEW_ID)
 
 
 def run_offline() -> int:
@@ -657,17 +778,27 @@ def run_smoke(project_env: bool) -> int:
     return 0 if result.get("complete") else 3
 
 
-def run_full(project_env: bool) -> int:
-    result = core.execute(
-        project_env=project_env,
-        arms=NEW_ARMS,
-        out_dir=OUT_DIR,
-        budget_path=BUDGET_PATH,
-        planned_calls=PLANNED_CALLS,
-        call_cap=CALL_CAP,
-        samples_per_arm=SAMPLES_PER_ARM,
-        result_writer=_result_writer,
-    )
+def run_full(project_env: bool, view: str = PRIMARY_VIEW_ID) -> int:
+    paths = out_paths(view)
+    # Any future execution must evaluate with the SAME view as the paper
+    # tables, so bind the selected evaluator into the shared call stack.
+    real_evaluator = core.evaluate_coarse
+    core.evaluate_coarse = (
+        lambda gold_doc, attempts, *, method_id:
+        evaluate_arm(gold_doc, attempts, method_id=method_id, view=view))
+    try:
+        result = core.execute(
+            project_env=project_env,
+            arms=NEW_ARMS,
+            out_dir=OUT_DIR,
+            budget_path=BUDGET_PATH,
+            planned_calls=PLANNED_CALLS,
+            call_cap=CALL_CAP,
+            samples_per_arm=SAMPLES_PER_ARM,
+            result_writer=lambda execution: _build_report(execution, view),
+        )
+    finally:
+        core.evaluate_coarse = real_evaluator
     print(json.dumps({
         "complete": result.get("complete"),
         "actual_calls": result.get("actual_calls"),
@@ -676,7 +807,9 @@ def run_full(project_env: bool) -> int:
         "abort_reason": result.get("abort_reason"),
         "budget_gate": result.get("budget_gate"),
         "runtime_seconds": result.get("runtime_seconds"),
-        "report": str(REPORT_JSON.relative_to(ROOT)).replace("\\", "/"),
+        "evaluation_view": view,
+        "report": str(paths["report_json"].relative_to(ROOT)).replace(
+            "\\", "/"),
     }, ensure_ascii=False, indent=2))
     return 0 if result.get("complete") else 3
 
@@ -690,20 +823,31 @@ def main() -> int:
     mode.add_argument("--execute", action="store_true")
     parser.add_argument("--allow-llm", action="store_true")
     parser.add_argument("--project-env", action="store_true")
+    parser.add_argument(
+        "--evaluation-view", default=PRIMARY_VIEW_ID,
+        choices=(PRIMARY_VIEW_ID, LEGACY_COARSE_VIEW_ID),
+        help=("evaluation view; default = formal main view (original Gold "
+              "spans). coarse_sentence_level reproduces the historical "
+              "capsules."))
     args = parser.parse_args()
+    view = args.evaluation_view
+    paths = out_paths(view)
     if args.offline_check:
         return run_offline()
     if args.report_only:
         execution_path = OUT_DIR / "execution_summary.json"
         execution = _read_json(execution_path) if execution_path.is_file() else None
-        report = _build_report(execution)
+        report = _build_report(execution, view)
         print(json.dumps({
             "status": report["status"],
+            "evaluation_view": report["view"],
             "primary_metric": report["primary_metric"],
             "main_effects": report["main_effects"],
-            "report_json": str(REPORT_JSON.relative_to(ROOT)).replace(
+            "report_json": str(paths["report_json"].relative_to(ROOT)).replace(
                 "\\", "/"),
-            "report_md": str(REPORT_MD.relative_to(ROOT)).replace(
+            "report_md": str(paths["report_md"].relative_to(ROOT)).replace(
+                "\\", "/"),
+            "table2_json": str(paths["table2_json"].relative_to(ROOT)).replace(
                 "\\", "/"),
         }, ensure_ascii=False, indent=2))
         return 0 if report["status"] == "complete" else 1
@@ -712,7 +856,7 @@ def main() -> int:
         return 2
     if args.smoke:
         return run_smoke(args.project_env)
-    return run_full(args.project_env)
+    return run_full(args.project_env, view)
 
 
 if __name__ == "__main__":
