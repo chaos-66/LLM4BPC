@@ -68,7 +68,9 @@ def llm_predictions(path: Path) -> tuple[dict[str, str | None], dict[str, Any]]:
     cost = 0.0
     calls = 0
     statuses: dict[str, int] = {}
+    request_statuses: dict[str, int] = {}
     models: set[str] = set()
+    failed = 0
     with path.open("r", encoding="utf-8") as handle:
         for raw in handle:
             if not raw.strip():
@@ -78,12 +80,18 @@ def llm_predictions(path: Path) -> tuple[dict[str, str | None], dict[str, Any]]:
             cost += float(row.get("cost_cny") or 0.0)
             calls += 1
             statuses[row["parse_status"]] = statuses.get(row["parse_status"], 0) + 1
+            status = row.get("request_status") or "unknown"
+            request_statuses[status] = request_statuses.get(status, 0) + 1
+            if row.get("label") is None:
+                failed += 1
             if row.get("returned_model"):
                 models.add(row["returned_model"])
     return predictions, {
         "calls": calls,
         "cost_cny": round(cost, 6),
         "parse_status_counts": statuses,
+        "request_status_counts": request_statuses,
+        "failed_samples": failed,
         "returned_models": sorted(models),
     }
 
@@ -129,9 +137,16 @@ def build_markdown(report: dict[str, Any]) -> str:
             f"{fmt(m['macro_recall'])} | {fmt(m['macro_f1'])} | {m['failures']} | "
             f"{fmt(m['failure_rate'])} | {total_runtime:.2f} |"
         )
-    lines += ["", "## 分类别 F1（support 为测试集真值条数）", "",
-              "| 方法 | definition (177) | obligation (195) | permission (39) | prohibition (15) |",
-              "|---|---:|---:|---:|---:|"]
+    lines += [
+        "",
+        "注：CFKW 的运行时间是 test 推理耗时；CFRNN/CFCNN 为训练 + 推理；Sun 为 426 条推理；"
+        "LLM-SE 为 426 次串行真实 API 调用墙钟时间（42 分钟），不与本地算力耗时直接可比。",
+        "",
+        "## 分类别 F1（support 为测试集真值条数）",
+        "",
+        "| 方法 | definition (177) | obligation (195) | permission (39) | prohibition (15) |",
+        "|---|---:|---:|---:|---:|",
+    ]
     for key in ["cfkw", "cfrnn", "cfcnn", "sun", "llm_se"]:
         arm = methods.get(key)
         if not arm:
@@ -158,8 +173,19 @@ def build_markdown(report: dict[str, Any]) -> str:
             f"- 实际费用: ¥{budget['cost_cny']:.4f}（上限 ¥{budget['cap_cny']:.2f}）",
             f"- 返回模型: {', '.join(budget['returned_models']) or 'n/a'}",
             f"- 解析状态分布: {json.dumps(budget['parse_status_counts'], ensure_ascii=False)}",
+            f"- 请求状态分布: {json.dumps(budget['request_status_counts'], ensure_ascii=False)}",
+            f"- 失败样本（保留在分母，未删样本/未猜标签）: {budget['failed_samples']} / "
+            f"{budget['planned_calls']}（failure_rate={budget['failure_rate']:.4f}）",
+            f"- 未发出调用（计入 `<no_prediction>`，未补标签）: {budget['uncalled_samples']}",
             f"- 价格窗口: {budget['price_window_at_start']} → {budget['price_window_at_end']}",
         ]
+        recon = budget.get("body_reconciliation")
+        if recon:
+            lines.append(
+                f"- 请求体对账: ok={recon['ok']}，checked={recon['checked']}，"
+                f"failures={recon['failures']}（记录字段 body_hash_match 全为 false 属记账口径差异，"
+                f"见 `llm_se/body_reconciliation.json`）"
+            )
     lines += ["", "## 实现与原论文的差异（必读）", ""]
     for item in report["differences"]:
         lines.append(f"- {item}")
@@ -176,6 +202,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--run-id", default=DEFAULT_RUN_ID)
     parser.add_argument("--force", action="store_true")
+    parser.add_argument("--report-dir", default=None,
+                        help="override output directory (used by offline validation)")
     args = parser.parse_args(argv)
 
     run_dir = RUN_ROOT / args.run_id
@@ -242,6 +270,9 @@ def main(argv: Sequence[str] | None = None) -> int:
             if llm_summary_path.exists()
             else {}
         )
+        if summary.get("elapsed_seconds") is not None:
+            # 426 serial API calls; wall clock, not local compute.
+            metrics["runtime_seconds"] = float(summary["elapsed_seconds"])
         methods["llm_se"] = {
             "display_name": DISPLAY["llm_se"],
             "metrics": metrics,
@@ -252,6 +283,12 @@ def main(argv: Sequence[str] | None = None) -> int:
                 "input_language": "de",
             },
         }
+        reconciliation_path = run_dir / "llm_se/body_reconciliation.json"
+        reconciliation = (
+            json.loads(reconciliation_path.read_text(encoding="utf-8"))
+            if reconciliation_path.exists()
+            else None
+        )
         llm_budget = {
             "calls": budget["calls"],
             "planned_calls": inventory["test"]["rows"],
@@ -259,8 +296,32 @@ def main(argv: Sequence[str] | None = None) -> int:
             "cap_cny": summary.get("cap_cny", 20.0),
             "returned_models": budget["returned_models"],
             "parse_status_counts": budget["parse_status_counts"],
+            "request_status_counts": budget["request_status_counts"],
+            "failed_samples": budget["failed_samples"],
+            "uncalled_samples": len(missing),
+            "failure_rate": (
+                round(budget["failed_samples"] / inventory["test"]["rows"], 6)
+                if inventory["test"]["rows"]
+                else None
+            ),
             "price_window_at_start": summary.get("first_price_window", "off_peak"),
             "price_window_at_end": summary.get("final_price_window"),
+            "body_hash_mismatch_count_raw": summary.get("body_hash_mismatch_count"),
+            "body_hash_mismatch_explained": True,
+            "body_reconciliation": (
+                {
+                    "ok": reconciliation.get("ok"),
+                    "checked": reconciliation.get("checked"),
+                    "failures": reconciliation.get("failures"),
+                    "note": (
+                        "记录中的 body_hash_match=false 来自本地记账口径（sort_keys dump）"
+                        "与 transport（builder 顺序 dump）不同；离线重推逐条核对证明两种序列化"
+                        "解析回同一对象，且 wire 摘要逐条等于 provider 侧摘要。"
+                    ),
+                }
+                if reconciliation
+                else None
+            ),
         }
         if missing:
             missing_report["llm_se"] = missing
@@ -306,19 +367,32 @@ def main(argv: Sequence[str] | None = None) -> int:
         "llm_budget": llm_budget,
         "missing_predictions": missing_report,
         "differences": [
-            "CFKW, CFRNN and CFCNN are independent reimplementations from the paper description; no author code, lexicon, embedding table or hyperparameters were available, and they are never referred to as the authors' original systems.",
-            "CFKW rule priority order and fallback class were selected on the dev split from four pre-declared candidates; the selected configuration is recorded with the arm.",
-            "Sun is the project's own BERT-TextCNN reconstruction (Legal-BERT base uncased) trained on the same train split; paper-reported scores are not used anywhere in this table.",
-            "The bound Sun checkpoint (candidate B) uses inverse-sqrt class-frequency weighted cross-entropy, while the S2.4 base config declares unweighted cross-entropy; the checkpoint is the one the project binds for the Sun baseline.",
-            "LLM-SE reuses the frozen EStG-150 prompt, schema and sampling policy (temperature 0, top_p 1, max_tokens 4096, thinking disabled, no retry) with deepseek-v4-pro (DeepSeek-V4-Pro-0813).",
-            "The frozen LLM-SE prompt was authored for the English EStG-150 text and here receives German sentences, because every arm must see the same German original. This language mismatch is a real deviation and is reported, not corrected.",
-            "No modality-only prompt is used; such a prompt would have to be reported separately as 'LLM modality-only' and is not part of this table.",
+            "CFKW / CFRNN / CFCNN 是按论文描述独立复现的：作者未公开代码、词表、词向量表与超参，"
+            "因此三者只称“独立复现”，从不写成作者原版系统。",
+            "CFKW 的规则优先级与未命中回退类由 dev 划分在 4 个预声明候选中选定，"
+            "选定结果随该臂一并记录；测试标签未参与选择。",
+            "Sun 是项目自建的 BERT-TextCNN（Legal-BERT base uncased），在同一 train 划分上训练；"
+            "本表任何位置都没有引用论文报告分数。",
+            "绑定的 Sun 检查点（候选 B）使用 inverse-sqrt 类别频率加权交叉熵，而 S2.4 基础配置声明的是"
+            "未加权交叉熵；本表报告的是项目实际绑定的检查点。",
+            "LLM-SE 沿用冻结的 EStG-150 提示词、schema 与采样策略（temperature 0、top_p 1、"
+            "max_tokens 4096、thinking disabled、无重试），模型 deepseek-v4-pro（DeepSeek-V4-Pro-0813）。",
+            "冻结的 LLM-SE 提示词原本面向英文 EStG-150 文本，本实验向其输入德语原句，"
+            "因为所有方法必须看到同一份德语原文；这一语言错配是真实偏差，如实报告且不做修正。",
+            "冻结提示词输出的是“规则记录（多 clause）”，句级 modality 取记录中第一个带非空标签的 clause，"
+            "与项目既有评价器 `_pred_modality_label` 的取法一致；这不是直接的句级 modality 判定，"
+            "是该方法在本任务上的代理口径。",
+            "失败样本（请求成功但输出无可解析 clause）保留在分母中，既不删除样本也不补猜标签。",
+            "本表没有使用任何只判断 modality 的提示词；若另写此类提示词，必须单独命名为 "
+            "“LLM modality-only”，不得标为原论文 LLM-SE。",
         ],
         "limitations": [
-            "The 426-row test split is a project-reconstructed deterministic split (seed 20260715), not Sun's original split.",
-            "The same test split was already used by the S2.4 candidate evaluation (2026-07-22) and the S2.7 alignment check (2026-08-08); it is therefore not pristine for the Sun arm, and all arms are single-seed without repeated runs.",
-            "The official modality data license remains unknown_pending_confirmation; raw sentences, vectors and row-level predictions stay local and are not redistributed.",
-            "Only one seed and one run per arm are reported; no significance test or confidence interval is claimed.",
+            "426 条测试集是项目重建的确定性划分（seed 20260715），不是 Sun 的原始划分。",
+            "同一测试集此前已被 S2.4 候选评价（2026-07-22）与 S2.7 对齐核验（2026-08-08）使用过，"
+            "对 Sun 臂并非“从未触碰”的测试集；所有方法均为单种子、单次运行。",
+            "官方 modality 数据许可仍为 unknown_pending_confirmation；原文、向量与逐条预测仅保留在本地，"
+            "不重新分发。",
+            "每个方法只报告一个种子、一次运行，不做显著性检验，也不声称置信区间。",
         ],
         "reproduction": {
             "commands": [
@@ -338,9 +412,10 @@ def main(argv: Sequence[str] | None = None) -> int:
         },
     }
 
-    REPORT_DIR.mkdir(parents=True, exist_ok=True)
-    json_path = REPORT_DIR / "sun_modality_five_way_v1.json"
-    md_path = REPORT_DIR / "sun_modality_five_way_v1.md"
+    report_dir = Path(args.report_dir) if args.report_dir else REPORT_DIR
+    report_dir.mkdir(parents=True, exist_ok=True)
+    json_path = report_dir / "sun_modality_five_way_v1.json"
+    md_path = report_dir / "sun_modality_five_way_v1.md"
     for path in (json_path, md_path):
         if path.exists() and not args.force:
             raise SystemExit(f"refusing to overwrite {path}")

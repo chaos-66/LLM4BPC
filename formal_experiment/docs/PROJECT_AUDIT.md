@@ -1,6 +1,6 @@
 # 项目实时状态（兼容文件名 PROJECT_AUDIT.md）
 
-**更新时间**：2026-10-12
+**更新时间**：2026-10-28
 **唯一活动目录**：`formal_experiment/`  
 **完整路线**：`docs/MASTER_PIPELINE.md`  
 **机器事实源**：`python formal_experiment/scripts/audit_project.py`（自动完整性检查）  
@@ -13,6 +13,31 @@ Part 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见主
 Sun 指 Sun et al. (2024) 的本地独立重建，历史名称 Rules-Only 对应
 `sun_rule_only` / B0。以下活动说明按当前名称阅读；冻结报告、源码与历史
 事件保持原字节。本次纯命名调整不改变本页任务状态、结果或实验授权。
+
+## SUN-MODALITY-5WAY-001：Sun modality 五方法对比补充实验完成（2026-10-28，含真实 LLM 调用）
+
+- 用户直接要求执行该补充实验；本轮授权真实 LLM 调用，硬上限 ¥20，最多 426 次。
+- 同一德语原文、同一固定划分（1985/420/426，seed 20260715）、同一评价器比较
+  CFKW / CFRNN(BiLSTM) / CFCNN(CNN) / Sun(BERT-TextCNN) / LLM-SE。
+- 本地四臂按论文描述**独立复现**，作者未公开代码/词表/词向量/超参，故不称作者原版；
+  Sun 复用候选 B 检查点不重训，并以 Macro-F1 `0.8772277372431857` 做 fail-closed 复现校验。
+- LLM-SE 沿用冻结提示词 v6（SHA-256 `3aa64877…0ede895`）、temperature 0 / top_p 1 /
+  4096 / thinking disabled / 零重试 / 每样本一次；426/426 全部在空闲时段执行
+  （18:00:14→18:42:14，墙钟 2520 s），`request_status` 全 ok，`returned_model` 全为
+  `deepseek-v4-pro`，解析 ok 424 + `no_clauses` 2。
+- **实际费用 ¥9.8428（上限 ¥20）**；用量 prompt 1,865,950 / completion 281,989 token，
+  缓存命中 542,720 token。
+- 测试集 426 条全部进入统计：2 条无可解析 clause 记 `<no_prediction>` 并保留在分母，
+  未删样本、未补猜标签。
+- 结果（Macro-F1）：Sun 0.8772 > CFRNN 0.7734 > CFCNN 0.7646 > CFKW 0.6657 > LLM-SE 0.6137。
+  LLM-SE 的失败模式是 definition 单向塌缩到道义类（177 条仅 53 条判对），
+  与冻结提示词“抽取规则记录”的用途一致，**未经 clause 级复核**，按待验证假设报告。
+- 记录字段 `body_hash_match=false`（426/426）经离线重推证明仅为 `sort_keys` 与 builder
+  顺序的**记账口径差异**，wire 摘要逐条等于 provider 侧摘要，发送内容未被污染。
+- 边界：不替换 EStG-150 S2.10 主表，不修改 Gold、冻结结果与历史记录，不恢复已取消的
+  Rules+LLM 实验；原文、逐条预测与权重仅本地保存（`outputs/development/` 已忽略）。
+- 详见 `docs/research/SUN_MODALITY_FIVE_WAY_COMPARISON.md` 与
+  `outputs/reports/sun_modality_five_way_v1.{json,md}`；主 Pipeline 变更记录 3.7.36。
 
 ## S3-BASELINE-REPAIR-V1：局部修复同批对照完成，完整复现仍未认证（2026-10-12）
 

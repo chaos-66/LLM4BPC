@@ -282,7 +282,18 @@ def cmd_execute(run_dir: Path, cap_cny: float, reserve_out: int, allow_peak: boo
         moment = datetime.now(llm_se.BEIJING)
         window, rate = llm_se.rate_for(moment)
         body = llm_se.request_body(sample_id, text)
-        body_bytes = json.dumps(body, ensure_ascii=False, sort_keys=True).encode("utf-8")
+        # The transport hashes json.dumps(body) in builder key order, not a
+        # sorted dump.  Rebuild the canonical wire form so the local hash is
+        # literally the provider-side request hash.
+        wire_body = {
+            key: body[key]
+            for key in (
+                "model", "messages", "max_tokens", "temperature", "top_p",
+                "stream", "thinking",
+            )
+            if key in body
+        }
+        body_bytes = json.dumps(wire_body).encode("utf-8")
         tokens = llm_se.estimate_input_tokens(body)
         try:
             reservation = gate.reserve(tokens, rate, moment)

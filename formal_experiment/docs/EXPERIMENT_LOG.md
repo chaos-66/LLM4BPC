@@ -6441,3 +6441,49 @@
 - 仍存在 blocker：无
 - 备注：已有实际重算2 passed/27.05秒、全部预测JSON一致；本次只核对运行器/配置/来源manifest及冻结输入哈希，复用相同状态的凭据。重现核心代码、旧指标和预测不改，不重复执行推理或全量测试。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-28T09:35:14.024800+00:00 - 新增 Sun modality 五方法对比补充实验：共享评价器、CFKW/BiLSTM/CNN 独立复现、Sun 权重推理与 LLM-SE 预检/执行入口
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：否；正式实验就绪：否
+- 测试：test summary unavailable
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`df53414758881f395515902ee95902af15ff9566`；相关未提交路径：115 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：本地四臂已跑通（CFKW 0.6657 / CFRNN 0.7734 / CFCNN 0.7646 / Sun 0.8772 Macro-F1）；LLM-SE 尚未发起真实调用，预检为零网络。不替换 EStG-150 S2.10 结果。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-28T09:36:33.013880+00:00 - 补充记录：上一事件在缺少 pytest 的解释器下运行，未执行测试；本事件用带 torch/pytest 的项目解释器重跑同一具名测试并记录真实证据
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：19 passed in 0.26s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`df53414758881f395515902ee95902af15ff9566`；相关未提交路径：115 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：19 项聚焦测试（非全量）；本地四臂已跑通；LLM-SE 真实调用尚未发起。上一事件 test_scope=focused 但测试未实际运行，以本事件为准。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-28T10:50:20.151582+00:00 - SUN-MODALITY-5WAY-001：五方法 modality 对比补充实验完成（含 426 次真实 LLM 调用，费用 ¥9.8428/上限 ¥20）
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=s28_sun_modality_five_way_v1；阶段=stage2；方法=CFKW / CFRNN(BiLSTM) / CFCNN(CNN) / Sun(BERT-TextCNN) / LLM-SE；状态=成功（`succeeded`）
+- 实际运行命令：`python scripts/run_sun_modality_five_way_v1.py --methods cfkw,cfcnn,cfrnn,sun; python scripts/run_sun_modality_llm_se_v1.py --preflight; python scripts/run_sun_modality_llm_se_v1.py --execute; python scripts/verify_llm_se_request_bodies_v1.py; python scripts/build_sun_modality_five_way_report_v1.py --force`
+- manifest：outputs/reports/sun_modality_five_way_v1.json
+- 结果摘要：测试集 426 条全部进入统计；Macro-F1 Sun 0.8772 > CFRNN 0.7734 > CFCNN 0.7646 > CFKW 0.6657 > LLM-SE 0.6137；LLM-SE 426/426 调用零重试、全部空闲时段、returned_model 全为 deepseek-v4-pro、实际费用 ¥9.8428；解析 ok 424 + no_clauses 2（按失败计入分母）；请求体离线对账 426/426 零失配
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：20 passed in 0.26s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`57fc0fe772d55ea4df3f2372186da7f59c37a2f4`；相关未提交路径：110 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：已授权调用（`authorized_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：单种子、单次运行，无显著性主张；不替换 EStG-150 S2.10 主表；原文/逐条预测/权重仅本地（outputs/development 已忽略）；记录中 body_hash_match=false 经重推证明仅为 sort_keys 与 builder 顺序的记账口径差异；LLM-SE 未落盘原始输出，clause 级归因需新调用，本轮协议不允许
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

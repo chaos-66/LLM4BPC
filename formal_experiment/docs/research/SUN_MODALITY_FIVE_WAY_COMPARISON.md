@@ -1,7 +1,7 @@
 # Sun modality 五方法对比：独立补充实验（SUN-MODALITY-5WAY-001）
 
-**状态**：本地四臂已完成；LLM-SE 真实调用按本轮授权执行中，结果以
-`outputs/reports/sun_modality_five_way_v1.json` 为准。
+**状态**：五臂全部完成（LLM-SE 于 2026-10-28 18:00–18:42 北京时间真实调用，426/426，
+实际费用 ¥9.8428）；数值以 `outputs/reports/sun_modality_five_way_v1.json` 为准。
 **日期**：2026-10-28
 **定位**：本实验是 S2.4 / EXP-S2A 的独立补充，**不替换** EStG-150 的 S2.10
 正式主表，也**不把** Sun 论文中报告的分数放进我们的结果表。
@@ -64,7 +64,10 @@ permission / 禁止 prohibition）句子级分类能力：
 | CFRNN (BiLSTM) | 0.8662 | 0.7747 | 0.7799 | 0.7734 | 0 | 160.5 |
 | CFCNN (CNN) | 0.8756 | 0.8121 | 0.7552 | 0.7646 | 0 | 29.4 |
 | Sun (BERT-TextCNN) | 0.9319 | 0.8753 | 0.8792 | 0.8772 | 0 | 76.1 |
-| LLM-SE | 见报告 | 见报告 | 见报告 | 见报告 | 见报告 | 见报告 |
+| LLM-SE | 0.6925 | 0.6486 | 0.7646 | 0.6137 | 2 | 2520.2 |
+
+注：CFKW 为 test 推理耗时；CFRNN/CFCNN 为训练 + 推理；Sun 为 426 条推理；LLM-SE 为
+426 次串行真实 API 调用墙钟时间（42 分钟），不与本地算力耗时直接可比。
 
 分类别 F1：
 
@@ -74,7 +77,7 @@ permission / 禁止 prohibition）句子级分类能力：
 | CFRNN | 0.8703 | 0.9003 | 0.8046 | 0.5185 |
 | CFCNN | 0.8876 | 0.9021 | 0.8140 | 0.4545 |
 | Sun | 0.9322 | 0.9666 | 0.8101 | 0.8000 |
-| LLM-SE | 见报告 | 见报告 | 见报告 | 见报告 |
+| LLM-SE | 0.4589 | 0.8366 | 0.7525 | 0.4068 |
 
 可观察到的现象（描述性，不做显著性主张）：
 
@@ -87,8 +90,33 @@ permission / 禁止 prohibition）句子级分类能力：
 3. 预训练 Legal-BERT 的 BERT-TextCNN 在四类上都更强，prohibition F1 0.80，
    明显高于两个从零训练基线（0.52 / 0.45），与“预训练语言模型在德语法律
    小样本分类上占优”的预期一致。
-4. 三方法在 permission 上差距不大（0.80–0.82），主要差距来自 prohibition 与
-   obligation。
+4. CFKW/CFRNN/CFCNN 三者在 permission 上差距不大（0.80–0.82），主要差距来自
+   prohibition 与 obligation。LLM-SE 的 permission F1 为 0.7525，低于这三者。
+5. **LLM-SE 是本轮最低的 Macro-F1（0.6137），但失败模式与关键词规则完全不同**：
+   它的 accuracy 高于 CFKW（0.6925 vs 0.6737）、macro-recall 甚至高于两个神经
+   基线（0.7646），但 macro-precision 只有 0.6486。也就是说它“敢判、判得散”。
+   obligation 召回 0.9846、permission 召回 0.9744，几乎不漏；代价是把大量
+   definition 判成义务或禁止。
+6. LLM-SE 混淆矩阵（行=真值，列=预测，含 `<no_prediction>`）：
+
+   | 真值＼预测 | definition | obligation | permission | prohibition | no_pred |
+   |---|---:|---:|---:|---:|---:|
+   | definition (177) | 53 | 68 | 24 | 30 | 2 |
+   | obligation (195) | 1 | 192 | 0 | 2 | 0 |
+   | permission (39) | 0 | 1 | 38 | 0 | 0 |
+   | prohibition (15) | 0 | 3 | 0 | 12 | 0 |
+
+   177 条 definition 只有 53 条判对（召回 0.2994），其余 122 条被分散到
+   obligation（68）、permission（24）、prohibition（30）。反向几乎没有污染：
+   obligation/permission 两类几乎不被判成 definition（合计 1 条）。因此这不是
+   “类别边界整体平移”，而是**定义类被判成道义类**的单向塌缩。
+7. 这一现象与冻结提示词的用途一致也相互制约：该提示词要求从法条句中抽取
+   “规则记录”，其输出天然倾向编码为“谁必须/可以/不得做什么”，而定义句
+   （“X gilt als …”）在这种记录里往往被折叠成义务或禁止。提示词不是为句级
+   modality 判定写的，本实验按“取第一个带标签 clause”的既定口径落标签。
+   该解释**未经 clause 级复核**（见 §7 第 7 条），只能作为待验证假设。
+8. 与 Sun 的差值（Macro-F1）：CFKW −21.15 pp、CFCNN −11.27 pp、CFRNN −10.38 pp、
+   LLM-SE −26.35 pp。四个基线全部低于 Sun，且量级差异远大于彼此之间的差异。
 
 ## 5. 与论文/作者实现的差异（必读）
 
@@ -131,12 +159,15 @@ permission / 禁止 prohibition）句子级分类能力：
   （SHA-256 `3aa64877…0ede895`）、temperature 0、top_p 1、max_tokens 4096、
   thinking disabled、无重试、每个测试样本最多一次请求。
 - 模型：`deepseek-v4-pro`（官方文档对应发布版 DeepSeek-V4-Pro-0813），
-  调用前核对官方价格页；不可用时如实报告，不擅自换模型。
+  调用前核对官方价格页；不可用时如实报告，不擅自换模型。实际 426/426 次响应
+  `model` 字段均为 `deepseek-v4-pro`，未发生替换。
 - **语言偏差**：该冻结提示词是为 EStG-150 的英文文本编写的，本轮按“所有方法
   使用相同德语原文”的要求直接输入德语原句。这是真实偏差，如实报告，不修改
   提示词、不做翻译后再输入。
 - modality 标签取自记录中第一个带非空标签的 clause，与项目评价器
   `_pred_modality_label` 的取法一致，未引入新的聚合规则。
+- 提示词示例与测试集重叠检查：6 条示例全为合成英文句，raw 与归一化后重叠均为 0
+  （`preflight.json::prompt_overlap`）。
 
 ## 6. 费用与预算
 
@@ -148,7 +179,19 @@ permission / 禁止 prohibition）句子级分类能力：
 - 离线预检：426 次调用，平均估算输入 5830 token；空闲时段预留合计 ¥18.08
   （预计实际约 ¥15.29），高峰时段预留合计 ¥36.16 —— 因此本轮**只在空闲时段
   执行**，以满足 ¥20 上限；高峰不执行，也不通过删样本或改提示词凑预算。
-- 实际调用次数与实际费用见报告 `llm_budget`。
+- 实际执行：**426/426 次调用，零重试，全部落在空闲时段**（18:00 之后启动，
+  18:00:14 → 18:42:14，墙钟 2,520 秒）。状态 `completed`。
+- **实际费用 ¥9.8428**（上限 ¥20.00，占用 49.2%）。估算预留 ¥18.08、预估 ¥15.29，
+  实际更低，原因是缓存命中 542,720 input token（按 0.15 元/百万计价）。
+- 用量：prompt 1,865,950 token / completion 281,989 token（平均输出约 662 token，
+  远低于预留的 1200）。费用可逐项对上：
+  输入未命中 1,323,230 × 4.5/M = ¥5.9545；输入命中 542,720 × 0.15/M = ¥0.0814；
+  输出 281,989 × 13.5/M = ¥3.8069；合计 **¥9.8428**。
+- 返回模型 426/426 均为 `deepseek-v4-pro`（`model_accepted=true`），
+  `request_status` 全 ok；解析 `ok` 424 + `no_clauses` 2。
+- 完整明细见 `outputs/development/s28_sun_modality_five_way_v1/llm_se/`
+  （本地，不入库）：`llm_se_run.json`、`llm_se_responses.jsonl`、`llm_se_ledger.jsonl`
+  （哈希链）、`preflight.json`、`body_reconciliation.json`。
 
 ## 7. 局限
 
@@ -160,6 +203,13 @@ permission / 禁止 prohibition）句子级分类能力：
 5. 官方数据许可未知，只在本地使用；逐条结果与原文不进入仓库。
 6. LLM-SE 的提示词语言（英文指令）与输入语言（德语）不一致，可能低估该方法
    在德语上的真实能力；本轮不通过改提示词或翻译来修正这一偏差。
+7. LLM-SE 只落盘每条响应的 SHA-256、usage、解析出的标签与失败状态，**未落盘原始
+   输出文本**。因此 §4 第 6–7 条描述的混淆只能从混淆矩阵层面陈述，无法回溯到
+   clause 级证据；若要做 clause 级归因，需要新的调用，而本轮协议限定“每样本最多
+   一次、不重试”，故未执行。
+8. 2 条 `no_clauses` 响应按失败计入分母（预测记 `<no_prediction>`），未删除样本、
+   未补猜标签。次级诊断（仅保留可评价样本，424 条）Macro-F1 = 0.6147，与主口径
+   0.6137 相差 0.001，排序不变；该诊断值不作为主表数字。
 
 ## 8. 复现
 
@@ -177,6 +227,10 @@ python scripts/run_sun_modality_llm_se_v1.py --execute
 
 # 4) 汇总报告（重算全部指标）
 python scripts/build_sun_modality_five_way_report_v1.py
+
+# 5) LLM 请求体离线对账（零网络；解释 body_hash_match=false 的记账口径）
+python scripts/verify_llm_se_request_bodies_v1.py \
+  --output outputs/development/s28_sun_modality_five_way_v1/llm_se/body_reconciliation.json
 ```
 
 针对性测试：
@@ -185,7 +239,20 @@ python scripts/build_sun_modality_five_way_report_v1.py
 python -m pytest tests/test_modality_five_way_v1.py -q
 ```
 
-## 9. 产物索引
+## 9. 运行清单
+
+| 臂 | run 目录 | 关键参数 | 耗时 | 产物（本地） |
+|---|---|---|---:|---|
+| CFKW | `s28.../cfkw/` | 优先级 prohibition>permission>obligation>definition；回退 definition；否定窗口 4 token | 0.28 s | `cfkw.json`、`local_only/test_predictions.jsonl`、`local_only/test_rule_trace.jsonl` |
+| CFRNN | `s28.../cfrnn/` | emb 128 / hidden 128 / 双向 / mean+max / Adam 2e-3 / bs 32 / ≤25 ep / patience 4 / seed 20260717 | 160.5 s | `cfrnn.json`、`local_only/test_predictions.jsonl`、`local_only/cfrnn_model.pt` |
+| CFCNN | `s28.../cfcnn/` | emb 128 / 核 2-3-4×128 / global max / dropout 0.3 / 同上训练策略 | 29.4 s | `cfcnn.json`、`local_only/test_predictions.jsonl`、`local_only/cfcnn_model.pt` |
+| Sun | `s28.../sun/` | 复用候选 B 检查点（不重训）；推理后 fail-closed 复现校验 | 76.1 s | `sun.json`、`local_only/test_predictions.jsonl` |
+| LLM-SE | `s28.../llm_se/` | 冻结提示词 v6 + temperature 0 / top_p 1 / 4096 / thinking disabled / 无重试 / 每样本一次 | 2520.2 s | `preflight.json`、`llm_se_responses.jsonl`、`llm_se_ledger.jsonl`、`llm_se_run.json`、`body_reconciliation.json` |
+
+数据绑定：train/dev/test = 1985/420/426，seed 20260715，三划分 SHA-256 在
+`data.py::EXPECTED` 中硬绑定，任何不一致直接 fail closed。
+
+## 10. 产物索引
 
 | 路径 | 内容 | 是否入库 |
 |---|---|---|
@@ -197,4 +264,5 @@ python -m pytest tests/test_modality_five_way_v1.py -q
 | `scripts/run_sun_modality_five_way_v1.py` | 本地四臂运行器 | 是 |
 | `scripts/run_sun_modality_llm_se_v1.py` | LLM-SE 预检 / 执行 | 是 |
 | `scripts/build_sun_modality_five_way_report_v1.py` | 报告生成器 | 是 |
-| `tests/test_modality_five_way_v1.py` | 针对性测试 | 是 |
+| `scripts/verify_llm_se_request_bodies_v1.py` | LLM 请求体离线对账 | 是 |
+| `tests/test_modality_five_way_v1.py` | 针对性测试（20 项） | 是 |

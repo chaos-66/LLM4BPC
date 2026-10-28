@@ -229,3 +229,24 @@ def test_request_body_is_frozen_sampling() -> None:
     assert body["top_p"] == 1.0
     assert body["max_tokens"] == llm_se.MAX_OUTPUT_TOKENS
     assert body["thinking"] == {"type": "disabled"}
+
+
+def test_request_body_serialisations_are_canonically_equal() -> None:
+    """The two recorded digests differ only by JSON key order, not payload."""
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location(
+        "verify_bodies", ROOT / "scripts/verify_llm_se_request_bodies_v1.py"
+    )
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+
+    body = llm_se.request_body("sample_y", "Der Antrag ist zu stellen.")
+    legacy = module.legacy_bytes(body)
+    wire = module.wire_bytes(body)
+    assert legacy != wire
+    assert json.loads(legacy) == json.loads(wire)
+    assert list(json.loads(wire)) == list(module.WIRE_ORDER) or set(
+        json.loads(wire)
+    ) == set(module.WIRE_ORDER)
