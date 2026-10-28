@@ -1,0 +1,219 @@
+{
+  "schema_version": "sun_modality_five_way_prereg@1.0.0",
+  "suite_id": "SUN-MODALITY-5WAY-001",
+  "created_at": "2026-10-28",
+  "pipeline_reference": "supplement to S2.4 (BERT-TextCNN) and EXP-S2A (sentence-level modality classification); not a replacement for the EStG-150 S2.10 formal comparison",
+  "claim_scope": "development_supplement_single_seed",
+  "task": {
+    "goal": "Compare a traditional keyword classifier, a BiLSTM classifier, a CNN classifier, the project's Sun BERT-TextCNN reconstruction and LLM-SE on the same German sentences, split, four labels and evaluator.",
+    "target": "sentence-level modality label among definition / obligation / permission / prohibition",
+    "explicitly_not": [
+      "a modality cue/word extraction task",
+      "an EStG-150 Part 2 rerun or replacement",
+      "a claim of Sun author-original code or original split",
+      "a vehicle for inserting Sun paper-reported scores into our result tables"
+    ]
+  },
+  "dataset": {
+    "dir": "data/development/modality/sun_estg_modality_v1",
+    "split_origin": "project_reconstructed_deterministic_group_aware_split_seed_20260715_not_sun_original_split",
+    "raw_sentences": 2833,
+    "quarantined_conflict_sentences": 2,
+    "main_analysis_population": 2831,
+    "splits": {
+      "train": {
+        "path": "data/development/modality/sun_estg_modality_v1/splits/train.jsonl",
+        "rows": 1985,
+        "sha256": "a7367cd35e3a5ce7263ad5b0fae4881a989761d4fba21b75bdc75b6e2b83c142"
+      },
+      "dev": {
+        "path": "data/development/modality/sun_estg_modality_v1/splits/dev.jsonl",
+        "rows": 420,
+        "sha256": "ad541915d16aaef6119cb3769e6da0b89e8e8af5ec9069ac3a25680040e5a8d6"
+      },
+      "test": {
+        "path": "data/development/modality/sun_estg_modality_v1/splits/test.jsonl",
+        "rows": 426,
+        "sha256": "2f67edad05e3a4d315d9ac65fc0ffd1d83dbaffd2d77a55916d6aa9a6919e871"
+      }
+    },
+    "labels": [
+      "definition",
+      "obligation",
+      "permission",
+      "prohibition"
+    ],
+    "test_label_distribution": {
+      "definition": 177,
+      "obligation": 195,
+      "permission": 39,
+      "prohibition": 15
+    },
+    "redistribution": "raw sentences, vectors and row-level predictions stay local; only aggregate metrics and hashes are versioned",
+    "historical_test_use": "the same 426-row test split was already used by the S2.4 candidate evaluation (2026-07-22) and the S2.7 modality alignment check (2026-08-08); it is therefore not a pristine held-out set for the Sun arm, and this limitation is reported"
+  },
+  "protocol": {
+    "single_seed": true,
+    "seed": 20260717,
+    "selection_split": "dev",
+    "selection_metric": "macro_f1",
+    "test_policy": "one evaluation per arm after the configuration/checkpoint is frozen",
+    "forbidden": [
+      "changing rules, hyperparameters, prompts or examples after seeing test labels",
+      "dropping failed samples or imputing labels for them",
+      "replacing measured values with paper-reported values",
+      "re-randomising the split"
+    ],
+    "all_test_samples_in_denominator": 426,
+    "failure_policy": "model/API/parse failure yields no prediction, stays in the denominator, lowers accuracy and gold-class recall, and is reported as failure_rate"
+  },
+  "methods": {
+    "cfkw": {
+      "status": "independent_reimplementation_not_author_original",
+      "type": "ordered German keyword rules",
+      "implementation": "src/bpc_hybrid/modality_benchmark/cfkw.py",
+      "priority_and_fallback": "selected on dev from four pre-declared (priority order, fallback) candidates",
+      "negation_scope_rule": "permission modal (darf/duerfen/kann/koennen/mag) followed within 4 tokens by nicht/kein/keine/keinen/keinesfalls/niemals -> prohibition",
+      "missing_details_in_paper": [
+        "author keyword lists",
+        "author matching and priority rules",
+        "author fallback class"
+      ]
+    },
+    "cfrnn": {
+      "status": "independent_reimplementation_not_author_original",
+      "type": "BiLSTM sentence classifier with corpus-trained embeddings",
+      "implementation": "src/bpc_hybrid/modality_benchmark/neural.py",
+      "hyperparameters": {
+        "embed_dim": 128,
+        "hidden_dim": 128,
+        "dropout": 0.3,
+        "batch_size": 32,
+        "learning_rate": 0.002,
+        "optimizer": "Adam",
+        "loss": "unweighted_cross_entropy",
+        "max_epochs": 25,
+        "early_stopping_patience": 4,
+        "max_sequence_length": 128,
+        "min_token_frequency": 2
+      },
+      "missing_details_in_paper": [
+        "author embedding source and dimension",
+        "author LSTM hidden size, pooling and dropout",
+        "author optimizer, learning rate and epoch budget"
+      ]
+    },
+    "cfcnn": {
+      "status": "independent_reimplementation_not_author_original",
+      "type": "Kim-style CNN sentence classifier with corpus-trained embeddings",
+      "implementation": "src/bpc_hybrid/modality_benchmark/neural.py",
+      "hyperparameters": {
+        "embed_dim": 128,
+        "filters": 128,
+        "kernel_sizes": [
+          2,
+          3,
+          4
+        ],
+        "dropout": 0.3,
+        "batch_size": 32,
+        "learning_rate": 0.002,
+        "optimizer": "Adam",
+        "loss": "unweighted_cross_entropy",
+        "max_epochs": 25,
+        "early_stopping_patience": 4,
+        "max_sequence_length": 128,
+        "min_token_frequency": 2
+      },
+      "missing_details_in_paper": [
+        "author filter widths and counts",
+        "author embedding source and dimension",
+        "author optimizer, learning rate and epoch budget"
+      ]
+    },
+    "sun": {
+      "status": "reused_project_checkpoint",
+      "type": "BERT-TextCNN (Legal-BERT base uncased) sentence classifier",
+      "config": "configs/models/sun_bert_textcnn_s24.json",
+      "config_sha256": "82f950bce605e405ee1600bca90a961337f30f2933ab807f33998464bb7af498",
+      "binding": "configs/models/sun_b0_s26_candidate_B_v1.json",
+      "checkpoint": "outputs/development/s24_candidate_B_invsqrt_weighted_seed20260717_v1/best_model.pt",
+      "checkpoint_sha256": "c78cd18baaeaabf5414a44785140b02f6e6bb8fb291ef4c0021179bbfab4c9d1",
+      "run_manifest": "outputs/reports/s24_candidate_B_invsqrt_weighted_seed20260717_v1.adapter_s24_schema.manifest.json",
+      "run_manifest_sha256": "a67ad5d690155759d068afe37bd32ac8dc0238f237c298ed8ff857accb258026",
+      "recorded_test_macro_f1": 0.8772277372431857,
+      "trained_on": "train 1985 rows, dev-selected best epoch (epoch 5 of 7)",
+      "implementation_difference": "candidate B uses inverse-sqrt class-frequency weighted cross-entropy; the S2.4 base config declares unweighted cross-entropy. The checkpoint is the one the project binds for the Sun baseline.",
+      "retraining": "none; inference only, and the reproduced macro-F1 must match the recorded value"
+    },
+    "llm_se": {
+      "status": "frozen_paper_prompt_reused",
+      "type": "LLM-based Semantic Extraction; sentence modality taken from the produced record",
+      "prompt": "prompts/sun_compat/direct_llm_sun_record_prompt_v6_d1r1_2026_08_05.md",
+      "prompt_sha256": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+      "schema": "stage2_prediction.schema.json@1.0.0",
+      "label_source": "first clause with a non-empty modality label (same rule as the project evaluator)",
+      "model": {
+        "requested_alias": "deepseek-v4-pro",
+        "documented_release": "DeepSeek-V4-Pro-0813",
+        "provider": "openai_compatible",
+        "base_url": "https://api.deepseek.com"
+      },
+      "sampling": {
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "max_tokens": 4096,
+        "stream": false,
+        "thinking": {
+          "type": "disabled"
+        },
+        "retry": 0
+      },
+      "deviation": "the frozen prompt was written for the English EStG-150 text; here it receives the German Sun sentence because all arms must see the same German original. This crosses the prompt's input language and is reported as a limitation.",
+      "max_calls": 426,
+      "budget_cny": 20.0,
+      "budget_rules": {
+        "reserve_output_tokens_per_call": 1200,
+        "hard_cap": "spent + in-flight reservation must stay below the CNY cap before every send",
+        "price_table": "official DeepSeek CNY table, verified 2026-10-28",
+        "peak": {
+          "input_cache_hit": 0.3,
+          "input_cache_miss": 9.0,
+          "output": 27.0
+        },
+        "off_peak": {
+          "input_cache_hit": 0.15,
+          "input_cache_miss": 4.5,
+          "output": 13.5
+        },
+        "peak_windows_beijing": [
+          "09:00-12:00",
+          "14:00-18:00"
+        ],
+        "peak_days": "Monday-Friday excluding Chinese statutory holidays"
+      },
+      "no_extra_prompt": "no modality-only prompt is used in this run; if one were added it would have to be reported separately as 'LLM modality-only', never as the paper's LLM-SE"
+    }
+  },
+  "evaluation": {
+    "evaluator": "src/bpc_hybrid/modality_benchmark/metrics.py",
+    "metrics": [
+      "accuracy",
+      "macro_precision",
+      "macro_recall",
+      "macro_f1",
+      "per_class_precision_recall_f1_support",
+      "confusion_matrix",
+      "failure_rate",
+      "runtime_seconds"
+    ],
+    "population": 426,
+    "paired_predictions": "all arms predict the identical 426 sample_ids in the identical order"
+  },
+  "artifacts": {
+    "local_run_dir": "outputs/development/s28_sun_modality_five_way_v1",
+    "versioned_report": "outputs/reports/sun_modality_five_way_v1.json",
+    "versioned_table": "outputs/reports/sun_modality_five_way_v1.md",
+    "documentation": "docs/research/SUN_MODALITY_FIVE_WAY_COMPARISON.md"
+  }
+}
