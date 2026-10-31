@@ -6487,3 +6487,31 @@
 - 仍存在 blocker：无
 - 备注：单种子、单次运行，无显著性主张；不替换 EStG-150 S2.10 主表；原文/逐条预测/权重仅本地（outputs/development 已忽略）；记录中 body_hash_match=false 经重推证明仅为 sort_keys 与 builder 顺序的记账口径差异；LLM-SE 未落盘原始输出，clause 级归因需新调用，本轮协议不允许
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-31T11:31:44.935688+00:00 - SUN-MODALITY-BOUNDARY-001：四类语义边界提示词分支及受控执行入口
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：否；正式实验就绪：是
+- 测试：1 failed, 29 passed in 0.85s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`1b0efbb18109de7f0fc25fbbdde39e7478973db5`；相关未提交路径：110 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：仅原v6系统提示词追加边界说明；426条同输入历史对照；探索性非盲测；上限426次/¥20、零重试、保守预算和持久化账本；本事件记录代码与离线验证，真实调用尚未开始；不运行全量测试。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-10-31T11:32:33.002784+00:00 - SUN-MODALITY-BOUNDARY-001：修正请求字节测试的浮点参数夹具并完成分支验证
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：10 passed in 0.31s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`1b0efbb18109de7f0fc25fbbdde39e7478973db5`；相关未提交路径：111 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：上一轮29项通过、1项测试夹具把0.0/1.0写成整数导致字节断言失败；实际执行配置已使用浮点数，源码和冻结请求不变。本次10项分支检查；旧20项相关检查沿用上一事件的逐项通过证据。预检426次，按无缓存和旧平均输出估计¥16.9413，上限¥20；真实调用0。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

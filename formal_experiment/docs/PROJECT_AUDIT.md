@@ -1,6 +1,6 @@
 # 项目实时状态（兼容文件名 PROJECT_AUDIT.md）
 
-**更新时间**：2026-10-28
+**更新时间**：2026-10-31
 **唯一活动目录**：`formal_experiment/`  
 **完整路线**：`docs/MASTER_PIPELINE.md`  
 **机器事实源**：`python formal_experiment/scripts/audit_project.py`（自动完整性检查）  
@@ -13,6 +13,18 @@ Part 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见主
 Sun 指 Sun et al. (2024) 的本地独立重建，历史名称 Rules-Only 对应
 `sun_rule_only` / B0。以下活动说明按当前名称阅读；冻结报告、源码与历史
 事件保持原字节。本次纯命名调整不改变本页任务状态、结果或实验授权。
+
+## SUN-MODALITY-BOUNDARY-001：四类边界提示词分支（2026-10-31）
+
+- 用户要求创建提示词分支并尝试效果；新增 `modality_boundary_v1/boundary_guidance.md`，
+  仅追加四类定义、否定范围和主从句情态区分；原v6、示例、输入、模型、采样和评价口径保留。
+- 计划最多426次新调用，零重试；执行器自设上限¥20，空闲时段，完整输出仅本地保存。
+- 原v6/Sun使用历史预测。本轮已知测试错误，标为探索性对照，不作为独立盲测或替换主表。
+- 当前：分支与执行器离线验证/预检通过（新分支10项、复用组件20项相关检查；非全量），
+  无缓存参考估算¥16.9413；真实调用0，尚无新性能结果，待代码检查点后执行。
+- 合同 `configs/supplement/sun_modality_boundary_v1.json`；入口
+  `scripts/run_sun_modality_boundary_v1.py`；分支说明
+  `prompts/sun_compat/modality_boundary_v1/README.md`。
 
 ## SUN-MODALITY-5WAY-001：Sun modality 五方法对比补充实验完成（2026-10-28，含真实 LLM 调用）
 
