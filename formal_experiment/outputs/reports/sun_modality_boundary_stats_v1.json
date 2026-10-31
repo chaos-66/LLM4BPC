@@ -1,0 +1,326 @@
+{
+  "suite_id": "SUN-MODALITY-BOUNDARY-001",
+  "supplement": "offline statistics v1 (McNemar + paired bootstrap + scope side effect)",
+  "created_at": "2026-10-31T12:40:34.300536+00:00",
+  "claim_scope": "test-informed exploratory historical comparison; not blinded confirmation",
+  "inputs": {
+    "test_split_sha256": "2f67edad05e3a4d315d9ac65fc0ffd1d83dbaffd2d77a55916d6aa9a6919e871",
+    "historical_llm_sha256": "036c05fc1b6780750257eed4be391c5830b8431bc9f4d1c4c7050301abebf6c6",
+    "historical_sun_sha256": "8b06f96a3184325e1809f407ab68bc3e5fd42762a954eb1071f146aa07094bd7",
+    "journal_sha256": "4b5993ef7cacfbee8a65c372b0f299a2488dcaf4a63b055fc537081a9c23b121",
+    "parent_report_preflight_sha256": "0e3373fedcf3948cf0a6b13d09d218d619e41d059ca73fe8f41d327f43f2d4bb"
+  },
+  "consistency_check": {
+    "recomputed_v6_macro_f1": 0.6136826686514257,
+    "recomputed_boundary_macro_f1": 0.7580907761828815,
+    "matches_parent_report": true
+  },
+  "mcnemar": {
+    "v6_vs_boundary": {
+      "only_v6_correct": 8,
+      "only_boundary_correct": 64,
+      "p_exact_two_sided": 5.765519304519332e-12
+    },
+    "boundary_vs_sun": {
+      "only_boundary_correct": 12,
+      "only_sun_correct": 58,
+      "p_exact_two_sided": 2.2489162308892232e-08
+    }
+  },
+  "bootstrap": {
+    "B": 10000,
+    "seed": 20261031,
+    "method": "percentile bootstrap; paired resampling of the 426 test samples with replacement; no-prediction stays in the denominator and never becomes a false positive (identical to the frozen evaluator semantics)",
+    "v6": {
+      "definition": {
+        "f1": 0.4588744588744589,
+        "ci95": [
+          0.3762376237623762,
+          0.5365853658536585
+        ],
+        "support": 177
+      },
+      "obligation": {
+        "f1": 0.8366013071895426,
+        "ci95": [
+          0.7981438515081207,
+          0.8716904276985744
+        ],
+        "support": 195
+      },
+      "permission": {
+        "f1": 0.7524752475247525,
+        "ci95": [
+          0.6470588235294118,
+          0.8387096774193548
+        ],
+        "support": 39
+      },
+      "prohibition": {
+        "f1": 0.4067796610169491,
+        "ci95": [
+          0.23529411764705882,
+          0.5573770491803278
+        ],
+        "support": 15
+      },
+      "macro_f1": {
+        "f1": 0.6136826686514257,
+        "ci95": [
+          0.55416151497102,
+          0.6676736484408881
+        ]
+      }
+    },
+    "boundary": {
+      "definition": {
+        "f1": 0.7697368421052632,
+        "ci95": [
+          0.7147766323024055,
+          0.8195718654434252
+        ],
+        "support": 177
+      },
+      "obligation": {
+        "f1": 0.8888888888888888,
+        "ci95": [
+          0.8557692307692307,
+          0.9185803757828809
+        ],
+        "support": 195
+      },
+      "permission": {
+        "f1": 0.8181818181818182,
+        "ci95": [
+          0.72,
+          0.8988764044943819
+        ],
+        "support": 39
+      },
+      "prohibition": {
+        "f1": 0.5555555555555556,
+        "ci95": [
+          0.3243243243243243,
+          0.7317073170731706
+        ],
+        "support": 15
+      },
+      "macro_f1": {
+        "f1": 0.7580907761828815,
+        "ci95": [
+          0.6895603674018556,
+          0.8135231913658817
+        ]
+      }
+    },
+    "delta_boundary_minus_v6": {
+      "definition": {
+        "delta": 0.3108623832308043,
+        "ci95": [
+          0.24003349658690076,
+          0.38720247576571243
+        ]
+      },
+      "obligation": {
+        "delta": 0.05228758169934622,
+        "ci95": [
+          0.026910920862867838,
+          0.07979559748427678
+        ]
+      },
+      "permission": {
+        "delta": 0.06570657065706575,
+        "ci95": [
+          -0.0034982508745627916,
+          0.13818017611198918
+        ]
+      },
+      "prohibition": {
+        "delta": 0.14877589453860646,
+        "ci95": [
+          0.0,
+          0.2850574712643678
+        ]
+      },
+      "macro_f1": {
+        "delta": 0.14440810753145572,
+        "ci95": [
+          0.09418218639484599,
+          0.1929372146686107
+        ]
+      }
+    }
+  },
+  "side_effect_scope_clauses": {
+    "markers": [
+      "anzuwenden",
+      "anwendbar",
+      "anwendbarkeit",
+      "gilt nur",
+      "gilt entsprechend"
+    ],
+    "regressions_total": 8,
+    "regressions_to_definition": 7,
+    "regressions_with_scope_marker": 4,
+    "regressions_detail": [
+      {
+        "sample_id": "sun_modality_33842fb54e03e8cd",
+        "gold": "obligation",
+        "v6": "obligation",
+        "boundary": "definition",
+        "scope_markers": []
+      },
+      {
+        "sample_id": "sun_modality_09af46d39837e8c3",
+        "gold": "obligation",
+        "v6": "obligation",
+        "boundary": "definition",
+        "scope_markers": []
+      },
+      {
+        "sample_id": "sun_modality_984a2369d8df5e69",
+        "gold": "obligation",
+        "v6": "obligation",
+        "boundary": "definition",
+        "scope_markers": [
+          "anzuwenden"
+        ]
+      },
+      {
+        "sample_id": "sun_modality_0d960e4bc91fb6ac",
+        "gold": "obligation",
+        "v6": "obligation",
+        "boundary": "definition",
+        "scope_markers": [
+          "anzuwenden"
+        ]
+      },
+      {
+        "sample_id": "sun_modality_6d46f2ca8400b2bc",
+        "gold": "permission",
+        "v6": "permission",
+        "boundary": "definition",
+        "scope_markers": []
+      },
+      {
+        "sample_id": "sun_modality_67a7e389e46440bd",
+        "gold": "permission",
+        "v6": "permission",
+        "boundary": "obligation",
+        "scope_markers": []
+      },
+      {
+        "sample_id": "sun_modality_b4fe643d2c491de2",
+        "gold": "prohibition",
+        "v6": "prohibition",
+        "boundary": "definition",
+        "scope_markers": [
+          "anzuwenden"
+        ]
+      },
+      {
+        "sample_id": "sun_modality_b0bdeb958fcc7cb5",
+        "gold": "prohibition",
+        "v6": "prohibition",
+        "boundary": "definition",
+        "scope_markers": [
+          "anzuwenden"
+        ]
+      }
+    ],
+    "boundary_definition_fp": 10,
+    "boundary_definition_fp_with_scope_marker": 4,
+    "boundary_definition_fp_detail": [
+      {
+        "sample_id": "sun_modality_33842fb54e03e8cd",
+        "gold": "obligation",
+        "boundary": "definition",
+        "scope_markers": []
+      },
+      {
+        "sample_id": "sun_modality_09af46d39837e8c3",
+        "gold": "obligation",
+        "boundary": "definition",
+        "scope_markers": []
+      },
+      {
+        "sample_id": "sun_modality_984a2369d8df5e69",
+        "gold": "obligation",
+        "boundary": "definition",
+        "scope_markers": [
+          "anzuwenden"
+        ]
+      },
+      {
+        "sample_id": "sun_modality_0d960e4bc91fb6ac",
+        "gold": "obligation",
+        "boundary": "definition",
+        "scope_markers": [
+          "anzuwenden"
+        ]
+      },
+      {
+        "sample_id": "sun_modality_68a7b0d9b95fb81e",
+        "gold": "obligation",
+        "boundary": "definition",
+        "scope_markers": []
+      },
+      {
+        "sample_id": "sun_modality_47b19113284fc538",
+        "gold": "obligation",
+        "boundary": "definition",
+        "scope_markers": []
+      },
+      {
+        "sample_id": "sun_modality_6d46f2ca8400b2bc",
+        "gold": "permission",
+        "boundary": "definition",
+        "scope_markers": []
+      },
+      {
+        "sample_id": "sun_modality_b4fe643d2c491de2",
+        "gold": "prohibition",
+        "boundary": "definition",
+        "scope_markers": [
+          "anzuwenden"
+        ]
+      },
+      {
+        "sample_id": "sun_modality_b0bdeb958fcc7cb5",
+        "gold": "prohibition",
+        "boundary": "definition",
+        "scope_markers": [
+          "anzuwenden"
+        ]
+      },
+      {
+        "sample_id": "sun_modality_e281d33605497ded",
+        "gold": "prohibition",
+        "boundary": "definition",
+        "scope_markers": []
+      }
+    ],
+    "v6_definition_fp": 1,
+    "scope_marker_population": 79,
+    "scope_marker_gold_distribution": {
+      "definition": 3,
+      "obligation": 70,
+      "permission": 0,
+      "prohibition": 6
+    },
+    "scope_marker_subset_correct": {
+      "v6": 76,
+      "boundary": 73,
+      "n": 79
+    },
+    "definition_fn_to_obligation_boundary": 36,
+    "definition_fn_to_obligation_with_scope_marker": 0
+  },
+  "limitations": [
+    "统计量描述本次单次运行在固定 426 测试集上的抽样波动，不覆盖提示词设计层面的随机性。",
+    "提示词为看过测试错误后设计，所有差值是上界估计，不是盲测确认。",
+    "bootstrap 为百分位法、非分层；小类别（prohibition n=15）的区间宽度本身即说明单次差异不可作为稳健结论。",
+    "McNemar 与 bootstrap 互不替代：前者检验配对正确性翻转，后者给出 F1 尺度的不确定度。",
+    "德语原文不进入版本化产物；副作用分析只含 sample_id、标签与标记命中计数。"
+  ]
+}
