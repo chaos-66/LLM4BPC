@@ -1,0 +1,495 @@
+{
+  "suite_id": "SUN-MODALITY-BOUNDARY-001",
+  "created_at": "2026-10-31T12:15:59.686292+00:00",
+  "claim_scope": "test-informed exploratory historical comparison; not blinded confirmation",
+  "completed": true,
+  "attempted": 426,
+  "finished": 426,
+  "uncalled": 0,
+  "actual_known_cost_cny": 9.654117,
+  "unsettled_reservation_cny": 0,
+  "metrics": {
+    "baseline": {
+      "n": 426,
+      "evaluated_population": "all_test_samples",
+      "accuracy": 0.6924882629107981,
+      "macro_precision": 0.6485961768219832,
+      "macro_recall": 0.7646023468057367,
+      "macro_f1": 0.6136826686514257,
+      "per_class": {
+        "definition": {
+          "precision": 0.9814814814814815,
+          "recall": 0.2994350282485876,
+          "f1": 0.4588744588744589,
+          "support": 177,
+          "tp": 53,
+          "fp": 1,
+          "fn": 124,
+          "tn": 248
+        },
+        "obligation": {
+          "precision": 0.7272727272727273,
+          "recall": 0.9846153846153847,
+          "f1": 0.8366013071895426,
+          "support": 195,
+          "tp": 192,
+          "fp": 72,
+          "fn": 3,
+          "tn": 159
+        },
+        "permission": {
+          "precision": 0.6129032258064516,
+          "recall": 0.9743589743589743,
+          "f1": 0.7524752475247525,
+          "support": 39,
+          "tp": 38,
+          "fp": 24,
+          "fn": 1,
+          "tn": 363
+        },
+        "prohibition": {
+          "precision": 0.2727272727272727,
+          "recall": 0.8,
+          "f1": 0.4067796610169491,
+          "support": 15,
+          "tp": 12,
+          "fp": 32,
+          "fn": 3,
+          "tn": 379
+        }
+      },
+      "confusion_matrix": {
+        "label_order": [
+          "definition",
+          "obligation",
+          "permission",
+          "prohibition"
+        ],
+        "column_order": [
+          "definition",
+          "obligation",
+          "permission",
+          "prohibition",
+          "<no_prediction>"
+        ],
+        "rows_gold_columns_predicted": [
+          [
+            53,
+            68,
+            24,
+            30,
+            2
+          ],
+          [
+            1,
+            192,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            38,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            0,
+            12,
+            0
+          ]
+        ],
+        "as_dict": {
+          "definition": {
+            "definition": 53,
+            "obligation": 68,
+            "permission": 24,
+            "prohibition": 30,
+            "<no_prediction>": 2
+          },
+          "obligation": {
+            "definition": 1,
+            "obligation": 192,
+            "permission": 0,
+            "prohibition": 2,
+            "<no_prediction>": 0
+          },
+          "permission": {
+            "definition": 0,
+            "obligation": 1,
+            "permission": 38,
+            "prohibition": 0,
+            "<no_prediction>": 0
+          },
+          "prohibition": {
+            "definition": 0,
+            "obligation": 3,
+            "permission": 0,
+            "prohibition": 12,
+            "<no_prediction>": 0
+          }
+        }
+      },
+      "failures": 2,
+      "failure_rate": 0.004694835680751174,
+      "coverage": 0.9953051643192489,
+      "coverage_restricted_secondary": {
+        "n": 424,
+        "accuracy": 0.6957547169811321,
+        "macro_precision": 0.6485961768219832,
+        "macro_recall": 0.7654578754578755,
+        "macro_f1": 0.6146845779502783,
+        "note": "secondary diagnostic only: excludes samples with no usable prediction; never the headline number"
+      }
+    },
+    "boundary": {
+      "n": 426,
+      "evaluated_population": "all_test_samples",
+      "accuracy": 0.823943661971831,
+      "macro_precision": 0.7391763999424884,
+      "macro_recall": 0.803715775749674,
+      "macro_f1": 0.7580907761828815,
+      "per_class": {
+        "definition": {
+          "precision": 0.9212598425196851,
+          "recall": 0.6610169491525424,
+          "f1": 0.7697368421052632,
+          "support": 177,
+          "tp": 117,
+          "fp": 10,
+          "fn": 60,
+          "tn": 239
+        },
+        "obligation": {
+          "precision": 0.8245614035087719,
+          "recall": 0.9641025641025641,
+          "f1": 0.8888888888888888,
+          "support": 195,
+          "tp": 188,
+          "fp": 40,
+          "fn": 7,
+          "tn": 191
+        },
+        "permission": {
+          "precision": 0.7346938775510204,
+          "recall": 0.9230769230769231,
+          "f1": 0.8181818181818182,
+          "support": 39,
+          "tp": 36,
+          "fp": 13,
+          "fn": 3,
+          "tn": 374
+        },
+        "prohibition": {
+          "precision": 0.47619047619047616,
+          "recall": 0.6666666666666666,
+          "f1": 0.5555555555555556,
+          "support": 15,
+          "tp": 10,
+          "fp": 11,
+          "fn": 5,
+          "tn": 400
+        }
+      },
+      "confusion_matrix": {
+        "label_order": [
+          "definition",
+          "obligation",
+          "permission",
+          "prohibition"
+        ],
+        "column_order": [
+          "definition",
+          "obligation",
+          "permission",
+          "prohibition",
+          "<no_prediction>"
+        ],
+        "rows_gold_columns_predicted": [
+          [
+            117,
+            36,
+            13,
+            10,
+            1
+          ],
+          [
+            6,
+            188,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            2,
+            36,
+            0,
+            0
+          ],
+          [
+            3,
+            2,
+            0,
+            10,
+            0
+          ]
+        ],
+        "as_dict": {
+          "definition": {
+            "definition": 117,
+            "obligation": 36,
+            "permission": 13,
+            "prohibition": 10,
+            "<no_prediction>": 1
+          },
+          "obligation": {
+            "definition": 6,
+            "obligation": 188,
+            "permission": 0,
+            "prohibition": 1,
+            "<no_prediction>": 0
+          },
+          "permission": {
+            "definition": 1,
+            "obligation": 2,
+            "permission": 36,
+            "prohibition": 0,
+            "<no_prediction>": 0
+          },
+          "prohibition": {
+            "definition": 3,
+            "obligation": 2,
+            "permission": 0,
+            "prohibition": 10,
+            "<no_prediction>": 0
+          }
+        }
+      },
+      "failures": 1,
+      "failure_rate": 0.002347417840375587,
+      "coverage": 0.9976525821596244,
+      "coverage_restricted_secondary": {
+        "n": 425,
+        "accuracy": 0.8258823529411765,
+        "macro_precision": 0.7391763999424884,
+        "macro_recall": 0.8046547202797203,
+        "macro_f1": 0.7587258725872588,
+        "note": "secondary diagnostic only: excludes samples with no usable prediction; never the headline number"
+      }
+    },
+    "sun": {
+      "n": 426,
+      "evaluated_population": "all_test_samples",
+      "accuracy": 0.931924882629108,
+      "macro_precision": 0.8753188886947405,
+      "macro_recall": 0.8792046936114732,
+      "macro_f1": 0.8772277372431857,
+      "per_class": {
+        "definition": {
+          "precision": 0.9322033898305084,
+          "recall": 0.9322033898305084,
+          "f1": 0.9322033898305084,
+          "support": 177,
+          "tp": 165,
+          "fp": 12,
+          "fn": 12,
+          "tn": 237
+        },
+        "obligation": {
+          "precision": 0.9690721649484536,
+          "recall": 0.9641025641025641,
+          "f1": 0.9665809768637532,
+          "support": 195,
+          "tp": 188,
+          "fp": 6,
+          "fn": 7,
+          "tn": 225
+        },
+        "permission": {
+          "precision": 0.8,
+          "recall": 0.8205128205128205,
+          "f1": 0.810126582278481,
+          "support": 39,
+          "tp": 32,
+          "fp": 8,
+          "fn": 7,
+          "tn": 379
+        },
+        "prohibition": {
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1": 0.8000000000000002,
+          "support": 15,
+          "tp": 12,
+          "fp": 3,
+          "fn": 3,
+          "tn": 408
+        }
+      },
+      "confusion_matrix": {
+        "label_order": [
+          "definition",
+          "obligation",
+          "permission",
+          "prohibition"
+        ],
+        "column_order": [
+          "definition",
+          "obligation",
+          "permission",
+          "prohibition"
+        ],
+        "rows_gold_columns_predicted": [
+          [
+            165,
+            4,
+            7,
+            1
+          ],
+          [
+            6,
+            188,
+            0,
+            1
+          ],
+          [
+            5,
+            1,
+            32,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            12
+          ]
+        ],
+        "as_dict": {
+          "definition": {
+            "definition": 165,
+            "obligation": 4,
+            "permission": 7,
+            "prohibition": 1
+          },
+          "obligation": {
+            "definition": 6,
+            "obligation": 188,
+            "permission": 0,
+            "prohibition": 1
+          },
+          "permission": {
+            "definition": 5,
+            "obligation": 1,
+            "permission": 32,
+            "prohibition": 1
+          },
+          "prohibition": {
+            "definition": 1,
+            "obligation": 1,
+            "permission": 1,
+            "prohibition": 12
+          }
+        }
+      },
+      "failures": 0,
+      "failure_rate": 0.0,
+      "coverage": 1.0
+    }
+  },
+  "paired_correctness_by_gold_class": {
+    "definition": {
+      "corrected": 64,
+      "regressed": 0,
+      "both_correct": 53,
+      "both_wrong": 60
+    },
+    "obligation": {
+      "corrected": 0,
+      "regressed": 4,
+      "both_correct": 188,
+      "both_wrong": 3
+    },
+    "permission": {
+      "corrected": 0,
+      "regressed": 2,
+      "both_correct": 36,
+      "both_wrong": 1
+    },
+    "prohibition": {
+      "corrected": 0,
+      "regressed": 2,
+      "both_correct": 10,
+      "both_wrong": 3
+    }
+  },
+  "contract": {
+    "schema_version": "sun_modality_boundary_exploration@1.0.0",
+    "suite_id": "SUN-MODALITY-BOUNDARY-001",
+    "created_at": "2026-10-31",
+    "claim_scope": "test-informed exploratory historical comparison; not blinded confirmation",
+    "authorization": {
+      "execute_requested": true,
+      "source": "current user message in this chat",
+      "user_text": "做出一个提示词分支，尝试一下当提示词专门对四类判定边界做出明确解释时，效果怎么样",
+      "scope_interpretation": "One new branch on the same 426 inputs; historical baseline reused. Call and cost ceilings are conservative agent-imposed limits, not a quoted user amount."
+    },
+    "max_calls": 426,
+    "cap_cny": 20.0,
+    "retry": 0,
+    "off_peak_only": true,
+    "parent_prompt": "prompts/sun_compat/direct_llm_sun_record_prompt_v6_d1r1_2026_08_05.md",
+    "parent_prompt_sha256": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+    "guidance_path": "prompts/sun_compat/modality_boundary_v1/boundary_guidance.md",
+    "guidance_sha256": "2e7f3fffffd308208c85c7e6a959f2399a2487a8cb64c3ff03874419d950cbf8",
+    "composition": "parent system + two newlines + stripped guidance; user prompt/examples unchanged",
+    "model": "deepseek-v4-pro",
+    "documented_release": "DeepSeek-V4-Pro-0813",
+    "endpoint": "https://api.deepseek.com",
+    "credentials": "process DEEPSEEK_API_KEY only; .env never read",
+    "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+    "price_verified_at": "2026-10-31",
+    "price_cny_per_million": {
+      "off_peak": {
+        "input_cache_hit": 0.15,
+        "input_cache_miss": 4.5,
+        "output": 13.5
+      },
+      "peak": {
+        "input_cache_hit": 0.3,
+        "input_cache_miss": 9.0,
+        "output": 27.0
+      }
+    },
+    "test_path": "data/development/modality/sun_estg_modality_v1/splits/test.jsonl",
+    "test_sha256": "2f67edad05e3a4d315d9ac65fc0ffd1d83dbaffd2d77a55916d6aa9a6919e871",
+    "raw_artifact_policy": "Local-only ignored outputs/development; aggregate reports and code versioned.",
+    "failure_policy": "No retry; all 426 in denominator; wrong model or body hash stops; interrupted request reserves full cost and is never automatically retried.",
+    "frozen_main_tables_unchanged": true,
+    "study_limitation": "Prompt motivated by inspected test errors; one exploratory run only; no test-derived examples added; no claim of unseen-test generalization or pure causal identification.",
+    "historical_llm": {
+      "path": "outputs/development/s28_sun_modality_five_way_v1/llm_se/llm_se_responses.jsonl",
+      "sha256": "036c05fc1b6780750257eed4be391c5830b8431bc9f4d1c4c7050301abebf6c6"
+    },
+    "historical_sun": {
+      "path": "outputs/development/s28_sun_modality_five_way_v1/sun/local_only/test_predictions.jsonl",
+      "sha256": "8b06f96a3184325e1809f407ab68bc3e5fd42762a954eb1071f146aa07094bd7"
+    },
+    "historical_report": {
+      "path": "outputs/reports/sun_modality_five_way_v1.json",
+      "sha256": "398537363aaa6b67041ad3c9855b8a565dd3b32e7ff22877d77bf3f85b91867c"
+    }
+  },
+  "preflight_sha256": "0e3373fedcf3948cf0a6b13d09d218d619e41d059ca73fe8f41d327f43f2d4bb",
+  "journal_sha256": "4b5993ef7cacfbee8a65c372b0f299a2488dcaf4a63b055fc537081a9c23b121",
+  "limitations": [
+    "看过该测试集错误后设计的探索性分支，不是独立盲测。",
+    "旧v6和Sun使用历史预测，未做同期基线重跑；模型服务的时间差仍可能影响对照。",
+    "只追加四类边界说明；模型、输入、采样、六要素JSON和首个clause口径保持一致。",
+    "未调用和失败均计入426分母；不替换原补充表或论文主表。"
+  ]
+}
