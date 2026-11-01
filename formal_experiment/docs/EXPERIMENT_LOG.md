@@ -6515,3 +6515,21 @@
 - 仍存在 blocker：无
 - 备注：上一轮29项通过、1项测试夹具把0.0/1.0写成整数导致字节断言失败；实际执行配置已使用浮点数，源码和冻结请求不变。本次10项分支检查；旧20项相关检查沿用上一事件的逐项通过证据。预检426次，按无缓存和旧平均输出估计¥16.9413，上限¥20；真实调用0。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-11-01T02:16:19.457054+00:00 - SUN-MODALITY-BOUNDARY-001：补齐已完成426次授权运行的实验事件与最终状态
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=sun_modality_boundary_v1；阶段=stage2；方法=LLM-SE v6 + four-class boundary guidance；状态=成功（`succeeded`）
+- 实际运行命令：`python -X utf8 -u formal_experiment/scripts/run_sun_modality_boundary_v1.py --execute`
+- manifest：outputs/reports/sun_modality_boundary_v1.json, outputs/reports/sun_modality_boundary_v1.authorization.json, outputs/development/sun_modality_boundary_v1/execution_20261031T121520823267.json
+- 结果摘要：426/426调用，费用¥9.654117，425条解析有效/1条无clause计失败；Macro-F1 0.6136827→0.7580908；改对64/改错8；禁止类FP32→11、召回12/15→10/15。
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：1 passed in 0.20s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`126914b1b6fa6db20bc7bb8ea157164ee591425a`；相关未提交路径：105 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：已授权调用（`authorized_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：本事件追记2026-10-31已执行运行，不是新调用；426条成员、原始返回哈希链、请求体/返回模型/用量、逐类TP/FP/FN、费用和报告点估计已纯只读核对一致。针对本轮1条no_clauses只跑1项评价器失败分母检查，复用原实现聚焦检查，不跑全量或bootstrap。报告提交bdaea3f和统计提交126914b为本回合恢复时已存在工作；本次仅收口事件/状态并推送。few-shot仍为草案，没有新授权或新调用。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

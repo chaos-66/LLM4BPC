@@ -1,6 +1,6 @@
 # 项目实时状态（兼容文件名 PROJECT_AUDIT.md）
 
-**更新时间**：2026-10-31
+**更新时间**：2026-11-01
 **唯一活动目录**：`formal_experiment/`  
 **完整路线**：`docs/MASTER_PIPELINE.md`  
 **机器事实源**：`python formal_experiment/scripts/audit_project.py`（自动完整性检查）  
@@ -20,8 +20,17 @@ Sun 指 Sun et al. (2024) 的本地独立重建，历史名称 Rules-Only 对应
   仅追加四类定义、否定范围和主从句情态区分；原v6、示例、输入、模型、采样和评价口径保留。
 - 计划最多426次新调用，零重试；执行器自设上限¥20，空闲时段，完整输出仅本地保存。
 - 原v6/Sun使用历史预测。本轮已知测试错误，标为探索性对照，不作为独立盲测或替换主表。
-- 当前：分支与执行器离线验证/预检通过（新分支10项、复用组件20项相关检查；非全量），
-  无缓存参考估算¥16.9413；真实调用0，尚无新性能结果，待代码检查点后执行。
+- 当前：已于2026-10-31完成426/426次授权调用，零重试，实际¥9.654117；
+  返回模型、请求体哈希和用量记录426/426通过；解析425条有效、1条无clause，保留在分母。
+- 原v6→边界分支：Accuracy 0.6925→0.8239，Macro-F1 0.6137→0.7581；
+  definition改对64条，其他三类合计改错8条；禁止类FP 32→11、召回12/15→10/15。
+  相比Sun 0.8772仍低0.1191；该差值在F1尺度上由禁止类贡献6.11pp、definition贡献4.06pp。
+- 汇总报告 `outputs/reports/sun_modality_boundary_v1.{json,md}`，授权记录
+  `outputs/reports/sun_modality_boundary_v1.authorization.json`；已有离线统计见
+  `outputs/reports/sun_modality_boundary_stats_v1.{json,md}`。2026-11-01只读复核
+  账本哈希链、426条成员、费用及指标与报告一致；没有新增调用或重跑bootstrap。
+- 18例few-shot材料仅为本地草案（`outputs/development/sun_modality_fewshot_v1/`），
+  来源/标签/哈希及与dev/test无同文本重叠已核对；未接线、未运行，旧426次授权不自动扩展。
 - 合同 `configs/supplement/sun_modality_boundary_v1.json`；入口
   `scripts/run_sun_modality_boundary_v1.py`；分支说明
   `prompts/sun_compat/modality_boundary_v1/README.md`。
