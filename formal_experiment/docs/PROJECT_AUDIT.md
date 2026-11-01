@@ -14,6 +14,24 @@ Sun 指 Sun et al. (2024) 的本地独立重建，历史名称 Rules-Only 对应
 `sun_rule_only` / B0。以下活动说明按当前名称阅读；冻结报告、源码与历史
 事件保持原字节。本次纯命名调整不改变本页任务状态、结果或实验授权。
 
+## SUN-MODALITY-FEWSHOT-001：语料 few-shot 提示词分支（2026-11-01）
+
+- 用户要求尝试添加few-shot；已将本地草案的18条train示例接入独立请求生成器，
+  配额definition 7 / obligation 5 / prohibition 3 / permission 3；固定家族、排序、顺序及哈希。
+- 在boundary system末尾追加示范块，明确这些句子仅用于模态校准，新输入仍返回完整六要素JSON。
+  原用户模板、六个合成示例、模型、采样和首有效clause口径保持不变。
+- 已离线检查426/426条请求，变化仅为system追加；所有示例来自train，编号与规范化文本
+  均不与dev/test重叠，选择器不访问dev/test标签。输入增量按UTF-8字节/3估算为730–731 tokens/条，
+  不是分词器测量或费用保证。没有新推理或API调用，性能结果为空。
+- 完整示范块与system预览保存在被忽略的
+  `outputs/development/sun_modality_fewshot_v1/prepared_v1/`；原本地草案保留。
+  版本化合同、选例清单、生成器和不含原句的预检：
+  `configs/supplement/sun_modality_fewshot_v1.json`、`prompts/sun_compat/modality_fewshot_v1/`、
+  `scripts/prepare_sun_modality_fewshot_v1.py`、`outputs/reports/sun_modality_fewshot_v1_preflight.json`。
+- 当前入口只做离线准备，无API执行模式；新批次须另有执行授权与账本。426次/¥20/零重试
+  是后续计划上限，未自动沿用已消耗的boundary授权。选例家族参考测试错误，仍属探索性，
+  不能称独立盲测或预先断言提升。
+
 ## SUN-MODALITY-BOUNDARY-001：四类边界提示词分支（2026-10-31）
 
 - 用户要求创建提示词分支并尝试效果；新增 `modality_boundary_v1/boundary_guidance.md`，
@@ -29,8 +47,8 @@ Sun 指 Sun et al. (2024) 的本地独立重建，历史名称 Rules-Only 对应
   `outputs/reports/sun_modality_boundary_v1.authorization.json`；已有离线统计见
   `outputs/reports/sun_modality_boundary_stats_v1.{json,md}`。2026-11-01只读复核
   账本哈希链、426条成员、费用及指标与报告一致；没有新增调用或重跑bootstrap。
-- 18例few-shot材料仅为本地草案（`outputs/development/sun_modality_fewshot_v1/`），
-  来源/标签/哈希及与dev/test无同文本重叠已核对；未接线、未运行，旧426次授权不自动扩展。
+- 原18例few-shot草案已于2026-11-01接入独立请求生成与离线预检，详见上方
+  SUN-MODALITY-FEWSHOT-001；尚无真实运行，旧426次授权不自动扩展。
 - 合同 `configs/supplement/sun_modality_boundary_v1.json`；入口
   `scripts/run_sun_modality_boundary_v1.py`；分支说明
   `prompts/sun_compat/modality_boundary_v1/README.md`。

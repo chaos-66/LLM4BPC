@@ -1,0 +1,75 @@
+{
+  "schema_version": "sun_modality_fewshot_exploration@1.0.0",
+  "suite_id": "SUN-MODALITY-FEWSHOT-001",
+  "created_at": "2026-11-01",
+  "claim_scope": "test-informed exploratory historical comparison; not blinded confirmation; not a proven upper bound",
+  "authorization": {
+    "preparation_requested": true,
+    "user_text": "你尝试考虑添加few shot到prompt中",
+    "real_api_calls_authorized": false,
+    "note": "Previous 426-call boundary authorization is exhausted and does not cover this branch."
+  },
+  "parent_prompt_sha256": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+  "guidance_sha256": "2e7f3fffffd308208c85c7e6a959f2399a2487a8cb64c3ff03874419d950cbf8",
+  "header": {
+    "path": "prompts/sun_compat/modality_fewshot_v1/demonstration_header.md",
+    "sha256": "40349bce07669ebe4a2d867534c1432e32e6bae158db2a6214d58f3c2d25ff22"
+  },
+  "selection_manifest": {
+    "path": "prompts/sun_compat/modality_fewshot_v1/selection_manifest.json",
+    "sha256": "5967ee1b02e0861c7a02f1f3a37407d4e751d4427390785ed6ac23758c6672e8"
+  },
+  "demonstration_block_sha256": "6aa454eb09d516e15390c5c6b97638a606a5514dd9ed6bd913a300c2b0668a05",
+  "composition": "frozen boundary system + two newlines + stripped corpus demonstration block; user prompt and original six synthetic examples unchanged",
+  "splits": {
+    "train": {
+      "rows": 1985,
+      "sha256": "a7367cd35e3a5ce7263ad5b0fae4881a989761d4fba21b75bdc75b6e2b83c142"
+    },
+    "dev": {
+      "rows": 420,
+      "sha256": "ad541915d16aaef6119cb3769e6da0b89e8e8af5ec9069ac3a25680040e5a8d6"
+    },
+    "test": {
+      "rows": 426,
+      "sha256": "2f67edad05e3a4d315d9ac65fc0ffd1d83dbaffd2d77a55916d6aa9a6919e871"
+    }
+  },
+  "model": "deepseek-v4-pro",
+  "endpoint": "https://api.deepseek.com",
+  "sampling": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 4096,
+    "stream": false,
+    "thinking": {
+      "type": "disabled"
+    }
+  },
+  "planned_comparison": "boundary + 18 corpus demonstrations vs saved boundary predictions; all 426 examples retained",
+  "planned_metrics": [
+    "macro_f1",
+    "accuracy",
+    "per_class_precision_recall_f1",
+    "confusion_matrix",
+    "paired_corrected_regressed_by_gold_class"
+  ],
+  "planned_limits": {
+    "max_calls": 426,
+    "cap_cny": 20.0,
+    "retries": 0,
+    "off_peak_only": true,
+    "authorized": false
+  },
+  "historical_boundary": {
+    "path": "outputs/reports/sun_modality_boundary_v1.json",
+    "sha256": "e8294b2c91a0228b8f6d709bd467ef5b32867f0307f285f97d732bacf09293b0"
+  },
+  "raw_artifact_policy": "German sentences and composed prompts remain local under ignored outputs/development; only ids, labels, rules and hashes are versioned.",
+  "limitations": [
+    "Example families were motivated by inspected test errors, even though every selected sentence is from train.",
+    "No parameter training; this branch uses 18 real corpus labels in context.",
+    "Historical controls do not remove temporal model-service confounding.",
+    "Improvement is a hypothesis; do not infer performance before an authorized run."
+  ]
+}
