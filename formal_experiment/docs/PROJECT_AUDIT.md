@@ -16,17 +16,27 @@ Sun 指 Sun et al. (2024) 的本地独立重建，历史名称 Rules-Only 对应
 
 ## SUN-MODALITY-FEWSHOT-001：语料 few-shot 提示词分支（2026-11-01）
 
-- 2026-11-03用户明确“可以跑了”，已记录独立授权 `configs/authorization/sun_modality_fewshot_20261103_v1.json`；
-  同426条、最多426次/¥20/零重试/仅空闲时段。新增执行器采用8路并发、主线程统一预算预留和哈希链账本；
-  原请求字节保持已准备版本，原准备合同中的未授权状态保留为历史快照。本次正在完成执行预检与代码检查点，真实调用尚未开始。
+- 2026-11-03用户明确“可以跑了”，独立授权 `configs/authorization/sun_modality_fewshot_20261103_v1.json`；
+  已于北京时间13:45:45–13:50:53完成426/426次、零重试，费用¥9.6837192（上限¥20），全部空闲时段。
+  8路并发下累计已花费+在途预留峰值¥10.7831；请求/返回哈希、模型、用量及账本全通过。
+  425条解析有效、1条no_clauses保留分母；原准备合同未授权字段是2026-11-01历史快照。
+- few-shot Macro-F1 **0.8232**、Accuracy **0.8732**（372/426）；相比boundary提升0.0652，
+  改对25/改错4；paired bootstrap 95%CI [+0.0279,+0.1090]（B=10000、seed=20261103），
+  McNemar accuracy p=0.000103716。相对Sun 0.8772仍低0.0540，配对独对14/39、p=0.000802331。
+- 逐类F1：definition 0.8438、obligation 0.9189、permission 0.8636、prohibition 0.6667。
+  definition漏判60→42；prohibition FP11→9、TP10→12（support15）。禁止/许可F1增量的bootstrap
+  下界为0，小类提升暂不作稳健显著性主张；75→54条错误中仍有42条是definition漏判。
+- 最终报告 `outputs/reports/sun_modality_fewshot_v1.{json,md}`；生成器
+  `scripts/build_sun_modality_fewshot_report_v1.py`。逐条编号/标签、混淆矩阵、纠错与回归在脱敏JSON内，
+  德语原文与完整返回仅在Git忽略目录。单次探索性历史对照，不替换论文主表。
 
-- 用户要求尝试添加few-shot；已将本地草案的18条train示例接入独立请求生成器，
+- 提示词准备（2026-11-01）：用户要求尝试添加few-shot；将18条train示例接入独立请求生成器，
   配额definition 7 / obligation 5 / prohibition 3 / permission 3；固定家族、排序、顺序及哈希。
 - 在boundary system末尾追加示范块，明确这些句子仅用于模态校准，新输入仍返回完整六要素JSON。
   原用户模板、六个合成示例、模型、采样和首有效clause口径保持不变。
 - 已离线检查426/426条请求，变化仅为system追加；所有示例来自train，编号与规范化文本
   均不与dev/test重叠，选择器不访问dev/test标签。输入增量按UTF-8字节/3估算为730–731 tokens/条，
-  不是分词器测量或费用保证。没有新推理或API调用，性能结果为空。
+  不是分词器测量或费用保证；该离线准备快照不含推理结果，真实运行结果见上方。
 - 完整示范块与system预览保存在被忽略的
   `outputs/development/sun_modality_fewshot_v1/prepared_v1/`；原本地草案保留。
   版本化合同、选例清单、生成器和不含原句的预检：

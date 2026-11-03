@@ -1,6 +1,6 @@
 # LLM4BPC 完整实验主 Pipeline
 
-**文档版本**：3.7.74
+**文档版本**：3.7.75
 **状态**：ACTIVE — 全项目研究与任务分解的唯一主线
 **最后更新**：2026-11-03
 **方法学主干**：Sun et al. (2024)（三部分方法主干）；Barrientos et al. (2026)（直接借鉴来源：LLM 结构化输出、验证、受控词汇、归一化与评估纪律）
@@ -3311,6 +3311,7 @@ development-only；S3.7 formal Oracle not started；Gold Rule Records absent。
 
 ## 15. Pipeline 变更日志
 
+| 3.7.75 | 2026-11-03 | **SUN-MODALITY-FEWSHOT-001：授权运行完成与配对报告**：426/426、零重试、8路并发、全部空闲时段，实际¥9.6837192；425解析有效+1无clause保留分母。Macro-F1 0.7581→0.8232（+0.0652），Accuracy 0.8239→0.8732，改对25/改错4；配对bootstrap 95%CI [+0.0279,+0.1090]，McNemar accuracy p=0.000103716。definition漏判60→42；prohibition FP11→9、TP10→12。相对Sun 0.8772仍低0.0540，独对14/39、p=0.000802331。所有请求字节匹配既定预检，原始响应/预算/模型/用量复核一致；真实原文仅本地，版本化脱敏逐条诊断、混淆矩阵与统计。test-informed历史探索对照，不替换主表。 | `outputs/reports/sun_modality_fewshot_v1.{json,md}`、`scripts/build_sun_modality_fewshot_report_v1.py`、`tests/test_modality_fewshot_report_v1.py` |
 | 3.7.74 | 2026-11-03 | **SUN-MODALITY-FEWSHOT-001：获准执行并接入有界运行器**：用户“可以跑了”授权既定18例分支，同426条、426次/¥20/零重试；官方价格/模型版本复核一致。8路并发配合统一预算预留及单写者哈希链账本，记录完整本地返回；当前完成执行准备，原提示词和预检字节保持冻结，不覆盖旧结果。 | `configs/authorization/sun_modality_fewshot_20261103_v1.json`、`scripts/run_sun_modality_fewshot_v1.py`、`tests/test_run_modality_fewshot_v1.py`、`outputs/reports/sun_modality_fewshot_v1_execution_preflight.json` |
 | 3.7.73 | 2026-11-01 | **SUN-MODALITY-FEWSHOT-001：train示例提示词分支离线准备**：用户要求添加few-shot；沿用已审阅草案18例（D7/O5/P3/M3），固定分层规则、相邻对比顺序及文本哈希，运行时从train恢复德语原句；boundary system仅追加语料模态示范说明与标签，原六要素JSON、用户模板、六例、模型和采样不变。426/426请求通过单一追加差异检查，train与dev/test编号/规范化文本无重叠，选择时不读dev/test标签；新API=0，性能为空。准备入口只生成本地prompt预览和脱敏预检，无执行模式。后续真实批次需要独立授权；test-informed探索性，不是盲测或已证明的上界。 | `prompts/sun_compat/modality_fewshot_v1/`、`configs/supplement/sun_modality_fewshot_v1.json`、`src/bpc_hybrid/modality_benchmark/fewshot.py`、`scripts/prepare_sun_modality_fewshot_v1.py`、`tests/test_modality_fewshot_v1.py`、`outputs/reports/sun_modality_fewshot_v1_preflight.json` |
 | 3.7.38 | 2026-10-31 | **SUN-MODALITY-BOUNDARY-001 统计补强（纯离线，零 API）**：对已保存的 v6/边界分支/Sun 逐样本预测补三件统计。(1) McNemar 精确检验：v6 vs 边界分支配对翻转 64/8，p=5.77e-12（改善显著）；边界分支 vs Sun 翻转 12/58，p=2.25e-08（仍显著低于 Sun 的主张获正式检验支持）。(2) 配对百分位 bootstrap（B=10000、seed 20261031、全分母口径与冻结评价器一致，重算点估计与主报告逐位一致）：macro-F1 Δ+0.1444 [95%CI +0.0942,+0.1929]；definition Δ+0.311 [+.240,+.387]、obligation Δ+0.052 [+.027,+.080] CI 全正；permission [-0.0035,+.1382] 跨零、prohibition [0.0000,+.2851] 触零，均不显著（n=39/15，单次差异不可作稳健结论）。(3) 适用范围条款副作用量化：测试集含 anzuwenden/anwendbar/gilt nur 等标记样本 79 条（gold：obligation 70、prohibition 6、definition 3、permission 0），该子集正确数 v6 76 vs 边界分支 73（净 −3）；8 条回归中 7 条判为 definition、4 条含标记；边界分支 definition 的 10 个误报中 4 条含标记；对照残余 36 条 definition→obligation 漏抽 0 条含标记（非同类机制）。德语原文不进入版本化产物，副作用分析只含 sample_id/标签/计数。 | `scripts/build_sun_modality_boundary_stats_v1.py`、`outputs/reports/sun_modality_boundary_stats_v1.{json,md}` |

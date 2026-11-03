@@ -6561,3 +6561,21 @@
 - 仍存在 blocker：无
 - 备注：用户2026-11-03明确可以跑了，授权同426条新批次，426次/¥20/零重试/仅空闲时段；按当前官方价格和DeepSeek-V4-Pro-0813版本核验。新增8路并发仅改变调度，426条请求与已准备字节绑定一致；协调线程统一预留所有在途费用、串行写账本，失败只收集在途返回并停止新发，未结算请求拒绝续跑。未修改原提示词/训练示例/历史预检，未读取.env；本事件为执行前检查点，尚未真实调用。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-11-03T05:54:49.255921+00:00 - SUN-MODALITY-FEWSHOT-001：426次授权调用完成，18例分支Macro-F1提升至0.8232
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=sun_modality_fewshot_v1；阶段=stage2；方法=LLM-SE v6 + boundary + 18 train corpus demonstrations；状态=成功（`succeeded`）
+- 实际运行命令：`python -X utf8 -u formal_experiment/scripts/run_sun_modality_fewshot_v1.py --execute; python -X utf8 -B formal_experiment/scripts/build_sun_modality_fewshot_report_v1.py`
+- manifest：outputs/reports/sun_modality_fewshot_v1.json, outputs/reports/sun_modality_fewshot_v1_execution_preflight.json, configs/authorization/sun_modality_fewshot_20261103_v1.json, outputs/development/sun_modality_fewshot_v1/execution_v1/execution_20261103T055053462867.json
+- 结果摘要：426/426、零重试，¥9.6837192；425有效/1无clause保留分母；Macro-F1 0.7580908→0.8232430，改对25/改错4；definition漏判60→42，prohibition FP11→9、TP10→12；paired bootstrap差值95%CI[0.0279,0.1090]；仍低于Sun0.8772。
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：9 passed in 0.32s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`955f97263e45839d29e3f15af901b034ebf3614d`；相关未提交路径：111 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：已授权调用（`authorized_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：用户2026-11-03明确可以跑了。北京时间13:45:45–13:50:53完成，全部空闲时段；请求/响应哈希、返回模型、用量及费用逐项复核一致，峰值已花费+在途预留¥10.7831。原v6/boundary/Sun指标精确复现。新报告代码只做离线核验、同口径评价、配对McNemar与10000次bootstrap，全部426进入分母；新报告检查及失败分母共9项，运行器20项沿用前一检查点证据，不跑全量。许可/禁止增量CI下界为0，不作稳健显著性主张；所有结果均为test-informed历史探索，不消除提示词选择和服务时间偏差，不替换主表。原文/完整返回仅本地，版本化产物仅编号/标签/统计。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

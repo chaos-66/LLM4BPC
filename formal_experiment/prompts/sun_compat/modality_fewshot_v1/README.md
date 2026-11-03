@@ -48,3 +48,12 @@ prohibition 误报。当前准备脚本不执行推理，也不生成性能分�
 未做参数训练；历史对照仍存在模型服务时间差。提升与副作用均须实际实验验证。
 
 当前状态只见 `docs/PROJECT_AUDIT.md`；完整路线只见 `docs/MASTER_PIPELINE.md`。
+
+执行扩展（2026-11-03）：用户已另行批准运行，授权记录为
+`configs/authorization/sun_modality_fewshot_20261103_v1.json`。原准备合同与预检
+保持历史字节，新的执行预检绑定该授权。运行入口为
+`python formal_experiment/scripts/run_sun_modality_fewshot_v1.py --execute`；
+仅发送未尝试编号，8路并发由单写者账本统一预留预算；失败时收集在途返回并停止新发。
+无未结算请求且已完成的批次再次启动不会重发。离线报告入口为
+`python formal_experiment/scripts/build_sun_modality_fewshot_report_v1.py`，默认拒绝覆盖已有报告。
+最终结果见 `outputs/reports/sun_modality_fewshot_v1.{json,md}`，当前事实见状态页。
