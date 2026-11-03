@@ -1,0 +1,84 @@
+{
+  "suite_id": "SUN-MODALITY-VALIDATE-001",
+  "schema_version": 2,
+  "prepared_date": "2026-11-03",
+  "user_request": "继续改进：运行方案、检查副作用、在dev上验证的准备",
+  "execution_authorized": false,
+  "planned_calls": {
+    "test:review": 426,
+    "dev:fewshot": 420,
+    "dev:review": 420
+  },
+  "requested_limits": {
+    "max_calls": 1266,
+    "cap_cny": 80.0,
+    "max_workers": 8,
+    "retries": 0,
+    "off_peak_only": true,
+    "endpoint": "https://api.deepseek.com",
+    "model": "deepseek-v4-pro",
+    "price_cny_per_million": {
+      "off_peak": {
+        "input_cache_hit": 0.15,
+        "input_cache_miss": 4.5,
+        "output": 13.5
+      },
+      "peak": {
+        "input_cache_hit": 0.3,
+        "input_cache_miss": 9.0,
+        "output": 27.0
+      }
+    }
+  },
+  "price_verification": {
+    "date": "2026-11-03",
+    "official_url": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+    "documented_model": "DeepSeek-V4-Pro-0813"
+  },
+  "bindings": {
+    "review_preflight": {
+      "path": "outputs/reports/sun_modality_review_v1_preflight.json",
+      "sha256": "4e9e09afccd142f0000da52d6fcd18884f84f66051f6a885748e5fc767f422e6"
+    },
+    "historical_result": {
+      "path": "outputs/reports/sun_modality_fewshot_v1.json",
+      "sha256": "fcb4d368c8b1d8caa65418e73905beeea97bef75a23249577ec97f902cc141ac"
+    },
+    "historical_journal": {
+      "path": "outputs/development/sun_modality_fewshot_v1/execution_v1/local_only/events.jsonl",
+      "sha256": "38d237b9301a1a6bdcc6dbd58ce5863cd7e80c739116e31edfa9228dd14687c6"
+    }
+  },
+  "design": {
+    "prompt": "Keep the prepared reviewer prompt frozen; no additional error-derived rules in this batch.",
+    "test": "All 426 review requests; historical few-shot control; exploratory after test-informed prompt editing.",
+    "dev": "Both fixed LLM prompts on all 420 samples, alternating pair submission order by sorted sample ID; no gold in requests.",
+    "analysis": "Only after complete collection; no mid-run label inspection, example selection, prompt updates, or stopping by observed score.",
+    "primary_validation": "Paired dev macro-F1 difference; paired bootstrap B=10000 seed=20261103.",
+    "secondary": "Accuracy McNemar, all four classes P/R/F1/support/FP/FN, corrected/regressed/both-wrong, parse failures retained.",
+    "decision": "Report positive, null or negative results. A positive macro-F1 difference alone is not evidence all four classes improved. CI overlapping zero is inconclusive for improvement.",
+    "no_ensemble": "No Sun-guided LLM repair, disagreement routing, Gold-guided routing or oracle selection."
+  },
+  "dev_exposure": {
+    "train_examples": "Unchanged 18 examples only from train.",
+    "prompt_development": "Available versioned evidence uses test errors and train labels; dev texts previously used for overlap checking, no dev label-based prompt selection found.",
+    "supervised_baselines": "dev already used for baseline model selection; not globally unused, not a new external test set."
+  },
+  "limitations": [
+    "test是看过错误后修改prompt的探索性历史对照，不能作为盲测。",
+    "dev仅是这两版冻结LLM提示词的留出验证；同语料、监督基线已用过dev，并非全项目未使用过的新数据。",
+    "若查看dev后继续调prompt，dev即转为开发数据；后续独立泛化主张需另有未参与调整的数据。",
+    "同期双臂按样本交错提交仍不能完全消除服务后端、并发与缓存差异。",
+    "首有效clause投影、残缺输入和标签歧义仍保留，不改Gold或评价器。",
+    "实际得分由真实完整返回决定；理论组合上界不是本实验的性能结果。"
+  ],
+  "data_policy": "Source German sentences, 18 train demonstrations, full prompts/responses remain git-ignored locally; approved requests go only to the official API.",
+  "performance_metrics": null,
+  "supersedes_preparation": {
+    "contract_path": "configs/supplement/sun_modality_validation_v1.json",
+    "contract_sha256": "dae817eedf63ff00c1c27b7091b79f19cde30fb5dfa68a637c4a7b3665fdcc9c",
+    "preflight_path": "outputs/reports/sun_modality_validation_v1_preflight.json",
+    "preflight_sha256": "1f977da6702a20243fd1b5c3d45e6798f8840f05835479eb263f3ddaacff648f",
+    "reason": "Initial no-cache estimate 61.1201165 CNY exceeded proposed 60 CNY cap; raise requested cap to 80 before seeking approval. No calls and no request-content change."
+  }
+}

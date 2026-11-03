@@ -1,6 +1,6 @@
 # LLM4BPC 完整实验主 Pipeline
 
-**文档版本**：3.7.76
+**文档版本**：3.7.77
 **状态**：ACTIVE — 全项目研究与任务分解的唯一主线
 **最后更新**：2026-11-03
 **方法学主干**：Sun et al. (2024)（三部分方法主干）；Barrientos et al. (2026)（直接借鉴来源：LLM 结构化输出、验证、受控词汇、归一化与评估纪律）
@@ -3311,6 +3311,7 @@ development-only；S3.7 formal Oracle not started；Gold Rule Records absent。
 
 ## 15. Pipeline 变更日志
 
+| 3.7.77 | 2026-11-03 | **SUN-MODALITY-VALIDATE-001：冻结prompt后的真实验证准备**：固定test reviewer426 + dev同期few-shot420/reviewer420，复合call ID、交错双臂顺序、请求及源码绑定；隔离复用旧有界协调器，不读dev/test标签发请求，完整账本验证后才评分。报告同时计算纠错、回归、四类P/R/F1/FP/FN及配对统计，部分批次不给最终成绩。dev仅为两版LLM提示词留出验证，曾用于监督基线选模，非全新外部测试。拟1266次/¥80/零重试/空闲时段；无缓存估算¥61.12，v1拟¥60预检保留且由v2取代。当前API=0、新性能=null，待新批次明确授权，不追加提示词规则或恢复Sun→LLM修补。 | `configs/supplement/sun_modality_validation_v2.json`、`outputs/reports/sun_modality_validation_v1_preflight_v2.json`、`prompts/sun_compat/modality_review_v1/VALIDATION.md` |
 | 3.7.76 | 2026-11-03 | **SUN-MODALITY-REVIEW-001：54条剩余错误审读与prompt分支离线准备**：AI逐条解释并与train词组候选对照，区分法律后果/状态、资格/期限、否定与指令、条件误拆、并列遗漏及输入残缺。程序核实4条错误的后续clause已有金标，1条条件误拆与3条独立多命题投影限制分开处理，不改首有效clause评价器或Gold。在原18例分支后追加六步审读及三组合成对比；426/426原请求绑定与单一system追加检查通过，输入估算增量1866–1867 tokens。测试错误指导的探索性准备，API=0、新性能=null；解释不是新增人工裁决或已验证的模型机制。 | `prompts/sun_compat/modality_review_v1/`、`outputs/reports/sun_modality_review_v1.{json,md}`、`outputs/reports/sun_modality_review_v1_preflight.json` |
 | 3.7.75 | 2026-11-03 | **SUN-MODALITY-FEWSHOT-001：授权运行完成与配对报告**：426/426、零重试、8路并发、全部空闲时段，实际¥9.6837192；425解析有效+1无clause保留分母。Macro-F1 0.7581→0.8232（+0.0652），Accuracy 0.8239→0.8732，改对25/改错4；配对bootstrap 95%CI [+0.0279,+0.1090]，McNemar accuracy p=0.000103716。definition漏判60→42；prohibition FP11→9、TP10→12。相对Sun 0.8772仍低0.0540，独对14/39、p=0.000802331。所有请求字节匹配既定预检，原始响应/预算/模型/用量复核一致；真实原文仅本地，版本化脱敏逐条诊断、混淆矩阵与统计。test-informed历史探索对照，不替换主表。 | `outputs/reports/sun_modality_fewshot_v1.{json,md}`、`scripts/build_sun_modality_fewshot_report_v1.py`、`tests/test_modality_fewshot_report_v1.py` |
 | 3.7.74 | 2026-11-03 | **SUN-MODALITY-FEWSHOT-001：获准执行并接入有界运行器**：用户“可以跑了”授权既定18例分支，同426条、426次/¥20/零重试；官方价格/模型版本复核一致。8路并发配合统一预算预留及单写者哈希链账本，记录完整本地返回；当前完成执行准备，原提示词和预检字节保持冻结，不覆盖旧结果。 | `configs/authorization/sun_modality_fewshot_20261103_v1.json`、`scripts/run_sun_modality_fewshot_v1.py`、`tests/test_run_modality_fewshot_v1.py`、`outputs/reports/sun_modality_fewshot_v1_execution_preflight.json` |

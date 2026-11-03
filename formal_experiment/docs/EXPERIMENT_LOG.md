@@ -6593,3 +6593,17 @@
 - 仍存在 blocker：无
 - 备注：用户要求继续分析错误并写入prompt。完成54条AI审读、train标记对照及18条多clause/4条后续金标核验；解释性归类不是人工裁决或模型内部机制证明。新分支只在原18例system后追加六步审读与三组合成对比，426条原请求绑定一致；原示例、Gold、输出合同、评价器和历史结果不改。检查仅限新模块具名测试及完整性，无全量；API=0、新性能=null。测试错误指导的探索性准备；残缺输入与独立多命题投影不靠猜标签或重排追分。原文和完整prompt仅本地，未读取.env。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-11-03T13:54:35.231455+00:00 - SUN-MODALITY-VALIDATE-001：冻结reviewer提示词并准备test诊断及dev同期配对验证
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：27 passed in 1.21s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`e8ea48aacfba97ae13ab2bcc43646687e4f6929a`；相关未提交路径：115 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：用户要求继续改进。准备test reviewer426及dev两臂各420，全部1266请求预绑定，保留旧提示词和18条示例；dev只作LLM prompt留出验证，不称全项目未使用数据。执行器隔离复用旧有界协调器，复合call ID保持双臂独立、无标签推理；完整账本核验后再评分，报告同时列纠错/回归/四类变化/失败及配对区间。新授权必须绑定预检，1266次/¥80/8并发/零重试/仅空闲时段，估算¥61.12；首次拟¥60准备未执行且保留，由v2取代。官方价格及模型版本已核验。新API=0、新性能=null；未读.env，未改Gold，不恢复Sun→LLM修补。仅两个具名文件测试，无全量。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

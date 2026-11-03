@@ -14,6 +14,27 @@ Sun 指 Sun et al. (2024) 的本地独立重建，历史名称 Rules-Only 对应
 `sun_rule_only` / B0。以下活动说明按当前名称阅读；冻结报告、源码与历史
 事件保持原字节。本次纯命名调整不改变本页任务状态、结果或实验授权。
 
+## SUN-MODALITY-VALIDATE-001：冻结prompt后的验证准备（2026-11-03）
+
+- 用户要求继续改进；当前将下一步落实为真实验证的可执行准备，保留reviewer提示词原字节，
+  不继续根据同一test错误追加规则。已备好1266个请求：test reviewer426，dev few-shot420及reviewer420。
+  test复用历史few-shot成绩；dev两臂按样本交错提交、交替先后顺序，仍为8路并发。
+- dev此前被监督基线用于模型选择、文本用于重复检查；现有版本化材料未显示其标签用于这两版
+  LLM prompt调参。这里只称LLM提示词留出验证，不称全项目未使用的数据或外部独立测试。
+  若看dev成绩后继续调prompt，后续独立验证需另有未参与调整的数据。
+- 主验证：dev配对Macro-F1差值及10000次bootstrap；同步给出四类P/R/F1/FP/FN、
+  改对/改错/共同错误、accuracy McNemar及失败分母。运行中不看标签或改prompt；
+  完整账本验证先于标签读取；未完成批次不给最终成绩，负结果照实报告。
+- 合同 `configs/supplement/sun_modality_validation_v2.json`；当前预检
+  `outputs/reports/sun_modality_validation_v1_preflight_v2.json`；执行/报告脚本分别为
+  `scripts/run_sun_modality_validation_v1.py`、`scripts/build_sun_modality_validation_report_v1.py`。
+  运行器隔离复用已测试协调器，以复合call ID绑定各臂；旧源码和旧运行目录不变。
+- 2026-11-03核验官方模型和价格：拟1266次/¥80/零重试/仅空闲时段，估算无缓存¥61.12；
+  首次拟¥60的v1准备因估算超过上限被v2取代，保留历史且未执行；请求内容完全相同。
+  已准备独立授权校验与累计费用+全部在途预留控制；原文、示范及完整返回仅本地。
+- 当前为离线准备，真实API=0、新性能=null，待用户明确批准此新批次。
+  旧426次授权已用尽，未复用；不进行Sun引导LLM修补、分歧路由或oracle选答案。
+
 ## SUN-MODALITY-REVIEW-001：剩余错误审读与新提示词准备（2026-11-03）
 
 - 用户要求继续分析few-shot错误，并将仔细人工阅读的纠错步骤写入prompt；已逐条检查54个错误。
