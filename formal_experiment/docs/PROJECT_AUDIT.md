@@ -14,6 +14,27 @@ Sun 指 Sun et al. (2024) 的本地独立重建，历史名称 Rules-Only 对应
 `sun_rule_only` / B0。以下活动说明按当前名称阅读；冻结报告、源码与历史
 事件保持原字节。本次纯命名调整不改变本页任务状态、结果或实验授权。
 
+## SUN-MODALITY-REVIEW-001：剩余错误审读与新提示词准备（2026-11-03）
+
+- 用户要求继续分析few-shot错误，并将仔细人工阅读的纠错步骤写入prompt；已逐条检查54个错误。
+  这是AI审读，未进行新增人工裁决；原Gold、历史结果和首有效clause评价器保持不变。
+- 解释性归类：法律后果/状态23、资格/数量/期限边界17、残缺输入3、独立多命题投影3、
+  指令或标注边界4、前置条件误拆1、并列谓词遗漏2、隐含申请选择1；不是已证明的模型内部机制。
+  程序核实18条多clause输出中5条计错，其中4条后续clause已有金标类别；仅1条可归为条件误拆，
+  其余3条不能靠重排独立命题追分。禁止类12 TP/9 FP/3 FN，8个FP来自definition。
+- train词组候选对照支持自动金额变化、责任归属等修正方向，同时发现近似否定表达跨类；
+  新指导不采用固定词汇→标签硬映射。报告 `outputs/reports/sun_modality_review_v1.{json,md}`
+  保存全部错误编号、原标签、解释和证据哈希，德语原文/完整返回仍仅在Git忽略目录。
+- 新分支在原v6 + boundary + 18条train示范后追加六步审读和三组英文合成对比，
+  见 `prompts/sun_compat/modality_review_v1/reviewer_guidance.md`。
+  离线入口 `scripts/prepare_sun_modality_review_v1.py` 已核对426/426原请求绑定，
+  变化仅为system追加；原示例、用户模板、模型、采样与输出合同保持不变。
+  输入增量按UTF-8字节/3估算1866–1867 tokens/条，不是实际分词测量。
+- 准备产物 `outputs/reports/sun_modality_review_v1_preflight.json`；完整prompt预览位于
+  `outputs/development/sun_modality_review_v1/composed_system_prompt.txt`。
+  当前仅完成离线准备，真实API=0、新性能=null；没有执行入口或新调用授权。
+  本分支继续参考同一测试集错误，属于探索性，不宣称盲测或保证修复全部54条。
+
 ## SUN-MODALITY-FEWSHOT-001：语料 few-shot 提示词分支（2026-11-01）
 
 - 2026-11-03用户明确“可以跑了”，独立授权 `configs/authorization/sun_modality_fewshot_20261103_v1.json`；
@@ -60,8 +81,8 @@ Sun 指 Sun et al. (2024) 的本地独立重建，历史名称 Rules-Only 对应
   `outputs/reports/sun_modality_boundary_v1.authorization.json`；已有离线统计见
   `outputs/reports/sun_modality_boundary_stats_v1.{json,md}`。2026-11-01只读复核
   账本哈希链、426条成员、费用及指标与报告一致；没有新增调用或重跑bootstrap。
-- 原18例few-shot草案已于2026-11-01接入独立请求生成与离线预检，详见上方
-  SUN-MODALITY-FEWSHOT-001；尚无真实运行，旧426次授权不自动扩展。
+- 原18例few-shot草案于2026-11-01接入离线预检，2026-11-03按独立授权完成运行，
+  详见上方SUN-MODALITY-FEWSHOT-001；boundary旧426次授权未扩展或复用。
 - 合同 `configs/supplement/sun_modality_boundary_v1.json`；入口
   `scripts/run_sun_modality_boundary_v1.py`；分支说明
   `prompts/sun_compat/modality_boundary_v1/README.md`。

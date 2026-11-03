@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "suite_id": "SUN-MODALITY-REVIEW-001",
+  "prepared_date": "2026-11-03",
+  "user_request": "还不够，再分析一下，还有哪里不够好？错误的地方是哪里错了？如果是人的话会怎么改？把这个改的放进prompt里",
+  "authorization": {
+    "scope": "offline_error_analysis_and_prompt_preparation_only",
+    "real_api_calls_authorized": false,
+    "new_call_budget": 0
+  },
+  "guidance": {
+    "path": "prompts/sun_compat/modality_review_v1/reviewer_guidance.md",
+    "sha256": "01bab7bb53c09deac365e11202d80d74156b9e914dec320737bbc8993f9e3d22"
+  },
+  "parent_preflight": {
+    "path": "outputs/reports/sun_modality_fewshot_v1_preflight.json",
+    "sha256": "52eaa8cfaf81578b92a6632c2c24774fbafd67cf3c2ea14ba7c637db2dc8412a"
+  },
+  "parent_result": {
+    "path": "outputs/reports/sun_modality_fewshot_v1.json",
+    "sha256": "fcb4d368c8b1d8caa65418e73905beeea97bef75a23249577ec97f902cc141ac"
+  },
+  "error_review": {
+    "path": "outputs/reports/sun_modality_review_v1.json",
+    "sha256": "f9fd5ae9b76ba33a35618f77f3b7eb4b004957fd617b26db6f6c0d9d2bcfef08"
+  },
+  "composition": [
+    "frozen v6 system",
+    "frozen boundary guidance",
+    "unchanged 18 train demonstrations",
+    "reader review guidance"
+  ],
+  "refinement": {
+    "reader_checks": 6,
+    "synthetic_contrast_pairs": 3,
+    "new_test_sentence_examples": 0,
+    "gold_changes": false,
+    "evaluator_changes": false,
+    "clause_order": "source_order"
+  },
+  "interpretation": "AI qualitative review; not human adjudication or demonstrated model improvement",
+  "evaluation_status": "test-informed exploratory preparation; no independent validation",
+  "performance_metrics": null,
+  "limitations": [
+    "Multiple independent propositions still use the frozen first-valid-clause projection.",
+    "Missing source context must not be invented.",
+    "Training marker counts do not establish deterministic classification rules."
+  ]
+}
