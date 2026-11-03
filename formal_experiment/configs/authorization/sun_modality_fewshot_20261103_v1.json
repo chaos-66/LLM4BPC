@@ -1,0 +1,36 @@
+{
+  "schema_version": "sun_modality_fewshot_authorization@1.0.0",
+  "suite_id": "SUN-MODALITY-FEWSHOT-001",
+  "date_local": "2026-11-03",
+  "timezone": "Asia/Shanghai",
+  "user_text": "可以跑了",
+  "source": "explicit approval in this chat after the prepared few-shot prompt was delivered",
+  "execute_authorized": true,
+  "scope": "One new batch of the same 426 German test sentences, with the frozen boundary prompt plus 18 labeled German train demonstrations sent in each system prompt. No retries or baseline re-runs.",
+  "prepared_preflight_sha256": "52eaa8cfaf81578b92a6632c2c24774fbafd67cf3c2ea14ba7c637db2dc8412a",
+  "max_calls": 426,
+  "cap_cny": 20.0,
+  "retries": 0,
+  "max_workers": 8,
+  "concurrency_note": "Coordinator-imposed concurrency 8 to use the current off-peak window; unchanged per-sample request bodies and shared budget reservations.",
+  "off_peak_only": true,
+  "endpoint": "https://api.deepseek.com",
+  "model": "deepseek-v4-pro",
+  "documented_release": "DeepSeek-V4-Pro-0813",
+  "credentials": "process DEEPSEEK_API_KEY only; no .env read",
+  "price_verified_at_local": "2026-11-03",
+  "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+  "price_cny_per_million": {
+    "off_peak": {
+      "input_cache_hit": 0.15,
+      "input_cache_miss": 4.5,
+      "output": 13.5
+    },
+    "peak": {
+      "input_cache_hit": 0.3,
+      "input_cache_miss": 9.0,
+      "output": 27.0
+    }
+  },
+  "raw_artifact_policy": "German texts, composed prompts and raw responses stay in git-ignored local outputs/development; only aggregate reports and hash bindings are versioned."
+}

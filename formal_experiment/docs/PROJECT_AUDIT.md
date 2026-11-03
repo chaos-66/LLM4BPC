@@ -1,6 +1,6 @@
 # 项目实时状态（兼容文件名 PROJECT_AUDIT.md）
 
-**更新时间**：2026-11-01
+**更新时间**：2026-11-03
 **唯一活动目录**：`formal_experiment/`  
 **完整路线**：`docs/MASTER_PIPELINE.md`  
 **机器事实源**：`python formal_experiment/scripts/audit_project.py`（自动完整性检查）  
@@ -16,6 +16,10 @@ Sun 指 Sun et al. (2024) 的本地独立重建，历史名称 Rules-Only 对应
 
 ## SUN-MODALITY-FEWSHOT-001：语料 few-shot 提示词分支（2026-11-01）
 
+- 2026-11-03用户明确“可以跑了”，已记录独立授权 `configs/authorization/sun_modality_fewshot_20261103_v1.json`；
+  同426条、最多426次/¥20/零重试/仅空闲时段。新增执行器采用8路并发、主线程统一预算预留和哈希链账本；
+  原请求字节保持已准备版本，原准备合同中的未授权状态保留为历史快照。本次正在完成执行预检与代码检查点，真实调用尚未开始。
+
 - 用户要求尝试添加few-shot；已将本地草案的18条train示例接入独立请求生成器，
   配额definition 7 / obligation 5 / prohibition 3 / permission 3；固定家族、排序、顺序及哈希。
 - 在boundary system末尾追加示范块，明确这些句子仅用于模态校准，新输入仍返回完整六要素JSON。
@@ -28,9 +32,8 @@ Sun 指 Sun et al. (2024) 的本地独立重建，历史名称 Rules-Only 对应
   版本化合同、选例清单、生成器和不含原句的预检：
   `configs/supplement/sun_modality_fewshot_v1.json`、`prompts/sun_compat/modality_fewshot_v1/`、
   `scripts/prepare_sun_modality_fewshot_v1.py`、`outputs/reports/sun_modality_fewshot_v1_preflight.json`。
-- 当前入口只做离线准备，无API执行模式；新批次须另有执行授权与账本。426次/¥20/零重试
-  是后续计划上限，未自动沿用已消耗的boundary授权。选例家族参考测试错误，仍属探索性，
-  不能称独立盲测或预先断言提升。
+- 2026-11-01的准备入口仅做离线准备；2026-11-03新增独立执行器和独立授权，
+  不沿用已消耗的boundary授权。选例家族参考测试错误，仍属探索性，不能称独立盲测或预先断言提升。
 
 ## SUN-MODALITY-BOUNDARY-001：四类边界提示词分支（2026-10-31）
 
