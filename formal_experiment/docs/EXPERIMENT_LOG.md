@@ -6607,3 +6607,17 @@
 - 仍存在 blocker：无
 - 备注：用户要求继续改进。准备test reviewer426及dev两臂各420，全部1266请求预绑定，保留旧提示词和18条示例；dev只作LLM prompt留出验证，不称全项目未使用数据。执行器隔离复用旧有界协调器，复合call ID保持双臂独立、无标签推理；完整账本核验后再评分，报告同时列纠错/回归/四类变化/失败及配对区间。新授权必须绑定预检，1266次/¥80/8并发/零重试/仅空闲时段，估算¥61.12；首次拟¥60准备未执行且保留，由v2取代。官方价格及模型版本已核验。新API=0、新性能=null；未读.env，未改Gold，不恢复Sun→LLM修补。仅两个具名文件测试，无全量。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-11-04T04:56:01.315844+00:00 - SUN-MODALITY-VALIDATE-001：用户批准1266次验证并完成执行前授权绑定
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：9 passed in 0.34s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`bce11bc66cc4be844ca2a08bc7821bdfbf90dcd1`；相关未提交路径：107 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：用户2026-11-04明确回复是，批准上一轮具体方案：官方DeepSeek API，test reviewer426与dev双臂各420，1266次/¥80/零重试/仅空闲时段，18条train示例与既定提示词一并发送。新授权精确绑定预检0e8baba4，全部请求与源码已离线复核；官方价格及模型版本与前日一致。直接校验实际授权成功，沿用此前27项代码证据，本次只跑授权相关9项，无全量。执行前检查点，尚未调用API或读取.env。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

@@ -1,0 +1,34 @@
+{
+  "max_calls": 1266,
+  "cap_cny": 80.0,
+  "max_workers": 8,
+  "retries": 0,
+  "off_peak_only": true,
+  "endpoint": "https://api.deepseek.com",
+  "model": "deepseek-v4-pro",
+  "price_cny_per_million": {
+    "off_peak": {
+      "input_cache_hit": 0.15,
+      "input_cache_miss": 4.5,
+      "output": 13.5
+    },
+    "peak": {
+      "input_cache_hit": 0.3,
+      "input_cache_miss": 9.0,
+      "output": 27.0
+    }
+  },
+  "schema_version": 1,
+  "suite_id": "SUN-MODALITY-VALIDATE-001",
+  "date_local": "2026-11-04",
+  "timezone": "Asia/Shanghai",
+  "execute_authorized": true,
+  "user_text": "是",
+  "approval_context": "The user answered yes to sending the German texts, prompts and original 18 train demonstrations to the official DeepSeek API for the prepared test reviewer426 + dev fewshot420 + dev reviewer420 batch, at most1266 calls and CNY80 total, zero retries, off-peak only.",
+  "approved_preflight_sha256": "0e8baba47519d1b16a24e7a778637c8a18366274e153bda4ba557732dcda68a6",
+  "price_reverified_date": "2026-11-04",
+  "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+  "documented_model": "DeepSeek-V4-Pro-0813",
+  "credential_policy": "Process DEEPSEEK_API_KEY only; never read .env or print secrets.",
+  "raw_artifact_policy": "German texts, composed prompts and full responses remain in ignored local outputs/development; only IDs, labels, aggregates and hashes are versioned."
+}
