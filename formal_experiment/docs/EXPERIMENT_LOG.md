@@ -6653,3 +6653,21 @@
 - 仍存在 blocker：无
 - 备注：原734条账本冻结；独立入口只使用原1266条授权中从未尝试的532条，失败429永不重发。并发8降4、发送间隔至少1秒、实际发送前再查空闲窗口；已知¥16.4269668与未知预留¥0.1632375均扣除，子预算¥63.4097957，总授权仍1266次/¥80。新恢复不是原运行器自动续跑，单独预检与源码绑定；再次异常仍停。合并完整人口后才读标签，429计入无预测分母；419条有响应dev配对只作敏感性诊断，主结果仍420。当前续跑API=0，未读中途标签，未改prompt/Gold/历史账本，未读.env。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-11-04T14:22:00.191055+00:00 - SUN-MODALITY-VALIDATE-001：1266个计划调用各一次尝试完成，test与dev配对改进均为正
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=sun_modality_validation_v1_completed；阶段=stage2；方法=LLM-SE fewshot versus reviewer prompt；状态=成功（`succeeded`）
+- 实际运行命令：`python -X utf8 -u formal_experiment/scripts/continue_sun_modality_validation_v1.py execute; python -X utf8 -u formal_experiment/scripts/continue_sun_modality_validation_v1.py report`
+- manifest：outputs/reports/sun_modality_validation_v1_completed.json, outputs/reports/sun_modality_validation_v1_continuation_preflight.json, outputs/development/sun_modality_validation_v1/continuation_v1/execution_20261104T053610988308.json
+- 结果摘要：1266条各尝试一次，零重试；test Macro-F1 0.8232→0.8667，改对22/改错2；dev 0.8012→0.8610，改对28/改错6；两组95%CI差值下界均大于0。1条429及1条无clause保留分母；已知¥28.5828837，含未知预留上界¥28.7461212。
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：1 passed in 0.25s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`4263f36ffe0d58969c3bfcda88aa3a255a426a55`；相关未提交路径：107 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：已授权调用（`authorized_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：用户批准1266次/¥80。首次734条因429停止，另在原授权内仅发送532条未尝试请求，于13:36:10全部结束，无重试或重复ID；续跑4并发并限速，全部空闲时段。两份账本和请求/返回/用量/费用核验完成后才读标签。429用量未知，完整预留¥0.1632375未释放；主dev420条保留该失败，419条有响应敏感性Macro-F1差仍+0.05913。test提升+4.35pp、dev+5.98pp；配对bootstrap B10000/seed20261103。所有历史字节、prompt、Gold及评价器保持冻结；test已参考错误、dev同语料且曾用于监督选模，不宣称外部泛化。该事件成功表示全部计划调用已尝试并完成统计，不表示每条API都成功。沿用18项续跑相关测试证据，仅额外检查评分保留回归及失败分母，无全量。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

@@ -1,6 +1,6 @@
 # LLM4BPC 完整实验主 Pipeline
 
-**文档版本**：3.7.80
+**文档版本**：3.7.81
 **状态**：ACTIVE — 全项目研究与任务分解的唯一主线
 **最后更新**：2026-11-04
 **方法学主干**：Sun et al. (2024)（三部分方法主干）；Barrientos et al. (2026)（直接借鉴来源：LLM 结构化输出、验证、受控词汇、归一化与评估纪律）
@@ -3311,6 +3311,7 @@ development-only；S3.7 formal Oracle not started；Gold Rule Records absent。
 
 ## 15. Pipeline 变更日志
 
+| 3.7.81 | 2026-11-04 | **SUN-MODALITY-VALIDATE-001：1266个计划调用各一次尝试完成并生成配对结果**：首次734+从未尝试532，两份账本无重复；零重试，429及无clause各1条保留分母。已知¥28.5828837，含未知预留上界¥28.7461212。test Macro-F1 0.8232→0.8667，改对22/改错2，95%CI差值[+0.0228,+0.0684]；dev 0.8012→0.8610，改对28/改错6，CI[+0.0272,+0.0966]，429配对排除敏感性仍+0.05913。test prohibition TP仍12/15、FP9→7；dev TP14→15/16、FP10→6。完整收集后才读标签，原prompt/Gold/评价器不变；test仍为已见错误的探索性对照，dev不是外部新语料。 | `outputs/reports/sun_modality_validation_v1_completed.{json,md}` |
 | 3.7.80 | 2026-11-04 | **SUN-MODALITY-VALIDATE-001：只处理未尝试请求的续跑准备**：冻结原734条账本，原授权内派生532条未发送清单；扣除已知¥16.4269668及未结算¥0.1632375后，剩余预算¥63.4097957。新入口4并发/至少1秒发起间隔、发送前再次检查空闲时段，不重发已尝试请求、不增加总授权。两个账本全人口一致后才读标签；429保留主分母，并另列419条dev失败敏感性检查。 | `scripts/continue_sun_modality_validation_v1.py`、`outputs/reports/sun_modality_validation_v1_continuation_preflight.json` |
 | 3.7.79 | 2026-11-04 | **SUN-MODALITY-VALIDATE-001：首次执行因HTTP429停止**：734/1266已尝试，733正常返回、1条429无用量；test426/dev各154，732可解析+1无clause+1无内容。已知费用¥16.4269668，未结算预留¥0.1632375继续占用总预算；原运行器按约定停止、零重试。532条尚未发送，当前无最终成绩、未查看中途标签；保存不可变账本及中断绑定后再处理未发送部分。 | `outputs/reports/sun_modality_validation_v1_interruption.json` |
 | 3.7.78 | 2026-11-04 | **SUN-MODALITY-VALIDATE-001：用户批准执行既定验证**：用户对1266次/¥80/零重试/仅空闲时段明确回复“是”，新增独立授权绑定v2预检；1266条请求和冻结源码复核一致，官方模型与费率再次核验。准备快照保持不变，此项是执行前授权检查点，尚无新性能。 | `configs/authorization/sun_modality_validation_20261104_v1.json` |

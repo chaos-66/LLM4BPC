@@ -1,0 +1,1403 @@
+{
+  "suite_id": "SUN-MODALITY-VALIDATE-001",
+  "all_planned_calls_attempted": 1266,
+  "retries": 0,
+  "failed_transport_calls": 1,
+  "known_cost_cny": 28.582883700000004,
+  "retained_uncertain_cny": 0.1632375,
+  "cost_upper_bound_with_hold_cny": 28.746121200000005,
+  "comparisons": {
+    "test": {
+      "fewshot": {
+        "n": 426,
+        "evaluated_population": "all_test_samples",
+        "accuracy": 0.8732394366197183,
+        "macro_precision": 0.7932675478160653,
+        "macro_recall": 0.8740112994350282,
+        "macro_f1": 0.8232429873054873,
+        "per_class": {
+          "definition": {
+            "precision": 0.9440559440559441,
+            "recall": 0.7627118644067796,
+            "f1": 0.84375,
+            "support": 177,
+            "tp": 135,
+            "fp": 8,
+            "fn": 42,
+            "tn": 241
+          },
+          "obligation": {
+            "precision": 0.8820754716981132,
+            "recall": 0.958974358974359,
+            "f1": 0.918918918918919,
+            "support": 195,
+            "tp": 187,
+            "fp": 25,
+            "fn": 8,
+            "tn": 206
+          },
+          "permission": {
+            "precision": 0.7755102040816326,
+            "recall": 0.9743589743589743,
+            "f1": 0.8636363636363635,
+            "support": 39,
+            "tp": 38,
+            "fp": 11,
+            "fn": 1,
+            "tn": 376
+          },
+          "prohibition": {
+            "precision": 0.5714285714285714,
+            "recall": 0.8,
+            "f1": 0.6666666666666666,
+            "support": 15,
+            "tp": 12,
+            "fp": 9,
+            "fn": 3,
+            "tn": 402
+          }
+        },
+        "confusion_matrix": {
+          "label_order": [
+            "definition",
+            "obligation",
+            "permission",
+            "prohibition"
+          ],
+          "column_order": [
+            "definition",
+            "obligation",
+            "permission",
+            "prohibition",
+            "<no_prediction>"
+          ],
+          "rows_gold_columns_predicted": [
+            [
+              135,
+              22,
+              11,
+              8,
+              1
+            ],
+            [
+              7,
+              187,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              38,
+              0,
+              0
+            ],
+            [
+              1,
+              2,
+              0,
+              12,
+              0
+            ]
+          ],
+          "as_dict": {
+            "definition": {
+              "definition": 135,
+              "obligation": 22,
+              "permission": 11,
+              "prohibition": 8,
+              "<no_prediction>": 1
+            },
+            "obligation": {
+              "definition": 7,
+              "obligation": 187,
+              "permission": 0,
+              "prohibition": 1,
+              "<no_prediction>": 0
+            },
+            "permission": {
+              "definition": 0,
+              "obligation": 1,
+              "permission": 38,
+              "prohibition": 0,
+              "<no_prediction>": 0
+            },
+            "prohibition": {
+              "definition": 1,
+              "obligation": 2,
+              "permission": 0,
+              "prohibition": 12,
+              "<no_prediction>": 0
+            }
+          }
+        },
+        "failures": 1,
+        "failure_rate": 0.002347417840375587,
+        "coverage": 0.9976525821596244,
+        "coverage_restricted_secondary": {
+          "n": 425,
+          "accuracy": 0.8752941176470588,
+          "macro_precision": 0.7932675478160653,
+          "macro_recall": 0.875094696969697,
+          "macro_f1": 0.8239042333869919,
+          "note": "secondary diagnostic only: excludes samples with no usable prediction; never the headline number"
+        }
+      },
+      "review": {
+        "n": 426,
+        "evaluated_population": "all_test_samples",
+        "accuracy": 0.92018779342723,
+        "macro_precision": 0.8377760659560293,
+        "macro_recall": 0.9069969578444155,
+        "macro_f1": 0.8667146972406818,
+        "per_class": {
+          "definition": {
+            "precision": 0.9620253164556962,
+            "recall": 0.8587570621468926,
+            "f1": 0.9074626865671642,
+            "support": 177,
+            "tp": 152,
+            "fp": 6,
+            "fn": 25,
+            "tn": 243
+          },
+          "obligation": {
+            "precision": 0.945,
+            "recall": 0.9692307692307692,
+            "f1": 0.9569620253164557,
+            "support": 195,
+            "tp": 189,
+            "fp": 11,
+            "fn": 6,
+            "tn": 220
+          },
+          "permission": {
+            "precision": 0.8125,
+            "recall": 1.0,
+            "f1": 0.896551724137931,
+            "support": 39,
+            "tp": 39,
+            "fp": 9,
+            "fn": 0,
+            "tn": 378
+          },
+          "prohibition": {
+            "precision": 0.631578947368421,
+            "recall": 0.8,
+            "f1": 0.7058823529411765,
+            "support": 15,
+            "tp": 12,
+            "fp": 7,
+            "fn": 3,
+            "tn": 404
+          }
+        },
+        "confusion_matrix": {
+          "label_order": [
+            "definition",
+            "obligation",
+            "permission",
+            "prohibition"
+          ],
+          "column_order": [
+            "definition",
+            "obligation",
+            "permission",
+            "prohibition",
+            "<no_prediction>"
+          ],
+          "rows_gold_columns_predicted": [
+            [
+              152,
+              9,
+              9,
+              6,
+              1
+            ],
+            [
+              5,
+              189,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              39,
+              0,
+              0
+            ],
+            [
+              1,
+              2,
+              0,
+              12,
+              0
+            ]
+          ],
+          "as_dict": {
+            "definition": {
+              "definition": 152,
+              "obligation": 9,
+              "permission": 9,
+              "prohibition": 6,
+              "<no_prediction>": 1
+            },
+            "obligation": {
+              "definition": 5,
+              "obligation": 189,
+              "permission": 0,
+              "prohibition": 1,
+              "<no_prediction>": 0
+            },
+            "permission": {
+              "definition": 0,
+              "obligation": 0,
+              "permission": 39,
+              "prohibition": 0,
+              "<no_prediction>": 0
+            },
+            "prohibition": {
+              "definition": 1,
+              "obligation": 2,
+              "permission": 0,
+              "prohibition": 12,
+              "<no_prediction>": 0
+            }
+          }
+        },
+        "failures": 1,
+        "failure_rate": 0.002347417840375587,
+        "coverage": 0.9976525821596244,
+        "coverage_restricted_secondary": {
+          "n": 425,
+          "accuracy": 0.9223529411764706,
+          "macro_precision": 0.8377760659560293,
+          "macro_recall": 0.9082167832167832,
+          "macro_f1": 0.8673939357785315,
+          "note": "secondary diagnostic only: excludes samples with no usable prediction; never the headline number"
+        }
+      },
+      "delta_macro_f1": 0.04347170993519456,
+      "paired": {
+        "corrected": 22,
+        "regressed": 2,
+        "by_gold_class": {
+          "definition": {
+            "corrected": 18,
+            "regressed": 1,
+            "both_correct": 134,
+            "both_wrong": 24
+          },
+          "obligation": {
+            "corrected": 3,
+            "regressed": 1,
+            "both_correct": 186,
+            "both_wrong": 5
+          },
+          "permission": {
+            "corrected": 1,
+            "regressed": 0,
+            "both_correct": 38,
+            "both_wrong": 0
+          },
+          "prohibition": {
+            "corrected": 0,
+            "regressed": 0,
+            "both_correct": 12,
+            "both_wrong": 3
+          }
+        },
+        "mcnemar_accuracy_p_exact_two_sided": 3.5881996154785156e-05,
+        "test_scope": "paired accuracy, not macro-F1; exploratory unadjusted p-value"
+      },
+      "bootstrap": {
+        "method": "paired percentile bootstrap; all 426 samples including parse failures",
+        "B": 10000,
+        "seed": 20261103,
+        "delta": "review minus fewshot",
+        "ci95": {
+          "definition": [
+            0.03418466235570572,
+            0.09618692931546213
+          ],
+          "obligation": [
+            0.01789250691542743,
+            0.06056944573535328
+          ],
+          "permission": [
+            0.0,
+            0.07613005551149876
+          ],
+          "prohibition": [
+            0.0,
+            0.10666666666666669
+          ],
+          "macro_f1": [
+            0.022797973668159388,
+            0.06843046987890744
+          ]
+        }
+      },
+      "changed_predictions": [
+        {
+          "sample_id": "sun_modality_77752de7e29c8bbb",
+          "gold": "definition",
+          "fewshot": "permission",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_7fa34c91c8b5d1d3",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_45c9436f7dd00f8f",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_ab32d2f569b854de",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_b0724f638384d3d3",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_f64641b20015ac92",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_902c634fc7e54c42",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_e19029c1815d3c02",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_beac0cdf663ceb3f",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_9df57345417f7572",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_ab32c956b52a8a7b",
+          "gold": "definition",
+          "fewshot": "prohibition",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_027c9d7c29d12293",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_926a46dd9fc215da",
+          "gold": "definition",
+          "fewshot": "prohibition",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_0e47ffb9c6dd00ec",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_bb89d6dab828ae2c",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_fdc9485a3ed1b40f",
+          "gold": "definition",
+          "fewshot": "definition",
+          "review": "obligation",
+          "transition": "regressed"
+        },
+        {
+          "sample_id": "sun_modality_e32abf250d2c0b8c",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_65b759f65d6cc998",
+          "gold": "definition",
+          "fewshot": "permission",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_41b6fe46777f63e0",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_c3bfd8acfa07ace4",
+          "gold": "obligation",
+          "fewshot": "definition",
+          "review": "obligation",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_f5037bcc56922965",
+          "gold": "obligation",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "regressed"
+        },
+        {
+          "sample_id": "sun_modality_7890eade5f0098ac",
+          "gold": "obligation",
+          "fewshot": "definition",
+          "review": "obligation",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_984a2369d8df5e69",
+          "gold": "obligation",
+          "fewshot": "definition",
+          "review": "obligation",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_e10c26a6829f26c0",
+          "gold": "permission",
+          "fewshot": "obligation",
+          "review": "permission",
+          "transition": "corrected"
+        }
+      ],
+      "per_class_f1_delta": {
+        "definition": 0.06371268656716422,
+        "obligation": 0.03804310639753672,
+        "permission": 0.032915360501567514,
+        "prohibition": 0.03921568627450989
+      },
+      "old_errors": 54,
+      "old_correct": 372,
+      "interpretation": "Report gains and losses jointly; positive total does not imply every class improved."
+    },
+    "dev": {
+      "fewshot": {
+        "n": 420,
+        "evaluated_population": "all_test_samples",
+        "accuracy": 0.8380952380952381,
+        "macro_precision": 0.7668278279691323,
+        "macro_recall": 0.8716739931719992,
+        "macro_f1": 0.8012025549094016,
+        "per_class": {
+          "definition": {
+            "precision": 0.946969696969697,
+            "recall": 0.7062146892655368,
+            "f1": 0.8090614886731392,
+            "support": 177,
+            "tp": 125,
+            "fp": 7,
+            "fn": 52,
+            "tn": 236
+          },
+          "obligation": {
+            "precision": 0.8405797101449275,
+            "recall": 0.93048128342246,
+            "f1": 0.8832487309644671,
+            "support": 187,
+            "tp": 174,
+            "fp": 33,
+            "fn": 13,
+            "tn": 200
+          },
+          "permission": {
+            "precision": 0.6964285714285714,
+            "recall": 0.975,
+            "f1": 0.8125,
+            "support": 40,
+            "tp": 39,
+            "fp": 17,
+            "fn": 1,
+            "tn": 363
+          },
+          "prohibition": {
+            "precision": 0.5833333333333334,
+            "recall": 0.875,
+            "f1": 0.7000000000000001,
+            "support": 16,
+            "tp": 14,
+            "fp": 10,
+            "fn": 2,
+            "tn": 394
+          }
+        },
+        "confusion_matrix": {
+          "label_order": [
+            "definition",
+            "obligation",
+            "permission",
+            "prohibition"
+          ],
+          "column_order": [
+            "definition",
+            "obligation",
+            "permission",
+            "prohibition",
+            "<no_prediction>"
+          ],
+          "rows_gold_columns_predicted": [
+            [
+              125,
+              30,
+              13,
+              9,
+              0
+            ],
+            [
+              7,
+              174,
+              4,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              39,
+              0,
+              0
+            ],
+            [
+              0,
+              2,
+              0,
+              14,
+              0
+            ]
+          ],
+          "as_dict": {
+            "definition": {
+              "definition": 125,
+              "obligation": 30,
+              "permission": 13,
+              "prohibition": 9,
+              "<no_prediction>": 0
+            },
+            "obligation": {
+              "definition": 7,
+              "obligation": 174,
+              "permission": 4,
+              "prohibition": 1,
+              "<no_prediction>": 1
+            },
+            "permission": {
+              "definition": 0,
+              "obligation": 1,
+              "permission": 39,
+              "prohibition": 0,
+              "<no_prediction>": 0
+            },
+            "prohibition": {
+              "definition": 0,
+              "obligation": 2,
+              "permission": 0,
+              "prohibition": 14,
+              "<no_prediction>": 0
+            }
+          }
+        },
+        "failures": 1,
+        "failure_rate": 0.002380952380952381,
+        "coverage": 0.9976190476190476,
+        "coverage_restricted_secondary": {
+          "n": 419,
+          "accuracy": 0.8400954653937948,
+          "macro_precision": 0.7668278279691323,
+          "macro_recall": 0.8729246400583197,
+          "macro_f1": 0.8017644179698116,
+          "note": "secondary diagnostic only: excludes samples with no usable prediction; never the headline number"
+        }
+      },
+      "review": {
+        "n": 420,
+        "evaluated_population": "all_test_samples",
+        "accuracy": 0.8904761904761904,
+        "macro_precision": 0.8273384018698102,
+        "macro_recall": 0.907360399861023,
+        "macro_f1": 0.8609985497081053,
+        "per_class": {
+          "definition": {
+            "precision": 0.9197530864197531,
+            "recall": 0.8418079096045198,
+            "f1": 0.8790560471976401,
+            "support": 177,
+            "tp": 149,
+            "fp": 13,
+            "fn": 28,
+            "tn": 230
+          },
+          "obligation": {
+            "precision": 0.9202127659574468,
+            "recall": 0.9251336898395722,
+            "f1": 0.9226666666666669,
+            "support": 187,
+            "tp": 173,
+            "fp": 15,
+            "fn": 14,
+            "tn": 218
+          },
+          "permission": {
+            "precision": 0.7551020408163265,
+            "recall": 0.925,
+            "f1": 0.8314606741573034,
+            "support": 40,
+            "tp": 37,
+            "fp": 12,
+            "fn": 3,
+            "tn": 368
+          },
+          "prohibition": {
+            "precision": 0.7142857142857143,
+            "recall": 0.9375,
+            "f1": 0.8108108108108109,
+            "support": 16,
+            "tp": 15,
+            "fp": 6,
+            "fn": 1,
+            "tn": 398
+          }
+        },
+        "confusion_matrix": {
+          "label_order": [
+            "definition",
+            "obligation",
+            "permission",
+            "prohibition"
+          ],
+          "column_order": [
+            "definition",
+            "obligation",
+            "permission",
+            "prohibition"
+          ],
+          "rows_gold_columns_predicted": [
+            [
+              149,
+              13,
+              10,
+              5
+            ],
+            [
+              11,
+              173,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              37,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              15
+            ]
+          ],
+          "as_dict": {
+            "definition": {
+              "definition": 149,
+              "obligation": 13,
+              "permission": 10,
+              "prohibition": 5
+            },
+            "obligation": {
+              "definition": 11,
+              "obligation": 173,
+              "permission": 2,
+              "prohibition": 1
+            },
+            "permission": {
+              "definition": 2,
+              "obligation": 1,
+              "permission": 37,
+              "prohibition": 0
+            },
+            "prohibition": {
+              "definition": 0,
+              "obligation": 1,
+              "permission": 0,
+              "prohibition": 15
+            }
+          }
+        },
+        "failures": 0,
+        "failure_rate": 0.0,
+        "coverage": 1.0
+      },
+      "delta_macro_f1": 0.05979599479870368,
+      "paired": {
+        "corrected": 28,
+        "regressed": 6,
+        "by_gold_class": {
+          "definition": {
+            "corrected": 25,
+            "regressed": 1,
+            "both_correct": 124,
+            "both_wrong": 27
+          },
+          "obligation": {
+            "corrected": 2,
+            "regressed": 3,
+            "both_correct": 171,
+            "both_wrong": 11
+          },
+          "permission": {
+            "corrected": 0,
+            "regressed": 2,
+            "both_correct": 37,
+            "both_wrong": 1
+          },
+          "prohibition": {
+            "corrected": 1,
+            "regressed": 0,
+            "both_correct": 14,
+            "both_wrong": 1
+          }
+        },
+        "mcnemar_accuracy_p_exact_two_sided": 0.00019512558355927467,
+        "test_scope": "paired accuracy, not macro-F1; exploratory unadjusted p-value"
+      },
+      "bootstrap": {
+        "method": "paired percentile bootstrap; all 420 samples including parse failures",
+        "B": 10000,
+        "seed": 20261103,
+        "delta": "review minus fewshot",
+        "ci95": {
+          "definition": [
+            0.03397768318464922,
+            0.1083094689297106
+          ],
+          "obligation": [
+            0.01632653061224487,
+            0.06402303677485155
+          ],
+          "permission": [
+            -0.03574738514497566,
+            0.07327141382868929
+          ],
+          "prohibition": [
+            0.023809523809523836,
+            0.2254449571522742
+          ],
+          "macro_f1": [
+            0.02720933905523193,
+            0.09663535863449935
+          ]
+        }
+      },
+      "changed_predictions": [
+        {
+          "sample_id": "sun_modality_2eaebe5149e77b9f",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_fe8fd1bdb66631a2",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_2ada3b90e3dd7c4b",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_3c60897fa625f360",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_e83e89c9f204451f",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_ab9c09509e0d726b",
+          "gold": "definition",
+          "fewshot": "prohibition",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_369c978133f7483b",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_c7c13b82c545b4c9",
+          "gold": "definition",
+          "fewshot": "permission",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_e94b1768dfb240a9",
+          "gold": "definition",
+          "fewshot": "prohibition",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_da1900ac367fcb6d",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_6688a04b100b5a09",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_70b9b5e010417da1",
+          "gold": "definition",
+          "fewshot": "permission",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_9616fed4750557d8",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_a9355866e90d8068",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_486fd75b60d3ed37",
+          "gold": "definition",
+          "fewshot": "prohibition",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_d24c74fb9ee76ae8",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_961b629f67d11f88",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_0e7059a21a0cd6a1",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_e960e0d48bdb8552",
+          "gold": "definition",
+          "fewshot": "prohibition",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_02cb797a0a03b9f0",
+          "gold": "definition",
+          "fewshot": "definition",
+          "review": "obligation",
+          "transition": "regressed"
+        },
+        {
+          "sample_id": "sun_modality_781eeb2bb30aea08",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_e850bfcd52341323",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_80afce650b47727b",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_a900fd139cb7b479",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_1eb84ec7afb8f705",
+          "gold": "definition",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_18a6b88762cb7073",
+          "gold": "definition",
+          "fewshot": "permission",
+          "review": "definition",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_2d522b2254bccfa6",
+          "gold": "obligation",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "regressed"
+        },
+        {
+          "sample_id": "sun_modality_630ff458e57aaace",
+          "gold": "obligation",
+          "fewshot": null,
+          "review": "obligation",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_bae25354509ccb28",
+          "gold": "obligation",
+          "fewshot": "permission",
+          "review": "definition",
+          "transition": "both_wrong"
+        },
+        {
+          "sample_id": "sun_modality_02b5fe536b624b6a",
+          "gold": "obligation",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "regressed"
+        },
+        {
+          "sample_id": "sun_modality_df5bf57b7641ef15",
+          "gold": "obligation",
+          "fewshot": "obligation",
+          "review": "definition",
+          "transition": "regressed"
+        },
+        {
+          "sample_id": "sun_modality_3954a93a6c69c3ee",
+          "gold": "obligation",
+          "fewshot": "permission",
+          "review": "obligation",
+          "transition": "corrected"
+        },
+        {
+          "sample_id": "sun_modality_c528fb4eef7b9582",
+          "gold": "permission",
+          "fewshot": "permission",
+          "review": "definition",
+          "transition": "regressed"
+        },
+        {
+          "sample_id": "sun_modality_2ec15a7d3496f18e",
+          "gold": "permission",
+          "fewshot": "permission",
+          "review": "definition",
+          "transition": "regressed"
+        },
+        {
+          "sample_id": "sun_modality_fcbc96215cf62d0e",
+          "gold": "prohibition",
+          "fewshot": "obligation",
+          "review": "prohibition",
+          "transition": "corrected"
+        }
+      ],
+      "per_class_f1_delta": {
+        "definition": 0.06999455852450087,
+        "obligation": 0.03941793570219976,
+        "permission": 0.018960674157303403,
+        "prohibition": 0.11081081081081079
+      },
+      "old_errors": 68,
+      "old_correct": 352,
+      "interpretation": "Report gains and losses jointly; positive total does not imply every class improved."
+    }
+  },
+  "dev_response_only_sensitivity": {
+    "n": 419,
+    "fewshot": {
+      "n": 419,
+      "evaluated_population": "all_test_samples",
+      "accuracy": 0.8400954653937948,
+      "macro_precision": 0.7668278279691323,
+      "macro_recall": 0.8729246400583197,
+      "macro_f1": 0.8017644179698116,
+      "per_class": {
+        "definition": {
+          "precision": 0.946969696969697,
+          "recall": 0.7062146892655368,
+          "f1": 0.8090614886731392,
+          "support": 177,
+          "tp": 125,
+          "fp": 7,
+          "fn": 52,
+          "tn": 235
+        },
+        "obligation": {
+          "precision": 0.8405797101449275,
+          "recall": 0.9354838709677419,
+          "f1": 0.8854961832061068,
+          "support": 186,
+          "tp": 174,
+          "fp": 33,
+          "fn": 12,
+          "tn": 200
+        },
+        "permission": {
+          "precision": 0.6964285714285714,
+          "recall": 0.975,
+          "f1": 0.8125,
+          "support": 40,
+          "tp": 39,
+          "fp": 17,
+          "fn": 1,
+          "tn": 362
+        },
+        "prohibition": {
+          "precision": 0.5833333333333334,
+          "recall": 0.875,
+          "f1": 0.7000000000000001,
+          "support": 16,
+          "tp": 14,
+          "fp": 10,
+          "fn": 2,
+          "tn": 393
+        }
+      },
+      "confusion_matrix": {
+        "label_order": [
+          "definition",
+          "obligation",
+          "permission",
+          "prohibition"
+        ],
+        "column_order": [
+          "definition",
+          "obligation",
+          "permission",
+          "prohibition"
+        ],
+        "rows_gold_columns_predicted": [
+          [
+            125,
+            30,
+            13,
+            9
+          ],
+          [
+            7,
+            174,
+            4,
+            1
+          ],
+          [
+            0,
+            1,
+            39,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            14
+          ]
+        ],
+        "as_dict": {
+          "definition": {
+            "definition": 125,
+            "obligation": 30,
+            "permission": 13,
+            "prohibition": 9
+          },
+          "obligation": {
+            "definition": 7,
+            "obligation": 174,
+            "permission": 4,
+            "prohibition": 1
+          },
+          "permission": {
+            "definition": 0,
+            "obligation": 1,
+            "permission": 39,
+            "prohibition": 0
+          },
+          "prohibition": {
+            "definition": 0,
+            "obligation": 2,
+            "permission": 0,
+            "prohibition": 14
+          }
+        }
+      },
+      "failures": 0,
+      "failure_rate": 0.0,
+      "coverage": 1.0
+    },
+    "review": {
+      "n": 419,
+      "evaluated_population": "all_test_samples",
+      "accuracy": 0.8902147971360382,
+      "macro_precision": 0.8272317344446196,
+      "macro_recall": 0.9072597731000547,
+      "macro_f1": 0.8608948857224037,
+      "per_class": {
+        "definition": {
+          "precision": 0.9197530864197531,
+          "recall": 0.8418079096045198,
+          "f1": 0.8790560471976401,
+          "support": 177,
+          "tp": 149,
+          "fp": 13,
+          "fn": 28,
+          "tn": 229
+        },
+        "obligation": {
+          "precision": 0.9197860962566845,
+          "recall": 0.9247311827956989,
+          "f1": 0.9222520107238605,
+          "support": 186,
+          "tp": 172,
+          "fp": 15,
+          "fn": 14,
+          "tn": 218
+        },
+        "permission": {
+          "precision": 0.7551020408163265,
+          "recall": 0.925,
+          "f1": 0.8314606741573034,
+          "support": 40,
+          "tp": 37,
+          "fp": 12,
+          "fn": 3,
+          "tn": 367
+        },
+        "prohibition": {
+          "precision": 0.7142857142857143,
+          "recall": 0.9375,
+          "f1": 0.8108108108108109,
+          "support": 16,
+          "tp": 15,
+          "fp": 6,
+          "fn": 1,
+          "tn": 397
+        }
+      },
+      "confusion_matrix": {
+        "label_order": [
+          "definition",
+          "obligation",
+          "permission",
+          "prohibition"
+        ],
+        "column_order": [
+          "definition",
+          "obligation",
+          "permission",
+          "prohibition"
+        ],
+        "rows_gold_columns_predicted": [
+          [
+            149,
+            13,
+            10,
+            5
+          ],
+          [
+            11,
+            172,
+            2,
+            1
+          ],
+          [
+            2,
+            1,
+            37,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            15
+          ]
+        ],
+        "as_dict": {
+          "definition": {
+            "definition": 149,
+            "obligation": 13,
+            "permission": 10,
+            "prohibition": 5
+          },
+          "obligation": {
+            "definition": 11,
+            "obligation": 172,
+            "permission": 2,
+            "prohibition": 1
+          },
+          "permission": {
+            "definition": 2,
+            "obligation": 1,
+            "permission": 37,
+            "prohibition": 0
+          },
+          "prohibition": {
+            "definition": 0,
+            "obligation": 1,
+            "permission": 0,
+            "prohibition": 15
+          }
+        }
+      },
+      "failures": 0,
+      "failure_rate": 0.0,
+      "coverage": 1.0
+    },
+    "delta_macro_f1": 0.05913046775259212,
+    "scope": "Failure-only sensitivity excludes the single 429 pair; primary retains all420."
+  },
+  "initial_successful_calls_audit": {
+    "attempted": 733,
+    "finished": 733,
+    "actual_cost_cny": 16.426966799999995,
+    "peak_spent_plus_reserved_cny": 17.651465699999992,
+    "peak_in_flight": 8,
+    "all_request_hashes_match": true,
+    "all_response_hashes_match": true,
+    "all_usage_verified": true,
+    "all_requests_off_peak": true,
+    "parse_status_counts": {
+      "ok": 732,
+      "no_clauses": 1
+    },
+    "returned_models": {
+      "deepseek-v4-pro": 733
+    }
+  },
+  "continuation_audit": {
+    "attempted": 532,
+    "finished": 532,
+    "actual_cost_cny": 12.155916900000003,
+    "peak_spent_plus_reserved_cny": 12.771741600000002,
+    "peak_in_flight": 4,
+    "all_request_hashes_match": true,
+    "all_response_hashes_match": true,
+    "all_usage_verified": true,
+    "all_requests_off_peak": true,
+    "parse_status_counts": {
+      "ok": 532
+    },
+    "returned_models": {
+      "deepseek-v4-pro": 532
+    }
+  },
+  "failed_request": {
+    "sample_id": "dev:fewshot:sun_modality_630ff458e57aaace",
+    "timestamp": "2026-11-04T05:05:31.374485+00:00",
+    "http_status": 429,
+    "error_type": "LLMClientError",
+    "request_sha256": "166a4b043361e351823a58d4a1182d5bb048edefe8458298e68a69a3a0621d71",
+    "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "usage": {},
+    "cost_cny": 0.0
+  },
+  "original_preflight_sha256": "0e8baba47519d1b16a24e7a778637c8a18366274e153bda4ba557732dcda68a6",
+  "original_authorization_sha256": "0a115c5a10ff9421ea7f7cb311a28d4aceaa8a7ddf152c7d0b932049978d1750",
+  "initial_journal_sha256": "18affbb084e34362f14f2317ee9e7f2dca2084232b7b58690dc85032bb233d83",
+  "continuation_journal_sha256": "0f4d563c0e894d885692b443d801813f9e02b50848b8532e033bd96256e4b153",
+  "continuation_preflight_sha256": "2fa041f65affda9ae0602a5e7295d07ff2d5fd810e145d0c9ef89e3f2dbfe804",
+  "limitations": [
+    "test是看过错误后修改prompt的探索性历史对照，不能作为盲测。",
+    "dev仅是这两版冻结LLM提示词的留出验证；同语料、监督基线已用过dev，并非全项目未使用过的新数据。",
+    "若查看dev后继续调prompt，dev即转为开发数据；后续独立泛化主张需另有未参与调整的数据。",
+    "同期双臂按样本交错提交仍不能完全消除服务后端、并发与缓存差异。",
+    "首有效clause投影、残缺输入和标签歧义仍保留，不改Gold或评价器。",
+    "实际得分由真实完整返回决定；理论组合上界不是本实验的性能结果。",
+    "首次734条因429停止，监督式续跑仅发532条未尝试请求；并发8降4并限制发送间隔，未改prompt。",
+    "原429无预测计入dev few-shot主指标分母；419条有响应配对只作失败敏感性诊断，不替换420条主结果。",
+    "429没有返回计费信息，费用报告为已知金额及保守预留上界，不能断言该条免费。"
+  ]
+}
