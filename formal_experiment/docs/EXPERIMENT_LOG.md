@@ -6621,3 +6621,21 @@
 - 仍存在 blocker：无
 - 备注：用户2026-11-04明确回复是，批准上一轮具体方案：官方DeepSeek API，test reviewer426与dev双臂各420，1266次/¥80/零重试/仅空闲时段，18条train示例与既定提示词一并发送。新授权精确绑定预检0e8baba4，全部请求与源码已离线复核；官方价格及模型版本与前日一致。直接校验实际授权成功，沿用此前27项代码证据，本次只跑授权相关9项，无全量。执行前检查点，尚未调用API或读取.env。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-11-04T05:09:45.903953+00:00 - SUN-MODALITY-VALIDATE-001：734条已尝试后HTTP429停止，保留失败及未结算预算
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=sun_modality_validation_v1_initial；阶段=stage2；方法=LLM-SE fewshot/reviewer validation；状态=部分完成（`partial`）
+- 实际运行命令：`python -X utf8 -u formal_experiment/scripts/run_sun_modality_validation_v1.py --execute --authorization formal_experiment/configs/authorization/sun_modality_validation_20261104_v1.json`
+- manifest：outputs/reports/sun_modality_validation_v1_interruption.json, outputs/development/sun_modality_validation_v1/execution_v1/execution_20261104T050536613118.json
+- 结果摘要：734已尝试，1条HTTP429；test426/dev各154；已知费用¥16.4269668，加未结算预留¥0.1632375；剩余532未发送；无最终成绩。
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：1 passed in 0.23s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`670847fa6f7e35839fcaee728cfac57c604c1d63`；相关未提交路径：107 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：已授权调用（`authorized_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：按用户1266次/¥80授权执行，首次批次遇429限流停止并收齐在途，零重试；原账本冻结，失败条无用量不能认定免费，保留完整预留。未读取中途标签/指标，未修改prompt或Gold。保存中断快照和剩余请求清单；仅可在原授权总额度内处理从未发送的532条，不重新发送任何已尝试条目。未完成批次不出最终成绩测试通过。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
