@@ -24,6 +24,12 @@ Sun 指 Sun et al. (2024) 的本地独立重建，历史名称 Rules-Only 对应
   另保留未结算预留¥0.1632375。剩余532条从未发送，原总预算剩余可用¥63.4097957。
   中断记录 `outputs/reports/sun_modality_validation_v1_interruption.json`；原账本冻结，
   未读取中途标签、没有最终成绩。后续只准备未发送条目的独立续跑，不重发734条已尝试请求。
+- 已准备监督式独立续跑：`scripts/continue_sun_modality_validation_v1.py`，预检
+  `outputs/reports/sun_modality_validation_v1_continuation_preflight.json`。只允许原授权集合中
+  从未尝试的532条，并发降为4、发送间隔至少1秒；原已知费用和未知预留都先扣除，
+  子批次最多¥63.4097957，整批仍最多1266次/¥80，零重试，不改原运行器或账本。
+  完成后合并两份账本核验全人口，429按无预测保留主分母；另外报告剔除该配对的419条
+  dev敏感性分析，不能替换420条主结果。此前停止策略的监督式恢复单独留痕，不自动循环恢复。
 - 用户要求继续改进；当前将下一步落实为真实验证的可执行准备，保留reviewer提示词原字节，
   不继续根据同一test错误追加规则。已备好1266个请求：test reviewer426，dev few-shot420及reviewer420。
   test复用历史few-shot成绩；dev两臂按样本交错提交、交替先后顺序，仍为8路并发。
