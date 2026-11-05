@@ -6699,3 +6699,21 @@
 - 仍存在 blocker：无
 - 备注：当前用户要求运行上轮交付的新提示词。单独授权记录绑定冻结 22-shot 提示词。程序自限 426 次、20 元、四路并发、零重试、仅空闲时段。426 个请求复核历史请求及本次哈希，准备阶段无模型推理。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-11-05T04:56:16.702569+00:00 - SUN-MODALITY-ELIGIBILITY-SHOTS-001：完成 22-shot 的 426 条配对比较
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=sun_modality_eligibility_shots_v1_completed；阶段=stage2；方法=LLM-SE reviewer plus four train shots；状态=成功（`succeeded`）
+- 实际运行命令：`python -X utf8 -u formal_experiment/scripts/run_sun_modality_eligibility_shots_v1.py execute，随后同入口 report`
+- manifest：outputs/reports/sun_modality_eligibility_shots_v1_completed.json, outputs/development/sun_modality_eligibility_shots_v1/execution_v1/execution_20261105T045350320381.json
+- 结果摘要：426/426 完成，零重试，实际费用 9.5435388 元；Macro-F1 0.8667→0.8698，改对 3、改错 2。原目标族 1/17→3/17。差值 CI95 跨 0。
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：8 passed in 0.26s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`439eb89133f48e03cfd8fb69bf4252628ca4ee85`；相关未提交路径：107 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：已授权调用（`authorized_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：已用冻结的 426 个请求哈希和本地账本验证原文返回、计费及完整性。空规则 1 条保留分母。全部 5 个变动都改判 definition；禁止类 12/15 和 7 个误报均保持。探索性历史对照。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

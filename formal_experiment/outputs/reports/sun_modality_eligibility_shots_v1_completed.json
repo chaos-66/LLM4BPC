@@ -1,0 +1,408 @@
+{
+  "suite_id": "SUN-MODALITY-ELIGIBILITY-SHOTS-001",
+  "scope": "test-informed exploratory historical comparison",
+  "control": {
+    "n": 426,
+    "evaluated_population": "all_test_samples",
+    "accuracy": 0.92018779342723,
+    "macro_precision": 0.8377760659560293,
+    "macro_recall": 0.9069969578444155,
+    "macro_f1": 0.8667146972406818,
+    "per_class": {
+      "definition": {
+        "precision": 0.9620253164556962,
+        "recall": 0.8587570621468926,
+        "f1": 0.9074626865671642,
+        "support": 177,
+        "tp": 152,
+        "fp": 6,
+        "fn": 25,
+        "tn": 243
+      },
+      "obligation": {
+        "precision": 0.945,
+        "recall": 0.9692307692307692,
+        "f1": 0.9569620253164557,
+        "support": 195,
+        "tp": 189,
+        "fp": 11,
+        "fn": 6,
+        "tn": 220
+      },
+      "permission": {
+        "precision": 0.8125,
+        "recall": 1.0,
+        "f1": 0.896551724137931,
+        "support": 39,
+        "tp": 39,
+        "fp": 9,
+        "fn": 0,
+        "tn": 378
+      },
+      "prohibition": {
+        "precision": 0.631578947368421,
+        "recall": 0.8,
+        "f1": 0.7058823529411765,
+        "support": 15,
+        "tp": 12,
+        "fp": 7,
+        "fn": 3,
+        "tn": 404
+      }
+    },
+    "confusion_matrix": {
+      "label_order": [
+        "definition",
+        "obligation",
+        "permission",
+        "prohibition"
+      ],
+      "column_order": [
+        "definition",
+        "obligation",
+        "permission",
+        "prohibition",
+        "<no_prediction>"
+      ],
+      "rows_gold_columns_predicted": [
+        [
+          152,
+          9,
+          9,
+          6,
+          1
+        ],
+        [
+          5,
+          189,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          39,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          12,
+          0
+        ]
+      ],
+      "as_dict": {
+        "definition": {
+          "definition": 152,
+          "obligation": 9,
+          "permission": 9,
+          "prohibition": 6,
+          "<no_prediction>": 1
+        },
+        "obligation": {
+          "definition": 5,
+          "obligation": 189,
+          "permission": 0,
+          "prohibition": 1,
+          "<no_prediction>": 0
+        },
+        "permission": {
+          "definition": 0,
+          "obligation": 0,
+          "permission": 39,
+          "prohibition": 0,
+          "<no_prediction>": 0
+        },
+        "prohibition": {
+          "definition": 1,
+          "obligation": 2,
+          "permission": 0,
+          "prohibition": 12,
+          "<no_prediction>": 0
+        }
+      }
+    },
+    "failures": 1,
+    "failure_rate": 0.002347417840375587,
+    "coverage": 0.9976525821596244,
+    "coverage_restricted_secondary": {
+      "n": 425,
+      "accuracy": 0.9223529411764706,
+      "macro_precision": 0.8377760659560293,
+      "macro_recall": 0.9082167832167832,
+      "macro_f1": 0.8673939357785315,
+      "note": "secondary diagnostic only: excludes samples with no usable prediction; never the headline number"
+    }
+  },
+  "eligibility_shots": {
+    "n": 426,
+    "evaluated_population": "all_test_samples",
+    "accuracy": 0.9225352112676056,
+    "macro_precision": 0.844109646676647,
+    "macro_recall": 0.903541938287701,
+    "macro_f1": 0.8697879915324909,
+    "per_class": {
+      "definition": {
+        "precision": 0.950920245398773,
+        "recall": 0.8757062146892656,
+        "f1": 0.911764705882353,
+        "support": 177,
+        "tp": 155,
+        "fp": 8,
+        "fn": 22,
+        "tn": 241
+      },
+      "obligation": {
+        "precision": 0.9494949494949495,
+        "recall": 0.9641025641025641,
+        "f1": 0.9567430025445293,
+        "support": 195,
+        "tp": 188,
+        "fp": 10,
+        "fn": 7,
+        "tn": 221
+      },
+      "permission": {
+        "precision": 0.8444444444444444,
+        "recall": 0.9743589743589743,
+        "f1": 0.9047619047619048,
+        "support": 39,
+        "tp": 38,
+        "fp": 7,
+        "fn": 1,
+        "tn": 380
+      },
+      "prohibition": {
+        "precision": 0.631578947368421,
+        "recall": 0.8,
+        "f1": 0.7058823529411765,
+        "support": 15,
+        "tp": 12,
+        "fp": 7,
+        "fn": 3,
+        "tn": 404
+      }
+    },
+    "confusion_matrix": {
+      "label_order": [
+        "definition",
+        "obligation",
+        "permission",
+        "prohibition"
+      ],
+      "column_order": [
+        "definition",
+        "obligation",
+        "permission",
+        "prohibition",
+        "<no_prediction>"
+      ],
+      "rows_gold_columns_predicted": [
+        [
+          155,
+          8,
+          7,
+          6,
+          1
+        ],
+        [
+          6,
+          188,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          38,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          12,
+          0
+        ]
+      ],
+      "as_dict": {
+        "definition": {
+          "definition": 155,
+          "obligation": 8,
+          "permission": 7,
+          "prohibition": 6,
+          "<no_prediction>": 1
+        },
+        "obligation": {
+          "definition": 6,
+          "obligation": 188,
+          "permission": 0,
+          "prohibition": 1,
+          "<no_prediction>": 0
+        },
+        "permission": {
+          "definition": 1,
+          "obligation": 0,
+          "permission": 38,
+          "prohibition": 0,
+          "<no_prediction>": 0
+        },
+        "prohibition": {
+          "definition": 1,
+          "obligation": 2,
+          "permission": 0,
+          "prohibition": 12,
+          "<no_prediction>": 0
+        }
+      }
+    },
+    "failures": 1,
+    "failure_rate": 0.002347417840375587,
+    "coverage": 0.9976525821596244,
+    "coverage_restricted_secondary": {
+      "n": 425,
+      "accuracy": 0.9247058823529412,
+      "macro_precision": 0.844109646676647,
+      "macro_recall": 0.9047858391608392,
+      "macro_f1": 0.8704603843834365,
+      "note": "secondary diagnostic only: excludes samples with no usable prediction; never the headline number"
+    }
+  },
+  "paired": {
+    "corrected": 3,
+    "regressed": 2,
+    "by_gold_class": {
+      "definition": {
+        "corrected": 3,
+        "regressed": 0,
+        "both_correct": 152,
+        "both_wrong": 22
+      },
+      "obligation": {
+        "corrected": 0,
+        "regressed": 1,
+        "both_correct": 188,
+        "both_wrong": 6
+      },
+      "permission": {
+        "corrected": 0,
+        "regressed": 1,
+        "both_correct": 38,
+        "both_wrong": 0
+      },
+      "prohibition": {
+        "corrected": 0,
+        "regressed": 0,
+        "both_correct": 12,
+        "both_wrong": 3
+      }
+    },
+    "mcnemar_accuracy_p_exact_two_sided": 1.0,
+    "test_scope": "paired accuracy, not macro-F1; exploratory unadjusted p-value"
+  },
+  "delta_macro_f1": 0.0030732942918090256,
+  "bootstrap": {
+    "method": "paired nonparametric percentile bootstrap; all 426 including failures",
+    "B": 10000,
+    "seed": 20261103,
+    "delta": "22-shot minus reviewer",
+    "ci95": {
+      "definition": [
+        -0.00839129542954109,
+        0.018233223703190693
+      ],
+      "obligation": [
+        -0.007851657983753535,
+        0.007144727490367653
+      ],
+      "permission": [
+        -0.03046336379669723,
+        0.04791894852135825
+      ],
+      "prohibition": [
+        0.0,
+        0.0
+      ],
+      "macro_f1": [
+        -0.009813080789321305,
+        0.016330945282114095
+      ]
+    }
+  },
+  "boundary_confusions": {
+    "control": {
+      "definition_to_permission": 9,
+      "permission_to_definition": 0
+    },
+    "new": {
+      "definition_to_permission": 7,
+      "permission_to_definition": 1
+    }
+  },
+  "original_17_family": {
+    "n": 17,
+    "control_correct": 1,
+    "new_correct": 3
+  },
+  "changed_predictions": [
+    {
+      "sample_id": "sun_modality_de8ae0a7de8610f6",
+      "gold": "definition",
+      "old": "permission",
+      "new": "definition"
+    },
+    {
+      "sample_id": "sun_modality_16f796b5340d99ce",
+      "gold": "definition",
+      "old": "obligation",
+      "new": "definition"
+    },
+    {
+      "sample_id": "sun_modality_ebcf85dc92f6a19b",
+      "gold": "definition",
+      "old": "permission",
+      "new": "definition"
+    },
+    {
+      "sample_id": "sun_modality_7890eade5f0098ac",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": "definition"
+    },
+    {
+      "sample_id": "sun_modality_6d46f2ca8400b2bc",
+      "gold": "permission",
+      "old": "permission",
+      "new": "definition"
+    }
+  ],
+  "audit": {
+    "attempted": 426,
+    "finished": 426,
+    "actual_cost_cny": 9.543538800000006,
+    "peak_spent_plus_reserved_cny": 10.209889800000004,
+    "peak_in_flight": 4,
+    "all_request_hashes_match": true,
+    "all_response_hashes_match": true,
+    "all_usage_verified": true,
+    "all_requests_off_peak": true,
+    "parse_status_counts": {
+      "ok": 425,
+      "no_clauses": 1
+    },
+    "returned_models": {
+      "deepseek-v4-pro": 426
+    }
+  },
+  "retry_count": 0,
+  "journal_sha256": "ab818d55f75717a9390761ec571c41369e59f1a78c0340982dd264d38f5c00bd",
+  "control_journal_sha256": "18affbb084e34362f14f2317ee9e7f2dca2084232b7b58690dc85032bb233d83",
+  "preflight_sha256": "4c8adeb1d012a733152476617f821ec1fab2b96a195a4ca4ff830b00be41acc9",
+  "public_preflight_sha256": "7575888e092d57d8c33e67cc4b1212882e0f04683788fe7750b077c5181e6119",
+  "authorization_sha256": "fb63923c1780608c014afad47591d5748b67c88dde585a2cbdb7dc100a4f75f3"
+}

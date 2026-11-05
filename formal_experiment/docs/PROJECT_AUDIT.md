@@ -14,11 +14,11 @@ Sun 指 Sun et al. (2024) 的本地独立重建，历史名称 Rules-Only 对应
 `sun_rule_only` / B0。以下活动说明按当前名称阅读；冻结报告、源码与历史
 事件保持原字节。本次纯命名调整不改变本页任务状态、结果或实验授权。
 
-## SUN-MODALITY-ELIGIBILITY-SHOTS-001 资格与许可示例已离线准备（2026-11-05）
+## SUN-MODALITY-ELIGIBILITY-SHOTS-001 资格与许可示例已完成 426 条配对比较（2026-11-05）
 
-执行准备已绑定单独的 426 个 test 请求，端点为 DeepSeek 官方 API，费用上限 ¥20，空闲时段、4 路并发、零重试。用户于 11 月 5 日要求重跑，执行预检见 `outputs/reports/sun_modality_eligibility_shots_v1_execution_preflight.json`。
+已完成 DeepSeek 官方 API 的 426 个 test 请求，空闲时段、零重试、¥9.5435388。425 条有标签、1 条空规则计入分母。与原 reviewer 的同样本历史预测比较，Macro-F1 0.8667→0.8698，净增 1 条正确（改对 3 条、改错 2 条），差值 95% 区间 −0.98 至 +1.63 个百分点。两版禁止类均为 12/15、F1 0.7059。完整分析见 `outputs/reports/sun_modality_eligibility_shots_v1_completed.md`。
 
-在 reviewer 后加入两对 train 示范，真实训练例从 18 条增至 22 条。新增 4 条与 dev/test 的 3,384 次文本比对通过，逐条来源及标签见 `prompts/sun_compat/modality_eligibility_shots_v1/selection_manifest.json`。本版本 API 调用 0 次，效果待测。教学主题参考既有错误诊断。
+在 reviewer 后加入两对 train 示范，真实训练例从 18 条增至 22 条。新增 4 条与 dev/test 的 3,384 次文本比对通过，来源见 `prompts/sun_compat/modality_eligibility_shots_v1/selection_manifest.json`。教学主题参考既有错误诊断。目标 17 条从答对 1 条增至 3 条，全部 5 条预测变化均改判为 definition。
 
 ## SUN-MODALITY-VALIDATE-001：冻结prompt后的验证完成（2026-11-04）
 
