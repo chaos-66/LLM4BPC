@@ -6685,3 +6685,17 @@
 - 仍存在 blocker：无
 - 备注：新增 4 条 train 原文原标签，18→22。固定编号后与 dev/test 仅按文本排重，3384 对核验通过；主题参考既有错例。本地已生成完整提示词，新版本效果待测。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-11-05T04:42:22.643301+00:00 - SUN-MODALITY-ELIGIBILITY-SHOTS-001：准备 426 条单臂运行与配对报告
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：18 passed in 6.79s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`6e58b751f9ffd76ebc4b2439ff2015ca617de1a5`；相关未提交路径：110 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：当前用户要求运行上轮交付的新提示词。单独授权记录绑定冻结 22-shot 提示词。程序自限 426 次、20 元、四路并发、零重试、仅空闲时段。426 个请求复核历史请求及本次哈希，准备阶段无模型推理。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

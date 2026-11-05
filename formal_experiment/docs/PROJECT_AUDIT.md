@@ -16,6 +16,8 @@ Sun 指 Sun et al. (2024) 的本地独立重建，历史名称 Rules-Only 对应
 
 ## SUN-MODALITY-ELIGIBILITY-SHOTS-001 资格与许可示例已离线准备（2026-11-05）
 
+执行准备已绑定单独的 426 个 test 请求，端点为 DeepSeek 官方 API，费用上限 ¥20，空闲时段、4 路并发、零重试。用户于 11 月 5 日要求重跑，执行预检见 `outputs/reports/sun_modality_eligibility_shots_v1_execution_preflight.json`。
+
 在 reviewer 后加入两对 train 示范，真实训练例从 18 条增至 22 条。新增 4 条与 dev/test 的 3,384 次文本比对通过，逐条来源及标签见 `prompts/sun_compat/modality_eligibility_shots_v1/selection_manifest.json`。本版本 API 调用 0 次，效果待测。教学主题参考既有错误诊断。
 
 ## SUN-MODALITY-VALIDATE-001：冻结prompt后的验证完成（2026-11-04）

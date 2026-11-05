@@ -1,0 +1,23 @@
+{
+  "suite_id": "SUN-MODALITY-ELIGIBILITY-SHOTS-001",
+  "date_local": "2026-11-05",
+  "user_text": "现在能再跑一下数据吗？",
+  "execute_authorized": true,
+  "scope": "One run of the delivered 22-train-shot prompt on the same 426 test sentences at the official DeepSeek endpoint. Historical reviewer predictions supply the control.",
+  "limit_basis": "Coordinator applies the prior single-test-arm ceiling to this new run. Four workers and one-second spacing are execution safeguards.",
+  "max_calls": 426,
+  "cap_cny": 20.0,
+  "max_workers": 4,
+  "retries": 0,
+  "off_peak_only": true,
+  "endpoint": "https://api.deepseek.com",
+  "model": "deepseek-v4-pro",
+  "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+  "price_verified_local": "2026-11-05",
+  "price_cny_per_million": {
+    "off_peak": {"input_cache_hit": 0.15, "input_cache_miss": 4.5, "output": 13.5},
+    "peak": {"input_cache_hit": 0.3, "input_cache_miss": 9.0, "output": 27.0}
+  },
+  "approved_prompt_preflight_sha256": "1df19e34bb607f02d59f975b1872970a55602e84b558a70c269ef96ae312a594",
+  "comparison": "Exploratory historical paired comparison. Primary macro-F1, paired interval, accuracy corrections/regressions, both directions of definition/permission confusion and the previously identified 17-case family. Retain all 426 including parse failures."
+}
