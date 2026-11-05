@@ -6731,3 +6731,21 @@
 - 仍存在 blocker：无
 - 备注：22 条原示例全部保留，追加 1 条禁止和 1 条 definition，新增示例仅来自 train，和 dev/test 1692 次比对。仅允许修正既有禁止误报与漏报，其他三类 P/R/F1 逐项考察。426 条请求已离线绑定，尚无本批 API 结果与运行授权。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-11-05T10:17:37.653263+00:00 - SUN-MODALITY-PROHIBITION-SHOTS-001：完成 24-shot，禁止误报和漏报不变、许可回归 1 条
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=sun_modality_prohibition_shots_v1_completed；阶段=stage2；方法=LLM-SE 24 train demonstrations；状态=成功（`succeeded`）
+- 实际运行命令：`python -X utf8 formal_experiment/scripts/run_sun_modality_prohibition_shots_v1.py execute --authorization formal_experiment/configs/authorization/sun_modality_prohibition_20261105_v1.json，随后同入口 report`
+- manifest：outputs/reports/sun_modality_prohibition_shots_v1_completed.json, outputs/development/sun_modality_prohibition_shots_v1/execution_v1/execution_20261105T101307003969.json
+- 结果摘要：426/426 完成，零重试，实际费用 9.7300008 元。禁止 TP/FP/FN 均为 12/7/3，F1 0.7059；许可 F1 0.9048→0.8916。4 条改判，3 对 1 错，保留 22-shot。
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：6 passed in 4.35s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`1a2229cb790a4e7af44259de549d4133e571b601`；相关未提交路径：109 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：已授权调用（`authorized_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：核对所有请求、返回、用量、费用及 22-shot 基线。含空规则 1 条，保留分母。4 项事前验收均未通过。事后多子句与词形核验只用于定位问题。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

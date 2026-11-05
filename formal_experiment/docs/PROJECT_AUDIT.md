@@ -14,7 +14,11 @@ Sun 指 Sun et al. (2024) 的本地独立重建，历史名称 Rules-Only 对应
 `sun_rule_only` / B0。以下活动说明按当前名称阅读；冻结报告、源码与历史
 事件保持原字节。本次纯命名调整不改变本页任务状态、结果或实验授权。
 
-## SUN-MODALITY-PROHIBITION-SHOTS-001 禁止类增量与其他模态保护（2026-11-05）
+## SUN-MODALITY-PROHIBITION-SHOTS-001 的 24-shot 对照完成（2026-11-05）
+
+426 次非高峰请求，零重试，费用 ¥9.7300008。24-shot 与 22-shot 的禁止判断逐条一致，禁止 F1 均为 0.7059。其余标签共 3 条改对、1 条许可改错，许可 F1 从 0.9048 降至 0.8916。四项冻结条件均未通过，继续使用 22-shot。示例与标签投影的逐例诊断见 `outputs/reports/sun_modality_prohibition_shots_v1_completed.md`。
+
+## SUN-MODALITY-PROHIBITION-SHOTS-001 执行前冻结的设计（2026-11-05）
 
 22-shot 为当前已测对照。在其后追加 train 中同一动词表达的条件性禁令与条件性补税免除各 1 条，24-shot 共有 4 条真实禁止示例。候选已离线准备，运行入口为 `scripts/run_sun_modality_prohibition_shots_v1.py`。预检固定全部 426 条，新增示例与 dev/test 比对 1,692 次。
 
