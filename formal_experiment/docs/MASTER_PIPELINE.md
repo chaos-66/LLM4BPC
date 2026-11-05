@@ -1,6 +1,6 @@
 # LLM4BPC 完整实验主 Pipeline
 
-**文档版本**：3.7.86
+**文档版本**：3.7.87
 **状态**：ACTIVE — 全项目研究与任务分解的唯一主线
 **最后更新**：2026-11-05
 **方法学主干**：Sun et al. (2024)（三部分方法主干）；Barrientos et al. (2026)（直接借鉴来源：LLM 结构化输出、验证、受控词汇、归一化与评估纪律）
@@ -3311,6 +3311,7 @@ development-only；S3.7 formal Oracle not started；Gold Rule Records absent。
 
 ## 15. Pipeline 变更日志
 
+| 3.7.87 | 2026-11-05 | 德语情态提示词调优结项，保留 22-shot。汇总各版分数、与 Sun 的误报分歧及多子句事后回放；新增 API 调用 0 次。 | [结项记录](../outputs/reports/sun_modality_prompt_closeout_20261105.md) |
 | 3.7.86 | 2026-11-05 | 24-shot 探索性对照全 426 条完成。禁止类 12 命中、7 误报、3 漏报，与 22-shot 逐条一致；许可回归 1 条。未通过逐条保护要求，保留 22-shot。 | `outputs/reports/sun_modality_prohibition_shots_v1_completed.md` |
 | 3.7.85 | 2026-11-05 | 22→24-shot 追加 train 条件性禁止/法律后果对照。候选及全 426 条句级保护标准已冻结。仅允许纠正禁止误报或漏报，同时要求禁止误报减少、F1 提高及其他三类 P/R/F1 逐类受保护。离线准备，效果待测。 | `outputs/reports/sun_modality_prohibition_shots_v1_preflight.json` |
 | 3.7.84 | 2026-11-05 | 22-shot 单臂 426 条完成，实际 ¥9.5435388，零重试。test Macro-F1 0.8667→0.8698，3 条纠错、2 条回归。目标族 1/17→3/17，禁止类 F1 0.7059。差值 95% 区间跨 0，结果为历史配对探索性对照。 | `outputs/reports/sun_modality_eligibility_shots_v1_completed.md` |

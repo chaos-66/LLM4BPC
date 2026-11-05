@@ -16,6 +16,8 @@ Sun 指 Sun et al. (2024) 的本地独立重建，历史名称 Rules-Only 对应
 
 ## SUN-MODALITY-PROHIBITION-SHOTS-001 的 24-shot 对照完成（2026-11-05）
 
+本轮德语情态提示词调优已结项，保留 22-shot。各版实测成绩、与 Sun 的逐句分歧及 test/dev 的事后回放统一见[结项记录](../outputs/reports/sun_modality_prompt_closeout_20261105.md)。
+
 426 次非高峰请求，零重试，费用 ¥9.7300008。24-shot 与 22-shot 的禁止判断逐条一致，禁止 F1 均为 0.7059。其余标签共 3 条改对、1 条许可改错，许可 F1 从 0.9048 降至 0.8916。四项冻结条件均未通过，继续使用 22-shot。示例与标签投影的逐例诊断见 `outputs/reports/sun_modality_prohibition_shots_v1_completed.md`。
 
 ## SUN-MODALITY-PROHIBITION-SHOTS-001 执行前冻结的设计（2026-11-05）
