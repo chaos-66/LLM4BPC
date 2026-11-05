@@ -1,6 +1,6 @@
 # 项目实时状态（兼容文件名 PROJECT_AUDIT.md）
 
-**更新时间**：2026-11-04
+**更新时间**：2026-11-05
 **唯一活动目录**：`formal_experiment/`  
 **完整路线**：`docs/MASTER_PIPELINE.md`  
 **机器事实源**：`python formal_experiment/scripts/audit_project.py`（自动完整性检查）  
@@ -13,6 +13,10 @@ Part 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见主
 Sun 指 Sun et al. (2024) 的本地独立重建，历史名称 Rules-Only 对应
 `sun_rule_only` / B0。以下活动说明按当前名称阅读；冻结报告、源码与历史
 事件保持原字节。本次纯命名调整不改变本页任务状态、结果或实验授权。
+
+## SUN-MODALITY-ELIGIBILITY-SHOTS-001 资格与许可示例已离线准备（2026-11-05）
+
+在 reviewer 后加入两对 train 示范，真实训练例从 18 条增至 22 条。新增 4 条与 dev/test 的 3,384 次文本比对通过，逐条来源及标签见 `prompts/sun_compat/modality_eligibility_shots_v1/selection_manifest.json`。本版本 API 调用 0 次，效果待测。教学主题参考既有错误诊断。
 
 ## SUN-MODALITY-VALIDATE-001：冻结prompt后的验证完成（2026-11-04）
 

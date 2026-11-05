@@ -6671,3 +6671,17 @@
 - 仍存在 blocker：无
 - 备注：用户批准1266次/¥80。首次734条因429停止，另在原授权内仅发送532条未尝试请求，于13:36:10全部结束，无重试或重复ID；续跑4并发并限速，全部空闲时段。两份账本和请求/返回/用量/费用核验完成后才读标签。429用量未知，完整预留¥0.1632375未释放；主dev420条保留该失败，419条有响应敏感性Macro-F1差仍+0.05913。test提升+4.35pp、dev+5.98pp；配对bootstrap B10000/seed20261103。所有历史字节、prompt、Gold及评价器保持冻结；test已参考错误、dev同语料且曾用于监督选模，不宣称外部泛化。该事件成功表示全部计划调用已尝试并完成统计，不表示每条API都成功。沿用18项续跑相关测试证据，仅额外检查评分保留回归及失败分母，无全量。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-11-05T04:30:57.215702+00:00 - SUN-MODALITY-ELIGIBILITY-SHOTS-001：在 reviewer 后添加两对严格来自 train 的资格与许可示例
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：8 passed in 0.87s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`946e805fef766ced96e926514a0fbc75a7aa8fc8`；相关未提交路径：111 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：新增 4 条 train 原文原标签，18→22。固定编号后与 dev/test 仅按文本排重，3384 对核验通过；主题参考既有错例。本地已生成完整提示词，新版本效果待测。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
