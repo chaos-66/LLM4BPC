@@ -1,0 +1,54 @@
+{
+  "suite_id": "SUN-MODALITY-PROHIBITION-SHOTS-001",
+  "status": "offline_prepared",
+  "planned_calls": 426,
+  "limits": {
+    "max_calls": 426,
+    "cap_cny": 20,
+    "max_workers": 4,
+    "retries": 0,
+    "off_peak_only": true,
+    "endpoint": "https://api.deepseek.com",
+    "model": "deepseek-v4-pro",
+    "price_cny_per_million": {
+      "peak": {
+        "input_cache_hit": 0.3,
+        "input_cache_miss": 9.0,
+        "output": 27.0
+      },
+      "off_peak": {
+        "input_cache_hit": 0.15,
+        "input_cache_miss": 4.5,
+        "output": 13.5
+      }
+    }
+  },
+  "system_sha256": "cd71fa68395b6eb99d5fc23a99ce7d93f7d3e8038acb94ea73401c1b624f65ba",
+  "train_sha256": "a7367cd35e3a5ce7263ad5b0fae4881a989761d4fba21b75bdc75b6e2b83c142",
+  "fixed_request_list_sha256": "60400c4cff801ffc02d47bfd65838a79c2649ec127b774d703f3d59fe3470532",
+  "parent_result_sha256": "cf838934de8c120064f36135d043e7b7209ba794defaa63e8c426c22784ac6ae",
+  "selection_manifest_sha256_lf": "029d7aac28ccfdbfe5bc710b7c23b05fcb6051dee0a49772f10cd820c7a8de36",
+  "runner_sha256_lf": "32a7b7b177bcd92756e6d35096da46c52f4802245080082f706e7356894fe56a",
+  "additional_train_examples": 2,
+  "new_total": 24,
+  "new_prohibition_count": 4,
+  "new_examples_times_dev_test_rows": 1692,
+  "near_overlap_hits": 0,
+  "acceptance": {
+    "population": "All 426 test cases compared individually with frozen 22-shot predictions after collection",
+    "target": "Strictly higher prohibition F1 and fewer prohibition false positives",
+    "permitted_sentence_label_changes": "Only corrections of old errors involving prohibition as the old prediction or the gold class",
+    "protected_classes": [
+      "definition",
+      "obligation",
+      "permission"
+    ],
+    "protected_metrics": [
+      "precision",
+      "recall",
+      "f1"
+    ],
+    "decision_unit": "Whole experimental arm. Document every transition. No per-case model selection."
+  },
+  "new_performance": null
+}

@@ -1,0 +1,31 @@
+{
+  "suite_id": "SUN-MODALITY-PROHIBITION-SHOTS-001",
+  "source_split": "train",
+  "parent_system_sha256": "2d038a9233420ead014d3714dbb697a39177d1cc55b9f3316f9dfc2f84fbbae4",
+  "parent_result_sha256": "cf838934de8c120064f36135d043e7b7209ba794defaa63e8c426c22784ac6ae",
+  "design": "Append a matched lexical contrast to the existing 22 examples. The general boundary was identified in earlier error analysis. IDs were fixed by reading the training split before the held-out text-only overlap check.",
+  "examples": [
+    {
+      "position": 23,
+      "sample_id": "sun_modality_70fb90568d073184",
+      "label": "prohibition",
+      "text_sha256": "3aa8e52ef46aa167d80bad7e52f493f935e8029ee7385cdd54c0ccf2623b1641",
+      "role_zh": "给付方已明确禁止传送时，接收方须停止传送。条件限定一项被禁止的行为。"
+    },
+    {
+      "position": 24,
+      "sample_id": "sun_modality_cefd23cdbaccf4e3",
+      "label": "definition",
+      "text_sha256": "de7d1672d6c367200558957d08cb17fe188e599b8d177226a199f6dd575d5fab",
+      "role_zh": "在相关年度持续证明权益资本没有下降的范围和期间内，补税不发生。条件限定法律后果。"
+    }
+  ],
+  "acceptance": {
+    "population": "All 426 test cases compared individually with frozen 22-shot predictions after collection",
+    "target": "Strictly higher prohibition F1 and fewer prohibition false positives",
+    "permitted_sentence_label_changes": "Only corrections of old errors involving prohibition as the old prediction or the gold class",
+    "protected_classes": ["definition", "obligation", "permission"],
+    "protected_metrics": ["precision", "recall", "f1"],
+    "decision_unit": "Whole experimental arm. Document every transition. No per-case model selection."
+  }
+}

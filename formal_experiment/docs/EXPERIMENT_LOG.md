@@ -6717,3 +6717,17 @@
 - 仍存在 blocker：无
 - 备注：已用冻结的 426 个请求哈希和本地账本验证原文返回、计费及完整性。空规则 1 条保留分母。全部 5 个变动都改判 definition；禁止类 12/15 和 7 个误报均保持。探索性历史对照。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-11-05T06:26:39.032763+00:00 - SUN-MODALITY-PROHIBITION-SHOTS-001：追加条件禁令与豁免对照并冻结逐条保护验收
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：6 passed in 7.49s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`e94550b902693e1a2cf70a635f56d474b1c9eaca`；相关未提交路径：110 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：22 条原示例全部保留，追加 1 条禁止和 1 条 definition，新增示例仅来自 train，和 dev/test 1692 次比对。仅允许修正既有禁止误报与漏报，其他三类 P/R/F1 逐项考察。426 条请求已离线绑定，尚无本批 API 结果与运行授权。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
