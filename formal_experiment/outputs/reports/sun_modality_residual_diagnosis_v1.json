@@ -1,0 +1,1907 @@
+{
+  "diagnosis_id": "SUN-MODALITY-RESIDUAL-001",
+  "date": "2026-11-05",
+  "scope": "Offline documentation of existing reviewer predictions; no new model calls, Gold changes, active prompt changes or evaluator changes.",
+  "reviewer": "Codex AI; not an independent human or legal expert review",
+  "source_git_commit": "9d170bed6799d44b8b0dc275b6f10ea310fa3e35",
+  "existing_scores": {
+    "test": {
+      "n": 426,
+      "macro_f1": 0.8667146972406818,
+      "errors": 34
+    },
+    "dev": {
+      "n": 420,
+      "macro_f1": 0.8609985497081053,
+      "errors": 46
+    }
+  },
+  "source_bindings": [
+    {
+      "path": "outputs/reports/sun_modality_validation_v1_completed.json",
+      "sha256": "50046bf470536f49b98f74cf1d63e07851207e1298656245b33ffd8f5510e980"
+    },
+    {
+      "path": "outputs/development/sun_modality_validation_v1/execution_v1/local_only/events.jsonl",
+      "sha256": "18affbb084e34362f14f2317ee9e7f2dca2084232b7b58690dc85032bb233d83"
+    },
+    {
+      "path": "outputs/development/sun_modality_validation_v1/continuation_v1/local_only/events.jsonl",
+      "sha256": "0f4d563c0e894d885692b443d801813f9e02b50848b8532e033bd96256e4b153"
+    },
+    {
+      "path": "outputs/development/sun_modality_fewshot_v1/execution_v1/local_only/events.jsonl",
+      "sha256": "38d237b9301a1a6bdcc6dbd58ce5863cd7e80c739116e31edfa9228dd14687c6"
+    },
+    {
+      "path": "prompts/sun_compat/modality_review_v1/reviewer_guidance.md",
+      "sha256": "01bab7bb53c09deac365e11202d80d74156b9e914dec320737bbc8993f9e3d22"
+    },
+    {
+      "path": "prompts/sun_compat/modality_boundary_v1/boundary_guidance.md",
+      "sha256": "2e7f3fffffd308208c85c7e6a959f2399a2487a8cb64c3ff03874419d950cbf8"
+    },
+    {
+      "path": "prompts/sun_compat/modality_fewshot_v1/selection_manifest.json",
+      "sha256": "5967ee1b02e0861c7a02f1f3a37407d4e751d4427390785ed6ac23758c6672e8"
+    },
+    {
+      "path": "src/bpc_hybrid/modality_benchmark/llm_se.py",
+      "sha256": "173fe63a008b5ccf8243064af789036a72b6389509a5d1d51129e223037b769e"
+    },
+    {
+      "path": "src/bpc_hybrid/datasets/sun_modality_official.py",
+      "sha256": "8ac8e848fd0b5b6d0e12a051fdc5488c8f74f7dd64a62e85e60190c1517f047b"
+    },
+    {
+      "path": "configs/datasets/sun_modality_dataset.json",
+      "sha256": "ba7544f0df8b7c78cea2308a9ff64c4ec836bd84bbc875c308814620cfff8bfd"
+    },
+    {
+      "path": "data/development/modality/sun_estg_modality_v1/splits/train.jsonl",
+      "sha256": "a7367cd35e3a5ce7263ad5b0fae4881a989761d4fba21b75bdc75b6e2b83c142"
+    },
+    {
+      "path": "data/development/modality/sun_estg_modality_v1/splits/dev.jsonl",
+      "sha256": "ad541915d16aaef6119cb3769e6da0b89e8e8af5ec9069ac3a25680040e5a8d6"
+    },
+    {
+      "path": "data/development/modality/sun_estg_modality_v1/splits/test.jsonl",
+      "sha256": "2f67edad05e3a4d315d9ac65fc0ffd1d83dbaffd2d77a55916d6aa9a6919e871"
+    }
+  ],
+  "source_csv_check": {
+    "residual_rows_compared": 80,
+    "texts_equal_after_outer_whitespace_trim": 80,
+    "one_hot_labels_equal": 80,
+    "source_member": "EStG_sent_vec.csv",
+    "source_member_size": 470740514,
+    "source_member_crc32": "A9E74EF5",
+    "note": "Read-only comparison against local original ZIP; this does not recover omitted context or prove original annotations correct."
+  },
+  "diagnostic_groups": {
+    "projection": {
+      "name": "独立命题已抽出，但首条投影丢弃后续 Gold 标签",
+      "test": 3,
+      "dev": 7
+    },
+    "condition_split": {
+      "name": "条件被误切成第一条独立规则",
+      "test": 1,
+      "dev": 0
+    },
+    "predicate_coverage": {
+      "name": "后续规范遗漏或不同情态混并",
+      "test": 2,
+      "dev": 3
+    },
+    "fragment": {
+      "name": "输入片段或缺少独立主命题",
+      "test": 3,
+      "dev": 1
+    },
+    "status_reading": {
+      "name": "状态、适用声明或计算结果被读成指令/选项（AI 判断）",
+      "test": 8,
+      "dev": 11
+    },
+    "boundary_unresolved": {
+      "name": "资格、有限许可、指令与语料标签边界尚未解决",
+      "test": 17,
+      "dev": 24
+    }
+  },
+  "later_gold_label_counts": {
+    "test": 4,
+    "dev": 7
+  },
+  "prohibition_test": {
+    "tp": 12,
+    "fn": 3,
+    "fp": 7,
+    "fp_gold_definition": 6,
+    "fp_gold_obligation": 1,
+    "false_negative_cases": [
+      "test-32",
+      "test-33",
+      "test-34"
+    ],
+    "note": "Three distinct structural failures: merged opposite-force actions, later correct label discarded, and omitted later prohibition. No revised score is claimed."
+  },
+  "train_pattern_probes": [
+    {
+      "probe": "corresponding_applicability",
+      "regex": "\\bg(?:ilt|elten)\\b.*\\b(?:entsprechend|sinngemäß)\\b",
+      "scope": "entire training sentences; exploratory lexical retrieval, not causal or clause-level annotation",
+      "count": 14,
+      "labels": {
+        "definition": 14
+      },
+      "selected_in_existing_18_fewshot": 0,
+      "matches": [
+        {
+          "sample_id": "sun_modality_881b111f16800b7b",
+          "label": "definition",
+          "text_sha256": "d0fb2a59d1a658663ccc46fe03644acf46637e20508ba663caad81312a2d99fa"
+        },
+        {
+          "sample_id": "sun_modality_863058f4cad7ea4e",
+          "label": "definition",
+          "text_sha256": "89af9cd948c7448e012994738df451c97b1d4c40185496924150092a07842630"
+        },
+        {
+          "sample_id": "sun_modality_f6cb872f57942aac",
+          "label": "definition",
+          "text_sha256": "e186055a869118dae766785edbc1cbab08021be71afdb35018da8a9aa2069d4e"
+        },
+        {
+          "sample_id": "sun_modality_9d9adb52360395e7",
+          "label": "definition",
+          "text_sha256": "1dcfecb2072b32e863201d6d83235abd2195442c4923eade395aa1793dc9644e"
+        },
+        {
+          "sample_id": "sun_modality_1cd72048cbf919b7",
+          "label": "definition",
+          "text_sha256": "d4e58785dcbba7fc367338b9ec7d220f1ab2601d253c342d84563f4c43f193e5"
+        },
+        {
+          "sample_id": "sun_modality_b4c02be547da7f09",
+          "label": "definition",
+          "text_sha256": "b900519fcb87d141bd25aed1036605fcf2f4b7bc43e4e559a23713652a02ac5a"
+        },
+        {
+          "sample_id": "sun_modality_1cca0b75017a8a9b",
+          "label": "definition",
+          "text_sha256": "0baac83f11cab03cfa3db4cc334dbd4799c96cf793032751651cf48b4cbe91fb"
+        },
+        {
+          "sample_id": "sun_modality_e3147cfa8fa66f9e",
+          "label": "definition",
+          "text_sha256": "86171aa736465614c4bce94cef26e539636fa55094b604ca97448d1b49995adc"
+        },
+        {
+          "sample_id": "sun_modality_12c6aaa4ff262e77",
+          "label": "definition",
+          "text_sha256": "bb1d9578f11aa5ff6fe08e7dd5387988cc4d16cc3d1b47be39d73cba695ca5b8"
+        },
+        {
+          "sample_id": "sun_modality_84295f8106c88484",
+          "label": "definition",
+          "text_sha256": "ad8f35a2ca90090fae1966557fb54da504eafd626908b181d4ffcfd3690187d0"
+        },
+        {
+          "sample_id": "sun_modality_c40a3c5928019dbf",
+          "label": "definition",
+          "text_sha256": "165cfdfbc4986d393b9c998dffb80e10af46fd71188bcb3aca6e1bc7cae12938"
+        },
+        {
+          "sample_id": "sun_modality_23ed517fc549199f",
+          "label": "definition",
+          "text_sha256": "0ad71added06f86328289fcb68ab53fd4fec12b5e8b7a57bcaa8ceff3a0b58d8"
+        },
+        {
+          "sample_id": "sun_modality_1f4afde8f69b9b23",
+          "label": "definition",
+          "text_sha256": "5c632a05177f703d31e8095e2b84c23ebe744c092c5ec0a6a6834ee3ee8d4b62"
+        },
+        {
+          "sample_id": "sun_modality_5ff16b37a97bb120",
+          "label": "definition",
+          "text_sha256": "51288ffbea87bc3acc4599a6bec275ef11b4990416bb93cd60d48e3b7145de8e"
+        }
+      ]
+    },
+    {
+      "probe": "presupposes",
+      "regex": "\\bsetzt voraus\\b",
+      "scope": "entire training sentences; exploratory lexical retrieval, not causal or clause-level annotation",
+      "count": 1,
+      "labels": {
+        "obligation": 1
+      },
+      "selected_in_existing_18_fewshot": 0,
+      "matches": [
+        {
+          "sample_id": "sun_modality_b33714b75f14c399",
+          "label": "obligation",
+          "text_sha256": "d9ea22ceb774653e6969718eb525e32ed537648f479058aec8b67c81e2f52332"
+        }
+      ]
+    },
+    {
+      "probe": "not_considered",
+      "regex": "nicht zu berücksichtigen",
+      "scope": "entire training sentences; exploratory lexical retrieval, not causal or clause-level annotation",
+      "count": 8,
+      "labels": {
+        "definition": 1,
+        "obligation": 1,
+        "prohibition": 6
+      },
+      "selected_in_existing_18_fewshot": 0,
+      "matches": [
+        {
+          "sample_id": "sun_modality_f3596ec70572acbb",
+          "label": "definition",
+          "text_sha256": "270f81c017b3afcb1171307cd8075fefdfdf101beda0e29b9e1f9b77977cc548"
+        },
+        {
+          "sample_id": "sun_modality_1bbd5e0ee435259c",
+          "label": "obligation",
+          "text_sha256": "0771eb21d1e06489401d162b1b441ecaa7e0060e7fa2e2b40ee0640541bbf85b"
+        },
+        {
+          "sample_id": "sun_modality_dd02193f807f916f",
+          "label": "prohibition",
+          "text_sha256": "7847df875ffd774e30472bdfc7eb9319ce4266a68f7be06128078090a1d726e2"
+        },
+        {
+          "sample_id": "sun_modality_f32e7cae7a031a7c",
+          "label": "prohibition",
+          "text_sha256": "3650d2e2254994115435fa16a0eed98e4faad92e55a84ec02419735cdf83f015"
+        },
+        {
+          "sample_id": "sun_modality_1b47c4a00bc1e0c7",
+          "label": "prohibition",
+          "text_sha256": "29f3c0c65b96eeab179da507a4579db679852206f0845cdaab5e93f1670a73b0"
+        },
+        {
+          "sample_id": "sun_modality_5f939a1cac418030",
+          "label": "prohibition",
+          "text_sha256": "5909d9a50fc24658f254e7d3d8f75f1093b86e4e9cff8d7162f2f8384a619988"
+        },
+        {
+          "sample_id": "sun_modality_d284c2c3b721eefe",
+          "label": "prohibition",
+          "text_sha256": "c5e0ff2189d49ae0aeafe6dae70a0812a770b317f3b74563fd6b37dcd1a8a227"
+        },
+        {
+          "sample_id": "sun_modality_56f68dc45815202a",
+          "label": "prohibition",
+          "text_sha256": "87380c3cfabc9deb4710fbf4d3dc522a0bb89a2f35f8c421dcbe3e35be628550"
+        }
+      ]
+    },
+    {
+      "probe": "allowed_only",
+      "regex": "(nur.*zulässig|zulässig.*nur)",
+      "scope": "entire training sentences; exploratory lexical retrieval, not causal or clause-level annotation",
+      "count": 10,
+      "labels": {
+        "definition": 10
+      },
+      "selected_in_existing_18_fewshot": 0,
+      "matches": [
+        {
+          "sample_id": "sun_modality_e2944d465cc02155",
+          "label": "definition",
+          "text_sha256": "cb1264a4eae60ad2bf73a72733ab9192ab6d93e17f16de633126eb611db23a92"
+        },
+        {
+          "sample_id": "sun_modality_98ccff70d9a3ec09",
+          "label": "definition",
+          "text_sha256": "96c60546c9a3df0ca0082429c7159f7413ff6a9588360eaefb9d9d017bcdf879"
+        },
+        {
+          "sample_id": "sun_modality_c33e7e546525587d",
+          "label": "definition",
+          "text_sha256": "b1a179b2ca77e8ebbad1ac977e4ef79c50c8017ad039fcd8f387455b51991c5a"
+        },
+        {
+          "sample_id": "sun_modality_d965c20b9bcac3ba",
+          "label": "definition",
+          "text_sha256": "fc1401d3b2dd5f522bcc97e5083b2f792bfcbb8335e771be16bfe78e213f4abd"
+        },
+        {
+          "sample_id": "sun_modality_128ec69b0aaadb0c",
+          "label": "definition",
+          "text_sha256": "eab0046fc86552f47143c9590bb27510388601a01b01ce5f2deadda7d2f130dc"
+        },
+        {
+          "sample_id": "sun_modality_47bdd258ad450ccc",
+          "label": "definition",
+          "text_sha256": "c21d486191aeda1b69d0cf4873607aa0af64b1a56203febaa95a67d690515af9"
+        },
+        {
+          "sample_id": "sun_modality_7dda1aacddaef685",
+          "label": "definition",
+          "text_sha256": "e869d1704ea40c5c8efd8649e31c2eb53cb131b44a07c6134f6e6da5f88af0e9"
+        },
+        {
+          "sample_id": "sun_modality_4451d5eb6f698eaa",
+          "label": "definition",
+          "text_sha256": "8afbae7aeac534f2edcdde27d1bcc9eb362f6696f338fcad3d56b6407d4194d6"
+        },
+        {
+          "sample_id": "sun_modality_0964048527c493a7",
+          "label": "definition",
+          "text_sha256": "d67c29311be4f069006b2c7b324aae11cdca80f93ee4127900e6da564bfa5926"
+        },
+        {
+          "sample_id": "sun_modality_dc65fe534c758051",
+          "label": "definition",
+          "text_sha256": "476f0e7d8412132986026f12ca379aa508baea842e207a1922fd0c3b019d0c99"
+        }
+      ]
+    },
+    {
+      "probe": "amount_ceiling",
+      "regex": "d(?:arf|ürfen).*höchstens",
+      "scope": "entire training sentences; exploratory lexical retrieval, not causal or clause-level annotation",
+      "count": 2,
+      "labels": {
+        "permission": 2
+      },
+      "selected_in_existing_18_fewshot": 1,
+      "matches": [
+        {
+          "sample_id": "sun_modality_fea60b898f3877a5",
+          "label": "permission",
+          "text_sha256": "4de5c2633f4c5500d823ee0dd88954fa78934894f28f924af7132b13463ff898"
+        },
+        {
+          "sample_id": "sun_modality_046a3b1b058ddf2a",
+          "label": "permission",
+          "text_sha256": "b4995fcf86ba90918b8f1be16967f175f8eafcddd56dfeb620809c11837041a9"
+        }
+      ]
+    },
+    {
+      "probe": "status_assumption",
+      "regex": "\\banzunehmen\\b",
+      "scope": "entire training sentences; exploratory lexical retrieval, not causal or clause-level annotation",
+      "count": 3,
+      "labels": {
+        "definition": 1,
+        "obligation": 1,
+        "prohibition": 1
+      },
+      "selected_in_existing_18_fewshot": 0,
+      "matches": [
+        {
+          "sample_id": "sun_modality_f56a47d5cde6fdc7",
+          "label": "definition",
+          "text_sha256": "79c0c312c5f1ec099952d0e09f7a8d008789d4967b5f6932a793a120f0065914"
+        },
+        {
+          "sample_id": "sun_modality_918281076461cfa5",
+          "label": "obligation",
+          "text_sha256": "2519e97182b8b3fc6ff8f54bd34f414740393f971b19d1255a2a8f284a332dcc"
+        },
+        {
+          "sample_id": "sun_modality_cc22ae70dc40af59",
+          "label": "prohibition",
+          "text_sha256": "72dec7f85b5590de6beeaf4ec45568d2d3426187398f4fc52a6c41f611bbf02d"
+        }
+      ]
+    },
+    {
+      "probe": "passive_credit",
+      "regex": "\\b(?:wird|werden)\\b.*angerechnet",
+      "scope": "entire training sentences; exploratory lexical retrieval, not causal or clause-level annotation",
+      "count": 7,
+      "labels": {
+        "definition": 3,
+        "permission": 4
+      },
+      "selected_in_existing_18_fewshot": 0,
+      "matches": [
+        {
+          "sample_id": "sun_modality_c8712b2d00865a9d",
+          "label": "definition",
+          "text_sha256": "d0f2ab03da60bbf0ac3a2a3a0368cb0689b447a35b2d56789d1a1db73ea8d943"
+        },
+        {
+          "sample_id": "sun_modality_860d0e217fba74d8",
+          "label": "definition",
+          "text_sha256": "b082ae8e9727272450d1281bc6234bbd357513d3615d403dae7ef42d2094398f"
+        },
+        {
+          "sample_id": "sun_modality_27132be81a9624c3",
+          "label": "definition",
+          "text_sha256": "5b67428a21373ad1c8418c904d53d1dd6ea5e8ba256f6671609089d3adeb18e9"
+        },
+        {
+          "sample_id": "sun_modality_8b3f29a428d5ca42",
+          "label": "permission",
+          "text_sha256": "136414b91d4e6404d85d589244269f8816937ff5d33d5ada921acc721c9c629d"
+        },
+        {
+          "sample_id": "sun_modality_386c26265a3b051f",
+          "label": "permission",
+          "text_sha256": "4fe773fd9b98ffb55904159bada65354a5409c442fb02ba109210a19ce48ec95"
+        },
+        {
+          "sample_id": "sun_modality_a985d35a49f8063a",
+          "label": "permission",
+          "text_sha256": "22ab09dbdf559b45b7eb4886d1880428a506467703d14232551fb0e53dffa661"
+        },
+        {
+          "sample_id": "sun_modality_f08f25828d6aa99c",
+          "label": "permission",
+          "text_sha256": "8c9eb64d30b6a352ad28f73507286a9bfd17f555e407735552291af2284a4809"
+        }
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "test-01",
+      "sample_id": "sun_modality_1ee80af54bbdf1a6",
+      "split": "test",
+      "gold": "definition",
+      "prediction": "prohibition",
+      "clause_labels_in_source_order": [
+        "prohibition"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "已识别前置条件；把不得再申报其他扣除读成禁止，Gold 却为资格/范围类 D。不能仅凭否定改为 D。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 1,
+      "source_text_sha256": "45171d97580b9c57fe02995c24be6b8576e9b8067fba3eff4c048240e29d3861",
+      "response_sha256": "b20a9e807c5c40868abec687c81c2f46f7f0ceb1f911dda931146c1eb7383f4d"
+    },
+    {
+      "case_id": "test-02",
+      "sample_id": "sun_modality_2e41dabd46f1c416",
+      "split": "test",
+      "gold": "definition",
+      "prediction": "prohibition",
+      "clause_labels_in_source_order": [
+        "prohibition"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "fragment",
+      "observation_zh": "输入出现允许结构却缺少完整主谓补足；输出以名词短语充当动作，已标记 action 歧义。无法凭空恢复原句。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 5,
+      "source_text_sha256": "df143ef8d860a133376909ac174c2d7007905b3ca946955cf97dcfda9c3ffc78",
+      "response_sha256": "7e6a50a36d3d650fe83e182c55d19ea51166138707d3d411f1e9f25f37308b62"
+    },
+    {
+      "case_id": "test-03",
+      "sample_id": "sun_modality_d1e1752b60090ac1",
+      "split": "test",
+      "gold": "definition",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "明确的应予考虑句式被读成 O；Gold 为 D。须比较对象资格规则和执行指令的训练反例。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 6,
+      "source_text_sha256": "894550bcce9f3f93930d11e800c5c7eea7012af301400c8ca466b80062e8827e",
+      "response_sha256": "8d07f0c1891801ce4148f23e7fe554f4592857c29e3feb2a0ec71b40b554d90e"
+    },
+    {
+      "case_id": "test-04",
+      "sample_id": "sun_modality_5dd905d7bef7684c",
+      "split": "test",
+      "gold": "definition",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "status_reading",
+      "observation_zh": "被动陈述征收方式，输出仅用普通被动助动词作义务证据；末尾结构也不完整，但主断言仍存在。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 8,
+      "source_text_sha256": "3e5482f2d59bfb3c2ed2f94b335d1eb57a4cc2bacf32dcb5cca1dec38a9c86ac",
+      "response_sha256": "8103b4bde9cb74b8910ec66233b166e3ab9941fb67f012410ec5c48156ad87fa"
+    },
+    {
+      "case_id": "test-05",
+      "sample_id": "sun_modality_39639c4e2a9d6b08",
+      "split": "test",
+      "gold": "definition",
+      "prediction": "permission",
+      "clause_labels_in_source_order": [
+        "permission"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "只可转入特定金额：模型读成受限许可，Gold 为计量范围 D；现有有限许可示例提供相反方向的类比。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 10,
+      "source_text_sha256": "6d46c12854fe747bc804886b53ddee4e59d2a2163d42759dea58de7efb220442",
+      "response_sha256": "6d6125a41f25608afe209a56e1850f6e0aa4de12da34e1d29dca3a7716d3421d"
+    },
+    {
+      "case_id": "test-06",
+      "sample_id": "sun_modality_372dad044592f8bd",
+      "split": "test",
+      "gold": "definition",
+      "prediction": "prohibition",
+      "clause_labels_in_source_order": [
+        "prohibition"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "满足条件时重新计算不再允许：模型 P，Gold D；条件本身不能消除禁止语义。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 11,
+      "source_text_sha256": "df91d4245ed7f6365f1f52088caae617f3992819afb0a2e3c04421b6bc4989d7",
+      "response_sha256": "853741e1e55721eef99140a7c6c217abb4b53e99c5f1c13be59542c675efac3e"
+    },
+    {
+      "case_id": "test-07",
+      "sample_id": "sun_modality_de8ae0a7de8610f6",
+      "split": "test",
+      "gold": "definition",
+      "prediction": "permission",
+      "clause_labels_in_source_order": [
+        "permission"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "特定面积条件下某计税方法才允许：M 与资格 D 的边界，训练中存在同类 D。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 12,
+      "source_text_sha256": "b392f0c771ff0329645fac30f7d2292c5563c519055d39f0581c3d9a97a2af7f",
+      "response_sha256": "7ab02a4d425d6313524b2f79d57eec36960714af1c40b65b60982d6997b5f59d"
+    },
+    {
+      "case_id": "test-08",
+      "sample_id": "sun_modality_a18989112132a992",
+      "split": "test",
+      "gold": "definition",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "status_reading",
+      "observation_zh": "拨款使账户金额减少是结果描述；被读成要求减少账户的 O。应核对主语及完整谓词的作用。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 14,
+      "source_text_sha256": "96e28b1e6d960313ae21c19fded968c3da260cdf301b9a5b36ba42ab69dbec2f",
+      "response_sha256": "4ff84accec4b5b5c8135672653458a9b58813519eb081b10003077ed554571ed"
+    },
+    {
+      "case_id": "test-09",
+      "sample_id": "sun_modality_f586ad99f05fac73",
+      "split": "test",
+      "gold": "definition",
+      "prediction": "permission",
+      "clause_labels_in_source_order": [
+        "permission"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "只在特定期间申领：M 与期限范围 D；与现有申请期限 M 示例接近，不能统一按期限改 D。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 15,
+      "source_text_sha256": "d2c11aab26da8fe0cccdf8751d96dc2e3d9a79c58fde3d915da0d62fe8adb0ff",
+      "response_sha256": "b6e083c58cb5b9c2be4886ee3ede5c85d20dc0ce81f2aa8087df681190057c60"
+    },
+    {
+      "case_id": "test-10",
+      "sample_id": "sun_modality_5fa7357484010c50",
+      "split": "test",
+      "gold": "definition",
+      "prediction": "permission",
+      "clause_labels_in_source_order": [
+        "permission"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "准备金可计提的对象与条件：模型 M，Gold D；需对象集合与主体选项的对照。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 16,
+      "source_text_sha256": "ce2c5fee60358b98cf2c8df5e38e09e66e6f5751dc147812c2f1e85d2fd86c23",
+      "response_sha256": "15d57c7e0cb5002bdabeddd831e9a861e42928eecc75e30196489bf62ba7cd49"
+    },
+    {
+      "case_id": "test-11",
+      "sample_id": "sun_modality_737196fcd064a220",
+      "split": "test",
+      "gold": "definition",
+      "prediction": "permission",
+      "clause_labels_in_source_order": [
+        "permission"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "额外预缴条件下可申领：M 与资格 D 均有字面依据，语料裁决规则仍不清楚。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 17,
+      "source_text_sha256": "0611f0917dfe134a18468c9d1e67f61c2ea145c003c03d7edc559071dc52d65c",
+      "response_sha256": "4433da49e26413b289d8710c80da6d92b520ef4ff833c30b47777f2dc4d0af9e"
+    },
+    {
+      "case_id": "test-12",
+      "sample_id": "sun_modality_16f796b5340d99ce",
+      "split": "test",
+      "gold": "definition",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "status_reading",
+      "observation_zh": "某会计准则具有决定效力，模型把状态谓词作为 O；需要与明确要求使用准则区分。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 19,
+      "source_text_sha256": "61b6c1c00415bae1e0905865d28a1ce699bb5b44fcc58fda0788f8d5b8251583",
+      "response_sha256": "0232e15f99d619ec4d828940fdc7b32d2928c4fde6376f67c854731e34983f8e"
+    },
+    {
+      "case_id": "test-13",
+      "sample_id": "sun_modality_9c3a77622a7918a1",
+      "split": "test",
+      "gold": "definition",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "status_reading",
+      "observation_zh": "计算中适用税率的被动陈述，模型 O，Gold D；与执行指令的区别需完整谓词证据。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 24,
+      "source_text_sha256": "b411ba0e0ce687c4fab0ad830a35de7e13cbd7853e2c04200e3c56ddce1d0dfb",
+      "response_sha256": "048023e71604b28f00f0d533a3f4f40fd12a87ab8a5952a54a20bb5b19e20a2e"
+    },
+    {
+      "case_id": "test-14",
+      "sample_id": "sun_modality_8c835060ccc2a69d",
+      "split": "test",
+      "gold": "definition",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "雇员向雇主作声明，模型 O，Gold D；文本确实含主体行为，不能仅称模型不懂自动法律效果。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 25,
+      "source_text_sha256": "ef51022e60e5d4d8b48abf4c1a37c48b0e0609dbd462841d9755a66f10f0671e",
+      "response_sha256": "0db6c72b479bb40612c34c351e22f23520ed528dc89575fa29a9881522776edb"
+    },
+    {
+      "case_id": "test-15",
+      "sample_id": "sun_modality_746109dbf9a4fac5",
+      "split": "test",
+      "gold": "definition",
+      "prediction": "permission",
+      "clause_labels_in_source_order": [
+        "permission"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "年度退税适用额度：模型 M，Gold D；与提示中最高额度 M 示例存在竞争。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 26,
+      "source_text_sha256": "e69b14c2b81d5b324bccb21d27c535fc7f5d405ebf55afc55ffcb14b7d67b079",
+      "response_sha256": "26cafb4bfc40ca074e4a6f917ff3398459369daa2858d4efcdac45520395e73a"
+    },
+    {
+      "case_id": "test-16",
+      "sample_id": "sun_modality_3dd3ee3a2a49ad1d",
+      "split": "test",
+      "gold": "definition",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "status_reading",
+      "observation_zh": "总使用年限至少八年的参数要求被读成 O；应先判断约束对象是数值参数还是主体行为。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 27,
+      "source_text_sha256": "c82afb10a381f0fa17473598187ee2bb7203f5f3a58e4e19629c88f42a011ed7",
+      "response_sha256": "d3d52996e84b30bf979e2d938a99c06583bcced2510e886b201e3947b1b1c484"
+    },
+    {
+      "case_id": "test-17",
+      "sample_id": "sun_modality_0b57d5229c19d571",
+      "split": "test",
+      "gold": "definition",
+      "prediction": "prohibition",
+      "clause_labels_in_source_order": [
+        "prohibition"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "开具工资单后年度结算不允许：模型 P，Gold D；有真实行为禁令读法，需语料边界证据。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 29,
+      "source_text_sha256": "aa64f1fc53c923072b28722d00e1b11e0598365c77286f55fde768fa47b01afa",
+      "response_sha256": "cd505e8842c4308cec5d58e152428bd5114be0642f88b228db7cb798b94f5b3e"
+    },
+    {
+      "case_id": "test-18",
+      "sample_id": "sun_modality_9fab8f347617dbd1",
+      "split": "test",
+      "gold": "definition",
+      "prediction": "prohibition",
+      "clause_labels_in_source_order": [
+        "prohibition"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "特定重组规则下不计算处置收益：P 与计算适用范围 D，不能建立所有否定计算皆 D 的规则。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 30,
+      "source_text_sha256": "4d1c680c47e5e2af43df5c5753200b3ebed10468c85ffb227c68580bbbb5030d",
+      "response_sha256": "13363f15192d42b098bc8683dbb9049b736066f298bf4e8288e2efe7e39eca5c"
+    },
+    {
+      "case_id": "test-19",
+      "sample_id": "sun_modality_fdc9485a3ed1b40f",
+      "split": "test",
+      "gold": "definition",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "status_reading",
+      "observation_zh": "将某关系认定为雇佣关系的法律拟制被读成 O；train 有近似且 Gold D 的判定例。此次为回归。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "regressed",
+      "prior_review_index": null,
+      "source_text_sha256": "f0450d14c10124dd3f7cd504d04462c8c389cb7faab4a7da98c3366e2c772d55",
+      "response_sha256": "021c2f187eb5b205d5fe17a1f523ccd4675f69967ed6f36f738228d5e1742338"
+    },
+    {
+      "case_id": "test-20",
+      "sample_id": "sun_modality_5c7ac6760deb9439",
+      "split": "test",
+      "gold": "definition",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "status_reading",
+      "observation_zh": "预缴款抵减税款的法律计算关系被读成 O；train 有两条相同主干的 D 对照。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 36,
+      "source_text_sha256": "c930fce16a316680f3d6092ed01ec782bf52677ae4711ff94f25b97af8190c97",
+      "response_sha256": "ed1c1776cbfc55d364800c9b40e65b02fae1ef0ed831721ebc49c18647157ee7"
+    },
+    {
+      "case_id": "test-21",
+      "sample_id": "sun_modality_468239026e9c7241",
+      "split": "test",
+      "gold": "definition",
+      "prediction": null,
+      "clause_labels_in_source_order": [],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "fragment",
+      "observation_zh": "主断言缺少必要谓词，模型返回空 clauses 和 context_required；属于输入/任务合同问题，非传输失败。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 37,
+      "source_text_sha256": "426a8bb3afe6e5cefc34bde7e8b7342e62438dbddd0b0069eb9d6d6e3d670778",
+      "response_sha256": "6096c39f6c675fa8992670e92a8b172735c9b127f6afe47a9d48202c6acef420"
+    },
+    {
+      "case_id": "test-22",
+      "sample_id": "sun_modality_a6e61618e5c6db5a",
+      "split": "test",
+      "gold": "definition",
+      "prediction": "prohibition",
+      "clause_labels_in_source_order": [
+        "prohibition"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "status_reading",
+      "observation_zh": "扣除不得产生亏损是结果限制，模型把发生亏损当作禁止行为；D 与 P 边界需反例保护。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 38,
+      "source_text_sha256": "29a492cace69a33ba079689aae79bda07d992b618693f20e8209861026c1f036",
+      "response_sha256": "3a3b15fbbd7035eaea94263dd8a99024373f68dad96ef3efca3aa8b2e38b7a60"
+    },
+    {
+      "case_id": "test-23",
+      "sample_id": "sun_modality_af5cbd9a42dc23b2",
+      "split": "test",
+      "gold": "definition",
+      "prediction": "permission",
+      "clause_labels_in_source_order": [
+        "permission"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "计入税基的利润上限：模型 M，Gold D；须区别额度定义和行使权利的许可。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 39,
+      "source_text_sha256": "cf220ac5359251de6a06a33094127f4f49855322b6688e82f31fcf767edd1783",
+      "response_sha256": "ec81bb1e403212931133006b99ed02480f1763f874943f0e630283558a8d7680"
+    },
+    {
+      "case_id": "test-24",
+      "sample_id": "sun_modality_43af0a1cb1e68953",
+      "split": "test",
+      "gold": "definition",
+      "prediction": "permission",
+      "clause_labels_in_source_order": [
+        "permission"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "准备金对象集合：模型 M，Gold D；与 test-10 同族，不能由可字直接确定许可。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 40,
+      "source_text_sha256": "45c5f0fa9c6dfb472613ab0236daf53f0c4d949d138ed5da001dbd92f796676b",
+      "response_sha256": "d3dad5afcc247e1f6a800c3cc5b049b4edf0615ae242cdc497650f6f7bcb1b09"
+    },
+    {
+      "case_id": "test-25",
+      "sample_id": "sun_modality_ebcf85dc92f6a19b",
+      "split": "test",
+      "gold": "definition",
+      "prediction": "permission",
+      "clause_labels_in_source_order": [
+        "permission"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "费用仅在经济关联范围内计入：模型 M，Gold D；已有类似 D 示例仍未稳定迁移。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 42,
+      "source_text_sha256": "9b1681321d7999fa8617fae73f7d085bef2c42f8e002f8582ce615012bba4c9a",
+      "response_sha256": "0128188cdbd525c0d999bbebdb9690b989c4b9a38cdb64c45d02873d8faa65fe"
+    },
+    {
+      "case_id": "test-26",
+      "sample_id": "sun_modality_33842fb54e03e8cd",
+      "split": "test",
+      "gold": "obligation",
+      "prediction": "definition",
+      "clause_labels_in_source_order": [
+        "definition",
+        "obligation"
+      ],
+      "gold_label_present_after_first": true,
+      "primary_diagnostic_group": "projection",
+      "observation_zh": "已输出 D（自动增减）及 O（排除指定项目）；首条取 D 导致句级错误，后续义务并未漏抽。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 43,
+      "source_text_sha256": "33910437530000507928e21710b4e93c45b1bd88e1b5027ee98f74033ddb3cb9",
+      "response_sha256": "95bb42793f34959ad6c5df4d39601106aee43d3f5706da559e4c801a77a4fd53"
+    },
+    {
+      "case_id": "test-27",
+      "sample_id": "sun_modality_cb6075c1bc204c4e",
+      "split": "test",
+      "gold": "obligation",
+      "prediction": "prohibition",
+      "clause_labels_in_source_order": [
+        "prohibition"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "不得考虑其他免税收入，模型 P，Gold O；train 中近似句同时有 O/P，不能直接判 Gold 错。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 44,
+      "source_text_sha256": "08f838220fe390a63aabc2694f3b255636d1c26b3a1d0f089c3866393f5bb06d",
+      "response_sha256": "0de3c8ddfc524cafd42efe1d822a67eb593ea1ee981c75c3da7c3d093e65ae49"
+    },
+    {
+      "case_id": "test-28",
+      "sample_id": "sun_modality_09af46d39837e8c3",
+      "split": "test",
+      "gold": "obligation",
+      "prediction": "definition",
+      "clause_labels_in_source_order": [
+        "definition"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "适用方法的前提条件被读成 D，Gold O；train 同主干例标 O，体现语料习惯而非清晰通用语义。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 46,
+      "source_text_sha256": "8375805ca1657d28e7f8117c0807ee7376f198f0beef2f8b9f6c29f610b4aa10",
+      "response_sha256": "e91657ad630f4f3ad6217cd527e54bd25c85ef0485c347db0105bdf7b643999a"
+    },
+    {
+      "case_id": "test-29",
+      "sample_id": "sun_modality_f5037bcc56922965",
+      "split": "test",
+      "gold": "obligation",
+      "prediction": "definition",
+      "clause_labels_in_source_order": [
+        "definition",
+        "obligation"
+      ],
+      "gold_label_present_after_first": true,
+      "primary_diagnostic_group": "condition_split",
+      "observation_zh": "前置转移条件被独立标 D，真正主指令 O 已在第二条；旧输出首条 O 也没有正确处理条件，旧评分正确不代表结构正确。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "regressed",
+      "prior_review_index": null,
+      "source_text_sha256": "b2ecf3d87a4b3c069822083b2b0a617bd085b2641fdd5fa22aa2b1a388ffe5b5",
+      "response_sha256": "229fe1cf3c4029cf6b94f8cc6dc3dd0bdf186db15755f208ee94a3317b64f1f4"
+    },
+    {
+      "case_id": "test-30",
+      "sample_id": "sun_modality_68a7b0d9b95fb81e",
+      "split": "test",
+      "gold": "obligation",
+      "prediction": "definition",
+      "clause_labels_in_source_order": [
+        "definition",
+        "obligation"
+      ],
+      "gold_label_present_after_first": true,
+      "primary_diagnostic_group": "projection",
+      "observation_zh": "新输出已分成类别排除 D 与列作债权 O；旧诊断的谓词漏抽不再适用，现为首条投影问题。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 49,
+      "source_text_sha256": "4905145d38cfd70e4c4fa6da31be43542b98e0a4d60cfbc196df6cf77cf914e7",
+      "response_sha256": "8d2de29658469b4b302f837bb6d07e90f7fbea7d10bb40422724ba4bc0ab7725"
+    },
+    {
+      "case_id": "test-31",
+      "sample_id": "sun_modality_47b19113284fc538",
+      "split": "test",
+      "gold": "obligation",
+      "prediction": "definition",
+      "clause_labels_in_source_order": [
+        "definition"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "fragment",
+      "observation_zh": "基金份额名词列举及关系从句，无完整外层指令；Gold O 可能依赖被截断的列表主句，不能补写。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 50,
+      "source_text_sha256": "81fafc66fd5f5942a484e34fc4aead0de3f0f79b4f30aa1aa546614c24817af0",
+      "response_sha256": "a11fcd104fb0f7715ccd913a90186313da29f9f37e25c1730a6ddde9e917cb01"
+    },
+    {
+      "case_id": "test-32",
+      "sample_id": "sun_modality_19490870e3fe6c41",
+      "split": "test",
+      "gold": "prohibition",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "predicate_coverage",
+      "observation_zh": "共同助动词支配制作报告和不得核查两项；两动作已输出，但统一标 O，局部否定的不同情态被抹平。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 52,
+      "source_text_sha256": "ade78b1692006db171a0372de58b5c40d91a4384437b8dd6ddf737d0227be424",
+      "response_sha256": "83ac1ba18f3ad51fcf5d6570eeb5ffca40ea735b5363f575f96bf0abd526c295"
+    },
+    {
+      "case_id": "test-33",
+      "sample_id": "sun_modality_47108b07b46a4cfc",
+      "split": "test",
+      "gold": "prohibition",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation",
+        "definition",
+        "prohibition"
+      ],
+      "gold_label_present_after_first": true,
+      "primary_diagnostic_group": "projection",
+      "observation_zh": "输出付款 O、到期 D、不适用 P 三条；Gold P 在第三条，被首条投影丢弃。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 53,
+      "source_text_sha256": "36dbd17a9e614fda2647bccf76babe2959c26b8a9dd7a4691f1b7cb8b4c48a64",
+      "response_sha256": "a74071310480f546e41a18cd3947b178a61404c9efd3cd8c03820db02ad6a86b"
+    },
+    {
+      "case_id": "test-34",
+      "sample_id": "sun_modality_e281d33605497ded",
+      "split": "test",
+      "gold": "prohibition",
+      "prediction": "definition",
+      "clause_labels_in_source_order": [
+        "definition"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "predicate_coverage",
+      "observation_zh": "只输出维持免税地位 D，遗漏后半句不得计入的规范；与旧输出后续已有 P 的状况不同，需重新诊断。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": 54,
+      "source_text_sha256": "918b1ced63c19d66f227a750b503f28751086f0bb6fd176db4401504c081bef8",
+      "response_sha256": "ae282b2ca10c974e65a15e36d4275eb18dd1473452cca10d43d3992144d04ba3"
+    },
+    {
+      "case_id": "dev-01",
+      "sample_id": "sun_modality_354647c255c213a4",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "permission",
+      "clause_labels_in_source_order": [
+        "permission"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "列入名单的资格条件，被标成允许列入的 M；资格与许可边界待解。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "ab320c5ddae869ba86c523de655970774c7c592c6655aba070aa0ef7113f6d8b",
+      "response_sha256": "03428dd3e3645cd1db72d824847f2e68f12d357a983dc23dca21dca2d30d9179"
+    },
+    {
+      "case_id": "dev-02",
+      "sample_id": "sun_modality_21a79633ad6a3800",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "permission",
+      "clause_labels_in_source_order": [
+        "permission"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "准备金可计提的对象类别被读成 M；Gold D。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "808455d9ed7bcdbbd9e9139c744e0f3e3cf84b5cd952b114fcc3899911374426",
+      "response_sha256": "297d512cf4ad6c6ab23385ec1a8de440c09971828dd23197c5fba61a3a6dac42"
+    },
+    {
+      "case_id": "dev-03",
+      "sample_id": "sun_modality_b5813e2143e9ad03",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "permission",
+      "clause_labels_in_source_order": [
+        "permission"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "准备金可计提的对象类别被读成 M；Gold D。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "0095e7eb7a3f3832f6a029f570497d0db0d1667d73a81f6f5b37ebafee217518",
+      "response_sha256": "2d7323843c056741f29e0c15faee8b28084c5f621a8b6e4afd8604c26c3a0900"
+    },
+    {
+      "case_id": "dev-04",
+      "sample_id": "sun_modality_7742015e59997a1c",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "prohibition",
+      "clause_labels_in_source_order": [
+        "prohibition"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "保险条款排除回购，模型 P，Gold D；产品属性排除与禁止交易存在不同读法。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "c95e3799150ba40b732c4555d225ea0384bf84339d6077ba285395a5ae7834f3",
+      "response_sha256": "6fc58c62f4e0650104dc967d4049d6ed2d6bc0267f8a3b2c07673a6d15ec8e86"
+    },
+    {
+      "case_id": "dev-05",
+      "sample_id": "sun_modality_c7860e9de5c29f56",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "permission",
+      "clause_labels_in_source_order": [
+        "permission"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "再次选择计税方式需间隔五年：模型 M，Gold D；等待期与许可边界待解。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "345c862aa9f0d3fdcfee82378662bfc432bb5f6285897c05e31d0ff04a18fbc6",
+      "response_sha256": "1d3a43bd9b1ec90b19103daad9b576bda20af288566500c146dedad06429ba0f"
+    },
+    {
+      "case_id": "dev-06",
+      "sample_id": "sun_modality_b00c4b414a997e2c",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "status_reading",
+      "observation_zh": "法规规定哪些营业类别适用税率的描述，模型用被动确定结构标 O；Gold D。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "0d2162451198e59aa8be8656540dcbb64b9d514a6b27c326afe68dc75d0a6293",
+      "response_sha256": "b40367c2a31404f28c6202477bdde096dfc1ac759c2fb4c724f95639720659fd"
+    },
+    {
+      "case_id": "dev-07",
+      "sample_id": "sun_modality_9149bc551c82a95c",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "无法举证时必须补征，模型 O，Gold D；明确指令读法很强，不宜编规则硬改。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "5f08e1090c1d172a99c4c4119278d932300634f41a5da2c24b811f604c8dfebe",
+      "response_sha256": "b7d73a6040ce4f714a5dd2d0dfaa16596bc1b6169ff5b6481d2f07154c8e5726"
+    },
+    {
+      "case_id": "dev-08",
+      "sample_id": "sun_modality_a39ef274a6639ce8",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "prohibition",
+      "clause_labels_in_source_order": [
+        "prohibition"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "某条款对特定主体不适用，模型 P，Gold D；与现有不适用 P 示例正面冲突。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "e5097b61b209a053e9403dd8161e5f3b92d592ca77aa69c8e6e0e473b7d7a26b",
+      "response_sha256": "d6112191bc720cc44207fc5d7bafee595afe5dccb4242f5583aa87d55086899d"
+    },
+    {
+      "case_id": "dev-09",
+      "sample_id": "sun_modality_d0ecaed52ce7ef17",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "status_reading",
+      "observation_zh": "对应适用声明被读成 O，尽管 reviewer 已明确要求区分；train 同模式 14 条均 D。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "6fb83d1f47e7b19aadde940e7f2502d5884605375a1c5b28998e0921bc3a2d26",
+      "response_sha256": "c22fc3570c9f485048bd2f739b8b8bd5bf2d61e32e3c15a92362b4e451ce44d6"
+    },
+    {
+      "case_id": "dev-10",
+      "sample_id": "sun_modality_bedbd9c59c047ba2",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "permission",
+      "clause_labels_in_source_order": [
+        "permission"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "向特定人传送个人数据也被允许，模型 M，Gold D；文本有真实授权读法，原因待裁决。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "6ef5a79ff7ce4989093cfddc20b29dc4edbb4986789c6d3a5baff1c2664fb73e",
+      "response_sha256": "afa5d4e82ce5bbc29e2bd5923d254357b6e9a62cf87172867fc041024ea8c975"
+    },
+    {
+      "case_id": "dev-11",
+      "sample_id": "sun_modality_bd86cc5976920d9f",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "status_reading",
+      "observation_zh": "企业须具有未被豁免的税负状态，模型 O；需区分资格属性与要求完成某行为。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "36bfb848ac1ef64d97f7464e9ed66e51fe49fc1a92af9d5abdfd8ce379dc5799",
+      "response_sha256": "5ed29a3e934e0573cf467d6d458ce944ba126cf181448f63ad00d9afcec55040"
+    },
+    {
+      "case_id": "dev-12",
+      "sample_id": "sun_modality_3633b24e02a450c3",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "prohibition",
+      "clause_labels_in_source_order": [
+        "prohibition"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "特定股份估值方法不允许，模型 P，Gold D；资格/方法限制的语料边界待解。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "966161a4c077fb7c5bca53dfffb9db688a954ca27ec7d2f49233245a77974630",
+      "response_sha256": "4eaa924c658241b72d3aaad343d5c7268e407d36f39441d295dcaa0f834f2540"
+    },
+    {
+      "case_id": "dev-13",
+      "sample_id": "sun_modality_000ba41da22ff6ad",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "status_reading",
+      "observation_zh": "原持有期间计入新期间的自动计算关系，被读成 O。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "471125cd1f9c6d1d1ae5f6beac368b94dc12d9ef978d12a7a23348f40e1f1d59",
+      "response_sha256": "f0b776f3b5bfe27c175a1b05a477ed6a6b6c19d1c32c4a5d38fb7674ef387918"
+    },
+    {
+      "case_id": "dev-14",
+      "sample_id": "sun_modality_9f2886f5d8ea5fe1",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "permission",
+      "clause_labels_in_source_order": [
+        "permission"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "较高扣除只在车辆退出时允许，模型 M，Gold D；train 有允许条件类 D 对照。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "0fe0e1b08926c556f06313293c008df885c6a92e0ea01927e702e87ffc154ee8",
+      "response_sha256": "6e6532338bf297d53425671e85829634e1d193e77c153b628b48683a749a9169"
+    },
+    {
+      "case_id": "dev-15",
+      "sample_id": "sun_modality_e818b6e9197bde71",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "status_reading",
+      "observation_zh": "条件成立时收入作为计税基础，模型仅用普通被动助动词作 O 证据。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "7bb3025ff27a1118fe045d22b02849141a3dccba31316378ba566ffdecc4b80a",
+      "response_sha256": "74dc82c4c49a6459a39a7bb4ba0b123014788fe58845a68182535bad3b3f2a85"
+    },
+    {
+      "case_id": "dev-16",
+      "sample_id": "sun_modality_65f6ec8801002e1c",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "permission",
+      "clause_labels_in_source_order": [
+        "permission"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "对特定资产的准备金转移允许，模型 M，Gold D；对象适用性与选择授权边界待解。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "8c37f40d318959dd047467e5431bf5d412d95a5bd3e3ae0ea26eb82dc9bb0ccf",
+      "response_sha256": "a39fb35d704b90fea042e71ad60a4aee5dadeacf77865019fa19e1b0ce75ac22"
+    },
+    {
+      "case_id": "dev-17",
+      "sample_id": "sun_modality_7dfab803598cdff0",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "permission",
+      "clause_labels_in_source_order": [
+        "permission"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "特定境内使用条件下才允许转移，模型 M，Gold D；与 dev-16 同族。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "c0d4621e615c4c696aaed07f9ae816de18c581348c7f22226f9b61492fdccaee",
+      "response_sha256": "f4a7d2961addc9877989f31b3a22d54d35052c1028dbdfe6441cdedf2d09f09e"
+    },
+    {
+      "case_id": "dev-18",
+      "sample_id": "sun_modality_8c82d1162d54b5a6",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "permission",
+      "clause_labels_in_source_order": [
+        "permission"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "仅可在年初更换税卡，模型 M，Gold D；时间范围不构成通用 D 判据。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "8a449ef7d081c1ecc6055d2252f0cacc0f47c5e02fc746e3d75aa3f71dbe9ab3",
+      "response_sha256": "1d88571438a4fd42f7936150b6b4a53ee0612e404024bc788085cb2394347182"
+    },
+    {
+      "case_id": "dev-19",
+      "sample_id": "sun_modality_20d402f3d54c6c9f",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "status_reading",
+      "observation_zh": "对应适用声明被读成 O；提示已有说明仍未执行。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "01b720119cd5cf51db3c2cfb8ef2b83ec5755f9521c22dfa98d7575d35088eca",
+      "response_sha256": "a8bd93ca1889a3fb872f539221409844daf92be7e494039e55ab401b4874d368"
+    },
+    {
+      "case_id": "dev-20",
+      "sample_id": "sun_modality_e529fa53e63ab953",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "机构要求返还税额的行为陈述，模型 O，Gold D；缺先行词，标签原因不能从此句确定。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "8bece489814e26dd41a972ca093dd0ce89916e152f58fea847d53b13348b2e8f",
+      "response_sha256": "9c9c672d370d4cd29bae08d5f912b6baf11a1bdd3e18f0761c9144c045d3001a"
+    },
+    {
+      "case_id": "dev-21",
+      "sample_id": "sun_modality_8a1e131dfea54b78",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "status_reading",
+      "observation_zh": "职责归属陈述被读成执行义务；Gold D，需区分被委以职责的状态与具体履行动作。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "520c723faf4c1d4ef84b59550cf7b4fd9e38996592dd9d37c27b44b4a9663413",
+      "response_sha256": "7802fd5c500f4765a342805d954b681e1b47a23d2545c4e1715a7c19a9ae21ac"
+    },
+    {
+      "case_id": "dev-22",
+      "sample_id": "sun_modality_d1d45d36c5ddcdf2",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "status_reading",
+      "observation_zh": "计税比例的计算式陈述被标 O；需区别算式定义与命令计算。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "a9901a4ad3f29adcd1afe4ac6d5c001f81eea6c61b2a0fa8593feb268a780508",
+      "response_sha256": "59a5dc049a5eeee70990c8310a82c07629aa4de3ee3e8651ba562b01da60919a"
+    },
+    {
+      "case_id": "dev-23",
+      "sample_id": "sun_modality_ea560bc68a217f67",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "prohibition",
+      "clause_labels_in_source_order": [
+        "prohibition"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "已认可费用不得再次作为其他扣除，模型 P，Gold D；与禁止重复操作的语义存在边界。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "d92be608a401905b5442583ff568581f463df21d7214e2161b4f08d30badf871",
+      "response_sha256": "e962f4a25dd4eab9a17518a9f1fdcceb324a315a582ed64986d2e0c98722168c"
+    },
+    {
+      "case_id": "dev-24",
+      "sample_id": "sun_modality_a02322f418de1843",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "prohibition",
+      "clause_labels_in_source_order": [
+        "prohibition"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "status_reading",
+      "observation_zh": "合同不再具备退税依据地位，被当成 P；否定对象是资格状态而非主体行为。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "9aa802143d953adc3707e8c06bbe0590fcb920d8c6bf1c9cf9129d7a9380e0fa",
+      "response_sha256": "6e73c3540bb0586823eb9356dce01133d43cc893d6cb2f2f5cd32febdae88970"
+    },
+    {
+      "case_id": "dev-25",
+      "sample_id": "sun_modality_02cb797a0a03b9f0",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "仅对特定建筑适用的明确指令，旧 D 改 O 后失分；reviewer 防止把限制指令都吸为 D 的规则在这里与 Gold 不一致。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "regressed",
+      "prior_review_index": null,
+      "source_text_sha256": "fac558d0eb94930b9759dac5306cf306b3635eab6ee3bf031873d8f37a1a79de",
+      "response_sha256": "c63bef2798ea7eba23a41342b2ab9c6265b83f518c9cb20620f44a47a56011e4"
+    },
+    {
+      "case_id": "dev-26",
+      "sample_id": "sun_modality_7918545e548aa803",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "permission",
+      "clause_labels_in_source_order": [
+        "permission"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "status_reading",
+      "observation_zh": "金额只能一次导致免补征效果，被读成 M；因果可能性不等于主体许可。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "20e05dce2bc96f10962a1ee7d80b10f4b86041c903fbd1348a6991b1a8ae80bc",
+      "response_sha256": "34b5aeb8c9a0da62a74178f15614d683d20bd1a7370ef0d042b8b354e2f7d21b"
+    },
+    {
+      "case_id": "dev-27",
+      "sample_id": "sun_modality_7689656d6e237add",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "status_reading",
+      "observation_zh": "类推适用声明被读成 O；与 dev-09/19 同模式，train 同模式 14 条均 D。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "7f4239a1a10c6ca4a4d11532c07a14dfaa1eb4bcd86c1fbaacab9946b1910307",
+      "response_sha256": "615e722c481a0a1fdccb308cea8fc00c5f8f7c5e2053a0415244442180dd4043"
+    },
+    {
+      "case_id": "dev-28",
+      "sample_id": "sun_modality_c8681b1f5dc1a5c9",
+      "split": "dev",
+      "gold": "definition",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "fragment",
+      "observation_zh": "名词列举中的目的性关系从句被当作 O；缺少外层完整主断言，目的表达不自动产生义务。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "0ac194c9e9c7e762d047a1b276968ed63389258c1850ab545ee2338a607e9275",
+      "response_sha256": "8b594679cbe02deda6053b1b729c652531e24c86e418080abff555b51c87b8d5"
+    },
+    {
+      "case_id": "dev-29",
+      "sample_id": "sun_modality_1c6887281973592f",
+      "split": "dev",
+      "gold": "obligation",
+      "prediction": "definition",
+      "clause_labels_in_source_order": [
+        "definition"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "predicate_coverage",
+      "observation_zh": "只提取分类拟制 D，关系从句中按固定税率征税的 O 未表达。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "aa58d83c6f5febb9f57dc081f437eade4f14bd4e50022057b95f99c01c74c495",
+      "response_sha256": "39f42444f9d0cacf3e56d87c480de587ebad79de6cb3e005131aeed1d9e186f1"
+    },
+    {
+      "case_id": "dev-30",
+      "sample_id": "sun_modality_2d522b2254bccfa6",
+      "split": "dev",
+      "gold": "obligation",
+      "prediction": "definition",
+      "clause_labels_in_source_order": [
+        "definition",
+        "obligation"
+      ],
+      "gold_label_present_after_first": true,
+      "primary_diagnostic_group": "projection",
+      "observation_zh": "已正确分出生效 D 与适用 O，首条投影使旧正确变错误；旧首条把生效误标 O。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "regressed",
+      "prior_review_index": null,
+      "source_text_sha256": "5df505dd75e342fb8994df0a8959160dd78d37afdccf1974a0c0d7fbfed90671",
+      "response_sha256": "879165dbb223a9da833b62dcd5922c33740ff3120e4626e6b71a9571f2502c15"
+    },
+    {
+      "case_id": "dev-31",
+      "sample_id": "sun_modality_3b44b9dfd6a13b2b",
+      "split": "dev",
+      "gold": "obligation",
+      "prediction": "definition",
+      "clause_labels_in_source_order": [
+        "definition"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "predicate_coverage",
+      "observation_zh": "只提取类推适用 D，限定从句中必须采用相应数值的 O 未表达。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "b1bad9c4c171e4f8e10b62db74da2d59fbe297cdf7fe3944c5006852e3bf87ee",
+      "response_sha256": "558b648709c7be9c1c1d9236f019c4cde0b5bab5385502bc3705f10010788332"
+    },
+    {
+      "case_id": "dev-32",
+      "sample_id": "sun_modality_bae25354509ccb28",
+      "split": "dev",
+      "gold": "obligation",
+      "prediction": "definition",
+      "clause_labels_in_source_order": [
+        "definition"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "predicate_coverage",
+      "observation_zh": "保留利息请求权状态 D，但遗漏后半句明确适用指令 O。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "0df863486278a20014b5cb171b74456266c51d27169d98cb641dc8b552bde489",
+      "response_sha256": "5264219fbf7b9e03d5b46fcd26e68c5bbaa6b990f92cb55b7ef53b1470ce4eca"
+    },
+    {
+      "case_id": "dev-33",
+      "sample_id": "sun_modality_02b5fe536b624b6a",
+      "split": "dev",
+      "gold": "obligation",
+      "prediction": "definition",
+      "clause_labels_in_source_order": [
+        "definition",
+        "obligation"
+      ],
+      "gold_label_present_after_first": true,
+      "primary_diagnostic_group": "projection",
+      "observation_zh": "生效 D 与适用 O 被分开后，首条投影使旧正确变错误；不能为分数重新把二者混并。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "regressed",
+      "prior_review_index": null,
+      "source_text_sha256": "6f5f89121f656aada34e29bc71cc5033ba42f8e52365c22d2d8704fa5184458d",
+      "response_sha256": "bff953e93454a9d717cd77aecc30cf13cb61a32065c55d1f7bc7de32a0c9014c"
+    },
+    {
+      "case_id": "dev-34",
+      "sample_id": "sun_modality_7bfb54410b314e5d",
+      "split": "dev",
+      "gold": "obligation",
+      "prediction": "definition",
+      "clause_labels_in_source_order": [
+        "definition",
+        "obligation"
+      ],
+      "gold_label_present_after_first": true,
+      "primary_diagnostic_group": "projection",
+      "observation_zh": "输出前置适用 D 及申报 O；Gold O 在后续，投影丢失。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "1e0d5af46e11b84e132e8687eefa06d88a6eaa01ae58359314ed530f17ed75b5",
+      "response_sha256": "f0d0047c68d62b37f48b4567b90eb69b0326632d74eb2935f6c2833c674366f7"
+    },
+    {
+      "case_id": "dev-35",
+      "sample_id": "sun_modality_df5bf57b7641ef15",
+      "split": "dev",
+      "gold": "obligation",
+      "prediction": "definition",
+      "clause_labels_in_source_order": [
+        "definition",
+        "obligation"
+      ],
+      "gold_label_present_after_first": true,
+      "primary_diagnostic_group": "projection",
+      "observation_zh": "生效 D 与适用 O 分开后失分；属于更合理结构与现有句级投影不匹配。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "regressed",
+      "prior_review_index": null,
+      "source_text_sha256": "514ee96b2f09b2a2f6569450b52ad7e27c229ea47b5922320eb914b63252727b",
+      "response_sha256": "c0cef9ce80ef959ee9ab10d57ce065c54414073c1d0be7bdf86648ce3286cc88"
+    },
+    {
+      "case_id": "dev-36",
+      "sample_id": "sun_modality_3c7b91f7ca786288",
+      "split": "dev",
+      "gold": "obligation",
+      "prediction": "definition",
+      "clause_labels_in_source_order": [
+        "definition"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "适用方法的前提条件，模型 D，Gold O；train 同主干 O 对照可用于解释语料习惯。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "5f11242af7fe65b1690aa20b6f8c022b1580e916bac9877a6d8bee966dc1a302",
+      "response_sha256": "3a85e93f2d4032584c43bca14ea23f3d471b32f76e0033f37f1ae59b1ef32e44"
+    },
+    {
+      "case_id": "dev-37",
+      "sample_id": "sun_modality_6c8ad4f0e682c5db",
+      "split": "dev",
+      "gold": "obligation",
+      "prediction": "definition",
+      "clause_labels_in_source_order": [
+        "definition",
+        "obligation"
+      ],
+      "gold_label_present_after_first": true,
+      "primary_diagnostic_group": "projection",
+      "observation_zh": "自动减额 D 和计算指令 O 都有；Gold O 在后续。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "8bf0f6bd9cf25ba3e735b165259e978f9e6e9538e4d28f3ff935dc33686fe4a8",
+      "response_sha256": "d11006aca4bf7e065842a0f94222f14ed65fbc581d4eb93e811f523c432cbbda"
+    },
+    {
+      "case_id": "dev-38",
+      "sample_id": "sun_modality_6e8a94babb63937d",
+      "split": "dev",
+      "gold": "obligation",
+      "prediction": "permission",
+      "clause_labels_in_source_order": [
+        "permission"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "该事项可省略，模型 M，Gold O；该事项指代未解，不能确定主体与规范功能。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "1ac31a81483521891b0f58eafecfafc48b22be539a1504f3e8ebe0fc71df8dfa",
+      "response_sha256": "e0e39e1197dc39ae5613393083abd99f876f6367b4a982759f7b4f01ba4cccb9"
+    },
+    {
+      "case_id": "dev-39",
+      "sample_id": "sun_modality_20b0f0eede0ae5e9",
+      "split": "dev",
+      "gold": "obligation",
+      "prediction": "definition",
+      "clause_labels_in_source_order": [
+        "definition",
+        "obligation"
+      ],
+      "gold_label_present_after_first": true,
+      "primary_diagnostic_group": "projection",
+      "observation_zh": "条件不适用 D 及后续适用 O 都有；首条投影丢失 O，输入开头也有拼接痕迹。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "7abba9539c8229737e833362ffc48788d980430ddac12032fc1c7a2a1f4689f0",
+      "response_sha256": "a3ac20d2125874a5a65368702129718ea53f59730730f06a0a72dd24341d66a2"
+    },
+    {
+      "case_id": "dev-40",
+      "sample_id": "sun_modality_346271c2220e8efa",
+      "split": "dev",
+      "gold": "obligation",
+      "prediction": "prohibition",
+      "clause_labels_in_source_order": [
+        "prohibition"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "扣除不得重复，模型 P，Gold O；近似负向计算指令在训练中跨类，不能臆设取反规则。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "9721fb53e082e45be3e93b61cf33ed8c7c1b990a874abc10c873781d6e516cbc",
+      "response_sha256": "7e318ee6a71262820c460e44c1c4c5dc53b3a59a372dc6565cb033b6b0c42ae4"
+    },
+    {
+      "case_id": "dev-41",
+      "sample_id": "sun_modality_394576e8a4f0be54",
+      "split": "dev",
+      "gold": "obligation",
+      "prediction": "definition",
+      "clause_labels_in_source_order": [
+        "definition"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "不视为雇佣所得利益的分类排除被读成 D，Gold O；通用语义和标签发生冲突。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "c7fe1b80cb7358cab6364e0c56bf2b4c0e936670cfe046ce8916524852c2ee7f",
+      "response_sha256": "a45cf65f10e7d32251eeba45eeff8cf642bccb5e95c7f676f0ed64cdcd93667d"
+    },
+    {
+      "case_id": "dev-42",
+      "sample_id": "sun_modality_997705d87c003fca",
+      "split": "dev",
+      "gold": "obligation",
+      "prediction": "permission",
+      "clause_labels_in_source_order": [
+        "permission"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "最高额度结构模型 M，Gold O；few-shot 中同类最高额度为 M，不能统一映射。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "2253734760ccf9ab87cfe3d17b1ae8990e38607abddae2e624145425592b9d11",
+      "response_sha256": "fa47a50cc1e1097717e8d925a7f3bb727d672847c4bda6643788787eea744e79"
+    },
+    {
+      "case_id": "dev-43",
+      "sample_id": "sun_modality_c528fb4eef7b9582",
+      "split": "dev",
+      "gold": "permission",
+      "prediction": "definition",
+      "clause_labels_in_source_order": [
+        "definition"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "免除记账义务旧 M 改 D 后失分；reviewer 将自动免除视为状态，与此语料 M 不一致。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "regressed",
+      "prior_review_index": null,
+      "source_text_sha256": "e58d9538f725e6874e0e2e04486ef088b4367b8bca096a2c56cfe9d0cbd732c1",
+      "response_sha256": "1f100e239068f2eccaed922d2cd1fb6d07372e5a4bf7e08b65c97c9b75fd0180"
+    },
+    {
+      "case_id": "dev-44",
+      "sample_id": "sun_modality_dcda1f312a525f6a",
+      "split": "dev",
+      "gold": "permission",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "依申请须核定税额，模型 O，Gold M；申请人选择和机关义务是两个不同观察视角。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "52a5b55aa2fb3b5f500b6b7932cad4e250731d3c6ff3472890368003166eef85",
+      "response_sha256": "af0c02d96a6b9b488bf7d4271f4ce03474b34c0fffbd2bd066c7d20a5342a851"
+    },
+    {
+      "case_id": "dev-45",
+      "sample_id": "sun_modality_2ec15a7d3496f18e",
+      "split": "dev",
+      "gold": "permission",
+      "prediction": "definition",
+      "clause_labels_in_source_order": [
+        "definition"
+      ],
+      "gold_label_present_after_first": false,
+      "primary_diagnostic_group": "boundary_unresolved",
+      "observation_zh": "住宅也可为他人土地上的建筑，旧 M 改 D；文字像类别扩展，但 Gold M，不能把修复等同语义正确。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "regressed",
+      "prior_review_index": null,
+      "source_text_sha256": "3781dd2115c7e18a932be33da7e616193365a84f8a1c502e83182ed7a6d95089",
+      "response_sha256": "42ef42e14c558fa2f7e387651efba78563a13d191d3608efa9a93f6bce9b56ae"
+    },
+    {
+      "case_id": "dev-46",
+      "sample_id": "sun_modality_23b303fdb6d6f9e8",
+      "split": "dev",
+      "gold": "prohibition",
+      "prediction": "obligation",
+      "clause_labels_in_source_order": [
+        "obligation",
+        "prohibition"
+      ],
+      "gold_label_present_after_first": true,
+      "primary_diagnostic_group": "projection",
+      "observation_zh": "扣减 O 和不得形成损失 P 两条均输出，Gold P 在第二条，首条投影丢弃。",
+      "interpretation_status": "AI qualitative diagnosis; not human adjudication; not proven model-internal cause",
+      "transition_from_fewshot": "both_wrong",
+      "prior_review_index": null,
+      "source_text_sha256": "eacbee1094419cc3d42f051a043425304c212ad05434bba572679ce91e2dc28b",
+      "response_sha256": "0e6accd5eef7a16ce63d74f2eabb4241acd053641cecc799bc8b68bb13b4e7c8"
+    }
+  ],
+  "limits": [
+    "Group assignments prioritize an actionable issue and are not mutually exclusive causal truths.",
+    "Presence of the Gold label in a later clause does not prove the entire Rule Record correct.",
+    "No oracle label choice, clause reordering, Gold relabeling or retrospective score replacement.",
+    "Prompt length, distraction and internal reasoning causes remain untested hypotheses.",
+    "Test and dev errors have now informed diagnosis; neither is a fresh blind validation set for any future tuned prompt.",
+    "The previous six-check prompt was tested as a bundle; per-rule causal contribution is not established."
+  ]
+}
