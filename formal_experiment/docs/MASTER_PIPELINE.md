@@ -1,8 +1,8 @@
 # LLM4BPC 完整实验主 Pipeline
 
-**文档版本**：3.7.87
+**文档版本**：3.7.88
 **状态**：ACTIVE — 全项目研究与任务分解的唯一主线
-**最后更新**：2026-11-05
+**最后更新**：2026-11-10
 **方法学主干**：Sun et al. (2024)（三部分方法主干）；Barrientos et al. (2026)（直接借鉴来源：LLM 结构化输出、验证、受控词汇、归一化与评估纪律）
 **当前实施优先级**：2026-10-12 用户直接要求修复 Sun/Winter 的方法实现并运行同批 Part 3。S3-BASELINE-REPAIR-V1 先固定局部修复设计、输入/参数/评估器，再执行零 API 对照并保存所有结果；不得以预期排名作为验收或选样条件。旧结果保留，完整 Sun 模态/抽取/标签分解与独立范围仍需分别认证；局部修复不代表完整原方法复现。正式 Oracle、未见测试和新 API 门禁独立，下方历史安排不扩大本轮范围。
 
@@ -16,6 +16,21 @@
 > 本文定义“要完成什么、先后依赖是什么、每一步怎样算完成”。
 > `docs/PROJECT_AUDIT.md` 只记录实时进度；不要再创建新的日期版
 > `STATUS_*`、`HANDOFF_*` 或平行路线文档。
+
+## SUN-MODALITY-FINAL-REVIEW-001：单候选离线准备（2026-11-10）
+
+本轮交付 **LLM-SE 显式句级模态候选**。范围为版本化 `rule_record` +
+`sentence_modality` 输出、整合模态指导、22 条 train 示例中的四项 D→D 替换、
+独立句级主取值与同返回首 clause 诊断、全 426 请求的离线预检。
+DoD：完整本地 prompt/请求可复现，四条替换来源/原标签/哈希及 3,384 次隔离比对通过，
+当前 33 条错误的观察和 AI 解释分列，相关接口/分母检查通过并完成 Git 检查点。
+
+离线候选已准备；历史 22-shot 对照仍为 393/426、Macro-F1 0.8697879915324909。
+本轮 API=0、无候选性能结果、无全量测试；真实执行门禁保持关闭。
+拟 426 次、原模型与采样、4 并发、零重试、仅空闲时段；估算 ¥23.81，拟硬上限 ¥35，
+必须由用户另行确认本批预算。后续结果为 test-informed 探索性比较。
+交付范围与检查依据见 [候选报告](../outputs/reports/sun_modality_sentence_v1_review.md)，
+实时状态见 PROJECT_AUDIT；不因此恢复其他已结项候选或改变正式主表。
 
 ## 2026-10-14 修订 3.7.72：参数敏感性图展示改为 Sun，补充水平线解释
 
@@ -3311,6 +3326,7 @@ development-only；S3.7 formal Oracle not started；Gold Rule Records absent。
 
 ## 15. Pipeline 变更日志
 
+| 3.7.88 | 2026-11-10 | SUN-MODALITY-FINAL-REVIEW-001：准备唯一显式句级候选、双取值适配与全 426 离线请求；四项 train 替换保持 22-shot，重新核对当前 33 条错误。零 API、预算待用户确认，不主张性能提高。 | `outputs/reports/sun_modality_sentence_v1_review.md`、`sun_modality_sentence_v1_preflight.json` |
 | 3.7.87 | 2026-11-05 | 德语情态提示词调优结项，保留 22-shot。汇总各版分数、与 Sun 的误报分歧及多子句事后回放；新增 API 调用 0 次。 | [结项记录](../outputs/reports/sun_modality_prompt_closeout_20261105.md) |
 | 3.7.86 | 2026-11-05 | 24-shot 探索性对照全 426 条完成。禁止类 12 命中、7 误报、3 漏报，与 22-shot 逐条一致；许可回归 1 条。未通过逐条保护要求，保留 22-shot。 | `outputs/reports/sun_modality_prohibition_shots_v1_completed.md` |
 | 3.7.85 | 2026-11-05 | 22→24-shot 追加 train 条件性禁止/法律后果对照。候选及全 426 条句级保护标准已冻结。仅允许纠正禁止误报或漏报，同时要求禁止误报减少、F1 提高及其他三类 P/R/F1 逐类受保护。离线准备，效果待测。 | `outputs/reports/sun_modality_prohibition_shots_v1_preflight.json` |

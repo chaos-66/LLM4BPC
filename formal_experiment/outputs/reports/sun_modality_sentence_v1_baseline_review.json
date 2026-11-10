@@ -1,0 +1,1365 @@
+{
+  "suite_id": "SUN-MODALITY-FINAL-REVIEW-001",
+  "api_calls": 0,
+  "evidence_kind": "existing 22-shot responses, original labels and AI interpretation kept separate",
+  "control_journal_sha256": "ab818d55f75717a9390761ec571c41369e59f1a78c0340982dd264d38f5c00bd",
+  "control_report_sha256": "cf838934de8c120064f36135d043e7b7209ba794defaa63e8c426c22784ac6ae",
+  "old_diagnosis_sha256": "50a382dcb2774fe1794f2887fb93ba494655962a63a140ef8ec1da14caa5552d",
+  "historical_metrics_unchanged": {
+    "n": 426,
+    "evaluated_population": "all_test_samples",
+    "accuracy": 0.9225352112676056,
+    "macro_precision": 0.844109646676647,
+    "macro_recall": 0.903541938287701,
+    "macro_f1": 0.8697879915324909,
+    "per_class": {
+      "definition": {
+        "precision": 0.950920245398773,
+        "recall": 0.8757062146892656,
+        "f1": 0.911764705882353,
+        "support": 177,
+        "tp": 155,
+        "fp": 8,
+        "fn": 22,
+        "tn": 241
+      },
+      "obligation": {
+        "precision": 0.9494949494949495,
+        "recall": 0.9641025641025641,
+        "f1": 0.9567430025445293,
+        "support": 195,
+        "tp": 188,
+        "fp": 10,
+        "fn": 7,
+        "tn": 221
+      },
+      "permission": {
+        "precision": 0.8444444444444444,
+        "recall": 0.9743589743589743,
+        "f1": 0.9047619047619048,
+        "support": 39,
+        "tp": 38,
+        "fp": 7,
+        "fn": 1,
+        "tn": 380
+      },
+      "prohibition": {
+        "precision": 0.631578947368421,
+        "recall": 0.8,
+        "f1": 0.7058823529411765,
+        "support": 15,
+        "tp": 12,
+        "fp": 7,
+        "fn": 3,
+        "tn": 404
+      }
+    },
+    "confusion_matrix": {
+      "label_order": [
+        "definition",
+        "obligation",
+        "permission",
+        "prohibition"
+      ],
+      "column_order": [
+        "definition",
+        "obligation",
+        "permission",
+        "prohibition",
+        "<no_prediction>"
+      ],
+      "rows_gold_columns_predicted": [
+        [
+          155,
+          8,
+          7,
+          6,
+          1
+        ],
+        [
+          6,
+          188,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          38,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          12,
+          0
+        ]
+      ],
+      "as_dict": {
+        "definition": {
+          "definition": 155,
+          "obligation": 8,
+          "permission": 7,
+          "prohibition": 6,
+          "<no_prediction>": 1
+        },
+        "obligation": {
+          "definition": 6,
+          "obligation": 188,
+          "permission": 0,
+          "prohibition": 1,
+          "<no_prediction>": 0
+        },
+        "permission": {
+          "definition": 1,
+          "obligation": 0,
+          "permission": 38,
+          "prohibition": 0,
+          "<no_prediction>": 0
+        },
+        "prohibition": {
+          "definition": 1,
+          "obligation": 2,
+          "permission": 0,
+          "prohibition": 12,
+          "<no_prediction>": 0
+        }
+      }
+    },
+    "failures": 1,
+    "failure_rate": 0.002347417840375587,
+    "coverage": 0.9976525821596244,
+    "coverage_restricted_secondary": {
+      "n": 425,
+      "accuracy": 0.9247058823529412,
+      "macro_precision": 0.844109646676647,
+      "macro_recall": 0.9047858391608392,
+      "macro_f1": 0.8704603843834365,
+      "note": "secondary diagnostic only: excludes samples with no usable prediction; never the headline number"
+    }
+  },
+  "historical_correct": 393,
+  "current_errors": 33,
+  "reviewer_errors": 34,
+  "reviewer_errors_now_correct": [
+    "sun_modality_16f796b5340d99ce",
+    "sun_modality_de8ae0a7de8610f6",
+    "sun_modality_ebcf85dc92f6a19b"
+  ],
+  "new_errors_vs_reviewer": [
+    "sun_modality_6d46f2ca8400b2bc",
+    "sun_modality_7890eade5f0098ac"
+  ],
+  "ai_primary_group_counts": {
+    "boundary_unresolved": 16,
+    "fragment": 3,
+    "status_reading": 7,
+    "projection": 3,
+    "condition_split": 2,
+    "predicate_coverage": 2
+  },
+  "cases": [
+    {
+      "sample_id": "sun_modality_1ee80af54bbdf1a6",
+      "source_text_sha256": "45171d97580b9c57fe02995c24be6b8576e9b8067fba3eff4c048240e29d3861",
+      "response_sha256": "acc87ec1574918157f45fc3439bed11bba801c5b9822fdb2a690dc070ba08a7b",
+      "observed": {
+        "original_sentence_label": "definition",
+        "first_clause_label": "prohibition",
+        "clause_labels_in_returned_order": [
+          "prohibition"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          1
+        ],
+        "condition_counts": [
+          1
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "boundary_unresolved",
+      "ai_interpretation_zh": "已识别前置条件；把不得再申报其他扣除读成禁止，Gold 却为资格/范围类 D。不能仅凭否定改为 D。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-01",
+      "old_reviewer_clause_labels": [
+        "prohibition"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_2e41dabd46f1c416",
+      "source_text_sha256": "df143ef8d860a133376909ac174c2d7007905b3ca946955cf97dcfda9c3ffc78",
+      "response_sha256": "275c04cdd7eaee13076eef5a36d5a54727a63e57275b047469c7930c22888fbd",
+      "observed": {
+        "original_sentence_label": "definition",
+        "first_clause_label": "prohibition",
+        "clause_labels_in_returned_order": [
+          "prohibition"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          1
+        ],
+        "condition_counts": [
+          2
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "fragment",
+      "ai_interpretation_zh": "可见许可结构缺少完整主谓补足，当前 action 文本也不是一个精确原文片段。不能靠拼出缺失动作恢复句级断言；记录输入不确定性。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-02",
+      "old_reviewer_clause_labels": [
+        "prohibition"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_d1e1752b60090ac1",
+      "source_text_sha256": "894550bcce9f3f93930d11e800c5c7eea7012af301400c8ca466b80062e8827e",
+      "response_sha256": "e570dbb3deb34435d2095c09c88bb2b92eb4cb1c628ac04b7f5e3bb06aea3baf",
+      "observed": {
+        "original_sentence_label": "definition",
+        "first_clause_label": "obligation",
+        "clause_labels_in_returned_order": [
+          "obligation"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          1
+        ],
+        "condition_counts": [
+          1
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "boundary_unresolved",
+      "ai_interpretation_zh": "明确的应予考虑句式被读成 O；Gold 为 D。须比较对象资格规则和执行指令的训练反例。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-03",
+      "old_reviewer_clause_labels": [
+        "obligation"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_5dd905d7bef7684c",
+      "source_text_sha256": "3e5482f2d59bfb3c2ed2f94b335d1eb57a4cc2bacf32dcb5cca1dec38a9c86ac",
+      "response_sha256": "49755f9414c53961314eae67055dbe7f1ab85f9f94b02a5539f824c62cae97b0",
+      "observed": {
+        "original_sentence_label": "definition",
+        "first_clause_label": "obligation",
+        "clause_labels_in_returned_order": [
+          "obligation"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          1
+        ],
+        "condition_counts": [
+          0
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "status_reading",
+      "ai_interpretation_zh": "当前证据已覆盖被动征收谓词，不再是仅普通助动词。可见主断言描述征收方式，尾部仍残缺；状态与行为指令需分辨。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-04",
+      "old_reviewer_clause_labels": [
+        "obligation"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_39639c4e2a9d6b08",
+      "source_text_sha256": "6d46c12854fe747bc804886b53ddee4e59d2a2163d42759dea58de7efb220442",
+      "response_sha256": "3064561ccda0a176691bc0507626019f13583f2799625736c270aaf92d86a2c6",
+      "observed": {
+        "original_sentence_label": "definition",
+        "first_clause_label": "permission",
+        "clause_labels_in_returned_order": [
+          "permission"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          1
+        ],
+        "condition_counts": [
+          0
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "boundary_unresolved",
+      "ai_interpretation_zh": "只可转入特定金额：模型读成受限许可，Gold 为计量范围 D；现有有限许可示例提供相反方向的类比。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-05",
+      "old_reviewer_clause_labels": [
+        "permission"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_372dad044592f8bd",
+      "source_text_sha256": "df91d4245ed7f6365f1f52088caae617f3992819afb0a2e3c04421b6bc4989d7",
+      "response_sha256": "b048e841a5d4a8222cf2c96c7b8f9886836bd7f6118fe1bcee107ba24b7f1f87",
+      "observed": {
+        "original_sentence_label": "definition",
+        "first_clause_label": "prohibition",
+        "clause_labels_in_returned_order": [
+          "prohibition"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          1
+        ],
+        "condition_counts": [
+          1
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "boundary_unresolved",
+      "ai_interpretation_zh": "满足条件时重新计算不再允许：模型 P，Gold D；条件本身不能消除禁止语义。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-06",
+      "old_reviewer_clause_labels": [
+        "prohibition"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_a18989112132a992",
+      "source_text_sha256": "96e28b1e6d960313ae21c19fded968c3da260cdf301b9a5b36ba42ab69dbec2f",
+      "response_sha256": "4fcdaf96ff5a62a1b4066b2c32d32dc6cf07b0afed37f6fe062878c0f4cc643e",
+      "observed": {
+        "original_sentence_label": "definition",
+        "first_clause_label": "obligation",
+        "clause_labels_in_returned_order": [
+          "obligation"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          1
+        ],
+        "condition_counts": [
+          1
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "status_reading",
+      "ai_interpretation_zh": "拨款使账户金额减少是结果描述；被读成要求减少账户的 O。应核对主语及完整谓词的作用。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-08",
+      "old_reviewer_clause_labels": [
+        "obligation"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_f586ad99f05fac73",
+      "source_text_sha256": "d2c11aab26da8fe0cccdf8751d96dc2e3d9a79c58fde3d915da0d62fe8adb0ff",
+      "response_sha256": "f59eec85c2e51fbe1bc35daf1e05520eeaeb2ea1b27859cd5eee9f061bdeb748",
+      "observed": {
+        "original_sentence_label": "definition",
+        "first_clause_label": "permission",
+        "clause_labels_in_returned_order": [
+          "permission"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          1
+        ],
+        "condition_counts": [
+          0
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "boundary_unresolved",
+      "ai_interpretation_zh": "只在特定期间申领：M 与期限范围 D；与现有申请期限 M 示例接近，不能统一按期限改 D。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-09",
+      "old_reviewer_clause_labels": [
+        "permission"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_5fa7357484010c50",
+      "source_text_sha256": "ce2c5fee60358b98cf2c8df5e38e09e66e6f5751dc147812c2f1e85d2fd86c23",
+      "response_sha256": "ab9a6b40a2bddaf8709eef9ddea8e9500c44fa0ffee752031a0a8e68e3d59944",
+      "observed": {
+        "original_sentence_label": "definition",
+        "first_clause_label": "permission",
+        "clause_labels_in_returned_order": [
+          "permission"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          1
+        ],
+        "condition_counts": [
+          1
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "boundary_unresolved",
+      "ai_interpretation_zh": "准备金可计提的对象与条件：模型 M，Gold D；需对象集合与主体选项的对照。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-10",
+      "old_reviewer_clause_labels": [
+        "permission"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_737196fcd064a220",
+      "source_text_sha256": "0611f0917dfe134a18468c9d1e67f61c2ea145c003c03d7edc559071dc52d65c",
+      "response_sha256": "232faa1bafb10f9fb1ac18d11682d7520390b65428c4a4c860c4e4bb77775e26",
+      "observed": {
+        "original_sentence_label": "definition",
+        "first_clause_label": "permission",
+        "clause_labels_in_returned_order": [
+          "permission"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          1
+        ],
+        "condition_counts": [
+          1
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "boundary_unresolved",
+      "ai_interpretation_zh": "额外预缴条件下可申领：M 与资格 D 均有字面依据，语料裁决规则仍不清楚。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-11",
+      "old_reviewer_clause_labels": [
+        "permission"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_9c3a77622a7918a1",
+      "source_text_sha256": "b411ba0e0ce687c4fab0ad830a35de7e13cbd7853e2c04200e3c56ddce1d0dfb",
+      "response_sha256": "22768363a63a6940ecaba681af4f860291bfac49477ee5dffa036b8905524811",
+      "observed": {
+        "original_sentence_label": "definition",
+        "first_clause_label": "obligation",
+        "clause_labels_in_returned_order": [
+          "obligation"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          1
+        ],
+        "condition_counts": [
+          0
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "status_reading",
+      "ai_interpretation_zh": "计算中适用税率的被动陈述，模型 O，Gold D；与执行指令的区别需完整谓词证据。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-13",
+      "old_reviewer_clause_labels": [
+        "obligation"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_8c835060ccc2a69d",
+      "source_text_sha256": "ef51022e60e5d4d8b48abf4c1a37c48b0e0609dbd462841d9755a66f10f0671e",
+      "response_sha256": "be6e4a22f0cdf7aa35d8356f3aa039540c15861c851264630b26176af6fc7c7f",
+      "observed": {
+        "original_sentence_label": "definition",
+        "first_clause_label": "obligation",
+        "clause_labels_in_returned_order": [
+          "obligation"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          1
+        ],
+        "condition_counts": [
+          0
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "boundary_unresolved",
+      "ai_interpretation_zh": "雇员向雇主作声明，模型 O，Gold D；文本确实含主体行为，不能仅称模型不懂自动法律效果。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-14",
+      "old_reviewer_clause_labels": [
+        "obligation"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_746109dbf9a4fac5",
+      "source_text_sha256": "e69b14c2b81d5b324bccb21d27c535fc7f5d405ebf55afc55ffcb14b7d67b079",
+      "response_sha256": "89a87c8fd81c83c00ef7797aa7047c1871bb00f7ff670246892511194456f1ab",
+      "observed": {
+        "original_sentence_label": "definition",
+        "first_clause_label": "permission",
+        "clause_labels_in_returned_order": [
+          "permission"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          1
+        ],
+        "condition_counts": [
+          0
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "boundary_unresolved",
+      "ai_interpretation_zh": "年度退税适用额度：模型 M，Gold D；与提示中最高额度 M 示例存在竞争。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-15",
+      "old_reviewer_clause_labels": [
+        "permission"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_3dd3ee3a2a49ad1d",
+      "source_text_sha256": "c82afb10a381f0fa17473598187ee2bb7203f5f3a58e4e19629c88f42a011ed7",
+      "response_sha256": "a61876d36a81f4a86c5a5ac563215b68461ad2d9069298729136b5a8cb061f77",
+      "observed": {
+        "original_sentence_label": "definition",
+        "first_clause_label": "obligation",
+        "clause_labels_in_returned_order": [
+          "obligation"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          1
+        ],
+        "condition_counts": [
+          1
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "status_reading",
+      "ai_interpretation_zh": "总使用年限至少八年的参数要求被读成 O；应先判断约束对象是数值参数还是主体行为。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-16",
+      "old_reviewer_clause_labels": [
+        "obligation"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_0b57d5229c19d571",
+      "source_text_sha256": "aa64f1fc53c923072b28722d00e1b11e0598365c77286f55fde768fa47b01afa",
+      "response_sha256": "64f5858c42d767312c4e2f61e6e88ad282688c6e48e038ac9d953c7d0098810d",
+      "observed": {
+        "original_sentence_label": "definition",
+        "first_clause_label": "prohibition",
+        "clause_labels_in_returned_order": [
+          "prohibition"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          1
+        ],
+        "condition_counts": [
+          1
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "boundary_unresolved",
+      "ai_interpretation_zh": "开具工资单后年度结算不允许：模型 P，Gold D；有真实行为禁令读法，需语料边界证据。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-17",
+      "old_reviewer_clause_labels": [
+        "prohibition"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_9fab8f347617dbd1",
+      "source_text_sha256": "4d1c680c47e5e2af43df5c5753200b3ebed10468c85ffb227c68580bbbb5030d",
+      "response_sha256": "da1a9014a67090f03acb02d9b9c59e3d1928fae4814adb9df1ad077f89a4f751",
+      "observed": {
+        "original_sentence_label": "definition",
+        "first_clause_label": "prohibition",
+        "clause_labels_in_returned_order": [
+          "prohibition"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          1
+        ],
+        "condition_counts": [
+          1
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "boundary_unresolved",
+      "ai_interpretation_zh": "特定重组规则下不计算处置收益：P 与计算适用范围 D，不能建立所有否定计算皆 D 的规则。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-18",
+      "old_reviewer_clause_labels": [
+        "prohibition"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_fdc9485a3ed1b40f",
+      "source_text_sha256": "f0450d14c10124dd3f7cd504d04462c8c389cb7faab4a7da98c3366e2c772d55",
+      "response_sha256": "021c2f187eb5b205d5fe17a1f523ccd4675f69967ed6f36f738228d5e1742338",
+      "observed": {
+        "original_sentence_label": "definition",
+        "first_clause_label": "obligation",
+        "clause_labels_in_returned_order": [
+          "obligation"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          1
+        ],
+        "condition_counts": [
+          1
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "status_reading",
+      "ai_interpretation_zh": "当前仍将法律关系认定标为 obligation。应比较关系被认定的状态与执行评估的要求；这是 AI 语义解释，不能仅凭认定动词统一归为 D。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-19",
+      "old_reviewer_clause_labels": [
+        "obligation"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_5c7ac6760deb9439",
+      "source_text_sha256": "c930fce16a316680f3d6092ed01ec782bf52677ae4711ff94f25b97af8190c97",
+      "response_sha256": "3993b5f9c7435a86cdbddce9d1f8b4db3274b0d9f309a85afd216cbd2f937a1c",
+      "observed": {
+        "original_sentence_label": "definition",
+        "first_clause_label": "obligation",
+        "clause_labels_in_returned_order": [
+          "obligation"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          1
+        ],
+        "condition_counts": [
+          0
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "status_reading",
+      "ai_interpretation_zh": "预缴款抵减税款的法律计算关系被读成 O；train 有两条相同主干的 D 对照。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-20",
+      "old_reviewer_clause_labels": [
+        "obligation"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_468239026e9c7241",
+      "source_text_sha256": "426a8bb3afe6e5cefc34bde7e8b7342e62438dbddd0b0069eb9d6d6e3d670778",
+      "response_sha256": "6096c39f6c675fa8992670e92a8b172735c9b127f6afe47a9d48202c6acef420",
+      "observed": {
+        "original_sentence_label": "definition",
+        "first_clause_label": null,
+        "clause_labels_in_returned_order": [],
+        "clause_count": 0,
+        "action_counts": [],
+        "condition_counts": [],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "fragment",
+      "ai_interpretation_zh": "主断言缺少必要谓词，模型返回空 clauses 和 context_required；属于输入/任务合同问题，非传输失败。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-21",
+      "old_reviewer_clause_labels": []
+    },
+    {
+      "sample_id": "sun_modality_a6e61618e5c6db5a",
+      "source_text_sha256": "29a492cace69a33ba079689aae79bda07d992b618693f20e8209861026c1f036",
+      "response_sha256": "9b474a54551c2da798598b4b556df86def6145dcf403c8935443c0b4e2092475",
+      "observed": {
+        "original_sentence_label": "definition",
+        "first_clause_label": "prohibition",
+        "clause_labels_in_returned_order": [
+          "prohibition"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          1
+        ],
+        "condition_counts": [
+          0
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "status_reading",
+      "ai_interpretation_zh": "扣除不得产生亏损是结果限制，模型把发生亏损当作禁止行为；D 与 P 边界需反例保护。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-22",
+      "old_reviewer_clause_labels": [
+        "prohibition"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_af5cbd9a42dc23b2",
+      "source_text_sha256": "cf220ac5359251de6a06a33094127f4f49855322b6688e82f31fcf767edd1783",
+      "response_sha256": "a976ecf178251afe22bece91b4a95317e4253e91253648ba7d3b7c4968ef3980",
+      "observed": {
+        "original_sentence_label": "definition",
+        "first_clause_label": "permission",
+        "clause_labels_in_returned_order": [
+          "permission"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          1
+        ],
+        "condition_counts": [
+          0
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "boundary_unresolved",
+      "ai_interpretation_zh": "计入税基的利润上限：模型 M，Gold D；须区别额度定义和行使权利的许可。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-23",
+      "old_reviewer_clause_labels": [
+        "permission"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_43af0a1cb1e68953",
+      "source_text_sha256": "45c5f0fa9c6dfb472613ab0236daf53f0c4d949d138ed5da001dbd92f796676b",
+      "response_sha256": "f110d3fe08125288c36668dd040b34238101e23404ad89b57ef8f8bb65d8e1e9",
+      "observed": {
+        "original_sentence_label": "definition",
+        "first_clause_label": "permission",
+        "clause_labels_in_returned_order": [
+          "permission"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          1
+        ],
+        "condition_counts": [
+          0
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "boundary_unresolved",
+      "ai_interpretation_zh": "准备金对象集合：模型 M，Gold D；与 test-10 同族，不能由可字直接确定许可。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-24",
+      "old_reviewer_clause_labels": [
+        "permission"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_33842fb54e03e8cd",
+      "source_text_sha256": "33910437530000507928e21710b4e93c45b1bd88e1b5027ee98f74033ddb3cb9",
+      "response_sha256": "024f13306a03c310503aeb54be2dd220f12498f7a7643f684974e5ec92e20212",
+      "observed": {
+        "original_sentence_label": "obligation",
+        "first_clause_label": "definition",
+        "clause_labels_in_returned_order": [
+          "definition",
+          "obligation"
+        ],
+        "clause_count": 2,
+        "action_counts": [
+          2,
+          1
+        ],
+        "condition_counts": [
+          0,
+          0
+        ],
+        "original_label_present_after_first": true
+      },
+      "ai_primary_group": "projection",
+      "ai_interpretation_zh": "已输出 D（自动增减）及 O（排除指定项目）；首条取 D 导致句级错误，后续义务并未漏抽。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-26",
+      "old_reviewer_clause_labels": [
+        "definition",
+        "obligation"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_cb6075c1bc204c4e",
+      "source_text_sha256": "08f838220fe390a63aabc2694f3b255636d1c26b3a1d0f089c3866393f5bb06d",
+      "response_sha256": "ffb0c45ba042c310e6a89328f2caf41195e1bf7b2894ffa1deffec971baddaf4",
+      "observed": {
+        "original_sentence_label": "obligation",
+        "first_clause_label": "prohibition",
+        "clause_labels_in_returned_order": [
+          "prohibition"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          1
+        ],
+        "condition_counts": [
+          0
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "boundary_unresolved",
+      "ai_interpretation_zh": "不得考虑其他免税收入，模型 P，Gold O；train 中近似句同时有 O/P，不能直接判 Gold 错。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-27",
+      "old_reviewer_clause_labels": [
+        "prohibition"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_09af46d39837e8c3",
+      "source_text_sha256": "8375805ca1657d28e7f8117c0807ee7376f198f0beef2f8b9f6c29f610b4aa10",
+      "response_sha256": "25073d5830e5929ddbc4ee2f67a01df46ab733fd182490f2a2e28283701cdb7d",
+      "observed": {
+        "original_sentence_label": "obligation",
+        "first_clause_label": "definition",
+        "clause_labels_in_returned_order": [
+          "definition"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          0
+        ],
+        "condition_counts": [
+          1
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "boundary_unresolved",
+      "ai_interpretation_zh": "适用方法的前提条件被读成 D，Gold O；train 同主干例标 O，体现语料习惯而非清晰通用语义。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-28",
+      "old_reviewer_clause_labels": [
+        "definition"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_f5037bcc56922965",
+      "source_text_sha256": "b2ecf3d87a4b3c069822083b2b0a617bd085b2641fdd5fa22aa2b1a388ffe5b5",
+      "response_sha256": "d3992526c074d6b7004b1964897a06eb02df01d496cee98a11d14d3acd94babb",
+      "observed": {
+        "original_sentence_label": "obligation",
+        "first_clause_label": "definition",
+        "clause_labels_in_returned_order": [
+          "definition",
+          "obligation"
+        ],
+        "clause_count": 2,
+        "action_counts": [
+          1,
+          1
+        ],
+        "condition_counts": [
+          0,
+          0
+        ],
+        "original_label_present_after_first": true
+      },
+      "ai_primary_group": "condition_split",
+      "ai_interpretation_zh": "前置转移条件仍单列 definition，后续主指令为 obligation；解释为条件误拆而非两个独立规则间的纯投影损失。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-29",
+      "old_reviewer_clause_labels": [
+        "definition",
+        "obligation"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_7890eade5f0098ac",
+      "source_text_sha256": "72583fa9e1355ae64e931b0503686be3e93f4d61c30d51703051bdf8f8de1cd5",
+      "response_sha256": "0bff1f87660271318c060bb3533701d54df8c6dd3e8564336d5ccfecff7ccffd",
+      "observed": {
+        "original_sentence_label": "obligation",
+        "first_clause_label": "definition",
+        "clause_labels_in_returned_order": [
+          "definition"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          0
+        ],
+        "condition_counts": [
+          1
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "boundary_unresolved",
+      "ai_interpretation_zh": "22-shot 新增回归：条件性费用计入被标 definition，原标签 obligation；资格限制与执行指令的语料边界待解，条件本身不能决定为 D。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": null,
+      "old_reviewer_clause_labels": null
+    },
+    {
+      "sample_id": "sun_modality_68a7b0d9b95fb81e",
+      "source_text_sha256": "4905145d38cfd70e4c4fa6da31be43542b98e0a4d60cfbc196df6cf77cf914e7",
+      "response_sha256": "639c375c486634ac660c1cf39c176b86458ea8e0bd1845b472dadc51ebfe7f07",
+      "observed": {
+        "original_sentence_label": "obligation",
+        "first_clause_label": "definition",
+        "clause_labels_in_returned_order": [
+          "definition"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          1
+        ],
+        "condition_counts": [
+          1
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "predicate_coverage",
+      "ai_interpretation_zh": "当前只有一个 definition clause，其 action 含列作债权的执行指令。旧 reviewer 的 D/O 分离和首标签丢失解释已不适用；本次解释为不同情态动作共用标签。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-30",
+      "old_reviewer_clause_labels": [
+        "definition",
+        "obligation"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_47b19113284fc538",
+      "source_text_sha256": "81fafc66fd5f5942a484e34fc4aead0de3f0f79b4f30aa1aa546614c24817af0",
+      "response_sha256": "65a087d1f78cac0fbbe8ee773d630bb4682c3ad0f661f3c9371ce868a1c7ce0f",
+      "observed": {
+        "original_sentence_label": "obligation",
+        "first_clause_label": "definition",
+        "clause_labels_in_returned_order": [
+          "definition"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          0
+        ],
+        "condition_counts": [
+          0
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "fragment",
+      "ai_interpretation_zh": "基金份额名词列举及关系从句，无完整外层指令；Gold O 可能依赖被截断的列表主句，不能补写。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-31",
+      "old_reviewer_clause_labels": [
+        "definition"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_6d46f2ca8400b2bc",
+      "source_text_sha256": "1e765ff0dec46b787ce55f07933b4c74a39396d499818837e950f1c439e42003",
+      "response_sha256": "e7233b45dd12745c0d8fd833b829e047f854c1aa5f7908839ec27b50f7187606",
+      "observed": {
+        "original_sentence_label": "permission",
+        "first_clause_label": "definition",
+        "clause_labels_in_returned_order": [
+          "definition",
+          "permission"
+        ],
+        "clause_count": 2,
+        "action_counts": [
+          0,
+          1
+        ],
+        "condition_counts": [
+          1,
+          0
+        ],
+        "original_label_present_after_first": true
+      },
+      "ai_primary_group": "condition_split",
+      "ai_interpretation_zh": "22-shot 新增回归：引导语单列 definition，许可位于下一 clause。引导语应结合后续主断言，不宜作为独立规则；它不是可信的独立多命题投影例。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": null,
+      "old_reviewer_clause_labels": null
+    },
+    {
+      "sample_id": "sun_modality_19490870e3fe6c41",
+      "source_text_sha256": "ade78b1692006db171a0372de58b5c40d91a4384437b8dd6ddf737d0227be424",
+      "response_sha256": "87f474d74e1ccf42547c71657341e5d65e17632230ec8acf5a064e3f434a09a7",
+      "observed": {
+        "original_sentence_label": "prohibition",
+        "first_clause_label": "obligation",
+        "clause_labels_in_returned_order": [
+          "obligation"
+        ],
+        "clause_count": 1,
+        "action_counts": [
+          2
+        ],
+        "condition_counts": [
+          0
+        ],
+        "original_label_present_after_first": false
+      },
+      "ai_primary_group": "predicate_coverage",
+      "ai_interpretation_zh": "同一 obligation clause 的两个 action 分别涉及制作和不核查；不同规范作用被共用标签。输出事实支持覆盖检查，内部成因未知。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-32",
+      "old_reviewer_clause_labels": [
+        "obligation"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_47108b07b46a4cfc",
+      "source_text_sha256": "36dbd17a9e614fda2647bccf76babe2959c26b8a9dd7a4691f1b7cb8b4c48a64",
+      "response_sha256": "38f2413fe3e24e6cf36c16e8b118926257146cdc214d949a73ad4b0b5e5ce084",
+      "observed": {
+        "original_sentence_label": "prohibition",
+        "first_clause_label": "obligation",
+        "clause_labels_in_returned_order": [
+          "obligation",
+          "definition",
+          "prohibition"
+        ],
+        "clause_count": 3,
+        "action_counts": [
+          1,
+          0,
+          1
+        ],
+        "condition_counts": [
+          0,
+          0,
+          0
+        ],
+        "original_label_present_after_first": true
+      },
+      "ai_primary_group": "projection",
+      "ai_interpretation_zh": "输出付款 O、到期 D、不适用 P 三条；Gold P 在第三条，被首条投影丢弃。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-33",
+      "old_reviewer_clause_labels": [
+        "obligation",
+        "definition",
+        "prohibition"
+      ]
+    },
+    {
+      "sample_id": "sun_modality_e281d33605497ded",
+      "source_text_sha256": "918b1ced63c19d66f227a750b503f28751086f0bb6fd176db4401504c081bef8",
+      "response_sha256": "0c006c95bfed5e90654c5afe88f2c3f977cd68cf7fc4cc3277b0818e2e6759bb",
+      "observed": {
+        "original_sentence_label": "prohibition",
+        "first_clause_label": "definition",
+        "clause_labels_in_returned_order": [
+          "definition",
+          "prohibition"
+        ],
+        "clause_count": 2,
+        "action_counts": [
+          1,
+          1
+        ],
+        "condition_counts": [
+          0,
+          1
+        ],
+        "original_label_present_after_first": true
+      },
+      "ai_primary_group": "projection",
+      "ai_interpretation_zh": "当前已分别输出维持状态 D 和后续禁止 P。旧 reviewer 的禁止漏抽解释不再成立；首标签投影丢失后续 P，但不能据 Gold 自动提升它。",
+      "interpretation_status": "Codex AI explanatory review; not human adjudication or proven internal mechanism",
+      "old_reviewer_case_id": "test-34",
+      "old_reviewer_clause_labels": [
+        "definition"
+      ]
+    }
+  ],
+  "train_boundary_probes": [
+    {
+      "probe": "corresponding_applicability",
+      "count": 14,
+      "label_counts": {
+        "definition": 14
+      },
+      "matches": [
+        {
+          "sample_id": "sun_modality_881b111f16800b7b",
+          "label": "definition",
+          "text_sha256": "d0fb2a59d1a658663ccc46fe03644acf46637e20508ba663caad81312a2d99fa"
+        },
+        {
+          "sample_id": "sun_modality_863058f4cad7ea4e",
+          "label": "definition",
+          "text_sha256": "89af9cd948c7448e012994738df451c97b1d4c40185496924150092a07842630"
+        },
+        {
+          "sample_id": "sun_modality_f6cb872f57942aac",
+          "label": "definition",
+          "text_sha256": "e186055a869118dae766785edbc1cbab08021be71afdb35018da8a9aa2069d4e"
+        },
+        {
+          "sample_id": "sun_modality_9d9adb52360395e7",
+          "label": "definition",
+          "text_sha256": "1dcfecb2072b32e863201d6d83235abd2195442c4923eade395aa1793dc9644e"
+        },
+        {
+          "sample_id": "sun_modality_1cd72048cbf919b7",
+          "label": "definition",
+          "text_sha256": "d4e58785dcbba7fc367338b9ec7d220f1ab2601d253c342d84563f4c43f193e5"
+        },
+        {
+          "sample_id": "sun_modality_b4c02be547da7f09",
+          "label": "definition",
+          "text_sha256": "b900519fcb87d141bd25aed1036605fcf2f4b7bc43e4e559a23713652a02ac5a"
+        },
+        {
+          "sample_id": "sun_modality_1cca0b75017a8a9b",
+          "label": "definition",
+          "text_sha256": "0baac83f11cab03cfa3db4cc334dbd4799c96cf793032751651cf48b4cbe91fb"
+        },
+        {
+          "sample_id": "sun_modality_e3147cfa8fa66f9e",
+          "label": "definition",
+          "text_sha256": "86171aa736465614c4bce94cef26e539636fa55094b604ca97448d1b49995adc"
+        },
+        {
+          "sample_id": "sun_modality_12c6aaa4ff262e77",
+          "label": "definition",
+          "text_sha256": "bb1d9578f11aa5ff6fe08e7dd5387988cc4d16cc3d1b47be39d73cba695ca5b8"
+        },
+        {
+          "sample_id": "sun_modality_84295f8106c88484",
+          "label": "definition",
+          "text_sha256": "ad8f35a2ca90090fae1966557fb54da504eafd626908b181d4ffcfd3690187d0"
+        },
+        {
+          "sample_id": "sun_modality_c40a3c5928019dbf",
+          "label": "definition",
+          "text_sha256": "165cfdfbc4986d393b9c998dffb80e10af46fd71188bcb3aca6e1bc7cae12938"
+        },
+        {
+          "sample_id": "sun_modality_23ed517fc549199f",
+          "label": "definition",
+          "text_sha256": "0ad71added06f86328289fcb68ab53fd4fec12b5e8b7a57bcaa8ceff3a0b58d8"
+        },
+        {
+          "sample_id": "sun_modality_1f4afde8f69b9b23",
+          "label": "definition",
+          "text_sha256": "5c632a05177f703d31e8095e2b84c23ebe744c092c5ec0a6a6834ee3ee8d4b62"
+        },
+        {
+          "sample_id": "sun_modality_5ff16b37a97bb120",
+          "label": "definition",
+          "text_sha256": "51288ffbea87bc3acc4599a6bec275ef11b4990416bb93cd60d48e3b7145de8e"
+        }
+      ]
+    },
+    {
+      "probe": "presupposes",
+      "count": 1,
+      "label_counts": {
+        "obligation": 1
+      },
+      "matches": [
+        {
+          "sample_id": "sun_modality_b33714b75f14c399",
+          "label": "obligation",
+          "text_sha256": "d9ea22ceb774653e6969718eb525e32ed537648f479058aec8b67c81e2f52332"
+        }
+      ]
+    },
+    {
+      "probe": "not_considered",
+      "count": 8,
+      "label_counts": {
+        "definition": 1,
+        "obligation": 1,
+        "prohibition": 6
+      },
+      "matches": [
+        {
+          "sample_id": "sun_modality_f3596ec70572acbb",
+          "label": "definition",
+          "text_sha256": "270f81c017b3afcb1171307cd8075fefdfdf101beda0e29b9e1f9b77977cc548"
+        },
+        {
+          "sample_id": "sun_modality_1bbd5e0ee435259c",
+          "label": "obligation",
+          "text_sha256": "0771eb21d1e06489401d162b1b441ecaa7e0060e7fa2e2b40ee0640541bbf85b"
+        },
+        {
+          "sample_id": "sun_modality_dd02193f807f916f",
+          "label": "prohibition",
+          "text_sha256": "7847df875ffd774e30472bdfc7eb9319ce4266a68f7be06128078090a1d726e2"
+        },
+        {
+          "sample_id": "sun_modality_f32e7cae7a031a7c",
+          "label": "prohibition",
+          "text_sha256": "3650d2e2254994115435fa16a0eed98e4faad92e55a84ec02419735cdf83f015"
+        },
+        {
+          "sample_id": "sun_modality_1b47c4a00bc1e0c7",
+          "label": "prohibition",
+          "text_sha256": "29f3c0c65b96eeab179da507a4579db679852206f0845cdaab5e93f1670a73b0"
+        },
+        {
+          "sample_id": "sun_modality_5f939a1cac418030",
+          "label": "prohibition",
+          "text_sha256": "5909d9a50fc24658f254e7d3d8f75f1093b86e4e9cff8d7162f2f8384a619988"
+        },
+        {
+          "sample_id": "sun_modality_d284c2c3b721eefe",
+          "label": "prohibition",
+          "text_sha256": "c5e0ff2189d49ae0aeafe6dae70a0812a770b317f3b74563fd6b37dcd1a8a227"
+        },
+        {
+          "sample_id": "sun_modality_56f68dc45815202a",
+          "label": "prohibition",
+          "text_sha256": "87380c3cfabc9deb4710fbf4d3dc522a0bb89a2f35f8c421dcbe3e35be628550"
+        }
+      ]
+    },
+    {
+      "probe": "allowed_only",
+      "count": 10,
+      "label_counts": {
+        "definition": 10
+      },
+      "matches": [
+        {
+          "sample_id": "sun_modality_e2944d465cc02155",
+          "label": "definition",
+          "text_sha256": "cb1264a4eae60ad2bf73a72733ab9192ab6d93e17f16de633126eb611db23a92"
+        },
+        {
+          "sample_id": "sun_modality_98ccff70d9a3ec09",
+          "label": "definition",
+          "text_sha256": "96c60546c9a3df0ca0082429c7159f7413ff6a9588360eaefb9d9d017bcdf879"
+        },
+        {
+          "sample_id": "sun_modality_c33e7e546525587d",
+          "label": "definition",
+          "text_sha256": "b1a179b2ca77e8ebbad1ac977e4ef79c50c8017ad039fcd8f387455b51991c5a"
+        },
+        {
+          "sample_id": "sun_modality_d965c20b9bcac3ba",
+          "label": "definition",
+          "text_sha256": "fc1401d3b2dd5f522bcc97e5083b2f792bfcbb8335e771be16bfe78e213f4abd"
+        },
+        {
+          "sample_id": "sun_modality_128ec69b0aaadb0c",
+          "label": "definition",
+          "text_sha256": "eab0046fc86552f47143c9590bb27510388601a01b01ce5f2deadda7d2f130dc"
+        },
+        {
+          "sample_id": "sun_modality_47bdd258ad450ccc",
+          "label": "definition",
+          "text_sha256": "c21d486191aeda1b69d0cf4873607aa0af64b1a56203febaa95a67d690515af9"
+        },
+        {
+          "sample_id": "sun_modality_7dda1aacddaef685",
+          "label": "definition",
+          "text_sha256": "e869d1704ea40c5c8efd8649e31c2eb53cb131b44a07c6134f6e6da5f88af0e9"
+        },
+        {
+          "sample_id": "sun_modality_4451d5eb6f698eaa",
+          "label": "definition",
+          "text_sha256": "8afbae7aeac534f2edcdde27d1bcc9eb362f6696f338fcad3d56b6407d4194d6"
+        },
+        {
+          "sample_id": "sun_modality_0964048527c493a7",
+          "label": "definition",
+          "text_sha256": "d67c29311be4f069006b2c7b324aae11cdca80f93ee4127900e6da564bfa5926"
+        },
+        {
+          "sample_id": "sun_modality_dc65fe534c758051",
+          "label": "definition",
+          "text_sha256": "476f0e7d8412132986026f12ca379aa508baea842e207a1922fd0c3b019d0c99"
+        }
+      ]
+    },
+    {
+      "probe": "amount_ceiling",
+      "count": 2,
+      "label_counts": {
+        "permission": 2
+      },
+      "matches": [
+        {
+          "sample_id": "sun_modality_fea60b898f3877a5",
+          "label": "permission",
+          "text_sha256": "4de5c2633f4c5500d823ee0dd88954fa78934894f28f924af7132b13463ff898"
+        },
+        {
+          "sample_id": "sun_modality_046a3b1b058ddf2a",
+          "label": "permission",
+          "text_sha256": "b4995fcf86ba90918b8f1be16967f175f8eafcddd56dfeb620809c11837041a9"
+        }
+      ]
+    },
+    {
+      "probe": "status_assumption",
+      "count": 3,
+      "label_counts": {
+        "definition": 1,
+        "obligation": 1,
+        "prohibition": 1
+      },
+      "matches": [
+        {
+          "sample_id": "sun_modality_f56a47d5cde6fdc7",
+          "label": "definition",
+          "text_sha256": "79c0c312c5f1ec099952d0e09f7a8d008789d4967b5f6932a793a120f0065914"
+        },
+        {
+          "sample_id": "sun_modality_918281076461cfa5",
+          "label": "obligation",
+          "text_sha256": "2519e97182b8b3fc6ff8f54bd34f414740393f971b19d1255a2a8f284a332dcc"
+        },
+        {
+          "sample_id": "sun_modality_cc22ae70dc40af59",
+          "label": "prohibition",
+          "text_sha256": "72dec7f85b5590de6beeaf4ec45568d2d3426187398f4fc52a6c41f611bbf02d"
+        }
+      ]
+    },
+    {
+      "probe": "passive_credit",
+      "count": 7,
+      "label_counts": {
+        "definition": 3,
+        "permission": 4
+      },
+      "matches": [
+        {
+          "sample_id": "sun_modality_c8712b2d00865a9d",
+          "label": "definition",
+          "text_sha256": "d0f2ab03da60bbf0ac3a2a3a0368cb0689b447a35b2d56789d1a1db73ea8d943"
+        },
+        {
+          "sample_id": "sun_modality_860d0e217fba74d8",
+          "label": "definition",
+          "text_sha256": "b082ae8e9727272450d1281bc6234bbd357513d3615d403dae7ef42d2094398f"
+        },
+        {
+          "sample_id": "sun_modality_27132be81a9624c3",
+          "label": "definition",
+          "text_sha256": "5b67428a21373ad1c8418c904d53d1dd6ea5e8ba256f6671609089d3adeb18e9"
+        },
+        {
+          "sample_id": "sun_modality_8b3f29a428d5ca42",
+          "label": "permission",
+          "text_sha256": "136414b91d4e6404d85d589244269f8816937ff5d33d5ada921acc721c9c629d"
+        },
+        {
+          "sample_id": "sun_modality_386c26265a3b051f",
+          "label": "permission",
+          "text_sha256": "4fe773fd9b98ffb55904159bada65354a5409c442fb02ba109210a19ce48ec95"
+        },
+        {
+          "sample_id": "sun_modality_a985d35a49f8063a",
+          "label": "permission",
+          "text_sha256": "22ab09dbdf559b45b7eb4886d1880428a506467703d14232551fb0e53dffa661"
+        },
+        {
+          "sample_id": "sun_modality_f08f25828d6aa99c",
+          "label": "permission",
+          "text_sha256": "8c9eb64d30b6a352ad28f73507286a9bfd17f555e407735552291af2284a4809"
+        }
+      ]
+    }
+  ],
+  "probe_limit": "Whole-sentence lexical retrieval, not clause annotations or an automatic class rule. Matches never enter requests as additional demonstrations.",
+  "mechanism_limit": "Observations cannot establish model-internal causes or candidate performance. No Gold changes."
+}

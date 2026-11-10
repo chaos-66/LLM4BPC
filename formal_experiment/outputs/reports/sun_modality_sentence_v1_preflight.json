@@ -1,0 +1,3564 @@
+{
+  "suite_id": "SUN-MODALITY-FINAL-REVIEW-001",
+  "candidate_name": "LLM-SE 显式句级模态候选",
+  "status": "offline_prepared_awaiting_batch_budget_authorization",
+  "api_calls": 0,
+  "execute_authorized": false,
+  "performance_metrics": null,
+  "policy": {
+    "suite_id": "SUN-MODALITY-FINAL-REVIEW-001",
+    "candidate_name": "LLM-SE 显式句级模态候选",
+    "status": "offline_preparation_only",
+    "execute_authorized": false,
+    "scope": "single test-informed exploratory candidate; no dev run; historical 22-shot control",
+    "output_schema": "configs/schemas/sun_sentence_modality_v1.schema.json",
+    "primary_readout": "sentence_modality.label",
+    "primary_metric": "four-class macro_f1 over all 426 test samples",
+    "diagnostic_readout": "unchanged llm_se.extract_modality_label on the same response's rule_record",
+    "canonical_validation_policy": "Call existing validate_canonical on a private copy. Report structural/span failures separately; do not gate sentence scores on six-element span correctness. No rewriting or repair. Malformed envelope or source binding invalidates both readouts; invalid sentence fields invalidate primary only. This is disclosed interface/readout change, not a historical rescore.",
+    "missing_prediction_policy": "Null, invalid sentence evidence/fields, parse failure, request failure and not-issued samples remain in all-426 denominator as None; no class fallback.",
+    "planned_requests": 426,
+    "retries": 0,
+    "proposed_max_workers": 4,
+    "proposed_cap_cny": 35.0,
+    "off_peak_only": true,
+    "endpoint": "https://api.deepseek.com",
+    "sampling": {
+      "model": "deepseek-v4-pro",
+      "documented_release": "DeepSeek-V4-Pro-0813",
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "max_tokens": 4096,
+      "stream": false,
+      "thinking": {
+        "type": "disabled"
+      },
+      "seed": "not sent, matching control"
+    },
+    "pricing": {
+      "source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+      "verified_date_beijing": "2026-11-10",
+      "cny_per_million_tokens": {
+        "off_peak": {
+          "input_cache_hit": 0.15,
+          "input_cache_miss": 4.5,
+          "output": 13.5
+        },
+        "peak": {
+          "input_cache_hit": 0.3,
+          "input_cache_miss": 9.0,
+          "output": 27.0
+        }
+      },
+      "recheck_before_execution": true
+    },
+    "future_execution_requirements": [
+      "New explicit user authorization must bind this suite, the delivered preflight SHA-256, request count, price table, model, cap and zero retries. Historical authorizations are inapplicable.",
+      "Revalidate frozen sources, data, request bodies and returned model before scoring; no implicit use of .env.",
+      "Reserve input wire byte bound plus 1024 tokens and full 4096 output tokens before each send, charging all input as cache miss. Stop before spent + unsettled + in-flight reservation + next reservation exceeds cap.",
+      "Write started and finished append-only events, request/response hashes, usage, model and timestamps. Never repeat a started ID, including uncertain transport outcomes.",
+      "Transport, model, request-byte or usage/accounting failures stop new sends and drain in-flight responses. No automatic retry. Parse/null failures remain None. Unissued IDs also remain None in partial-run diagnostics; do not call a partial run completed.",
+      "Stop outside off-peak or at cap. Reconfirm changed price/model, budget expansion or a new retry batch explicitly; never silently switch model or sampling."
+    ],
+    "predeclared_reporting": [
+      "all-sample accuracy and macro P/R/F1; four-class P/R/F1 and confusion matrix",
+      "corrected/regressed versus historical 22-shot, prohibition TP/FP/FN and no-prediction counts",
+      "same-response first-clause diagnostic and per-ID differences from explicit sentence label",
+      "raw response/identity/canonical validation counts, costs, failures and incomplete run status"
+    ],
+    "decision_policy": "Report all predeclared comparisons regardless of outcome. No promise to fix all 33 errors, no automatic promotion, no post-run replacement of primary metric. Existing dev/test have informed design; future scores remain exploratory."
+  },
+  "requests": [
+    {
+      "sample_id": "sun_modality_1ee80af54bbdf1a6",
+      "request_id": "input_000001",
+      "source_text_sha256": "45171d97580b9c57fe02995c24be6b8576e9b8067fba3eff4c048240e29d3861",
+      "request_sha256": "c635edafd47bb3bc4cb1e5a6238d5d3b1a69a924fad30e0be01d3a3beab8e8a3",
+      "estimated_input_tokens": 9795,
+      "per_send_reservation_cny": 0.192888
+    },
+    {
+      "sample_id": "sun_modality_e864b656f4e4dd8b",
+      "request_id": "input_000002",
+      "source_text_sha256": "3dda3374cc925fcf31b054370bbf227018a4d424ca2b56c1abe505444ced6b97",
+      "request_sha256": "0f0cc4f90e831451bea1894a523ee615433f7a6d52fb277efe0f22fa39e0255c",
+      "estimated_input_tokens": 9775,
+      "per_send_reservation_cny": 0.1927035
+    },
+    {
+      "sample_id": "sun_modality_ed40ef519cdb088f",
+      "request_id": "input_000003",
+      "source_text_sha256": "07047ba88315636a502ae669fbb79c2f234b5fb32f812aa3242e371e8d96a1a0",
+      "request_sha256": "643b1a9a3b18498f320a9b29d0ebff41c530f00f66d58006f87a7e65fde5cda4",
+      "estimated_input_tokens": 9780,
+      "per_send_reservation_cny": 0.19269
+    },
+    {
+      "sample_id": "sun_modality_de7be4409eeab5a8",
+      "request_id": "input_000004",
+      "source_text_sha256": "ab359a9ebf1fd016fcc22c09bad37153dfbd6198b1f7cfc27c856739ef3d8a38",
+      "request_sha256": "1c87e893532974cd6150fed9a06d6b615daf9d90cee62a8adda2300157dc5992",
+      "estimated_input_tokens": 9756,
+      "per_send_reservation_cny": 0.192348
+    },
+    {
+      "sample_id": "sun_modality_91b608f1779a8c5b",
+      "request_id": "input_000005",
+      "source_text_sha256": "9ca4945542043f23701f2216b163efcaa3abf1c8f0cc90bf717e2f00aff6bf93",
+      "request_sha256": "117a8f677d002951068b4854d08b6aba5e57f4553b0aeeb83f2c3bdef04c491d",
+      "estimated_input_tokens": 9807,
+      "per_send_reservation_cny": 0.1930815
+    },
+    {
+      "sample_id": "sun_modality_65cf4c89eaf0f6d9",
+      "request_id": "input_000006",
+      "source_text_sha256": "90b1a4c8681f809c24b01c223a928c46f775e2e89940e854a46d6ca32200f279",
+      "request_sha256": "c47934727a0c72e63d3bb4eb48a2da538117bb7616d609cd93515fb22bf55123",
+      "estimated_input_tokens": 9816,
+      "per_send_reservation_cny": 0.1931535
+    },
+    {
+      "sample_id": "sun_modality_d3455b27b04755d7",
+      "request_id": "input_000007",
+      "source_text_sha256": "c3a008381117e20cdf2aaf2365b28fc1c849b3aba10e2923996ce50abca2fe24",
+      "request_sha256": "9b818d0c460a5fb4e02072c5d406bac3f041b55ea664b6b42a3506cbf08ca915",
+      "estimated_input_tokens": 9756,
+      "per_send_reservation_cny": 0.192312
+    },
+    {
+      "sample_id": "sun_modality_77752de7e29c8bbb",
+      "request_id": "input_000008",
+      "source_text_sha256": "50b39b8e3b07897820bfe433bed731ef480ae9098c37cc1645ae37e1a99f84b7",
+      "request_sha256": "b2037131e83a600859539c1cd3cd57b90ce3789c34fd1e262792dcb4ba74b9f4",
+      "estimated_input_tokens": 9859,
+      "per_send_reservation_cny": 0.1938285
+    },
+    {
+      "sample_id": "sun_modality_d486681dd9630f61",
+      "request_id": "input_000009",
+      "source_text_sha256": "3ad97b2efbf5065a3782c1d5d0b52d5974c060b94f1af8c7cf62cbf83f64baf4",
+      "request_sha256": "660219c4d37aa2dbeb5b2ec7cc119d73b571a5ae1320715c6e39c0a173c33cca",
+      "estimated_input_tokens": 9775,
+      "per_send_reservation_cny": 0.1925865
+    },
+    {
+      "sample_id": "sun_modality_4a2829b629f68b51",
+      "request_id": "input_000010",
+      "source_text_sha256": "155b443acb53c286156225abcbcffeb4e88efd8ea5c8ac32afba743606543685",
+      "request_sha256": "9580897ff26a311b6b76ea96e0fd252bfa6b4b57aeca31af2a512bc785a04589",
+      "estimated_input_tokens": 9789,
+      "per_send_reservation_cny": 0.1927575
+    },
+    {
+      "sample_id": "sun_modality_46ab92007ac2ba0b",
+      "request_id": "input_000011",
+      "source_text_sha256": "d2351ce603c0558e1dfd93848656c2668efb6346adc5f50dc1354cc7e3ce8acb",
+      "request_sha256": "43858ebd8762d0fb81cf29885143328cedbafdfda0c26fcb6f011f0df159104a",
+      "estimated_input_tokens": 9819,
+      "per_send_reservation_cny": 0.1932435
+    },
+    {
+      "sample_id": "sun_modality_aea9dcc83200786f",
+      "request_id": "input_000012",
+      "source_text_sha256": "cbf8435976ae07fa9231a2893f35445e9752ce92bed8087bd880de82fd608ad7",
+      "request_sha256": "a4049d486ff63d628f97d9bd9c38eb11a82093ec00e8b0f2dd928f557b481b6b",
+      "estimated_input_tokens": 9841,
+      "per_send_reservation_cny": 0.1935855
+    },
+    {
+      "sample_id": "sun_modality_4a5988bf0397884f",
+      "request_id": "input_000013",
+      "source_text_sha256": "852a45ec6ec040f0470525431c1effd2e6cbb2b9049f04aef07ad41736e638b9",
+      "request_sha256": "cc2d02656e4207d00ac740f7f2992685d833342f9a7be6fcd391b4de4ff308fd",
+      "estimated_input_tokens": 9833,
+      "per_send_reservation_cny": 0.193419
+    },
+    {
+      "sample_id": "sun_modality_7fa34c91c8b5d1d3",
+      "request_id": "input_000014",
+      "source_text_sha256": "bec40b33366ad5cd4b724d53a00326195362ac45dddd2ecb8700d133a2e72574",
+      "request_sha256": "16cfd2ab5c109a75c0b39f5bd92cc1c5a2934cefdc51bf3b7b1f32546884c6b4",
+      "estimated_input_tokens": 9787,
+      "per_send_reservation_cny": 0.1927935
+    },
+    {
+      "sample_id": "sun_modality_342ac608856d1421",
+      "request_id": "input_000015",
+      "source_text_sha256": "228c1a82d265a8108c9d080cc7fdb2b005a9b50e76f35d3a8db86af164e82991",
+      "request_sha256": "708bad26973ad62e4e54fe905b0289879378088a36084ae923ae193fa95c36e1",
+      "estimated_input_tokens": 9763,
+      "per_send_reservation_cny": 0.19242
+    },
+    {
+      "sample_id": "sun_modality_af0dacbfcc1b538e",
+      "request_id": "input_000016",
+      "source_text_sha256": "d7c329221711921865410db244d1a7422900ee1539f108209361ad2510a10698",
+      "request_sha256": "ddc83c066e39d5d782d31ac77fd1b2b378f835d086f09dcc4795de5d6b6803ba",
+      "estimated_input_tokens": 9782,
+      "per_send_reservation_cny": 0.1927125
+    },
+    {
+      "sample_id": "sun_modality_f8794e8d375ed72b",
+      "request_id": "input_000017",
+      "source_text_sha256": "c080216b28360975c955c52125486e3441db9135fe421cfcd13fd88d2617095b",
+      "request_sha256": "01753d9a1494861116ba367500306b338d33bad436fd7ae3e540830c352e0dd0",
+      "estimated_input_tokens": 9779,
+      "per_send_reservation_cny": 0.1926945
+    },
+    {
+      "sample_id": "sun_modality_75cb919db3117438",
+      "request_id": "input_000018",
+      "source_text_sha256": "08b4402a2b28f821252361267afda58d7ad110886845303ca0e6e5bf1829a928",
+      "request_sha256": "e2bf5bd33f6943525f20479efd2e2366065c0ba2fe2423ece5951d1531251b9a",
+      "estimated_input_tokens": 9766,
+      "per_send_reservation_cny": 0.192492
+    },
+    {
+      "sample_id": "sun_modality_f7305d2aa6bfaa35",
+      "request_id": "input_000019",
+      "source_text_sha256": "0b75c045dc504b0e03c591ed76f3b8974539742dfb0101a643fc56a425412f81",
+      "request_sha256": "60696309499e35b6d462fd761775799492a8bd4146d44e501212faa43076e6b2",
+      "estimated_input_tokens": 9806,
+      "per_send_reservation_cny": 0.193095
+    },
+    {
+      "sample_id": "sun_modality_d3d2e5ecdd937e40",
+      "request_id": "input_000020",
+      "source_text_sha256": "fb482d4c324e19951ff5ef75dbc3f31c17042b403502d29bbdb0aef8cfcb05ae",
+      "request_sha256": "db4f0a27f195a41ef40bf16001ace5dc2ca2bb57cb3c80307235427df8fd4f26",
+      "estimated_input_tokens": 9837,
+      "per_send_reservation_cny": 0.1934955
+    },
+    {
+      "sample_id": "sun_modality_45c9436f7dd00f8f",
+      "request_id": "input_000021",
+      "source_text_sha256": "0416b4c61f9278057a7274c1c12ad1886c13c9e5df52fd156400ffe614f8a4cd",
+      "request_sha256": "7eae93c2b3a91bf2d31b21358dc61cfc0362244d79020a0e069b48931befcca3",
+      "estimated_input_tokens": 9806,
+      "per_send_reservation_cny": 0.192978
+    },
+    {
+      "sample_id": "sun_modality_0f5ec34c08479583",
+      "request_id": "input_000022",
+      "source_text_sha256": "9a03e86000576d562c5f66c5fb95faa8f7c592d70903e264f8a2eadb018c836b",
+      "request_sha256": "a2b622b871e3838392818eb3a797cc7863d653b10a5a3f9e530f6c5075b32c9b",
+      "estimated_input_tokens": 9806,
+      "per_send_reservation_cny": 0.193086
+    },
+    {
+      "sample_id": "sun_modality_06cc29a39c94ea87",
+      "request_id": "input_000023",
+      "source_text_sha256": "99b96bc793510be59a57b7344c79150d7dbccb0508e789bf89592216ce24b24b",
+      "request_sha256": "88d29c7b8d1401fe71d115ec53e8a5c66515e00938eee3950b023f854c86180a",
+      "estimated_input_tokens": 9792,
+      "per_send_reservation_cny": 0.1927755
+    },
+    {
+      "sample_id": "sun_modality_a5bcc3209239f03d",
+      "request_id": "input_000024",
+      "source_text_sha256": "d734262ae47bfe39e86c148aec670c636b91b41bf20933744767128c15702318",
+      "request_sha256": "3dee77a0e5e46340d1b02b22b2837d93aab6b73e00df6fa7d6f75a14e344a3d5",
+      "estimated_input_tokens": 9751,
+      "per_send_reservation_cny": 0.1922265
+    },
+    {
+      "sample_id": "sun_modality_8f56132f781ba809",
+      "request_id": "input_000025",
+      "source_text_sha256": "f2e87cf8b76481788e5c90564d998dcd4fcab7422131ad01b513af4c36508950",
+      "request_sha256": "9f97d3d085742f66709dc5ca014ca133b98f00bbc72b0c10e52590008700ead5",
+      "estimated_input_tokens": 9803,
+      "per_send_reservation_cny": 0.192978
+    },
+    {
+      "sample_id": "sun_modality_2e41dabd46f1c416",
+      "request_id": "input_000026",
+      "source_text_sha256": "df143ef8d860a133376909ac174c2d7007905b3ca946955cf97dcfda9c3ffc78",
+      "request_sha256": "e2bac7e220426e0835d1de5cf8d8fd6cb68b633b396a9a2a58a7c8b937bf98c4",
+      "estimated_input_tokens": 9851,
+      "per_send_reservation_cny": 0.1937295
+    },
+    {
+      "sample_id": "sun_modality_45ab7a6cb37bbe22",
+      "request_id": "input_000027",
+      "source_text_sha256": "d46404bb90f6b718f24a79dc33905d795d93ba77a00ec6573b8826212694f5c8",
+      "request_sha256": "391b69067ed4f0327d6a5b3a8b26c81b84c5ac8ace8690d7de9bf92804d284c2",
+      "estimated_input_tokens": 9751,
+      "per_send_reservation_cny": 0.1922265
+    },
+    {
+      "sample_id": "sun_modality_d1e1752b60090ac1",
+      "request_id": "input_000028",
+      "source_text_sha256": "894550bcce9f3f93930d11e800c5c7eea7012af301400c8ca466b80062e8827e",
+      "request_sha256": "15adf5f1910adeb9935c436aa2c6293b9443ddbb7875c2ae7de28c5656f0b68b",
+      "estimated_input_tokens": 9787,
+      "per_send_reservation_cny": 0.1927755
+    },
+    {
+      "sample_id": "sun_modality_40ad24504a1e527b",
+      "request_id": "input_000029",
+      "source_text_sha256": "557db9ada6319cb1e66a6cd99b34a4dfccff77338fdcd9420e8f94f8555e9361",
+      "request_sha256": "71786d773fce9142d02e514bc306658724ce22eeac4b7ae7938e87a4853fc211",
+      "estimated_input_tokens": 9829,
+      "per_send_reservation_cny": 0.193383
+    },
+    {
+      "sample_id": "sun_modality_15379fb73bdfa875",
+      "request_id": "input_000030",
+      "source_text_sha256": "3ad4d7d1f181f8f5a6543128eaeb5125499789450cfae763fc8828091a71a522",
+      "request_sha256": "87a638c21b1b8a6fcc0857e6b9c30efab06ffc9d6b3c8eb1b6b279808b683251",
+      "estimated_input_tokens": 9833,
+      "per_send_reservation_cny": 0.193473
+    },
+    {
+      "sample_id": "sun_modality_e132e4a5396a1738",
+      "request_id": "input_000031",
+      "source_text_sha256": "4f6d67bbf735696cd78400793bc519cf42b2eee99ef02450cbde9f288a18a4bc",
+      "request_sha256": "572033819fa0bbe642f7f6c71554d4a159ae892061fdc60b46ee2afa6d28b682",
+      "estimated_input_tokens": 9821,
+      "per_send_reservation_cny": 0.193221
+    },
+    {
+      "sample_id": "sun_modality_2dc3bf734b302ce1",
+      "request_id": "input_000032",
+      "source_text_sha256": "f3b1bbac0ad339461ab60d72487d098c3827e45932bbe01d4efc47d9a334a9a3",
+      "request_sha256": "48425cc15562d4583b213d0fdad1e5e901dbfcade95c075dbc416a54cdcc312a",
+      "estimated_input_tokens": 9779,
+      "per_send_reservation_cny": 0.1926495
+    },
+    {
+      "sample_id": "sun_modality_d7282301840858ae",
+      "request_id": "input_000033",
+      "source_text_sha256": "f6f7bf96719ef16fc5db0e96003331aad2ffab8553a365506531a3a025d25d01",
+      "request_sha256": "891bce481dd13655f9bc7af7c8d473281e9fd6cbfac0d54415fe7d5277e8b85f",
+      "estimated_input_tokens": 9803,
+      "per_send_reservation_cny": 0.1930365
+    },
+    {
+      "sample_id": "sun_modality_cf992d31bc6415e6",
+      "request_id": "input_000034",
+      "source_text_sha256": "d90a28d8dde52809428b43e7761f387f2ad9e58655c96e762c920e2cb89d6e38",
+      "request_sha256": "d25059508aa1b3681c43274d36d1fc79b15ff3ff6debf54729bf0d63008a73a7",
+      "estimated_input_tokens": 9763,
+      "per_send_reservation_cny": 0.1924335
+    },
+    {
+      "sample_id": "sun_modality_8f3ae941399bc02a",
+      "request_id": "input_000035",
+      "source_text_sha256": "755435968779c4764e3c34fe2bf09002e86216f2fa0bd1f0983eb2f1ec4f2e03",
+      "request_sha256": "eb00a7fb4fe33cf4731b9b00fd084c937436d5c143b8371bb883cff89037cc27",
+      "estimated_input_tokens": 9782,
+      "per_send_reservation_cny": 0.192681
+    },
+    {
+      "sample_id": "sun_modality_6c1481a2d0cd515f",
+      "request_id": "input_000036",
+      "source_text_sha256": "500e6c593e393e3485a9f27e382852ccaf748c8d6fc94b2ba11fcfda988d18dd",
+      "request_sha256": "81abfed72b30d56bc3558ebac9cd54119295051729bbc6ebf5cedc561f8093d1",
+      "estimated_input_tokens": 9776,
+      "per_send_reservation_cny": 0.192618
+    },
+    {
+      "sample_id": "sun_modality_04813ff2eeff0ee3",
+      "request_id": "input_000037",
+      "source_text_sha256": "63666242c0a37426c87371d728ad9dd8df9e84619587fe888b713a8b8cc552c5",
+      "request_sha256": "246ef36c2631675c36f9db7a076cc9929e669d98d43938cc598378cd239c6a4a",
+      "estimated_input_tokens": 9794,
+      "per_send_reservation_cny": 0.1928925
+    },
+    {
+      "sample_id": "sun_modality_ab32d2f569b854de",
+      "request_id": "input_000038",
+      "source_text_sha256": "129a24a4b2dc8a05db0693b5e6722758b1f3164e67c63a02d40e1c66cc47587e",
+      "request_sha256": "f37c6fefb1334d54ac96d35e4a15ee93b37dc43e91ce32e055364ebb5549d166",
+      "estimated_input_tokens": 9789,
+      "per_send_reservation_cny": 0.1927845
+    },
+    {
+      "sample_id": "sun_modality_5dd905d7bef7684c",
+      "request_id": "input_000039",
+      "source_text_sha256": "3e5482f2d59bfb3c2ed2f94b335d1eb57a4cc2bacf32dcb5cca1dec38a9c86ac",
+      "request_sha256": "ea96141a1d05f6a839e8b6657d7c74c434b28862be43d4346ae3e07f78592cd9",
+      "estimated_input_tokens": 9790,
+      "per_send_reservation_cny": 0.1928025
+    },
+    {
+      "sample_id": "sun_modality_01afee4e8eafee59",
+      "request_id": "input_000040",
+      "source_text_sha256": "9aa983471e0ed9cf3c121d52b5535d18628861eebd2616e6151a5e9010464d6e",
+      "request_sha256": "bbff886af26619cdc8e852a5f952c14784ad4ccc9e688850a811c75f95ebeade",
+      "estimated_input_tokens": 9840,
+      "per_send_reservation_cny": 0.193617
+    },
+    {
+      "sample_id": "sun_modality_f524c650514d748c",
+      "request_id": "input_000041",
+      "source_text_sha256": "8836d18bcfea3e3b39a215710ea2f802663e7c414fc35d2dc68b7cda059e50fb",
+      "request_sha256": "3c558a00e3d341bbabcd9467e02f0454860c51a1c297f94c8797149fa4e17612",
+      "estimated_input_tokens": 9759,
+      "per_send_reservation_cny": 0.1924065
+    },
+    {
+      "sample_id": "sun_modality_c435717097e07bd4",
+      "request_id": "input_000042",
+      "source_text_sha256": "6df05c5fa8c1b78c7c25abe76ff27abc55e963c321a0827710fd83db48df291a",
+      "request_sha256": "6fb5b9ccd04d56ae7ec1d519706120a332c6b9305c2e8a870710ab1db6315e65",
+      "estimated_input_tokens": 9778,
+      "per_send_reservation_cny": 0.1926405
+    },
+    {
+      "sample_id": "sun_modality_3cae75a6fd42e2bc",
+      "request_id": "input_000043",
+      "source_text_sha256": "558b047d701863fb5456724981665d2d9b070be5d48253d29f02c248e5cf003c",
+      "request_sha256": "8001b52915ea257b333aa67c8f94ac8b8ea6b7ee17c421147adf123b2e4903fb",
+      "estimated_input_tokens": 9798,
+      "per_send_reservation_cny": 0.1928745
+    },
+    {
+      "sample_id": "sun_modality_b0724f638384d3d3",
+      "request_id": "input_000044",
+      "source_text_sha256": "e63578d226eeef6ac0b226ec6b3c02932eb54af1211678eaa5564cf75ff349f9",
+      "request_sha256": "d4939ab08fdcef42d674b3b188213c49cbf674c6ec2ac39d78b03140dcd3cd12",
+      "estimated_input_tokens": 9779,
+      "per_send_reservation_cny": 0.1926135
+    },
+    {
+      "sample_id": "sun_modality_f926b50052c31fa9",
+      "request_id": "input_000045",
+      "source_text_sha256": "14822c12e5033ee75701f73dee057f75e8b3a299d2b8b2b889cadd1c2eb4a7c1",
+      "request_sha256": "5917cf8db547f8f8ac17bc6d4c1910b886e9fb76a81e077ce9404e5b0c355147",
+      "estimated_input_tokens": 9749,
+      "per_send_reservation_cny": 0.1922085
+    },
+    {
+      "sample_id": "sun_modality_22dbfcdde89082c0",
+      "request_id": "input_000046",
+      "source_text_sha256": "60fdb0e0d0e6ee33d86e8c9385ad9b015f39d67a0876c8b7399da23cad955869",
+      "request_sha256": "f307ddb720d101592d3031aa87deffda7c59270b83690510190060db798e7c86",
+      "estimated_input_tokens": 9781,
+      "per_send_reservation_cny": 0.192627
+    },
+    {
+      "sample_id": "sun_modality_b7e7a1544939a500",
+      "request_id": "input_000047",
+      "source_text_sha256": "5b64d063a67ff3b503ebc0f24060088c37ae39a0813441ac1de43ce59ee4e577",
+      "request_sha256": "01ea942ec433b567edbd69c9d93c0f32ece9e9399df557c870abfa708e961d26",
+      "estimated_input_tokens": 9857,
+      "per_send_reservation_cny": 0.193797
+    },
+    {
+      "sample_id": "sun_modality_39639c4e2a9d6b08",
+      "request_id": "input_000048",
+      "source_text_sha256": "6d46c12854fe747bc804886b53ddee4e59d2a2163d42759dea58de7efb220442",
+      "request_sha256": "4ae3b2143aeb8718e2e1560b45564aae86779524ad00e646e7a2be5b21f47fbc",
+      "estimated_input_tokens": 9782,
+      "per_send_reservation_cny": 0.1926945
+    },
+    {
+      "sample_id": "sun_modality_baf11b9eb31ab744",
+      "request_id": "input_000049",
+      "source_text_sha256": "c3284f83cfca314942f1f2fdc78e6e704b922d4529cda6ff1663b98b64b17e61",
+      "request_sha256": "cc01d19302289f1bf71e5f2cd122f93bcabbde3d64f023dd7057339cb7bc7834",
+      "estimated_input_tokens": 9771,
+      "per_send_reservation_cny": 0.1925505
+    },
+    {
+      "sample_id": "sun_modality_372dad044592f8bd",
+      "request_id": "input_000050",
+      "source_text_sha256": "df91d4245ed7f6365f1f52088caae617f3992819afb0a2e3c04421b6bc4989d7",
+      "request_sha256": "0ada4ea5e70b7a3a5a3dbae0aeff157820a9dd167b419a427c49156da7617025",
+      "estimated_input_tokens": 9803,
+      "per_send_reservation_cny": 0.192996
+    },
+    {
+      "sample_id": "sun_modality_dce685fbbe368673",
+      "request_id": "input_000051",
+      "source_text_sha256": "3868d6fdb524280c02ec2f95c9ab9880a6acd6882e67474aadb00de548302342",
+      "request_sha256": "ef7a40f629a82398f514707a0c450d6f6b64f6863600ae9761250437a42f663e",
+      "estimated_input_tokens": 9835,
+      "per_send_reservation_cny": 0.1934415
+    },
+    {
+      "sample_id": "sun_modality_7c2df76361290457",
+      "request_id": "input_000052",
+      "source_text_sha256": "e2573e0269f512d6b17a1ed399507723a09b92afcad97063dd4b57a7fdbe4eaf",
+      "request_sha256": "1740609bd7a03387bd8d824b7a59f309f972ea66d9392638df61af00a3114bd3",
+      "estimated_input_tokens": 9762,
+      "per_send_reservation_cny": 0.19242
+    },
+    {
+      "sample_id": "sun_modality_b0df01ddb3d8fa66",
+      "request_id": "input_000053",
+      "source_text_sha256": "2b273dfff17dc5af537bd69695277684a13bd3aa84fe4cef5c549cdf44253977",
+      "request_sha256": "73d39e60ccce8fc1690a5c900c4f5d147f1eb5cca3e99e77a3a48e07f610b4a9",
+      "estimated_input_tokens": 9762,
+      "per_send_reservation_cny": 0.192366
+    },
+    {
+      "sample_id": "sun_modality_33dfce3afccf61e7",
+      "request_id": "input_000054",
+      "source_text_sha256": "e57b2f7f5a4cf66375a446f31974c3538b461062f16f1d014431f12dc338de50",
+      "request_sha256": "a4578945fd072e6f705a4762162d9f3a996abb0abd60aed3bd54c322b63608de",
+      "estimated_input_tokens": 9777,
+      "per_send_reservation_cny": 0.1926495
+    },
+    {
+      "sample_id": "sun_modality_f1d6033fcd51b7e0",
+      "request_id": "input_000055",
+      "source_text_sha256": "815f55db128d6e9d5e0bebbccee0d470dd610d51198abba3a4cbe16a9039dc69",
+      "request_sha256": "5302a3f0f0e3b7f29d769bbda8b93d63e915bbbb70e7d9c5c737c378351bc5a9",
+      "estimated_input_tokens": 9802,
+      "per_send_reservation_cny": 0.193005
+    },
+    {
+      "sample_id": "sun_modality_f11b43c763695a7e",
+      "request_id": "input_000056",
+      "source_text_sha256": "330353d54557ccacd97e4ae621fc67028fc0656fd6ba153c561d3412db4de7fe",
+      "request_sha256": "fc88f0b9f5e044e8cd40fe8c1672212cf85fd587548ae2071b515fda5285d681",
+      "estimated_input_tokens": 9766,
+      "per_send_reservation_cny": 0.1924425
+    },
+    {
+      "sample_id": "sun_modality_6560b49186e7c054",
+      "request_id": "input_000057",
+      "source_text_sha256": "c37b967739cd9eb7a701a10219a2797e4b72816e62aea7df7b307a7bc698cb17",
+      "request_sha256": "a02d1a5386493b7329ce083c97d9295bfe62a7834fb3e341cbdf64590330f3a8",
+      "estimated_input_tokens": 9763,
+      "per_send_reservation_cny": 0.192402
+    },
+    {
+      "sample_id": "sun_modality_38bc44de70c90d59",
+      "request_id": "input_000058",
+      "source_text_sha256": "c37b967739cd9eb7a701a10219a2797e4b72816e62aea7df7b307a7bc698cb17",
+      "request_sha256": "929421b4d501b7e22db506c3f3352d04b4d7e604b13ddcbdc31e8772040e65c8",
+      "estimated_input_tokens": 9763,
+      "per_send_reservation_cny": 0.192402
+    },
+    {
+      "sample_id": "sun_modality_c6b1edaa2ed92b80",
+      "request_id": "input_000059",
+      "source_text_sha256": "86aace8a900557fc4250d1519a88f45ef24b6ad35f9d22c53c241b949b3b1cce",
+      "request_sha256": "cabc4bd9772fad8535867776c9676d4a48395d45cf37b558a3c7c5a70d71168d",
+      "estimated_input_tokens": 9783,
+      "per_send_reservation_cny": 0.1927395
+    },
+    {
+      "sample_id": "sun_modality_20a8a8c769395563",
+      "request_id": "input_000060",
+      "source_text_sha256": "f7050a9920fe5a84625f217e6b0963b994ef88e327f6cd7af7cfbdde337c6666",
+      "request_sha256": "ad760ab434be5896776c4e992517f65b9652ae37a1cc61cca575e1735cc762ac",
+      "estimated_input_tokens": 9761,
+      "per_send_reservation_cny": 0.192375
+    },
+    {
+      "sample_id": "sun_modality_d276501af2c67790",
+      "request_id": "input_000061",
+      "source_text_sha256": "db124c9b277d368bd03dd7a811b4011124b820b551199f23b450d05931793080",
+      "request_sha256": "9b3a37f9d7d603dd05df39d59e2d2c3d174d4ce489b95a8a3c62ae296d1f62ed",
+      "estimated_input_tokens": 9747,
+      "per_send_reservation_cny": 0.192204
+    },
+    {
+      "sample_id": "sun_modality_2fe27ba8ffa47612",
+      "request_id": "input_000062",
+      "source_text_sha256": "d8acc4308fd11828d0872a8a96b8d0d578f7676c27ee27d71b8cc7c4e627109c",
+      "request_sha256": "5a307cd1f6c2f6f713f9299e044d528e2f2711849dc86cb91bc9c52965d7d0fe",
+      "estimated_input_tokens": 9786,
+      "per_send_reservation_cny": 0.19278
+    },
+    {
+      "sample_id": "sun_modality_3875a5407bed3789",
+      "request_id": "input_000063",
+      "source_text_sha256": "f0dc176f076bd286c42b0a8aaa08c4387b8123b66a5639eb8e7898b3187f4cce",
+      "request_sha256": "9f654dcbb2262655ad9dcfc31fae220f3313307634f36029c715dca10da96cac",
+      "estimated_input_tokens": 9806,
+      "per_send_reservation_cny": 0.193077
+    },
+    {
+      "sample_id": "sun_modality_1b03b9601d6e3a4d",
+      "request_id": "input_000064",
+      "source_text_sha256": "4c488560fc266ecb1754659d37f0836f8f7d23cef297bdc89ac5ba4078443af9",
+      "request_sha256": "3ae64655229af1f6b2b2884930b30d5d3279812a29ce4e0b41976f7d79afc1a8",
+      "estimated_input_tokens": 9775,
+      "per_send_reservation_cny": 0.192582
+    },
+    {
+      "sample_id": "sun_modality_debccff3223ade96",
+      "request_id": "input_000065",
+      "source_text_sha256": "c3668efcc1cd0e271f803932612b93ac9851d413c99bd2329d89b5b1bfe66184",
+      "request_sha256": "4f98dbb262423206c5e0c8ec111d7418c1244efb7282dd3f3c7593bca7b460b1",
+      "estimated_input_tokens": 9808,
+      "per_send_reservation_cny": 0.193023
+    },
+    {
+      "sample_id": "sun_modality_08d08c3ab804a9d0",
+      "request_id": "input_000066",
+      "source_text_sha256": "6e0d0c7846ea09861c858b5ce9c57d1d3c12395ae959b906fa3b3561dd2d563a",
+      "request_sha256": "d4293984200ba8e1232aa61f3a7d52c1ed5ace7e6c0626e20ef080583155fcb6",
+      "estimated_input_tokens": 9760,
+      "per_send_reservation_cny": 0.192357
+    },
+    {
+      "sample_id": "sun_modality_3045fe86d0adb321",
+      "request_id": "input_000067",
+      "source_text_sha256": "9eb54e661f86d08b94c7802a20e118adea722e7d3eab55e7a2d152ef5e1c9ad6",
+      "request_sha256": "77fb70efffd469b0ddd34772de0972d4c6b9d6112ee4a9f573473a836f5c4d66",
+      "estimated_input_tokens": 9875,
+      "per_send_reservation_cny": 0.1940355
+    },
+    {
+      "sample_id": "sun_modality_e41a7fe42f1fba5d",
+      "request_id": "input_000068",
+      "source_text_sha256": "6a6b0bc3d85744f006e1cd90275595c1397119d54f0385af0685d551f0efa24a",
+      "request_sha256": "984857e3627cd62fc5f8d1ddea251d6198c8cc376cf36a0e18190cef028502df",
+      "estimated_input_tokens": 9824,
+      "per_send_reservation_cny": 0.193338
+    },
+    {
+      "sample_id": "sun_modality_d5795ec34035be81",
+      "request_id": "input_000069",
+      "source_text_sha256": "ea556ffbfa2ff59d4c332d59e2d8204d628cc3fee8894789e4b5ff2c1682e99c",
+      "request_sha256": "35576976d69efdb9010f1a06b74b648f14a28b25e13b4e95bdec4a5890e8c83c",
+      "estimated_input_tokens": 9764,
+      "per_send_reservation_cny": 0.1923975
+    },
+    {
+      "sample_id": "sun_modality_de8ae0a7de8610f6",
+      "request_id": "input_000070",
+      "source_text_sha256": "b392f0c771ff0329645fac30f7d2292c5563c519055d39f0581c3d9a97a2af7f",
+      "request_sha256": "49df1e27ec605a15488f4b7e04326f0419bac7d140c35d2400754a35c4d24c6b",
+      "estimated_input_tokens": 9800,
+      "per_send_reservation_cny": 0.1929735
+    },
+    {
+      "sample_id": "sun_modality_4aa713032da0593a",
+      "request_id": "input_000071",
+      "source_text_sha256": "9bd92b773535cf057ed0a70c216cd346ae0dc5fecf6ceb6e5a3dbe98e2dc46a8",
+      "request_sha256": "14703ec386d24d70c07672143379268c3b0e5f026573f9f3306018ecafce30e6",
+      "estimated_input_tokens": 9767,
+      "per_send_reservation_cny": 0.1924785
+    },
+    {
+      "sample_id": "sun_modality_f64641b20015ac92",
+      "request_id": "input_000072",
+      "source_text_sha256": "b61739f38cd8e049b747f75ddee8aafb319c0901dc2b8e3bf8685b05da43389b",
+      "request_sha256": "644ebc5c53ad996071a0bdef6bdaa92fd6f3f20765d4eee8a1f0d985d392e25e",
+      "estimated_input_tokens": 9763,
+      "per_send_reservation_cny": 0.1924065
+    },
+    {
+      "sample_id": "sun_modality_217f78d48f05e957",
+      "request_id": "input_000073",
+      "source_text_sha256": "fc5e432455d01842dc47b0ead2c1cd7160ac92bb79a3ce66afe7f93140c497af",
+      "request_sha256": "442386fec8beacca308c4733b7246d65828cb1e728d2e9b2c69936cd4fa9c7ec",
+      "estimated_input_tokens": 9877,
+      "per_send_reservation_cny": 0.194013
+    },
+    {
+      "sample_id": "sun_modality_56aa60a2a3a4bd38",
+      "request_id": "input_000074",
+      "source_text_sha256": "e70400638eb99ef161eb0e5ffab63534acd604dd5315e24ffa6d669789b02038",
+      "request_sha256": "cb6a42d23cd67ad4338852c5719ec52110b1a8684ff00d6122418d60377f19f5",
+      "estimated_input_tokens": 9824,
+      "per_send_reservation_cny": 0.193275
+    },
+    {
+      "sample_id": "sun_modality_f392b16a5dc9f1d4",
+      "request_id": "input_000075",
+      "source_text_sha256": "0dca1dc87bf7bc293864bc8c3c952f9dd403ff2eaeddddc3ad6641de4dc55347",
+      "request_sha256": "afb457117e194a3b45bc125226b036ecdd51d1e8b985c0b82e83293743c69167",
+      "estimated_input_tokens": 9796,
+      "per_send_reservation_cny": 0.192861
+    },
+    {
+      "sample_id": "sun_modality_0e7905b9a7c2ddda",
+      "request_id": "input_000076",
+      "source_text_sha256": "098d404c8e0c80b1dedabc4898c9402713b8f2b3c9122bf3ca7f4b3166872495",
+      "request_sha256": "a4cde7319fe12741c3a88c35e3dc02a170c610aee3ac60d2dfe03bc1f059bb86",
+      "estimated_input_tokens": 9752,
+      "per_send_reservation_cny": 0.1922895
+    },
+    {
+      "sample_id": "sun_modality_898c39af252c289b",
+      "request_id": "input_000077",
+      "source_text_sha256": "b6989aaf5d3e5b0eef2859312e37a29a73b7a517ac2a608515cb8105b55d6afe",
+      "request_sha256": "c5e22886f5572f7f4b2846b02cb52b05d54f34bb9249e652e43001d68119ab06",
+      "estimated_input_tokens": 9777,
+      "per_send_reservation_cny": 0.192609
+    },
+    {
+      "sample_id": "sun_modality_a18989112132a992",
+      "request_id": "input_000078",
+      "source_text_sha256": "96e28b1e6d960313ae21c19fded968c3da260cdf301b9a5b36ba42ab69dbec2f",
+      "request_sha256": "1416bc0d05bf89f9ad9ec06919e509ee5d30ec8bd9e3dd14fa6ae35e09e2ecae",
+      "estimated_input_tokens": 9780,
+      "per_send_reservation_cny": 0.1926315
+    },
+    {
+      "sample_id": "sun_modality_983511dc4dd875c9",
+      "request_id": "input_000079",
+      "source_text_sha256": "b5404053f18acfe583d3a9308aca1b0f78cadb48d1f00bd2bd49b50df60e1118",
+      "request_sha256": "5d821388360a95e9a9b26e69324a8c2d21eedb31a7110d392a90cc8570f22a01",
+      "estimated_input_tokens": 9799,
+      "per_send_reservation_cny": 0.1929375
+    },
+    {
+      "sample_id": "sun_modality_801770835869d6c0",
+      "request_id": "input_000080",
+      "source_text_sha256": "8fefc04b2bfdbc8ebc05a981fb3217dfe438d8716c263a79e62e0da068b086b7",
+      "request_sha256": "eb1c94870eeedf5485d9a08b3baeae4fb3d8359afa15ba224983145f068c3037",
+      "estimated_input_tokens": 9765,
+      "per_send_reservation_cny": 0.192483
+    },
+    {
+      "sample_id": "sun_modality_f586ad99f05fac73",
+      "request_id": "input_000081",
+      "source_text_sha256": "d2c11aab26da8fe0cccdf8751d96dc2e3d9a79c58fde3d915da0d62fe8adb0ff",
+      "request_sha256": "55c930ba3e15a09a00589a31fbceea9b25afb2a77ae420aa1b4d80794319a19c",
+      "estimated_input_tokens": 9807,
+      "per_send_reservation_cny": 0.19305
+    },
+    {
+      "sample_id": "sun_modality_e5a4c2c16f69e240",
+      "request_id": "input_000082",
+      "source_text_sha256": "869ad3eddae982c620508bcc6bb5665ab3261caf14e9c9c461634d8b2b3cd327",
+      "request_sha256": "753b6bb2157ea50558db7522aee75c00505074b578db351130844bc4466465ef",
+      "estimated_input_tokens": 9772,
+      "per_send_reservation_cny": 0.192546
+    },
+    {
+      "sample_id": "sun_modality_ffa2e576c82b2e90",
+      "request_id": "input_000083",
+      "source_text_sha256": "56b446f8270475f09dd5e7fe09eea4fef57c33215f0a441b45f4b72b51af968b",
+      "request_sha256": "c8138652d9c8fc474fea9bd961aea6f2c609f781d580664181620f5abae3f8f1",
+      "estimated_input_tokens": 9768,
+      "per_send_reservation_cny": 0.1924875
+    },
+    {
+      "sample_id": "sun_modality_5fa7357484010c50",
+      "request_id": "input_000084",
+      "source_text_sha256": "ce2c5fee60358b98cf2c8df5e38e09e66e6f5751dc147812c2f1e85d2fd86c23",
+      "request_sha256": "5226bd023b275d04fe8443be85b256bc561765d40299f7be52bf1b2e66dd760a",
+      "estimated_input_tokens": 9789,
+      "per_send_reservation_cny": 0.1928205
+    },
+    {
+      "sample_id": "sun_modality_737196fcd064a220",
+      "request_id": "input_000085",
+      "source_text_sha256": "0611f0917dfe134a18468c9d1e67f61c2ea145c003c03d7edc559071dc52d65c",
+      "request_sha256": "39a2df970868dcd3a9e89b93890f3916e355831b6612b071ea6e5c6bbe759f02",
+      "estimated_input_tokens": 9815,
+      "per_send_reservation_cny": 0.193158
+    },
+    {
+      "sample_id": "sun_modality_6e854481440db49f",
+      "request_id": "input_000086",
+      "source_text_sha256": "ad5b17817211bb86c055fcbd6b2f73d5d5fbbf0b7500313e73aa2bb49c3cc19a",
+      "request_sha256": "be564b4d9e3925215d91f85315a5dc95c44f52201bc6c2a05e8d754401231997",
+      "estimated_input_tokens": 9818,
+      "per_send_reservation_cny": 0.1933245
+    },
+    {
+      "sample_id": "sun_modality_41d3beb20ca55a60",
+      "request_id": "input_000087",
+      "source_text_sha256": "2c54164eb9c4824afc4f5dc7a2fba61a661e93840df844178e36c4984a611ac2",
+      "request_sha256": "65b218d975471b90630a0f905dd1a2391244fa0fbabd1a96acc404d1f02d4ead",
+      "estimated_input_tokens": 9767,
+      "per_send_reservation_cny": 0.1924335
+    },
+    {
+      "sample_id": "sun_modality_902c634fc7e54c42",
+      "request_id": "input_000088",
+      "source_text_sha256": "5b28f82e1690e9864ac65a0bf14a0fd20fda7b03b0842689bd9348a217563d2e",
+      "request_sha256": "8ca80e39fc69a427999d4aa6f506bdb82426441c13de95d3a6200bc7e2805c20",
+      "estimated_input_tokens": 9842,
+      "per_send_reservation_cny": 0.193545
+    },
+    {
+      "sample_id": "sun_modality_0acd538d7c1ed0c6",
+      "request_id": "input_000089",
+      "source_text_sha256": "71b19be6336e80448fb3ed7b9755a7241df2cdc0dd9a74ceca7ae3e579e0f5aa",
+      "request_sha256": "69ace9149102feea42442e048723d747e7f3f54b2063820773d9acf3b60e6568",
+      "estimated_input_tokens": 9790,
+      "per_send_reservation_cny": 0.1927665
+    },
+    {
+      "sample_id": "sun_modality_0c6161cec95b5823",
+      "request_id": "input_000090",
+      "source_text_sha256": "f91ed0823c300d593e6548b895456a68e7d73cd0b5b59fed4b01d5d1a3e41f74",
+      "request_sha256": "6bf496c428e08ca7d893279deeabe81e2205bebd09c00e723cf2b7b791b7d853",
+      "estimated_input_tokens": 9784,
+      "per_send_reservation_cny": 0.1927395
+    },
+    {
+      "sample_id": "sun_modality_16f796b5340d99ce",
+      "request_id": "input_000091",
+      "source_text_sha256": "61b6c1c00415bae1e0905865d28a1ce699bb5b44fcc58fda0788f8d5b8251583",
+      "request_sha256": "6417fef880c921894814a43f5b16506dfd60a14fa1163ca53062ab92433c7c0c",
+      "estimated_input_tokens": 9856,
+      "per_send_reservation_cny": 0.193779
+    },
+    {
+      "sample_id": "sun_modality_e46a26171e0d8d42",
+      "request_id": "input_000092",
+      "source_text_sha256": "2120c5208394f8c9d7c800b3ed86bcea718aa4d47997906cf5eb3718fb495db7",
+      "request_sha256": "70f4e6427fa8e559d1a1ccace562668a721410e0d8fab80a5aa7c093bfb0a35e",
+      "estimated_input_tokens": 9786,
+      "per_send_reservation_cny": 0.192753
+    },
+    {
+      "sample_id": "sun_modality_e19029c1815d3c02",
+      "request_id": "input_000093",
+      "source_text_sha256": "e4af11aa9c7777ac633fe96cc159279eb2be4cd2541baf499c51b53dacf94a6e",
+      "request_sha256": "ddf61ae53024779bc7c024e1514f7992e1a45f989fce35d105ee95c176df3f2a",
+      "estimated_input_tokens": 9774,
+      "per_send_reservation_cny": 0.1925325
+    },
+    {
+      "sample_id": "sun_modality_c4a39e4bd8ea6f64",
+      "request_id": "input_000094",
+      "source_text_sha256": "8ae4190005e59ec1019760a1127c3897720068027be1e6bbbc1a316319fce2cd",
+      "request_sha256": "9ad1cc4c05b1d3cb4180205a11ad3997f29dc0f407c1221d47bfa0ddcde7fea2",
+      "estimated_input_tokens": 9776,
+      "per_send_reservation_cny": 0.1925955
+    },
+    {
+      "sample_id": "sun_modality_beac0cdf663ceb3f",
+      "request_id": "input_000095",
+      "source_text_sha256": "85b8152b27760a86f38f0f461dcce0a77da40d3c747f2759cf687959e64f741a",
+      "request_sha256": "60f411a9c2c9ac014aede8ffab8929732f96e73efd1f1fa82cbe5ba4c253b989",
+      "estimated_input_tokens": 9754,
+      "per_send_reservation_cny": 0.192276
+    },
+    {
+      "sample_id": "sun_modality_99c9770d52f9933a",
+      "request_id": "input_000096",
+      "source_text_sha256": "2ef9fb601c50958ca3d191f650378845cf82d961615d5b865ac3c0a6643640b1",
+      "request_sha256": "3fa00c2256051fd749f36310b96e76b528717289c0041ad137f8b21bb691386d",
+      "estimated_input_tokens": 9769,
+      "per_send_reservation_cny": 0.192483
+    },
+    {
+      "sample_id": "sun_modality_9df57345417f7572",
+      "request_id": "input_000097",
+      "source_text_sha256": "4e2858e198905abfd4ef7bd5fe575c04e7e533b53891941ce8384c41c98e2ff9",
+      "request_sha256": "e737ba8570b5f9ff584f4d5e1d7b37e3f9dac91fbe2b64c5894a5e74ea496672",
+      "estimated_input_tokens": 9774,
+      "per_send_reservation_cny": 0.192555
+    },
+    {
+      "sample_id": "sun_modality_82c972d55f2fd88b",
+      "request_id": "input_000098",
+      "source_text_sha256": "e49b3aad659083f0cc0ccd62a61ac509cbb0c8a1a76b4bdcff4aa48b418b395c",
+      "request_sha256": "957589c85bab3ad70a8be4fa1a74feabb8df703a0508e4a0af75bf23b897ff5f",
+      "estimated_input_tokens": 9817,
+      "per_send_reservation_cny": 0.1931805
+    },
+    {
+      "sample_id": "sun_modality_2b6e7776d439d30a",
+      "request_id": "input_000099",
+      "source_text_sha256": "326e1b096aacca16d89f9199d407193c14924fd0c048465c71c62d9e573ae32d",
+      "request_sha256": "ce96721a7732d2a42497ea25761ed5521ed5db88e82dfb91e7f53947db77e831",
+      "estimated_input_tokens": 9791,
+      "per_send_reservation_cny": 0.1927755
+    },
+    {
+      "sample_id": "sun_modality_ab32c956b52a8a7b",
+      "request_id": "input_000100",
+      "source_text_sha256": "8631ce0ba4d2d30a1395115186a109ad7ce15dc5f6a9fddc27db7f825fcb79fd",
+      "request_sha256": "caf309f8b4be4e1b6b78e325e56f00e25bead546c9a6b44798bf4e951bffd201",
+      "estimated_input_tokens": 9760,
+      "per_send_reservation_cny": 0.192348
+    },
+    {
+      "sample_id": "sun_modality_e28b0697631b46f3",
+      "request_id": "input_000101",
+      "source_text_sha256": "f3989e66970eb8dd972a931f5d9cbc6009b01081fb9c8016e80b89ba20851acc",
+      "request_sha256": "c2df7532ab8fa20cf3473987d3311dfb8b4e2c2bb9ade8f372941570bf070adb",
+      "estimated_input_tokens": 9794,
+      "per_send_reservation_cny": 0.192825
+    },
+    {
+      "sample_id": "sun_modality_ef845af34d199653",
+      "request_id": "input_000102",
+      "source_text_sha256": "54d5dbd4628f616f152d4d1c62b3325f88a6eea1a226c4a705f011b6a0994496",
+      "request_sha256": "64b6e65c9e38c8fa242328eb0863bc8f66065bf4f442a885500448ca00aa1334",
+      "estimated_input_tokens": 9824,
+      "per_send_reservation_cny": 0.193266
+    },
+    {
+      "sample_id": "sun_modality_9c3a77622a7918a1",
+      "request_id": "input_000103",
+      "source_text_sha256": "b411ba0e0ce687c4fab0ad830a35de7e13cbd7853e2c04200e3c56ddce1d0dfb",
+      "request_sha256": "aae1725a1110fc464e015314aa4774e03b2b487f72ecf49658b3934bbbe4e1b4",
+      "estimated_input_tokens": 9772,
+      "per_send_reservation_cny": 0.1925415
+    },
+    {
+      "sample_id": "sun_modality_cfb8fcbebca7158c",
+      "request_id": "input_000104",
+      "source_text_sha256": "9882720778c876f9ef6a08c9b5bef6bd0ccf50840fe186c68f408e6d159763e3",
+      "request_sha256": "d84bbcf6867539062e22b9a4c6326c163345fd223a3ce368283cbe661e893d42",
+      "estimated_input_tokens": 9902,
+      "per_send_reservation_cny": 0.194346
+    },
+    {
+      "sample_id": "sun_modality_8c835060ccc2a69d",
+      "request_id": "input_000105",
+      "source_text_sha256": "ef51022e60e5d4d8b48abf4c1a37c48b0e0609dbd462841d9755a66f10f0671e",
+      "request_sha256": "fc03bd04dd3fbe3dda47c0ff9cfe0faab12a2eae985de0296c76f4b98f2bfe51",
+      "estimated_input_tokens": 9809,
+      "per_send_reservation_cny": 0.193095
+    },
+    {
+      "sample_id": "sun_modality_746109dbf9a4fac5",
+      "request_id": "input_000106",
+      "source_text_sha256": "e69b14c2b81d5b324bccb21d27c535fc7f5d405ebf55afc55ffcb14b7d67b079",
+      "request_sha256": "55b37259fc3f6c746327ffd2fe5ee5a04d017e64f381989c4d480380a0d311f5",
+      "estimated_input_tokens": 9775,
+      "per_send_reservation_cny": 0.1925955
+    },
+    {
+      "sample_id": "sun_modality_af1791c34474fda1",
+      "request_id": "input_000107",
+      "source_text_sha256": "7cc0da3c96d930edac10fe0c52d28a51f5c333a96f803b6c1e90f61c2b1cf708",
+      "request_sha256": "1d34e30936ab72f055931de85af1620a1701577a6392540c05eef0d866f735b4",
+      "estimated_input_tokens": 9779,
+      "per_send_reservation_cny": 0.1926405
+    },
+    {
+      "sample_id": "sun_modality_d6ce3e804cffd475",
+      "request_id": "input_000108",
+      "source_text_sha256": "d81c21f54c9011bc7a254491625d89a2f5efb8fefa4c04c5dca36c57f0bdd487",
+      "request_sha256": "09eccfc07a002d2f2e2f9ac018a1b4f7c390d01e25e5d626f25765025e8b8e32",
+      "estimated_input_tokens": 9861,
+      "per_send_reservation_cny": 0.1938825
+    },
+    {
+      "sample_id": "sun_modality_3d4289e33ae6f1d7",
+      "request_id": "input_000109",
+      "source_text_sha256": "3294a88751280dcd7df0602e5667dda51add11fb814a3a0b77d53c6cacdf9183",
+      "request_sha256": "eaaa752fdc726c9bd42b236ea16f9152f12565a196703a406e0525b2e6b81f49",
+      "estimated_input_tokens": 9775,
+      "per_send_reservation_cny": 0.1926225
+    },
+    {
+      "sample_id": "sun_modality_1b517d3d90a57ac2",
+      "request_id": "input_000110",
+      "source_text_sha256": "4ffe4f8f46187b0a4402e1e31a841bdf13ff8681be8d9502c9d556cdccf4b0aa",
+      "request_sha256": "52e8ece423798893ad6720da3654751311f65e9ad730f360c921bff64cb767f4",
+      "estimated_input_tokens": 9796,
+      "per_send_reservation_cny": 0.192843
+    },
+    {
+      "sample_id": "sun_modality_931a19686548ade7",
+      "request_id": "input_000111",
+      "source_text_sha256": "631777974f35906fc3abf28743717ed8f60a899621797ba16caefff0de6d09c0",
+      "request_sha256": "c73d89331d8d43b51da54dcb2e59cf426d28ce13efcfa05e81ca6aaf77f26fb4",
+      "estimated_input_tokens": 9786,
+      "per_send_reservation_cny": 0.1928025
+    },
+    {
+      "sample_id": "sun_modality_b528f7f3be399f86",
+      "request_id": "input_000112",
+      "source_text_sha256": "92f28c69d7c5ce51761883226d08e69866f071e1d4e41e7236478606c4ec9cb2",
+      "request_sha256": "6924d0f99ec42fe8e0cf296dc34a0022084ceaa86ed84ac2edfec798f0830733",
+      "estimated_input_tokens": 9768,
+      "per_send_reservation_cny": 0.1924695
+    },
+    {
+      "sample_id": "sun_modality_3dd3ee3a2a49ad1d",
+      "request_id": "input_000113",
+      "source_text_sha256": "c82afb10a381f0fa17473598187ee2bb7203f5f3a58e4e19629c88f42a011ed7",
+      "request_sha256": "6b9dd4d06535c68604add8789724214808627a73f9a0346a8a19a2829e82d8a0",
+      "estimated_input_tokens": 9792,
+      "per_send_reservation_cny": 0.1928295
+    },
+    {
+      "sample_id": "sun_modality_98ff4092f04fb972",
+      "request_id": "input_000114",
+      "source_text_sha256": "009cb785b15de0975458b270066e72031dab55bc8724ed73440c018a53a03a59",
+      "request_sha256": "c66a9fd68b54328747e0aa4b3e50f0db570615902effe54b7f047d345d97ca9f",
+      "estimated_input_tokens": 9845,
+      "per_send_reservation_cny": 0.193635
+    },
+    {
+      "sample_id": "sun_modality_027c9d7c29d12293",
+      "request_id": "input_000115",
+      "source_text_sha256": "596724fc62bd7966f91a7f07ea1c2b1102f9af5d051bae9649173c586a50f978",
+      "request_sha256": "5a07f5f8556b4331194b8b2afe235f934709dd0998c5e4f628647e803f885e33",
+      "estimated_input_tokens": 9868,
+      "per_send_reservation_cny": 0.193797
+    },
+    {
+      "sample_id": "sun_modality_26fb78a1e008b4b1",
+      "request_id": "input_000116",
+      "source_text_sha256": "cc12ee94a2733190dd1f7e805400b7028cdbb1c7ead60d62ed4f2c7d0d562046",
+      "request_sha256": "adb8e78b29d51cefd5ec118b599e9e967cf3336730efc16fc808ed96307464e1",
+      "estimated_input_tokens": 9903,
+      "per_send_reservation_cny": 0.1943865
+    },
+    {
+      "sample_id": "sun_modality_5ba4e625747f1dd8",
+      "request_id": "input_000117",
+      "source_text_sha256": "b21f968efb24e58113d1683c09a595a09d04970985a8e6c293f7f6e1cb941b01",
+      "request_sha256": "b1aff0de270de4002280f9ef16098337746552d62299d29ab6bec02f8b80c160",
+      "estimated_input_tokens": 9758,
+      "per_send_reservation_cny": 0.1924065
+    },
+    {
+      "sample_id": "sun_modality_d5005379ec7ad570",
+      "request_id": "input_000118",
+      "source_text_sha256": "3d68c96033fe4e0b31946dd7521eb8e4450b038ef18fef8f43b03d9edbc8eae8",
+      "request_sha256": "a58b679b88acf54fa758700ae29dc6ecbb2c6e4c0d57c8b816ee0eca7aa570de",
+      "estimated_input_tokens": 9821,
+      "per_send_reservation_cny": 0.1932525
+    },
+    {
+      "sample_id": "sun_modality_e2fb123e3d7f04d4",
+      "request_id": "input_000119",
+      "source_text_sha256": "dbf3ac4781c463d284027fbec9a24f89cfc1e2529e25336c1aaaf196ff74d809",
+      "request_sha256": "8144c1e17fd38513b8ac221786426933ac657273bd9a1d811067266d002046bf",
+      "estimated_input_tokens": 9767,
+      "per_send_reservation_cny": 0.192492
+    },
+    {
+      "sample_id": "sun_modality_1aa562216c7946d9",
+      "request_id": "input_000120",
+      "source_text_sha256": "3063c06c509722ce32ada5adfbe44a0f0cac517c45dba50fa27641b9cb9ed349",
+      "request_sha256": "7c5bca44a70a2ee2c2cc1a45fd8244157b0c2063d349467dee5fde10e747a229",
+      "estimated_input_tokens": 9800,
+      "per_send_reservation_cny": 0.192969
+    },
+    {
+      "sample_id": "sun_modality_94cc5fd0629954e3",
+      "request_id": "input_000121",
+      "source_text_sha256": "bc6b6c932db3e4ddfbe11ea2f67e5ac10a8752b2ee6bf954c3089d1ac948c993",
+      "request_sha256": "be5553580fab149297c08712aa9bd07fb2296b998bde7056894a341a82e8abe9",
+      "estimated_input_tokens": 9782,
+      "per_send_reservation_cny": 0.192699
+    },
+    {
+      "sample_id": "sun_modality_62f5625d8106dd26",
+      "request_id": "input_000122",
+      "source_text_sha256": "46ebe3c735e3cca1955a97d73824db09236a7e06f9120f035f22037a20272a81",
+      "request_sha256": "b2e1f657abf89b4e3b14628a7a0cfa0762fed18eabf564bd7e7270f41c1a0547",
+      "estimated_input_tokens": 9792,
+      "per_send_reservation_cny": 0.192897
+    },
+    {
+      "sample_id": "sun_modality_e0ebba50ee8d6388",
+      "request_id": "input_000123",
+      "source_text_sha256": "fd54e39b70efc6cb0a5cf7cfc1c14dc8cad15f5ddc1cc968b6d0bebe0065b1c8",
+      "request_sha256": "69c7ac1c9260528cdcb381948b75014461cd94e151083cefde7c245da7e2c712",
+      "estimated_input_tokens": 9864,
+      "per_send_reservation_cny": 0.193878
+    },
+    {
+      "sample_id": "sun_modality_0b57d5229c19d571",
+      "request_id": "input_000124",
+      "source_text_sha256": "aa64f1fc53c923072b28722d00e1b11e0598365c77286f55fde768fa47b01afa",
+      "request_sha256": "2077cdb1acd51ea092cb176b28500244381d9ea86221a6e60e0d898d458e5b81",
+      "estimated_input_tokens": 9803,
+      "per_send_reservation_cny": 0.192996
+    },
+    {
+      "sample_id": "sun_modality_faaed83ac2ff3fb6",
+      "request_id": "input_000125",
+      "source_text_sha256": "e17d708bd95395d623f78794d6c12a37637eb06ff2267b86f329a5dfb1ec7b40",
+      "request_sha256": "8f8a7a70065b7df77e9f8b228021bf7f662a39a08fc8c1878cf88d03af09c4f7",
+      "estimated_input_tokens": 9816,
+      "per_send_reservation_cny": 0.1931535
+    },
+    {
+      "sample_id": "sun_modality_62ba1b5e9e938bd0",
+      "request_id": "input_000126",
+      "source_text_sha256": "e7d07a44a46cd5c134ebd0ff9f23445233621f2296f7d9e62255716ef1d7e1cf",
+      "request_sha256": "9731ed59330e2be93a19112ce10150a113351873db33c4d50fe58c47ec745faa",
+      "estimated_input_tokens": 9807,
+      "per_send_reservation_cny": 0.193086
+    },
+    {
+      "sample_id": "sun_modality_f6590fb5a6e27b54",
+      "request_id": "input_000127",
+      "source_text_sha256": "ca75531db858f8b91f9b1718c8db9a0612596ce28b061c3be46e79de3a732d90",
+      "request_sha256": "e7118591d641e9155377c7c66cd5a4fba9c5100ac5fe824c4d63fd7c9aafc651",
+      "estimated_input_tokens": 9771,
+      "per_send_reservation_cny": 0.19251
+    },
+    {
+      "sample_id": "sun_modality_e36ba0f82332dd53",
+      "request_id": "input_000128",
+      "source_text_sha256": "7af86410ba8c1b4858a550d0077fa8700287de8521efb8058ec607fab2575f23",
+      "request_sha256": "67763935386d48e1044c105266d8ec38e8f9a29976784e05429f479471b19481",
+      "estimated_input_tokens": 9766,
+      "per_send_reservation_cny": 0.1924605
+    },
+    {
+      "sample_id": "sun_modality_5650d5d726c7bdf1",
+      "request_id": "input_000129",
+      "source_text_sha256": "cd77f7bb95ba2bcbbf136276aa0ba8409641b69daac37863593f4fede4d2644e",
+      "request_sha256": "d9e0bdffa8d2ac4f7586a3189122bed7f98f29b01b3cca1bff4f6f371484b5f9",
+      "estimated_input_tokens": 9786,
+      "per_send_reservation_cny": 0.192735
+    },
+    {
+      "sample_id": "sun_modality_b953a4410773812e",
+      "request_id": "input_000130",
+      "source_text_sha256": "67bfb330d136fba33285cb03e943ab9a86173e5a6ca2ccbeff82cf82c931c778",
+      "request_sha256": "639d4c2aa1056e898f9b4cb22e5538a0ea91d0788f9d3c4e1664d53e79879efa",
+      "estimated_input_tokens": 9845,
+      "per_send_reservation_cny": 0.1936395
+    },
+    {
+      "sample_id": "sun_modality_429aa9dadc9faa7d",
+      "request_id": "input_000131",
+      "source_text_sha256": "e9cfa5f69a2b23ecc7edabf8f13d76db8e685d31416c11aaa5fabc3198cbd253",
+      "request_sha256": "c5a54c20ad23802161a867a298f20c5ed012109c1a0cf94035baf4f9bd48055a",
+      "estimated_input_tokens": 9831,
+      "per_send_reservation_cny": 0.193428
+    },
+    {
+      "sample_id": "sun_modality_1d1a941a62b2b259",
+      "request_id": "input_000132",
+      "source_text_sha256": "09fcf332cbc49b6288163a0d366426094b25e43e083539e3a3ba0c5baa8ba67f",
+      "request_sha256": "f2ba762a0543d8359b31091d2a9ce7791bb5196a0673f33721698631e5657e11",
+      "estimated_input_tokens": 9781,
+      "per_send_reservation_cny": 0.192735
+    },
+    {
+      "sample_id": "sun_modality_9ac5437664436669",
+      "request_id": "input_000133",
+      "source_text_sha256": "b147bf8ae6a21e7a6e70d0503dde369dfa3496ad2a2a09a1548febe41a363a4c",
+      "request_sha256": "32108377431c6cc939f5cca1a3b73f03df731378ae45e006bc3f00c1cc54cf60",
+      "estimated_input_tokens": 9786,
+      "per_send_reservation_cny": 0.192717
+    },
+    {
+      "sample_id": "sun_modality_9fab8f347617dbd1",
+      "request_id": "input_000134",
+      "source_text_sha256": "4d1c680c47e5e2af43df5c5753200b3ebed10468c85ffb227c68580bbbb5030d",
+      "request_sha256": "f3395f6ad88887372942d8e63f9f5a7cbf9167e72c0dec2be80cfef604707bb2",
+      "estimated_input_tokens": 9771,
+      "per_send_reservation_cny": 0.1925595
+    },
+    {
+      "sample_id": "sun_modality_474862c7aba53440",
+      "request_id": "input_000135",
+      "source_text_sha256": "bad975c1cdd29b7e5db61c1cbeaaf7fe95eef168d29a746d0c73b8d3fb1997bc",
+      "request_sha256": "ff12ad773ee84b7ae8d9ccdf6ba5791ae90093a9170024dd74ff21b3e1f85596",
+      "estimated_input_tokens": 9780,
+      "per_send_reservation_cny": 0.192681
+    },
+    {
+      "sample_id": "sun_modality_c34fc75f49515101",
+      "request_id": "input_000136",
+      "source_text_sha256": "2e741826e37a61037c474ac89f4dd67a2898bba7054d099d1a9de52c4164f524",
+      "request_sha256": "4cee67074e49926293865b0067386d84b1e36574110823b5452e65b7c94ec664",
+      "estimated_input_tokens": 9778,
+      "per_send_reservation_cny": 0.1926
+    },
+    {
+      "sample_id": "sun_modality_926a46dd9fc215da",
+      "request_id": "input_000137",
+      "source_text_sha256": "83236c65f63398d2c9784205eb5c93ec38c74edfc4b3836fdc5dbb369b734b07",
+      "request_sha256": "bd76cc74a1166f539c37fb89c6e10d9682450c0e4ef73c83a5a9482c69f0544d",
+      "estimated_input_tokens": 9806,
+      "per_send_reservation_cny": 0.193086
+    },
+    {
+      "sample_id": "sun_modality_0e47ffb9c6dd00ec",
+      "request_id": "input_000138",
+      "source_text_sha256": "50a955043ca91ec20e4f2c003e5d7826cfc5604e18e169d718e7da3050e84f6c",
+      "request_sha256": "d974b613e753b7f3e7ba4c591d9fe7560a41f9ae3f972132ae542b8288578df4",
+      "estimated_input_tokens": 9743,
+      "per_send_reservation_cny": 0.1921095
+    },
+    {
+      "sample_id": "sun_modality_20ad1dcec22a0969",
+      "request_id": "input_000139",
+      "source_text_sha256": "a7fed1487320ab3f4dbd3f4ed4f08990fc4ce4e95eda02ae51c64a4f4beb7904",
+      "request_sha256": "4d141fc8d2bf3d415e3a9d8b7e8d8ad99d8c6a39927f59e4fc186dcbc5dddacd",
+      "estimated_input_tokens": 9794,
+      "per_send_reservation_cny": 0.192924
+    },
+    {
+      "sample_id": "sun_modality_34cce308696757a5",
+      "request_id": "input_000140",
+      "source_text_sha256": "2af20b23f309ef452ae7f699bf890abd32e2ba6c0ee8d41b39bac920331086a9",
+      "request_sha256": "0372d9313b079c022458dbe474b4cff53eb8da205384c5b9d34ed7ba0697205d",
+      "estimated_input_tokens": 9868,
+      "per_send_reservation_cny": 0.193923
+    },
+    {
+      "sample_id": "sun_modality_4d9f9acdea0aac7c",
+      "request_id": "input_000141",
+      "source_text_sha256": "9ac23960d2a3f5dedc4451423defac1b7f239e9e91b4d460ba0afea8ed8a855c",
+      "request_sha256": "16e50e3b1121e88a83f287220ff78b8e7ed2708a22666aa160692dda141c175f",
+      "estimated_input_tokens": 9787,
+      "per_send_reservation_cny": 0.1927305
+    },
+    {
+      "sample_id": "sun_modality_bc97767d41f6d47b",
+      "request_id": "input_000142",
+      "source_text_sha256": "56a4402fe5bdab99a75b2e1e2281d5cd477fbbc45b5ddefaac5a25556a6f771b",
+      "request_sha256": "9e043be4c52c0fc0a4c782a8ac2cbe3d7ad68fbe23d2a4d15157095f3aeafacd",
+      "estimated_input_tokens": 9899,
+      "per_send_reservation_cny": 0.194346
+    },
+    {
+      "sample_id": "sun_modality_44950c0be6c00613",
+      "request_id": "input_000143",
+      "source_text_sha256": "953c9af7e618b2f9719dc9e611aaadf2c2bc1ae21caaf7b10f917e593179bd76",
+      "request_sha256": "7eda7b0fb9e852aefbc98aaa234bcde91358fcf37fb6677f8a4e6eeb5c4ab525",
+      "estimated_input_tokens": 9852,
+      "per_send_reservation_cny": 0.1937835
+    },
+    {
+      "sample_id": "sun_modality_bb89d6dab828ae2c",
+      "request_id": "input_000144",
+      "source_text_sha256": "94b5502520413da026a60385fbdf969bd5178bc4033ffa8b366dabfbaa519ced",
+      "request_sha256": "54582a05f53dbbe9750ae6f2f6d98c353950bec4fdd50708e5dcab145b40ab43",
+      "estimated_input_tokens": 9777,
+      "per_send_reservation_cny": 0.1925685
+    },
+    {
+      "sample_id": "sun_modality_fdc9485a3ed1b40f",
+      "request_id": "input_000145",
+      "source_text_sha256": "f0450d14c10124dd3f7cd504d04462c8c389cb7faab4a7da98c3366e2c772d55",
+      "request_sha256": "999628f14519b9a12622f3e876ff1f7f5237e6b0c3584fe7d038811fa4c4b6e1",
+      "estimated_input_tokens": 9808,
+      "per_send_reservation_cny": 0.193014
+    },
+    {
+      "sample_id": "sun_modality_8e94916053aac7eb",
+      "request_id": "input_000146",
+      "source_text_sha256": "5f488f85639ebe59d563e4dbed08b4a4f5706bd5471e597521ff605fe7cf22f5",
+      "request_sha256": "d218ab1d8005faff17bed2aadb5058cdbfe79ae56aa0f381565338c877bc1e31",
+      "estimated_input_tokens": 9810,
+      "per_send_reservation_cny": 0.193158
+    },
+    {
+      "sample_id": "sun_modality_18a8c978a45e74b9",
+      "request_id": "input_000147",
+      "source_text_sha256": "49e365dfed744c512ffebc2d7fc72a3fb6a4bf9a760e3bd26e4bf3ef4dd355ec",
+      "request_sha256": "8e6037dd5e788b203b10d9d1585c4f183c8113f97898d1233776a9d4ec7e566e",
+      "estimated_input_tokens": 9763,
+      "per_send_reservation_cny": 0.1924065
+    },
+    {
+      "sample_id": "sun_modality_e32abf250d2c0b8c",
+      "request_id": "input_000148",
+      "source_text_sha256": "289b331e8da1ca423035112b8e906763e5730bd780b1f79c40ebb7c16f5d257a",
+      "request_sha256": "6f936205064c3bbd593c578eb9d372f1f235f01ef9e746d767c58a0d0b908210",
+      "estimated_input_tokens": 9839,
+      "per_send_reservation_cny": 0.19359
+    },
+    {
+      "sample_id": "sun_modality_07b0547a7b2a92a1",
+      "request_id": "input_000149",
+      "source_text_sha256": "69dd07c378a0190df93d3e4ab21e62fcd643f136795fb626b93760a39fe4d0d5",
+      "request_sha256": "345d262124fddf4c97b31bbc0676110e4aa3406541fdbfdae8441cb05ef306f7",
+      "estimated_input_tokens": 9843,
+      "per_send_reservation_cny": 0.19359
+    },
+    {
+      "sample_id": "sun_modality_65b759f65d6cc998",
+      "request_id": "input_000150",
+      "source_text_sha256": "a8653f0d979951658e4fc617ca41f2260dd76bd31a9be41aaf7501fb851460e6",
+      "request_sha256": "b22c7547baf23f624ddc9774ca60b12546b57084883347fe31c538510a6eec76",
+      "estimated_input_tokens": 9745,
+      "per_send_reservation_cny": 0.192159
+    },
+    {
+      "sample_id": "sun_modality_868f6aa1d2fce836",
+      "request_id": "input_000151",
+      "source_text_sha256": "42ad72bd464c29f3512b589ccc78aa85a7ab62b5a81cf74e2f3565fc004ebc0f",
+      "request_sha256": "801b62602bed60c8c116bd909d2bd644d4f21941d859cd6c152d153a6d91d269",
+      "estimated_input_tokens": 9756,
+      "per_send_reservation_cny": 0.192285
+    },
+    {
+      "sample_id": "sun_modality_d2cc242dec1fe422",
+      "request_id": "input_000152",
+      "source_text_sha256": "bc8798d423c3837210ea57abc4733912cd942e4015fd325c175fdc3e06a96423",
+      "request_sha256": "c8c9690a4e01f54a8446d833c72cfb4188d17cae7d0e1eaee45c7ee5a8b5920d",
+      "estimated_input_tokens": 9810,
+      "per_send_reservation_cny": 0.1931805
+    },
+    {
+      "sample_id": "sun_modality_5c7ac6760deb9439",
+      "request_id": "input_000153",
+      "source_text_sha256": "c930fce16a316680f3d6092ed01ec782bf52677ae4711ff94f25b97af8190c97",
+      "request_sha256": "56f1dd95aeea117ea068e465bb5f63c13a6abd6430b166ba72e0d3ae2bc9f56c",
+      "estimated_input_tokens": 9769,
+      "per_send_reservation_cny": 0.1924785
+    },
+    {
+      "sample_id": "sun_modality_5c5bc4c478b04077",
+      "request_id": "input_000154",
+      "source_text_sha256": "92aaca3cf82ab54f05dc8147436ba75a6b9d36bbf24a13b65c9d81609a64e9b4",
+      "request_sha256": "9cb3ddb55ae0f2e718fd8f479a1201fe433749c0c3a12f582bbd4fac88c884a6",
+      "estimated_input_tokens": 9795,
+      "per_send_reservation_cny": 0.1928295
+    },
+    {
+      "sample_id": "sun_modality_a6205cfee1ebf78d",
+      "request_id": "input_000155",
+      "source_text_sha256": "8f891580e1c139c99c453aed628e9835395ac638fc7c739d36094a13eff7e43c",
+      "request_sha256": "520151a529ed7f147189abd5b8f87e6dd17f412863c25581b0e70f0361da1046",
+      "estimated_input_tokens": 9781,
+      "per_send_reservation_cny": 0.1926945
+    },
+    {
+      "sample_id": "sun_modality_468239026e9c7241",
+      "request_id": "input_000156",
+      "source_text_sha256": "426a8bb3afe6e5cefc34bde7e8b7342e62438dbddd0b0069eb9d6d6e3d670778",
+      "request_sha256": "52f04febaee48c8d795c93e11baa6eb1e1b32bd81556c3e30b6769ca4966239c",
+      "estimated_input_tokens": 9779,
+      "per_send_reservation_cny": 0.1926585
+    },
+    {
+      "sample_id": "sun_modality_e472de45eed547a8",
+      "request_id": "input_000157",
+      "source_text_sha256": "0f0eb7b28a636e83faca87645dd8eb4b0b7e92171f8f3d48d2a1ac0b1dae8f04",
+      "request_sha256": "5100a6cc89d7a681d532f1311cdddd7625ef3a53e7ffe69f280f2de8eff1f650",
+      "estimated_input_tokens": 9795,
+      "per_send_reservation_cny": 0.1928385
+    },
+    {
+      "sample_id": "sun_modality_0946c5fa15d64568",
+      "request_id": "input_000158",
+      "source_text_sha256": "90b0995967c107cd71175074052f02f71957263274034339c4ff13cf3412ef6a",
+      "request_sha256": "70b782c0cd6d259e01d7593be13a35365fd2dc3055af22d164bf9d31d6753346",
+      "estimated_input_tokens": 9811,
+      "per_send_reservation_cny": 0.1931085
+    },
+    {
+      "sample_id": "sun_modality_b01c0d18a5e61ac1",
+      "request_id": "input_000159",
+      "source_text_sha256": "2449de1cde73a072e78df5d2b73149dc5ea622aacb8684a6640a6967bef18f4d",
+      "request_sha256": "467ca190a8f88d48c930e1940bb8bd44765224345fd407abd108ecce3233e0cf",
+      "estimated_input_tokens": 9765,
+      "per_send_reservation_cny": 0.192411
+    },
+    {
+      "sample_id": "sun_modality_a6e61618e5c6db5a",
+      "request_id": "input_000160",
+      "source_text_sha256": "29a492cace69a33ba079689aae79bda07d992b618693f20e8209861026c1f036",
+      "request_sha256": "082c5acb463892f3cf168a8b3b962f11ef59f6702d1571a0095b8872ea3d6a4f",
+      "estimated_input_tokens": 9754,
+      "per_send_reservation_cny": 0.192285
+    },
+    {
+      "sample_id": "sun_modality_1923c769b06ea927",
+      "request_id": "input_000161",
+      "source_text_sha256": "fb5fc78a4a5217fc61dc4dfae002d10f1c00f8eccf092b649fdc6455f72d654d",
+      "request_sha256": "6810ef5e658e886ed109eb30f4a6e50b548d833427eff90b66b14d7fc2f901a5",
+      "estimated_input_tokens": 9753,
+      "per_send_reservation_cny": 0.192285
+    },
+    {
+      "sample_id": "sun_modality_af5cbd9a42dc23b2",
+      "request_id": "input_000162",
+      "source_text_sha256": "cf220ac5359251de6a06a33094127f4f49855322b6688e82f31fcf767edd1783",
+      "request_sha256": "ba5e749baab7b8e0243743b9b70fbceef3d3db1b41e8fd293c371c132ac3f011",
+      "estimated_input_tokens": 9783,
+      "per_send_reservation_cny": 0.1927125
+    },
+    {
+      "sample_id": "sun_modality_9b0c4172b4d1874f",
+      "request_id": "input_000163",
+      "source_text_sha256": "0859a234de5879859ece8734fbe5dc803e386090863949313fd9b3574e653f70",
+      "request_sha256": "28f160406709f7f8fe3d01605d2f13e7afafc53385c52815336ad16e25280600",
+      "estimated_input_tokens": 9889,
+      "per_send_reservation_cny": 0.1942875
+    },
+    {
+      "sample_id": "sun_modality_41b37ca8b559ef22",
+      "request_id": "input_000164",
+      "source_text_sha256": "09310a85f6249d35f819322052627eec287d027ae5df6bb78894dc24d2bf18fd",
+      "request_sha256": "808ec1c48137c70e41474fc9aed2d60c962663a1a60d03a2da297f5f38f93bb2",
+      "estimated_input_tokens": 9763,
+      "per_send_reservation_cny": 0.19242
+    },
+    {
+      "sample_id": "sun_modality_44c411a53fe79cab",
+      "request_id": "input_000165",
+      "source_text_sha256": "f94f6acd6a32a00f898519ea2c6ca48b7a2aba332228ad44f5670865749d1837",
+      "request_sha256": "08e52a163e3e53c0842db0bd4433223f147229bad031c58193e0e2f0e2f4a4ac",
+      "estimated_input_tokens": 9771,
+      "per_send_reservation_cny": 0.1925505
+    },
+    {
+      "sample_id": "sun_modality_1d3bd9ad6a5b35b6",
+      "request_id": "input_000166",
+      "source_text_sha256": "4a26a144416f0820f3e07a403ce8e690306a0a95ce9fd1a0a6c6ab2d4c9fc136",
+      "request_sha256": "a010934e9fb64426aaec7f2571f5a7ad20a6195715cedc434b8cfdbf47bcf2d6",
+      "estimated_input_tokens": 9828,
+      "per_send_reservation_cny": 0.1933695
+    },
+    {
+      "sample_id": "sun_modality_f8af9212daacdfb3",
+      "request_id": "input_000167",
+      "source_text_sha256": "956154a83545417a4dd862ffffe88af9b0b033feaa28333f674478a73dac6dfb",
+      "request_sha256": "cb2a6793c61269fd6fdcc8bb6b0e620aa941ee953989070fb930fea58f86fe20",
+      "estimated_input_tokens": 9801,
+      "per_send_reservation_cny": 0.1930365
+    },
+    {
+      "sample_id": "sun_modality_541278026c70d261",
+      "request_id": "input_000168",
+      "source_text_sha256": "c37fd4d4e846aa5a0c5d7979edb0a9404853c229dfc9a3309284c7f0ef3dcd0d",
+      "request_sha256": "bc4b86e1308306d64b39ace9e48a62ca4b893ce67c34c7443e841c608c141c5b",
+      "estimated_input_tokens": 9818,
+      "per_send_reservation_cny": 0.193122
+    },
+    {
+      "sample_id": "sun_modality_43af0a1cb1e68953",
+      "request_id": "input_000169",
+      "source_text_sha256": "45c5f0fa9c6dfb472613ab0236daf53f0c4d949d138ed5da001dbd92f796676b",
+      "request_sha256": "0de20342d10e2f7bc66c18c66dffc466b00000d3693c63490d23121f968a10e1",
+      "estimated_input_tokens": 9765,
+      "per_send_reservation_cny": 0.1924605
+    },
+    {
+      "sample_id": "sun_modality_5a3bd1b5011bdd66",
+      "request_id": "input_000170",
+      "source_text_sha256": "38734f01b4b966ddb2098ebd956f5e55948c7f7675428410b893047c3cb64d2c",
+      "request_sha256": "aed31e4dfb9377ed835900a08fb702fc3c58daa609b5113c7f369552b992ed61",
+      "estimated_input_tokens": 9773,
+      "per_send_reservation_cny": 0.1925505
+    },
+    {
+      "sample_id": "sun_modality_41b6fe46777f63e0",
+      "request_id": "input_000171",
+      "source_text_sha256": "c389eeb78b93b3d9837f98b6a6f3835c6ac94c64cfe3a35a206fc73a7701541c",
+      "request_sha256": "3ce6aeeba0817a6bfe43248711a1c3b8b97a77fd3305ae58dabf4dd249c1611f",
+      "estimated_input_tokens": 9764,
+      "per_send_reservation_cny": 0.192492
+    },
+    {
+      "sample_id": "sun_modality_36fdc15465439af6",
+      "request_id": "input_000172",
+      "source_text_sha256": "dacdac59929bb1d158497e92a5ea7c5c6964171e3e851ddfdca94549aa9a9077",
+      "request_sha256": "102898f0a27f3562d3695465166973851cc6bd9bff6d7f1969ed5764620f7891",
+      "estimated_input_tokens": 9854,
+      "per_send_reservation_cny": 0.1937025
+    },
+    {
+      "sample_id": "sun_modality_87ad4e98d8b1a03c",
+      "request_id": "input_000173",
+      "source_text_sha256": "0dacf09a505b4bb29c33503009c733c0ccbea42a50f6ddf8bd0c54fb86d04a8a",
+      "request_sha256": "fb501a80a85f6d5a17c6afc0426d69370aa9d20caf748465d2557957c95c22ef",
+      "estimated_input_tokens": 9807,
+      "per_send_reservation_cny": 0.1930905
+    },
+    {
+      "sample_id": "sun_modality_095b3b3717898a61",
+      "request_id": "input_000174",
+      "source_text_sha256": "66c876be40a979bd940660ca06e4825670488c190e97ce6bec29d2e019a236ca",
+      "request_sha256": "91b09f28f0893f64ba24471e44ec07305070560ba7643516cb4751652df84761",
+      "estimated_input_tokens": 9790,
+      "per_send_reservation_cny": 0.192789
+    },
+    {
+      "sample_id": "sun_modality_ebcf85dc92f6a19b",
+      "request_id": "input_000175",
+      "source_text_sha256": "9b1681321d7999fa8617fae73f7d085bef2c42f8e002f8582ce615012bba4c9a",
+      "request_sha256": "813ba198151e22010973c1ddbca2875f5a92ea9222b614a58e03d4c6e3cbebd7",
+      "estimated_input_tokens": 9797,
+      "per_send_reservation_cny": 0.1929105
+    },
+    {
+      "sample_id": "sun_modality_f1d05aec9e352576",
+      "request_id": "input_000176",
+      "source_text_sha256": "ee9da466d2e0f982b473eb84f78f1439dacf94b462336263bd9ec04ead4e3497",
+      "request_sha256": "52467a17416f73d33999cb6131b2f94d50d76c8f5bc9582f1db02cf974b9b63c",
+      "estimated_input_tokens": 9746,
+      "per_send_reservation_cny": 0.192195
+    },
+    {
+      "sample_id": "sun_modality_ac917ad1741d1293",
+      "request_id": "input_000177",
+      "source_text_sha256": "75b92539f5d937b983c628f3a763c90ba14d62f5f6cdd2ee3ab34d2473013199",
+      "request_sha256": "af7efb30ab4d9af88c39c1626b27ad5b490a52564c7615a1bc924305bebedf44",
+      "estimated_input_tokens": 9757,
+      "per_send_reservation_cny": 0.1922985
+    },
+    {
+      "sample_id": "sun_modality_31305eea46c1a147",
+      "request_id": "input_000178",
+      "source_text_sha256": "5766456453597b7f62c4cea32f2d4ace8040c5d3634c5f73dfefda698f668812",
+      "request_sha256": "3347e2e27876e3e1594d45208dca3224a02962c929e65342137853c327431da6",
+      "estimated_input_tokens": 9779,
+      "per_send_reservation_cny": 0.192618
+    },
+    {
+      "sample_id": "sun_modality_37abc23150f2268f",
+      "request_id": "input_000179",
+      "source_text_sha256": "2bada49f8f6e78a5bc095ebc02039274cdac6da6910d82e259d8fc4e1c640c32",
+      "request_sha256": "03ab32a98c4dfe381a8ea8cb62c6fddfa76e950c19d08eb890877299acccba09",
+      "estimated_input_tokens": 9801,
+      "per_send_reservation_cny": 0.1930005
+    },
+    {
+      "sample_id": "sun_modality_9d702b0c572ee27b",
+      "request_id": "input_000180",
+      "source_text_sha256": "66126607a0ce6cc154ba50bb962c54b05d972ba1c25d1d0529ed1a583d05a9fb",
+      "request_sha256": "3337c72c138fbd07e9702bdffbb3b113f88689565a6342ef5ba09a41872f13b4",
+      "estimated_input_tokens": 9810,
+      "per_send_reservation_cny": 0.1930365
+    },
+    {
+      "sample_id": "sun_modality_408db401a0664fb7",
+      "request_id": "input_000181",
+      "source_text_sha256": "f3915b61c0df3a9ddebf0f7ab06cd70d193772d11ab0d38a605ef76d8a1495e2",
+      "request_sha256": "df675c4add3b18fcb8a5e6c24a10ba1808b108fc4fb8aea22ea07b99ce487915",
+      "estimated_input_tokens": 9777,
+      "per_send_reservation_cny": 0.1925955
+    },
+    {
+      "sample_id": "sun_modality_c961313d19e26f0e",
+      "request_id": "input_000182",
+      "source_text_sha256": "ab81d895a79c9c3a61bd8cbd9d068c85c6732d69bebf69804d869fa9305cbfc3",
+      "request_sha256": "a9c7507bcb01814db668deea67c2b98094965a0db58d20b867e0aa8bbd310ca1",
+      "estimated_input_tokens": 9784,
+      "per_send_reservation_cny": 0.1927035
+    },
+    {
+      "sample_id": "sun_modality_9b142d98644c876a",
+      "request_id": "input_000183",
+      "source_text_sha256": "9b0744b054e91e380584b73dc6888402b591b9b048ff0eed0d22a76cd69a6dc2",
+      "request_sha256": "ad6b655bb85f6f26183760f7ee39364afc00a5cfed3c6c83a4bf94ef02debbdc",
+      "estimated_input_tokens": 9808,
+      "per_send_reservation_cny": 0.1930095
+    },
+    {
+      "sample_id": "sun_modality_31320a1ae04ea44a",
+      "request_id": "input_000184",
+      "source_text_sha256": "8a899db07f825d89aa515ae51b4e284cead7408c40ac95a3db57d458320a159e",
+      "request_sha256": "f5d82b36c4a075bea3cd33e04ebeac1f01a7dfddb01d6b774cfb6d506624556a",
+      "estimated_input_tokens": 9857,
+      "per_send_reservation_cny": 0.1938195
+    },
+    {
+      "sample_id": "sun_modality_afa03c64c80fb70b",
+      "request_id": "input_000185",
+      "source_text_sha256": "f522cbc7a9ec212d38e16d28bf61a368c15b16ac6c85aaa3bc844cdac1d35635",
+      "request_sha256": "fd20b943e97e37ef1431c117a9dd66e8c39cdc691c7435cd76a28d3a2c04c065",
+      "estimated_input_tokens": 9778,
+      "per_send_reservation_cny": 0.192618
+    },
+    {
+      "sample_id": "sun_modality_a8fc342153c88a96",
+      "request_id": "input_000186",
+      "source_text_sha256": "4d5ed7ac6c35cef7d07e01fd816f5febcf00005283a8c2bf8730db9ebc2a6a05",
+      "request_sha256": "14dee0d95786cca14ef364eabebf8b0fd6a7b884361bd99aa6ea7fc591f48f9e",
+      "estimated_input_tokens": 9780,
+      "per_send_reservation_cny": 0.1926315
+    },
+    {
+      "sample_id": "sun_modality_ca4ff9c35b38557f",
+      "request_id": "input_000187",
+      "source_text_sha256": "11cb85d865cd90096931bb5a32eef4151c369e27ef79b0f7044019082ba9b96a",
+      "request_sha256": "e4283cb43b3b9157657cb80e8fdb3c892b7baad39a78c33ea1c71ddaa51e9f98",
+      "estimated_input_tokens": 9870,
+      "per_send_reservation_cny": 0.193896
+    },
+    {
+      "sample_id": "sun_modality_3b06cb0a14b8a572",
+      "request_id": "input_000188",
+      "source_text_sha256": "60a9c78b319adc7bb97f4db1141941588587dfc2217ec9af8e008593d41c2bc0",
+      "request_sha256": "97979d8f593ea779a7e16925d2629b8be926e3579f4287660ea3bb4d766c4485",
+      "estimated_input_tokens": 9780,
+      "per_send_reservation_cny": 0.1926315
+    },
+    {
+      "sample_id": "sun_modality_6eefcb12db5ecb8f",
+      "request_id": "input_000189",
+      "source_text_sha256": "60a9c78b319adc7bb97f4db1141941588587dfc2217ec9af8e008593d41c2bc0",
+      "request_sha256": "c5c198b67eabd999af8dc0024a3a0cbcd66b733eda7b89af77f36744fe1a0a4a",
+      "estimated_input_tokens": 9780,
+      "per_send_reservation_cny": 0.1926315
+    },
+    {
+      "sample_id": "sun_modality_33551c8eaa432287",
+      "request_id": "input_000190",
+      "source_text_sha256": "31c5c7c9c66d1a940356f1b75c25687b06342e16e9ecfcb3c3b0b5e22f947817",
+      "request_sha256": "7d751ed14bfe38ea008a29c0849fc3c78bf3b9a1594bb436b890a57ac5922a93",
+      "estimated_input_tokens": 9791,
+      "per_send_reservation_cny": 0.19278
+    },
+    {
+      "sample_id": "sun_modality_31890f133a9593bf",
+      "request_id": "input_000191",
+      "source_text_sha256": "2637283cc5e47dd33e58f39f57da720814eee6131d2879ec03494587e4f02a74",
+      "request_sha256": "4ac496af572db791e267084d631a47bb166dfb58db8ac4bc5f8227d8ddd0d7f1",
+      "estimated_input_tokens": 9790,
+      "per_send_reservation_cny": 0.192807
+    },
+    {
+      "sample_id": "sun_modality_238baf3cb2303dfe",
+      "request_id": "input_000192",
+      "source_text_sha256": "a7e823719143b23f7cfbfa5208c5845e3eb24c4aaef90cd3ff6724ab5e32ec96",
+      "request_sha256": "efc55692321cec0a7534d5011e451b8372815ab67d7a9926e40c1f3aeca32f10",
+      "estimated_input_tokens": 9818,
+      "per_send_reservation_cny": 0.193203
+    },
+    {
+      "sample_id": "sun_modality_b3352e757813f3f0",
+      "request_id": "input_000193",
+      "source_text_sha256": "f0af26e0eeba385d9003a8053f78180e7e49385fc0ed22b27a0a1fd36e7d9ee9",
+      "request_sha256": "78036b82536959584f716521fda9956344bba066e8419c0ab974b21e26af1054",
+      "estimated_input_tokens": 9839,
+      "per_send_reservation_cny": 0.1935135
+    },
+    {
+      "sample_id": "sun_modality_e5194b23046b82f6",
+      "request_id": "input_000194",
+      "source_text_sha256": "ae09345db71fdec4d9b747f17e5066a3cdfe3de03ebffdc3024fc10eae49ff88",
+      "request_sha256": "40d6a9011237446a4e91885882094c202978254b7ac76f2e3244711a53cb937f",
+      "estimated_input_tokens": 9745,
+      "per_send_reservation_cny": 0.1921725
+    },
+    {
+      "sample_id": "sun_modality_f8a052691625ed19",
+      "request_id": "input_000195",
+      "source_text_sha256": "40d541d61c1534d6739e7136636ca2032329b0b6e93448a3c192437877fbf42b",
+      "request_sha256": "d72b191dcc94db26d69c761f19d8780d2f1a36d62ddcb21d3755a4220109027d",
+      "estimated_input_tokens": 9809,
+      "per_send_reservation_cny": 0.193059
+    },
+    {
+      "sample_id": "sun_modality_7f2a59e56d7f558d",
+      "request_id": "input_000196",
+      "source_text_sha256": "2aad2828745225ccb7a9205d21da60de2ebf654d623654569bade4dc8f519eb2",
+      "request_sha256": "d70674950a01cc62ac70f67d7427f847c1e9f6feda5e3f99e5c0700bc02a4bc7",
+      "estimated_input_tokens": 9766,
+      "per_send_reservation_cny": 0.1924965
+    },
+    {
+      "sample_id": "sun_modality_b321a367ba9a1df0",
+      "request_id": "input_000197",
+      "source_text_sha256": "55dd2e3f82860dcf04a5d73e7ecb8b00519352d693bc0128f5a0e56e9135e49d",
+      "request_sha256": "de88c5a885bb8887749b1c38797759cae3309e9c3b1b6a20d3cee37edbd7c179",
+      "estimated_input_tokens": 9804,
+      "per_send_reservation_cny": 0.192987
+    },
+    {
+      "sample_id": "sun_modality_9dafb51fede91501",
+      "request_id": "input_000198",
+      "source_text_sha256": "c45e3081e76cb2103959a89d7fae9f47951e4e37811e66b80126e93a05f2a81c",
+      "request_sha256": "b8a36f6306d26cb8604b6fc982c8542ca85e4ac00b0fbf0c7c0971c75d7ebe7b",
+      "estimated_input_tokens": 9796,
+      "per_send_reservation_cny": 0.192843
+    },
+    {
+      "sample_id": "sun_modality_ae6656be0ee50171",
+      "request_id": "input_000199",
+      "source_text_sha256": "d92bf584f0fd0a99d656a0bf1255266b26a3a5bf27e9fc4d15bcac034d54faa4",
+      "request_sha256": "438167eeb01272f905edfc1bd4dd0ab3f529c1bf2149fa80a59c94811d3295f3",
+      "estimated_input_tokens": 9782,
+      "per_send_reservation_cny": 0.192645
+    },
+    {
+      "sample_id": "sun_modality_c28616c3335236b7",
+      "request_id": "input_000200",
+      "source_text_sha256": "45fcc108049bec45515e852cb6561312b0ad8b5b397e0bc011ea2565c367408b",
+      "request_sha256": "1908b2cd51aa1167a01e0e36c806706ebf14c0a7a3387105e9f07f44f5f3be55",
+      "estimated_input_tokens": 9804,
+      "per_send_reservation_cny": 0.193014
+    },
+    {
+      "sample_id": "sun_modality_f0848760a53dfe9c",
+      "request_id": "input_000201",
+      "source_text_sha256": "09f563893e841871667f4300ab5263ce7db71682374a9bdfbc5d05aafd8607de",
+      "request_sha256": "0c14f6c2b5dd5f72003cea7da339e98c4c49ad7467576e060c77afe0114f34b4",
+      "estimated_input_tokens": 9806,
+      "per_send_reservation_cny": 0.193005
+    },
+    {
+      "sample_id": "sun_modality_c5df8e67211e09d5",
+      "request_id": "input_000202",
+      "source_text_sha256": "ac9477e1ffbb24dd512fafb6e679e4f4a83c1778caf976a556fa3fa60147829d",
+      "request_sha256": "8ee67b59c08a00e318206ccfb4c20837c0a70657fcf97729fddce13741b7ecf1",
+      "estimated_input_tokens": 9796,
+      "per_send_reservation_cny": 0.192852
+    },
+    {
+      "sample_id": "sun_modality_5ff7d510982e54a0",
+      "request_id": "input_000203",
+      "source_text_sha256": "9e1e199a35565cfe62f9a029aa469597247f74dd8fcdecbeda564ee4fa313d5c",
+      "request_sha256": "61c8eac5f9ad66e42b270d82e333c1375a55c43db5fc99b7e0544cb80ecdd5fd",
+      "estimated_input_tokens": 9873,
+      "per_send_reservation_cny": 0.1939275
+    },
+    {
+      "sample_id": "sun_modality_c6b68ee7086da031",
+      "request_id": "input_000204",
+      "source_text_sha256": "a78f10b4fe3fcf1925129f7c1a65c2a4eb228c96dc60943df8a34b9bf5868a67",
+      "request_sha256": "b3ba83a3e4763048a18cd181b338c69e55b560fd076be2d72d10f97c4ebe5994",
+      "estimated_input_tokens": 9806,
+      "per_send_reservation_cny": 0.1930545
+    },
+    {
+      "sample_id": "sun_modality_4ff649f2a9671788",
+      "request_id": "input_000205",
+      "source_text_sha256": "c075f3c2f9c83eec67c9a54a9e3443135e4678edcdb3c54262f54f2a859b7f9f",
+      "request_sha256": "70a599dd47ffe187f6ec6c79ac4f1970aa8a5656e18d537e705a7be9646ab9ba",
+      "estimated_input_tokens": 9785,
+      "per_send_reservation_cny": 0.192753
+    },
+    {
+      "sample_id": "sun_modality_f8b56c5df9a44152",
+      "request_id": "input_000206",
+      "source_text_sha256": "8c0cea62804100e22920119ab633b0e477f5c94d6793048c23403b84ab9d4e72",
+      "request_sha256": "09d647a001e60d91e1df0b0310428386ca5d42bd009610c130390948afd279a7",
+      "estimated_input_tokens": 9808,
+      "per_send_reservation_cny": 0.193068
+    },
+    {
+      "sample_id": "sun_modality_5f1460870de572fe",
+      "request_id": "input_000207",
+      "source_text_sha256": "5888bb1a0714386d8c72371b2a2ad7068b2d74fce369e161bd8e2a712ef68541",
+      "request_sha256": "f377e914210c53f396b2a8af8f7b1d89dfd1f458d70099d4078625a5a1e6b240",
+      "estimated_input_tokens": 9774,
+      "per_send_reservation_cny": 0.1925685
+    },
+    {
+      "sample_id": "sun_modality_33842fb54e03e8cd",
+      "request_id": "input_000208",
+      "source_text_sha256": "33910437530000507928e21710b4e93c45b1bd88e1b5027ee98f74033ddb3cb9",
+      "request_sha256": "213a828c51d28a78e574923c0ed9ef21e292cc07bbe8854e68fc9d18b3213f23",
+      "estimated_input_tokens": 9832,
+      "per_send_reservation_cny": 0.1934415
+    },
+    {
+      "sample_id": "sun_modality_a1baa3f84c20f826",
+      "request_id": "input_000209",
+      "source_text_sha256": "5d391154fb5bd10b9b65e6e3303938d37b2323d7afcbc49cb10dee540f4bf8a9",
+      "request_sha256": "ee33affc1b60fe02ed17a858203496d9f835faedaecc2976c768aaaa2a3dc8ba",
+      "estimated_input_tokens": 9791,
+      "per_send_reservation_cny": 0.1927935
+    },
+    {
+      "sample_id": "sun_modality_cb6075c1bc204c4e",
+      "request_id": "input_000210",
+      "source_text_sha256": "08f838220fe390a63aabc2694f3b255636d1c26b3a1d0f089c3866393f5bb06d",
+      "request_sha256": "140c894a4bdfb3213ef615d2664098f98c5c285c08a2fa25bbde2500985f0beb",
+      "estimated_input_tokens": 9751,
+      "per_send_reservation_cny": 0.1922625
+    },
+    {
+      "sample_id": "sun_modality_0738582b531e9266",
+      "request_id": "input_000211",
+      "source_text_sha256": "0bdf1d711e23115d62451247dab2ca34f8ed16da5c2791a19095e03724065247",
+      "request_sha256": "41470d2cd88c4abe77cc2396e50316a756fb4165f0231c2681fb3b7e95a4b1f0",
+      "estimated_input_tokens": 9779,
+      "per_send_reservation_cny": 0.1926585
+    },
+    {
+      "sample_id": "sun_modality_8efa350640d341df",
+      "request_id": "input_000212",
+      "source_text_sha256": "b8cf973984fd7055a9cda88bb6a9d90961f74a4365b409118223791f639fc091",
+      "request_sha256": "e3e5fd56d9247dbcd6556fbed334a9fd662c87dbdf6e310c7a8d09e970af3ca8",
+      "estimated_input_tokens": 9780,
+      "per_send_reservation_cny": 0.192618
+    },
+    {
+      "sample_id": "sun_modality_5eafbae9b95747c0",
+      "request_id": "input_000213",
+      "source_text_sha256": "b5d358a133059943dc1ed8456448c849609afd36e0714304a2702c2c5774a897",
+      "request_sha256": "f8dd6740c90d671c475e4d78d0a17538464218e5250269d47b97c0ff10c4e188",
+      "estimated_input_tokens": 9757,
+      "per_send_reservation_cny": 0.1923075
+    },
+    {
+      "sample_id": "sun_modality_6b3da4201341250a",
+      "request_id": "input_000214",
+      "source_text_sha256": "31cd069fe6a3345515bc94be5d86f00477cb2e159fac36959d07490b197607bd",
+      "request_sha256": "d7048181df0543e9c4ac69ca1548dabfdfa34d4926a63fffd592100955401412",
+      "estimated_input_tokens": 9756,
+      "per_send_reservation_cny": 0.1923075
+    },
+    {
+      "sample_id": "sun_modality_7523fff8c5b353e4",
+      "request_id": "input_000215",
+      "source_text_sha256": "53ec6a429a8c4069e5cfc642fe621f3dda29748b81114751b1b0e31c324fa22b",
+      "request_sha256": "59535f439cbe22adaf9d5f86c276814caa7257182138f542eef3f46aa61140a0",
+      "estimated_input_tokens": 9828,
+      "per_send_reservation_cny": 0.1933695
+    },
+    {
+      "sample_id": "sun_modality_a0155bb59626b640",
+      "request_id": "input_000216",
+      "source_text_sha256": "a352395e03e831d9615ff0d7d47cd5dfcce66ff6ea411eb215c751bad3f93f01",
+      "request_sha256": "1f74884808def894e435b1d086e4697bc30c182768efc0523a47077d9cf43091",
+      "estimated_input_tokens": 9801,
+      "per_send_reservation_cny": 0.1929285
+    },
+    {
+      "sample_id": "sun_modality_219230f5c57d16e0",
+      "request_id": "input_000217",
+      "source_text_sha256": "2a98fe3e79e01cfc1bd4e326a513b738ec39635cb7946cc92d75918dcc453567",
+      "request_sha256": "d1c687d8f3c2c09f2f58047d3851593545e553d5e9d0928155f3c03b305d96f6",
+      "estimated_input_tokens": 9757,
+      "per_send_reservation_cny": 0.1923345
+    },
+    {
+      "sample_id": "sun_modality_5de4c51095d25b3b",
+      "request_id": "input_000218",
+      "source_text_sha256": "f10007cfed9252bdabe044d97d071613d5f8d42bd6b964e9267abde5b6543e12",
+      "request_sha256": "bba9556fa9cbe571b94e206f777f9182e6f88c77654c338640927191f56b2a92",
+      "estimated_input_tokens": 9752,
+      "per_send_reservation_cny": 0.1922535
+    },
+    {
+      "sample_id": "sun_modality_62da5f53974c89a1",
+      "request_id": "input_000219",
+      "source_text_sha256": "372a504609f6c1b386b9e9961e6a93b044e823c48531f5ac153622abb2fef214",
+      "request_sha256": "a2fc59cd741075ccb52ed393cc134851c25d79ad753ac27e3a876499b746ff77",
+      "estimated_input_tokens": 9827,
+      "per_send_reservation_cny": 0.1932705
+    },
+    {
+      "sample_id": "sun_modality_40499148436dd523",
+      "request_id": "input_000220",
+      "source_text_sha256": "e21e57a7a12d25facca4b80a907c49a55dcb8d53eb70a5a4181baef1fd25ef39",
+      "request_sha256": "2be95ec2a19e17b4650e0a1350f800a708e3c5a4d38ed40965db65a06e5b264d",
+      "estimated_input_tokens": 9874,
+      "per_send_reservation_cny": 0.193986
+    },
+    {
+      "sample_id": "sun_modality_daaba8ffc0de5c05",
+      "request_id": "input_000221",
+      "source_text_sha256": "9fbb7d8a8ba0b087eb31714ccaa8c732aef57ea5ca65f4399c7c27912c35c461",
+      "request_sha256": "276768531eb39548d367c5a7a10a322036d11e185d899d5d2637862526df748e",
+      "estimated_input_tokens": 9798,
+      "per_send_reservation_cny": 0.1928565
+    },
+    {
+      "sample_id": "sun_modality_3f5f938bbf3957e4",
+      "request_id": "input_000222",
+      "source_text_sha256": "98fadc2a7ca0085405e96a456eb835f8e01d4c07a7f2e9b14282447fd9fa62dc",
+      "request_sha256": "048cedba1564c4af6c5f8bc0a4c557f40ddfb7d9721617f326d0b81dbd5d7b9d",
+      "estimated_input_tokens": 9838,
+      "per_send_reservation_cny": 0.1936125
+    },
+    {
+      "sample_id": "sun_modality_929e48671ace4e61",
+      "request_id": "input_000223",
+      "source_text_sha256": "5b857f9eb169ff39f9dd86293f3dd744de36e72b90ec552a62e2335859515ad7",
+      "request_sha256": "66e3e9d1aa19118126d808e0fbf28947f153764d1fdfbe68876f70e85a5c18c9",
+      "estimated_input_tokens": 9788,
+      "per_send_reservation_cny": 0.1927935
+    },
+    {
+      "sample_id": "sun_modality_ac16a5b3668834e4",
+      "request_id": "input_000224",
+      "source_text_sha256": "1c7bad43b127c068cb754cf05bad8ddd9d3aaff66a24338e9b55a4636bb0dfbe",
+      "request_sha256": "4a8bb84702c968714e3363b727436c68bd61f85e9adb9008f379662c2b233785",
+      "estimated_input_tokens": 9765,
+      "per_send_reservation_cny": 0.1924875
+    },
+    {
+      "sample_id": "sun_modality_738f3a55bc3e3505",
+      "request_id": "input_000225",
+      "source_text_sha256": "be0b03ffd2fcda736dd006550002e16cc633c585524514d5150a914a46fe6d22",
+      "request_sha256": "be2f02cbbfd8cd0fd8cec0e4572489798f213f3e96257efe88214cad71fce496",
+      "estimated_input_tokens": 9763,
+      "per_send_reservation_cny": 0.1923795
+    },
+    {
+      "sample_id": "sun_modality_46c330cb9661ebe2",
+      "request_id": "input_000226",
+      "source_text_sha256": "28c92ce88010c2a63b5dd7cb92a94c7f1f7a9e5d3fd51d0b4122ae9eb2f78435",
+      "request_sha256": "42648c8f8b8abe3835f9cdd2d49e3ba845e4c1ab2b72a1a5644f5c3d7ece9435",
+      "estimated_input_tokens": 9789,
+      "per_send_reservation_cny": 0.1928295
+    },
+    {
+      "sample_id": "sun_modality_d39cf56683f3121f",
+      "request_id": "input_000227",
+      "source_text_sha256": "1362141a82253be6745237fc790d25cac8c87b4e2069cf25518f2e41a414d33e",
+      "request_sha256": "de8fdc805efe2b011ebf390b086db3f87c85bc8080cb65d43f806ce90189ada5",
+      "estimated_input_tokens": 9742,
+      "per_send_reservation_cny": 0.192096
+    },
+    {
+      "sample_id": "sun_modality_4d9feca20131b8ed",
+      "request_id": "input_000228",
+      "source_text_sha256": "1362141a82253be6745237fc790d25cac8c87b4e2069cf25518f2e41a414d33e",
+      "request_sha256": "08af5c75dc3412b7b5843fbcb2914ab04d920b8b4cffa32d9bffb8c3926aac0f",
+      "estimated_input_tokens": 9742,
+      "per_send_reservation_cny": 0.192096
+    },
+    {
+      "sample_id": "sun_modality_be53265c03e17ff1",
+      "request_id": "input_000229",
+      "source_text_sha256": "bd4d037a45cd6c00ae7f68184ee655f7fcb2485162fa27c5ff02c65470d97b85",
+      "request_sha256": "1f7fcdee7b2285e84710eb3bd9019df319d9045aa7465226c77d91ac9339098e",
+      "estimated_input_tokens": 9755,
+      "per_send_reservation_cny": 0.1923075
+    },
+    {
+      "sample_id": "sun_modality_5a21276afd62a1bf",
+      "request_id": "input_000230",
+      "source_text_sha256": "a96c9327953d3dde6fec3228f06b33be6c70e0b98167c3c0567dbd3801ad996a",
+      "request_sha256": "0456d36087eaa56fc4b4bed9a852f42f96bf9db5462b8a25d801b5dcb02e4121",
+      "estimated_input_tokens": 9755,
+      "per_send_reservation_cny": 0.1922985
+    },
+    {
+      "sample_id": "sun_modality_39dcefd4d0ad8663",
+      "request_id": "input_000231",
+      "source_text_sha256": "be5a9dbcfc2eb8cdf8940d79027bf33ec357bffda8a3fb8fd09f02b90f342d34",
+      "request_sha256": "bd5803fe6a7bd9e24eb2c692a321ffe16c9154626305a8a7cbcb3cddf3dd63be",
+      "estimated_input_tokens": 9793,
+      "per_send_reservation_cny": 0.192825
+    },
+    {
+      "sample_id": "sun_modality_35308ae71a50bd38",
+      "request_id": "input_000232",
+      "source_text_sha256": "f1b481a4dc17436bacdfaaaf6aeebc1e16f0afb57268b19897bd543dfdd4c7d0",
+      "request_sha256": "991c740d6f1c8333825ec20c3abef596d54f38733a2a2d009e49f7e8de593238",
+      "estimated_input_tokens": 9772,
+      "per_send_reservation_cny": 0.192519
+    },
+    {
+      "sample_id": "sun_modality_24057e8a506cc1b1",
+      "request_id": "input_000233",
+      "source_text_sha256": "e963cff15620a185f410d409e726b98e701685a16c1b4a8e0edd9e1094aaf2a0",
+      "request_sha256": "3c023d39b099c4dd6cd2c7019be3e80ddd51b186d3f2e0f901d24666907ec3d4",
+      "estimated_input_tokens": 9768,
+      "per_send_reservation_cny": 0.1924695
+    },
+    {
+      "sample_id": "sun_modality_05162b827a5cdd1b",
+      "request_id": "input_000234",
+      "source_text_sha256": "96261d50b52588ade303716ace33e63f18c8a3adf474d811238e83e511d25ea0",
+      "request_sha256": "dcc0966dff7005005fb263f3afd33523b64175072587fdb21f7fcdcf8375c235",
+      "estimated_input_tokens": 9786,
+      "per_send_reservation_cny": 0.1927125
+    },
+    {
+      "sample_id": "sun_modality_4e590b2e034cce56",
+      "request_id": "input_000235",
+      "source_text_sha256": "0d42ffdfd53850a8df86fb02000c63de591cfbc5c9692de7f39acf6b4040cf92",
+      "request_sha256": "6f8e7028dc2fab335562f6a717e21af02dad08c9fbdb8afed39ba64b35f0dd69",
+      "estimated_input_tokens": 9779,
+      "per_send_reservation_cny": 0.1926225
+    },
+    {
+      "sample_id": "sun_modality_b97935f1e746b4c3",
+      "request_id": "input_000236",
+      "source_text_sha256": "5b5298e9d59c91f086692b572ed76f4e3418b1ab89807b05de5192d188b4c19a",
+      "request_sha256": "d7d50def5a361c9e3cf226c5763367f15482867975b10ec899cd1cdfd4158e94",
+      "estimated_input_tokens": 9808,
+      "per_send_reservation_cny": 0.193005
+    },
+    {
+      "sample_id": "sun_modality_9ac66481be2ad31e",
+      "request_id": "input_000237",
+      "source_text_sha256": "8fa75bfe08548fd10e0337e1cf0a431d2731bc180d826764d6cebb3f108ff4c7",
+      "request_sha256": "cd47a79ce04681c5f601506e0e119b7d45615a8f9d68b70faa34d1d2853d164e",
+      "estimated_input_tokens": 9793,
+      "per_send_reservation_cny": 0.1928385
+    },
+    {
+      "sample_id": "sun_modality_4b2a70530f54f9f5",
+      "request_id": "input_000238",
+      "source_text_sha256": "2f25dfb8df076a7cd6aeff59feb97177c42b27318c365e213b27b565f37b1b65",
+      "request_sha256": "38c479fe1cc82907f5b0294ed2e20b1c2beda9b6fc896cc18e3be8f1e4d26311",
+      "estimated_input_tokens": 9782,
+      "per_send_reservation_cny": 0.1926765
+    },
+    {
+      "sample_id": "sun_modality_3b058fef67f11922",
+      "request_id": "input_000239",
+      "source_text_sha256": "b73df88123b1142fe3f4d6c96591902c55f35b0e70a90a2209c8ee77d76b1659",
+      "request_sha256": "afc08c1a6b74db83213a2a64dbab7ad6ca781a3a71e8e9f408bc952aa21196b9",
+      "estimated_input_tokens": 9801,
+      "per_send_reservation_cny": 0.192933
+    },
+    {
+      "sample_id": "sun_modality_bbfa32fdde883e0a",
+      "request_id": "input_000240",
+      "source_text_sha256": "84f2a2ea037e8df4f4445dbe695d755fef8094889fbcfe3c89ebd7284429eac3",
+      "request_sha256": "7f2f8a9c989769aaf5f0652dd1bc67568386098824e4a3553be476812ef77d19",
+      "estimated_input_tokens": 9810,
+      "per_send_reservation_cny": 0.193113
+    },
+    {
+      "sample_id": "sun_modality_dd202b091c7e0bbe",
+      "request_id": "input_000241",
+      "source_text_sha256": "fcb6f1883fd9d8399c2240dd5dc1d73c5e952d884bf7a480543e002c292acfe6",
+      "request_sha256": "6cc5c7ec115d03e0e529e9f5f349850218938950ffcaae8414c02e21f4efbbc1",
+      "estimated_input_tokens": 9835,
+      "per_send_reservation_cny": 0.193464
+    },
+    {
+      "sample_id": "sun_modality_88ea5164541723c3",
+      "request_id": "input_000242",
+      "source_text_sha256": "fde562976d47e2cace8970c923cfd6201b157b548322b36700d5f4854aa0a459",
+      "request_sha256": "989eea8d4bda1624dae9ebab8d852c630ebabf8b3c0b16a756c2498e99d6f574",
+      "estimated_input_tokens": 9769,
+      "per_send_reservation_cny": 0.192501
+    },
+    {
+      "sample_id": "sun_modality_df86f02cfc2a8e19",
+      "request_id": "input_000243",
+      "source_text_sha256": "4c697279176a6d091979cf6e69a2cf4ae623a9990b05112e21958ec6ee9524c0",
+      "request_sha256": "e4c0e6d0466ef96c8084dbc1b808d84f14acfb3f5fd3198673de1b68c540c998",
+      "estimated_input_tokens": 9781,
+      "per_send_reservation_cny": 0.1927035
+    },
+    {
+      "sample_id": "sun_modality_85ae84c4c6b4a822",
+      "request_id": "input_000244",
+      "source_text_sha256": "ff06636b4492c05c3e116caafbf2ab107343c4d5cf1fb5f7b21260b371d42c9b",
+      "request_sha256": "5fcd3824b8847ad94151fac706b26b711ed5db1ebfcdc902df469f8f8682641b",
+      "estimated_input_tokens": 9842,
+      "per_send_reservation_cny": 0.1935
+    },
+    {
+      "sample_id": "sun_modality_9370e585fadb4d6a",
+      "request_id": "input_000245",
+      "source_text_sha256": "ff06636b4492c05c3e116caafbf2ab107343c4d5cf1fb5f7b21260b371d42c9b",
+      "request_sha256": "33fb910deae54adfa32c7cdab81d42a73f1655fa0fab3e60cd7812f7268df6ad",
+      "estimated_input_tokens": 9842,
+      "per_send_reservation_cny": 0.1935
+    },
+    {
+      "sample_id": "sun_modality_84cffcaefa51b990",
+      "request_id": "input_000246",
+      "source_text_sha256": "f5aefd02532d0fc1277c16b5f6c32b25e1812b10787574079ca461ffd3f3e201",
+      "request_sha256": "69f6e34aca998059a36b4c474fdab78ed1ac9dd3be1a5a65fbac6c241b6e56e3",
+      "estimated_input_tokens": 9797,
+      "per_send_reservation_cny": 0.192933
+    },
+    {
+      "sample_id": "sun_modality_471d3fc787936ad9",
+      "request_id": "input_000247",
+      "source_text_sha256": "c5a938546db1d4172b4f030a39712b7fa5b385c732239af55282644e2b9f9b3e",
+      "request_sha256": "9a17afea17d745184954a08e0593a0d6e49c1f0df36e381c888c6b11b43b15b4",
+      "estimated_input_tokens": 9771,
+      "per_send_reservation_cny": 0.1925235
+    },
+    {
+      "sample_id": "sun_modality_a1031b181cc1e4ed",
+      "request_id": "input_000248",
+      "source_text_sha256": "d6715d09e7c9cb608a04e9a4e93ca2f389317d31c42ad54463aabb256b80170b",
+      "request_sha256": "b3b40f2290bc3596555dbc44d6c2a3f9435cacb6801cffda8b42c52202ba58ff",
+      "estimated_input_tokens": 9804,
+      "per_send_reservation_cny": 0.193041
+    },
+    {
+      "sample_id": "sun_modality_534ba51d497df9f3",
+      "request_id": "input_000249",
+      "source_text_sha256": "f026985bfb1139703cbcdbea248059d5bbbacdfa4ffe4fab77f3c3a9d3d80889",
+      "request_sha256": "1725d1c1f4eed879334644eafb4657767415ebf0f69a14fde05ee0ccf744fd87",
+      "estimated_input_tokens": 9778,
+      "per_send_reservation_cny": 0.192627
+    },
+    {
+      "sample_id": "sun_modality_5ff2d799723a34f1",
+      "request_id": "input_000250",
+      "source_text_sha256": "4cd108863ad9c19285910cfcf7dfcd7084e06aac94cca0d6688cd48165c99a8e",
+      "request_sha256": "f3336eb3e3f5a39206c8cf12524827cf562cb612daa927642b9b19c36561a939",
+      "estimated_input_tokens": 9800,
+      "per_send_reservation_cny": 0.192942
+    },
+    {
+      "sample_id": "sun_modality_66adce51089c93fe",
+      "request_id": "input_000251",
+      "source_text_sha256": "d0c28c7a916d59d32e62d6a8843bf1d0e58db7a1059f56b4887bb13f41daf2dd",
+      "request_sha256": "af29feeac00ae1bc8ca8387bb45fb0e1c31b408ca17f07d3e6a2ca16ba2249fe",
+      "estimated_input_tokens": 9791,
+      "per_send_reservation_cny": 0.1928475
+    },
+    {
+      "sample_id": "sun_modality_f815d8bb82399d7f",
+      "request_id": "input_000252",
+      "source_text_sha256": "5eaef84f0b149f23a8c94b844681690016df8633f4a59cc7efbc1245ada9b817",
+      "request_sha256": "a7726d7a7b34ea10ea0c2f7855f0340557d04882bff6b8b389232cd51bb84236",
+      "estimated_input_tokens": 9772,
+      "per_send_reservation_cny": 0.192537
+    },
+    {
+      "sample_id": "sun_modality_baeb562830caf5a0",
+      "request_id": "input_000253",
+      "source_text_sha256": "f752637495ff49ff01b8ef3b373c0fa8335f30f1a374859916874410833c39c3",
+      "request_sha256": "491b65c20434ac00694b684b801edf3a77e2726ae840088adf795ce61d66efbb",
+      "estimated_input_tokens": 9740,
+      "per_send_reservation_cny": 0.192078
+    },
+    {
+      "sample_id": "sun_modality_263f6059f06bfa41",
+      "request_id": "input_000254",
+      "source_text_sha256": "3e15595aa92e36164683108d60004e444a8de0ae7b2373e17c57bd84288dc2fe",
+      "request_sha256": "bfc6999f8f3a1dfd094a211572311ce2136a9d444e8ab0672485e03f97e48384",
+      "estimated_input_tokens": 9800,
+      "per_send_reservation_cny": 0.192915
+    },
+    {
+      "sample_id": "sun_modality_05e8cebde901efc6",
+      "request_id": "input_000255",
+      "source_text_sha256": "7c33d95a0b64dd80ad40dce96af24412d8e7f7ef645b7a243d0c2b8e0012c7b2",
+      "request_sha256": "abeba440d833b880824f3572dde1a1a99d8b96422fa52fc39278b06028e66e59",
+      "estimated_input_tokens": 9783,
+      "per_send_reservation_cny": 0.1926945
+    },
+    {
+      "sample_id": "sun_modality_296d98270a858f4c",
+      "request_id": "input_000256",
+      "source_text_sha256": "84dad0edba8d581ade4c22012cd90d95c19424fade2d04fd8b53416d9265077d",
+      "request_sha256": "f5c145418841414d0a1bf9a051e71fa6d2608abedf0f1d6dc3c30c3a351a256d",
+      "estimated_input_tokens": 9831,
+      "per_send_reservation_cny": 0.1934055
+    },
+    {
+      "sample_id": "sun_modality_2b1891749b75d59f",
+      "request_id": "input_000257",
+      "source_text_sha256": "f2e0083b3a362250b177085104191860132df3573d588baf6c021de8d5a1d263",
+      "request_sha256": "be36f86bc11c9a0bb7d310ce980c418ba1d3adc25de7c6d223c22c8362c47891",
+      "estimated_input_tokens": 9766,
+      "per_send_reservation_cny": 0.192429
+    },
+    {
+      "sample_id": "sun_modality_ba09f71ad62a521a",
+      "request_id": "input_000258",
+      "source_text_sha256": "861850a0df31745102e3ed2c05093ab76a7c2e8aa7ec830bdd8ac68dec5af625",
+      "request_sha256": "4e2114da3ae1b25230c20cb1452e1740dde71be53a9e70a4ef20e1127e41e434",
+      "estimated_input_tokens": 9789,
+      "per_send_reservation_cny": 0.1927575
+    },
+    {
+      "sample_id": "sun_modality_c3bfd8acfa07ace4",
+      "request_id": "input_000259",
+      "source_text_sha256": "0d49c5095b3c87de1ca6157574bee4e3b676c983f799fc22c7a39a0e7c2ef8aa",
+      "request_sha256": "36171076b18c13d3dbf731254c42a7c29b889049eb7071d65910e75cf36ae0e9",
+      "estimated_input_tokens": 9798,
+      "per_send_reservation_cny": 0.192924
+    },
+    {
+      "sample_id": "sun_modality_8ea4cb645b487b54",
+      "request_id": "input_000260",
+      "source_text_sha256": "2960658ac968745c7a281111e369f1be4cb2ae655ff40dcba07f6dd14eb8948b",
+      "request_sha256": "4782f92ee81c8200e182ba72cbe636e97eaf91197b2be314383b062a3c549381",
+      "estimated_input_tokens": 9823,
+      "per_send_reservation_cny": 0.193338
+    },
+    {
+      "sample_id": "sun_modality_9ab614cfe489f520",
+      "request_id": "input_000261",
+      "source_text_sha256": "8af1ed4f56f50618d048f0c98029fd7fa9de1cae1a95dd0c5425298992676d5e",
+      "request_sha256": "2f3490e5418da21a1578bffecdc0c8b9bd190085f2f5f6dfce56235779f1b686",
+      "estimated_input_tokens": 9772,
+      "per_send_reservation_cny": 0.1925415
+    },
+    {
+      "sample_id": "sun_modality_19dc631e48901756",
+      "request_id": "input_000262",
+      "source_text_sha256": "a6119841eeadf54b58bed0c3578ef9df42b8eba3694209fea1a90ae813503332",
+      "request_sha256": "0d8e3ac2afd9d836bab9b5d43fe0f38c66637342b78fc5ab1a5acd2cdafc10a8",
+      "estimated_input_tokens": 9795,
+      "per_send_reservation_cny": 0.192852
+    },
+    {
+      "sample_id": "sun_modality_11e920b78d2c89f7",
+      "request_id": "input_000263",
+      "source_text_sha256": "de028a5e71f0294372c2028bb5c182f5a2276fa89551446503bdf46e38040a29",
+      "request_sha256": "948cf147112456e763fa294aaaa7c75e65712997f75eb8112d0fd0a2d94e6a9c",
+      "estimated_input_tokens": 9847,
+      "per_send_reservation_cny": 0.1936125
+    },
+    {
+      "sample_id": "sun_modality_09af46d39837e8c3",
+      "request_id": "input_000264",
+      "source_text_sha256": "8375805ca1657d28e7f8117c0807ee7376f198f0beef2f8b9f6c29f610b4aa10",
+      "request_sha256": "fd9163a2a9aaa62c549e0788b470a192ace3cab45451e544fd62a0316f0da7bf",
+      "estimated_input_tokens": 9800,
+      "per_send_reservation_cny": 0.192951
+    },
+    {
+      "sample_id": "sun_modality_e75844a198a3b060",
+      "request_id": "input_000265",
+      "source_text_sha256": "e866564888ca5febe341759c8c4b17034f36c1258039078e152d37ecbf1432fa",
+      "request_sha256": "4e1ef244b3f1a106749b589a80b9ff3268776a09efb2f79625b39a25c76e148b",
+      "estimated_input_tokens": 9820,
+      "per_send_reservation_cny": 0.19323
+    },
+    {
+      "sample_id": "sun_modality_f7529e0b85a7b537",
+      "request_id": "input_000266",
+      "source_text_sha256": "72241681331e76e49d978d3c6cd1d34437ed1df473c8dfd0815a39cef664e5a3",
+      "request_sha256": "8f518d42a6b51ca76c98823e16d07448f69a1b9928ca5f2b43e55c627ec09a68",
+      "estimated_input_tokens": 9788,
+      "per_send_reservation_cny": 0.1927395
+    },
+    {
+      "sample_id": "sun_modality_c5b67e346cf59650",
+      "request_id": "input_000267",
+      "source_text_sha256": "52ef52fcd699012e5e7e7dcf71fbe6ffca7bc5d355189bff7f80ebae97b64504",
+      "request_sha256": "b67acf1195558a9f7a6fbea1bf44af1cb57ae638398f38401a929e5207b0a47d",
+      "estimated_input_tokens": 9829,
+      "per_send_reservation_cny": 0.193383
+    },
+    {
+      "sample_id": "sun_modality_0986841d95041d97",
+      "request_id": "input_000268",
+      "source_text_sha256": "d01b2a86218603bbc6ca63316b479be5ca4646508d154056968781d8d6f1afd0",
+      "request_sha256": "fc2455c95b249ecb55f16243ae3e03fa744594eb91128e0a3470feed4051e77a",
+      "estimated_input_tokens": 9785,
+      "per_send_reservation_cny": 0.1927125
+    },
+    {
+      "sample_id": "sun_modality_c49fc719b031b043",
+      "request_id": "input_000269",
+      "source_text_sha256": "ef31ded107c98e3cab6b4acaef1d86139e4d805585f44596e8754b19e470598b",
+      "request_sha256": "b32596fd1dbc80b06871b4c3f1c662bb619ca3ede39ccf0f1f374ff85eb7f88e",
+      "estimated_input_tokens": 9804,
+      "per_send_reservation_cny": 0.1930455
+    },
+    {
+      "sample_id": "sun_modality_cb17d2a07efb96a4",
+      "request_id": "input_000270",
+      "source_text_sha256": "17e6b59ede0063c4c290a4d3e76520bd51ef5c59868aa5eae73818d2e6cb5054",
+      "request_sha256": "56922192006fa43e69ade1e881295731f5e527ff5b6aa35b02e41f68e3d22940",
+      "estimated_input_tokens": 9793,
+      "per_send_reservation_cny": 0.1927935
+    },
+    {
+      "sample_id": "sun_modality_ac310d77c2611c9d",
+      "request_id": "input_000271",
+      "source_text_sha256": "1749db2ea4202eeded080b065fc3988800919e5454a29de13476ae23424c7715",
+      "request_sha256": "318fc793f27c77cca4b291b2ce9961dfb7a0c10d986bb833c62b65d3c14f1a51",
+      "estimated_input_tokens": 9834,
+      "per_send_reservation_cny": 0.1934145
+    },
+    {
+      "sample_id": "sun_modality_349b20dabb5a6a13",
+      "request_id": "input_000272",
+      "source_text_sha256": "229eeef625885ff0a779f3bdc3d73315981e48ad1abe31230239a9d752b6d468",
+      "request_sha256": "ae218c05219997b6943c7cffaa57732354fb2dba2e6a2615e786467dc98077b1",
+      "estimated_input_tokens": 9831,
+      "per_send_reservation_cny": 0.193374
+    },
+    {
+      "sample_id": "sun_modality_13a92860a67b672c",
+      "request_id": "input_000273",
+      "source_text_sha256": "c1e2ef634bfbf1a70ac1d76d633acc53d2f5585ad332457cd04f83208a39d24d",
+      "request_sha256": "20de3ec330f8f9ee6901351433a683116fb4d27293e25911d82f7d4b7176004b",
+      "estimated_input_tokens": 9775,
+      "per_send_reservation_cny": 0.1926315
+    },
+    {
+      "sample_id": "sun_modality_e64c50116eb7f14c",
+      "request_id": "input_000274",
+      "source_text_sha256": "6258663254246a67d3661b8e93173e9f9297cdf096d090b038a343512b0299c4",
+      "request_sha256": "035e9e04947fed84fc25bbac318164e6ae68c3b058caf698809b663efaa98138",
+      "estimated_input_tokens": 9808,
+      "per_send_reservation_cny": 0.193068
+    },
+    {
+      "sample_id": "sun_modality_ec4f7ad6e3e359c1",
+      "request_id": "input_000275",
+      "source_text_sha256": "1a7bb7b66d36ec0f3c9eec94f6d5eebcdf5e9f1e3215e46a8c817629df3ec0d2",
+      "request_sha256": "b6285830c4dd881122c4aee8565a30815239610f97fbcd92e05283e764e36608",
+      "estimated_input_tokens": 9798,
+      "per_send_reservation_cny": 0.192897
+    },
+    {
+      "sample_id": "sun_modality_08afb7609d6d73cf",
+      "request_id": "input_000276",
+      "source_text_sha256": "219f6c42365f6b5d8dc349563b6a5a9dc4f73b80d0edcb0a2846b6987413713d",
+      "request_sha256": "e51a73b9eab012d50df3eff065c789996d0971635cc4124108a57b4370136c95",
+      "estimated_input_tokens": 9841,
+      "per_send_reservation_cny": 0.193509
+    },
+    {
+      "sample_id": "sun_modality_ee3fd88fb69f6013",
+      "request_id": "input_000277",
+      "source_text_sha256": "bf623e9b7eb9f7d213dd4c99988ae530205bb17b5eded00579d34b96abdde1ae",
+      "request_sha256": "f51aa773e5cebe65acbea72e9832f5559c6cc098eb8e8a2e309cec0af65fe068",
+      "estimated_input_tokens": 9777,
+      "per_send_reservation_cny": 0.192609
+    },
+    {
+      "sample_id": "sun_modality_01700e04994c297d",
+      "request_id": "input_000278",
+      "source_text_sha256": "5c357de262c772d18fce5b135f606ee1aa8a334ceb06654bfdb3e5e1ad00fd1d",
+      "request_sha256": "d2d2260bad489645a73ec3402af3c629d15194d6d69413da9ac51648b6e63412",
+      "estimated_input_tokens": 9857,
+      "per_send_reservation_cny": 0.193779
+    },
+    {
+      "sample_id": "sun_modality_f5037bcc56922965",
+      "request_id": "input_000279",
+      "source_text_sha256": "b2ecf3d87a4b3c069822083b2b0a617bd085b2641fdd5fa22aa2b1a388ffe5b5",
+      "request_sha256": "d372384f7099073d8d27ed4abb3103cea8a48ba45196598adf3ac39078524b93",
+      "estimated_input_tokens": 9916,
+      "per_send_reservation_cny": 0.194652
+    },
+    {
+      "sample_id": "sun_modality_8e57d70f3973f669",
+      "request_id": "input_000280",
+      "source_text_sha256": "fa0e59d25d95dc163f35930ae23ea38bbb67be81680837542ca9f1e1de241c60",
+      "request_sha256": "73501f1d70070d62202358960e0677947fc31846e5dbf117b0f0a00ac037a22f",
+      "estimated_input_tokens": 9792,
+      "per_send_reservation_cny": 0.192789
+    },
+    {
+      "sample_id": "sun_modality_965340d7e51afd1b",
+      "request_id": "input_000281",
+      "source_text_sha256": "50510dd223a8782980dd0d719c2f6439740e3fdf8dc3fa4d36cbbe532092ed7a",
+      "request_sha256": "0d728bd51d6054149c14afeb8827d20f8a7473b70a106f75793d83fe45b22155",
+      "estimated_input_tokens": 9824,
+      "per_send_reservation_cny": 0.193275
+    },
+    {
+      "sample_id": "sun_modality_0dbe74770686be81",
+      "request_id": "input_000282",
+      "source_text_sha256": "89f73ce5f074b003af67ebe37acbf91420854f8a91ff72ea42b245cd01c4ac1c",
+      "request_sha256": "12bcab910b5b74bf84f2a8e0a5a4867b95065223cd564f1a215b29fc971e05a0",
+      "estimated_input_tokens": 9884,
+      "per_send_reservation_cny": 0.1940715
+    },
+    {
+      "sample_id": "sun_modality_9f948a65fd450a18",
+      "request_id": "input_000283",
+      "source_text_sha256": "de0f7a781a1a904f855accc7345c040eff8bdb8bd49d7f150d4f77b9226379ca",
+      "request_sha256": "c0f18ce2e7d2f044d19a176bb548057f2363a55d7f9afc347591c7ff5df1b0a3",
+      "estimated_input_tokens": 9789,
+      "per_send_reservation_cny": 0.1927755
+    },
+    {
+      "sample_id": "sun_modality_63660793da5fbb89",
+      "request_id": "input_000284",
+      "source_text_sha256": "8c56b7912a9c78f44d57068cf9da56b665435dbf149d0a409581bdeb9fa691f9",
+      "request_sha256": "7431033f77a64914a3761c58b915fa3bace201c9e94b42710b9f0c8a4f070480",
+      "estimated_input_tokens": 9779,
+      "per_send_reservation_cny": 0.1926225
+    },
+    {
+      "sample_id": "sun_modality_9cbfe94e9e3a1cce",
+      "request_id": "input_000285",
+      "source_text_sha256": "4cefe7845c030d001ecbee06a930b4861403db45acda6bb99a31757792a4094b",
+      "request_sha256": "724b6fbb1f21a4daaacd5c1674f87672db1851cad29d315a72744d2c13191302",
+      "estimated_input_tokens": 9793,
+      "per_send_reservation_cny": 0.1928205
+    },
+    {
+      "sample_id": "sun_modality_59f3abc69246920e",
+      "request_id": "input_000286",
+      "source_text_sha256": "fff8ae3fe6d8d1b737753f2acb05de95e509bbb625e7e2ac33723edf7d24850e",
+      "request_sha256": "573a8835e905ac22d8f27d388c98e7fd6ca4bc1806e788c64cd74e0909a9e25a",
+      "estimated_input_tokens": 9778,
+      "per_send_reservation_cny": 0.192609
+    },
+    {
+      "sample_id": "sun_modality_4b702f39f2b98efb",
+      "request_id": "input_000287",
+      "source_text_sha256": "fff8ae3fe6d8d1b737753f2acb05de95e509bbb625e7e2ac33723edf7d24850e",
+      "request_sha256": "e31b7f85023d22b3c3784897f605f00d3eeb73bd0b67769b0514fc33e510a70b",
+      "estimated_input_tokens": 9778,
+      "per_send_reservation_cny": 0.192609
+    },
+    {
+      "sample_id": "sun_modality_1e6397daffe79903",
+      "request_id": "input_000288",
+      "source_text_sha256": "fff8ae3fe6d8d1b737753f2acb05de95e509bbb625e7e2ac33723edf7d24850e",
+      "request_sha256": "7ccc08e6387ded3eff7f6f9205a648a303d62b0638c2260f5af2f41514383ee4",
+      "estimated_input_tokens": 9778,
+      "per_send_reservation_cny": 0.192609
+    },
+    {
+      "sample_id": "sun_modality_a26dab998b30feaa",
+      "request_id": "input_000289",
+      "source_text_sha256": "fff8ae3fe6d8d1b737753f2acb05de95e509bbb625e7e2ac33723edf7d24850e",
+      "request_sha256": "022a68f869c055c7b846fa4e6f72e7cdc68ed2abe3af8870de5452eb02080256",
+      "estimated_input_tokens": 9778,
+      "per_send_reservation_cny": 0.192609
+    },
+    {
+      "sample_id": "sun_modality_c11e684d8ab6fb62",
+      "request_id": "input_000290",
+      "source_text_sha256": "fff8ae3fe6d8d1b737753f2acb05de95e509bbb625e7e2ac33723edf7d24850e",
+      "request_sha256": "453d07c09518fc23646de4292046c8d5b32120778dc14da7874ee89ffcd9587a",
+      "estimated_input_tokens": 9778,
+      "per_send_reservation_cny": 0.192609
+    },
+    {
+      "sample_id": "sun_modality_fa459fad53ed62aa",
+      "request_id": "input_000291",
+      "source_text_sha256": "fe2cad03cdcb5d8a9473e3fb3ed3aa6a7eeac1937a3f7c3581009cef2d3a410f",
+      "request_sha256": "07b14144e3c6d825e765a9d2a676a1f7bda8bdd094e2969fa9535fbb4d2be28e",
+      "estimated_input_tokens": 9764,
+      "per_send_reservation_cny": 0.1923975
+    },
+    {
+      "sample_id": "sun_modality_857fee2852d387fe",
+      "request_id": "input_000292",
+      "source_text_sha256": "6fc46a41bf7fc554e4f8e0500f340dcf06212cb17f6198ee72d78b2d0485f108",
+      "request_sha256": "c36bd016f2310e938b17bd0a968971bfd7acb6a44a4e477b535fdae500c2cd08",
+      "estimated_input_tokens": 9794,
+      "per_send_reservation_cny": 0.192834
+    },
+    {
+      "sample_id": "sun_modality_f259e8c01aa7863a",
+      "request_id": "input_000293",
+      "source_text_sha256": "59c46e5adfe5e9b9a6002e0efc23b6b4fcc9a036706c66d66760cc3ea5d71866",
+      "request_sha256": "13e59d184e52fdf14fcbbc7d9236380c371466d14eb45137d019b87e0c118796",
+      "estimated_input_tokens": 9779,
+      "per_send_reservation_cny": 0.1926495
+    },
+    {
+      "sample_id": "sun_modality_7890eade5f0098ac",
+      "request_id": "input_000294",
+      "source_text_sha256": "72583fa9e1355ae64e931b0503686be3e93f4d61c30d51703051bdf8f8de1cd5",
+      "request_sha256": "ead85db7926b2d5108a98c7b9dd1cef9d93754ed3671deae9d9269ca41c63f57",
+      "estimated_input_tokens": 9832,
+      "per_send_reservation_cny": 0.1934775
+    },
+    {
+      "sample_id": "sun_modality_94313f20d53c8df6",
+      "request_id": "input_000295",
+      "source_text_sha256": "4f90c8e6ea6a22ac58c7cbb1ef63f59d41dd21a21af2ae32ec5cdb46f1ee3f74",
+      "request_sha256": "a8302a578dd55dbc2cb50babd2d163ce8edb0bce38e8eb4c62f13e68875ac0e2",
+      "estimated_input_tokens": 9813,
+      "per_send_reservation_cny": 0.1931265
+    },
+    {
+      "sample_id": "sun_modality_8bbd45ca8903175a",
+      "request_id": "input_000296",
+      "source_text_sha256": "39b2798abf7f5e584529fb75620ee4cc19266692e7bea68a29326386c30aca89",
+      "request_sha256": "45d17636071975618b404e08a2801ed6b74641ac20f3316d8fe20e1a4412f15f",
+      "estimated_input_tokens": 9757,
+      "per_send_reservation_cny": 0.1923075
+    },
+    {
+      "sample_id": "sun_modality_35f445f4b901a1a7",
+      "request_id": "input_000297",
+      "source_text_sha256": "914a428a48f09a97a1caa542d607a4aa40cf2af5a3ceae7b89e4a03115351411",
+      "request_sha256": "c86ff9e00e6d90a607850a1a01a8afeb6fb886a6c0be945e06702dbdb538c7bc",
+      "estimated_input_tokens": 9828,
+      "per_send_reservation_cny": 0.193302
+    },
+    {
+      "sample_id": "sun_modality_f4657b9efd26083e",
+      "request_id": "input_000298",
+      "source_text_sha256": "b9b54587482f74acedc587c34f14c9f86eb6d942318959f47b761c104bc86b1f",
+      "request_sha256": "9341c9575e6c51be7ea540b00e3a7b9986e2286737569a317649974f1875bed0",
+      "estimated_input_tokens": 9821,
+      "per_send_reservation_cny": 0.193203
+    },
+    {
+      "sample_id": "sun_modality_a5565a2322d7eaab",
+      "request_id": "input_000299",
+      "source_text_sha256": "7ef4bd5c880d02e727524f593504ad2472d0c6314f903c8bc47a437cdc8d6971",
+      "request_sha256": "85d57d3eaaabee8fe6a9e8618cfd6d8cbd104d7602b53cd0755dd66fd98fdfd2",
+      "estimated_input_tokens": 9799,
+      "per_send_reservation_cny": 0.1929105
+    },
+    {
+      "sample_id": "sun_modality_6c270e3d39cac851",
+      "request_id": "input_000300",
+      "source_text_sha256": "e2f716aed82698bcfaebb9ef1bc6eb942e47579ddba52f8b15b79aaec811ca85",
+      "request_sha256": "314edfe4a0bf1e6738f58009d8de94353662d0aad7702ee088a8c86bca39996b",
+      "estimated_input_tokens": 9848,
+      "per_send_reservation_cny": 0.193545
+    },
+    {
+      "sample_id": "sun_modality_956eeca0ecc32f1c",
+      "request_id": "input_000301",
+      "source_text_sha256": "310203b004bd21b8ec58a94fa111c45adb21e0512b83fcc21692eb33300e0f4f",
+      "request_sha256": "2df03852f2ea871cdc0c8a890a3605f0e3d47a6ee8e30b36f93327479947a39a",
+      "estimated_input_tokens": 9785,
+      "per_send_reservation_cny": 0.192735
+    },
+    {
+      "sample_id": "sun_modality_a6f2de3285f8db7b",
+      "request_id": "input_000302",
+      "source_text_sha256": "98388fd8bb86d8407a696b53716fe824eb3cd688ba4d69b1a13c3f34f29bd8b0",
+      "request_sha256": "36e0f949c7d0714f785d0e0e47f6b231a0bf4b4db9ea16e5cf3120960cfa6d07",
+      "estimated_input_tokens": 9776,
+      "per_send_reservation_cny": 0.192627
+    },
+    {
+      "sample_id": "sun_modality_c4504f4904e3b75b",
+      "request_id": "input_000303",
+      "source_text_sha256": "0a0ab497ffb58d30dd8bb16b6bab6555f242fad468a0b5b057fc7be8790b578a",
+      "request_sha256": "ffb157468052c0d7881d9f559d545dd5eed43bc36e16cdcbe1902ebe46c68dbc",
+      "estimated_input_tokens": 9834,
+      "per_send_reservation_cny": 0.19341
+    },
+    {
+      "sample_id": "sun_modality_afdec1f075373d72",
+      "request_id": "input_000304",
+      "source_text_sha256": "bd425c4aac5b7ef77d02d225857caef1c20dafa28e4e27b454510d6503e5316b",
+      "request_sha256": "6f58f068efc8487419541fd38bfb510970b6ea9bdeccb206e9a65e3a713bcf89",
+      "estimated_input_tokens": 9768,
+      "per_send_reservation_cny": 0.19251
+    },
+    {
+      "sample_id": "sun_modality_dee7284d9a2ce9d7",
+      "request_id": "input_000305",
+      "source_text_sha256": "e2f8ee1e190e1dcf15657956acaf1946981afd1965181c6680d66f1ccad019d1",
+      "request_sha256": "05a06d6c2b1332e05050309067da959a3a40a68421bb5390a530b3eb012ae49b",
+      "estimated_input_tokens": 9785,
+      "per_send_reservation_cny": 0.1926765
+    },
+    {
+      "sample_id": "sun_modality_0a06235a331cf6d4",
+      "request_id": "input_000306",
+      "source_text_sha256": "373579927f2d0c0bab07aea3c5557aea4239b2d672ef3178024ca56bc8aa4956",
+      "request_sha256": "b2df9f7d04bc0b5da736f7a3db2e66104f0b6deb2b26a7699ba6fc8307c68ccb",
+      "estimated_input_tokens": 9797,
+      "per_send_reservation_cny": 0.192951
+    },
+    {
+      "sample_id": "sun_modality_0fe1c097e476d903",
+      "request_id": "input_000307",
+      "source_text_sha256": "f9c968cb5e78bc7024f8c9e6386aaefcd5fc3ff1585db7d4306028e06d63fbf6",
+      "request_sha256": "2a93d205f44419f10803fc5ed81f724db3226d4cef463931a7791781419b3557",
+      "estimated_input_tokens": 9875,
+      "per_send_reservation_cny": 0.1940985
+    },
+    {
+      "sample_id": "sun_modality_e28dd41747a53b2f",
+      "request_id": "input_000308",
+      "source_text_sha256": "8ac1438f6c5e1cb3dffee1814ec0f95a83afc436fdfec332a222c04855c54a5b",
+      "request_sha256": "015313707f05a3dfc4a091d4afee39e7155cea43c39d68ca9541b886a8e9f8d7",
+      "estimated_input_tokens": 9774,
+      "per_send_reservation_cny": 0.1925865
+    },
+    {
+      "sample_id": "sun_modality_84dbdf3d345e2e48",
+      "request_id": "input_000309",
+      "source_text_sha256": "bccb4efcaba3398b8ac66db6e7c6fa4a51d9d5d71ca2399daff2c8befd21a49a",
+      "request_sha256": "86505d4110b1dea815b1f07a3b8c9e6a6a1f170bd339057188bd7d6d8999de02",
+      "estimated_input_tokens": 9794,
+      "per_send_reservation_cny": 0.192861
+    },
+    {
+      "sample_id": "sun_modality_5e2b7ae2713dfc25",
+      "request_id": "input_000310",
+      "source_text_sha256": "973f1d5ecbaae1c06fe5b82abd3b53450063b30f8846a2c46e3db1824b7b5070",
+      "request_sha256": "0ab7093e387b9a56865c4a1cc4c291d37e979e67ee67fa1c996ffc026fa5ea54",
+      "estimated_input_tokens": 9781,
+      "per_send_reservation_cny": 0.1926405
+    },
+    {
+      "sample_id": "sun_modality_56a0cf9ec9e3bfde",
+      "request_id": "input_000311",
+      "source_text_sha256": "0d74deb1a66a64fdbce0bfd71c11e070c388893713965938e51c2548056a17e2",
+      "request_sha256": "558553b2ffdcb6403592a206400298c454b8303bc26220545fb0dda6253cb07c",
+      "estimated_input_tokens": 9814,
+      "per_send_reservation_cny": 0.193176
+    },
+    {
+      "sample_id": "sun_modality_985aa53e4bac48ee",
+      "request_id": "input_000312",
+      "source_text_sha256": "1a73f4289ad369339f34928eb0fc3bcbb3401118163e72c0487de3b7e8551773",
+      "request_sha256": "a16e0920fdfc73c3b9422a55aa7b3d5978cefa92a602b1e173a867e01f711a3d",
+      "estimated_input_tokens": 9783,
+      "per_send_reservation_cny": 0.1927485
+    },
+    {
+      "sample_id": "sun_modality_65c61eebd55337e9",
+      "request_id": "input_000313",
+      "source_text_sha256": "a0282b0ac75a60abfd14d4a387fa2fe777d644b1259f1f5bdb84b655cce91542",
+      "request_sha256": "f8c2bdd26f85b24352cbe66cb18e9e73410c6e54f44e0b3e1f9683f442ab0319",
+      "estimated_input_tokens": 9764,
+      "per_send_reservation_cny": 0.19242
+    },
+    {
+      "sample_id": "sun_modality_d139739a1c3b2634",
+      "request_id": "input_000314",
+      "source_text_sha256": "bd94e3daf7baf3f0a0a84c1136480c2a43f480ccf3bc0f6213d2ecef75f97b88",
+      "request_sha256": "eb72740a9ef6b584f0c1a7afd12903691dbd1650516a07bad7b8b5f8ae818b6a",
+      "estimated_input_tokens": 9801,
+      "per_send_reservation_cny": 0.1929645
+    },
+    {
+      "sample_id": "sun_modality_44756f822fef1162",
+      "request_id": "input_000315",
+      "source_text_sha256": "441a0462aabba4aad923ae721f1cafd44ad4963e0d9181a599c42dc1164ca5b3",
+      "request_sha256": "abc2f79b95923ce3f1b9a2209070a9485328bc0930fe41e7e0723c1e29a7989b",
+      "estimated_input_tokens": 9809,
+      "per_send_reservation_cny": 0.1930725
+    },
+    {
+      "sample_id": "sun_modality_4a4e6f5243e41d4f",
+      "request_id": "input_000316",
+      "source_text_sha256": "b11872031078ef1bec5570f5ae52ebb37e20e3246917803436b43bb5c4b3dc60",
+      "request_sha256": "d200845c2f4ad13bc0f94227ea0286ae815ccaa8bfa23853fa260c05e65cf99e",
+      "estimated_input_tokens": 9758,
+      "per_send_reservation_cny": 0.192357
+    },
+    {
+      "sample_id": "sun_modality_bb0063f12e993468",
+      "request_id": "input_000317",
+      "source_text_sha256": "1dae1bd0cea3fc59b680b825f2db46a4e7d016a5ecb23c8c09be3dfcc829acd1",
+      "request_sha256": "dac934ba5abaefdeb3ac874de10f380c37d441b83c5d32566d613827ae78db4c",
+      "estimated_input_tokens": 9791,
+      "per_send_reservation_cny": 0.1928295
+    },
+    {
+      "sample_id": "sun_modality_8c90d2e996ecb14d",
+      "request_id": "input_000318",
+      "source_text_sha256": "3c7f3886a25906ab9678d676464327c6f924894e56885279db83e787e86fc6b0",
+      "request_sha256": "0b11ec8172491b104b546f8ac64a596bb13e8796fb4b78df7151918bae1a9379",
+      "estimated_input_tokens": 9793,
+      "per_send_reservation_cny": 0.192825
+    },
+    {
+      "sample_id": "sun_modality_e37bba11b35592de",
+      "request_id": "input_000319",
+      "source_text_sha256": "ce2f6b269cdad624bbe7d1f5ed69281eba480f7dcda3c42eb15ed42c1387e697",
+      "request_sha256": "439885e113be0ee59817c237027106fefe67856ba8e790a30769f15f02524575",
+      "estimated_input_tokens": 9789,
+      "per_send_reservation_cny": 0.1928115
+    },
+    {
+      "sample_id": "sun_modality_8d7148bde58e198d",
+      "request_id": "input_000320",
+      "source_text_sha256": "84159e05a56f0af866170da20a5c193dc0624834dea20fdb0f94f032bbb1c6ed",
+      "request_sha256": "f6fbfc3a34faf67985e4618deb373f91f92f5cbb2f55fbb6f2d7e7491123d113",
+      "estimated_input_tokens": 9778,
+      "per_send_reservation_cny": 0.192609
+    },
+    {
+      "sample_id": "sun_modality_13677e15c4579c2d",
+      "request_id": "input_000321",
+      "source_text_sha256": "b6229aba0d9319da9a4f9fd61d39b68f88c89a5d65971083129b1873b9f667d5",
+      "request_sha256": "3707ae19deb62f14d93ef44c67755431e742fd22b75e30a7b312464fe74bb4c8",
+      "estimated_input_tokens": 9784,
+      "per_send_reservation_cny": 0.192717
+    },
+    {
+      "sample_id": "sun_modality_b036acb09554f95a",
+      "request_id": "input_000322",
+      "source_text_sha256": "0e540cc7fc1297bf54455a6c9ee4b041545ec2e66429ba2a4b32c1fe9c06c891",
+      "request_sha256": "004bfb7fb3d6823d33d9019f6045fbf47ab0ea608ddd9260a3a62d41393830e4",
+      "estimated_input_tokens": 9842,
+      "per_send_reservation_cny": 0.193482
+    },
+    {
+      "sample_id": "sun_modality_ea0700a5b47ca2a7",
+      "request_id": "input_000323",
+      "source_text_sha256": "eded46f7a2ed45728dd0c1a962fba7587256b1db41f7957bbc011761963fad0d",
+      "request_sha256": "70c8f15c8b5618b587e55570567827571c5cab7f205d68e8e21aaf64bfb228eb",
+      "estimated_input_tokens": 9773,
+      "per_send_reservation_cny": 0.1925415
+    },
+    {
+      "sample_id": "sun_modality_8fa70a58ff1052a9",
+      "request_id": "input_000324",
+      "source_text_sha256": "ce023e6b6d4c3f607ee42da0d6b0872460a70a239104f3275da9e39e3d53ecae",
+      "request_sha256": "7ed2c0122dd19001694add1a16ec9ee5ff44ec4d4863621a5d266475cda65d49",
+      "estimated_input_tokens": 9758,
+      "per_send_reservation_cny": 0.19233
+    },
+    {
+      "sample_id": "sun_modality_984a2369d8df5e69",
+      "request_id": "input_000325",
+      "source_text_sha256": "b0c60260b11c871b86c5459a4e01da437fa3cccb31cd456d15fad380c12e707e",
+      "request_sha256": "3fa0996746f2efb7e116b61c24b5c36df8bae1cc74f940306686e9bc5fdb016a",
+      "estimated_input_tokens": 9778,
+      "per_send_reservation_cny": 0.1926
+    },
+    {
+      "sample_id": "sun_modality_3bae2aec3d7cf40f",
+      "request_id": "input_000326",
+      "source_text_sha256": "667020cfa1484f8eb89e22edc2cb597a3cdd570d4f3fdc67e5ac2f24602b83cb",
+      "request_sha256": "ed7b1e2cd6b558a18da3be43e482d3bcf941c6d8f275604ec5c798cd057448ae",
+      "estimated_input_tokens": 9825,
+      "per_send_reservation_cny": 0.1933785
+    },
+    {
+      "sample_id": "sun_modality_1afeaf8b743c2c9d",
+      "request_id": "input_000327",
+      "source_text_sha256": "f6245df76a18368b2501cdb1cda443ac03f11b7b6ff291320c0e7236b84e74fa",
+      "request_sha256": "c4767b838da6098e1fb15d1b3e72ec62f020759c812658fc3c5349ae99b49e1e",
+      "estimated_input_tokens": 9755,
+      "per_send_reservation_cny": 0.1922805
+    },
+    {
+      "sample_id": "sun_modality_4baacedbc32b1d1f",
+      "request_id": "input_000328",
+      "source_text_sha256": "a4ac4103477e90b557350e614a1288d4a31c9dc9e31c396a8755b340e2114558",
+      "request_sha256": "a0efc0b430b35a360a2811177161523d75f5cec2c608adbbcae670f875baa038",
+      "estimated_input_tokens": 9760,
+      "per_send_reservation_cny": 0.192357
+    },
+    {
+      "sample_id": "sun_modality_e2cbc6de151a2e3b",
+      "request_id": "input_000329",
+      "source_text_sha256": "0d494a12bb4a9864fecc020da8ec957e0ab4a35221dd230d423ebf5f2aae6ff6",
+      "request_sha256": "6db230a5423c0a266985b32cc797f74101f120b56d4934e3dcc5c82bdf036cf4",
+      "estimated_input_tokens": 9816,
+      "per_send_reservation_cny": 0.193167
+    },
+    {
+      "sample_id": "sun_modality_a42090d1a9ed021c",
+      "request_id": "input_000330",
+      "source_text_sha256": "a2da8ccae054fd19e98b3037f21108fd169063d411fb20830f594f96f51da651",
+      "request_sha256": "9ef11e2c8276259e4b000d47eb2be026a864bac07bab97934c188388359e913b",
+      "estimated_input_tokens": 9758,
+      "per_send_reservation_cny": 0.1923165
+    },
+    {
+      "sample_id": "sun_modality_e723011041e9fcf1",
+      "request_id": "input_000331",
+      "source_text_sha256": "a30a9cd79d3712039f1864524a82e6331fc05c0b4ea70129871e789a73732df9",
+      "request_sha256": "bd596b05fbe2dce657e1e1e0c2e4d0e2724b426fb0e5494f42d93ff760a046b9",
+      "estimated_input_tokens": 9787,
+      "per_send_reservation_cny": 0.1927215
+    },
+    {
+      "sample_id": "sun_modality_cbfeade64c54fe63",
+      "request_id": "input_000332",
+      "source_text_sha256": "b0dd128a368afcab10636613591a9b87157d2567476fa578465cb4c4d8bc3dc8",
+      "request_sha256": "c5e0fa7c564a9abc20dc95eb7db443f440defa6504b0149bf34d2ab8676af293",
+      "estimated_input_tokens": 9772,
+      "per_send_reservation_cny": 0.192555
+    },
+    {
+      "sample_id": "sun_modality_ec71918514080086",
+      "request_id": "input_000333",
+      "source_text_sha256": "4277e7381edcb009f26899ccce10cc3293480d42cc90665788522aebf9f84470",
+      "request_sha256": "86991e9303bc4a0b290fe0553d8046b2b5cd5d03a1ce51e576d8b3fa2f46e71e",
+      "estimated_input_tokens": 9781,
+      "per_send_reservation_cny": 0.1926675
+    },
+    {
+      "sample_id": "sun_modality_32c3130272942c6e",
+      "request_id": "input_000334",
+      "source_text_sha256": "1f7de967a46554d0325b4c0622299f9aabd8bca7f29c682144af94b0557f5e0e",
+      "request_sha256": "9ff1a1eba13fb8ac3ba040795b9ae6ad49ec00f229021bb2ead3c897166819da",
+      "estimated_input_tokens": 9791,
+      "per_send_reservation_cny": 0.1927755
+    },
+    {
+      "sample_id": "sun_modality_3dc2104947dc8e10",
+      "request_id": "input_000335",
+      "source_text_sha256": "591b8fd6797779f56f69a26dd7f4c02e31979698beba12df5cffe7a0aa6f0272",
+      "request_sha256": "236725c332867a6e321e9ed6530648532731ab60eeb7677743e733ae2e16eb20",
+      "estimated_input_tokens": 9774,
+      "per_send_reservation_cny": 0.192528
+    },
+    {
+      "sample_id": "sun_modality_0d960e4bc91fb6ac",
+      "request_id": "input_000336",
+      "source_text_sha256": "c9cdc36ddf194b45407c145226a60b9eebc4b177c72758437cbf7ff3f8f400ed",
+      "request_sha256": "38efa6e854a10720da5ff026e4ef5b4ed53d0f7e5921a02d6a5915c745257567",
+      "estimated_input_tokens": 9777,
+      "per_send_reservation_cny": 0.1926225
+    },
+    {
+      "sample_id": "sun_modality_57616fce99da0013",
+      "request_id": "input_000337",
+      "source_text_sha256": "2254113be3cb279c4ef3242859cf3dbf2d0e2aa00d41d3dddab807828980d086",
+      "request_sha256": "3afb2632d206ce406cf586b31979a43b4999d6ab6217670b2b3506f5db26ef30",
+      "estimated_input_tokens": 9791,
+      "per_send_reservation_cny": 0.192816
+    },
+    {
+      "sample_id": "sun_modality_a0f80ebac4b45e5b",
+      "request_id": "input_000338",
+      "source_text_sha256": "978c686298a736413030628c7016b5a1c1e8e080dee20e0cf0ee212631360e0c",
+      "request_sha256": "a6466aeb253dbd97d8b2a1e4e631121513e652c3df77a0a1e98275e1268bedb3",
+      "estimated_input_tokens": 9780,
+      "per_send_reservation_cny": 0.192672
+    },
+    {
+      "sample_id": "sun_modality_047e4fdce99495e7",
+      "request_id": "input_000339",
+      "source_text_sha256": "e1367bd55910368b3df86dfeda4d0f591ef745ce9038d85b3e7b6614c0f9ff2e",
+      "request_sha256": "302deeceee80905431a2da0179f4c9433a7528794c3005a79275bb950fb6f8e2",
+      "estimated_input_tokens": 9791,
+      "per_send_reservation_cny": 0.192762
+    },
+    {
+      "sample_id": "sun_modality_99d525bd99e31dbf",
+      "request_id": "input_000340",
+      "source_text_sha256": "473e1475c392898a9b6aa4d57a34d682417dfe21b8816bef08a77eb3544f1221",
+      "request_sha256": "a0ea67ccd09a38e97ed80db44629fe94c42d9b722821a7c26911526301f6e3e2",
+      "estimated_input_tokens": 9800,
+      "per_send_reservation_cny": 0.192933
+    },
+    {
+      "sample_id": "sun_modality_6259ab76ffadc38b",
+      "request_id": "input_000341",
+      "source_text_sha256": "320325fcacbce0f46dab4b4e507ca5a08fc47bfb21d11bfcd5f25b3fea15750d",
+      "request_sha256": "5c249be1688b9be4d85f8a8fa112511566ddc1fa566a3f97833f3e4e1236c948",
+      "estimated_input_tokens": 9825,
+      "per_send_reservation_cny": 0.1933425
+    },
+    {
+      "sample_id": "sun_modality_dcc19d3290ff9ac8",
+      "request_id": "input_000342",
+      "source_text_sha256": "dd9268b90413aafc5f9e7eb3cea1acb930ac8e26fbe63b3272039a2e3ddaf2ab",
+      "request_sha256": "a27f782a4b2754d9e97a9bf7ea346cfd0ab508a8c87932040f1ac586e3766964",
+      "estimated_input_tokens": 9794,
+      "per_send_reservation_cny": 0.192834
+    },
+    {
+      "sample_id": "sun_modality_17367469b9450b2c",
+      "request_id": "input_000343",
+      "source_text_sha256": "37d9a73756d369977e578020c64d8be26f2ee66a88705317bff0e6bcfb5043aa",
+      "request_sha256": "db863b22b969f8c3019c4f21fd6798b6173d85864efa631faf77b0af776e341f",
+      "estimated_input_tokens": 9799,
+      "per_send_reservation_cny": 0.192924
+    },
+    {
+      "sample_id": "sun_modality_075db6ea9d98b943",
+      "request_id": "input_000344",
+      "source_text_sha256": "f2d58a5f84ada250eef4d5a2168c02bfb07e10530544fb619481fb110e32401b",
+      "request_sha256": "5e5b2cf0e01b876c6f25d5e4f88cc3cc9c79059e1f14c71cb9e24d7f7d62f383",
+      "estimated_input_tokens": 9890,
+      "per_send_reservation_cny": 0.194193
+    },
+    {
+      "sample_id": "sun_modality_fa3badc96194f737",
+      "request_id": "input_000345",
+      "source_text_sha256": "7fdc0711580a3622b8de59b9047ec62896185b2bbc64cab060b433b25bd4bcb1",
+      "request_sha256": "a4a38bb274bbaf3caf255c9dc040ca97ba9e3e199cca9db564ac506d052b74ac",
+      "estimated_input_tokens": 9792,
+      "per_send_reservation_cny": 0.192834
+    },
+    {
+      "sample_id": "sun_modality_c4926a4142dbcc96",
+      "request_id": "input_000346",
+      "source_text_sha256": "0042e4d55e19a742f24ab26b0f6985c61ae15c3e1a1f23e51118c602cbdde576",
+      "request_sha256": "f9a72e9ffd2e85e6246915dd85845f50edecd83a1a6d0ff3ddee406252d1469b",
+      "estimated_input_tokens": 9819,
+      "per_send_reservation_cny": 0.1932705
+    },
+    {
+      "sample_id": "sun_modality_4d19dab0ea998d78",
+      "request_id": "input_000347",
+      "source_text_sha256": "a54559a9df31258e0c4abebcd655082f436b582184ebd0718700629e65be44c0",
+      "request_sha256": "6751ead9590c76bd71291e8295318ae82e3bf4f05fd2b1cc11f72b8d65ffc507",
+      "estimated_input_tokens": 9781,
+      "per_send_reservation_cny": 0.192681
+    },
+    {
+      "sample_id": "sun_modality_ca86f445c178b7ff",
+      "request_id": "input_000348",
+      "source_text_sha256": "c14baacb29e084dcbcfe0e9f3be672d2766cc2da8bade42477200fb2bd710aa9",
+      "request_sha256": "0bf92bf4f202d653530adee76e08e21f3f3a786ced5740e34f41284a9862bf4b",
+      "estimated_input_tokens": 9779,
+      "per_send_reservation_cny": 0.192636
+    },
+    {
+      "sample_id": "sun_modality_f055d7902b06a0e3",
+      "request_id": "input_000349",
+      "source_text_sha256": "4abc8e27a4287d042db983d726b3e5b626b81eb6a95d42d4e23b801355346551",
+      "request_sha256": "7c15c6ee58ba622602972f3260e8012367e7f978fdf1dcf3000416b369bb8c12",
+      "estimated_input_tokens": 9788,
+      "per_send_reservation_cny": 0.192762
+    },
+    {
+      "sample_id": "sun_modality_469ebd8d6a5965ab",
+      "request_id": "input_000350",
+      "source_text_sha256": "4abc8e27a4287d042db983d726b3e5b626b81eb6a95d42d4e23b801355346551",
+      "request_sha256": "9eda05de2d77954ba4a9751ac3fbcf737510146191d568f37415159390c05ce0",
+      "estimated_input_tokens": 9788,
+      "per_send_reservation_cny": 0.192762
+    },
+    {
+      "sample_id": "sun_modality_68a7b0d9b95fb81e",
+      "request_id": "input_000351",
+      "source_text_sha256": "4905145d38cfd70e4c4fa6da31be43542b98e0a4d60cfbc196df6cf77cf914e7",
+      "request_sha256": "24a17fe985a649cecab17bdc85f5953ba25c9141f9cd93d8ff3d570c84158185",
+      "estimated_input_tokens": 9802,
+      "per_send_reservation_cny": 0.192951
+    },
+    {
+      "sample_id": "sun_modality_55ef593c74cda3f3",
+      "request_id": "input_000352",
+      "source_text_sha256": "147e44547349833fc6163eb63a9913574f581196a1af5636fee06eb00e4cc88f",
+      "request_sha256": "3e5cb99b44c76106cb9181c867b2113908d2781209b263ec037e1dbb9be0b66a",
+      "estimated_input_tokens": 9825,
+      "per_send_reservation_cny": 0.193239
+    },
+    {
+      "sample_id": "sun_modality_addef856096867b6",
+      "request_id": "input_000353",
+      "source_text_sha256": "6b00683e8137fa20b58f5faea66d819c72fcc2104a9393337de36bd878a8b1ee",
+      "request_sha256": "181ee32718b78ed5e20f8d6f5bd81fdf9a2e3b2e9db57e6be69aa1d0494f76cc",
+      "estimated_input_tokens": 9764,
+      "per_send_reservation_cny": 0.1924335
+    },
+    {
+      "sample_id": "sun_modality_2ad366c9ab7327b8",
+      "request_id": "input_000354",
+      "source_text_sha256": "eb0a1ec09a138b631993c35aac1ad354445c13572c0e599ca7437bbe8989fa3e",
+      "request_sha256": "bef8b461e7199f4f7c5fa801e92a952df339927d393cc38bc791a49855aa31b7",
+      "estimated_input_tokens": 9830,
+      "per_send_reservation_cny": 0.193365
+    },
+    {
+      "sample_id": "sun_modality_47b19113284fc538",
+      "request_id": "input_000355",
+      "source_text_sha256": "81fafc66fd5f5942a484e34fc4aead0de3f0f79b4f30aa1aa546614c24817af0",
+      "request_sha256": "7f46ab2378d61b4b7d616c4803394c34f5cd016f433ba6696786155aaab3a0c6",
+      "estimated_input_tokens": 9891,
+      "per_send_reservation_cny": 0.1942335
+    },
+    {
+      "sample_id": "sun_modality_e81092c4f608f50c",
+      "request_id": "input_000356",
+      "source_text_sha256": "6a0e4ec2cf52531acedeb6338985ee75c5b6c13d254f1d9b81f3a87e77f8f802",
+      "request_sha256": "30fcf146d9b44b7c4db8a98fbf684faf074fc4cd53786ff679af17293f9d1647",
+      "estimated_input_tokens": 9784,
+      "per_send_reservation_cny": 0.19269
+    },
+    {
+      "sample_id": "sun_modality_f1340e90f9beb2bf",
+      "request_id": "input_000357",
+      "source_text_sha256": "38ccd2e2da115aa157b7cc06a0c16e5e4d85a630c52c6ced95378b8fd79e74e2",
+      "request_sha256": "5a66d903494682ada7e682d14ffcca33096b52da2fe9dbb0b3e7e3889486933c",
+      "estimated_input_tokens": 9782,
+      "per_send_reservation_cny": 0.19269
+    },
+    {
+      "sample_id": "sun_modality_8eff4eb683f245fb",
+      "request_id": "input_000358",
+      "source_text_sha256": "e8ad6bd4211938427ccf63463ec1bb3ef0c97bffb31af3e9c09fc4180fb302ea",
+      "request_sha256": "f2ce8c5ff28c0e112d68906065e5d3bb58b826f69425e51ccf31f529ab6d7b27",
+      "estimated_input_tokens": 9779,
+      "per_send_reservation_cny": 0.1926135
+    },
+    {
+      "sample_id": "sun_modality_849ac8d69dc794d7",
+      "request_id": "input_000359",
+      "source_text_sha256": "1e5f6282f003f64c20ddc9df2f8dd1ab6a4e47ccd096c3174b5c60703ed70420",
+      "request_sha256": "5ae1c7a028b1fc6688a8ada6cc5c3da03c99d9666f283d2d5044a31e67f65ed3",
+      "estimated_input_tokens": 9823,
+      "per_send_reservation_cny": 0.193248
+    },
+    {
+      "sample_id": "sun_modality_c1a566c0baf00b1a",
+      "request_id": "input_000360",
+      "source_text_sha256": "288e9c066f593268161ca6ad472b0544ee60feabc191eaaa719fb2bbc95bee87",
+      "request_sha256": "1ec76054772b69a029708fc75f6c4386e6d556f183838fa05095c76249e74aa9",
+      "estimated_input_tokens": 9744,
+      "per_send_reservation_cny": 0.192132
+    },
+    {
+      "sample_id": "sun_modality_21a68ef63e173268",
+      "request_id": "input_000361",
+      "source_text_sha256": "94e87f37cd1eb8ba47785b6664bb16e1597c3d6cacaa2e492369d50635674207",
+      "request_sha256": "881f1bb1414ffe659a1cbde16d960425fa11ad79cc8b98778d1e2dcbaa2deb50",
+      "estimated_input_tokens": 9852,
+      "per_send_reservation_cny": 0.1936575
+    },
+    {
+      "sample_id": "sun_modality_12c56463fef71f73",
+      "request_id": "input_000362",
+      "source_text_sha256": "04a82a26862cc402b651c53199e211e08fb28957eb21a6d4cf62660274f3375e",
+      "request_sha256": "7533a0a0644006d65018d04f74f094aa0d5ac6e7bcdae5280d95c762ec4b320c",
+      "estimated_input_tokens": 9750,
+      "per_send_reservation_cny": 0.192231
+    },
+    {
+      "sample_id": "sun_modality_483f4175c9c4bde7",
+      "request_id": "input_000363",
+      "source_text_sha256": "b0aa862bd0c30169b5a8bcccd98f8ef20d7efacac03ac3f175b19bc6e7b4704d",
+      "request_sha256": "60992ab4ff40f4cad9c2dff124d5460568ed6bfaba6d036bb53230d45d76ea8a",
+      "estimated_input_tokens": 9757,
+      "per_send_reservation_cny": 0.192339
+    },
+    {
+      "sample_id": "sun_modality_554032f9e6b83f8d",
+      "request_id": "input_000364",
+      "source_text_sha256": "ba87afb0843214dbd4106510f252a54138bed68cc37f7b8966234fd39ca5e011",
+      "request_sha256": "85408e4ae5cf027a6224f2e0cedfad4f3e7360197a0c63fa8fddc9d6b7b493f6",
+      "estimated_input_tokens": 9811,
+      "per_send_reservation_cny": 0.1931085
+    },
+    {
+      "sample_id": "sun_modality_2915a7122c34e718",
+      "request_id": "input_000365",
+      "source_text_sha256": "56ee8e5801d8b8714beba17408b9cb5c5079f50969aa4728591f719e6788da1b",
+      "request_sha256": "14eb55d5c904de2f53d4d8fc71ddd33b7ede21b8656dbb73b44b472c4edf215c",
+      "estimated_input_tokens": 9808,
+      "per_send_reservation_cny": 0.193023
+    },
+    {
+      "sample_id": "sun_modality_5fe27ac891117c07",
+      "request_id": "input_000366",
+      "source_text_sha256": "234a9bc60100ea64f8f0426c103fd695e315c15ea99a72b4aa3bbc7c35f10bf0",
+      "request_sha256": "97e2a2966322a6497c188cdaa69ffe0869a7b99956f11c0391ad4637f425feef",
+      "estimated_input_tokens": 9759,
+      "per_send_reservation_cny": 0.19233
+    },
+    {
+      "sample_id": "sun_modality_06e8af68d9122b34",
+      "request_id": "input_000367",
+      "source_text_sha256": "4abd078c0596ae8b3d7b44051e69aa6c9880600af1b616a2e8fc4d47237a2fb4",
+      "request_sha256": "7e385a792841c2f56c7154dca131855338c5b8ee8e6bd4e5660791e7ea67834a",
+      "estimated_input_tokens": 9764,
+      "per_send_reservation_cny": 0.192456
+    },
+    {
+      "sample_id": "sun_modality_b7ec01332572f34e",
+      "request_id": "input_000368",
+      "source_text_sha256": "54c115afc6d0fa9f61a5ce3ce392a13025e91e097f2c11a9c8c43e181e94d602",
+      "request_sha256": "3bdcb368aed40af12de9a7f270251ec11a5cf7c4b7588adee290e56c5a74b56c",
+      "estimated_input_tokens": 9802,
+      "per_send_reservation_cny": 0.193005
+    },
+    {
+      "sample_id": "sun_modality_4244c95c7be294b9",
+      "request_id": "input_000369",
+      "source_text_sha256": "c687a739f2ea4818a0864afe9c5ce3436ae3c36263a541d1637157428da209e5",
+      "request_sha256": "136350274172745a860f167f8278ba7bcda9d6394a89909e1881daeacf5fd3ff",
+      "estimated_input_tokens": 9808,
+      "per_send_reservation_cny": 0.1931175
+    },
+    {
+      "sample_id": "sun_modality_894153a0919fa2e3",
+      "request_id": "input_000370",
+      "source_text_sha256": "cd77b1b9f2a5bd646f332058b04a445fc3ac068fa5a57346db50bb4c615ab081",
+      "request_sha256": "8e5e0117e887d4ceccd928a2086055ad28c21f1205200ba7a8125f72e790342b",
+      "estimated_input_tokens": 9811,
+      "per_send_reservation_cny": 0.1931355
+    },
+    {
+      "sample_id": "sun_modality_56017d4c43711792",
+      "request_id": "input_000371",
+      "source_text_sha256": "5f46eef239ae75641f025f39c0e2a24d53d7c1662a67a9795875e08af76646d5",
+      "request_sha256": "c2e41ca159dedbf6b32122e37e73db2139a8ab41e6c110d33aa8df63e2f14d0b",
+      "estimated_input_tokens": 9810,
+      "per_send_reservation_cny": 0.193113
+    },
+    {
+      "sample_id": "sun_modality_fb718535863d1fab",
+      "request_id": "input_000372",
+      "source_text_sha256": "a29917c9523d2dc1967c6679142c18e5df098199d7ee747303e5e63b8b34e064",
+      "request_sha256": "85ca10691a4a1521ecc75c177b1738c38f712aa8c8aa0aed9f5f437c3bf839f5",
+      "estimated_input_tokens": 9845,
+      "per_send_reservation_cny": 0.1936035
+    },
+    {
+      "sample_id": "sun_modality_6c39a3ff7fd22045",
+      "request_id": "input_000373",
+      "source_text_sha256": "6f982b1350822b1c7ca6210b3bd8dc0f565ddd02bad16d4ee0fbb869bfca92c2",
+      "request_sha256": "9c281993ce87e38affda03f9e2ada3bd2ce9f48c6a87a20470787fe3dcc4effe",
+      "estimated_input_tokens": 9831,
+      "per_send_reservation_cny": 0.1933875
+    },
+    {
+      "sample_id": "sun_modality_1a71d6acafc56635",
+      "request_id": "input_000374",
+      "source_text_sha256": "7a568d3e2cf26c3c3c096ece191ae408d8bbc423e64d344a4d177608a447fb1a",
+      "request_sha256": "53b7e54a27168cb8006706c55c42e3a49a3af3acba327e07a822e456f781dcc2",
+      "estimated_input_tokens": 9793,
+      "per_send_reservation_cny": 0.1928205
+    },
+    {
+      "sample_id": "sun_modality_303c927bb70be739",
+      "request_id": "input_000375",
+      "source_text_sha256": "100bf8f04ee673e4779e2c5d85e76e7d907a76b2021919e3a8964c40df206405",
+      "request_sha256": "efa8a6967ac3265591981c93d0a5f0d68e0e85ae12be1b20fe6b1922fd7649b9",
+      "estimated_input_tokens": 9784,
+      "per_send_reservation_cny": 0.1927575
+    },
+    {
+      "sample_id": "sun_modality_50de1ec08faecf00",
+      "request_id": "input_000376",
+      "source_text_sha256": "9559a6c009baeb53602f4f74bb436779f0b9fc20bb9ac4c0ee1966da9176bf28",
+      "request_sha256": "ba935abfc2a5dfbed57079cec7a5de56d46033c54cfc35d33f6e0553c5d8a3ec",
+      "estimated_input_tokens": 9811,
+      "per_send_reservation_cny": 0.1931085
+    },
+    {
+      "sample_id": "sun_modality_70ce999b396d0d17",
+      "request_id": "input_000377",
+      "source_text_sha256": "549b370bbb980e1a001b234e372a04d4acaa30a25a26a613405a3486a70891ae",
+      "request_sha256": "a09b6072a5e7b08b23b61c9d869932a06087517f791690315aaabeac64a3607e",
+      "estimated_input_tokens": 9763,
+      "per_send_reservation_cny": 0.1923795
+    },
+    {
+      "sample_id": "sun_modality_8d0af70ed534107f",
+      "request_id": "input_000378",
+      "source_text_sha256": "58af485feaf05ea4f483d278c370623f1ed49e717df0cc686795a89609bc73df",
+      "request_sha256": "ac8bda85778f8529bd378e8c916e010e763172dc7dac3cf2b7a3c7358a27d0fb",
+      "estimated_input_tokens": 9867,
+      "per_send_reservation_cny": 0.1939365
+    },
+    {
+      "sample_id": "sun_modality_4f892ffece1dc13a",
+      "request_id": "input_000379",
+      "source_text_sha256": "2769dc765f284bad4f0d15d864b4f0de6a670230826a4515c3adca51af885564",
+      "request_sha256": "b4108253f34ccd0c4069a05a9fb0f3120d70e3768a6ee7358ae689e4116dedd0",
+      "estimated_input_tokens": 9756,
+      "per_send_reservation_cny": 0.1923255
+    },
+    {
+      "sample_id": "sun_modality_d9c85ed0903ad427",
+      "request_id": "input_000380",
+      "source_text_sha256": "ec1286418c1088d74f1012149e5c80d769f9b3bfa64d73da549975fd93a92b74",
+      "request_sha256": "5acffdd561a46b4784eac5067c16f3f6ec9755db51596695a1816b09a5c83c78",
+      "estimated_input_tokens": 9755,
+      "per_send_reservation_cny": 0.1922805
+    },
+    {
+      "sample_id": "sun_modality_27868c67b8b7b6ca",
+      "request_id": "input_000381",
+      "source_text_sha256": "ae27b06d67ca71b4081dc2207b57d4714b04fafd35adec3168a9fdcf452ad3a4",
+      "request_sha256": "567747379d46b8c88a68402347173e49764654f68ddbef9439b17c4022fc87b2",
+      "estimated_input_tokens": 9807,
+      "per_send_reservation_cny": 0.192996
+    },
+    {
+      "sample_id": "sun_modality_e10c26a6829f26c0",
+      "request_id": "input_000382",
+      "source_text_sha256": "6d97cab38632fad510a9ed83afad373aacce8aedcf66c96123c5468b145230ec",
+      "request_sha256": "34ac080836680d9bf654bc3b68ead34c23e77932e9ab683d6b6a159a4e89ef1e",
+      "estimated_input_tokens": 9792,
+      "per_send_reservation_cny": 0.192834
+    },
+    {
+      "sample_id": "sun_modality_16f4773e395cd946",
+      "request_id": "input_000383",
+      "source_text_sha256": "749f7211f64886b48e97e6176b114dbbe6fbe30c46bd35c43d5fff4bc6b47032",
+      "request_sha256": "a0c7b7156c5a849bfff66426147ae84f39533793380618cc6a476f76eca7ee94",
+      "estimated_input_tokens": 9868,
+      "per_send_reservation_cny": 0.194022
+    },
+    {
+      "sample_id": "sun_modality_c3f4621e49484a4d",
+      "request_id": "input_000384",
+      "source_text_sha256": "ca9e784734d2a02c3dfbce21aeed6fa9db9ea31d87bdad5d31c036c23c86f4f5",
+      "request_sha256": "b0bb64fa4a9728d41229b4dcc5e709b89310142f33d2a5e25d8a490897b46d51",
+      "estimated_input_tokens": 9793,
+      "per_send_reservation_cny": 0.1928205
+    },
+    {
+      "sample_id": "sun_modality_6d46f2ca8400b2bc",
+      "request_id": "input_000385",
+      "source_text_sha256": "1e765ff0dec46b787ce55f07933b4c74a39396d499818837e950f1c439e42003",
+      "request_sha256": "a27b9641270356a8e1d90e5e38bdd692a79e5627224eef3928c83d9b7a40fe48",
+      "estimated_input_tokens": 9823,
+      "per_send_reservation_cny": 0.193356
+    },
+    {
+      "sample_id": "sun_modality_8b07c393411cee37",
+      "request_id": "input_000386",
+      "source_text_sha256": "360ab4aa9e67190d7d7e55758401d0e7ef21433b844e14a122a490738240f98b",
+      "request_sha256": "e3d14be4133ce385185aff44c669c2b45c794de97872eb954c4bad87890ee9ce",
+      "estimated_input_tokens": 9804,
+      "per_send_reservation_cny": 0.1929915
+    },
+    {
+      "sample_id": "sun_modality_9d78523e56788d9e",
+      "request_id": "input_000387",
+      "source_text_sha256": "f8cda720b6cbfe1f61b6dbc5cf126f5ed302b5deebd03d1e71aff62b96223b73",
+      "request_sha256": "74aef05f04fb4fa190f5337839a2bc982a8a63df83d04986bef7c5321f5a1453",
+      "estimated_input_tokens": 9811,
+      "per_send_reservation_cny": 0.193122
+    },
+    {
+      "sample_id": "sun_modality_d4121256b2d58a98",
+      "request_id": "input_000388",
+      "source_text_sha256": "b7dce346b2a43e7c392df48abafe3cb0e6d08cf84c6176dcdca8198775e3b995",
+      "request_sha256": "f874dbadeca71a05de1fa94b0257e68c3bb5e51d2770b3b66e0a31bf9fe8ebb0",
+      "estimated_input_tokens": 9821,
+      "per_send_reservation_cny": 0.1932345
+    },
+    {
+      "sample_id": "sun_modality_9d4d6d93dfe8ed07",
+      "request_id": "input_000389",
+      "source_text_sha256": "5856bfd35d36f7aa13ae87f03feb5c3f065ad1f1039ee43b4be6836dc3a7935c",
+      "request_sha256": "247277b09416bd005ec74eef874da06651b68eab9ea6e3dd9a87520e17eeca37",
+      "estimated_input_tokens": 9769,
+      "per_send_reservation_cny": 0.192501
+    },
+    {
+      "sample_id": "sun_modality_7a2fde0b0b7fea8d",
+      "request_id": "input_000390",
+      "source_text_sha256": "de5560ea2090375503fac29c5a91b0ebbb28942f98544ad4a4838faaaa9a899d",
+      "request_sha256": "12ca2ca21502a7308a83bcdcc902d047bdd6545ce14ecc30cb80925da4fa33b0",
+      "estimated_input_tokens": 9810,
+      "per_send_reservation_cny": 0.193059
+    },
+    {
+      "sample_id": "sun_modality_9ca5a110e45021ab",
+      "request_id": "input_000391",
+      "source_text_sha256": "a75a4c736db760215e0ea45b1ac6c9472fb8d5a461e60c14c335f4f7c36f22a1",
+      "request_sha256": "5410a87af5f27e242be2b638a05c07c3d4f25c2afd9e114266e5d46a0e62c332",
+      "estimated_input_tokens": 9784,
+      "per_send_reservation_cny": 0.1927395
+    },
+    {
+      "sample_id": "sun_modality_c474dcd414a9aacf",
+      "request_id": "input_000392",
+      "source_text_sha256": "23c22f0ab9cb330a2542b65edd587de3bf53312452c3aacb7c27394d82d6a9a4",
+      "request_sha256": "6a524a474f4a9588a5b4d1a8c9496e3dfcbd7537aff864d1b5342b0a5bff68e8",
+      "estimated_input_tokens": 9865,
+      "per_send_reservation_cny": 0.193887
+    },
+    {
+      "sample_id": "sun_modality_8a2c25d0b5c8d884",
+      "request_id": "input_000393",
+      "source_text_sha256": "35025b16c2d8514705e2ac3e5ae2666d6f7efcbe4bf9764cef9975fc48284279",
+      "request_sha256": "992b32744cf682fc17a75f79cb6ae16f56031d78623ae4ea5ae4861133241f4e",
+      "estimated_input_tokens": 9791,
+      "per_send_reservation_cny": 0.1928115
+    },
+    {
+      "sample_id": "sun_modality_021f012516dbab37",
+      "request_id": "input_000394",
+      "source_text_sha256": "cbcd25b385cb166bbae683660d571e4d48f07c82ce07a37cd8c974b769a69762",
+      "request_sha256": "041e138d8e5b87407e58cafabfcb6ed27adfd6ca687faa4a2028f3f463135d5a",
+      "estimated_input_tokens": 9865,
+      "per_send_reservation_cny": 0.1938105
+    },
+    {
+      "sample_id": "sun_modality_e51fd92825396871",
+      "request_id": "input_000395",
+      "source_text_sha256": "fbd1480e0fc85215b6bf8ce3e06c7d40cc4059a47449d8517fce89cb48bb012b",
+      "request_sha256": "eead71568a6dce22a55c68ec3b1b5cec69294ab4d83e1449342562924c820e6c",
+      "estimated_input_tokens": 9763,
+      "per_send_reservation_cny": 0.1924695
+    },
+    {
+      "sample_id": "sun_modality_67a59bd9b1f755a0",
+      "request_id": "input_000396",
+      "source_text_sha256": "ec3abbc486d7e1b5deae7718f88f0605022283634f4924536fbde7446a81cdb4",
+      "request_sha256": "64fb7fb73c5a90a7de821ec71d61e26addaf2447d533933052eaf7c99a69fbe7",
+      "estimated_input_tokens": 9808,
+      "per_send_reservation_cny": 0.1930815
+    },
+    {
+      "sample_id": "sun_modality_93a7472e20a683e2",
+      "request_id": "input_000397",
+      "source_text_sha256": "51f311634950a7c88bc2c845661cf1146670382693e295b5b33b2b929f8ce9f2",
+      "request_sha256": "05752b6927920d012f2a46bcfcbb10975f333d7f0a5f4666b175e1dc737ce9a1",
+      "estimated_input_tokens": 9835,
+      "per_send_reservation_cny": 0.1934955
+    },
+    {
+      "sample_id": "sun_modality_25e15b3e78c2b354",
+      "request_id": "input_000398",
+      "source_text_sha256": "24b0c0e9588530f7a3cc4451f473cb72d8ab6b96a32efdcb94af4d81767413ee",
+      "request_sha256": "d26605326406b168e18ed36addc475597641534c194e29256e12d67738779994",
+      "estimated_input_tokens": 9871,
+      "per_send_reservation_cny": 0.1939995
+    },
+    {
+      "sample_id": "sun_modality_17904ca685ba8fea",
+      "request_id": "input_000399",
+      "source_text_sha256": "23fa75172e3cee93c3534baf46c112e5b072053e2daa00d4170bdc4501b23462",
+      "request_sha256": "76a092833e4e0fccfa6c416af94a5b9d9687e5363515bd7741fbdff09a7bebef",
+      "estimated_input_tokens": 9816,
+      "per_send_reservation_cny": 0.1931895
+    },
+    {
+      "sample_id": "sun_modality_7b492acb73584201",
+      "request_id": "input_000400",
+      "source_text_sha256": "147514165b164675faa4bbcf5144597b99a351b730c81c1e1db65a1a2a1c3304",
+      "request_sha256": "11205e0cc3140a127245ca654f4ccd84a704035a3dc3ea52047c975b80a6f059",
+      "estimated_input_tokens": 9859,
+      "per_send_reservation_cny": 0.1939095
+    },
+    {
+      "sample_id": "sun_modality_3534d9110a27f689",
+      "request_id": "input_000401",
+      "source_text_sha256": "34bf15bd93206d1b5a018efcacb0267be7135fa4267600a8d1489de751756931",
+      "request_sha256": "34b2ba67b47a10e4111266fadb33dd6576b3fb7df2f5f5de1d578c53c3db3904",
+      "estimated_input_tokens": 9802,
+      "per_send_reservation_cny": 0.192978
+    },
+    {
+      "sample_id": "sun_modality_f047f4868298b5a1",
+      "request_id": "input_000402",
+      "source_text_sha256": "5954022da0ae836cb60b3a915ce859ecc8aaedae4174566e106c342526c5a807",
+      "request_sha256": "7c9217e5c40a46ee25805fe4946b91eb3093cb9e3bb217089dae373a28bec508",
+      "estimated_input_tokens": 9840,
+      "per_send_reservation_cny": 0.193572
+    },
+    {
+      "sample_id": "sun_modality_c4ef6b4630ca795d",
+      "request_id": "input_000403",
+      "source_text_sha256": "8e8e7701d35ae2862edbf95b92155c02d03f9ef475f5db1342183c3d28e6a4fc",
+      "request_sha256": "59f75afde47a0fb45db3283e06839d51f441826829ac6af1d58b64f4c87eb926",
+      "estimated_input_tokens": 9779,
+      "per_send_reservation_cny": 0.192672
+    },
+    {
+      "sample_id": "sun_modality_924fd57872575a82",
+      "request_id": "input_000404",
+      "source_text_sha256": "a5c2e3b88e06d569db33dadd5d0840fa400cb757f63293355cf33a9204300fe3",
+      "request_sha256": "f24ac0e207de1ffc552df7de764e70adb5942a382ca085c038bacdfe40761552",
+      "estimated_input_tokens": 9812,
+      "per_send_reservation_cny": 0.1931715
+    },
+    {
+      "sample_id": "sun_modality_8c0090187080c998",
+      "request_id": "input_000405",
+      "source_text_sha256": "3f48cbd91812c4ab25927b2d07e6fb37fdbb732c3c5daf6f8e5126eb1ad1d05a",
+      "request_sha256": "32a127d9b37d49d66265698334c72458915c53fcfb69f245f2b919c78c75da59",
+      "estimated_input_tokens": 9770,
+      "per_send_reservation_cny": 0.1925325
+    },
+    {
+      "sample_id": "sun_modality_3dc91979a3043436",
+      "request_id": "input_000406",
+      "source_text_sha256": "9144cc2c0fe5b80096ee6e617e8442d299821ac2ded987bd18ea45179f6fda6a",
+      "request_sha256": "537a5ae1fc27d986944453bb319c53512aad2ee2f35f6a79c2cfae49803c055b",
+      "estimated_input_tokens": 9772,
+      "per_send_reservation_cny": 0.192564
+    },
+    {
+      "sample_id": "sun_modality_7a414901f3c90d61",
+      "request_id": "input_000407",
+      "source_text_sha256": "a15f474a777548c123cced2799cc9e57751b388f46762d1b87185297d94ff274",
+      "request_sha256": "8ae741005cfc59cee0990d84c842406cb47164b612fcdb9eeb5bd2d07bfd066b",
+      "estimated_input_tokens": 9788,
+      "per_send_reservation_cny": 0.192816
+    },
+    {
+      "sample_id": "sun_modality_e96911aa922791db",
+      "request_id": "input_000408",
+      "source_text_sha256": "1e883bb7e8e51857087c57d441218574fda485fe4b98d848d2064d45ef138b26",
+      "request_sha256": "07e48cd4c94d9452ef8984381688a24b1e03afa210f0f3927d426b743f6b39d5",
+      "estimated_input_tokens": 9819,
+      "per_send_reservation_cny": 0.193194
+    },
+    {
+      "sample_id": "sun_modality_f269036bdd67fd4b",
+      "request_id": "input_000409",
+      "source_text_sha256": "7660b55cbd9293aa5eeed1330b6539d8f774b33832a5c7d4a1084e20d76f6b5a",
+      "request_sha256": "0e39fb797370cf25dd9c48edfeceea17fb1bdb48b6805d1c08847a074a3b016b",
+      "estimated_input_tokens": 9863,
+      "per_send_reservation_cny": 0.1939275
+    },
+    {
+      "sample_id": "sun_modality_67a7e389e46440bd",
+      "request_id": "input_000410",
+      "source_text_sha256": "3c03c83b4a78304b2d027e32bdc33bf4ccc488d3ad4b9ac79874d3fcab84768a",
+      "request_sha256": "eea86e01075b68834632e39d4f9a7c91e9e79f4d492dc8e55bc266929d36b67e",
+      "estimated_input_tokens": 9795,
+      "per_send_reservation_cny": 0.1928745
+    },
+    {
+      "sample_id": "sun_modality_d77e1228dd450dee",
+      "request_id": "input_000411",
+      "source_text_sha256": "a18e16ad28c00c4b475d11efb89422740b19c8981bfa31435b8e4d3997333bc2",
+      "request_sha256": "193d68c93edea6718e8deb1cdf5e2245cbf8c11a1cc3be55d8466ecda02aa8ff",
+      "estimated_input_tokens": 9813,
+      "per_send_reservation_cny": 0.1931355
+    },
+    {
+      "sample_id": "sun_modality_48a4ccd45ef98e5b",
+      "request_id": "input_000412",
+      "source_text_sha256": "e96b58d2441006e7514c428e8d384ae48f5ac1477b7dd56ebef54de40b4bfb00",
+      "request_sha256": "4ef8158a0214f983d6cef8b0666f525178d8fe355223d40154c130ede1303b50",
+      "estimated_input_tokens": 9782,
+      "per_send_reservation_cny": 0.1926945
+    },
+    {
+      "sample_id": "sun_modality_b4fe643d2c491de2",
+      "request_id": "input_000413",
+      "source_text_sha256": "8095e126d89824409a5f186a6e87bb641dbbb7a3e4ada04c3ac8daf4c0d28b10",
+      "request_sha256": "ba0d63f8590e4b6f748a3d916a4c1e795e42c5c250bfad83f207a2e39d0786b3",
+      "estimated_input_tokens": 9787,
+      "per_send_reservation_cny": 0.1927665
+    },
+    {
+      "sample_id": "sun_modality_2e37f2da3189dc78",
+      "request_id": "input_000414",
+      "source_text_sha256": "2e97ac57ac085a3208613a3de60856ee1d1001168538f41ad3444a962ad34f1f",
+      "request_sha256": "2785c5df1efbe5b321de2e4c768a8b662d75f47b23ec40ad46c1bcb620652de1",
+      "estimated_input_tokens": 9789,
+      "per_send_reservation_cny": 0.1928205
+    },
+    {
+      "sample_id": "sun_modality_b0bdeb958fcc7cb5",
+      "request_id": "input_000415",
+      "source_text_sha256": "fd8e1fdcba4c49fd20d5018f8f7cd8d0afc362efef4cb13c61a19cc0f7e380c6",
+      "request_sha256": "550efdbeaa495a45a8081e5184f52d61174fa48524b4de45331a949212080a5e",
+      "estimated_input_tokens": 9759,
+      "per_send_reservation_cny": 0.19233
+    },
+    {
+      "sample_id": "sun_modality_a03fd6ffc4b78f9a",
+      "request_id": "input_000416",
+      "source_text_sha256": "b7b708196d424ea47cc324f31fbd637fec1bb5e5e825ce5498d36970f892cbc3",
+      "request_sha256": "d2e1ab71b033693505955875795d62cb88dadc2bde8e911ded17da92951bff60",
+      "estimated_input_tokens": 9788,
+      "per_send_reservation_cny": 0.1927935
+    },
+    {
+      "sample_id": "sun_modality_a92af258f6e785f7",
+      "request_id": "input_000417",
+      "source_text_sha256": "943b39c8a813347129e4503a37e26376f63cb036f743efc543e7f350ee35980c",
+      "request_sha256": "372f26e6064f7dff29db80a16bdf685467a077fb402e0ea491282773e4b72b98",
+      "estimated_input_tokens": 9754,
+      "per_send_reservation_cny": 0.1922805
+    },
+    {
+      "sample_id": "sun_modality_8c9fc74f67bb6a79",
+      "request_id": "input_000418",
+      "source_text_sha256": "8f94675bc1f26c81130d139d34a0a723b584ecd54db43981f8ccf2806accba65",
+      "request_sha256": "beab25f237b80fd037b717c50e9cd50d05de16c26def5fffe91c75f7ea020ad8",
+      "estimated_input_tokens": 9821,
+      "per_send_reservation_cny": 0.1932075
+    },
+    {
+      "sample_id": "sun_modality_90b28fa1f345b741",
+      "request_id": "input_000419",
+      "source_text_sha256": "6b1206fff9fd677c7aaa5f3fa1dd9f818d253eab6aa8190704d24512749d4dcb",
+      "request_sha256": "e87081d706e4cea0a98f2041271b666b8d4daf40ce34540b613ee2106bada642",
+      "estimated_input_tokens": 9869,
+      "per_send_reservation_cny": 0.1939275
+    },
+    {
+      "sample_id": "sun_modality_627c7015370fa295",
+      "request_id": "input_000420",
+      "source_text_sha256": "af8d836cc65861f00b08209f4d6c90d4620c82d38585e0e7b130154e9e507d7f",
+      "request_sha256": "4f6ed400b05f0e6da7a626e6ae1ba2142b5e23ba3e75b6248acea6a67668ec6c",
+      "estimated_input_tokens": 9761,
+      "per_send_reservation_cny": 0.1923705
+    },
+    {
+      "sample_id": "sun_modality_5a2e3caa6504990a",
+      "request_id": "input_000421",
+      "source_text_sha256": "d6ee0b592ab2caf6fe053a943a6be8a3c68cc835a8ebcbc662e9117208602c8d",
+      "request_sha256": "4253c88fc1f48b4039dc622178c53c759e1f2bd43e6bc2c73a9f55db302384a7",
+      "estimated_input_tokens": 9807,
+      "per_send_reservation_cny": 0.1930365
+    },
+    {
+      "sample_id": "sun_modality_32bc7b702004c220",
+      "request_id": "input_000422",
+      "source_text_sha256": "d40f0a8495af0e5ef1933cb208bfb70220a77291c06a990f3ef6b60e6c3dbb9c",
+      "request_sha256": "9538c8dfbc6b2675c30b2d7bd1ec562c0ebda9ffb9799cdf120509ee7da2670e",
+      "estimated_input_tokens": 9776,
+      "per_send_reservation_cny": 0.192582
+    },
+    {
+      "sample_id": "sun_modality_19490870e3fe6c41",
+      "request_id": "input_000423",
+      "source_text_sha256": "ade78b1692006db171a0372de58b5c40d91a4384437b8dd6ddf737d0227be424",
+      "request_sha256": "46da94e139ea669af770f0ecbb956a532a2310c5ecfc81d00661496121bb432e",
+      "estimated_input_tokens": 9804,
+      "per_send_reservation_cny": 0.1929915
+    },
+    {
+      "sample_id": "sun_modality_47108b07b46a4cfc",
+      "request_id": "input_000424",
+      "source_text_sha256": "36dbd17a9e614fda2647bccf76babe2959c26b8a9dd7a4691f1b7cb8b4c48a64",
+      "request_sha256": "6c6830fc193a22aff5b759e49d5f0105e1b350fd6fca9de60014ce77628a1911",
+      "estimated_input_tokens": 9850,
+      "per_send_reservation_cny": 0.193734
+    },
+    {
+      "sample_id": "sun_modality_ca6c6f353ddcbbec",
+      "request_id": "input_000425",
+      "source_text_sha256": "b1b362d0114d9ef06c6498517c49750e0378c0e155b5cfee228f86a8aeceb073",
+      "request_sha256": "553501d04f0ebe2fc5dc1c22e06e5a19bfc7e5fced1ae5bc3c25672e8e71d35f",
+      "estimated_input_tokens": 9773,
+      "per_send_reservation_cny": 0.1925415
+    },
+    {
+      "sample_id": "sun_modality_e281d33605497ded",
+      "request_id": "input_000426",
+      "source_text_sha256": "918b1ced63c19d66f227a750b503f28751086f0bb6fd176db4401504c081bef8",
+      "request_sha256": "7facbe2c231d4e74f1f2bec32b185f99dd782b78ab802804699c1392ec63a567",
+      "estimated_input_tokens": 9799,
+      "per_send_reservation_cny": 0.1929915
+    }
+  ],
+  "source_sha256_lf_utf8": {
+    "scripts/prepare_sun_modality_sentence_v1.py": "724b82cb8cdb529e98dd1206d56b4bb33d3db08664fda0b69916491525c8c476",
+    "configs/supplement/sun_modality_sentence_v1.json": "b2559f36e2d55f7eaaddc8e788bf2eccf91ee666ebec9cb89f9df2378be5282f",
+    "prompts/sun_compat/modality_sentence_v1/system_prompt.md": "90f92d66ae80fd2ff73f172ef06ee3cc205b8acc44e914208d12e419a834428f",
+    "prompts/sun_compat/modality_sentence_v1/modality_guidance.md": "5d68c488fd02d2ad09cd26d8f2fc3819dc101a3de73088f89e21ef176dd777bf",
+    "prompts/sun_compat/modality_sentence_v1/selection_manifest.json": "6a42f277406000c5ba9a36c3e862096458d10cb8d548ef8b8e2d8d9210ab7739",
+    "prompts/sun_compat/modality_sentence_v1/format_examples.json": "2a71f1a38cd44357959dd507bea0fd1f0e99df83b8eeb97b543cb3854f06d9f1",
+    "configs/schemas/sun_sentence_modality_v1.schema.json": "d0120e8bf53a57297717916c6f9ed207a1275cec8829bb68af08a8745e65cccf",
+    "src/bpc_hybrid/modality_benchmark/sentence.py": "8857b4e9171cbd4737970aabfcac4980abc8a49d1fafa503e1dad7a5d4066d3d",
+    "src/bpc_hybrid/modality_benchmark/metrics.py": "e255efc5925786bb214fc6275143d6f43976f53d9b6e32cd486806146cc499cb",
+    "src/bpc_hybrid/modality_benchmark/llm_se.py": "173fe63a008b5ccf8243064af789036a72b6389509a5d1d51129e223037b769e",
+    "src/bpc_hybrid/modality_benchmark/data.py": "7e309249819ca7a3edbb446a897f783aed03295c7826abbf47d0a43b93adbaeb",
+    "src/bpc_hybrid/modality_benchmark/boundary.py": "2e8a14bd56595a5872f3447036e76b0f64696cddbc90285d8005c2a651568348",
+    "src/bpc_hybrid/stage2_canonical.py": "39bd93ef30f5744fc977a382ecd484d4802fc8074aec312034625e0398fd4e70",
+    "configs/schemas/stage2_prediction.schema.json": "d94941c1f7ea90f768d7244bdb72ac3c588b727e0f1fcb4e4732ef8b239259ea",
+    "scripts/prepare_sun_modality_eligibility_shots_v1.py": "dc4419c9a4ad5a5975b7d27d2dcae27009974e151cdc21dfe733822314eecb80",
+    "scripts/prepare_sun_modality_fewshot_v1.py": "fe51e0fdeacc0df3729453267c80ba471a77814e48a27394ff6cbaa2012ade3b",
+    "prompts/sun_compat/modality_fewshot_v1/selection_manifest.json": "5967ee1b02e0861c7a02f1f3a37407d4e751d4427390785ed6ac23758c6672e8",
+    "prompts/sun_compat/modality_eligibility_shots_v1/selection_manifest.json": "fab0d1cb9711a7e63a87eeea9ed6b17d612f66a64b3fcc80c6ad8b609f25c41f",
+    "prompts/sun_compat/direct_llm_sun_record_prompt_v6_d1r1_2026_08_05.md": "3aa64877cd4c4dae9f13cb40d102c3c9b04cc9bee5d478c34ad04621c0ede895",
+    "src/bpc_hybrid/datasets/sun_modality_importer.py": "78d1a4989d1922da75165c01ae5d2ca5e02f2c84f9a3dc06bbc60d343dd89d91",
+    "tests/test_modality_sentence_v1.py": "b9d4ab01e014f58e0154129bec50d30bf560d96f520932287e00982c5a84beb9"
+  },
+  "splits": {
+    "dataset_dir": "data/development/modality/sun_estg_modality_v1",
+    "split_origin": "project_reconstructed_deterministic_group_aware_split_seed_20260715_not_sun_original_split",
+    "main_analysis_population": 2831,
+    "splits": {
+      "train": {
+        "path": "data/development/modality/sun_estg_modality_v1/splits/train.jsonl",
+        "rows": 1985,
+        "sha256": "a7367cd35e3a5ce7263ad5b0fae4881a989761d4fba21b75bdc75b6e2b83c142"
+      },
+      "dev": {
+        "path": "data/development/modality/sun_estg_modality_v1/splits/dev.jsonl",
+        "rows": 420,
+        "sha256": "ad541915d16aaef6119cb3769e6da0b89e8e8af5ec9069ac3a25680040e5a8d6"
+      },
+      "test": {
+        "path": "data/development/modality/sun_estg_modality_v1/splits/test.jsonl",
+        "rows": 426,
+        "sha256": "2f67edad05e3a4d315d9ac65fc0ffd1d83dbaffd2d77a55916d6aa9a6919e871"
+      }
+    }
+  },
+  "demonstrations": 22,
+  "class_totals": {
+    "definition": 9,
+    "obligation": 5,
+    "permission": 5,
+    "prohibition": 3
+  },
+  "isolation": {
+    "new_examples": 4,
+    "retained_examples": 18,
+    "all_22_exact_id_or_normalized_text_hits": 0,
+    "new_near_duplicate_hits": 0,
+    "new_near_comparisons": {
+      "dev": 1680,
+      "test": 1704
+    },
+    "near_rule": "same prepare_sun_modality_eligibility_shots_v1.near_match; token ratio >= .80, contiguous >= .85 of shorter >= 8 tokens, or character ratio >= .88",
+    "retained_18_near_check": "not newly claimed; same exact/normalized isolation as parent",
+    "selector_held_out_labels_read": false
+  },
+  "system_prompt_sha256_utf8": "c60d775843be99ed4dbfa17200a500eccf11031badebb770056309801fb2f379",
+  "synthetic_examples": 6,
+  "baseline_review_sha256": "16353bf7096ea957e3e3279b5e5c9cd6ca121ad97bceeccf2c835249ce1ddae5",
+  "budget_estimate": {
+    "method": "UTF-8 JSON bytes / 3 rounded up; no tokenizer, all cache miss, 22-shot mean completion + 256 new-envelope tokens",
+    "historical_mean_output_tokens": 619.1549295774648,
+    "assumed_output_tokens_per_call": 875.1549295774648,
+    "estimated_input_tokens_total": 4173475,
+    "estimated_total_cny": 23.8136535,
+    "proposed_cap_cny": 35.0,
+    "full_reservation_sum_cny": 82.1765925,
+    "per_call_reservation_range_cny": [
+      0.192078,
+      0.194652
+    ],
+    "cap_guarantees_completion": false,
+    "note": "Estimate is not a charge or upper bound. Cap is only a proposal; a future run stops before exceeding it even if fewer than 426 are issued."
+  }
+}

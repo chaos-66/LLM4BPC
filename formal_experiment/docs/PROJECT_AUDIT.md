@@ -1,6 +1,6 @@
 # 项目实时状态（兼容文件名 PROJECT_AUDIT.md）
 
-**更新时间**：2026-11-05
+**更新时间**：2026-11-10
 **唯一活动目录**：`formal_experiment/`  
 **完整路线**：`docs/MASTER_PIPELINE.md`  
 **机器事实源**：`python formal_experiment/scripts/audit_project.py`（自动完整性检查）  
@@ -13,6 +13,21 @@ Part 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见主
 Sun 指 Sun et al. (2024) 的本地独立重建，历史名称 Rules-Only 对应
 `sun_rule_only` / B0。以下活动说明按当前名称阅读；冻结报告、源码与历史
 事件保持原字节。本次纯命名调整不改变本页任务状态、结果或实验授权。
+
+## SUN-MODALITY-FINAL-REVIEW-001：离线候选已准备，执行预算待确认（2026-11-10）
+
+交付唯一 **LLM-SE 显式句级模态候选**，完整 prompt 和 426 个请求保留本地忽略目录
+`outputs/development/sun_modality_sentence_v1/`。版本化接口同时返回完整 Rule Record 和
+sentence_modality；主分数读取后者，旧首 clause 取值只作同返回诊断。
+22 条真实示例中四项 D→D 替换，其余 18 条不变；新增四条对 dev/test 的 3,384 次
+近重复比对零命中。33 条当前错误重新按返回核对，观察与 AI 主分类分别保存。
+
+本次 API=0；无性能提升结论、无全量测试。历史对照仍为 393/426、Macro-F1
+0.8697879915324909、禁止 TP/FP/FN=12/7/3。拟沿用 deepseek-v4-pro 和采样设置，
+test 426 次、4 并发、零重试、仅空闲时段，估算 ¥23.81，拟硬上限 ¥35。
+**下一步仅等待用户决定是否批准本批预算和执行**；旧授权不适用。
+准备器无发送模式。详见 [候选报告](../outputs/reports/sun_modality_sentence_v1_review.md)、
+[预检](../outputs/reports/sun_modality_sentence_v1_preflight.json)。
 
 ## SUN-MODALITY-PROHIBITION-SHOTS-001 的 24-shot 对照完成（2026-11-05）
 

@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
-**生成日期**：2026-10-12
-**收录文件**：4582 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**生成日期**：2026-11-10
+**收录文件**：4594 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -170,6 +170,7 @@
 | `configs/schemas/stage3_gold_annotation.schema.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/schemas/stage3_inference.schema.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/schemas/stage3_prediction.schema.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `configs/schemas/sun_sentence_modality_v1.schema.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/sep_c2_stage2b_predecessor_plan_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/sep_c3_condition_preservation_authorization_event_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/sep_c3_condition_preservation_budget_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
@@ -218,6 +219,7 @@
 | `configs/stage3_winter_paper_rerun_20261010_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/sun_corenlp_runtime.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/sun_stage3_development_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `configs/supplement/sun_modality_sentence_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/tfidf_svd_stage3_development_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/v6_factorial_ablation_budget_smoke_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/v6_factorial_ablation_budget_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
@@ -3621,6 +3623,9 @@
 | `outputs/reports/sun_llm_fallback_method_gate_decision_dry_run.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/sun_llm_fallback_method_gate_decision_dry_run_v2.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/sun_llm_fallback_method_gate_decision_dry_run_v2.md` | 活动 | 说明、规范或研究文档 |
+| `outputs/reports/sun_modality_sentence_v1_baseline_review.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/sun_modality_sentence_v1_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/sun_modality_sentence_v1_review.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/sun_rule_only_method_gate_authorization_dry_run.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/sun_rule_only_method_gate_authorization_dry_run.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/sun_stage3_official_asset_audit_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
@@ -3704,6 +3709,10 @@
 | `prompts/sun_compat/dry_run_back_translation.md` | 活动 | 说明、规范或研究文档 |
 | `prompts/sun_compat/dry_run_six_element.md` | 活动 | 说明、规范或研究文档 |
 | `prompts/sun_compat/dry_run_zh_gloss.md` | 活动 | 说明、规范或研究文档 |
+| `prompts/sun_compat/modality_sentence_v1/format_examples.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `prompts/sun_compat/modality_sentence_v1/modality_guidance.md` | 活动 | 说明、规范或研究文档 |
+| `prompts/sun_compat/modality_sentence_v1/selection_manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `prompts/sun_compat/modality_sentence_v1/system_prompt.md` | 活动 | 说明、规范或研究文档 |
 | `prompts/sun_compat/modular_condition_preservation_v1/generated/direct_llm_condition_preservation_BASE_v1.md` | 活动 | 说明、规范或研究文档 |
 | `prompts/sun_compat/modular_condition_preservation_v1/generated/direct_llm_condition_preservation_RC1_v1.md` | 活动 | 说明、规范或研究文档 |
 | `prompts/sun_compat/modular_condition_preservation_v1/generated/direct_llm_condition_preservation_RC_KEEP_v1.md` | 活动 | 说明、规范或研究文档 |
@@ -3992,6 +4001,7 @@
 | `scripts/prepare_stage3_execution_v4.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/prepare_stage3_table3_r5_execution.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/prepare_stage3_table3_r5_execution_v2.py` | 活动 | Python 实现、脚本或测试 |
+| `scripts/prepare_sun_modality_sentence_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/promote_gdpr7_direct_llm_arm_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/promote_layer_d_v2.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/publish_formal_benchmark_v2.py` | 活动 | Python 实现、脚本或测试 |
@@ -4255,6 +4265,7 @@
 | `src/bpc_hybrid/llm_config.py` | 活动 | Python 实现、脚本或测试 |
 | `src/bpc_hybrid/llm_provider.py` | 活动 | Python 实现、脚本或测试 |
 | `src/bpc_hybrid/mini_pilot_evaluator.py` | 活动 | Python 实现、脚本或测试 |
+| `src/bpc_hybrid/modality_benchmark/sentence.py` | 活动 | Python 实现、脚本或测试 |
 | `src/bpc_hybrid/modular_prompt.py` | 活动 | Python 实现、脚本或测试 |
 | `src/bpc_hybrid/modular_refinement_prompt.py` | 活动 | Python 实现、脚本或测试 |
 | `src/bpc_hybrid/multi_model_stage2.py` | 活动 | Python 实现、脚本或测试 |
@@ -4508,6 +4519,7 @@
 | `tests/test_llm_client.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_llm_config.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_master_pipeline_and_layout.py` | 活动 | Python 实现、脚本或测试 |
+| `tests/test_modality_sentence_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_modular_prompt_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_multi_model_stage2.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_normalization.py` | 活动 | Python 实现、脚本或测试 |

@@ -6749,3 +6749,17 @@
 - 仍存在 blocker：无
 - 备注：核对所有请求、返回、用量、费用及 22-shot 基线。含空规则 1 条，保留分母。4 项事前验收均未通过。事后多子句与词形核验只用于定位问题。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-11-10T07:07:16.272959+00:00 - SUN-MODALITY-FINAL-REVIEW-001：完成唯一显式句级模态候选与零API准备
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：56 passed in 3.07s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`72fb1b488121c3aa8b4f776f28cd1f0718a8314f`；相关未提交路径：117 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：完整rule_record复用现有合同校验，新增独立sentence_modality及同返回首clause诊断；全426含失败/null。22条示例仅四项D到D替换，新增四条dev/test共3384次近重复零命中。当前33错与旧reviewer34错分开核对，事实与AI推断分列。拟426次原模型采样、零重试、35元硬上限，预算未授权。原文/请求本地忽略；历史结果、Gold及无关用户改动保留。仅具名相关测试，非全量。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
