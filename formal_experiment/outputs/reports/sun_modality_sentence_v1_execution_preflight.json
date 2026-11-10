@@ -1,0 +1,43 @@
+{
+  "suite_id": "SUN-MODALITY-FINAL-REVIEW-001",
+  "planned_requests": 426,
+  "api_calls": 0,
+  "authorization_sha256": "1a608574e360f3fb999798b8e8673ad096e8359acc56d575f52859292c05ab68",
+  "candidate_preflight_sha256": "9b608fcb0423f9bf836d06b082fcdd8765633b045281901d149bff13d649123d",
+  "execution_preflight_sha256": "9ada4cb5b8f44a6be965d0164f160486edf588b078cb8d8568f4bcadfbefa9d1",
+  "source_sha256_lf_utf8": {
+    "scripts/run_sun_modality_sentence_v1.py": "0a07394edc9be30755800103ad1f1988c4aad8b087cbec4180dc8ff5f25a1c9d",
+    "scripts/run_sun_modality_fewshot_v1.py": "8834b4377c8c547c8974956a710f762299754e70a51aabdfa1bf4f7006c44ee0",
+    "scripts/run_sun_modality_boundary_v1.py": "b0dc7592fcb8339860584261eacf55488447745ee34664781e989a740be4c647",
+    "scripts/continue_sun_modality_validation_v1.py": "461898d70f3859ca3e9473aeb963eaf300e483a21cfdd24d26cbdbb043acdf77",
+    "src/bpc_hybrid/llm_client.py": "a48213c69b4c2e244d8d4b0706d8cc22d09208f9b1632abe7d10a9988c8b2ccb",
+    "src/bpc_hybrid/h1_transport.py": "5e54a41fa48c01377295b2ac6422e27852a40dc4fbd5cb7df90d6651ddfe8be9",
+    "src/bpc_hybrid/llm_config.py": "6aa49e63f7b37f0997bdcedcb3074eca854c4f49b6320e8fb1925dbfb60bbbed",
+    "tests/test_run_modality_sentence_v1.py": "411cc72f42eb07cba2aebd65fb91196c81271304ed276f538f0e4d60fb5b8126"
+  },
+  "limits": {
+    "suite_id": "SUN-MODALITY-FINAL-REVIEW-001",
+    "execute_authorized": true,
+    "max_calls": 426,
+    "cap_cny": 35.0,
+    "max_workers": 4,
+    "retries": 0,
+    "off_peak_only": true,
+    "minimum_dispatch_interval_seconds": 1.0,
+    "endpoint": "https://api.deepseek.com",
+    "model": "deepseek-v4-pro",
+    "price_cny_per_million": {
+      "peak": {
+        "input_cache_hit": 0.3,
+        "input_cache_miss": 9.0,
+        "output": 27.0
+      },
+      "off_peak": {
+        "input_cache_hit": 0.15,
+        "input_cache_miss": 4.5,
+        "output": 13.5
+      }
+    }
+  },
+  "status": "authorized_awaiting_off_peak"
+}

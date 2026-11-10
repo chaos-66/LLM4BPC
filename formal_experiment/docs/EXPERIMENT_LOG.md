@@ -6763,3 +6763,17 @@
 - 仍存在 blocker：无
 - 备注：完整rule_record复用现有合同校验，新增独立sentence_modality及同返回首clause诊断；全426含失败/null。22条示例仅四项D到D替换，新增四条dev/test共3384次近重复零命中。当前33错与旧reviewer34错分开核对，事实与AI推断分列。拟426次原模型采样、零重试、35元硬上限，预算未授权。原文/请求本地忽略；历史结果、Gold及无关用户改动保留。仅具名相关测试，非全量。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-11-10T12:19:55.608232+00:00 - SUN-MODALITY-FINAL-REVIEW-001：用户授权后冻结426次35元执行器与双取值报告
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：28 passed, 1 skipped in 1.11s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`901f64207dc4f7b40c0d57f129cb0d50e1d5e6e2`；相关未提交路径：110 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：用户回复可以跑并继续，授权交付方案426次/35元/4并发/零重试/仅空闲时段。候选prompt、解析器、评价器及426请求字节均未修改。执行加载器只读train标签和test文本；不加载.env。仅新增发送前字节核验、显式句级输出适配、账本核验及报告。首次真实调用计划北京时间18时后；本事件为执行前零API检查点，测试仅具名假发送器及其直接协调器，非全量。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

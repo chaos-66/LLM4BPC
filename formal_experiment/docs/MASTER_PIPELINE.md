@@ -1,6 +1,6 @@
 # LLM4BPC 完整实验主 Pipeline
 
-**文档版本**：3.7.88
+**文档版本**：3.7.89
 **状态**：ACTIVE — 全项目研究与任务分解的唯一主线
 **最后更新**：2026-11-10
 **方法学主干**：Sun et al. (2024)（三部分方法主干）；Barrientos et al. (2026)（直接借鉴来源：LLM 结构化输出、验证、受控词汇、归一化与评估纪律）
@@ -26,9 +26,12 @@ DoD：完整本地 prompt/请求可复现，四条替换来源/原标签/哈希�
 当前 33 条错误的观察和 AI 解释分列，相关接口/分母检查通过并完成 Git 检查点。
 
 离线候选已准备；历史 22-shot 对照仍为 393/426、Macro-F1 0.8697879915324909。
-本轮 API=0、无候选性能结果、无全量测试；真实执行门禁保持关闭。
-拟 426 次、原模型与采样、4 并发、零重试、仅空闲时段；估算 ¥23.81，拟硬上限 ¥35，
-必须由用户另行确认本批预算。后续结果为 test-informed 探索性比较。
+2026-11-10 用户回复“可以跑”并要求“继续”，已授权交付方案：426 次、原模型与采样、
+4 并发、零重试、仅空闲时段、硬上限 ¥35。新授权绑定交付预检 SHA-256，
+`scripts/run_sun_modality_sentence_v1.py` 接入独立预算/身份/字节检查与双取值报告。
+截至执行前检查点 API=0；无全量测试。按已确认窗口最早北京时间 18:00 发送。
+运行 DoD：账本/费用/请求与返回绑定核对，全 426 分母的主结果和同返回首 clause 诊断、
+对历史 22-shot 的改对/改错、禁止 TP/FP/FN、无预测数及 Git 检查点。结果仍为探索性比较。
 交付范围与检查依据见 [候选报告](../outputs/reports/sun_modality_sentence_v1_review.md)，
 实时状态见 PROJECT_AUDIT；不因此恢复其他已结项候选或改变正式主表。
 
@@ -3326,6 +3329,7 @@ development-only；S3.7 formal Oracle not started；Gold Rule Records absent。
 
 ## 15. Pipeline 变更日志
 
+| 3.7.89 | 2026-11-10 | SUN-MODALITY-FINAL-REVIEW-001 用户批准执行冻结候选；记录426次/35元/4并发/零重试/空闲时段授权并接入预算受限发送器和双取值报告。执行前无API、无全量测试。 | `configs/authorization/sun_modality_sentence_20261110_v1.json`、`outputs/reports/sun_modality_sentence_v1_execution_preflight.json` |
 | 3.7.88 | 2026-11-10 | SUN-MODALITY-FINAL-REVIEW-001：准备唯一显式句级候选、双取值适配与全 426 离线请求；四项 train 替换保持 22-shot，重新核对当前 33 条错误。零 API、预算待用户确认，不主张性能提高。 | `outputs/reports/sun_modality_sentence_v1_review.md`、`sun_modality_sentence_v1_preflight.json` |
 | 3.7.87 | 2026-11-05 | 德语情态提示词调优结项，保留 22-shot。汇总各版分数、与 Sun 的误报分歧及多子句事后回放；新增 API 调用 0 次。 | [结项记录](../outputs/reports/sun_modality_prompt_closeout_20261105.md) |
 | 3.7.86 | 2026-11-05 | 24-shot 探索性对照全 426 条完成。禁止类 12 命中、7 误报、3 漏报，与 22-shot 逐条一致；许可回归 1 条。未通过逐条保护要求，保留 22-shot。 | `outputs/reports/sun_modality_prohibition_shots_v1_completed.md` |

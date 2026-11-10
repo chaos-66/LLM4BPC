@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
 **生成日期**：2026-11-10
-**收录文件**：4594 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**收录文件**：4598 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -65,6 +65,7 @@
 | `configs/authorization/stage2_structural_feedback_20261007_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/authorization/stage3_d1_v4_r1_user_authorization_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/authorization/stage3_d1_v4_user_authorization_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `configs/authorization/sun_modality_sentence_20261110_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/bm25_stage3_development_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/bm25_stage3_development_v3.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/datasets/stage1_stage3_gdpr7_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
@@ -3624,6 +3625,7 @@
 | `outputs/reports/sun_llm_fallback_method_gate_decision_dry_run_v2.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/sun_llm_fallback_method_gate_decision_dry_run_v2.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/sun_modality_sentence_v1_baseline_review.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/sun_modality_sentence_v1_execution_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/sun_modality_sentence_v1_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/sun_modality_sentence_v1_review.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/sun_rule_only_method_gate_authorization_dry_run.json` | 活动 | 机器可读配置、数据、事件或产物 |
@@ -4119,6 +4121,7 @@
 | `scripts/run_stage3_winter_cpu_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_stage3_winter_paper_rerun_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_sun_llm_fallback.py` | 活动 | Python 实现、脚本或测试 |
+| `scripts/run_sun_modality_sentence_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_sun_rule_only.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_sun_stage3_development.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_v6_factorial_ablation_v1.py` | 活动 | Python 实现、脚本或测试 |
@@ -4537,6 +4540,7 @@
 | `tests/test_reevaluate_sun_literal_v2_v10a_vs_c3.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_relaxation_experiments_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_restore_layer_e_adjudication.py` | 活动 | Python 实现、脚本或测试 |
+| `tests/test_run_modality_sentence_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_run_stage3_d1_v4.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_run_stage3_d1_v4_r1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_s1_1_s1_4_stage1_structural.py` | 活动 | Python 实现、脚本或测试 |
