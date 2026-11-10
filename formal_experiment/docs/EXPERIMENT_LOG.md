@@ -6809,3 +6809,17 @@
 - 仍存在 blocker：无
 - 备注：用户要求撤销。移除本任务12个新增活动文件（schema、句级坐标否决、prompt/示例、准备器、发送器、本批授权配置及候选测试）。configs/prompts/scripts/src/tests版本化树与任务前72fb1b4一致；8份历史报告、本地调用账本和无关用户文件哈希不变。Agent擅加坐标否决并在早期系统性失败后继续发完是实现和执行错误。已有426次及费用9.6668145元仅保留为历史事实，不重新计分；本次零API、无新候选、无全量测试。两项具名检查仅验证原22-shot构造与标签读取。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-11-10T13:31:57.899940+00:00 - SUN-MODALITY-ES-MINIMAL-001：逐项自查后准备单例E替换和单段S澄清
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：4 passed in 1.09s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`76b7765403a0b5171099b2399e35a79ec15e58c0`；相关未提交路径：111 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：用户要求只做有判断正确性依据的E/S小修改，每项先自查目的与反作用。E1只将第15条不完整金额D示例换成train完整抵减关系D；S1只补引导下文与独立适用声明的区别。两个独立离线版本，不合并，总22及类别9/5/5/3不变；新例dev/test846次隔离零命中。原接口、首clause标签读取、评分器、模型采样和历史22shot保持；不恢复已撤销句级输出/坐标否决。准备器只离线，真实调用未授权，API0；无新成绩、无全量测试。新具名测试验证改动隔离、train来源和原标签不受坐标错误否决。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

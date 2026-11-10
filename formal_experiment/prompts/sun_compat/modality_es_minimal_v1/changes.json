@@ -1,0 +1,53 @@
+{
+  "suite_id": "SUN-MODALITY-ES-MINIMAL-001",
+  "base": "original 22-shot eligibility prompt",
+  "base_system_sha256": "2d038a9233420ead014d3714dbb697a39177d1cc55b9f3316f9dfc2f84fbbae4",
+  "train_sha256": "a7367cd35e3a5ce7263ad5b0fae4881a989761d4fba21b75bdc75b6e2b83c142",
+  "scope": "Two separate offline prompt variants: E1 changes one demonstration; S1 adds one framing distinction. Neither combines both changes.",
+  "self_review_question": "这个修改是否有具体依据帮助模型提高判断正确性，同时避免把原本正确的句子带偏？",
+  "review_author": "AI analysis; not a measured improvement or human annotation",
+  "api_authorized": false,
+  "performance_metrics": null,
+  "E1": {
+    "position": 15,
+    "old": {
+      "sample_id": "sun_modality_27b2552450dda62f",
+      "label": "definition",
+      "text_sha256": "d236e8fd096556a2a049d76f5ba461e8511cf7e66630804343b273587ff9014f"
+    },
+    "new": {
+      "sample_id": "sun_modality_c8712b2d00865a9d",
+      "label": "definition",
+      "text_sha256": "d0f2ab03da60bbf0ac3a2a3a0368cb0689b447a35b2d56789d1a1db73ea8d943"
+    },
+    "review": {
+      "observed_gap": "原第15条金额示例缺少具体数值；当前22-shot仍会把抵减关系等状态描述判成义务。",
+      "reason_to_change": "用train原标签为definition、抵减关系谓词完整的例句补足现有算术示例的教学内容；不改变总数、类别数量或其他21条。",
+      "regression_risk": "可能把真正要求执行计算的obligation也吸收到definition；保留原有义务示例，后续检查反向误判。",
+      "decision": "apply only this D-to-D replacement; no claim of performance improvement"
+    }
+  },
+  "S1": {
+    "before": "   to perform or omit conduct, and an option offered to a subject. A verb-first\n   German segment can be a conditional antecedent even without \"wenn\".",
+    "after": "   to perform or omit conduct, and an option offered to a subject.\n   An introduction such as \"gilt Folgendes\" points to the following content;\n   classify that content instead of making the introduction a separate rule.\n   A complete assertion such as \"die Vorschrift gilt entsprechend\" can state\n   applicability on its own. Decide from the complete construction. A verb-first\n   German segment can be a conditional antecedent even without \"wenn\".",
+    "review": {
+      "observed_gap": "当前22-shot有引导语被单列为definition、后续许可因首标签取值被丢掉的返回；现有指引说明条件句，但没有明确区分引导下文与独立适用声明。",
+      "reason_to_change": "只补这个具体语义区别，帮助保留真正主断言；配一个完整适用声明的对照，避免把所有gilt结构都当引导语。",
+      "regression_risk": "可能误合并独立适用声明；保留该反例和原有独立clause按原文顺序输出的规则。",
+      "decision": "apply only the framing clarification; do not change genuine multi-proposition readout"
+    }
+  },
+  "unchanged": [
+    "22 demonstration count and class totals",
+    "original canonical Rule Record output and JSON schema",
+    "original first non-empty clause modality readout",
+    "four-class evaluator and all-sample denominator",
+    "model and sampling settings",
+    "Gold and historical 22-shot artifacts"
+  ],
+  "not_selected": [
+    "Do not repeat existing condition/negation guidance or rewrite the whole prompt.",
+    "Do not introduce a new sentence output, coordinate veto, parser, evaluator or execution mode.",
+    "Do not infer a universal class rule from disputed negative or eligibility phrases."
+  ]
+}

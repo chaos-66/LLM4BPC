@@ -1,6 +1,6 @@
 # LLM4BPC 完整实验主 Pipeline
 
-**文档版本**：3.7.91
+**文档版本**：3.7.92
 **状态**：ACTIVE — 全项目研究与任务分解的唯一主线
 **最后更新**：2026-11-10
 **方法学主干**：Sun et al. (2024)（三部分方法主干）；Barrientos et al. (2026)（直接借鉴来源：LLM 结构化输出、验证、受控词汇、归一化与评估纪律）
@@ -16,6 +16,16 @@
 > 本文定义“要完成什么、先后依赖是什么、每一步怎样算完成”。
 > `docs/PROJECT_AUDIT.md` 只记录实时进度；不要再创建新的日期版
 > `STATUS_*`、`HANDOFF_*` 或平行路线文档。
+
+## SUN-MODALITY-ES-MINIMAL-001：E／S最小修改，离线准备（2026-11-10）
+
+用户要求每项修改前自查是否有具体理由提高判断正确性，只做恰当小修改。
+以原22-shot为对照，分别准备E1（第15条缺金额的D示例换成完整抵减关系D）和
+S1（只补引导下文与独立适用声明的区别），不合并。两版仍为22条，D/O/M/P=9/5/5/3。
+原输出、模态取值、模型采样和评分器保持不变；撤销的句级接口/坐标否决不恢复。
+DoD：每项自查和反作用说明、train标签/哈希及新例846次隔离检查、独立prompt可重建、
+单改动与原接口具名检查、实验事件及Git检查点。API=0，无新性能结果或运行授权。
+范围与具体差异见 [E／S最小修改](../outputs/reports/sun_modality_es_minimal_v1_review.md)。
 
 ## SUN-MODALITY-FINAL-REVIEW-001：用户撤销，恢复原22-shot活动状态（2026-11-10）
 
@@ -3325,6 +3335,7 @@ development-only；S3.7 formal Oracle not started；Gold Rule Records absent。
 
 ## 15. Pipeline 变更日志
 
+| 3.7.92 | 2026-11-10 | SUN-MODALITY-ES-MINIMAL-001：依据用户逐项自查要求，分别准备单例D→D替换E1与引导语区别S1。保留22-shot、原接口/取值，零API；不恢复撤销候选。 | `outputs/reports/sun_modality_es_minimal_v1_review.md`、`sun_modality_es_minimal_v1_preflight.json` |
 | 3.7.91 | 2026-11-10 | 用户撤销SUN-MODALITY-FINAL-REVIEW-001；撤下12个新增活动文件，恢复任务前22-shot活动代码/提示词，撤销本批发送入口。保留已发生调用、费用和历史报告，零新API。 | `outputs/reports/sun_modality_sentence_v1_withdrawal.md`、`sun_modality_sentence_v1_withdrawal.json` |
 | 3.7.90 | 2026-11-10 | SUN-MODALITY-FINAL-REVIEW-001 授权426次完成，费用9.6668145元，零重试/请求失败。冻结主F1=0.053099（408坐标失败、1 null），首clause诊断0.775741；如实保留失败结果，不替换历史22-shot。 | `outputs/reports/sun_modality_sentence_v1_completed.json`、`sun_modality_sentence_v1_execution_review.md` |
 | 3.7.89 | 2026-11-10 | SUN-MODALITY-FINAL-REVIEW-001 用户批准执行冻结候选；记录426次/35元/4并发/零重试/空闲时段授权并接入预算受限发送器和双取值报告。执行前无API、无全量测试。 | `configs/authorization/sun_modality_sentence_20261110_v1.json`、`outputs/reports/sun_modality_sentence_v1_execution_preflight.json` |

@@ -1,0 +1,115 @@
+{
+  "suite_id": "SUN-MODALITY-ES-MINIMAL-001",
+  "status": "offline_prepared_not_executed",
+  "api_calls": 0,
+  "api_authorized": false,
+  "performance_metrics": null,
+  "base_system_sha256": "2d038a9233420ead014d3714dbb697a39177d1cc55b9f3316f9dfc2f84fbbae4",
+  "baseline_preflight_sha256": "1df19e34bb607f02d59f975b1872970a55602e84b558a70c269ef96ae312a594",
+  "source_sha256_lf_utf8": {
+    "prompts/sun_compat/modality_es_minimal_v1/changes.json": "7a29f5a64aaac0e5443a7f9bc4bc9efc3b9f4c0f763616ca05352188757cdab3",
+    "scripts/prepare_sun_modality_es_minimal_v1.py": "be9b0c55ceff874eed3b107e49266944f339634e7956db20a092436d08952988",
+    "tests/test_modality_es_minimal_v1.py": "fd68536b7680a75f71cff1b6e00d0001309cb5be0501c585d78d15c11d6c8e11",
+    "src/bpc_hybrid/modality_benchmark/llm_se.py": "173fe63a008b5ccf8243064af789036a72b6389509a5d1d51129e223037b769e",
+    "src/bpc_hybrid/modality_benchmark/metrics.py": "e255efc5925786bb214fc6275143d6f43976f53d9b6e32cd486806146cc499cb",
+    "configs/schemas/stage2_prediction.schema.json": "d94941c1f7ea90f768d7244bdb72ac3c588b727e0f1fcb4e4732ef8b239259ea"
+  },
+  "train_sha256": "a7367cd35e3a5ce7263ad5b0fae4881a989761d4fba21b75bdc75b6e2b83c142",
+  "new_example_vs_held_out_comparisons": {
+    "dev": 420,
+    "test": 426
+  },
+  "new_exact_or_near_duplicate_hits": 0,
+  "retained_21_examples": "unchanged; reuse original exact ID/text isolation, not a new near-duplicate claim",
+  "held_out_labels_read": false,
+  "unchanged_request_fields": {
+    "model": "deepseek-v4-pro",
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 4096,
+    "stream": false,
+    "thinking": {
+      "type": "disabled"
+    },
+    "user_message": {
+      "role": "user",
+      "content": "Input mode: target_text_only\nsample_id: {sample_id}\nsource_id: {sample_id}\nsource_text:\n{source_text}\n\nReturn the complete canonical JSON record. Use these four synthetic examples\nonly for contract behavior, span arithmetic, and JSON shape. They are not\nformal test-set samples:\n\n## Examples\n\nExample 1 — unresolved subject pronoun remains an exact actor mention:\nInput: \"It may cover a shorter period if a business is opened.\"\nOutput:\n```json\n{\n  \"schema_version\": \"1.0.0\",\n  \"sample_id\": \"synthetic_pronoun_01\",\n  \"source_id\": \"synthetic_pronoun_01\",\n  \"source_text\": \"It may cover a shorter period if a business is opened.\",\n  \"clauses\": [\n    {\n      \"clause_id\": \"synthetic_pronoun_01_c01\",\n      \"clause_span\": {\"text\": \"It may cover a shorter period if a business is opened.\", \"start\": 0, \"end\": 54},\n      \"modality\": {\"label\": \"permission\", \"evidence\": [{\"text\": \"may\", \"start\": 3, \"end\": 6}]},\n      \"actors\": [{\"id\": \"a01\", \"text\": \"It\", \"start\": 0, \"end\": 2, \"normalized\": \"it\"}],\n      \"actions\": [{\"id\": \"p01\", \"text\": \"cover a shorter period\", \"start\": 7, \"end\": 29, \"normalized\": \"cover a shorter period\"}],\n      \"conditions\": [{\"id\": \"c01\", \"text\": \"if a business is opened\", \"start\": 30, \"end\": 53, \"normalized\": \"if a business is opened\"}],\n      \"constraints\": [],\n      \"exceptions\": [],\n      \"actor_action_map\": [{\"actor_id\": \"a01\", \"action_id\": \"p01\"}],\n      \"order_relations\": []\n    }\n  ],\n  \"method\": {\"name\": \"direct_llm\", \"schema_source\": \"stage2_prediction.schema.json@1.0.0\"},\n  \"validation\": {\"schema_valid\": true, \"cross_field_valid\": true, \"errors\": []},\n  \"unsupported_or_ambiguous\": [\n    {\"field\": \"actor\", \"reason\": \"reference_status=unresolved_coreference;independence_status=context_required\"}\n  ]\n}\n```\n\nExample 2 — passive clause without an expressed actor and with two actions:\nInput: \"The report must be filed within 72 hours and retained for 5 years.\"\nOutput:\n```json\n{\n  \"schema_version\": \"1.0.0\",\n  \"sample_id\": \"synthetic_passive_01\",\n  \"source_id\": \"synthetic_passive_01\",\n  \"source_text\": \"The report must be filed within 72 hours and retained for 5 years.\",\n  \"clauses\": [\n    {\n      \"clause_id\": \"synthetic_passive_01_c01\",\n      \"clause_span\": {\"text\": \"The report must be filed within 72 hours and retained for 5 years.\", \"start\": 0, \"end\": 66},\n      \"modality\": {\"label\": \"obligation\", \"evidence\": [{\"text\": \"must\", \"start\": 11, \"end\": 15}]},\n      \"actors\": [],\n      \"actions\": [\n        {\"id\": \"p01\", \"text\": \"filed\", \"start\": 19, \"end\": 24, \"normalized\": \"file\"},\n        {\"id\": \"p02\", \"text\": \"retained\", \"start\": 45, \"end\": 53, \"normalized\": \"retain\"}\n      ],\n      \"conditions\": [],\n      \"constraints\": [\n        {\"id\": \"c01\", \"text\": \"within 72 hours\", \"start\": 25, \"end\": 40, \"normalized\": \"within 72 hours\"},\n        {\"id\": \"c02\", \"text\": \"for 5 years\", \"start\": 54, \"end\": 65, \"normalized\": \"for 5 years\"}\n      ],\n      \"exceptions\": [],\n      \"actor_action_map\": [\n        {\"actor_id\": null, \"action_id\": \"p01\"},\n        {\"actor_id\": null, \"action_id\": \"p02\"}\n      ],\n      \"order_relations\": []\n    }\n  ],\n  \"method\": {\"name\": \"direct_llm\", \"schema_source\": \"stage2_prediction.schema.json@1.0.0\"},\n  \"validation\": {\"schema_valid\": true, \"cross_field_valid\": true, \"errors\": []},\n  \"unsupported_or_ambiguous\": []\n}\n```\n\nExample 3 — prohibition with an exception:\nInput: \"The controller may not disclose data unless the data subject consents.\"\nOutput:\n```json\n{\n  \"schema_version\": \"1.0.0\",\n  \"sample_id\": \"synthetic_exception_01\",\n  \"source_id\": \"synthetic_exception_01\",\n  \"source_text\": \"The controller may not disclose data unless the data subject consents.\",\n  \"clauses\": [\n    {\n      \"clause_id\": \"synthetic_exception_01_c01\",\n      \"clause_span\": {\"text\": \"The controller may not disclose data unless the data subject consents.\", \"start\": 0, \"end\": 70},\n      \"modality\": {\"label\": \"prohibition\", \"evidence\": [{\"text\": \"may not\", \"start\": 15, \"end\": 22}, {\"text\": \"not\", \"start\": 19, \"end\": 22}]},\n      \"actors\": [{\"id\": \"a01\", \"text\": \"The controller\", \"start\": 0, \"end\": 14, \"normalized\": \"controller\"}],\n      \"actions\": [{\"id\": \"p01\", \"text\": \"disclose data\", \"start\": 23, \"end\": 36, \"normalized\": \"disclose data\"}],\n      \"conditions\": [],\n      \"constraints\": [],\n      \"exceptions\": [{\"id\": \"e01\", \"text\": \"unless the data subject consents\", \"start\": 37, \"end\": 69, \"normalized\": \"unless the data subject consents\"}],\n      \"actor_action_map\": [{\"actor_id\": \"a01\", \"action_id\": \"p01\"}],\n      \"order_relations\": []\n    }\n  ],\n  \"method\": {\"name\": \"direct_llm\", \"schema_source\": \"stage2_prediction.schema.json@1.0.0\"},\n  \"validation\": {\"schema_valid\": true, \"cross_field_valid\": true, \"errors\": []},\n  \"unsupported_or_ambiguous\": []\n}\n```\n\nExample 4 — two independently normative clauses, including a definition:\nInput: \"'Personal data' means information about a person; the controller must protect it.\"\nOutput:\n```json\n{\n  \"schema_version\": \"1.0.0\",\n  \"sample_id\": \"synthetic_multiclause_01\",\n  \"source_id\": \"synthetic_multiclause_01\",\n  \"source_text\": \"'Personal data' means information about a person; the controller must protect it.\",\n  \"clauses\": [\n    {\n      \"clause_id\": \"synthetic_multiclause_01_c01\",\n      \"clause_span\": {\"text\": \"'Personal data' means information about a person\", \"start\": 0, \"end\": 48},\n      \"modality\": {\"label\": \"definition\", \"evidence\": [{\"text\": \"means\", \"start\": 16, \"end\": 21}]},\n      \"actors\": [],\n      \"actions\": [],\n      \"conditions\": [],\n      \"constraints\": [],\n      \"exceptions\": [],\n      \"actor_action_map\": [],\n      \"order_relations\": []\n    },\n    {\n      \"clause_id\": \"synthetic_multiclause_01_c02\",\n      \"clause_span\": {\"text\": \"the controller must protect it.\", \"start\": 50, \"end\": 81},\n      \"modality\": {\"label\": \"obligation\", \"evidence\": [{\"text\": \"must\", \"start\": 65, \"end\": 69}]},\n      \"actors\": [{\"id\": \"a02\", \"text\": \"the controller\", \"start\": 50, \"end\": 64, \"normalized\": \"controller\"}],\n      \"actions\": [{\"id\": \"p02\", \"text\": \"protect it\", \"start\": 70, \"end\": 80, \"normalized\": \"protect it\"}],\n      \"conditions\": [],\n      \"constraints\": [],\n      \"exceptions\": [],\n      \"actor_action_map\": [{\"actor_id\": \"a02\", \"action_id\": \"p02\"}],\n      \"order_relations\": []\n    }\n  ],\n  \"method\": {\"name\": \"direct_llm\", \"schema_source\": \"stage2_prediction.schema.json@1.0.0\"},\n  \"validation\": {\"schema_valid\": true, \"cross_field_valid\": true, \"errors\": []},\n  \"unsupported_or_ambiguous\": []\n}\n```\n\nExample 5 — obligation with legal-reference constraint (constraint is NOT part of the action):\nInput: \"The taxpayer shall depreciate the acquisition costs in accordance with Section 11(1).\"\nOutput:\n```json\n{\n  \"schema_version\": \"1.0.0\",\n  \"sample_id\": \"synthetic_constraint_ref_01\",\n  \"source_id\": \"synthetic_constraint_ref_01\",\n  \"source_text\": \"The taxpayer shall depreciate the acquisition costs in accordance with Section 11(1).\",\n  \"clauses\": [\n    {\n      \"clause_id\": \"synthetic_constraint_ref_01_c01\",\n      \"clause_span\": {\"text\": \"The taxpayer shall depreciate the acquisition costs in accordance with Section 11(1).\", \"start\": 0, \"end\": 85},\n      \"modality\": {\"label\": \"obligation\", \"evidence\": [{\"text\": \"shall\", \"start\": 13, \"end\": 18}]},\n      \"actors\": [{\"id\": \"a01\", \"text\": \"The taxpayer\", \"start\": 0, \"end\": 12, \"normalized\": \"taxpayer\"}],\n      \"actions\": [{\"id\": \"p01\", \"text\": \"depreciate the acquisition costs\", \"start\": 19, \"end\": 51, \"normalized\": \"depreciate acquisition costs\"}],\n      \"conditions\": [],\n      \"constraints\": [{\"id\": \"c01\", \"text\": \"in accordance with Section 11(1)\", \"start\": 52, \"end\": 84, \"normalized\": \"in accordance with section 11(1)\"}],\n      \"exceptions\": [],\n      \"actor_action_map\": [{\"actor_id\": \"a01\", \"action_id\": \"p01\"}],\n      \"order_relations\": []\n    }\n  ],\n  \"method\": {\"name\": \"direct_llm\", \"schema_source\": \"stage2_prediction.schema.json@1.0.0\"},\n  \"validation\": {\"schema_valid\": true, \"cross_field_valid\": true, \"errors\": []},\n  \"unsupported_or_ambiguous\": []\n}\n```\n\nExample 6 — condition clause with a nested constraint (both fields reported separately):\nInput: \"The tax office shall refund the amount if the application is filed within two years.\"\nOutput:\n```json\n{\n  \"schema_version\": \"1.0.0\",\n  \"sample_id\": \"synthetic_condition_constraint_01\",\n  \"source_id\": \"synthetic_condition_constraint_01\",\n  \"source_text\": \"The tax office shall refund the amount if the application is filed within two years.\",\n  \"clauses\": [\n    {\n      \"clause_id\": \"synthetic_condition_constraint_01_c01\",\n      \"clause_span\": {\"text\": \"The tax office shall refund the amount if the application is filed within two years.\", \"start\": 0, \"end\": 84},\n      \"modality\": {\"label\": \"obligation\", \"evidence\": [{\"text\": \"shall\", \"start\": 15, \"end\": 20}]},\n      \"actors\": [{\"id\": \"a01\", \"text\": \"The tax office\", \"start\": 0, \"end\": 14, \"normalized\": \"tax office\"}],\n      \"actions\": [{\"id\": \"p01\", \"text\": \"refund the amount\", \"start\": 21, \"end\": 38, \"normalized\": \"refund amount\"}],\n      \"conditions\": [{\"id\": \"d01\", \"text\": \"if the application is filed within two years\", \"start\": 39, \"end\": 83, \"normalized\": \"if the application is filed within two years\"}],\n      \"constraints\": [{\"id\": \"c01\", \"text\": \"within two years\", \"start\": 67, \"end\": 83, \"normalized\": \"within two years\"}],\n      \"exceptions\": [],\n      \"actor_action_map\": [{\"actor_id\": \"a01\", \"action_id\": \"p01\"}],\n      \"order_relations\": []\n    }\n  ],\n  \"method\": {\"name\": \"direct_llm\", \"schema_source\": \"stage2_prediction.schema.json@1.0.0\"},\n  \"validation\": {\"schema_valid\": true, \"cross_field_valid\": true, \"errors\": []},\n  \"unsupported_or_ambiguous\": []\n}\n```"
+    }
+  },
+  "readout": "unchanged llm_se.extract_modality_label; coordinate errors do not veto modality",
+  "variants": {
+    "E1": {
+      "system_sha256": "748b3f10904f3280a599fcaabc93114f096f5152ba2f90db674c30681d732ac5",
+      "system_characters": 17786,
+      "train_example_count": 22,
+      "train_example_ids": [
+        "sun_modality_5ccf4f5766fc4368",
+        "sun_modality_4eedec00fff51555",
+        "sun_modality_267f991cc2af6841",
+        "sun_modality_f2f8526e8bf9cb4d",
+        "sun_modality_d7fefa8d6ef125d7",
+        "sun_modality_7e61f7387b1aec6f",
+        "sun_modality_b212b4f4b8094922",
+        "sun_modality_721709f564a13ed7",
+        "sun_modality_046a3b1b058ddf2a",
+        "sun_modality_45984577a22c0eb2",
+        "sun_modality_7d5af812056499df",
+        "sun_modality_ad860f9fe0909264",
+        "sun_modality_7f54b848e8338171",
+        "sun_modality_0bb2123818d753c7",
+        "sun_modality_c8712b2d00865a9d",
+        "sun_modality_7fbc1f262e968d9a",
+        "sun_modality_054e8e096ede273a",
+        "sun_modality_68ec568e127cff92",
+        "sun_modality_47bdd258ad450ccc",
+        "sun_modality_4ec129fa37a62124",
+        "sun_modality_d965c20b9bcac3ba",
+        "sun_modality_df4caf84dd4a706e"
+      ],
+      "class_totals": {
+        "definition": 9,
+        "obligation": 5,
+        "permission": 5,
+        "prohibition": 3
+      },
+      "local_system_path": "outputs/development/sun_modality_es_minimal_v1/E1_system_prompt.txt"
+    },
+    "S1": {
+      "system_sha256": "9f897b6e8d0729f3e5d88ced361911485cb674dc2b5b45e050c2956a521eaa44",
+      "system_characters": 18010,
+      "train_example_count": 22,
+      "train_example_ids": [
+        "sun_modality_5ccf4f5766fc4368",
+        "sun_modality_4eedec00fff51555",
+        "sun_modality_267f991cc2af6841",
+        "sun_modality_f2f8526e8bf9cb4d",
+        "sun_modality_d7fefa8d6ef125d7",
+        "sun_modality_7e61f7387b1aec6f",
+        "sun_modality_b212b4f4b8094922",
+        "sun_modality_721709f564a13ed7",
+        "sun_modality_046a3b1b058ddf2a",
+        "sun_modality_45984577a22c0eb2",
+        "sun_modality_7d5af812056499df",
+        "sun_modality_ad860f9fe0909264",
+        "sun_modality_7f54b848e8338171",
+        "sun_modality_0bb2123818d753c7",
+        "sun_modality_27b2552450dda62f",
+        "sun_modality_7fbc1f262e968d9a",
+        "sun_modality_054e8e096ede273a",
+        "sun_modality_68ec568e127cff92",
+        "sun_modality_47bdd258ad450ccc",
+        "sun_modality_4ec129fa37a62124",
+        "sun_modality_d965c20b9bcac3ba",
+        "sun_modality_df4caf84dd4a706e"
+      ],
+      "class_totals": {
+        "definition": 9,
+        "obligation": 5,
+        "permission": 5,
+        "prohibition": 3
+      },
+      "local_system_path": "outputs/development/sun_modality_es_minimal_v1/S1_system_prompt.txt"
+    }
+  },
+  "scope": "Design informed by previously inspected errors; no new scores, dispatched requests or model calls. E1 and S1 are separate, not combined."
+}
