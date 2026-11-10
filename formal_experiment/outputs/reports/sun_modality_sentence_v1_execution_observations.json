@@ -1,0 +1,76 @@
+{
+  "journal_sha256": "33e6b91b2c6978e2b1767623dafe72d8eeaf6bb44f2f33a5526756ea7f5caa32",
+  "observation_counts": {
+    "invalid_with_valid_nonnull_label": 408,
+    "invalid_all_excerpts_literal": 407,
+    "invalid_any_excerpt_not_literal": 1,
+    "invalid_exact_fields_and_types": 408,
+    "invalid_any_coordinate_mismatch": 408
+  },
+  "sentence_error_counts": {
+    "sentence evidence must be an exact, nonempty source span": 408
+  },
+  "readout_difference_counts": {
+    "sentence_missing_first_present": 408,
+    "same_label_or_both_null": 18
+  },
+  "raw_uncertainty_counts": {
+    "mixed_independent_modalities": 13,
+    "incomplete_input": 4,
+    "corpus_boundary_ambiguous": 3
+  },
+  "usage": {
+    "completion_tokens": 314227,
+    "prompt_cache_hit_tokens": 1624320,
+    "prompt_cache_miss_tokens": 1151356,
+    "prompt_tokens": 2775676,
+    "total_tokens": 3089903
+  },
+  "first_clause_vs_historical": {
+    "corrected": 3,
+    "regressed": 32
+  },
+  "started_at": "2026-11-10T12:25:32.541673+00:00",
+  "last_response_at": "2026-11-10T12:38:23.895631+00:00",
+  "raw_unvalidated_label_differences": [
+    {
+      "sample_id": "sun_modality_1aa562216c7946d9",
+      "raw_sentence_label": "permission",
+      "first_clause_label": "definition",
+      "primary_parse_status": "invalid_sentence_modality"
+    },
+    {
+      "sample_id": "sun_modality_44950c0be6c00613",
+      "raw_sentence_label": "definition",
+      "first_clause_label": "prohibition",
+      "primary_parse_status": "invalid_sentence_modality"
+    },
+    {
+      "sample_id": "sun_modality_87ad4e98d8b1a03c",
+      "raw_sentence_label": "permission",
+      "first_clause_label": "definition",
+      "primary_parse_status": "invalid_sentence_modality"
+    },
+    {
+      "sample_id": "sun_modality_c3bfd8acfa07ace4",
+      "raw_sentence_label": "obligation",
+      "first_clause_label": "definition",
+      "primary_parse_status": "invalid_sentence_modality"
+    },
+    {
+      "sample_id": "sun_modality_94313f20d53c8df6",
+      "raw_sentence_label": "obligation",
+      "first_clause_label": "definition",
+      "primary_parse_status": "invalid_sentence_modality"
+    },
+    {
+      "sample_id": "sun_modality_6d46f2ca8400b2bc",
+      "raw_sentence_label": "permission",
+      "first_clause_label": "definition",
+      "primary_parse_status": "invalid_sentence_modality"
+    }
+  ],
+  "suite_id": "SUN-MODALITY-FINAL-REVIEW-001",
+  "scope": "Post-collection observations only; no relaxed scoring, no new API, no modification of frozen results.",
+  "result_manifest": "outputs/reports/sun_modality_sentence_v1_completed.json"
+}

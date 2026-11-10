@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
 **生成日期**：2026-11-10
-**收录文件**：4598 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**收录文件**：4602 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -3625,7 +3625,11 @@
 | `outputs/reports/sun_llm_fallback_method_gate_decision_dry_run_v2.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/sun_llm_fallback_method_gate_decision_dry_run_v2.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/sun_modality_sentence_v1_baseline_review.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/sun_modality_sentence_v1_completed.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/sun_modality_sentence_v1_completed.md` | 活动 | 说明、规范或研究文档 |
+| `outputs/reports/sun_modality_sentence_v1_execution_observations.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/sun_modality_sentence_v1_execution_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/sun_modality_sentence_v1_execution_review.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/sun_modality_sentence_v1_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/sun_modality_sentence_v1_review.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/sun_rule_only_method_gate_authorization_dry_run.json` | 活动 | 机器可读配置、数据、事件或产物 |

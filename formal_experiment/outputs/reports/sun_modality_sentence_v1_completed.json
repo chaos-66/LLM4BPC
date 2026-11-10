@@ -1,0 +1,5401 @@
+{
+  "scope": "test-informed exploratory result; not unseen generalization",
+  "primary_readout": "sentence_modality.label",
+  "primary": {
+    "n": 426,
+    "evaluated_population": "all_test_samples",
+    "accuracy": 0.028169014084507043,
+    "macro_precision": 0.5416666666666666,
+    "macro_recall": 0.032073011734028684,
+    "macro_f1": 0.053098512132125575,
+    "per_class": {
+      "definition": {
+        "precision": 1.0,
+        "recall": 0.05649717514124294,
+        "f1": 0.10695187165775402,
+        "support": 177,
+        "tp": 10,
+        "fp": 0,
+        "fn": 167,
+        "tn": 249
+      },
+      "obligation": {
+        "precision": 1.0,
+        "recall": 0.005128205128205128,
+        "f1": 0.010204081632653062,
+        "support": 195,
+        "tp": 1,
+        "fp": 0,
+        "fn": 194,
+        "tn": 231
+      },
+      "permission": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 39,
+        "tp": 0,
+        "fp": 0,
+        "fn": 39,
+        "tn": 387
+      },
+      "prohibition": {
+        "precision": 0.16666666666666666,
+        "recall": 0.06666666666666667,
+        "f1": 0.09523809523809522,
+        "support": 15,
+        "tp": 1,
+        "fp": 5,
+        "fn": 14,
+        "tn": 406
+      }
+    },
+    "confusion_matrix": {
+      "label_order": [
+        "definition",
+        "obligation",
+        "permission",
+        "prohibition"
+      ],
+      "column_order": [
+        "definition",
+        "obligation",
+        "permission",
+        "prohibition",
+        "<no_prediction>"
+      ],
+      "rows_gold_columns_predicted": [
+        [
+          10,
+          0,
+          0,
+          5,
+          162
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          194
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          39
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          14
+        ]
+      ],
+      "as_dict": {
+        "definition": {
+          "definition": 10,
+          "obligation": 0,
+          "permission": 0,
+          "prohibition": 5,
+          "<no_prediction>": 162
+        },
+        "obligation": {
+          "definition": 0,
+          "obligation": 1,
+          "permission": 0,
+          "prohibition": 0,
+          "<no_prediction>": 194
+        },
+        "permission": {
+          "definition": 0,
+          "obligation": 0,
+          "permission": 0,
+          "prohibition": 0,
+          "<no_prediction>": 39
+        },
+        "prohibition": {
+          "definition": 0,
+          "obligation": 0,
+          "permission": 0,
+          "prohibition": 1,
+          "<no_prediction>": 14
+        }
+      }
+    },
+    "failures": 409,
+    "failure_rate": 0.960093896713615,
+    "coverage": 0.03990610328638498,
+    "coverage_restricted_secondary": {
+      "n": 17,
+      "accuracy": 0.7058823529411765,
+      "macro_precision": 0.5416666666666666,
+      "macro_recall": 0.6666666666666666,
+      "macro_f1": 0.5214285714285715,
+      "note": "secondary diagnostic only: excludes samples with no usable prediction; never the headline number"
+    }
+  },
+  "same_response_first_clause_diagnostic": {
+    "n": 426,
+    "evaluated_population": "all_test_samples",
+    "accuracy": 0.8544600938967136,
+    "macro_precision": 0.7467123105420979,
+    "macro_recall": 0.8575836592785746,
+    "macro_f1": 0.7757406855275072,
+    "per_class": {
+      "definition": {
+        "precision": 0.9407407407407408,
+        "recall": 0.7175141242937854,
+        "f1": 0.8141025641025641,
+        "support": 177,
+        "tp": 127,
+        "fp": 8,
+        "fn": 50,
+        "tn": 241
+      },
+      "obligation": {
+        "precision": 0.8952380952380953,
+        "recall": 0.9641025641025641,
+        "f1": 0.928395061728395,
+        "support": 195,
+        "tp": 188,
+        "fp": 22,
+        "fn": 7,
+        "tn": 209
+      },
+      "permission": {
+        "precision": 0.7872340425531915,
+        "recall": 0.9487179487179487,
+        "f1": 0.8604651162790696,
+        "support": 39,
+        "tp": 37,
+        "fp": 10,
+        "fn": 2,
+        "tn": 377
+      },
+      "prohibition": {
+        "precision": 0.36363636363636365,
+        "recall": 0.8,
+        "f1": 0.5000000000000001,
+        "support": 15,
+        "tp": 12,
+        "fp": 21,
+        "fn": 3,
+        "tn": 390
+      }
+    },
+    "confusion_matrix": {
+      "label_order": [
+        "definition",
+        "obligation",
+        "permission",
+        "prohibition"
+      ],
+      "column_order": [
+        "definition",
+        "obligation",
+        "permission",
+        "prohibition",
+        "<no_prediction>"
+      ],
+      "rows_gold_columns_predicted": [
+        [
+          127,
+          19,
+          10,
+          20,
+          1
+        ],
+        [
+          6,
+          188,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          37,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          12,
+          0
+        ]
+      ],
+      "as_dict": {
+        "definition": {
+          "definition": 127,
+          "obligation": 19,
+          "permission": 10,
+          "prohibition": 20,
+          "<no_prediction>": 1
+        },
+        "obligation": {
+          "definition": 6,
+          "obligation": 188,
+          "permission": 0,
+          "prohibition": 1,
+          "<no_prediction>": 0
+        },
+        "permission": {
+          "definition": 1,
+          "obligation": 1,
+          "permission": 37,
+          "prohibition": 0,
+          "<no_prediction>": 0
+        },
+        "prohibition": {
+          "definition": 1,
+          "obligation": 2,
+          "permission": 0,
+          "prohibition": 12,
+          "<no_prediction>": 0
+        }
+      }
+    },
+    "failures": 1,
+    "failure_rate": 0.002347417840375587,
+    "coverage": 0.9976525821596244,
+    "coverage_restricted_secondary": {
+      "n": 425,
+      "accuracy": 0.8564705882352941,
+      "macro_precision": 0.7467123105420979,
+      "macro_recall": 0.8586028554778555,
+      "macro_f1": 0.7763951088105479,
+      "note": "secondary diagnostic only: excludes samples with no usable prediction; never the headline number"
+    }
+  },
+  "historical_22shot_original_readout": {
+    "n": 426,
+    "evaluated_population": "all_test_samples",
+    "accuracy": 0.9225352112676056,
+    "macro_precision": 0.844109646676647,
+    "macro_recall": 0.903541938287701,
+    "macro_f1": 0.8697879915324909,
+    "per_class": {
+      "definition": {
+        "precision": 0.950920245398773,
+        "recall": 0.8757062146892656,
+        "f1": 0.911764705882353,
+        "support": 177,
+        "tp": 155,
+        "fp": 8,
+        "fn": 22,
+        "tn": 241
+      },
+      "obligation": {
+        "precision": 0.9494949494949495,
+        "recall": 0.9641025641025641,
+        "f1": 0.9567430025445293,
+        "support": 195,
+        "tp": 188,
+        "fp": 10,
+        "fn": 7,
+        "tn": 221
+      },
+      "permission": {
+        "precision": 0.8444444444444444,
+        "recall": 0.9743589743589743,
+        "f1": 0.9047619047619048,
+        "support": 39,
+        "tp": 38,
+        "fp": 7,
+        "fn": 1,
+        "tn": 380
+      },
+      "prohibition": {
+        "precision": 0.631578947368421,
+        "recall": 0.8,
+        "f1": 0.7058823529411765,
+        "support": 15,
+        "tp": 12,
+        "fp": 7,
+        "fn": 3,
+        "tn": 404
+      }
+    },
+    "confusion_matrix": {
+      "label_order": [
+        "definition",
+        "obligation",
+        "permission",
+        "prohibition"
+      ],
+      "column_order": [
+        "definition",
+        "obligation",
+        "permission",
+        "prohibition",
+        "<no_prediction>"
+      ],
+      "rows_gold_columns_predicted": [
+        [
+          155,
+          8,
+          7,
+          6,
+          1
+        ],
+        [
+          6,
+          188,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          38,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          12,
+          0
+        ]
+      ],
+      "as_dict": {
+        "definition": {
+          "definition": 155,
+          "obligation": 8,
+          "permission": 7,
+          "prohibition": 6,
+          "<no_prediction>": 1
+        },
+        "obligation": {
+          "definition": 6,
+          "obligation": 188,
+          "permission": 0,
+          "prohibition": 1,
+          "<no_prediction>": 0
+        },
+        "permission": {
+          "definition": 1,
+          "obligation": 0,
+          "permission": 38,
+          "prohibition": 0,
+          "<no_prediction>": 0
+        },
+        "prohibition": {
+          "definition": 1,
+          "obligation": 2,
+          "permission": 0,
+          "prohibition": 12,
+          "<no_prediction>": 0
+        }
+      }
+    },
+    "failures": 1,
+    "failure_rate": 0.002347417840375587,
+    "coverage": 0.9976525821596244,
+    "coverage_restricted_secondary": {
+      "n": 425,
+      "accuracy": 0.9247058823529412,
+      "macro_precision": 0.844109646676647,
+      "macro_recall": 0.9047858391608392,
+      "macro_f1": 0.8704603843834365,
+      "note": "secondary diagnostic only: excludes samples with no usable prediction; never the headline number"
+    }
+  },
+  "primary_vs_historical": {
+    "corrected": 0,
+    "regressed": 381
+  },
+  "primary_vs_same_response_first_clause": {
+    "corrected": 0,
+    "regressed": 352
+  },
+  "sentence_vs_first_clause_differences": [
+    {
+      "sample_id": "sun_modality_1ee80af54bbdf1a6",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_e864b656f4e4dd8b",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_ed40ef519cdb088f",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_de7be4409eeab5a8",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_65cf4c89eaf0f6d9",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_d3455b27b04755d7",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_77752de7e29c8bbb",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_d486681dd9630f61",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_4a2829b629f68b51",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_46ab92007ac2ba0b",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_aea9dcc83200786f",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_4a5988bf0397884f",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_7fa34c91c8b5d1d3",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_342ac608856d1421",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_af0dacbfcc1b538e",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_f8794e8d375ed72b",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_75cb919db3117438",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_f7305d2aa6bfaa35",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_d3d2e5ecdd937e40",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_45c9436f7dd00f8f",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_0f5ec34c08479583",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_06cc29a39c94ea87",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_a5bcc3209239f03d",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_8f56132f781ba809",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_2e41dabd46f1c416",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_45ab7a6cb37bbe22",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_d1e1752b60090ac1",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_40ad24504a1e527b",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_15379fb73bdfa875",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_e132e4a5396a1738",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_2dc3bf734b302ce1",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_d7282301840858ae",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_cf992d31bc6415e6",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_6c1481a2d0cd515f",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_04813ff2eeff0ee3",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_ab32d2f569b854de",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_5dd905d7bef7684c",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_01afee4e8eafee59",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_f524c650514d748c",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_c435717097e07bd4",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_3cae75a6fd42e2bc",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_b0724f638384d3d3",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_f926b50052c31fa9",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_b7e7a1544939a500",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_39639c4e2a9d6b08",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_baf11b9eb31ab744",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_372dad044592f8bd",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_dce685fbbe368673",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_7c2df76361290457",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_b0df01ddb3d8fa66",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_33dfce3afccf61e7",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_f1d6033fcd51b7e0",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_f11b43c763695a7e",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_6560b49186e7c054",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_38bc44de70c90d59",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_c6b1edaa2ed92b80",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_20a8a8c769395563",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_d276501af2c67790",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_2fe27ba8ffa47612",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_3875a5407bed3789",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_1b03b9601d6e3a4d",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_debccff3223ade96",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_08d08c3ab804a9d0",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_3045fe86d0adb321",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_e41a7fe42f1fba5d",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_d5795ec34035be81",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_de8ae0a7de8610f6",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_4aa713032da0593a",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_f64641b20015ac92",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_217f78d48f05e957",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_56aa60a2a3a4bd38",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_f392b16a5dc9f1d4",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_0e7905b9a7c2ddda",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_898c39af252c289b",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_a18989112132a992",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_983511dc4dd875c9",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_801770835869d6c0",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_f586ad99f05fac73",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_ffa2e576c82b2e90",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_5fa7357484010c50",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_737196fcd064a220",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_6e854481440db49f",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_41d3beb20ca55a60",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_902c634fc7e54c42",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_0acd538d7c1ed0c6",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_0c6161cec95b5823",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_16f796b5340d99ce",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_e46a26171e0d8d42",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_e19029c1815d3c02",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_c4a39e4bd8ea6f64",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_beac0cdf663ceb3f",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_99c9770d52f9933a",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_9df57345417f7572",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_82c972d55f2fd88b",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_2b6e7776d439d30a",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_ab32c956b52a8a7b",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_ef845af34d199653",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_9c3a77622a7918a1",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_cfb8fcbebca7158c",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_8c835060ccc2a69d",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_746109dbf9a4fac5",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_af1791c34474fda1",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_d6ce3e804cffd475",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_3d4289e33ae6f1d7",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_1b517d3d90a57ac2",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_b528f7f3be399f86",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_3dd3ee3a2a49ad1d",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_98ff4092f04fb972",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_027c9d7c29d12293",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_26fb78a1e008b4b1",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_5ba4e625747f1dd8",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_d5005379ec7ad570",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_e2fb123e3d7f04d4",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_1aa562216c7946d9",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_94cc5fd0629954e3",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_e0ebba50ee8d6388",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_0b57d5229c19d571",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_faaed83ac2ff3fb6",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_62ba1b5e9e938bd0",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_f6590fb5a6e27b54",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_e36ba0f82332dd53",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_5650d5d726c7bdf1",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_b953a4410773812e",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_1d1a941a62b2b259",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_9ac5437664436669",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_474862c7aba53440",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_c34fc75f49515101",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_926a46dd9fc215da",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_0e47ffb9c6dd00ec",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_20ad1dcec22a0969",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_34cce308696757a5",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_bc97767d41f6d47b",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_44950c0be6c00613",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_bb89d6dab828ae2c",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_fdc9485a3ed1b40f",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_8e94916053aac7eb",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_18a8c978a45e74b9",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_e32abf250d2c0b8c",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_07b0547a7b2a92a1",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_65b759f65d6cc998",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_868f6aa1d2fce836",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_5c7ac6760deb9439",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_5c5bc4c478b04077",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_a6205cfee1ebf78d",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_e472de45eed547a8",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_0946c5fa15d64568",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_b01c0d18a5e61ac1",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_a6e61618e5c6db5a",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_af5cbd9a42dc23b2",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_9b0c4172b4d1874f",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_44c411a53fe79cab",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_f8af9212daacdfb3",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_541278026c70d261",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_43af0a1cb1e68953",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_5a3bd1b5011bdd66",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_41b6fe46777f63e0",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_36fdc15465439af6",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_87ad4e98d8b1a03c",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_095b3b3717898a61",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_ebcf85dc92f6a19b",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_ac917ad1741d1293",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_31305eea46c1a147",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_37abc23150f2268f",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_9d702b0c572ee27b",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_408db401a0664fb7",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_c961313d19e26f0e",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_9b142d98644c876a",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_31320a1ae04ea44a",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_afa03c64c80fb70b",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_a8fc342153c88a96",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_ca4ff9c35b38557f",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_3b06cb0a14b8a572",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_6eefcb12db5ecb8f",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_33551c8eaa432287",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_31890f133a9593bf",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_238baf3cb2303dfe",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_b3352e757813f3f0",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_e5194b23046b82f6",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_f8a052691625ed19",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_7f2a59e56d7f558d",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_b321a367ba9a1df0",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_9dafb51fede91501",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_ae6656be0ee50171",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_c28616c3335236b7",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_f0848760a53dfe9c",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_c5df8e67211e09d5",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_5ff7d510982e54a0",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_c6b68ee7086da031",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_4ff649f2a9671788",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_f8b56c5df9a44152",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_5f1460870de572fe",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_33842fb54e03e8cd",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_a1baa3f84c20f826",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_cb6075c1bc204c4e",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_0738582b531e9266",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_8efa350640d341df",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_5eafbae9b95747c0",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_6b3da4201341250a",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_7523fff8c5b353e4",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_a0155bb59626b640",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_219230f5c57d16e0",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_5de4c51095d25b3b",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_62da5f53974c89a1",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_40499148436dd523",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_daaba8ffc0de5c05",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_3f5f938bbf3957e4",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_929e48671ace4e61",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_ac16a5b3668834e4",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_738f3a55bc3e3505",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_46c330cb9661ebe2",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_d39cf56683f3121f",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_4d9feca20131b8ed",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_be53265c03e17ff1",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_5a21276afd62a1bf",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_39dcefd4d0ad8663",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_35308ae71a50bd38",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_24057e8a506cc1b1",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_05162b827a5cdd1b",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_4e590b2e034cce56",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_b97935f1e746b4c3",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_9ac66481be2ad31e",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_4b2a70530f54f9f5",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_3b058fef67f11922",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_bbfa32fdde883e0a",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_dd202b091c7e0bbe",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_88ea5164541723c3",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_df86f02cfc2a8e19",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_85ae84c4c6b4a822",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_9370e585fadb4d6a",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_84cffcaefa51b990",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_471d3fc787936ad9",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_a1031b181cc1e4ed",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_534ba51d497df9f3",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_5ff2d799723a34f1",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_66adce51089c93fe",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_f815d8bb82399d7f",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_263f6059f06bfa41",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_05e8cebde901efc6",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_296d98270a858f4c",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_2b1891749b75d59f",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_ba09f71ad62a521a",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_c3bfd8acfa07ace4",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_8ea4cb645b487b54",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_9ab614cfe489f520",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_19dc631e48901756",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_11e920b78d2c89f7",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_09af46d39837e8c3",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_e75844a198a3b060",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_f7529e0b85a7b537",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_c5b67e346cf59650",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_0986841d95041d97",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_c49fc719b031b043",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_cb17d2a07efb96a4",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_ac310d77c2611c9d",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_349b20dabb5a6a13",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_13a92860a67b672c",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_e64c50116eb7f14c",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_ec4f7ad6e3e359c1",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_08afb7609d6d73cf",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_ee3fd88fb69f6013",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_01700e04994c297d",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_f5037bcc56922965",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_8e57d70f3973f669",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_965340d7e51afd1b",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_0dbe74770686be81",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_9f948a65fd450a18",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_63660793da5fbb89",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_9cbfe94e9e3a1cce",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_59f3abc69246920e",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_4b702f39f2b98efb",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_1e6397daffe79903",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_a26dab998b30feaa",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_c11e684d8ab6fb62",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_fa459fad53ed62aa",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_857fee2852d387fe",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_f259e8c01aa7863a",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_7890eade5f0098ac",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_94313f20d53c8df6",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_8bbd45ca8903175a",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_35f445f4b901a1a7",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_f4657b9efd26083e",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_a5565a2322d7eaab",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_6c270e3d39cac851",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_956eeca0ecc32f1c",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_a6f2de3285f8db7b",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_c4504f4904e3b75b",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_afdec1f075373d72",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_dee7284d9a2ce9d7",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_0a06235a331cf6d4",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_0fe1c097e476d903",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_e28dd41747a53b2f",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_84dbdf3d345e2e48",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_5e2b7ae2713dfc25",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_56a0cf9ec9e3bfde",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_985aa53e4bac48ee",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_65c61eebd55337e9",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_d139739a1c3b2634",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_44756f822fef1162",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_4a4e6f5243e41d4f",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_bb0063f12e993468",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_8c90d2e996ecb14d",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_e37bba11b35592de",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_8d7148bde58e198d",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_13677e15c4579c2d",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_b036acb09554f95a",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_ea0700a5b47ca2a7",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_8fa70a58ff1052a9",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_984a2369d8df5e69",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_3bae2aec3d7cf40f",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_1afeaf8b743c2c9d",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_4baacedbc32b1d1f",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_e2cbc6de151a2e3b",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_a42090d1a9ed021c",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_e723011041e9fcf1",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_cbfeade64c54fe63",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_ec71918514080086",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_32c3130272942c6e",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_3dc2104947dc8e10",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_0d960e4bc91fb6ac",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_57616fce99da0013",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_a0f80ebac4b45e5b",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_047e4fdce99495e7",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_99d525bd99e31dbf",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_6259ab76ffadc38b",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_dcc19d3290ff9ac8",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_17367469b9450b2c",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_075db6ea9d98b943",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_fa3badc96194f737",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_c4926a4142dbcc96",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_4d19dab0ea998d78",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_ca86f445c178b7ff",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_f055d7902b06a0e3",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_469ebd8d6a5965ab",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_68a7b0d9b95fb81e",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_55ef593c74cda3f3",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_addef856096867b6",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_2ad366c9ab7327b8",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_47b19113284fc538",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_e81092c4f608f50c",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_f1340e90f9beb2bf",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_8eff4eb683f245fb",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_849ac8d69dc794d7",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_c1a566c0baf00b1a",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_21a68ef63e173268",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_12c56463fef71f73",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_483f4175c9c4bde7",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_554032f9e6b83f8d",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_2915a7122c34e718",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_5fe27ac891117c07",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_06e8af68d9122b34",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_b7ec01332572f34e",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_4244c95c7be294b9",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_894153a0919fa2e3",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_56017d4c43711792",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_fb718535863d1fab",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_6c39a3ff7fd22045",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_1a71d6acafc56635",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_303c927bb70be739",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_50de1ec08faecf00",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_70ce999b396d0d17",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_8d0af70ed534107f",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_4f892ffece1dc13a",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_d9c85ed0903ad427",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_27868c67b8b7b6ca",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_e10c26a6829f26c0",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_16f4773e395cd946",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_c3f4621e49484a4d",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_6d46f2ca8400b2bc",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    },
+    {
+      "sample_id": "sun_modality_8b07c393411cee37",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_9d78523e56788d9e",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_d4121256b2d58a98",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_9d4d6d93dfe8ed07",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_7a2fde0b0b7fea8d",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_9ca5a110e45021ab",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_c474dcd414a9aacf",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_8a2c25d0b5c8d884",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_021f012516dbab37",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_e51fd92825396871",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_67a59bd9b1f755a0",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_93a7472e20a683e2",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_25e15b3e78c2b354",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_17904ca685ba8fea",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_7b492acb73584201",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_3534d9110a27f689",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_f047f4868298b5a1",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_c4ef6b4630ca795d",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_924fd57872575a82",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_8c0090187080c998",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_3dc91979a3043436",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_7a414901f3c90d61",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_e96911aa922791db",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_f269036bdd67fd4b",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_67a7e389e46440bd",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_d77e1228dd450dee",
+      "sentence_label": null,
+      "first_clause_label": "permission"
+    },
+    {
+      "sample_id": "sun_modality_48a4ccd45ef98e5b",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_b4fe643d2c491de2",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_2e37f2da3189dc78",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_a03fd6ffc4b78f9a",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_a92af258f6e785f7",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_8c9fc74f67bb6a79",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_90b28fa1f345b741",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_627c7015370fa295",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_5a2e3caa6504990a",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_32bc7b702004c220",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_19490870e3fe6c41",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_47108b07b46a4cfc",
+      "sentence_label": null,
+      "first_clause_label": "obligation"
+    },
+    {
+      "sample_id": "sun_modality_ca6c6f353ddcbbec",
+      "sentence_label": null,
+      "first_clause_label": "prohibition"
+    },
+    {
+      "sample_id": "sun_modality_e281d33605497ded",
+      "sentence_label": null,
+      "first_clause_label": "definition"
+    }
+  ],
+  "primary_status_counts": {
+    "invalid_sentence_modality": 408,
+    "ok": 17,
+    "null_label": 1
+  },
+  "rule_record_invalid_count": 424,
+  "suite_id": "SUN-MODALITY-FINAL-REVIEW-001",
+  "candidate_name": "LLM-SE 显式句级模态候选",
+  "audit": {
+    "attempted": 426,
+    "finished": 426,
+    "uncalled": 0,
+    "actual_known_cost_cny": 9.666814500000005,
+    "unsettled_reservation_cny": 0,
+    "peak_spent_plus_reserved_cny": 10.334331000000006,
+    "peak_in_flight": 4,
+    "completed": true,
+    "all_request_hashes_match": true,
+    "all_response_hashes_match": true,
+    "all_requests_off_peak": true,
+    "retry_count": 0,
+    "request_failure_count": 0,
+    "parse_status_counts": {
+      "invalid_sentence_modality": 408,
+      "ok": 17,
+      "null_label": 1
+    },
+    "returned_models": {
+      "deepseek-v4-pro": 426
+    }
+  },
+  "changed_predictions": [
+    {
+      "sample_id": "sun_modality_1ee80af54bbdf1a6",
+      "gold": "definition",
+      "old": "prohibition",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_e864b656f4e4dd8b",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_ed40ef519cdb088f",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_de7be4409eeab5a8",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_65cf4c89eaf0f6d9",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_d3455b27b04755d7",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_77752de7e29c8bbb",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_d486681dd9630f61",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_4a2829b629f68b51",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_46ab92007ac2ba0b",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_aea9dcc83200786f",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_4a5988bf0397884f",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_7fa34c91c8b5d1d3",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_342ac608856d1421",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_af0dacbfcc1b538e",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_f8794e8d375ed72b",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_75cb919db3117438",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_f7305d2aa6bfaa35",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_d3d2e5ecdd937e40",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_45c9436f7dd00f8f",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_0f5ec34c08479583",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_06cc29a39c94ea87",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_a5bcc3209239f03d",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_8f56132f781ba809",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_2e41dabd46f1c416",
+      "gold": "definition",
+      "old": "prohibition",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_45ab7a6cb37bbe22",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_d1e1752b60090ac1",
+      "gold": "definition",
+      "old": "obligation",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_40ad24504a1e527b",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_15379fb73bdfa875",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_e132e4a5396a1738",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_2dc3bf734b302ce1",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_d7282301840858ae",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_cf992d31bc6415e6",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_8f3ae941399bc02a",
+      "gold": "definition",
+      "old": "definition",
+      "new": "prohibition",
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_6c1481a2d0cd515f",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_04813ff2eeff0ee3",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_ab32d2f569b854de",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_5dd905d7bef7684c",
+      "gold": "definition",
+      "old": "obligation",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_01afee4e8eafee59",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_f524c650514d748c",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_c435717097e07bd4",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_3cae75a6fd42e2bc",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_b0724f638384d3d3",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_f926b50052c31fa9",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_22dbfcdde89082c0",
+      "gold": "definition",
+      "old": "definition",
+      "new": "prohibition",
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_b7e7a1544939a500",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_39639c4e2a9d6b08",
+      "gold": "definition",
+      "old": "permission",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_baf11b9eb31ab744",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_372dad044592f8bd",
+      "gold": "definition",
+      "old": "prohibition",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_dce685fbbe368673",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_7c2df76361290457",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_b0df01ddb3d8fa66",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_33dfce3afccf61e7",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_f1d6033fcd51b7e0",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_f11b43c763695a7e",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_6560b49186e7c054",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_38bc44de70c90d59",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_c6b1edaa2ed92b80",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_20a8a8c769395563",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_d276501af2c67790",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_2fe27ba8ffa47612",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_3875a5407bed3789",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_1b03b9601d6e3a4d",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_debccff3223ade96",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_08d08c3ab804a9d0",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_3045fe86d0adb321",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_e41a7fe42f1fba5d",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_d5795ec34035be81",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_de8ae0a7de8610f6",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_4aa713032da0593a",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_f64641b20015ac92",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_217f78d48f05e957",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_56aa60a2a3a4bd38",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_f392b16a5dc9f1d4",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_0e7905b9a7c2ddda",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_898c39af252c289b",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_a18989112132a992",
+      "gold": "definition",
+      "old": "obligation",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_983511dc4dd875c9",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_801770835869d6c0",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_f586ad99f05fac73",
+      "gold": "definition",
+      "old": "permission",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_ffa2e576c82b2e90",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_5fa7357484010c50",
+      "gold": "definition",
+      "old": "permission",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_737196fcd064a220",
+      "gold": "definition",
+      "old": "permission",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_6e854481440db49f",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_41d3beb20ca55a60",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_902c634fc7e54c42",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_0acd538d7c1ed0c6",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_0c6161cec95b5823",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_16f796b5340d99ce",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_e46a26171e0d8d42",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_e19029c1815d3c02",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_c4a39e4bd8ea6f64",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_beac0cdf663ceb3f",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_99c9770d52f9933a",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_9df57345417f7572",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_82c972d55f2fd88b",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_2b6e7776d439d30a",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_ab32c956b52a8a7b",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_ef845af34d199653",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_9c3a77622a7918a1",
+      "gold": "definition",
+      "old": "obligation",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_cfb8fcbebca7158c",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_8c835060ccc2a69d",
+      "gold": "definition",
+      "old": "obligation",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_746109dbf9a4fac5",
+      "gold": "definition",
+      "old": "permission",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_af1791c34474fda1",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_d6ce3e804cffd475",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_3d4289e33ae6f1d7",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_1b517d3d90a57ac2",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_b528f7f3be399f86",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_3dd3ee3a2a49ad1d",
+      "gold": "definition",
+      "old": "obligation",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_98ff4092f04fb972",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_027c9d7c29d12293",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_26fb78a1e008b4b1",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_5ba4e625747f1dd8",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_d5005379ec7ad570",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_e2fb123e3d7f04d4",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_1aa562216c7946d9",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_94cc5fd0629954e3",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_e0ebba50ee8d6388",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_0b57d5229c19d571",
+      "gold": "definition",
+      "old": "prohibition",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_faaed83ac2ff3fb6",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_62ba1b5e9e938bd0",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_f6590fb5a6e27b54",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_e36ba0f82332dd53",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_5650d5d726c7bdf1",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_b953a4410773812e",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_1d1a941a62b2b259",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_9ac5437664436669",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_474862c7aba53440",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_c34fc75f49515101",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_926a46dd9fc215da",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_0e47ffb9c6dd00ec",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_20ad1dcec22a0969",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_34cce308696757a5",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_bc97767d41f6d47b",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_44950c0be6c00613",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_bb89d6dab828ae2c",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_fdc9485a3ed1b40f",
+      "gold": "definition",
+      "old": "obligation",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_8e94916053aac7eb",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_18a8c978a45e74b9",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_e32abf250d2c0b8c",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_07b0547a7b2a92a1",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_65b759f65d6cc998",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_868f6aa1d2fce836",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_5c7ac6760deb9439",
+      "gold": "definition",
+      "old": "obligation",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_5c5bc4c478b04077",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_a6205cfee1ebf78d",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_e472de45eed547a8",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_0946c5fa15d64568",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_b01c0d18a5e61ac1",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_a6e61618e5c6db5a",
+      "gold": "definition",
+      "old": "prohibition",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_1923c769b06ea927",
+      "gold": "definition",
+      "old": "definition",
+      "new": "prohibition",
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_af5cbd9a42dc23b2",
+      "gold": "definition",
+      "old": "permission",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_9b0c4172b4d1874f",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_44c411a53fe79cab",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_1d3bd9ad6a5b35b6",
+      "gold": "definition",
+      "old": "definition",
+      "new": "prohibition",
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_f8af9212daacdfb3",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_541278026c70d261",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_43af0a1cb1e68953",
+      "gold": "definition",
+      "old": "permission",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_5a3bd1b5011bdd66",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_41b6fe46777f63e0",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_36fdc15465439af6",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_87ad4e98d8b1a03c",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_095b3b3717898a61",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_ebcf85dc92f6a19b",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_ac917ad1741d1293",
+      "gold": "definition",
+      "old": "definition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_31305eea46c1a147",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_37abc23150f2268f",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_9d702b0c572ee27b",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_408db401a0664fb7",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_c961313d19e26f0e",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_9b142d98644c876a",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_31320a1ae04ea44a",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_afa03c64c80fb70b",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_a8fc342153c88a96",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_ca4ff9c35b38557f",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_3b06cb0a14b8a572",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_6eefcb12db5ecb8f",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_33551c8eaa432287",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_31890f133a9593bf",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_238baf3cb2303dfe",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_b3352e757813f3f0",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_e5194b23046b82f6",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_f8a052691625ed19",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_7f2a59e56d7f558d",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_b321a367ba9a1df0",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_9dafb51fede91501",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_ae6656be0ee50171",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_c28616c3335236b7",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_f0848760a53dfe9c",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_c5df8e67211e09d5",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_5ff7d510982e54a0",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_c6b68ee7086da031",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_4ff649f2a9671788",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_f8b56c5df9a44152",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_5f1460870de572fe",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_33842fb54e03e8cd",
+      "gold": "obligation",
+      "old": "definition",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_a1baa3f84c20f826",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_cb6075c1bc204c4e",
+      "gold": "obligation",
+      "old": "prohibition",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_0738582b531e9266",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_8efa350640d341df",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_5eafbae9b95747c0",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_6b3da4201341250a",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_7523fff8c5b353e4",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_a0155bb59626b640",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_219230f5c57d16e0",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_5de4c51095d25b3b",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_62da5f53974c89a1",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_40499148436dd523",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_daaba8ffc0de5c05",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_3f5f938bbf3957e4",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_929e48671ace4e61",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_ac16a5b3668834e4",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_738f3a55bc3e3505",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_46c330cb9661ebe2",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_d39cf56683f3121f",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_4d9feca20131b8ed",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_be53265c03e17ff1",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_5a21276afd62a1bf",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_39dcefd4d0ad8663",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_35308ae71a50bd38",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_24057e8a506cc1b1",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_05162b827a5cdd1b",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_4e590b2e034cce56",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_b97935f1e746b4c3",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_9ac66481be2ad31e",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_4b2a70530f54f9f5",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_3b058fef67f11922",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_bbfa32fdde883e0a",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_dd202b091c7e0bbe",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_88ea5164541723c3",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_df86f02cfc2a8e19",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_85ae84c4c6b4a822",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_9370e585fadb4d6a",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_84cffcaefa51b990",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_471d3fc787936ad9",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_a1031b181cc1e4ed",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_534ba51d497df9f3",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_5ff2d799723a34f1",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_66adce51089c93fe",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_f815d8bb82399d7f",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_263f6059f06bfa41",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_05e8cebde901efc6",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_296d98270a858f4c",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_2b1891749b75d59f",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_ba09f71ad62a521a",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_c3bfd8acfa07ace4",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_8ea4cb645b487b54",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_9ab614cfe489f520",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_19dc631e48901756",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_11e920b78d2c89f7",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_09af46d39837e8c3",
+      "gold": "obligation",
+      "old": "definition",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_e75844a198a3b060",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_f7529e0b85a7b537",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_c5b67e346cf59650",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_0986841d95041d97",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_c49fc719b031b043",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_cb17d2a07efb96a4",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_ac310d77c2611c9d",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_349b20dabb5a6a13",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_13a92860a67b672c",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_e64c50116eb7f14c",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_ec4f7ad6e3e359c1",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_08afb7609d6d73cf",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_ee3fd88fb69f6013",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_01700e04994c297d",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_f5037bcc56922965",
+      "gold": "obligation",
+      "old": "definition",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_8e57d70f3973f669",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_965340d7e51afd1b",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_0dbe74770686be81",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_9f948a65fd450a18",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_63660793da5fbb89",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_9cbfe94e9e3a1cce",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_59f3abc69246920e",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_4b702f39f2b98efb",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_1e6397daffe79903",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_a26dab998b30feaa",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_c11e684d8ab6fb62",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_fa459fad53ed62aa",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_857fee2852d387fe",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_f259e8c01aa7863a",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_7890eade5f0098ac",
+      "gold": "obligation",
+      "old": "definition",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_94313f20d53c8df6",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_8bbd45ca8903175a",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_35f445f4b901a1a7",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_f4657b9efd26083e",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_a5565a2322d7eaab",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_6c270e3d39cac851",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_956eeca0ecc32f1c",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_a6f2de3285f8db7b",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_c4504f4904e3b75b",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_afdec1f075373d72",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_dee7284d9a2ce9d7",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_0a06235a331cf6d4",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_0fe1c097e476d903",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_e28dd41747a53b2f",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_84dbdf3d345e2e48",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_5e2b7ae2713dfc25",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_56a0cf9ec9e3bfde",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_985aa53e4bac48ee",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_65c61eebd55337e9",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_d139739a1c3b2634",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_44756f822fef1162",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_4a4e6f5243e41d4f",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_bb0063f12e993468",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_8c90d2e996ecb14d",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_e37bba11b35592de",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_8d7148bde58e198d",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_13677e15c4579c2d",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_b036acb09554f95a",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_ea0700a5b47ca2a7",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_8fa70a58ff1052a9",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_984a2369d8df5e69",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_3bae2aec3d7cf40f",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_1afeaf8b743c2c9d",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_4baacedbc32b1d1f",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_e2cbc6de151a2e3b",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_a42090d1a9ed021c",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_e723011041e9fcf1",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_cbfeade64c54fe63",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_ec71918514080086",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_32c3130272942c6e",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_3dc2104947dc8e10",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_0d960e4bc91fb6ac",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_57616fce99da0013",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_a0f80ebac4b45e5b",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_047e4fdce99495e7",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_99d525bd99e31dbf",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_6259ab76ffadc38b",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_dcc19d3290ff9ac8",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_17367469b9450b2c",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_075db6ea9d98b943",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_fa3badc96194f737",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_c4926a4142dbcc96",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_4d19dab0ea998d78",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_ca86f445c178b7ff",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_f055d7902b06a0e3",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_469ebd8d6a5965ab",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_68a7b0d9b95fb81e",
+      "gold": "obligation",
+      "old": "definition",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_55ef593c74cda3f3",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_addef856096867b6",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_2ad366c9ab7327b8",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_47b19113284fc538",
+      "gold": "obligation",
+      "old": "definition",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_e81092c4f608f50c",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_f1340e90f9beb2bf",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_8eff4eb683f245fb",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_849ac8d69dc794d7",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_c1a566c0baf00b1a",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_21a68ef63e173268",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_12c56463fef71f73",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_483f4175c9c4bde7",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_554032f9e6b83f8d",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_2915a7122c34e718",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_5fe27ac891117c07",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_06e8af68d9122b34",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_b7ec01332572f34e",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_4244c95c7be294b9",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_894153a0919fa2e3",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_56017d4c43711792",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_fb718535863d1fab",
+      "gold": "obligation",
+      "old": "obligation",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_6c39a3ff7fd22045",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_1a71d6acafc56635",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_303c927bb70be739",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_50de1ec08faecf00",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_70ce999b396d0d17",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_8d0af70ed534107f",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_4f892ffece1dc13a",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_d9c85ed0903ad427",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_27868c67b8b7b6ca",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_e10c26a6829f26c0",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_16f4773e395cd946",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_c3f4621e49484a4d",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_6d46f2ca8400b2bc",
+      "gold": "permission",
+      "old": "definition",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_8b07c393411cee37",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_9d78523e56788d9e",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_d4121256b2d58a98",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_9d4d6d93dfe8ed07",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_7a2fde0b0b7fea8d",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_9ca5a110e45021ab",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_c474dcd414a9aacf",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_8a2c25d0b5c8d884",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_021f012516dbab37",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_e51fd92825396871",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_67a59bd9b1f755a0",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_93a7472e20a683e2",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_25e15b3e78c2b354",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_17904ca685ba8fea",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_7b492acb73584201",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_3534d9110a27f689",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_f047f4868298b5a1",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_c4ef6b4630ca795d",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_924fd57872575a82",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_8c0090187080c998",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_3dc91979a3043436",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_7a414901f3c90d61",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_e96911aa922791db",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_f269036bdd67fd4b",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_67a7e389e46440bd",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_d77e1228dd450dee",
+      "gold": "permission",
+      "old": "permission",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_48a4ccd45ef98e5b",
+      "gold": "prohibition",
+      "old": "prohibition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_b4fe643d2c491de2",
+      "gold": "prohibition",
+      "old": "prohibition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_2e37f2da3189dc78",
+      "gold": "prohibition",
+      "old": "prohibition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_a03fd6ffc4b78f9a",
+      "gold": "prohibition",
+      "old": "prohibition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_a92af258f6e785f7",
+      "gold": "prohibition",
+      "old": "prohibition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_8c9fc74f67bb6a79",
+      "gold": "prohibition",
+      "old": "prohibition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_90b28fa1f345b741",
+      "gold": "prohibition",
+      "old": "prohibition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_627c7015370fa295",
+      "gold": "prohibition",
+      "old": "prohibition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_5a2e3caa6504990a",
+      "gold": "prohibition",
+      "old": "prohibition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_32bc7b702004c220",
+      "gold": "prohibition",
+      "old": "prohibition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_19490870e3fe6c41",
+      "gold": "prohibition",
+      "old": "obligation",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_47108b07b46a4cfc",
+      "gold": "prohibition",
+      "old": "obligation",
+      "new": null,
+      "change": "both_wrong_changed"
+    },
+    {
+      "sample_id": "sun_modality_ca6c6f353ddcbbec",
+      "gold": "prohibition",
+      "old": "prohibition",
+      "new": null,
+      "change": "regressed"
+    },
+    {
+      "sample_id": "sun_modality_e281d33605497ded",
+      "gold": "prohibition",
+      "old": "definition",
+      "new": null,
+      "change": "both_wrong_changed"
+    }
+  ],
+  "uncertainty_counts": {
+    "incomplete_input": 2
+  },
+  "created_at": "2026-11-10T12:38:37.776313+00:00",
+  "authorization_sha256": "1a608574e360f3fb999798b8e8673ad096e8359acc56d575f52859292c05ab68",
+  "candidate_preflight_sha256": "9b608fcb0423f9bf836d06b082fcdd8765633b045281901d149bff13d649123d",
+  "execution_preflight_sha256": "9ada4cb5b8f44a6be965d0164f160486edf588b078cb8d8568f4bcadfbefa9d1",
+  "journal_sha256": "33e6b91b2c6978e2b1767623dafe72d8eeaf6bb44f2f33a5526756ea7f5caa32",
+  "control_journal_sha256": "ab818d55f75717a9390761ec571c41369e59f1a78c0340982dd264d38f5c00bd",
+  "source_sha256_lf_utf8": {
+    "scripts/run_sun_modality_sentence_v1.py": "0a07394edc9be30755800103ad1f1988c4aad8b087cbec4180dc8ff5f25a1c9d",
+    "scripts/run_sun_modality_fewshot_v1.py": "8834b4377c8c547c8974956a710f762299754e70a51aabdfa1bf4f7006c44ee0",
+    "scripts/run_sun_modality_boundary_v1.py": "b0dc7592fcb8339860584261eacf55488447745ee34664781e989a740be4c647",
+    "scripts/continue_sun_modality_validation_v1.py": "461898d70f3859ca3e9473aeb963eaf300e483a21cfdd24d26cbdbb043acdf77",
+    "src/bpc_hybrid/llm_client.py": "a48213c69b4c2e244d8d4b0706d8cc22d09208f9b1632abe7d10a9988c8b2ccb",
+    "src/bpc_hybrid/h1_transport.py": "5e54a41fa48c01377295b2ac6422e27852a40dc4fbd5cb7df90d6651ddfe8be9",
+    "src/bpc_hybrid/llm_config.py": "6aa49e63f7b37f0997bdcedcb3074eca854c4f49b6320e8fb1925dbfb60bbbed",
+    "tests/test_run_modality_sentence_v1.py": "411cc72f42eb07cba2aebd65fb91196c81271304ed276f538f0e4d60fb5b8126"
+  },
+  "git_commit": "ef360cd4e9183f5f9d3384d711a61458c519e9b5",
+  "delta_macro_f1": -0.8166894794003653,
+  "correct_count": 12
+}

@@ -6777,3 +6777,21 @@
 - 仍存在 blocker：无
 - 备注：用户回复可以跑并继续，授权交付方案426次/35元/4并发/零重试/仅空闲时段。候选prompt、解析器、评价器及426请求字节均未修改。执行加载器只读train标签和test文本；不加载.env。仅新增发送前字节核验、显式句级输出适配、账本核验及报告。首次真实调用计划北京时间18时后；本事件为执行前零API检查点，测试仅具名假发送器及其直接协调器，非全量。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-11-10T12:42:57.662576+00:00 - SUN-MODALITY-FINAL-REVIEW-001：完成授权426次并冻结失败候选双取值结果
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=sun_modality_sentence_v1_completed；阶段=stage2；方法=LLM-SE explicit sentence modality；状态=成功（`succeeded`）
+- 实际运行命令：`python -X utf8 -u formal_experiment/scripts/run_sun_modality_sentence_v1.py execute --wait-for-off-peak ; python -X utf8 formal_experiment/scripts/run_sun_modality_sentence_v1.py report`
+- manifest：outputs/reports/sun_modality_sentence_v1_completed.json, outputs/reports/sun_modality_sentence_v1_execution_observations.json
+- 结果摘要：Exploratory all426 completed; cost CNY9.6668145; requests failed0 retries0; primary MacroF1=0.053098512132125575 correct12 no_prediction409 corrected0 regressed381 prohibition1/5/14; first_clause diagnostic MacroF1=0.7757406855275072 correct364 corrected3 regressed32 prohibition12/21/3. Candidate not promoted; historical22shot retained.
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：1 passed in 8.69s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`ef360cd4e9183f5f9d3384d711a61458c519e9b5`；相关未提交路径：110 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：已授权调用（`authorized_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：运行成功指426次收集/报告完成，不表示候选改善。408条句级证据坐标失败、1条合法null全计入分母；424条Rule Record完整校验失败独立披露。407条失败证据文本本身是原文子串；原始label与首clause有6条差异，仅做未评分观察。无事后放宽主取值，无新增候选，无Gold或历史修改，无全量测试；具名检查只回放冻结请求、账本、适配器、计费和所有保存指标。执行前提交ef360cd已推送，原文及完整prompt/响应留本地忽略。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

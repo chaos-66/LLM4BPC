@@ -14,7 +14,7 @@ Sun 指 Sun et al. (2024) 的本地独立重建，历史名称 Rules-Only 对应
 `sun_rule_only` / B0。以下活动说明按当前名称阅读；冻结报告、源码与历史
 事件保持原字节。本次纯命名调整不改变本页任务状态、结果或实验授权。
 
-## SUN-MODALITY-FINAL-REVIEW-001：执行已授权，等待空闲时段（2026-11-10）
+## SUN-MODALITY-FINAL-REVIEW-001：授权运行完成，候选不替换对照（2026-11-10）
 
 交付唯一 **LLM-SE 显式句级模态候选**，完整 prompt 和 426 个请求保留本地忽略目录
 `outputs/development/sun_modality_sentence_v1/`。版本化接口同时返回完整 Rule Record 和
@@ -24,10 +24,18 @@ sentence_modality；主分数读取后者，旧首 clause 取值只作同返回�
 
 用户已回复“可以跑”“继续”，授权本批 test 426 次、4 并发、零重试、仅空闲时段、
 硬上限 ¥35。沿用 deepseek-v4-pro 和采样设置；新授权绑定已交付候选预检，旧授权不复用。
-截至执行前检查点 API=0，等待北京时间 2026-11-10 18:00 开始；无全量测试。
-发送器 `scripts/run_sun_modality_sentence_v1.py` 独立于冻结的离线准备器。
+北京时间 20:25—20:38 完成 426/426；按返回用量费用 ¥9.6668145，零请求失败、
+零重试，最高4并发，全部空闲时段，未结算预留为零。请求/响应哈希、冻结源码和账本核验通过。
+冻结句级主 Macro-F1=0.0530985121（正确12；无预测409＝408证据坐标校验失败＋1 null）；
+对历史改对0、改错381，禁止 TP/FP/FN=1/5/14。
+同返回首clause诊断 Macro-F1=0.775741、正确364；对历史改对3、改错32，禁止12/21/3。
+408条有效取值差异均为句级无预测而首clause有预测；原始未通过校验的label有6条与首clause
+不同，仅作为输出观察，不另算放宽规则后的主分数。424条Rule Record校验未通过，独立披露。
+新增运行后检查仅回放已保存结果并核对全426分母/账本/费用；无全量测试。
 历史对照仍为 393/426、Macro-F1 0.8697879915324909、禁止 TP/FP/FN=12/7/3。
-下一步完成本批真实调用、全426主结果/首clause诊断、账本核验及结果检查点。
+本任务执行与报告完成，保留历史22-shot；不根据结果调整解析规则，不自动启动新候选。
+完整四类指标、混淆矩阵与差异见 [执行结果](../outputs/reports/sun_modality_sentence_v1_completed.md)，
+坐标失败观察及归因限制见 [执行复核](../outputs/reports/sun_modality_sentence_v1_execution_review.md)。
 详见 [候选报告](../outputs/reports/sun_modality_sentence_v1_review.md)、
 [预检](../outputs/reports/sun_modality_sentence_v1_preflight.json)。
 
