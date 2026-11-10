@@ -6795,3 +6795,17 @@
 - 仍存在 blocker：无
 - 备注：运行成功指426次收集/报告完成，不表示候选改善。408条句级证据坐标失败、1条合法null全计入分母；424条Rule Record完整校验失败独立披露。407条失败证据文本本身是原文子串；原始label与首clause有6条差异，仅做未评分观察。无事后放宽主取值，无新增候选，无Gold或历史修改，无全量测试；具名检查只回放冻结请求、账本、适配器、计费和所有保存指标。执行前提交ef360cd已推送，原文及完整prompt/响应留本地忽略。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-11-10T13:01:33.713326+00:00 - SUN-MODALITY-FINAL-REVIEW-001：按用户撤销要求移除候选并恢复原22-shot活动状态
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：2 passed in 0.94s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`d809571df0649fcd0f2ea67ab0f78307626d251d`；相关未提交路径：120 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：用户要求撤销。移除本任务12个新增活动文件（schema、句级坐标否决、prompt/示例、准备器、发送器、本批授权配置及候选测试）。configs/prompts/scripts/src/tests版本化树与任务前72fb1b4一致；8份历史报告、本地调用账本和无关用户文件哈希不变。Agent擅加坐标否决并在早期系统性失败后继续发完是实现和执行错误。已有426次及费用9.6668145元仅保留为历史事实，不重新计分；本次零API、无新候选、无全量测试。两项具名检查仅验证原22-shot构造与标签读取。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

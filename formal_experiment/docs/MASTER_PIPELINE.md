@@ -1,6 +1,6 @@
 # LLM4BPC 完整实验主 Pipeline
 
-**文档版本**：3.7.90
+**文档版本**：3.7.91
 **状态**：ACTIVE — 全项目研究与任务分解的唯一主线
 **最后更新**：2026-11-10
 **方法学主干**：Sun et al. (2024)（三部分方法主干）；Barrientos et al. (2026)（直接借鉴来源：LLM 结构化输出、验证、受控词汇、归一化与评估纪律）
@@ -17,30 +17,19 @@
 > `docs/PROJECT_AUDIT.md` 只记录实时进度；不要再创建新的日期版
 > `STATUS_*`、`HANDOFF_*` 或平行路线文档。
 
-## SUN-MODALITY-FINAL-REVIEW-001：单候选授权运行完成（2026-11-10）
+## SUN-MODALITY-FINAL-REVIEW-001：用户撤销，恢复原22-shot活动状态（2026-11-10）
 
-本轮交付 **LLM-SE 显式句级模态候选**。范围为版本化 `rule_record` +
-`sentence_modality` 输出、整合模态指导、22 条 train 示例中的四项 D→D 替换、
-独立句级主取值与同返回首 clause 诊断、全 426 请求的离线预检。
-DoD：完整本地 prompt/请求可复现，四条替换来源/原标签/哈希及 3,384 次隔离比对通过，
-当前 33 条错误的观察和 AI 解释分列，相关接口/分母检查通过并完成 Git 检查点。
+用户明确要求“撤销”。本候选已撤下：新增句级schema、坐标否决解析器、四项示例替换、
+提示词、准备器、发送器、本批授权配置及相关候选测试共12个活动文件删除。
+`configs/`、`prompts/`、`scripts/`、`src/`、`tests/` 的版本化内容恢复至本任务前
+`72fb1b4` 的状态。原22-shot保持393/426、Macro-F1=0.8697879915324909。
 
-离线候选已准备；历史 22-shot 对照仍为 393/426、Macro-F1 0.8697879915324909。
-2026-11-10 用户回复“可以跑”并要求“继续”，已授权交付方案：426 次、原模型与采样、
-4 并发、零重试、仅空闲时段、硬上限 ¥35。新授权绑定交付预检 SHA-256，
-`scripts/run_sun_modality_sentence_v1.py` 接入独立预算/身份/字节检查与双取值报告。
-已于北京时间 20:25—20:38 完成 426/426 次调用；按返回用量费用 ¥9.6668145，
-零请求失败、零重试、4 并发，全部处于空闲时段。账本/费用/请求与返回绑定核对通过。
-全 426 冻结主结果 Macro-F1=0.0530985121、正确 12、无预测 409（408 条证据坐标
-校验失败、1 条 null）；相对历史改对 0、改错 381，禁止 TP/FP/FN=1/5/14。
-同返回首 clause 诊断 Macro-F1=0.775741、正确 364、改对 3、改错 32，亦低于历史。
-运行 DoD 的全分母双取值、四类指标/混淆矩阵、费用及差异报告已生成并进入结果检查点；
-**执行完成，候选未达到替换对照的证据要求**。保留历史 22-shot，不改取值或追加候选。
-结果仍为 test-informed 探索性比较；无全量测试。
-见 [执行结果](../outputs/reports/sun_modality_sentence_v1_completed.md) 和
-[失败观察与解释边界](../outputs/reports/sun_modality_sentence_v1_execution_review.md)。
-交付范围与检查依据见 [候选报告](../outputs/reports/sun_modality_sentence_v1_review.md)，
-实时状态见 PROJECT_AUDIT；不因此恢复其他已结项候选或改变正式主表。
+撤销原因：Agent擅自将句级证据扩展为字符坐标，并把坐标不符与模态标签作废绑定；
+在早期发现系统性失败后仍继续发送，属于实现与执行判断错误。
+已发生的426次调用、¥9.6668145费用及旧报告保留为撤销候选的历史证据；
+0.053099不是独立模态分类能力结论，不作为活动候选成绩或正式论文结论。
+本次撤销零API，不重新计分、不启动新候选；仅核对原22-shot提示词和标签读取。
+详见 [撤销记录](../outputs/reports/sun_modality_sentence_v1_withdrawal.md)。
 
 ## 2026-10-14 修订 3.7.72：参数敏感性图展示改为 Sun，补充水平线解释
 
@@ -3336,6 +3325,7 @@ development-only；S3.7 formal Oracle not started；Gold Rule Records absent。
 
 ## 15. Pipeline 变更日志
 
+| 3.7.91 | 2026-11-10 | 用户撤销SUN-MODALITY-FINAL-REVIEW-001；撤下12个新增活动文件，恢复任务前22-shot活动代码/提示词，撤销本批发送入口。保留已发生调用、费用和历史报告，零新API。 | `outputs/reports/sun_modality_sentence_v1_withdrawal.md`、`sun_modality_sentence_v1_withdrawal.json` |
 | 3.7.90 | 2026-11-10 | SUN-MODALITY-FINAL-REVIEW-001 授权426次完成，费用9.6668145元，零重试/请求失败。冻结主F1=0.053099（408坐标失败、1 null），首clause诊断0.775741；如实保留失败结果，不替换历史22-shot。 | `outputs/reports/sun_modality_sentence_v1_completed.json`、`sun_modality_sentence_v1_execution_review.md` |
 | 3.7.89 | 2026-11-10 | SUN-MODALITY-FINAL-REVIEW-001 用户批准执行冻结候选；记录426次/35元/4并发/零重试/空闲时段授权并接入预算受限发送器和双取值报告。执行前无API、无全量测试。 | `configs/authorization/sun_modality_sentence_20261110_v1.json`、`outputs/reports/sun_modality_sentence_v1_execution_preflight.json` |
 | 3.7.88 | 2026-11-10 | SUN-MODALITY-FINAL-REVIEW-001：准备唯一显式句级候选、双取值适配与全 426 离线请求；四项 train 替换保持 22-shot，重新核对当前 33 条错误。零 API、预算待用户确认，不主张性能提高。 | `outputs/reports/sun_modality_sentence_v1_review.md`、`sun_modality_sentence_v1_preflight.json` |
