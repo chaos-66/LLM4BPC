@@ -1,0 +1,415 @@
+{
+  "suite_id": "SUN-MODALITY-E1-FULL-001",
+  "method": "direct_llm",
+  "scope": "test-informed historical paired comparison",
+  "stage": "Part 2",
+  "model": "deepseek-v4-pro",
+  "system_sha256": "748b3f10904f3280a599fcaabc93114f096f5152ba2f90db674c30681d732ac5",
+  "test_sha256": "2f67edad05e3a4d315d9ac65fc0ffd1d83dbaffd2d77a55916d6aa9a6919e871",
+  "max_new_calls": 421,
+  "new_calls": 421,
+  "reused_E1": 5,
+  "n": 426,
+  "retry_count": 0,
+  "new_started_utc": "2026-11-11T08:26:36.111116+00:00",
+  "new_finished_utc": "2026-11-11T08:41:28.006452+00:00",
+  "control_journal_sha256": "ab818d55f75717a9390761ec571c41369e59f1a78c0340982dd264d38f5c00bd",
+  "pilot_journal_sha256": "d56258f6a9ac636ab725c47355c5e81150bea3791b007e8313deac0ca0a842fa",
+  "new_journal_local_path": "outputs/development/sun_modality_es_minimal_v1/E1_full_20261111/events.jsonl",
+  "new_journal_sha256": "5c7a7b1892447bfd4814dc4777203cba44f2a8e6cdb1e7179567be2e093ec93d",
+  "preflight_sha256_lf": "ef59340a9e48a7851b6dbeac6f3f4def2fb9747d3be5586775c7945d701c9b80",
+  "settings": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "stream": false,
+    "max_tokens": 4096,
+    "thinking": {
+      "type": "disabled"
+    }
+  },
+  "new_call_estimated_cost_cny_at_project_rates": 18.915759,
+  "reused_E1_historical_cost_cny_at_project_rates": 0.2576052,
+  "new_usage": {
+    "prompt_tokens": 2885721,
+    "completion_tokens": 259594,
+    "prompt_cache_hit_tokens": 1616640,
+    "prompt_cache_miss_tokens": 1269081
+  },
+  "new_returned_models": {
+    "deepseek-v4-pro": 421
+  },
+  "parse_status_all": {
+    "ok": 425,
+    "no_clauses": 1
+  },
+  "control": {
+    "n": 426,
+    "evaluated_population": "all_test_samples",
+    "accuracy": 0.9225352112676056,
+    "macro_precision": 0.844109646676647,
+    "macro_recall": 0.903541938287701,
+    "macro_f1": 0.8697879915324909,
+    "per_class": {
+      "definition": {
+        "precision": 0.950920245398773,
+        "recall": 0.8757062146892656,
+        "f1": 0.911764705882353,
+        "support": 177,
+        "tp": 155,
+        "fp": 8,
+        "fn": 22,
+        "tn": 241
+      },
+      "obligation": {
+        "precision": 0.9494949494949495,
+        "recall": 0.9641025641025641,
+        "f1": 0.9567430025445293,
+        "support": 195,
+        "tp": 188,
+        "fp": 10,
+        "fn": 7,
+        "tn": 221
+      },
+      "permission": {
+        "precision": 0.8444444444444444,
+        "recall": 0.9743589743589743,
+        "f1": 0.9047619047619048,
+        "support": 39,
+        "tp": 38,
+        "fp": 7,
+        "fn": 1,
+        "tn": 380
+      },
+      "prohibition": {
+        "precision": 0.631578947368421,
+        "recall": 0.8,
+        "f1": 0.7058823529411765,
+        "support": 15,
+        "tp": 12,
+        "fp": 7,
+        "fn": 3,
+        "tn": 404
+      }
+    },
+    "confusion_matrix": {
+      "label_order": [
+        "definition",
+        "obligation",
+        "permission",
+        "prohibition"
+      ],
+      "column_order": [
+        "definition",
+        "obligation",
+        "permission",
+        "prohibition",
+        "<no_prediction>"
+      ],
+      "rows_gold_columns_predicted": [
+        [
+          155,
+          8,
+          7,
+          6,
+          1
+        ],
+        [
+          6,
+          188,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          38,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          12,
+          0
+        ]
+      ],
+      "as_dict": {
+        "definition": {
+          "definition": 155,
+          "obligation": 8,
+          "permission": 7,
+          "prohibition": 6,
+          "<no_prediction>": 1
+        },
+        "obligation": {
+          "definition": 6,
+          "obligation": 188,
+          "permission": 0,
+          "prohibition": 1,
+          "<no_prediction>": 0
+        },
+        "permission": {
+          "definition": 1,
+          "obligation": 0,
+          "permission": 38,
+          "prohibition": 0,
+          "<no_prediction>": 0
+        },
+        "prohibition": {
+          "definition": 1,
+          "obligation": 2,
+          "permission": 0,
+          "prohibition": 12,
+          "<no_prediction>": 0
+        }
+      }
+    },
+    "failures": 1,
+    "failure_rate": 0.002347417840375587,
+    "coverage": 0.9976525821596244,
+    "coverage_restricted_secondary": {
+      "n": 425,
+      "accuracy": 0.9247058823529412,
+      "macro_precision": 0.844109646676647,
+      "macro_recall": 0.9047858391608392,
+      "macro_f1": 0.8704603843834365,
+      "note": "secondary diagnostic only: excludes samples with no usable prediction; never the headline number"
+    }
+  },
+  "E1": {
+    "n": 426,
+    "evaluated_population": "all_test_samples",
+    "accuracy": 0.9295774647887324,
+    "macro_precision": 0.8471452453697222,
+    "macro_recall": 0.9026510212950891,
+    "macro_f1": 0.8713708337484511,
+    "per_class": {
+      "definition": {
+        "precision": 0.9518072289156626,
+        "recall": 0.8926553672316384,
+        "f1": 0.9212827988338192,
+        "support": 177,
+        "tp": 158,
+        "fp": 8,
+        "fn": 19,
+        "tn": 241
+      },
+      "obligation": {
+        "precision": 0.9642857142857143,
+        "recall": 0.9692307692307692,
+        "f1": 0.9667519181585678,
+        "support": 195,
+        "tp": 189,
+        "fp": 7,
+        "fn": 6,
+        "tn": 224
+      },
+      "permission": {
+        "precision": 0.8409090909090909,
+        "recall": 0.9487179487179487,
+        "f1": 0.891566265060241,
+        "support": 39,
+        "tp": 37,
+        "fp": 7,
+        "fn": 2,
+        "tn": 380
+      },
+      "prohibition": {
+        "precision": 0.631578947368421,
+        "recall": 0.8,
+        "f1": 0.7058823529411765,
+        "support": 15,
+        "tp": 12,
+        "fp": 7,
+        "fn": 3,
+        "tn": 404
+      }
+    },
+    "confusion_matrix": {
+      "label_order": [
+        "definition",
+        "obligation",
+        "permission",
+        "prohibition"
+      ],
+      "column_order": [
+        "definition",
+        "obligation",
+        "permission",
+        "prohibition",
+        "<no_prediction>"
+      ],
+      "rows_gold_columns_predicted": [
+        [
+          158,
+          5,
+          7,
+          6,
+          1
+        ],
+        [
+          5,
+          189,
+          0,
+          1,
+          0
+        ],
+        [
+          2,
+          0,
+          37,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          12,
+          0
+        ]
+      ],
+      "as_dict": {
+        "definition": {
+          "definition": 158,
+          "obligation": 5,
+          "permission": 7,
+          "prohibition": 6,
+          "<no_prediction>": 1
+        },
+        "obligation": {
+          "definition": 5,
+          "obligation": 189,
+          "permission": 0,
+          "prohibition": 1,
+          "<no_prediction>": 0
+        },
+        "permission": {
+          "definition": 2,
+          "obligation": 0,
+          "permission": 37,
+          "prohibition": 0,
+          "<no_prediction>": 0
+        },
+        "prohibition": {
+          "definition": 1,
+          "obligation": 2,
+          "permission": 0,
+          "prohibition": 12,
+          "<no_prediction>": 0
+        }
+      }
+    },
+    "failures": 1,
+    "failure_rate": 0.002347417840375587,
+    "coverage": 0.9976525821596244,
+    "coverage_restricted_secondary": {
+      "n": 425,
+      "accuracy": 0.9317647058823529,
+      "macro_precision": 0.8471452453697222,
+      "macro_recall": 0.9039189976689976,
+      "macro_f1": 0.8720442860867799,
+      "note": "secondary diagnostic only: excludes samples with no usable prediction; never the headline number"
+    }
+  },
+  "delta_macro_f1": 0.0015828422159602784,
+  "paired": {
+    "corrected": 4,
+    "regressed": 1,
+    "by_gold_class": {
+      "definition": {
+        "corrected": 3,
+        "regressed": 0,
+        "both_correct": 155,
+        "both_wrong": 19
+      },
+      "obligation": {
+        "corrected": 1,
+        "regressed": 0,
+        "both_correct": 188,
+        "both_wrong": 6
+      },
+      "permission": {
+        "corrected": 0,
+        "regressed": 1,
+        "both_correct": 37,
+        "both_wrong": 1
+      },
+      "prohibition": {
+        "corrected": 0,
+        "regressed": 0,
+        "both_correct": 12,
+        "both_wrong": 3
+      }
+    },
+    "mcnemar_accuracy_p_exact_two_sided": 0.375,
+    "test_scope": "paired accuracy, not macro-F1; exploratory unadjusted p-value"
+  },
+  "paired_bootstrap": {
+    "method": "paired nonparametric percentile bootstrap; all 426 including failures",
+    "B": 10000,
+    "seed": 20261103,
+    "delta": "E1 minus original 22-shot",
+    "ci95": {
+      "definition": [
+        -0.0024015009380864427,
+        0.02389023405972568
+      ],
+      "obligation": [
+        0.002349573617985601,
+        0.02107595170402088
+      ],
+      "permission": [
+        -0.04422604422604426,
+        0.0
+      ],
+      "prohibition": [
+        0.0,
+        0.0
+      ],
+      "macro_f1": [
+        -0.008861646587538297,
+        0.01001360667145601
+      ]
+    }
+  },
+  "changed_first_labels": [
+    {
+      "sample_id": "sun_modality_a18989112132a992",
+      "gold": "definition",
+      "original_22shot": "obligation",
+      "E1": "definition",
+      "reused_pilot": true
+    },
+    {
+      "sample_id": "sun_modality_fdc9485a3ed1b40f",
+      "gold": "definition",
+      "original_22shot": "obligation",
+      "E1": "definition",
+      "reused_pilot": false
+    },
+    {
+      "sample_id": "sun_modality_5c7ac6760deb9439",
+      "gold": "definition",
+      "original_22shot": "obligation",
+      "E1": "definition",
+      "reused_pilot": true
+    },
+    {
+      "sample_id": "sun_modality_f5037bcc56922965",
+      "gold": "obligation",
+      "original_22shot": "definition",
+      "E1": "obligation",
+      "reused_pilot": false
+    },
+    {
+      "sample_id": "sun_modality_e10c26a6829f26c0",
+      "gold": "permission",
+      "original_22shot": "permission",
+      "E1": "definition",
+      "reused_pilot": false
+    }
+  ]
+}

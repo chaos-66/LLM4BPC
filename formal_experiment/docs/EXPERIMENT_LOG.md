@@ -6855,3 +6855,21 @@
 - 仍存在 blocker：无
 - 备注：用户要求继续验证E1整体Macro-F1，沿用原官方终点与原22-shot首标签。准备时核验原426条请求、5条E1请求及原始返回哈希；排除S1和重复调用。上限421次、4路并发、不重试，完整评估包含空标签。此准备批次尚未发送。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-11-11T08:44:33.833329+00:00 - SUN-MODALITY-E1-FULL-001 完成整体Macro-F1实测与426条逐句配对核验
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=sun_modality_e1_full_v1；阶段=stage2；方法=direct_llm；状态=成功（`succeeded`）
+- 实际运行命令：`python -B -X utf8 formal_experiment/scripts/run_sun_modality_e1_full_v1.py execute，随后以 report 模式离线计分`
+- manifest：outputs/reports/sun_modality_e1_full_v1_completed.json
+- 结果摘要：E1判对396/426，Macro-F1为0.8713708337484511，原22-shot为0.8697879915324909；4条改对1条回归。禁止类12/7/3逐句不变。
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：3 passed in 0.33s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`41ad70d38a7306dde39a77f9e7f39bcb1a202f2f`；相关未提交路径：108 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：已授权调用（`authorized_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：复用5条E1，另外421次由同一官方模型完成，零重试，新增估算18.915759元。425条有效首标签、1条空规则，均进入分母。检查请求及原始返回哈希、独立复算四类计数，与24-shot在425/426条首标签相同，仅直接目标抵减句不同。测试集知情的小幅提升；差值配对bootstrap 95%区间跨零。无全量套件。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
