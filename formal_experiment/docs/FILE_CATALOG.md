@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
 **生成日期**：2026-11-11
-**收录文件**：4599 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**收录文件**：4602 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -3622,6 +3622,7 @@
 | `outputs/reports/sun_llm_fallback_method_gate_decision_dry_run.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/sun_llm_fallback_method_gate_decision_dry_run_v2.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/sun_llm_fallback_method_gate_decision_dry_run_v2.md` | 活动 | 说明、规范或研究文档 |
+| `outputs/reports/sun_modality_e1_full_v1_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/sun_modality_es_minimal_v1_pilot_20261111.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/sun_modality_es_minimal_v1_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/sun_modality_es_minimal_v1_review.md` | 活动 | 说明、规范或研究文档 |
@@ -4125,6 +4126,7 @@
 | `scripts/run_stage3_winter_cpu_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_stage3_winter_paper_rerun_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_sun_llm_fallback.py` | 活动 | Python 实现、脚本或测试 |
+| `scripts/run_sun_modality_e1_full_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_sun_rule_only.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_sun_stage3_development.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_v6_factorial_ablation_v1.py` | 活动 | Python 实现、脚本或测试 |
@@ -4524,6 +4526,7 @@
 | `tests/test_llm_client.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_llm_config.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_master_pipeline_and_layout.py` | 活动 | Python 实现、脚本或测试 |
+| `tests/test_modality_e1_full_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_modality_es_minimal_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_modular_prompt_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_multi_model_stage2.py` | 活动 | Python 实现、脚本或测试 |

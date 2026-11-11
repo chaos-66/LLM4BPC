@@ -6841,3 +6841,17 @@
 - 仍存在 blocker：无
 - 备注：用户明确确认向官方DeepSeek发送完整提示及德语测试原文。每条请求、原始返回、身份、用量与历史首标签逐项核对。实际用量按项目费率估算0.4505682元；原文与返回仅存本地。仅具名检查。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-11-11T08:24:36.716693+00:00 - SUN-MODALITY-E1-FULL-001 冻结421条新增请求，核实5条同版返回可复用
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：6 passed in 5.30s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`fa6d01f824cd31729730e0e9ac4af39d32fd2208`；相关未提交路径：109 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：用户要求继续验证E1整体Macro-F1，沿用原官方终点与原22-shot首标签。准备时核验原426条请求、5条E1请求及原始返回哈希；排除S1和重复调用。上限421次、4路并发、不重试，完整评估包含空标签。此准备批次尚未发送。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
