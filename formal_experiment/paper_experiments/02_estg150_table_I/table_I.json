@@ -1,0 +1,109 @@
+{
+  "dataset": "independently_reconstructed_estg_150_v1",
+  "n": 150,
+  "view": "fine_gold_span",
+  "methods": {
+    "LLM-SE": {
+      "modality_macro_f1": 0.7694506979014613,
+      "span_fields": {
+        "action": {
+          "extracted": 210,
+          "f1": 0.8799825746024831,
+          "ground_truth": 247,
+          "precision": 0.9523809523809523,
+          "recall": 0.8178137651821862
+        },
+        "actor": {
+          "extracted": 60,
+          "f1": 0.7222222222222223,
+          "ground_truth": 48,
+          "precision": 0.65,
+          "recall": 0.8125
+        },
+        "condition": {
+          "extracted": 135,
+          "f1": 0.7863159258779318,
+          "ground_truth": 214,
+          "precision": 0.9111111111111111,
+          "recall": 0.6915887850467289
+        },
+        "constraint": {
+          "extracted": 175,
+          "f1": 0.5481510327930033,
+          "ground_truth": 302,
+          "precision": 0.7257142857142858,
+          "recall": 0.44039735099337746
+        },
+        "exception": {
+          "extracted": 10,
+          "f1": 0.6956521739130435,
+          "ground_truth": 13,
+          "precision": 0.8,
+          "recall": 0.6153846153846154
+        }
+      },
+      "pooled_five_span_fields": {
+        "extracted": 590,
+        "f1": 0.7294372414251455,
+        "ground_truth": 824,
+        "matched_ground_truth": 530,
+        "matched_predictions": 497,
+        "misclassified": 93,
+        "missed": 294,
+        "precision": 0.8423728813559322,
+        "recall": 0.6432038834951457
+      }
+    },
+    "Sun": {
+      "modality_macro_f1": 0.712845542257307,
+      "span_fields": {
+        "action": {
+          "extracted": 244,
+          "f1": 0.8554026399759472,
+          "ground_truth": 247,
+          "precision": 0.8565573770491803,
+          "recall": 0.854251012145749
+        },
+        "actor": {
+          "extracted": 65,
+          "f1": 0.8038834951456311,
+          "ground_truth": 48,
+          "precision": 0.6923076923076923,
+          "recall": 0.9583333333333334
+        },
+        "condition": {
+          "extracted": 239,
+          "f1": 0.705423471848942,
+          "ground_truth": 214,
+          "precision": 0.6569037656903766,
+          "recall": 0.7616822429906542
+        },
+        "constraint": {
+          "extracted": 330,
+          "f1": 0.4913493402728364,
+          "ground_truth": 302,
+          "precision": 0.46060606060606063,
+          "recall": 0.5264900662251656
+        },
+        "exception": {
+          "extracted": 14,
+          "f1": 0.8148148148148148,
+          "ground_truth": 13,
+          "precision": 0.7857142857142857,
+          "recall": 0.8461538461538461
+        }
+      },
+      "pooled_five_span_fields": {
+        "extracted": 892,
+        "f1": 0.6778243012801525,
+        "ground_truth": 824,
+        "matched_ground_truth": 590,
+        "matched_predictions": 574,
+        "misclassified": 318,
+        "missed": 234,
+        "precision": 0.6434977578475336,
+        "recall": 0.7160194174757282
+      }
+    }
+  }
+}

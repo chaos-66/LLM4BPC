@@ -1,0 +1,230 @@
+{
+  "dataset": "sun_estg_modality_v1/test",
+  "denominator": 426,
+  "llm_readout": "first non-empty modality label in Rule Record order",
+  "methods": {
+    "Sun": {
+      "n": 426,
+      "correct": 397,
+      "macro_f1": 0.8772277372431857,
+      "per_class": {
+        "definition": {
+          "tp": 165,
+          "fp": 12,
+          "fn": 12,
+          "f1": 0.9322033898305084
+        },
+        "obligation": {
+          "tp": 188,
+          "fp": 6,
+          "fn": 7,
+          "f1": 0.9665809768637532
+        },
+        "permission": {
+          "tp": 32,
+          "fp": 8,
+          "fn": 7,
+          "f1": 0.810126582278481
+        },
+        "prohibition": {
+          "tp": 12,
+          "fp": 3,
+          "fn": 3,
+          "f1": 0.8
+        }
+      }
+    },
+    "original_22shot": {
+      "n": 426,
+      "correct": 393,
+      "macro_f1": 0.8697879915324909,
+      "per_class": {
+        "definition": {
+          "tp": 155,
+          "fp": 8,
+          "fn": 22,
+          "f1": 0.9117647058823529
+        },
+        "obligation": {
+          "tp": 188,
+          "fp": 10,
+          "fn": 7,
+          "f1": 0.9567430025445293
+        },
+        "permission": {
+          "tp": 38,
+          "fp": 7,
+          "fn": 1,
+          "f1": 0.9047619047619048
+        },
+        "prohibition": {
+          "tp": 12,
+          "fp": 7,
+          "fn": 3,
+          "f1": 0.7058823529411765
+        }
+      }
+    },
+    "prohibition_24shot": {
+      "n": 426,
+      "correct": 395,
+      "macro_f1": 0.869965746814473,
+      "per_class": {
+        "definition": {
+          "tp": 157,
+          "fp": 8,
+          "fn": 20,
+          "f1": 0.9181286549707602
+        },
+        "obligation": {
+          "tp": 189,
+          "fp": 8,
+          "fn": 6,
+          "f1": 0.9642857142857143
+        },
+        "permission": {
+          "tp": 37,
+          "fp": 7,
+          "fn": 2,
+          "f1": 0.891566265060241
+        },
+        "prohibition": {
+          "tp": 12,
+          "fp": 7,
+          "fn": 3,
+          "f1": 0.7058823529411765
+        }
+      }
+    },
+    "E1": {
+      "n": 426,
+      "correct": 396,
+      "macro_f1": 0.8713708337484511,
+      "per_class": {
+        "definition": {
+          "tp": 158,
+          "fp": 8,
+          "fn": 19,
+          "f1": 0.9212827988338192
+        },
+        "obligation": {
+          "tp": 189,
+          "fp": 7,
+          "fn": 6,
+          "f1": 0.9667519181585678
+        },
+        "permission": {
+          "tp": 37,
+          "fp": 7,
+          "fn": 2,
+          "f1": 0.891566265060241
+        },
+        "prohibition": {
+          "tp": 12,
+          "fp": 7,
+          "fn": 3,
+          "f1": 0.7058823529411765
+        }
+      }
+    }
+  },
+  "E1_vs_original_22shot": {
+    "paired": {
+      "corrected": 4,
+      "regressed": 1,
+      "by_gold_class": {
+        "definition": {
+          "corrected": 3,
+          "regressed": 0,
+          "both_correct": 155,
+          "both_wrong": 19
+        },
+        "obligation": {
+          "corrected": 1,
+          "regressed": 0,
+          "both_correct": 188,
+          "both_wrong": 6
+        },
+        "permission": {
+          "corrected": 0,
+          "regressed": 1,
+          "both_correct": 37,
+          "both_wrong": 1
+        },
+        "prohibition": {
+          "corrected": 0,
+          "regressed": 0,
+          "both_correct": 12,
+          "both_wrong": 3
+        }
+      },
+      "mcnemar_accuracy_p_exact_two_sided": 0.375,
+      "test_scope": "paired accuracy, not macro-F1; exploratory unadjusted p-value"
+    },
+    "paired_bootstrap": {
+      "method": "paired nonparametric percentile bootstrap; all 426 including failures",
+      "B": 10000,
+      "seed": 20261103,
+      "delta": "E1 minus original 22-shot",
+      "ci95": {
+        "definition": [
+          -0.0024015009380864427,
+          0.02389023405972568
+        ],
+        "obligation": [
+          0.002349573617985601,
+          0.02107595170402088
+        ],
+        "permission": [
+          -0.04422604422604426,
+          0.0
+        ],
+        "prohibition": [
+          0.0,
+          0.0
+        ],
+        "macro_f1": [
+          -0.008861646587538297,
+          0.01001360667145601
+        ]
+      }
+    },
+    "changed_first_labels": [
+      {
+        "sample_id": "sun_modality_a18989112132a992",
+        "gold": "definition",
+        "original_22shot": "obligation",
+        "E1": "definition",
+        "reused_pilot": true
+      },
+      {
+        "sample_id": "sun_modality_fdc9485a3ed1b40f",
+        "gold": "definition",
+        "original_22shot": "obligation",
+        "E1": "definition",
+        "reused_pilot": false
+      },
+      {
+        "sample_id": "sun_modality_5c7ac6760deb9439",
+        "gold": "definition",
+        "original_22shot": "obligation",
+        "E1": "definition",
+        "reused_pilot": true
+      },
+      {
+        "sample_id": "sun_modality_f5037bcc56922965",
+        "gold": "obligation",
+        "original_22shot": "definition",
+        "E1": "obligation",
+        "reused_pilot": false
+      },
+      {
+        "sample_id": "sun_modality_e10c26a6829f26c0",
+        "gold": "permission",
+        "original_22shot": "permission",
+        "E1": "definition",
+        "reused_pilot": false
+      }
+    ]
+  }
+}

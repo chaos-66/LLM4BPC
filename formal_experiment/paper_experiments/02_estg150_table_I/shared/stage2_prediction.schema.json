@@ -1,0 +1,329 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "stage2_prediction.schema.json",
+ "title": "Stage 2 canonical prediction record",
+ "description": "Method-agnostic canonical prediction schema for Stage 2 regulatory extraction. v1.0.0. Span offsets are character offsets into source_text (0-indexed start, exclusive end, Python slice semantics). review metadata is NOT in this schema; human-Gold review packs have a separate schema.",
+ "type": "object",
+ "required": [
+  "schema_version",
+  "sample_id",
+  "source_id",
+  "source_text",
+  "clauses",
+  "method",
+  "validation"
+ ],
+ "additionalProperties": false,
+ "properties": {
+  "schema_version": {
+   "const": "1.0.0"
+  },
+  "sample_id": {
+   "type": "string",
+   "minLength": 1
+  },
+  "source_id": {
+   "type": "string",
+   "minLength": 1
+  },
+  "source_text": {
+   "type": "string",
+   "minLength": 1
+  },
+  "clauses": {
+   "type": "array",
+   "minItems": 0,
+   "items": {
+    "$ref": "#/$defs/clause"
+   }
+  },
+  "method": {
+   "$ref": "#/$defs/method"
+  },
+  "validation": {
+   "$ref": "#/$defs/validation"
+  },
+  "unsupported_or_ambiguous": {
+   "type": "array",
+   "items": {
+    "$ref": "#/$defs/unsupportedField"
+   }
+  }
+ },
+ "$defs": {
+  "span": {
+   "description": "Raw evidence span. text MUST equal source_text[start:end].",
+   "type": "object",
+   "required": [
+    "text",
+    "start",
+    "end"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "text": {
+     "type": "string",
+     "minLength": 1
+    },
+    "start": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "end": {
+     "type": "integer",
+     "minimum": 1
+    }
+   }
+  },
+  "identifiedSpan": {
+   "description": "span with a stable id. id uniqueness is enforced by the cross-field validator, not by JSON Schema.",
+   "allOf": [
+    {
+     "$ref": "#/$defs/span"
+    },
+    {
+     "type": "object",
+     "required": [
+      "id"
+     ],
+     "additionalProperties": false,
+     "properties": {
+      "id": {
+       "type": "string",
+       "minLength": 1
+      }
+     }
+    }
+   ]
+  },
+  "supportedSpan": {
+   "description": "identifiedSpan + a separate normalized value. normalized is for downstream matching; it CANNOT modify the raw evidence text.",
+   "allOf": [
+    {
+     "$ref": "#/$defs/identifiedSpan"
+    }
+   ],
+   "type": "object",
+   "required": [
+    "normalized"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "normalized": {
+     "type": "string",
+     "minLength": 1
+    }
+   }
+  },
+  "modality": {
+   "type": "object",
+   "required": [
+    "label",
+    "evidence"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "label": {
+     "enum": [
+      "obligation",
+      "prohibition",
+      "permission",
+      "definition"
+     ]
+    },
+    "evidence": {
+     "type": "array",
+     "minItems": 0,
+     "items": {
+      "$ref": "#/$defs/span"
+     }
+    }
+   },
+   "description": "Empty evidence array is legal: empty means absent (the producer could not identify a surface trigger)."
+  },
+  "actorActionEdge": {
+   "type": "object",
+   "required": [
+    "actor_id",
+    "action_id"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "actor_id": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "action_id": {
+     "type": "string"
+    }
+   }
+  },
+  "orderRelation": {
+   "type": "object",
+   "required": [
+    "before_action_id",
+    "after_action_id",
+    "evidence"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "before_action_id": {
+     "type": "string"
+    },
+    "after_action_id": {
+     "type": "string"
+    },
+    "evidence": {
+     "type": "array",
+     "minItems": 0,
+     "items": {
+      "$ref": "#/$defs/span"
+     }
+    }
+   }
+  },
+  "clause": {
+   "type": "object",
+   "required": [
+    "clause_id",
+    "clause_span",
+    "modality",
+    "actors",
+    "actions",
+    "conditions",
+    "constraints",
+    "exceptions",
+    "actor_action_map",
+    "order_relations"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "clause_id": {
+     "type": "string",
+     "minLength": 1
+    },
+    "clause_span": {
+     "$ref": "#/$defs/span"
+    },
+    "modality": {
+     "$ref": "#/$defs/modality"
+    },
+    "actors": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/supportedSpan"
+     }
+    },
+    "actions": {
+     "type": "array",
+     "minItems": 0,
+     "items": {
+      "$ref": "#/$defs/supportedSpan"
+     }
+    },
+    "conditions": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/supportedSpan"
+     }
+    },
+    "constraints": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/supportedSpan"
+     }
+    },
+    "exceptions": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/supportedSpan"
+     }
+    },
+    "actor_action_map": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/actorActionEdge"
+     }
+    },
+    "order_relations": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/orderRelation"
+     }
+    }
+   }
+  },
+  "method": {
+   "type": "object",
+   "required": [
+    "name",
+    "schema_source"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "name": {
+     "enum": [
+      "sun_rule_only",
+      "sun_llm_fallback",
+      "direct_llm"
+     ]
+    },
+    "schema_source": {
+     "const": "stage2_prediction.schema.json@1.0.0"
+    }
+   }
+  },
+  "validation": {
+   "type": "object",
+   "required": [
+    "schema_valid",
+    "cross_field_valid",
+    "errors"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "schema_valid": {
+     "type": "boolean"
+    },
+    "cross_field_valid": {
+     "type": "boolean"
+    },
+    "errors": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "unsupportedField": {
+   "description": "Records fields the producer could not determine. Used for transparent reporting, not for skipping evidence spans.",
+   "type": "object",
+   "required": [
+    "field",
+    "reason"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "field": {
+     "enum": [
+      "modality",
+      "actor",
+      "action",
+      "condition",
+      "constraint",
+      "exception",
+      "actor_action_map",
+      "order_relations"
+     ]
+    },
+    "reason": {
+     "type": "string",
+     "minLength": 1
+    }
+   }
+  }
+ }
+}

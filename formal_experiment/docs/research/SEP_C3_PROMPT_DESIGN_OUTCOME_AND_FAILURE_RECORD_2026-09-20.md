@@ -273,7 +273,7 @@ original_execution_binding 内部）：
 | 协议与批次审计 | `outputs/reports/sep_c3_modular_full8_protocol_audit_v1.md` | 批次绑定声明 |
 | 配对误差归因 | `outputs/reports/sep_c3_modular_paired_error_attribution_v1.json` | 同批配对来源 |
 | 指令清单与重叠 Gate | `outputs/reports/sep_c3_modular_prompt_overlap_audit_v1.json` | 本记录 §2 瓶颈 1/2 的直接来源 |
-| 根因诊断 | `sep_c3_modular_ablation_root_cause_v1.md`（仓库根） | actor 过抽与组合冲突 |
+| 根因诊断 | [本机诊断稿](../../workspace_auxiliary/reports/sep_c3_modular_ablation_root_cause_v1.md) | actor 过抽与组合冲突 |
 | 八格发现与诊断 | `docs/research/SEP_C3_MODULAR_ABLATION_FINDINGS_AND_DIAGNOSIS_2026-09-17.md` | 论文安全措辞来源 |
 | targeted refinement | `outputs/reports/sep_c3_targeted_refinement_v1_phase2_summary.json` | R_A / R_C |
 | condition-preservation | `outputs/reports/sep_c3_condition_preservation_v1_final_report.md` | RC_KEEP 未保留 |

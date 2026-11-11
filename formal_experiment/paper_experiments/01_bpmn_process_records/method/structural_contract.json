@@ -1,0 +1,81 @@
+{
+  "schema_version": "stage1_structural_contract@1.0.0",
+  "task_ids": ["S1.1", "S1.2", "S1.4"],
+  "status": "verified_offline_structural_contract_pending_formal_bpmn_and_gold",
+  "process_record_schema": {
+    "path": "configs/schemas/process_record.schema.json",
+    "sha256": "9f2dc77a5386c472f9ea27fcf256a2e47195ed66e70ea5f9550caeccdf26bfef",
+    "schema_version": "process_record@1.0.0"
+  },
+  "parser": {
+    "method_name": "stage1_bpmn_xml_structural",
+    "parser_version": "stage1_bpmn_parser@1.0.0",
+    "input_extension": ".bpmn",
+    "canonical_namespace": "http://www.omg.org/spec/BPMN/20100524/MODEL",
+    "namespace_handling": "local_name_parse_namespace_recorded",
+    "process_selection": "exactly_one_process_per_input",
+    "subprocess_handling": "opaque_activity_no_internal_flattening",
+    "label_semantics": "preserve_original_labels_only",
+    "xml_doctype_or_entity_allowed": false,
+    "max_input_bytes": 20971520
+  },
+  "supported_elements": {
+    "activities": [
+      "task",
+      "userTask",
+      "serviceTask",
+      "sendTask",
+      "receiveTask",
+      "manualTask",
+      "businessRuleTask",
+      "scriptTask",
+      "subProcess",
+      "callActivity"
+    ],
+    "events": [
+      "startEvent",
+      "endEvent",
+      "intermediateCatchEvent",
+      "intermediateThrowEvent",
+      "boundaryEvent"
+    ],
+    "gateways": [
+      "exclusiveGateway",
+      "parallelGateway",
+      "inclusiveGateway",
+      "complexGateway",
+      "eventBasedGateway"
+    ],
+    "containers": ["participant", "lane", "sequenceFlow"]
+  },
+  "determinism": {
+    "record_arrays": "ascending_id",
+    "id_lists": "ascending_codepoint",
+    "edge_pairs": "ascending_source_ref_then_target_ref",
+    "xml_sibling_order_affects_output": false,
+    "duplicate_ids": "reject",
+    "unknown_flow_references": "reject",
+    "orphan_lane_references": "reject"
+  },
+  "control_flow": {
+    "direct_edges": "one_pair_per_sequence_flow_deduplicated",
+    "reachable_pairs": "directed_transitive_reachability_excluding_self_pairs",
+    "activity_order_relations": "reachable_activity_pairs_excluding_self_pairs",
+    "cycle_detection": "nodes_that_can_reach_themselves_via_one_or_more_edges",
+    "unreachable_nodes": "flow_nodes_not_reachable_from_any_start_event_including_start_events_as_reachable",
+    "branching_gateway": "gateway_outdegree_greater_than_one",
+    "parallel_split": "parallelGateway_outdegree_greater_than_one",
+    "parallel_join": "parallelGateway_indegree_greater_than_one"
+  },
+  "safety": {
+    "fixture_scope": "synthetic_only",
+    "formal_bpmn_read": false,
+    "human_gold_read_or_modified": false,
+    "llm_api_called": false,
+    "network_called": false,
+    "performance_evaluation": false,
+    "formal_process_records_written": false,
+    "no_overwrite": true
+  },
+  "claim_boundary": "S1.1/S1.2/S1.4 freeze and verify a canonical Process Record schema, deterministic BPMN structural parsing, lane/pool binding, direct flow, reachability, activity order, branch/parallel classification, cycle detection, and unreachable-node accounting on synthetic BPMN only. This is not label-semantic evaluation, human Gold, formal BPMN evaluation, or Stage 1 performance evidence."
+}

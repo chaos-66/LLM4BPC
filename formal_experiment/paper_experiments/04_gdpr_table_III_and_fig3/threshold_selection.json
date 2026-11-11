@@ -1,0 +1,46 @@
+{
+  "scope": "original development calibration before the Figure 3 formula replay",
+  "grid": {
+    "gamma": [
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8
+    ],
+    "theta": [
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8
+    ]
+  },
+  "objective": "mean_of_sun_and_ours_development_macro_f1",
+  "tie_breakers": [
+    "higher_combined_dev_objective",
+    "higher_min_method_macro_f1",
+    "lower_mean_unknown_rate",
+    "higher_mean_overall_precision",
+    "larger_gamma_plus_theta"
+  ],
+  "selected": {
+    "backend": "sentence_transformers_all_mpnet_base_v2",
+    "gamma": 0.55,
+    "theta": 0.45,
+    "tau": 0.8,
+    "objective": 0.4906004331482082
+  },
+  "winter": {
+    "gamma": 0.4,
+    "delta": 0.8
+  }
+}

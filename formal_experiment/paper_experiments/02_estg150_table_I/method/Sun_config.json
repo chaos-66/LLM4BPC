@@ -1,0 +1,142 @@
+{
+ "schema_version": "estg150_b0_enhanced_development@1.0.0",
+ "task_id": "S2.7-B0-ENHANCED-DEV",
+ "run_id": "s27_estg150_b0_enhanced_v10a",
+ "status": "preregistered_development_evaluation",
+ "dataset_id": "independently_reconstructed_estg_150_v1",
+ "claim_scope": "development",
+ "inputs": {
+  "human_correction_layer_e": {
+   "path": "data/development/human_review/estg_150_human_correction_v1.json",
+   "sha256": "7fd55f98a7dd6aeef58a93be825465c767f00feeab84c6d4215afc434a135b1c"
+  },
+  "membership_hashes": {
+   "path": "data/development/estg/estg_150_membership_hashes.json",
+   "sha256": "0f9065523a57900b22a8a04ae9109d37c72abbe514f3cde60bcd7652cfa1417b"
+  },
+  "annotation_freeze_receipt": {
+   "path": "outputs/reports/s22_estg150_human_annotation_freeze_v1.manifest.json",
+   "sha256": "aa316ed71751192cada9c3077ab1ebbba76081b20d102e9873c66ac315146961"
+  },
+  "independence_audit": {
+   "path": "outputs/development/estg150_independence_audit_v1/estg_150_independence_audit_v1.jsonl",
+   "sha256": "d32a60727e0470c94a8ceeb8f5a0703af68903c5e92b997ffee094d7d6fccc6a"
+  }
+ },
+ "method": {
+  "method_id": "b0_enhanced_v10a",
+  "paper_faithful_b0": false,
+  "s2_6_config": {
+   "path": "configs/models/sun_b0_s26_candidate_B_v1.json",
+   "sha256": "34ae74f8ef2cabde6404ce6cdd6e0498cb3b2d7603651e67ade18d9af3d5f126"
+  },
+  "classifier_input": "German sentence/clause units aligned to planned English clause units",
+  "classifier_label_mapping": "definition-first EN markers; classifier fallback when no marker",
+  "phrase_input": "approved_text_en",
+  "phrase_extractor": "CoreNLP 4.5.10 + v3 patterns + lexicon-v2 markers + dep resolvers",
+  "clause_segmentation": "v3-stable merge + conservative multi-modal split",
+  "canonical_mapping": "build_canonical_record_enhanced multi-span fields",
+  "canonical_method_name": "sun_rule_only",
+  "notes": "v5 hybrid after v4 under-segmentation regression",
+  "classifier": {
+   "binding": "configs/models/sun_b0_s26_candidate_B_v1.json",
+   "candidate_key": "B_invsqrt_weighted_ce",
+   "candidate_run_id": "s24_candidate_B_invsqrt_weighted_seed20260717_v1",
+   "parent_locked_run_id": "s24_legal_bert_textcnn_seed20260717_v1"
+  },
+  "lexicon": {
+   "id": "public_marker_lexicon_en_v2",
+   "manifest": "resources/lexicon/public_marker_lexicon_en_v2.manifest.json",
+   "manifest_sha256": "eddc8179de33580ca08e6bf86ceb6a0caf3a9546f82a599c3eeedfecfeaa3dda",
+   "category_files": {
+    "actor": {
+     "path": "resources/lexicon/actor_markers_en_v2.json",
+     "sha256": "43e404d2a69c091e6b07ee2a474ab4f8bb3021403fc481ca2500952a6a6d8378",
+     "entry_count": 50
+    },
+    "condition": {
+     "path": "resources/lexicon/condition_markers_en_v2.json",
+     "sha256": "588fe22f7e9d4e22f742447ebbc8756d784d102c3d62e7d2c46bd22687379e2a",
+     "entry_count": 34
+    },
+    "constraint": {
+     "path": "resources/lexicon/constraint_markers_en_v2.json",
+     "sha256": "764a4b801fc950bd3e5f382767fc733c6d8c95503ab07dd9dfa4ddfdba3c00e1",
+     "entry_count": 45
+    },
+    "exception": {
+     "path": "resources/lexicon/exception_markers_en_v2.json",
+     "sha256": "ba6de9a1701e368566ee46d58678ef73bd7730d93ec342620d34469cc9ce3d6e",
+     "entry_count": 16
+    },
+    "modality": {
+     "path": "resources/lexicon/modality_markers_en_v2.json",
+     "sha256": "cb6fae1292e3601b0bf10ca21459e37f63957a1e34f58d8155bc7bee74b69095",
+     "entry_count": 29
+    }
+   },
+   "runtime_loaded": true
+  },
+  "tsurgeon_enabled": false,
+  "tsurgeon_note": "Honest non-implementation: operations empty; Multi bridge collect-only; SafeV2.java is comment marker only",
+  "actor_action_policy": "ownership_evidence_only",
+  "method_variant": "b0_enhanced_v10a",
+  "profile_id": "v10-A_scope_tregex_recall_recovery",
+  "preregistration": {
+   "path": "configs/models/estg150_b0_v10_preregistration_v2.json",
+   "sha256": "9b074dd927bdba40462126ef2d4f909fdf6b85fcaeec70d502ed4ef196bfa333"
+  },
+  "active_registry": {
+   "path": "configs/models/estg150_b0_active_registry_v3.json",
+   "sha256": "cc89d4ad730ea6ff48d7c66c355feb0da30f47eb98b9f4500043ea679e69ed97"
+  }
+ },
+ "evaluator": {
+  "path": "configs/stage2_evaluator_s210_v3.json",
+  "sha256": "28ce332564c5d10da08dea515aefe31cc2aacd91b6c6877aa1bfebe44f39ae7f",
+  "tracks": [
+   "all_150_sentence_only_english",
+   "independent_82_sentence_only_english_sensitivity",
+   "sun_table8_any_overlap_diagnostic"
+  ]
+ },
+ "output": {
+  "directory": "outputs/development/s27_estg150_b0_enhanced_v10a",
+  "no_overwrite": true,
+  "persist_row_level_predictions": true,
+  "persist_canonical_gold_copy": false
+ },
+ "route_boundaries": {
+  "formal_gold_published": false,
+  "formal_performance_result": false,
+  "context_sidecar_used": false,
+  "german_to_english_fidelity_human_verified": false,
+  "same_sentence_only_approved_english_phrase_input_for_future_b0_h1_d1": true,
+  "open_issue_ids": [
+   "RWI-0001",
+   "RWI-0007"
+  ],
+  "interpretation": "Development evidence for method-defect repairs on B0. Not formal Gold publication. Tracks remain sentence-only English with independent-82 sensitivity."
+ },
+ "safety": {
+  "llm_api_called": false,
+  "network_allowed": false,
+  "human_decisions_modified": false,
+  "data_gold_written": false,
+  "data_input_written": false,
+  "formal_predictions_or_results_written": false
+ },
+ "input_binding_full": {
+  "layer_e": "7fd55f98a7dd6aeef58a93be825465c767f00feeab84c6d4215afc434a135b1c",
+  "membership": "0f9065523a57900b22a8a04ae9109d37c72abbe514f3cde60bcd7652cfa1417b",
+  "freeze_receipt": "aa316ed71751192cada9c3077ab1ebbba76081b20d102e9873c66ac315146961",
+  "evaluator": "28ce332564c5d10da08dea515aefe31cc2aacd91b6c6877aa1bfebe44f39ae7f",
+  "s26": "34ae74f8ef2cabde6404ce6cdd6e0498cb3b2d7603651e67ade18d9af3d5f126",
+  "checkpoint": "c78cd18baaeaabf5414a44785140b02f6e6bb8fb291ef4c0021179bbfab4c9d1",
+  "lexicon_manifest": "3f7e6108c1e66de37377abc2e9b9f4d0344ff2d1eca20b49ebf90e38aff7b462",
+  "preregistration": "22ea52d6640f0f74b22bf97d2cb27caca0a61406beef391f836449648d44cf91",
+  "active_registry": "8c8395e020b0bfe09750202dbf32c1291be55710fac7ff7ead73e45dff8ec3ad",
+  "v9_module": "075da06d7c455d3abc4fdaef70eb6dca23cc4cf12d198adb7609aced8c20c9a7",
+  "v8_status_correction": "363fdc2808660657f9c0ebfe5fc6493eeb31972ad1ffd20a7435c4c6fce8eabd"
+ }
+}

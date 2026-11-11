@@ -1,0 +1,141 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "schema_version": "g04_evaluation_views_contract@2.0.0",
+  "contract_id": "g04_evaluation_views_contract_v2",
+  "created": "2026-10-27",
+  "supersedes": {
+    "contract_id": "g04_evaluation_views_contract_v1",
+    "path": "configs/evaluation/g04_evaluation_views_contract_v1.json",
+    "effect": "v1 stays valid and authoritative for every result it already produced (the historical coarse sentence-level Stage 2 numbers). v2 changes only WHICH view is the paper's formal main report: the coarse view moves to the historical/diagnostic role and the fine (original Gold span) view becomes the formal main report. v2 does not redefine the coarse view, does not delete it, and does not rewrite any historical artifact."
+  },
+  "purpose": "Versioned, machine-verifiable evaluation-views contract for the formal benchmark. Fixes which Gold view feeds which metric family, forbids cross-view mixing, and separates modality-label metrics from five-field span metrics. v2 additionally fixes the reference-side unit of the span metric: the reference spans are the original annotated Gold spans, never a per-field envelope.",
+  "primary_view": "fine_gold_span",
+  "views": {
+    "fine_gold_span": {
+      "role": "formal main report (user decision 2026-10-27): clause-level ORIGINAL Gold spans, five span-bearing fields + separate four-class modality-label metrics",
+      "transform": {
+        "name": "identity_published_gold_spans",
+        "input": "data/gold/stage2/estg150_formal_gold_v1.json as published",
+        "rule": "no aggregation of any kind on the reference side: every annotated Gold span in every clause is used as its own reference span; a field with several annotated spans keeps all of them as separate reference spans; a field with no annotated span stays absent (zero reference spans, never a fabricated span)",
+        "modality": "modality is consumed as a plain four-class label; no modality evidence span is synthesized, zeroed or aggregated",
+        "prediction_side": "predictions keep their own original validated spans; the prediction side is never merged, clipped or re-aligned to the reference side"
+      },
+      "evaluator": "sun_table8_literal_overlap_v2 (sun_literal_overlap_evaluation@2.0.0)",
+      "main_report_authorized": true,
+      "main_report_authorized_at": "2026-10-27"
+    },
+    "coarse_sentence_level": {
+      "role": "historical / diagnostic only (superseded 2026-10-27 as the paper main report): sentence-level coarse FIVE span-bearing fields + separate four-class modality-label metrics; retained unchanged so every coarse result stays reproducible and readable",
+      "superseded_by": "fine_gold_span",
+      "main_report_authorized": false,
+      "transform": {
+        "name": "formal_sentence_level_coarse_view",
+        "input": "data/gold/stage2/estg150_formal_gold_v1.json (published formal Gold)",
+        "rule": "one synthetic clause per sentence over [0, len(approved_text_en)); per field one span [min(start), max(end)) over all annotated spans in the sentence; absent fields stay absent; text = approved_text_en slice; modality label = first non-empty clause modality string; modality evidence = merged clause spans (published Gold does not carry local modality evidence spans)",
+        "normalized": "spans carry normalized = ' '.join(text.casefold().split()) for non-modality fields (deterministic derivation, not copied from any development file)",
+        "historical_semantic_sha256": "6e19cf3c684a26aa9e9fdc9f76c3529b5a4232aecb085fad4c206ceb177bcb26",
+        "consistency_proof_required": "derived view must hash- and record-level match the historical sentence-level coarse gold (2026-08-07 user-confirmed main view); otherwise primary formal metrics MUST NOT be published and the exact diff must be reported"
+      },
+      "evaluator": "sun_table8_literal_overlap_v2 (sun_literal_overlap_evaluation@2.0.0)",
+      "consistency_status_2026_08_10": {
+        "semantic_hash_matches_historical": false,
+        "record_level_identical": false,
+        "diff_fields": {
+          "modality": 147
+        },
+        "reason": "published formal Gold stores modality as a plain string; the local modality evidence spans of the historical coarse gold (Layer E modality.span) are not reproducible from it. All other fields are identical.",
+        "consequence": "the historical six-field coarse aggregate (incl. modality evidence-span numbers not reproducible from the published Gold) is development provenance only; the derived coarse five-field view remains a readable diagnostic view but is NOT the paper's formal main report"
+      },
+      "retention": "MUST NOT be deleted, redefined, or removed from the code path; historical experiments and diagnostics keep reading it"
+    },
+    "fine_gold_diagnostic_legacy_alias": {
+      "role": "compatibility alias for the pre-2026-10-27 label 'fine_gold' (secondary/diagnostic); it denotes exactly the same Gold view as 'fine_gold_span'",
+      "alias_of": "fine_gold_span",
+      "main_report_authorized": false
+    }
+  },
+  "defect_fixed_2026_10_27": {
+    "summary": "Until 2026-10-27 the paper's Stage 2 main report evaluated the coarse Gold view, in which every semantic field of a sentence was replaced by the envelope [min(start), max(end)) of all its annotated spans, while predictions were scored unmerged. An unannotated prediction lying between two annotated spans of the same field therefore earned match credit although it overlapped no annotated Gold span.",
+    "reference_span_count_coarse_vs_original": {
+      "original_gold_spans": 824,
+      "coarse_envelopes": 459,
+      "samples_affected": 103,
+      "sample_total": 150
+    },
+    "envelope_only_credit": {
+      "sun_rule_only": 49,
+      "llm_se": 16,
+      "definition": "prediction spans that were counted as matched only because of the envelope merge, i.e. matched under the coarse view and unmatched under the original Gold spans"
+    },
+    "decision": "keep the existing overlap-based match rule unchanged and remove the Gold-side envelope merge; do NOT switch metric family",
+    "explicitly_rejected": [
+      "exact match",
+      "token-level F1",
+      "IoU thresholds",
+      "maximum bipartite / one-to-one assignment",
+      "any other metric swap"
+    ]
+  },
+  "rules": {
+    "no_cross_view_mixing": true,
+    "modality_label_metrics_reported_separately": true,
+    "modality_evidence_span_metrics": "unavailable from the published formal Gold (modality published as plain string; Layer E local evidence spans are adjudication content not carried by the decision-only Gold); reported as unavailable with reason, never silently zeroed",
+    "five_field_span_metrics": "fixed Sun literal-overlap contract (independent_same_field_any_nonempty_character_span_intersection)",
+    "match_rule": "independent_same_field_any_nonempty_character_span_intersection",
+    "match_semantics": {
+      "same_sample_id_required": true,
+      "same_element_type_required": true,
+      "coordinate_convention": "zero-based character offsets into approved_text_en, half-open interval [start, end)",
+      "positive_overlap": "non-empty character intersection; touching endpoints ([0,5) vs [5,10)) do NOT overlap",
+      "assignment": "none; matching is independent in both directions and is NOT a one-to-one assignment",
+      "precision": "matched predictions / extracted predictions",
+      "recall": "covered Gold spans / reference Gold spans",
+      "precision_recall_count_note": "the prediction-side match count and the reference-side coverage count are two different denominators and MUST NOT be presented as a single shared TP count"
+    },
+    "overall_metric": {
+      "id": "pooled_five_span_fields",
+      "aggregation": "micro pooling of the evaluator's own counters over actor/action/condition/constraint/exception",
+      "excluded": "modality (label macro-F1 only)"
+    },
+    "modality_metric": {
+      "id": "modality_label_macro_f1",
+      "classes": ["obligation", "permission", "prohibition", "definition"],
+      "folded_into_overall": false
+    },
+    "rounding": {
+      "stored": "full precision (no rounding inside any artifact)",
+      "paper_display": "three decimals for per-element and overall Stage 2 F1; four decimals for the Table II factorial cells"
+    },
+    "diagnostic_only": [
+      "strict_exact",
+      "token_overlap",
+      "clause_aligned_hungarian_iou",
+      "actor_action_edges"
+    ],
+    "claim_scopes": {
+      "formal": "all three method arms (sun_rule_only / direct_llm / sun_llm_fallback) carry claim_scope=formal since the 2026-08-11 user authorization (zero-API snapshot publications)",
+      "candidate": "no longer active for the formal arms; historical candidate re-evaluations remain provenance"
+    }
+  },
+  "outputs": {
+    "table1_report_fine_gold_span": "outputs/reports/stage2_table1_paper_final_v2.json",
+    "table2_report_fine_gold_span": "outputs/reports/stage2_table2_prompt_ablation_paper_final_v3.json",
+    "frozen_capsule": "outputs/evidence/g04_fine_gold_span_formal_results_v2/manifest.json",
+    "coarse_view_file": "outputs/evidence/g04_formal_coarse_view_v1/coarse_view_derived.json",
+    "coarse_view_report": "outputs/evidence/g04_formal_coarse_view_v1/manifest.json",
+    "historical_coarse_table1": "outputs/reports/stage2_table1_paper_final_v1.json",
+    "historical_coarse_table2": "outputs/reports/stage2_table2_prompt_ablation_paper_final_v2.json"
+  },
+  "authorization": {
+    "authorized_by_user": true,
+    "authorized_at": "2026-10-27",
+    "decision": "formal Stage 2 main report = original Gold spans, five span-bearing fields with the unchanged non-one-to-one overlap rule + separate four-class modality-label metrics; the coarse sentence-level view becomes a historical/diagnostic view and is neither deleted nor rewritten. Table I and Table II are recomputed from the frozen predictions only; no LLM call, no Gold edit, no prompt change, no Stage 3 change.",
+    "constraints": [
+      "no Gold modification",
+      "no prediction regeneration",
+      "no fabricated modality evidence spans",
+      "historical coarse results and their generations configs preserved",
+      "a lower new score is reported as-is; no metric shopping"
+    ]
+  }
+}

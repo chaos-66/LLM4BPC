@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" id="Definitions" targetNamespace="urn:bpc:table3:r5:v1">
+  <collaboration id="Collaboration">
+    <participant id="Participant" name="Controller" processRef="Process" />
+  </collaboration>
+  <process id="Process" name="Controller" isExecutable="false">
+    <laneSet id="LaneSet">
+      <lane id="Lane_Actor" name="Controller">
+        <flowNodeRef>Start</flowNodeRef>
+        <flowNodeRef>Activity_0</flowNodeRef>
+        <flowNodeRef>Activity_2</flowNodeRef>
+        <flowNodeRef>End</flowNodeRef>
+      </lane>
+    </laneSet>
+    <startEvent id="Start" name="The data subject has a right to rectification without undue delay." />
+    <task id="Activity_0" name="Receive the rectification request" />
+    <task id="Activity_2" name="Confirm the rectification to the data subject" />
+    <endEvent id="End" />
+    <sequenceFlow id="Flow_0" sourceRef="Start" targetRef="Activity_0" />
+    <sequenceFlow id="Flow_1" sourceRef="Activity_0" targetRef="Activity_2" />
+    <sequenceFlow id="Flow_2" sourceRef="Activity_2" targetRef="End" />
+  </process>
+</definitions>

@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/bpc-hybrid/process_record.schema.json",
+  "title": "Canonical Stage 1 Process Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "process_id",
+    "source",
+    "method",
+    "pools",
+    "lanes",
+    "activities",
+    "events",
+    "gateways",
+    "sequence_flows",
+    "control_flow"
+  ],
+  "properties": {
+    "schema_version": {"const": "process_record@1.0.0"},
+    "process_id": {"$ref": "#/$defs/nonempty"},
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["input_id", "path", "sha256", "byte_size", "bpmn_namespace"],
+      "properties": {
+        "input_id": {"$ref": "#/$defs/nonempty"},
+        "path": {"$ref": "#/$defs/nonempty"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "byte_size": {"type": "integer", "minimum": 1},
+        "bpmn_namespace": {"type": "string"}
+      }
+    },
+    "method": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "parser_version", "label_semantics"],
+      "properties": {
+        "name": {"const": "stage1_bpmn_xml_structural"},
+        "parser_version": {"const": "stage1_bpmn_parser@1.0.0"},
+        "label_semantics": {"const": "preserve_original_labels_only"}
+      }
+    },
+    "pools": {"type": "array", "items": {"$ref": "#/$defs/pool"}},
+    "lanes": {"type": "array", "items": {"$ref": "#/$defs/lane"}},
+    "activities": {"type": "array", "items": {"$ref": "#/$defs/typedNode"}},
+    "events": {"type": "array", "items": {"$ref": "#/$defs/typedNode"}},
+    "gateways": {"type": "array", "items": {"$ref": "#/$defs/typedNode"}},
+    "sequence_flows": {"type": "array", "items": {"$ref": "#/$defs/flow"}},
+    "control_flow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "direct_edges",
+        "reachable_pairs",
+        "activity_order_relations",
+        "start_event_ids",
+        "end_event_ids",
+        "branching_gateway_ids",
+        "parallel_gateway_ids",
+        "parallel_split_gateway_ids",
+        "parallel_join_gateway_ids",
+        "cyclic_node_ids",
+        "cycle_detected",
+        "unreachable_node_ids"
+      ],
+      "properties": {
+        "direct_edges": {"type": "array", "items": {"$ref": "#/$defs/pair"}},
+        "reachable_pairs": {"type": "array", "items": {"$ref": "#/$defs/pair"}},
+        "activity_order_relations": {"type": "array", "items": {"$ref": "#/$defs/orderPair"}},
+        "start_event_ids": {"$ref": "#/$defs/idArray"},
+        "end_event_ids": {"$ref": "#/$defs/idArray"},
+        "branching_gateway_ids": {"$ref": "#/$defs/idArray"},
+        "parallel_gateway_ids": {"$ref": "#/$defs/idArray"},
+        "parallel_split_gateway_ids": {"$ref": "#/$defs/idArray"},
+        "parallel_join_gateway_ids": {"$ref": "#/$defs/idArray"},
+        "cyclic_node_ids": {"$ref": "#/$defs/idArray"},
+        "cycle_detected": {"type": "boolean"},
+        "unreachable_node_ids": {"$ref": "#/$defs/idArray"}
+      }
+    }
+  },
+  "$defs": {
+    "nonempty": {"type": "string", "minLength": 1},
+    "idArray": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/nonempty"},
+      "uniqueItems": true
+    },
+    "pool": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "process_ref"],
+      "properties": {
+        "id": {"$ref": "#/$defs/nonempty"},
+        "name": {"type": "string"},
+        "process_ref": {"$ref": "#/$defs/nonempty"}
+      }
+    },
+    "lane": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "parent_lane_id", "flow_node_refs"],
+      "properties": {
+        "id": {"$ref": "#/$defs/nonempty"},
+        "name": {"type": "string"},
+        "parent_lane_id": {"type": ["string", "null"], "minLength": 1},
+        "flow_node_refs": {"$ref": "#/$defs/idArray"}
+      }
+    },
+    "typedNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "type", "lane_ids"],
+      "properties": {
+        "id": {"$ref": "#/$defs/nonempty"},
+        "name": {"type": "string"},
+        "type": {"$ref": "#/$defs/nonempty"},
+        "lane_ids": {"$ref": "#/$defs/idArray"}
+      }
+    },
+    "flow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "source_ref", "target_ref", "condition_expression", "is_default"],
+      "properties": {
+        "id": {"$ref": "#/$defs/nonempty"},
+        "name": {"type": "string"},
+        "source_ref": {"$ref": "#/$defs/nonempty"},
+        "target_ref": {"$ref": "#/$defs/nonempty"},
+        "condition_expression": {"type": ["string", "null"]},
+        "is_default": {"type": "boolean"}
+      }
+    },
+    "pair": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_ref", "target_ref"],
+      "properties": {
+        "source_ref": {"$ref": "#/$defs/nonempty"},
+        "target_ref": {"$ref": "#/$defs/nonempty"}
+      }
+    },
+    "orderPair": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["before_activity_id", "after_activity_id", "relation"],
+      "properties": {
+        "before_activity_id": {"$ref": "#/$defs/nonempty"},
+        "after_activity_id": {"$ref": "#/$defs/nonempty"},
+        "relation": {"const": "reachable_before"}
+      }
+    }
+  }
+}

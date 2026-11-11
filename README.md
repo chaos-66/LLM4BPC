@@ -1,5 +1,8 @@
 # LLM4BPC workspace
 
+论文主实验文件集中在 [formal_experiment/paper_experiments/](formal_experiment/paper_experiments/)。
+按论文表号查数据、预测、代码和结果，见[主实验目录说明](formal_experiment/README.md#论文主实验)。
+
 The workspace is intentionally split into three areas:
 
 ```text

@@ -1,5 +1,27 @@
 # Formal Experiment
 
+## 论文主实验
+
+[paper_experiments/](paper_experiments/) 按《LLM-Based Semantic Extraction for Design-Time Business Process Compliance Checking》所附 PDF 的表 I、II、III 和图 3 整理。德语情态四分类作为补充实验单列。五个子目录存放实际实验文件，查看结果可直接从下表进入。
+
+| 实验 | 收录内容 | 首先打开 |
+|---|---|---|
+| 01 · BPMN 解析 | 115 个 BPMN、对应的 Process Record、解析器和记录 schema。流程样本以 `case_id` 对应表 III。 | [BPMN](paper_experiments/01_bpmn_process_records/bpmn/) · [Process Records](paper_experiments/01_bpmn_process_records/process_records.json) |
+| 02 · 表 I，EStG-150 语义抽取 | 150 条推理输入、正式 Gold、Sun 与 LLM-SE 的逐条预测、提示词、后处理和评分实现。五字段合并计算 Micro-F1，情态另算 Macro-F1。 | [表 I](paper_experiments/02_estg150_table_I/table_I.json) · [输入和 Gold](paper_experiments/02_estg150_table_I/shared/) |
+| 03 · 表 II，E/S/J 消融 | 8 份提示词，8 组各 150 条预测。共用 02 的 Gold 和原始 span 评分口径。每行保留样本 ID、有效性状态和预测记录。 | [表 II](paper_experiments/03_estg150_table_II_ablation/table_II.json) · [各组预测](paper_experiments/03_estg150_table_II_ablation/predictions/) |
+| 04 · 表 III 和图 3，GDPR 合规检查 | 33 条法规、两种抽取器的原始与转换后 Rule Record、开发集参考标签、三种方法在 201 个单元上的判定。图 3 附 9 组阈值的逐项预测、曲线数据和矢量图。 | [表 III](paper_experiments/04_gdpr_table_III_and_fig3/table_III.json) · [逐项判定](paper_experiments/04_gdpr_table_III_and_fig3/predictions_201.jsonl) · [图 3](paper_experiments/04_gdpr_table_III_and_fig3/fig3/fig3_sun_formula_replay.pdf) |
+| 05 · 德语情态四分类 | Sun 本地重建、原 22-shot、24-shot、E1 的 426 条全量结果及逐类 TP/FP/FN。S1 只有 3 条配对试测。 | [全量比较与 E1 变化](paper_experiments/05_german_modality_426/full_test_results.json) · [S1 的 3 条实际返回标签](paper_experiments/05_german_modality_426/S1_pilot.json) |
+
+表 I 固定对比与表 II 的 `111` 各用一份独立保存的 LLM-SE 输出，五字段 Micro-F1 分别为 0.7294 和 0.7280。原始文件映射与 SHA-256 见[表 I/II 冻结清单](outputs/evidence/g04_fine_gold_span_formal_results_v2/manifest.json)。表 II 打包时从逐条预测中取出 `sample_id`、`request_status` 和 `record`，去掉请求编号等运行字段。
+
+表 III 的 Sun 和 LLM-SE 使用 10 月 14 日修正事件对象范围后的结果，Winter 使用 10 月 12 日同一批 201 单元的预测。只在正负参考标签明确、顺序检查符合论文纳入范围的单元上计分。原始 9×9 选参可查[网格、目标及选中参数](paper_experiments/04_gdpr_table_III_and_fig3/threshold_selection.json)。保存的选参摘要没有 81 个点的逐点分数。图 3 的数据来自随后固定一轴的 9 组阈值，两条曲线共用中心点。[Sun/LLM-SE 结果来源（本机）](outputs/reports/sun_formula_replay_20261014/metrics_comparison.json) · [Winter 结果来源](outputs/reports/stage3_reproduction_repair_20261012_v2.json)
+
+德语四分类沿用 Rule Record 顺序中首个非空情态标签。E1 的 426 条含试测复用的 5 条和后续 421 条。S1 在直接目标上仍把引导语列为第一条定义，后续许可列第二，按预设条件停止。原始德语文本、逐句配对和含训练例句的 4 份完整提示词仅在本机 `paper_experiments/05_german_modality_426/local_only/`。逐类错误和个案解释见 [E1 实验收尾记录](outputs/reports/sun_modality_e1_full_v1_completed.md)。
+
+目录中的方法文件供对照实现；运行器继续从仓库原路径加载依赖、模型和冻结输入。实验日志在 `docs/`，历次运行在 `outputs/`，论文与汇报在 `paper/`。这次从仓库根目录移出的旧汇报、诊断稿、临时脚本和补丁日志保存在本机 `workspace_auxiliary/`。
+
+## 项目范围
+
 这是 `LLM4BPC` 唯一的活动实验目录。项目完整目标是重建并改进 Sun 方法的
 三个组成部分：Part 1 解析 BPMN 并生成 Process Record；Part 2 从合规需求生成
 Rule Record；Part 3 使用两种记录完成匹配与违规检查。Part 1 与 Part 2 是独立
