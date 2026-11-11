@@ -1,6 +1,6 @@
 # 项目实时状态（兼容文件名 PROJECT_AUDIT.md）
 
-**更新时间**：2026-11-11
+**更新时间**：2026-11-12
 **唯一活动目录**：`formal_experiment/`  
 **完整路线**：`docs/MASTER_PIPELINE.md`  
 **机器事实源**：`python formal_experiment/scripts/audit_project.py`（自动完整性检查）  
@@ -13,6 +13,12 @@ Part 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见主
 Sun 指 Sun et al. (2024) 的本地独立重建，历史名称 Rules-Only 对应
 `sun_rule_only` / B0。以下活动说明按当前名称阅读；冻结报告、源码与历史
 事件保持原字节。本次纯命名调整不改变本页任务状态、结果或实验授权。
+
+## 统一 E1 第 19 例后重跑论文实验（2026-11-12）
+
+已核对表 I 的两套结果、表 II 的 1,200 条历史原始返回、德语 426 条和 GDPR 图 3 的 6,210 个检查输出。两组消融对照的 300 个请求及响应通过指纹核对。正式重跑预计新增 EStG 900 次、GDPR 33 次和德语 426 次。当前为零付费调用，修订版成绩待测。
+
+[离线验证](../outputs/reports/paper_e1_r19_v1_offline_validation.json)
 
 ## SUN-MODALITY-E1-FULL-001 本轮德语情态四分类提示词调优已结项（2026-11-11）
 

@@ -6873,3 +6873,17 @@
 - 仍存在 blocker：无
 - 备注：复用5条E1，另外421次由同一官方模型完成，零重试，新增估算18.915759元。425条有效首标签、1条空规则，均进入分母。检查请求及原始返回哈希、独立复算四类计数，与24-shot在425/426条首标签相同，仅直接目标抵减句不同。测试集知情的小幅提升；差值配对bootstrap 95%区间跨零。无全量套件。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-11-11T17:28:12.284147+00:00 - Unified E1 shot-19 rerun preflight and historical scoring parity
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：4 passed in 5.05s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`b1c8ba0383dce660d28b9d56d5412a19b09f72ed`；相关未提交路径：111 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：1359 new calls planned, 300 exact historical controls. No revised scores or charges. Historic EStG 1200 raw responses, German 426 and GDPR nine operating points verified.
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

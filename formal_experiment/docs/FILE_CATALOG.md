@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
-**生成日期**：2026-11-11
-**收录文件**：4604 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**生成日期**：2026-11-12
+**收录文件**：4790 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -3125,6 +3125,8 @@
 | `outputs/reports/gold_conflict_audit_readonly_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/gold_conflict_audit_readonly_v1.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/llm4bpc_name_migration_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/paper_e1_r19_v1_offline_validation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/paper_e1_r19_v1_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/paper_experiment_completion_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s11_s14_stage1_structural_synthetic_v1.manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s13_stage1_label_semantics_synthetic_v1.manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
@@ -3682,6 +3684,190 @@
 | `paper/SIM_CASE_SECTION_v1.md` | 活动 | 说明、规范或研究文档 |
 | `paper/THESIS_DRAFT.md` | 活动 | 中文论文连续工作稿与结果占位 |
 
+## `paper_experiments`
+
+| 文件 | 状态 | 用途 |
+|---|---|---|
+| `paper_experiments/01_bpmn_process_records/bpmn/case_0164a880bf44.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_026d89f057e8.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_0697d9b84b86.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_0ca6ea35f87e.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_0f67bfdd277b.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_11233dd30223.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_156f3d39867e.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_18d0d72c49e8.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_19b2d6f1bfb0.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_1a2d6abc026a.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_1d6ccfc9b95c.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_1e5363aa87b5.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_1f817e0b0d37.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_1fafed22bfdd.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_1fd8d9be0c9d.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_203f2134c0ec.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_220918995d29.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_221218bba2d3.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_250418025567.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_25d20a4b486f.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_26761c804689.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_27553ad672b2.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_27a05191cde1.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_293adf4880a6.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_2a918b013dbb.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_2e0630dc5be5.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_2fbe69c72793.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_35ae84dddc65.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_36a5f51046f7.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_3af5fd62647b.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_3b01b9c36d0f.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_3db096abecec.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_436340192865.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_44ded3550ee5.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_47ac07c5ced4.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_4aec33c00dc8.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_4c59fee89687.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_50f498770ae9.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_5751d20f4ed7.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_591221684b9f.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_5b249b3a462b.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_5b5cc6e83173.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_5bcf29af32f6.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_6209f221b20b.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_648835a58615.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_64985e535fd0.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_64e83d36bba3.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_65628736fcec.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_661cbff65102.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_66774ccb1348.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_6711c5a0dad8.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_6cb0e57227f2.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_6d3b90db76ed.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_6f4087fc924f.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_6fda0f20b097.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_706168fa759f.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_72073c61be4c.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_7396f1ecbaf2.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_7c047344bd97.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_7dcc88ac3cf1.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_806f7830225a.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_81af7889b5bb.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_83e2662c1457.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_8447fd35edc7.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_8480429a9517.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_88a2fd3f66cf.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_89f6d9e7047b.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_8c729ed572f4.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_8d21f4b6fb98.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_9742238625a1.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_99b7bc6f1fc6.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_9c6fcd32f03c.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_a0f75080210f.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_a1712c670943.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_a2f445c641d1.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_a9fd75331508.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_aae318ffa9f8.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_b15419d68b21.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_b5a60700383d.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_b6bda7bca9ff.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_b72abd1e6b8b.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_b91fc088d4c5.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_ba895d210eaf.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_bb81d68dc7f5.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_c20eeebe67dd.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_c2c28cb239bc.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_c5b585c4439f.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_c962e006a37d.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_cecd14adb006.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_d1ab41696c03.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_d2f6fee80f4e.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_d391f7745e2d.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_d46c4dbbf7b8.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_d7a85c641eb0.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_d8029187c213.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_d824876f7bf8.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_dbe5d0716353.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_de1137fcd3ae.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_devsupp_s4t3_baseline.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_devsupp_s4t3_out_of_order.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_e1847c1c4ceb.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_e29a5ec0bbbc.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_e382dcb7708b.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_e44cf42b30f7.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_e85d2791c743.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_ec2a9cc66fae.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_f2558cf5f53d.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_f2e0ecd3abf8.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_f6dc7b084b03.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_f7bb207445df.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_f81de319913d.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_f88b4ccdc713.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_fb1fd0822200.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_fe8ab9bca28a.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/bpmn/case_ff937cc4c24e.bpmn` | 活动 | 流程模型或测试 fixture |
+| `paper_experiments/01_bpmn_process_records/method/process_record.schema.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/01_bpmn_process_records/method/role_surface.py` | 活动 | Python 实现、脚本或测试 |
+| `paper_experiments/01_bpmn_process_records/method/stage1_process.py` | 活动 | Python 实现、脚本或测试 |
+| `paper_experiments/01_bpmn_process_records/method/structural_contract.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/01_bpmn_process_records/process_records.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/02_estg150_table_I/method/d1_schema_adapter.py` | 活动 | Python 实现、脚本或测试 |
+| `paper_experiments/02_estg150_table_I/method/d1_span_canonicalizer.py` | 活动 | Python 实现、脚本或测试 |
+| `paper_experiments/02_estg150_table_I/method/formal_stage2_evaluation.py` | 活动 | Python 实现、脚本或测试 |
+| `paper_experiments/02_estg150_table_I/method/LLM-SE_prompt.md` | 活动 | 说明、规范或研究文档 |
+| `paper_experiments/02_estg150_table_I/method/sep_c3_primary_evaluation.py` | 活动 | Python 实现、脚本或测试 |
+| `paper_experiments/02_estg150_table_I/method/stage2_sun_literal_overlap.py` | 活动 | Python 实现、脚本或测试 |
+| `paper_experiments/02_estg150_table_I/method/Sun_config.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/02_estg150_table_I/predictions/LLM-SE.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/02_estg150_table_I/predictions/Sun.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/02_estg150_table_I/shared/g04_evaluation_views_contract_v2.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/02_estg150_table_I/shared/gold_150.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/02_estg150_table_I/shared/input_150.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/02_estg150_table_I/shared/stage2_prediction.schema.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/02_estg150_table_I/table_I.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/03_estg150_table_II_ablation/predictions/000.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/03_estg150_table_II_ablation/predictions/001.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/03_estg150_table_II_ablation/predictions/010.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/03_estg150_table_II_ablation/predictions/011.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/03_estg150_table_II_ablation/predictions/100.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/03_estg150_table_II_ablation/predictions/101.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/03_estg150_table_II_ablation/predictions/110.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/03_estg150_table_II_ablation/predictions/111.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/03_estg150_table_II_ablation/prompts/000.md` | 活动 | 说明、规范或研究文档 |
+| `paper_experiments/03_estg150_table_II_ablation/prompts/001.md` | 活动 | 说明、规范或研究文档 |
+| `paper_experiments/03_estg150_table_II_ablation/prompts/010.md` | 活动 | 说明、规范或研究文档 |
+| `paper_experiments/03_estg150_table_II_ablation/prompts/011.md` | 活动 | 说明、规范或研究文档 |
+| `paper_experiments/03_estg150_table_II_ablation/prompts/100.md` | 活动 | 说明、规范或研究文档 |
+| `paper_experiments/03_estg150_table_II_ablation/prompts/101.md` | 活动 | 说明、规范或研究文档 |
+| `paper_experiments/03_estg150_table_II_ablation/prompts/110.md` | 活动 | 说明、规范或研究文档 |
+| `paper_experiments/03_estg150_table_II_ablation/prompts/111.md` | 活动 | 说明、规范或研究文档 |
+| `paper_experiments/03_estg150_table_II_ablation/table_II.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/04_gdpr_table_III_and_fig3/development_reference.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/04_gdpr_table_III_and_fig3/fig3/fig3_sun_formula_replay.csv` | 活动 | 项目文件 |
+| `paper_experiments/04_gdpr_table_III_and_fig3/fig3/fig3_sun_formula_replay.pdf` | 活动 | 项目文件 |
+| `paper_experiments/04_gdpr_table_III_and_fig3/fig3/predictions_9x201.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/04_gdpr_table_III_and_fig3/method/action_order_projection_v2.py` | 活动 | Python 实现、脚本或测试 |
+| `paper_experiments/04_gdpr_table_III_and_fig3/method/checker_v2.py` | 活动 | Python 实现、脚本或测试 |
+| `paper_experiments/04_gdpr_table_III_and_fig3/method/evaluation_v2.py` | 活动 | Python 实现、脚本或测试 |
+| `paper_experiments/04_gdpr_table_III_and_fig3/method/local_mpnet_backend_v1.py` | 活动 | Python 实现、脚本或测试 |
+| `paper_experiments/04_gdpr_table_III_and_fig3/method/rule_order_adapter_v3.py` | 活动 | Python 实现、脚本或测试 |
+| `paper_experiments/04_gdpr_table_III_and_fig3/method/rule_record_converter_v2.py` | 活动 | Python 实现、脚本或测试 |
+| `paper_experiments/04_gdpr_table_III_and_fig3/method/semantic_matcher_v2.py` | 活动 | Python 实现、脚本或测试 |
+| `paper_experiments/04_gdpr_table_III_and_fig3/method/sun_model.py` | 活动 | Python 实现、脚本或测试 |
+| `paper_experiments/04_gdpr_table_III_and_fig3/method/sun_scorer.py` | 活动 | Python 实现、脚本或测试 |
+| `paper_experiments/04_gdpr_table_III_and_fig3/method/winter/global_roles.py` | 活动 | Python 实现、脚本或测试 |
+| `paper_experiments/04_gdpr_table_III_and_fig3/method/winter/winter_clause.py` | 活动 | Python 实现、脚本或测试 |
+| `paper_experiments/04_gdpr_table_III_and_fig3/method/winter/winter_model.py` | 活动 | Python 实现、脚本或测试 |
+| `paper_experiments/04_gdpr_table_III_and_fig3/method/winter/winter_pair.py` | 活动 | Python 实现、脚本或测试 |
+| `paper_experiments/04_gdpr_table_III_and_fig3/method/winter/winter_similarity.py` | 活动 | Python 实现、脚本或测试 |
+| `paper_experiments/04_gdpr_table_III_and_fig3/native_CR_records/LLM-SE.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/04_gdpr_table_III_and_fig3/native_CR_records/Sun.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/04_gdpr_table_III_and_fig3/predictions_201.jsonl` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/04_gdpr_table_III_and_fig3/requirements_33.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/04_gdpr_table_III_and_fig3/rule_records.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/04_gdpr_table_III_and_fig3/table_III.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/04_gdpr_table_III_and_fig3/threshold_selection.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/05_german_modality_426/full_test_results.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/05_german_modality_426/prompt_variants.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/05_german_modality_426/S1_pilot.json` | 活动 | 机器可读配置、数据、事件或产物 |
+
 ## `prompts`
 
 | 文件 | 状态 | 用途 |
@@ -4003,6 +4189,7 @@
 | `scripts/migrate_project_names.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/modality_classifier_alignment_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/postprocess_sep_c3_definition_targeted_refinement_v1.py` | 活动 | Python 实现、脚本或测试 |
+| `scripts/prepare_paper_e1_r19_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/prepare_sep_c3_condition_preservation_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/prepare_sep_c3_definition_full150_confirmation_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/prepare_sep_c3_definition_targeted_execution_v1.py` | 活动 | Python 实现、脚本或测试 |
@@ -4053,6 +4240,7 @@
 | `scripts/run_gdpr_3type_linkage_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_gdpr_s2_s3_linkage_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_llm_zh_aid.py` | 活动 | Python 实现、脚本或测试 |
+| `scripts/run_paper_e1_r19_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_s2_12_direct_llm_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_s2_12_sun_llm_fallback_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/run_s2_12_sun_rule_only_v1.py` | 活动 | Python 实现、脚本或测试 |
@@ -4147,6 +4335,8 @@
 | `scripts/s2_12_build_execution_ready_v2.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/s2_12_build_readiness_v3.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/s2_12_build_readiness_v4.py` | 活动 | Python 实现、脚本或测试 |
+| `scripts/score_paper_e1_r19_gdpr.py` | 活动 | Python 实现、脚本或测试 |
+| `scripts/score_paper_e1_r19_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/stage1_review_tool.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/stage2_multi_model.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/stage3_run_common.py` | 活动 | Python 实现、脚本或测试 |
@@ -4533,6 +4723,7 @@
 | `tests/test_modular_prompt_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_multi_model_stage2.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_normalization.py` | 活动 | Python 实现、脚本或测试 |
+| `tests/test_paper_e1_r19_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_plain_prompt_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_prepare_stage3_execution_v4.py` | 活动 | Python 实现、脚本或测试 |
 | `tests/test_project_name_migration.py` | 活动 | Python 实现、脚本或测试 |
