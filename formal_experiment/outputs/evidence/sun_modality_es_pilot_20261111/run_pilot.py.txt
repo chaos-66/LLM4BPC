@@ -1,0 +1,110 @@
+"""Run one declared wave of the 11-call pilot using the historical 22-shot transport."""
+import argparse
+import json
+import sys
+from datetime import datetime
+from pathlib import Path
+
+RUN = Path(__file__).resolve().parent
+ROOT = RUN.parents[3]
+sys.path.insert(0, str(ROOT / "scripts"))
+import run_sun_modality_fewshot_v1 as tx
+import prepare_sun_modality_es_minimal_v1 as prep
+from bpc_hybrid.modality_benchmark import boundary, data, llm_se
+
+WAVES = {
+    "S1-1": ["6d46f2ca8400b2bc", "ebcf85dc92f6a19b", "07b0547a7b2a92a1"],
+    "S1-2": ["f5037bcc56922965", "98ff4092f04fb972", "021f012516dbab37"],
+    "E1-1": ["5c7ac6760deb9439", "8efa350640d341df", "3dc91979a3043436"],
+    "E1-2": ["a18989112132a992", "d276501af2c67790"],
+}
+PLAN = RUN / "plan.json"
+JOURNAL = RUN / "events.jsonl"
+CONTROL = ROOT / "outputs/development/sun_modality_eligibility_shots_v1/execution_v1/local_only/events.jsonl"
+
+def plan_and_bodies():
+    baseline, systems, frozen = prep.build()
+    if frozen != prep.read(prep.REPORT):
+        raise ValueError("prepared prompt drift")
+    if boundary.digest(CONTROL.read_bytes()) != "ab818d55f75717a9390761ec571c41369e59f1a78c0340982dd264d38f5c00bd":
+        raise ValueError("control journal drift")
+    control = {r["sample_id"]: r for r in boundary.read_events(CONTROL) if r["kind"] == "finished"}
+    texts = dict(data.load_split_text_only("test"))
+    inputs, cases = {}, {}
+    for wave, suffixes in WAVES.items():
+        variant = wave[:2]
+        cases[wave] = []
+        for suffix in suffixes:
+            sid = "sun_modality_" + suffix
+            original = prep.request_body(baseline, sid, texts[sid])
+            if boundary.digest(boundary.wire_bytes(original)) != control[sid]["request_sha256"]:
+                raise ValueError("historical request mismatch")
+            body = prep.request_body(systems[variant], sid, texts[sid])
+            request_hash = boundary.digest(boundary.wire_bytes(body))
+            inputs[sid] = texts[sid], body, request_hash
+            cases[wave].append({"sample_id": sid, "request_sha256": request_hash})
+    plan = {"authorization": "有没有进行画蛇添足的改动？如果没有就可以跑了",
+            "scope": "historically paired exploratory pilot, confirm each second wave separately against first-wave returns",
+            "max_calls": 11, "per_variant": {"S1": 6, "E1": 5}, "retries": 0, "workers": 1,
+            "endpoint": "https://api.deepseek.com", "model": llm_se.MODEL_ALIAS,
+            "preflight_sha256": boundary.digest(prep.REPORT.read_bytes()),
+            "control_journal_sha256": boundary.digest(CONTROL.read_bytes()),
+            "runner_sha256": boundary.digest(Path(__file__).read_bytes()), "waves": cases,
+            "stop": "Wrong response ID, incompatible model/body, usage or transport issue: stop. Consecutive unexpected empty rules: stop. Inspect canonical records after first wave; do not expand a failed arm."}
+    return plan, inputs
+
+def run(wave):
+    plan, inputs = plan_and_bodies()
+    if wave == "prepare":
+        if PLAN.exists():
+            if prep.read(PLAN) != plan:
+                raise ValueError("existing plan mismatch")
+        else:
+            tx.base.write_new(PLAN, plan)
+        print("Prepared 11 bound requests, zero sends.")
+        return
+    if prep.read(PLAN) != plan:
+        raise ValueError("pilot plan drift")
+    config = tx.base.environment_config()
+    with (RUN / "execution.lock").open("x") as lock:
+        try:
+            events = boundary.read_events(JOURNAL)
+            finishes = [r for r in events if r["kind"] == "finished"]
+            if len(events) != 2 * len(finishes) or any(tx.failed(r) or not r["identity_ok"] for r in finishes):
+                raise ValueError("unsettled or failed previous dispatch")
+            started = {r["sample_id"] for r in events if r["kind"] == "started"}
+            if wave.endswith("2"):
+                expected = {c["sample_id"] for c in plan["waves"][wave[:2] + "-1"]}
+                if not expected <= started:
+                    raise ValueError("first wave not completed")
+            previous = events[-1]["event_hash"] if events else ""
+            for case in plan["waves"][wave]:
+                sid = case["sample_id"]
+                if sid in started:
+                    continue
+                if len(started) >= plan["max_calls"]:
+                    raise ValueError("call limit")
+                text, body, request_hash = inputs[sid]
+                window, rate = llm_se.rate_for(datetime.now(llm_se.BEIJING))
+                previous = boundary.append_event(JOURNAL, {"kind": "started", "sample_id": sid, "wave": wave,
+                    "timestamp": tx.base.now(), "request_sha256": request_hash, "price_window": window,
+                    "reserved_cny": boundary.reserve_cost(body, rate)}, previous)
+                started.add(sid)
+                row = tx.send_one(config, sid, text, body, request_hash, rate)
+                record = llm_se._extract_json_object(row["raw_content"]) or {}
+                row.update(wave=wave, identity_ok=record.get("sample_id") == sid and record.get("source_id") == sid)
+                previous = boundary.append_event(JOURNAL, row, previous)
+                print(json.dumps({k: row[k] for k in ("sample_id", "label", "clauses", "parse_status", "request_status", "http_status", "identity_ok", "model_accepted", "body_hash_match", "usage_verified")}), flush=True)
+                if tx.failed(row) or not row["identity_ok"]:
+                    raise SystemExit("stopped on transport, binding or identity")
+                if finishes and not finishes[-1]["clauses"] and not row["clauses"]:
+                    raise SystemExit("two consecutive empty records")
+                finishes.append(row)
+        finally:
+            lock.close()
+            (RUN / "execution.lock").unlink()
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("wave", choices=["prepare", *WAVES])
+    run(parser.parse_args().wave)

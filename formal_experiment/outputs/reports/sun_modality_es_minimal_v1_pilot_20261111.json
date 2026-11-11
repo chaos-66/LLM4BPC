@@ -1,0 +1,303 @@
+{
+  "run_id": "sun_modality_es_minimal_v1_pilot_20261111",
+  "suite_id": "SUN-MODALITY-ES-MINIMAL-001",
+  "stage": "Part 2",
+  "method": "direct_llm",
+  "kind": "test-informed exploratory paired pilot",
+  "status": "completed_under_stopping_rules",
+  "git_commit": "5b0f82b10f023191623e7d57203b1558d37c5cc6",
+  "worktree_dirty_at_start": true,
+  "authorization": {
+    "confirmation": "是",
+    "destination": "https://api.deepseek.com",
+    "disclosed_payload_zh": "含训练例句的完整冻结提示与所选德语测试原文",
+    "max_calls": 11,
+    "S1_max_calls": 6,
+    "E1_max_calls": 5,
+    "retries": 0
+  },
+  "frozen_plan": {
+    "local_path": "outputs/development/sun_modality_es_minimal_v1/pilot_20261111/plan.json",
+    "sha256": "972ad08aad38a499ab199e48220d07869ab5ac5e1bc74e220d3ad2c567ecc738",
+    "waves": {
+      "S1-1": [
+        {
+          "sample_id": "sun_modality_6d46f2ca8400b2bc",
+          "request_sha256": "e2659ea7d23dadbb521924db1612f29cadcd0b276d6a1a8bd7fee1ca4ffb4d67"
+        },
+        {
+          "sample_id": "sun_modality_ebcf85dc92f6a19b",
+          "request_sha256": "f87e720a2a20694439afd50854f75752aa5142e9d455679f75e3859cc83290b1"
+        },
+        {
+          "sample_id": "sun_modality_07b0547a7b2a92a1",
+          "request_sha256": "89f6a274d65405df7b34cf7045e4b35054aa95ce197d47e770b1964ac0ebb6fc"
+        }
+      ],
+      "S1-2": [
+        {
+          "sample_id": "sun_modality_f5037bcc56922965",
+          "request_sha256": "69ab7d4ab8e178d792449fb1fbbdd43a94c6a6b11f1a7270bdbc46e81b3b1b49"
+        },
+        {
+          "sample_id": "sun_modality_98ff4092f04fb972",
+          "request_sha256": "6577b21594510b474fc455409629f1d0011613ed2207042ee6e4188ed8fbf3b4"
+        },
+        {
+          "sample_id": "sun_modality_021f012516dbab37",
+          "request_sha256": "5c7f0fb925a8b621b216be30dea458ab490d31a4a25b5b3901bc2e0e55f8636f"
+        }
+      ],
+      "E1-1": [
+        {
+          "sample_id": "sun_modality_5c7ac6760deb9439",
+          "request_sha256": "b123e2ac554ec46e3076b0211f544533653c2f9ead647206aee9aee85fcd987d"
+        },
+        {
+          "sample_id": "sun_modality_8efa350640d341df",
+          "request_sha256": "246e8ff8332ddd308cc49b65c37db18ca210c888b45d3c923ce8e03a0eaebd11"
+        },
+        {
+          "sample_id": "sun_modality_3dc91979a3043436",
+          "request_sha256": "d153b8bdc4e3e3a57df1cbb3720674d5c6e021df7fc3984cc597428de11c910c"
+        }
+      ],
+      "E1-2": [
+        {
+          "sample_id": "sun_modality_a18989112132a992",
+          "request_sha256": "2992dc6f9cb351b54bf6194197761dcfc0345e6de71e2b21de292aef34864e82"
+        },
+        {
+          "sample_id": "sun_modality_d276501af2c67790",
+          "request_sha256": "714ba9c1d36e4d9087f519345f806f0702639aea9710132d68721a084f22d2a0"
+        }
+      ]
+    },
+    "preflight_path": "outputs/reports/sun_modality_es_minimal_v1_preflight.json",
+    "preflight_sha256": "6edb39ded798d4ee6b54b823c02631288c7a9bec48f7226582463d2ec1d553f1",
+    "runner_local_path": "outputs/development/sun_modality_es_minimal_v1/pilot_20261111/run_pilot.py",
+    "runner_source_snapshot": "outputs/evidence/sun_modality_es_pilot_20261111/run_pilot.py.txt",
+    "runner_sha256": "c3c90ff07aeea17c37956da2a56cd89b3ec9bd3187927a0a66fa02d6c183d46d"
+  },
+  "inputs": {
+    "test_sha256": "2f67edad05e3a4d315d9ac65fc0ffd1d83dbaffd2d77a55916d6aa9a6919e871",
+    "test_path": "data/development/modality/sun_estg_modality_v1/splits/test.jsonl",
+    "train_sha256": "a7367cd35e3a5ce7263ad5b0fae4881a989761d4fba21b75bdc75b6e2b83c142",
+    "baseline_system_sha256": "2d038a9233420ead014d3714dbb697a39177d1cc55b9f3316f9dfc2f84fbbae4",
+    "candidate_system_sha256": {
+      "E1": "748b3f10904f3280a599fcaabc93114f096f5152ba2f90db674c30681d732ac5",
+      "S1": "9f897b6e8d0729f3e5d88ced361911485cb674dc2b5b45e050c2956a521eaa44"
+    }
+  },
+  "execution": {
+    "command_cwd": "repository root",
+    "command_template": "python -B -X utf8 formal_experiment/outputs/development/sun_modality_es_minimal_v1/pilot_20261111/run_pilot.py <wave>",
+    "waves_executed": [
+      "S1-1",
+      "E1-1",
+      "E1-2"
+    ],
+    "workers": 1,
+    "model": "deepseek-v4-pro",
+    "returned_models": [
+      "deepseek-v4-pro"
+    ],
+    "sampling": {
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "max_tokens": 4096,
+      "thinking": {
+        "type": "disabled"
+      },
+      "stream": false
+    },
+    "started_utc": "2026-11-11T08:05:07.959147+00:00",
+    "finished_utc": "2026-11-11T08:07:27.738530+00:00",
+    "requests": 8,
+    "retries": 0,
+    "failed": 0,
+    "usage": {
+      "prompt_tokens": 54886,
+      "completion_tokens": 4909,
+      "prompt_cache_hit_tokens": 20224,
+      "prompt_cache_miss_tokens": 34662
+    },
+    "cost_cny_at_project_rates": 0.4505682,
+    "rate_basis": "historical project rates in llm_se.PRICE_CNY_PER_MILLION times provider usage, not an invoice",
+    "price_window_counts": {
+      "peak": 8
+    }
+  },
+  "readout": "Original first non-empty clause modality, all dispatched cases retained, no evidence-coordinate veto.",
+  "evidence": {
+    "historical_22shot_journal_path": "outputs/development/sun_modality_eligibility_shots_v1/execution_v1/local_only/events.jsonl",
+    "historical_22shot_journal_sha256": "ab818d55f75717a9390761ec571c41369e59f1a78c0340982dd264d38f5c00bd",
+    "pilot_journal_path": "outputs/development/sun_modality_es_minimal_v1/pilot_20261111/events.jsonl",
+    "pilot_journal_sha256": "d56258f6a9ac636ab725c47355c5e81150bea3791b007e8313deac0ca0a842fa",
+    "verified": "chains, unique IDs, raw response digests, model, request bodies, usage, returned identifiers and source texts, first-label readout"
+  },
+  "results": {
+    "S1": {
+      "n": 3,
+      "baseline_correct": 2,
+      "candidate_correct": 2,
+      "corrections": 0,
+      "regressions": 0,
+      "full_test_macro_f1": null
+    },
+    "E1": {
+      "n": 5,
+      "baseline_correct": 3,
+      "candidate_correct": 5,
+      "corrections": 2,
+      "regressions": 0,
+      "full_test_macro_f1": null
+    }
+  },
+  "cases": [
+    {
+      "wave": "S1-1",
+      "sample_id": "sun_modality_6d46f2ca8400b2bc",
+      "original_label": "permission",
+      "baseline_first_label": "definition",
+      "candidate_first_label": "definition",
+      "baseline_order": [
+        "definition",
+        "permission"
+      ],
+      "candidate_order": [
+        "definition",
+        "permission"
+      ],
+      "request_sha256": "e2659ea7d23dadbb521924db1612f29cadcd0b276d6a1a8bd7fee1ca4ffb4d67",
+      "baseline_response_sha256": "e7233b45dd12745c0d8fd833b829e047f854c1aa5f7908839ec27b50f7187606",
+      "response_sha256": "c03d7389b6a8fd57908a60e4a9ca23af201d358806937f36bff6a5053f8a1b35",
+      "review_zh": "引导语仍单列为定义，正文扣除许可仍排第二。触发 S1 直接目标停止条件。"
+    },
+    {
+      "wave": "S1-1",
+      "sample_id": "sun_modality_ebcf85dc92f6a19b",
+      "original_label": "definition",
+      "baseline_first_label": "definition",
+      "candidate_first_label": "definition",
+      "baseline_order": [
+        "definition"
+      ],
+      "candidate_order": [
+        "definition"
+      ],
+      "request_sha256": "f87e720a2a20694439afd50854f75752aa5142e9d455679f75e3859cc83290b1",
+      "baseline_response_sha256": "3898118eb5ecba2d0ff45e5458a05147b02fed395a601a8edb35feed1b616e69",
+      "response_sha256": "5102de7407891b0b9767fbb5334290bff3dd86449a0de84908205a346180d012",
+      "review_zh": "仍为单条定义。模态证据从引导语转为正文限定。"
+    },
+    {
+      "wave": "S1-1",
+      "sample_id": "sun_modality_07b0547a7b2a92a1",
+      "original_label": "definition",
+      "baseline_first_label": "definition",
+      "candidate_first_label": "definition",
+      "baseline_order": [
+        "definition",
+        "definition"
+      ],
+      "candidate_order": [
+        "definition",
+        "definition"
+      ],
+      "request_sha256": "89f6a274d65405df7b34cf7045e4b35054aa95ce197d47e770b1964ac0ebb6fc",
+      "baseline_response_sha256": "21c025cf7fc9527acc1640e55a9c60870ab688e311a230747330e69965205882",
+      "response_sha256": "3aa6cbeaa4d3fec726917cae14ab3101e55c1494185d14da0d42d819e006cf71",
+      "review_zh": "两个定义子句均保留，第二条仍为独立适用声明。"
+    },
+    {
+      "wave": "E1-1",
+      "sample_id": "sun_modality_5c7ac6760deb9439",
+      "original_label": "definition",
+      "baseline_first_label": "obligation",
+      "candidate_first_label": "definition",
+      "baseline_order": [
+        "obligation"
+      ],
+      "candidate_order": [
+        "definition"
+      ],
+      "request_sha256": "b123e2ac554ec46e3076b0211f544533653c2f9ead647206aee9aee85fcd987d",
+      "baseline_response_sha256": "3993b5f9c7435a86cdbddce9d1f8b4db3274b0d9f309a85afd216cbd2f937a1c",
+      "response_sha256": "8fb981a936dadf051c05993f4124a0945418e097f0a9f75d0fa955fad660ee41",
+      "review_zh": "预缴款抵减税债由义务改为定义，返回单条计算关系。"
+    },
+    {
+      "wave": "E1-1",
+      "sample_id": "sun_modality_8efa350640d341df",
+      "original_label": "obligation",
+      "baseline_first_label": "obligation",
+      "candidate_first_label": "obligation",
+      "baseline_order": [
+        "obligation"
+      ],
+      "candidate_order": [
+        "obligation"
+      ],
+      "request_sha256": "246e8ff8332ddd308cc49b65c37db18ca210c888b45d3c923ce8e03a0eaebd11",
+      "baseline_response_sha256": "5425d6d2a8c1e97efb396a722c7b5b05c7d58df0de54399df0f9ecb24319f951",
+      "response_sha256": "fc1f2eb11ffaed8df39b9bccdf5264d6dcf12c1559a9c8a51a8898a84b170d2f",
+      "review_zh": "必须计入上限的执行义务保留。"
+    },
+    {
+      "wave": "E1-1",
+      "sample_id": "sun_modality_3dc91979a3043436",
+      "original_label": "permission",
+      "baseline_first_label": "permission",
+      "candidate_first_label": "permission",
+      "baseline_order": [
+        "permission"
+      ],
+      "candidate_order": [
+        "permission"
+      ],
+      "request_sha256": "d153b8bdc4e3e3a57df1cbb3720674d5c6e021df7fc3984cc597428de11c910c",
+      "baseline_response_sha256": "bcf714a3ad5638672ae8ae1b3c4704a1fd7a011fb268d79d1004a2ad06f9cc25",
+      "response_sha256": "2c5906bce08b3da3ea704c37ee2ea09afee31814339477b729ef0379434ed06d",
+      "review_zh": "可选择抵减的许可保留。"
+    },
+    {
+      "wave": "E1-2",
+      "sample_id": "sun_modality_a18989112132a992",
+      "original_label": "definition",
+      "baseline_first_label": "obligation",
+      "candidate_first_label": "definition",
+      "baseline_order": [
+        "obligation"
+      ],
+      "candidate_order": [
+        "definition"
+      ],
+      "request_sha256": "2992dc6f9cb351b54bf6194197761dcfc0345e6de71e2b21de292aef34864e82",
+      "baseline_response_sha256": "4fcdaf96ff5a62a1b4066b2c32d32dc6cf07b0afed37f6fe062878c0f4cc643e",
+      "response_sha256": "44f263d183047ea65573ce9fdae4ae8feae5a0fe5b2a2d56f807896434bcd346",
+      "review_zh": "分配款减少账户余额由义务改为定义，此例在历史24-shot也曾改对。"
+    },
+    {
+      "wave": "E1-2",
+      "sample_id": "sun_modality_d276501af2c67790",
+      "original_label": "definition",
+      "baseline_first_label": "definition",
+      "candidate_first_label": "definition",
+      "baseline_order": [
+        "definition"
+      ],
+      "candidate_order": [
+        "definition"
+      ],
+      "request_sha256": "714ba9c1d36e4d9087f519345f806f0702639aea9710132d68721a084f22d2a0",
+      "baseline_response_sha256": "024ec4659799da340c0e042150520c21f677dd1d44265b973fb975f900d1495e",
+      "response_sha256": "62341b8a4d4c2e2c9ff139238aedc4e37db1c54884fcd3996dc74f37e7fa5380",
+      "review_zh": "缺数值的补贴额度保留为定义。"
+    }
+  ],
+  "decision_zh": {
+    "S1": "直接目标仍错，按约定停止，未发送第二批3条。",
+    "E1": "两条目标改对、三个正确对照保住。优先候选，整体426条Macro-F1待独立运行。"
+  }
+}

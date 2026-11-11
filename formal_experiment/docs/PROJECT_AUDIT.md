@@ -1,6 +1,6 @@
 # 项目实时状态（兼容文件名 PROJECT_AUDIT.md）
 
-**更新时间**：2026-11-10
+**更新时间**：2026-11-11
 **唯一活动目录**：`formal_experiment/`  
 **完整路线**：`docs/MASTER_PIPELINE.md`  
 **机器事实源**：`python formal_experiment/scripts/audit_project.py`（自动完整性检查）  
@@ -13,6 +13,15 @@ Part 1/2/3 工作分解、依赖和完成定义不在这里重复，统一见主
 Sun 指 Sun et al. (2024) 的本地独立重建，历史名称 Rules-Only 对应
 `sun_rule_only` / B0。以下活动说明按当前名称阅读；冻结报告、源码与历史
 事件保持原字节。本次纯命名调整不改变本页任务状态、结果或实验授权。
+
+## SUN-MODALITY-ES-MINIMAL-001 小批结果（2026-11-11）
+
+用户确认将含训练例句的完整提示和选定德语输入发送至 DeepSeek 官方 API。已用 8/11 次，
+零失败、零重试，按项目费率及实际用量估算 ¥0.4505682。S1 的主目标仍输出定义、许可两条，
+首标签仍错，另外两条保持正确，已按停止条件结束。E1 将税款抵减和账户余额减少两条从义务
+改判为定义，三条正确对照保留，小批由 3/5 升到 5/5。保留 E1 为下一步优先候选。
+全体 426 条仅有历史 22-shot 对照成绩；E1、S1 的整体 Macro-F1 均待测。
+[逐条配对与运行记录](../outputs/reports/sun_modality_es_minimal_v1_pilot_20261111.json)
 
 ## SUN-MODALITY-ES-MINIMAL-001：两项独立小修改已离线准备（2026-11-10）
 

@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
-**生成日期**：2026-11-10
-**收录文件**：4597 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**生成日期**：2026-11-11
+**收录文件**：4599 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -3030,6 +3030,7 @@
 | `outputs/evidence/stage3_winter_paper_rerun_20261010_v1/global_role_candidates.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/stage3_winter_paper_rerun_20261010_v1/predictions.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/evidence/stage3_winter_paper_rerun_20261010_v1/run_manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/evidence/sun_modality_es_pilot_20261111/run_pilot.py.txt` | 活动 | 文本清单或依赖说明 |
 | `outputs/reports/.gitkeep` | 目录占位 | 保留当前空目录 |
 | `outputs/reports/b0_d1_experiment_closure_brief.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/b0_d1_formal_readiness_v2.json` | 活动 | 机器可读配置、数据、事件或产物 |
@@ -3621,6 +3622,7 @@
 | `outputs/reports/sun_llm_fallback_method_gate_decision_dry_run.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/sun_llm_fallback_method_gate_decision_dry_run_v2.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/sun_llm_fallback_method_gate_decision_dry_run_v2.md` | 活动 | 说明、规范或研究文档 |
+| `outputs/reports/sun_modality_es_minimal_v1_pilot_20261111.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/sun_modality_es_minimal_v1_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/sun_modality_es_minimal_v1_review.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/sun_modality_sentence_v1_baseline_review.json` | 活动 | 机器可读配置、数据、事件或产物 |

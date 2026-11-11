@@ -1,8 +1,8 @@
 # LLM4BPC 完整实验主 Pipeline
 
-**文档版本**：3.7.92
+**文档版本**：3.7.93
 **状态**：ACTIVE — 全项目研究与任务分解的唯一主线
-**最后更新**：2026-11-10
+**最后更新**：2026-11-11
 **方法学主干**：Sun et al. (2024)（三部分方法主干）；Barrientos et al. (2026)（直接借鉴来源：LLM 结构化输出、验证、受控词汇、归一化与评估纪律）
 **当前实施优先级**：2026-10-12 用户直接要求修复 Sun/Winter 的方法实现并运行同批 Part 3。S3-BASELINE-REPAIR-V1 先固定局部修复设计、输入/参数/评估器，再执行零 API 对照并保存所有结果；不得以预期排名作为验收或选样条件。旧结果保留，完整 Sun 模态/抽取/标签分解与独立范围仍需分别认证；局部修复不代表完整原方法复现。正式 Oracle、未见测试和新 API 门禁独立，下方历史安排不扩大本轮范围。
 
@@ -16,6 +16,14 @@
 > 本文定义“要完成什么、先后依赖是什么、每一步怎样算完成”。
 > `docs/PROJECT_AUDIT.md` 只记录实时进度；不要再创建新的日期版
 > `STATUS_*`、`HANDOFF_*` 或平行路线文档。
+
+## SUN-MODALITY-ES-MINIMAL-001 小批实测（2026-11-11）
+
+按事前方案将两个候选各自与所选句子的历史 22-shot 首标签配对。S1 首批三条判对两条，
+直接目标仍将引导语单列为定义，依约停发第二批。E1 五条全部判对，两条原错例改对，
+三条正确对照保留。总计 8 次请求、零重试。E1 保留为整体比较候选；
+原 22-shot 仍是已测对照，两个候选的 426 条 Macro-F1 均待测。
+[小批结果与账本哈希](../outputs/reports/sun_modality_es_minimal_v1_pilot_20261111.json)
 
 ## SUN-MODALITY-ES-MINIMAL-001：E／S最小修改，离线准备（2026-11-10）
 
@@ -3335,6 +3343,7 @@ development-only；S3.7 formal Oracle not started；Gold Rule Records absent。
 
 ## 15. Pipeline 变更日志
 
+| 3.7.93 | 2026-11-11 | SUN-MODALITY-ES-MINIMAL-001 小批执行完成。S1 直接目标未修复，三条后停止。E1 改对两条、三个正确对照保持。 | `outputs/reports/sun_modality_es_minimal_v1_pilot_20261111.json` |
 | 3.7.92 | 2026-11-10 | SUN-MODALITY-ES-MINIMAL-001：依据用户逐项自查要求，分别准备单例D→D替换E1与引导语区别S1。保留22-shot、原接口/取值，零API；不恢复撤销候选。 | `outputs/reports/sun_modality_es_minimal_v1_review.md`、`sun_modality_es_minimal_v1_preflight.json` |
 | 3.7.91 | 2026-11-10 | 用户撤销SUN-MODALITY-FINAL-REVIEW-001；撤下12个新增活动文件，恢复任务前22-shot活动代码/提示词，撤销本批发送入口。保留已发生调用、费用和历史报告，零新API。 | `outputs/reports/sun_modality_sentence_v1_withdrawal.md`、`sun_modality_sentence_v1_withdrawal.json` |
 | 3.7.90 | 2026-11-10 | SUN-MODALITY-FINAL-REVIEW-001 授权426次完成，费用9.6668145元，零重试/请求失败。冻结主F1=0.053099（408坐标失败、1 null），首clause诊断0.775741；如实保留失败结果，不替换历史22-shot。 | `outputs/reports/sun_modality_sentence_v1_completed.json`、`sun_modality_sentence_v1_execution_review.md` |

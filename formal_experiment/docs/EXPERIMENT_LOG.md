@@ -6823,3 +6823,21 @@
 - 仍存在 blocker：无
 - 备注：用户要求只做有判断正确性依据的E/S小修改，每项先自查目的与反作用。E1只将第15条不完整金额D示例换成train完整抵减关系D；S1只补引导下文与独立适用声明的区别。两个独立离线版本，不合并，总22及类别9/5/5/3不变；新例dev/test846次隔离零命中。原接口、首clause标签读取、评分器、模型采样和历史22shot保持；不恢复已撤销句级输出/坐标否决。准备器只离线，真实调用未授权，API0；无新成绩、无全量测试。新具名测试验证改动隔离、train来源和原标签不受坐标错误否决。
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-11-11T08:11:29.193921+00:00 - SUN-MODALITY-ES-MINIMAL-001 完成 E1、S1 独立小批配对与约定早停
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=sun_modality_es_minimal_v1_pilot_20261111；阶段=stage2；方法=direct_llm；状态=成功（`succeeded`）
+- 实际运行命令：`python -B -X utf8 formal_experiment/outputs/development/sun_modality_es_minimal_v1/pilot_20261111/run_pilot.py <wave>（实际顺序 S1-1、E1-1、E1-2）`
+- manifest：outputs/reports/sun_modality_es_minimal_v1_pilot_20261111.json
+- 结果摘要：8次调用、零重试；S1直接目标仍错，3条后停止，2/3与对照相同；E1由3/5到5/5，改对2条、回归0条。整体Macro-F1待测。
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：4 passed in 0.97s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`5b0f82b10f023191623e7d57203b1558d37c5cc6`；相关未提交路径：108 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：已授权调用（`authorized_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：用户明确确认向官方DeepSeek发送完整提示及德语测试原文。每条请求、原始返回、身份、用量与历史首标签逐项核对。实际用量按项目费率估算0.4505682元；原文与返回仅存本地。仅具名检查。
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
