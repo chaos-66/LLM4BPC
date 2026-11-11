@@ -1,6 +1,6 @@
 # LLM4BPC 完整实验主 Pipeline
 
-**文档版本**：3.7.94
+**文档版本**：3.7.95
 **状态**：ACTIVE — 全项目研究与任务分解的唯一主线
 **最后更新**：2026-11-11
 **方法学主干**：Sun et al. (2024)（三部分方法主干）；Barrientos et al. (2026)（直接借鉴来源：LLM 结构化输出、验证、受控词汇、归一化与评估纪律）
@@ -17,12 +17,14 @@
 > `docs/PROJECT_AUDIT.md` 只记录实时进度；不要再创建新的日期版
 > `STATUS_*`、`HANDOFF_*` 或平行路线文档。
 
-## SUN-MODALITY-E1-FULL-001 德语 E1 整体评估完成（2026-11-11）
+## SUN-MODALITY-E1-FULL-001 德语情态四分类提示词调优已结项（2026-11-11）
 
 验证 5 条小批 E1 返回后补测其余 421 条，以原口径评估全部 426 条。E1 判对 396 条，
 Macro-F1 为 0.871371，高于原 22-shot 的 0.869788。配对结果为 4 条改对、1 条回归；
 两版禁止类逐句相同。与历史 24-shot 唯一不同的首标签为直接目标税款抵减定义。
-[整体结果与逐句变化](../outputs/reports/sun_modality_e1_full_v1_completed.md)
+用户决定本轮到此结束。S1 停于三条小批。结项记录逐条说明 E1 剩余的 30 个错误，
+包括 10 条禁止误报或漏报、7 条定义误判许可、2 条许可漏报，以及其余 11 条。
+[整体结果与结项错例分析](../outputs/reports/sun_modality_e1_full_v1_completed.md#结项决定与未修复的错误)
 
 ## SUN-MODALITY-ES-MINIMAL-001 小批实测（2026-11-11）
 
@@ -3350,6 +3352,7 @@ development-only；S3.7 formal Oracle not started；Gold Rule Records absent。
 
 ## 15. Pipeline 变更日志
 
+| 3.7.95 | 2026-11-11 | 按用户决定结束本轮德语情态四分类提示词调优。回查已存子句，记录 E1 全部 30 个错例及 S1 直接目标未修复的原因。 | `outputs/reports/sun_modality_e1_full_v1_completed.md` |
 | 3.7.94 | 2026-11-11 | SUN-MODALITY-E1-FULL-001 完成 426 条同口径评估。E1 判对 396 条，Macro-F1 0.871371，目标税款抵减改对。 | `outputs/reports/sun_modality_e1_full_v1_completed.json` |
 | 3.7.93 | 2026-11-11 | SUN-MODALITY-ES-MINIMAL-001 小批执行完成。S1 直接目标未修复，三条后停止。E1 改对两条、三个正确对照保持。 | `outputs/reports/sun_modality_es_minimal_v1_pilot_20261111.json` |
 | 3.7.92 | 2026-11-10 | SUN-MODALITY-ES-MINIMAL-001：依据用户逐项自查要求，分别准备单例D→D替换E1与引导语区别S1。保留22-shot、原接口/取值，零API；不恢复撤销候选。 | `outputs/reports/sun_modality_es_minimal_v1_review.md`、`sun_modality_es_minimal_v1_preflight.json` |
