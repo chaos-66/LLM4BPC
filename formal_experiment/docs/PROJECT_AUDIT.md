@@ -16,11 +16,11 @@ Sun 指 Sun et al. (2024) 的本地独立重建，历史名称 Rules-Only 对应
 
 ## 统一 E1 第 19 例后重跑论文实验（2026-11-12）
 
-已核对表 I 的两套结果、表 II 的 1,200 条历史原始返回、德语 426 条和 GDPR 图 3 的 6,210 个检查输出。两组消融对照的 300 个请求及响应通过指纹核对。正式重跑共计划新增 EStG 900 次、GDPR 33 次和德语 426 次。
+统一提示词重跑已完成。EStG 新测 900 条，两组请求完全相同的历史对照共 300 条。GDPR 新测 33 条，独立核对 201 个开发集单元。德语 426 条均进入分母。表 I 五字段 Micro-F1 为 0.708906，GDPR 固定阈值 F1 为 0.487500，德语 Macro-F1 为 0.868634。
 
-用户已授权向 DeepSeek 官方 API 发送冻结提示词、启用的带标签训练例和上述测试输入，只在空闲时段调用，总费用上限 ¥65。八组各一条试发全部通过，计入总数，合计消耗 42,415 个输入 token 和 6,492 个输出 token，按用量计费 ¥0.2361927。后续批次已开始。
+八条试发已计入 1,359 次调用，所有调用在空闲时段结算，零重试，按返回用量合计 ¥28.666415，低于授权上限 ¥65。
 
-[离线验证](../outputs/reports/paper_e1_r19_v1_offline_validation.json) · [预算记录](../configs/authorization/paper_e1_r19_v1.json)
+[汇总与历史差异](../outputs/reports/paper_e1_r19_v1_completed.md) · [论文结果](../paper_experiments/06_unified_E1_R19/paper_results.json) · [运行清单](../outputs/reports/paper_e1_r19_v1_manifest.json)
 
 ## SUN-MODALITY-E1-FULL-001 本轮德语情态四分类提示词调优已结项（2026-11-11）
 

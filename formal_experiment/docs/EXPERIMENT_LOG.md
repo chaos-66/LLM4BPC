@@ -6933,3 +6933,21 @@
 - 仍存在 blocker：无
 - 备注：Offline export check only. Repriced the eight settled pilot responses using returned token counts, tested the spending reservation check and rendered the previous nine points in memory. The separately authorized bulk job continues.
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-11-12T05:20:28.453904+00:00 - Complete unified E1-R19 paper rerun and independently verify tables and Figure 3
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=paper_e1_r19_v1；阶段=Parts 2 and 3；方法=direct_llm；状态=成功（`succeeded`）
+- 实际运行命令：`python scripts/run_paper_e1_r19_v1.py --execute, then score_paper_e1_r19_v1.py score, score_paper_e1_r19_gdpr.py score and bundle_paper_e1_r19_v1.py`
+- manifest：outputs/reports/paper_e1_r19_v1_manifest.json
+- 结果摘要：1359 new off-peak calls, zero retries, usage-priced CNY 28.6664151. EStG 150 micro-F1 0.708906. German 394/426 macro-F1 0.868634. GDPR development F1 0.487500 on 201 units.
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：1 passed in 13.76s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`572f516350878732cd44ba7428f8b53db011b0ea`；相关未提交路径：112 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：已授权调用（`authorized_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：Controls 000/001 exactly reused; complete 111 predictions shared. Verified independent character coverage tallies on 8 arms x 5 span fields, all nine GDPR thresholds against 201 units per method, German counts and all seven artifact hashes. One empty German prediction retained. Public result bundle is aggregate only.
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

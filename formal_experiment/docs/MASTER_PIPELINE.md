@@ -19,9 +19,9 @@
 
 ## 统一 E1 第 19 例后重跑论文实验（2026-11-12）
 
-在原 E1 中仅用同标签训练样本替换第 19 例。EStG、GDPR 和德语测试的完整配置共用同一提示词。表 II 的各组仍按 E/S/J 设计关闭对应模块。请求与历史评分回放已通过离线检查。完成条件为八组试发均通过数据绑定检查、1,359 次新请求全部结算、复算各表及图 3，并保存新结果和费用。德国情态测试使用全部 426 条，另列剔除两个既有近似样本的敏感性结果。
+已完成。在原 E1 中仅用同标签训练样本替换第 19 例。EStG、GDPR 和德语测试的完整配置共用同一提示词。表 II 的各组仍按 E/S/J 设计关闭对应模块。八组试发通过数据绑定检查，1,359 次新请求全部结算，按用量计费 ¥28.666415。已保存表 I–III、图 3 及德语 426 条主结果，另列剔除两个既有近似样本后的 424 条敏感性结果。
 
-[请求清单](../outputs/reports/paper_e1_r19_v1_preflight.json) · [历史评分回放](../outputs/reports/paper_e1_r19_v1_offline_validation.json)
+[请求清单](../outputs/reports/paper_e1_r19_v1_preflight.json) · [历史评分回放](../outputs/reports/paper_e1_r19_v1_offline_validation.json) · [论文结果](../paper_experiments/06_unified_E1_R19/paper_results.json)
 
 ## SUN-MODALITY-E1-FULL-001 德语情态四分类提示词调优已结项（2026-11-11）
 

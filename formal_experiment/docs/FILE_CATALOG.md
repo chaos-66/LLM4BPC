@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
 **生成日期**：2026-11-12
-**收录文件**：4793 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**收录文件**：4799 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -3126,9 +3126,13 @@
 | `outputs/reports/gold_conflict_audit_readonly_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/gold_conflict_audit_readonly_v1.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/llm4bpc_name_migration_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/paper_e1_r19_v1_completed.md` | 活动 | 说明、规范或研究文档 |
+| `outputs/reports/paper_e1_r19_v1_gdpr.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/paper_e1_r19_v1_manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/paper_e1_r19_v1_offline_validation.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/paper_e1_r19_v1_pilot.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/paper_e1_r19_v1_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/paper_e1_r19_v1_scores.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/paper_experiment_completion_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s11_s14_stage1_structural_synthetic_v1.manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s13_stage1_label_semantics_synthetic_v1.manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
@@ -3869,6 +3873,8 @@
 | `paper_experiments/05_german_modality_426/full_test_results.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `paper_experiments/05_german_modality_426/prompt_variants.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `paper_experiments/05_german_modality_426/S1_pilot.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `paper_experiments/06_unified_E1_R19/fig3.pdf` | 活动 | 项目文件 |
+| `paper_experiments/06_unified_E1_R19/paper_results.json` | 活动 | 机器可读配置、数据、事件或产物 |
 
 ## `prompts`
 
