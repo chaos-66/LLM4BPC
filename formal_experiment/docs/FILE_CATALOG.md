@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
 **生成日期**：2026-11-12
-**收录文件**：4790 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**收录文件**：4791 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -53,6 +53,7 @@
 | `configs/ablations/gdpr7_direct_llm_execution_contract_v2.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/ablations/gdpr7_direct_llm_execution_contract_v3.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/ablations/gdpr7_direct_llm_execution_contract_v3_1.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `configs/authorization/paper_e1_r19_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/authorization/s2_prompt_simplification_20261006_v2.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/authorization/s2_thinking_20261006_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `configs/authorization/s2_thinking_default_20261007_v2.json` | 活动 | 机器可读配置、数据、事件或产物 |

@@ -18,7 +18,9 @@ Sun 指 Sun et al. (2024) 的本地独立重建，历史名称 Rules-Only 对应
 
 已核对表 I 的两套结果、表 II 的 1,200 条历史原始返回、德语 426 条和 GDPR 图 3 的 6,210 个检查输出。两组消融对照的 300 个请求及响应通过指纹核对。正式重跑预计新增 EStG 900 次、GDPR 33 次和德语 426 次。当前为零付费调用，修订版成绩待测。
 
-[离线验证](../outputs/reports/paper_e1_r19_v1_offline_validation.json)
+用户确认仅在空闲时段调用，总费用上限 ¥65，八条试发计入总数。执行平台在进程启动前拒绝了向 DeepSeek 发送实验输入的请求，要求明确指定允许发送的数据和目的地。截至本次记录，已发送 0 条，费用 ¥0。
+
+[离线验证](../outputs/reports/paper_e1_r19_v1_offline_validation.json) · [预算记录](../configs/authorization/paper_e1_r19_v1.json)
 
 ## SUN-MODALITY-E1-FULL-001 本轮德语情态四分类提示词调优已结项（2026-11-11）
 

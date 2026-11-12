@@ -6887,3 +6887,17 @@
 - 仍存在 blocker：无
 - 备注：1359 new calls planned, 300 exact historical controls. No revised scores or charges. Historic EStG 1200 raw responses, German 426 and GDPR nine operating points verified.
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-11-12T03:07:15.072064+00:00 - Record paper E1 rerun CNY 65 off-peak budget
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：1 passed in 3.22s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`107c0fa487dc763289f4903fd37609c6f7803cae`；相关未提交路径：106 个
+- Gold：未读取或修改（`not_read_or_modified`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：User supplied CNY 65 hard cap. Automatic execution approval rejected sending the prompt, training examples and EStG/GDPR/German inputs to the external DeepSeek API without explicit destination and data consent. No process started. Journal absent. Zero sends, zero charges.
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
