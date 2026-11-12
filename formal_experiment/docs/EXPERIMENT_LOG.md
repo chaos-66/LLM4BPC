@@ -6901,3 +6901,21 @@
 - 仍存在 blocker：无
 - 备注：User supplied CNY 65 hard cap. Automatic execution approval rejected sending the prompt, training examples and EStG/GDPR/German inputs to the external DeepSeek API without explicit destination and data consent. No process started. Journal absent. Zero sends, zero charges.
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-11-12T04:54:36.917421+00:00 - Paper E1-R19 pilot passed across all eight dispatch groups
+
+- 事件类型：实验运行（`experiment_run`）
+- 实验：run_id=paper_e1_r19_v1_pilot；阶段=Parts 2 and 3；方法=direct_llm；状态=成功（`succeeded`）
+- 实际运行命令：`python -B -u -X utf8 scripts/run_paper_e1_r19_v1.py --execute`
+- manifest：outputs/reports/paper_e1_r19_v1_pilot.json
+- 结果摘要：Eight of eight registered pilot calls passed; CNY 0.2361927; these calls count toward the total.
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：1 passed in 4.23s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`e057174997b13787c724091a24ab14d74368f504`；相关未提交路径：107 个
+- Gold：未读取或修改（`not_read_or_modified`）；LLM/API：已授权调用（`authorized_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：Explicit data transfer consent recorded for official DeepSeek API. Bulk phase in progress. No accuracy-based selection.
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

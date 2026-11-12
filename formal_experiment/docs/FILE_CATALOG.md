@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
 **生成日期**：2026-11-12
-**收录文件**：4791 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**收录文件**：4792 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -3127,6 +3127,7 @@
 | `outputs/reports/gold_conflict_audit_readonly_v1.md` | 活动 | 说明、规范或研究文档 |
 | `outputs/reports/llm4bpc_name_migration_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/paper_e1_r19_v1_offline_validation.json` | 活动 | 机器可读配置、数据、事件或产物 |
+| `outputs/reports/paper_e1_r19_v1_pilot.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/paper_e1_r19_v1_preflight.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/paper_experiment_completion_v1.json` | 活动 | 机器可读配置、数据、事件或产物 |
 | `outputs/reports/s11_s14_stage1_structural_synthetic_v1.manifest.json` | 活动 | 机器可读配置、数据、事件或产物 |
