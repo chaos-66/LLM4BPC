@@ -6919,3 +6919,17 @@
 - 仍存在 blocker：无
 - 备注：Explicit data transfer consent recorded for official DeepSeek API. Bulk phase in progress. No accuracy-based selection.
 - 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`
+
+## 2026-11-12T05:02:24.666408+00:00 - Check paper E1 result export and independent cost accounting on pilot
+
+- 事件类型：变更（`change`）
+- 命令：`python formal_experiment/scripts/record_change.py`
+- 完整性通过：是；正式实验就绪：是
+- 测试：1 passed in 2.88s
+- 测试范围：相关测试（非全量）
+- 测试证据：本次新运行（`fresh_run`）
+- Git：`529c53412a3dda814300ee4bc9f59b3c8a359a16`；相关未提交路径：106 个
+- Gold：仅完整性检查读取（`audit_read_only`）；LLM/API：未调用（`not_called`）；产物：新建且未覆盖（`created_no_overwrite`）
+- 仍存在 blocker：无
+- 备注：Offline export check only. Repriced the eight settled pilot responses using returned token counts, tested the spending reservation check and rendered the previous nine points in memory. The separately authorized bulk job continues.
+- 机器实验事件：`docs/EXPERIMENT_EVENTS.jsonl`

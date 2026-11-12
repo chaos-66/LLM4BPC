@@ -98,3 +98,23 @@ def test_modality_readout_keeps_invalid_evidence_and_all_samples():
     assert result["primary_426"]["per_class"][gold["a"]]["fn"] == 1
     with pytest.raises(ValueError,match="duplicate"):
         population([{"sample_id":"a"},{"sample_id":"a"}],{"a","b"})
+
+
+def test_final_accounting_separates_paid_response_from_empty_prediction(monkeypatch):
+    import bundle_paper_e1_r19_v1 as bundle
+    monkeypatch.setattr(run.pre,"datasets",lambda:{"german":[("s","source")]})
+    usage = {"prompt_tokens":30,"completion_tokens":25,"prompt_cache_hit_tokens":20,"prompt_cache_miss_tokens":10}
+    cost = run.pre.llm_se.cost_cny(usage,run.pre.llm_se.PRICE_CNY_PER_MILLION["off_peak"])
+    common = {"sample_id":"german|111|s","timestamp":"2026-11-12T04:51:11+00:00"}
+    events = [dict(common,kind="started",price_window="off_peak",reserved_cny=.12),
+              dict(common,kind="finished",cost_cny=cost,raw_content="{}",request_status="ok",
+                   returned_model="deepseek-v4-pro",usage=usage,model_accepted=True,
+                   usage_verified=True,body_hash_match=True)]
+    plan = {"new_calls_by_group":{"german/111":1}}
+    auth = {"max_new_calls":1,"max_cost_cny":65}
+    ledger = bundle.billing(events,plan,auth)
+    assert ledger["request_status"] == {"ok":1} and ledger["cost_cny"] == cost
+    assert ledger["extraction_checks_by_group"]["german/111"]["empty_or_failed_readout"] == 1
+    assert ledger["peak_spent_plus_open_reservations_cny"] == .12
+    with pytest.raises(ValueError,match="outside authorization"):
+        bundle.billing(events,plan,dict(auth,max_cost_cny=.11))

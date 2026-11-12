@@ -1,7 +1,7 @@
 # 项目逐文件目录
 
 **生成日期**：2026-11-12
-**收录文件**：4792 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
+**收录文件**：4793 个（不含 `_retired/`、Git-ignored 本地产物、`.env` 与可再生缓存）
 **生成命令**：`python formal_experiment/scripts/generate_file_catalog.py`
 
 本文件只收录活动项目文件；归档仅在明确追溯时查阅，不进入默认目录。
@@ -4144,6 +4144,7 @@
 | `scripts/build_v6_factorial_arms_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/build_v6_factorial_arms_v2.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/build_v6_factorial_arms_v3.py` | 活动 | Python 实现、脚本或测试 |
+| `scripts/bundle_paper_e1_r19_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/check_api_env_ready_v1.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/check_sun_baseline.py` | 活动 | Python 实现、脚本或测试 |
 | `scripts/clean_estg150_german.py` | 活动 | Python 实现、脚本或测试 |
